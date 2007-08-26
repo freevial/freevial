@@ -11,7 +11,6 @@
 # Carles 24/8/2007
 #
 
-
 import sys
 import pygame
 import Numeric
@@ -70,32 +69,36 @@ class Preguntador:
 		pygame.font.init()
 
 		# carrega d'imatges
-		self.fons = [ 	pygame.image.load( 'imatges/categoria1.png' ), 
-						pygame.image.load( 'imatges/categoria2.png' ), 
-						pygame.image.load( 'imatges/categoria3.png' ), 
-						pygame.image.load( 'imatges/categoria4.png' ), 
-						pygame.image.load( 'imatges/categoria5.png' ), 
-						pygame.image.load( 'imatges/categoria6.png' ) ]
+		self.fons = [
+							pygame.image.load( '../../data/images/categoria1.png' ), 
+							pygame.image.load( '../../data/images/categoria2.png' ), 
+							pygame.image.load( '../../data/images/categoria3.png' ), 
+							pygame.image.load( '../../data/images/categoria4.png' ), 
+							pygame.image.load( '../../data/images/categoria5.png' ), 
+							pygame.image.load( '../../data/images/categoria6.png' ),
+						]
 
-		self.mascara_de_fons = pygame.image.load('imatges/mascara_de_fons.png')
-		self.retalla_sel = pygame.image.load('imatges/retalla_sel.png')
+		self.mascara_de_fons = pygame.image.load('../../data/images/mascara_de_fons.png')
+		self.retalla_sel = pygame.image.load('../../data/images/retalla_sel.png')
 
-		self.solucio_ok = pygame.image.load('imatges/ok.png')
-		self.solucio_nook = pygame.image.load('imatges/nook.png')
+		self.solucio_ok = pygame.image.load('../../data/images/ok.png')
+		self.solucio_nook = pygame.image.load('../../data/images/nook.png')
 
 		self.mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
 
-		self.lletres = [	[pygame.image.load('imatges/lletraA.png'), pygame.image.load('imatges/lletraA_off.png')], 
-							[pygame.image.load('imatges/lletraB.png'), pygame.image.load('imatges/lletraB_off.png')], 				
-							[pygame.image.load('imatges/lletraC.png'), pygame.image.load('imatges/lletraC_off.png')] ]
+		self.lletres = [
+								[pygame.image.load('../../data/images/lletraA.png'), pygame.image.load('../../data/images/lletraA_off.png')], 
+								[pygame.image.load('../../data/images/lletraB.png'), pygame.image.load('../../data/images/lletraB_off.png')], 				
+								[pygame.image.load('../../data/images/lletraC.png'), pygame.image.load('../../data/images/lletraC_off.png')],
+							]
 
 		# carreguem els arxius de so
-		self.so_ticking2 = pygame.mixer.Sound("sons/ticking2.ogg" )
-		self.so_drum2 = pygame.mixer.Sound( "sons/drum2.ogg" )
-		self.so_sub = pygame.mixer.Sound( "sons/sub.ogg" )
+		self.so_ticking2 = pygame.mixer.Sound("../../data/sounds/ticking2.ogg" )
+		self.so_drum2 = pygame.mixer.Sound( "../../data/sounds/drum2.ogg" )
+		self.so_sub = pygame.mixer.Sound( "../../data/sounds/sub.ogg" )
 		self.so_sub.set_volume( 0.1 )
-		self.so_ok = pygame.mixer.Sound( "sons/evil.ogg" )
-		self.so_nook = pygame.mixer.Sound( "sons/crboo.ogg" )
+		self.so_ok = pygame.mixer.Sound( "../../data/sounds/evil.ogg" )
+		self.so_nook = pygame.mixer.Sound( "../../data/sounds/crboo.ogg" )
 
 	###########################################
 	#
@@ -112,7 +115,7 @@ class Preguntador:
 	###########################################
 	#
 	# Assistent pel renderitzat fàcil del text
-	def render_text( self, cadena, color, mida, antialias = 0, nomfont = "lb.ttf" ):
+	def render_text( self, cadena, color, mida, antialias = 0, nomfont = "../../data/fonts/lb.ttf" ):
 		font1 = pygame.font.Font( nomfont, mida)
 		return font1.render( cadena, antialias, color )
 
@@ -383,4 +386,3 @@ class Preguntador:
 
 joc = Preguntador()
 joc.juguem()
-			

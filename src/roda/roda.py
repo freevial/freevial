@@ -8,8 +8,6 @@
 # Carles 22/8/2007
 #
 
-
-
 import sys, pygame
 import random
 
@@ -28,20 +26,20 @@ pantalla = pygame.display.set_mode( (mida_pantalla_x,mida_pantalla_y), pygame.HW
 pygame.display.toggle_fullscreen()
 pygame.mixer.init()
 
-fons = pygame.image.load('imatges/ruleta_fons.png')
-front = pygame.image.load('imatges/ruleta_front.png')
-paper = pygame.image.load('imatges/ruleta_paper.png')
+fons = pygame.image.load('../../data/images/ruleta_fons.png')
+front = pygame.image.load('../../data/images/ruleta_front.png')
+paper = pygame.image.load('../../data/images/ruleta_paper.png')
 
-so_dot = pygame.mixer.Sound( "sons/dot.ogg" )
-so_cher = pygame.mixer.Sound( "sons/cheer.ogg" )
+so_dot = pygame.mixer.Sound( "../../data/sounds/dot.ogg" )
+so_cher = pygame.mixer.Sound( "../../data/sounds/cheer.ogg" )
 
 so_cat = range(0,6)
-so_cat[0] = pygame.mixer.Sound( "sons/c1.ogg" )
-so_cat[1] = pygame.mixer.Sound( "sons/c2.ogg" )
-so_cat[2] = pygame.mixer.Sound( "sons/c3.ogg" )
-so_cat[3] = pygame.mixer.Sound( "sons/c4.ogg" )
-so_cat[4] = pygame.mixer.Sound( "sons/c5.ogg" )
-so_cat[5] = pygame.mixer.Sound( "sons/c6.ogg" )
+so_cat[0] = pygame.mixer.Sound( "../../data/sounds/c1.ogg" )
+so_cat[1] = pygame.mixer.Sound( "../../data/sounds/c2.ogg" )
+so_cat[2] = pygame.mixer.Sound( "../../data/sounds/c3.ogg" )
+so_cat[3] = pygame.mixer.Sound( "../../data/sounds/c4.ogg" )
+so_cat[4] = pygame.mixer.Sound( "../../data/sounds/c5.ogg" )
+so_cat[5] = pygame.mixer.Sound( "../../data/sounds/c6.ogg" )
 
 pos = 0
 pos_fons = 0
@@ -119,7 +117,7 @@ while 1:
 		
 		pos -= velocitat
 		if( pos <= -1200): pos += 1200
-		
+
 
 
 	pantalla.blit( fons, (0, pos_fons) )
@@ -134,6 +132,3 @@ while 1:
 	pygame.display.flip()
 
 	#pygame.time.Clock().tick( Limit_FPS )
-
-	
-	

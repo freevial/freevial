@@ -20,7 +20,7 @@ mida_pantalla_y = 768
 
 
 pantalla = pygame.display.set_mode((mida_pantalla_x,mida_pantalla_y))
-nil = pygame.image.load('categoria2.png').convert()
+nil = pygame.image.load('../../data/images/categoria2.png').convert()
 
 ypos = 0
 

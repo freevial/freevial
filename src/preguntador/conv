@@ -1,7 +1,0 @@
-#! /bin/sh
-
-
-mencoder -vf crop=1024:768:0:0 -ovc lavc -lavcopts vcodec=mpeg4:vpass=1:vbitrate=300 -oac copy out.ogg -o out.avi 
-mencoder -vf crop=1024:768:0:0 -ovc lavc -lavcopts vcodec=mpeg4:vpass=2:vbitrate=300 -oac copy out.ogg -o out.avi 
-
-
