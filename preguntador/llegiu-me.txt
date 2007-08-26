@@ -23,7 +23,9 @@ Credits
 ----------------------------------------------------------------
 
 Embolicador principal: Carles Oriol i Margarit
+Embolicador Launchpad: Siegfried Gevatter (RainCT)
 Preguntes: Nil Oriol, Josep Sanchez, Lluïsa Nuñez
+
 
 
 Històric
