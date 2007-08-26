@@ -3,6 +3,9 @@
  
 ##########################################
 #
+# Freevial 
+#
+#
 # Realitzador de preguntes
 #
 # Carles 24/8/2007
@@ -18,391 +21,366 @@ import re
 import math
 import time
 
-import preguntes
-
 from Numeric import *
 from pygame.locals import *
+
+
+import preguntes
 from preguntes import textpreguntes
 
-mida_pantalla_x = 1024
-mida_pantalla_y = 768
-#Limit_FPS = 40
+##################################################
+#
+# Empaquetat en una classe del preguntador
+#
+# Carles 26/08/2007
+#
 
-color_de_fons = 0, 0, 128
-color_de_text = 255, 255, 255
+class Preguntador:
 
-mida_font = 40
-altlinies = mida_font + 5
-postextx= 80
-postexty = 40
-
-pregunta_actual = 0
-pregunta = textpreguntes [pregunta_actual]
-
-pantalla = pygame.display.set_mode((mida_pantalla_x,mida_pantalla_y), 0, 32)
-
-mostrasolucions = 0
-
-
-#pygame.display.toggle_fullscreen()
-pygame.mixer.pre_init( 44100 )
-pygame.mixer.init(  )
-pygame.font.init()
-
-fons = [ 	pygame.image.load('imatges/categoria1.png'), 
-			pygame.image.load('imatges/categoria2.png'), 
-			pygame.image.load('imatges/categoria3.png'), 
-			pygame.image.load('imatges/categoria4.png'), 
-			pygame.image.load('imatges/categoria5.png'), 
-			pygame.image.load('imatges/categoria6.png') ]
-
-mascara_de_fons = pygame.image.load('imatges/mascara_de_fons.png')
-retalla_sel = pygame.image.load('imatges/retalla_sel.png')
-
-solucio_ok = pygame.image.load('imatges/ok.png')
-solucio_nook = pygame.image.load('imatges/nook.png')
-
-
-
-
-mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
-#mascara_de_fons = pygame.image.load('imatges/ruleta_front.png')
-
-lletres = [ [pygame.image.load('imatges/lletraA.png'), pygame.image.load('imatges/lletraA_off.png')], [pygame.image.load('imatges/lletraB.png'), pygame.image.load('imatges/lletraB_off.png')], [pygame.image.load('imatges/lletraC.png'), pygame.image.load('imatges/lletraC_off.png')] ]
-
-so_ticking2 = pygame.mixer.Sound( "sons/ticking2.ogg" )
-so_drum2 = pygame.mixer.Sound( "sons/drum2.ogg" )
-so_sub = pygame.mixer.Sound( "sons/sub.ogg" )
-so_sub.set_volume( .1 )
-
-so_ok = pygame.mixer.Sound( "sons/evil.ogg" )
-so_nook = pygame.mixer.Sound( "sons/crboo.ogg" )
-
-
-seleccio = 0
-
-ypos = 190
-
-nomove = 0	
-
-def Scroll( surface, x, y, w, h, dx, dy ):
-
-	surface.blit( surface, (x + dx, y + dy), (x, y, w - dx , h - dy) )
-
-
-
-global sfc_pregunta
-
-def comptalinies( cadena ):
-	compta = 1
-
-	for caracter in cadena:
-		if ( '#' == caracter ) :
-			compta += 1
-
-	return compta
-
-
-
-def pintatext( textapintar, mida ):
-
-	font1 = pygame.font.Font( "lb.ttf", mida)
-
-	cadenes = re.split( '#', textapintar )
-
-	nlinia = 0
-
-
-	sfc = pygame.Surface((1024, (comptalinies(textapintar) + 1)*altlinies), pygame.SRCALPHA, 32)
-		
-
-	for cadena in cadenes:
-		text_pregunta = font1.render( cadena, 1, (0,0,0) )
-		sfc.blit( text_pregunta, (0 + 2, altlinies * nlinia + 2))
-		text_pregunta = font1.render( cadena, 1, color_de_text )
-		sfc.blit( text_pregunta, (0, altlinies * nlinia))
-		nlinia += 1
-
-	return sfc
-
-def Scroll( surface, x, y, w, h, dx, dy ):
-
-	surface.blit( surface, (x + dx, y + dy), (x, y, w - dx , h - dy) )
-
-def inicialitza_pregunta():
-	global sfc_pregunta
-	global sfc_respostaA 
-	global sfc_respostaB
-	global sfc_respostaC
-	global sfc_npregunta
-	global sfc_apregunta
-	global seleccio 
-	global temps_inici_pregunta
-	global mostrasolucions
-	global segons
-
-	seleccio = 0
-
-	sfc_pregunta  = pintatext( pregunta[1], mida_font )
-	sfc_respostaA = pintatext( pregunta[2], mida_font )
-	sfc_respostaB = pintatext( pregunta[3], mida_font )
-	sfc_respostaC = pintatext( pregunta[4], mida_font )
-
-	font1 = pygame.font.Font( "lb.ttf", 100)
-	sfc_npregunta = text_pregunta = font1.render( str(pregunta[9]), 0, (255,255,255) )
-	sfc_npregunta.set_alpha( 64 )
-
-	font1 = pygame.font.Font( "lb.ttf", 16)
-	sfc_apregunta = text_pregunta = font1.render( pregunta[6], 0, (255,255,255) )
-	sfc_apregunta.set_alpha( 64 )	
-
-	temps_inici_pregunta = time.time()
-	segons = 99
-	so_drum2.stop()
-	so_drum2.play()
-
-	mostrasolucions = 0
-
-def atzar( categoria ):
-	global pregunta
-
-	cerca = categoria	
-	anterior = pregunta[9] - 1
-	nova = anterior
-
-	while( nova == anterior or pregunta[0] != cerca ):		
-		nova = 	int(random.random() * len(textpreguntes))
-		pregunta = textpreguntes [ nova ]
-		if( categoria == 0 ): cerca = pregunta[0]
+	###########################################
+	#
+	def __init__( self ):
 	
-	inicialitza_pregunta()
+		self.mida_pantalla_x = 1024
+		self.mida_pantalla_y = 768
+		self.Limit_FPS = 40
 
-atzar( 0 )
+		self.color_de_fons = (0, 0, 0)
+		self.color_de_text = (255, 255, 255)
 
-inicialitza_pregunta()
+		self.mida_font = 40
+		self.altlinies = self.mida_font + 5
+		self.postextx= 80
+		self.postexty = 40
 
-temps = time.time()
-darrer_temps = pygame.time.get_ticks()
+		self.pregunta_actual = 0
+		self.pregunta = textpreguntes [self.pregunta_actual]
+		self.mostrasolucions = 0
+		
+		self.seleccio = 0
+		self.ypos = 190
 
-imatges_x_segon = 0
-Limit_FPS = 60
+		# inicialitzem la superficie de presentació
+		self.pantalla = pygame.display.set_mode( ( self.mida_pantalla_x, self.mida_pantalla_y), 0, 32)
+		pygame.display.toggle_fullscreen()
 
-pantalla.fill( (0,0,0,0) )
+		# inicialitzem el sistema de so
+		pygame.mixer.pre_init( 44100 )
+		pygame.mixer.init(  )
+		pygame.font.init()
 
-mostranpregunta = 1
+		# carrega d'imatges
+		self.fons = [ 	pygame.image.load( 'imatges/categoria1.png' ), 
+						pygame.image.load( 'imatges/categoria2.png' ), 
+						pygame.image.load( 'imatges/categoria3.png' ), 
+						pygame.image.load( 'imatges/categoria4.png' ), 
+						pygame.image.load( 'imatges/categoria5.png' ), 
+						pygame.image.load( 'imatges/categoria6.png' ) ]
 
-segons = 99
+		self.mascara_de_fons = pygame.image.load('imatges/mascara_de_fons.png')
+		self.retalla_sel = pygame.image.load('imatges/retalla_sel.png')
 
-while 1:
+		self.solucio_ok = pygame.image.load('imatges/ok.png')
+		self.solucio_nook = pygame.image.load('imatges/nook.png')
 
-	if time.time() > temps + 1:
-		print "FPS: " + str( imatges_x_segon )
+		self.mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
+
+		self.lletres = [	[pygame.image.load('imatges/lletraA.png'), pygame.image.load('imatges/lletraA_off.png')], 
+							[pygame.image.load('imatges/lletraB.png'), pygame.image.load('imatges/lletraB_off.png')], 				
+							[pygame.image.load('imatges/lletraC.png'), pygame.image.load('imatges/lletraC_off.png')] ]
+
+		# carreguem els arxius de so
+		self.so_ticking2 = pygame.mixer.Sound("sons/ticking2.ogg" )
+		self.so_drum2 = pygame.mixer.Sound( "sons/drum2.ogg" )
+		self.so_sub = pygame.mixer.Sound( "sons/sub.ogg" )
+		self.so_sub.set_volume( 0.1 )
+		self.so_ok = pygame.mixer.Sound( "sons/evil.ogg" )
+		self.so_nook = pygame.mixer.Sound( "sons/crboo.ogg" )
+
+	###########################################
+	#
+	# Funció per veure el nombre de linies que té una frase a mostrar
+	# basant-nos en que el separador és el caracter #
+	def comptalinies( self, cadena ):
+		compta = 1
+
+		for caracter in cadena:
+			if ( '#' == caracter ) : compta += 1
+
+		return compta
+
+	###########################################
+	#
+	# Assistent pel renderitzat fàcil del text
+	def render_text( self, cadena, color, mida, antialias = 0, nomfont = "lb.ttf" ):
+		font1 = pygame.font.Font( nomfont, mida)
+		return font1.render( cadena, antialias, color )
+
+	###########################################
+	#
+	# Funció per pintar el text i les preguntes sobre una nova superficie
+	# usant el color del text i el sobrejat
+	def pintatext( self, textapintar, mida ):
+
+		cadenes = re.split( '#', textapintar )
+		nlinia = 0
+
+		sfc = pygame.Surface( ( 1024, ( self.comptalinies ( textapintar ) + 1 ) * self.altlinies ), pygame.SRCALPHA, 32)
+
+		for cadena in cadenes:
+			text_pregunta = self.render_text( cadena, self.color_de_fons, mida, 1)
+			sfc.blit( text_pregunta, (0 + 2, self.altlinies * nlinia + 2))
+
+			text_pregunta = self.render_text( cadena, self.color_de_text, mida, 1)
+			sfc.blit( text_pregunta, (0, self.altlinies * nlinia))
+
+			nlinia += 1
+
+		return sfc
+
+
+	###########################################
+	#
+	# Inicialitzador de nova pregunta
+	#
+	def inicialitza_pregunta( self ):
+
+		self.seleccio = 0
+
+		self.sfc_pregunta  = self.pintatext( self.pregunta[1], self.mida_font )
+
+		self.sfc_resposta = range(0, 3)
+		for compta in range(0, 3):
+			self.sfc_resposta[ compta ] = self.pintatext( self.pregunta[ compta + 2], self.mida_font )
+
+		self.sfc_npregunta = self.render_text( str(self.pregunta[9]), (255,255,255), 100 )
+		self.sfc_npregunta.set_alpha( 64 )
+
+		self.sfc_apregunta = self.render_text( str(self.pregunta[6]), (255,255,255), 16 )
+		self.sfc_apregunta.set_alpha( 64 )	
+
+		self.temps_inici_pregunta = time.time()
+		self.segons = 61
+		self.so_drum2.stop()
+		self.so_drum2.play()
+
+		self.mostrasolucions = 0
+
+	###########################################
+	#
+	# Cercador de preguntes a l'atzar
+	# si la categoria és 0 no té en compte el valor
+	def atzar( self, categoria ):
+
+		cerca = categoria	
+		anterior = self.pregunta[9] - 1
+		nova = anterior
+
+		while( nova == anterior or self.pregunta[0] != cerca ):		
+			nova = 	int( random.random() * len( textpreguntes ) )
+			self.pregunta = textpreguntes [ nova ]
+			if( categoria == 0 ): cerca = self.pregunta[0]
+		
+		self.inicialitza_pregunta()
+
+
+	###########################################
+	#
+	# Bucle principal del programa
+	#
+	def juguem( self ):
+
+		# de moment per fer proves agafem una pregunta a l'atzar
+		self.atzar( 0 )
+
+		self.inicialitza_pregunta()
+
 		temps = time.time()
+		darrer_temps = pygame.time.get_ticks()
+
 		imatges_x_segon = 0
-	else:
-		imatges_x_segon = imatges_x_segon  + 1
 
-#	dif_fps = 1000 / Limit_FPS 
-#	dif_ticks = pygame.time.get_ticks() - darrer_temps
-#	if( dif_ticks < dif_fps ):
-#		pygame.time.wait(  dif_fps - dif_ticks )
-#	darrer_temps = pygame.time.get_ticks()
+		self.pantalla.fill( (0,0,0,0) )
 
-	acaba = 0
+		# mostra nombre de pregunta i autor
+		mostranpregunta = 1
 
-	for event in pygame.event.get():
-		if event.type == pygame.QUIT: sys.exit()
-		if event.type == pygame.KEYUP and event.key == pygame.K_q: sys.exit()
+		#segons restants per fi de pregunta
+		self.segons = 61
 
-		if event.type == pygame.KEYUP and event.key == pygame.K_f: pygame.display.toggle_fullscreen()
+		while 1:
 
-		if ( mostrasolucions == 0 ):
-			if event.type == pygame.KEYUP and event.key == pygame.K_a:	
-				seleccio = 1
-				so_sub.play()
-
-			if event.type == pygame.KEYUP and event.key == pygame.K_b:	
-				seleccio = 2
-				so_sub.play()
-
-			if event.type == pygame.KEYUP and event.key == pygame.K_c:	
-				seleccio = 3
-				so_sub.play()
-
-			if event.type == pygame.KEYUP and event.key == pygame.K_DOWN: 
-				seleccio += 1
-				if( seleccio == 4):
-					seleccio = 1
-				so_sub.play()
-
-			if event.type == pygame.KEYUP and event.key == pygame.K_UP: 
-				seleccio -= 1
-				if( seleccio <= 0):
-					seleccio = 3	
-				so_sub.play()
-
-		if event.type == pygame.KEYUP and event.key == pygame.K_z:	
-			mostranpregunta ^= 1
+			# Calculem el nombre de FPS
+			if time.time() > temps + 1:
+				#print "FPS: " + str( imatges_x_segon )
+				temps = time.time()
+				imatges_x_segon = 0
+			else:
+				imatges_x_segon = imatges_x_segon  + 1
 		
-		if event.type == pygame.KEYUP and event.key == pygame.K_RIGHT: 
-			pregunta_actual+=1;
-			pregunta_actual %= len ( textpreguntes )
-			pregunta = textpreguntes [pregunta_actual]
-			inicialitza_pregunta()
+			# No cal limitador de frames actualment ja que estem en 7 aprox
+			dif_fps = 1000 / self.Limit_FPS 
+			dif_ticks = pygame.time.get_ticks() - darrer_temps
+			if( dif_ticks < dif_fps ):
+				pygame.time.wait(  dif_fps - dif_ticks )
+				darrer_temps = pygame.time.get_ticks()
 
-		if event.type == pygame.KEYUP and event.key == pygame.K_LEFT: 
-			pregunta_actual-=1;
-			pregunta_actual %= len ( textpreguntes )			
-			pregunta = textpreguntes [pregunta_actual]
-			inicialitza_pregunta()
+			acaba = 0
+			
+			# Iterador d'events
+			for event in pygame.event.get():
 
-		if event.type == pygame.KEYUP and event.key == pygame.K_1: 	atzar( 1 )
-		if event.type == pygame.KEYUP and event.key == pygame.K_2:	atzar( 2 )
-		if event.type == pygame.KEYUP and event.key == pygame.K_3:	atzar( 3 )
-		if event.type == pygame.KEYUP and event.key == pygame.K_4:	atzar( 4 )
-		if event.type == pygame.KEYUP and event.key == pygame.K_5:	atzar( 5 )
-		if event.type == pygame.KEYUP and event.key == pygame.K_6:	atzar( 6 )
-		if event.type == pygame.KEYUP and event.key == pygame.K_0:	atzar( 0 )
+				if event.type == pygame.QUIT: sys.exit()
+				if event.type == pygame.KEYUP and event.key == pygame.K_q: sys.exit()
 
-		if (event.type == pygame.KEYUP and event.key == pygame.K_RETURN):
-			acaba = 1
+				if event.type == pygame.KEYUP and event.key == pygame.K_f: pygame.display.toggle_fullscreen()
 
-	if (acaba == 1 or segons <= 0):
-		if (mostrasolucions == 0):
-			mostrasolucions = 3		
-			if( pregunta[5] == seleccio):
-				so_ok.play()
-			else:
-				so_nook.play()	
-	
+				if ( self.mostrasolucions == 0 ):
+					if event.type == pygame.KEYUP and event.key == pygame.K_a:	
+						self.seleccio = 1
+						self.so_sub.play()
 
-	ypos = ypos + 2
-	if ypos >= mida_pantalla_y: ypos %= mida_pantalla_y
+					if event.type == pygame.KEYUP and event.key == pygame.K_b:	
+						self.seleccio = 2
+						self.so_sub.play()
 
+					if event.type == pygame.KEYUP and event.key == pygame.K_c:	
+						self.seleccio = 3
+						self.so_sub.play()
 
-	#pantalla.blit( fons, (0, ypos) )
-	#pantalla.blit( fons, (0, ypos- mida_pantalla_y) )
+					if event.type == pygame.KEYUP and event.key == pygame.K_DOWN: 
+						self.seleccio += 1
+						if( self.seleccio == 4):
+							self.seleccio = 1
+						self.so_sub.play()
 
-	pantalla.blit( fons[pregunta[0] - 1], (0,0), (0, (768 - ypos), mida_pantalla_x, min(200, ypos)))
-	if( ypos < 200):
-		pantalla.blit( fons[pregunta[0] - 1], (0, min( 200, ypos)), (0, 0, mida_pantalla_x, 200-min( 200, ypos)))
+					if event.type == pygame.KEYUP and event.key == pygame.K_UP: 
+						self.seleccio -= 1
+						if( self.seleccio <= 0):
+							self.seleccio = 3	
+						self.so_sub.play()
 
+				if event.type == pygame.KEYUP and event.key == pygame.K_z:	
+					mostranpregunta ^= 1
+				
+				if event.type == pygame.KEYUP and event.key == pygame.K_RIGHT: 
+					self.pregunta_actual += 1;
+					self.pregunta_actual %= len ( textpreguntes )
+					self.pregunta = textpreguntes [self.pregunta_actual]
+					self.inicialitza_pregunta()
 
-	pantalla.blit( mascara_de_fons, (0, 0) )
+				if event.type == pygame.KEYUP and event.key == pygame.K_LEFT: 
+					self.pregunta_actual -= 1;
+					self.pregunta_actual %= len ( textpreguntes )			
+					self.pregunta = textpreguntes [self.pregunta_actual]
+					self.inicialitza_pregunta()
 
-	ympos = ypos + 300
-	ympos %= 768
-	mascara.blit( fons[pregunta[0] - 1], (0,0), (0, (768 - ympos), mida_pantalla_x, min(200, ympos)))
-	if( ympos < 200):
-		mascara.blit( fons[pregunta[0] - 1], (0, min( 200, ympos)), (0, 0, mida_pantalla_x, 200-min( 200, ympos)))
-	mascara.blit( retalla_sel, (0,0))
+				if event.type == pygame.KEYUP and event.key == pygame.K_1: 	self.atzar( 1 )
+				if event.type == pygame.KEYUP and event.key == pygame.K_2:	self.atzar( 2 )
+				if event.type == pygame.KEYUP and event.key == pygame.K_3:	self.atzar( 3 )
+				if event.type == pygame.KEYUP and event.key == pygame.K_4:	self.atzar( 4 )
+				if event.type == pygame.KEYUP and event.key == pygame.K_5:	self.atzar( 5 )
+				if event.type == pygame.KEYUP and event.key == pygame.K_6:	self.atzar( 6 )
+				if event.type == pygame.KEYUP and event.key == pygame.K_0:	self.atzar( 0 )
 
-	if( seleccio == 1): pantalla.blit( mascara, (postextx, 260))
-	if( seleccio == 2): pantalla.blit( mascara, (postextx, 260+150))
-	if( seleccio == 3): pantalla.blit( mascara, (postextx, 260+300))
+				if (event.type == pygame.KEYUP and event.key == pygame.K_RETURN): acaba = 1
 
-	if ( mostranpregunta != 0 ):
-		pantalla.blit( sfc_npregunta, (1024 - (sfc_npregunta.get_width() + 25),0))
-		pantalla.blit( sfc_apregunta, (1024 - (sfc_apregunta.get_width() + 25), 94))
+			# Si hem apretat a return o s'ha acabat el temps finalitzem
+			if (acaba == 1 or self.segons <= 0):
+				if ( self.mostrasolucions == 0 ):
+					self.mostrasolucions = 3		
+					if( self.pregunta[5] == self.seleccio): self.so_ok.play()
+					else: self.so_nook.play()	
+			
+			# Animem el fons
+			self.ypos += 2
+			if self.ypos >= self.mida_pantalla_y: self.ypos %= self.mida_pantalla_y
+
+			# Pintem el fons animat
+			self.pantalla.blit( self.fons[self.pregunta[0] - 1], (0,0), (0, (768 - self.ypos), self.mida_pantalla_x, min(200, self.ypos)))
+			if( self.ypos < 200):
+				self.pantalla.blit( self.fons[self.pregunta[0] - 1], (0, min( 200, self.ypos)), (0, 0, self.mida_pantalla_x, 200 - min( 200, self.ypos)))
 		
-	
-	pantalla.blit( sfc_pregunta, (postextx, postexty) )	
-	
-	linia_act = 270
-	if( seleccio == 1 ):
-		pantalla.blit( lletres[0][0], ( postextx, linia_act ) )
-	else:
-		pantalla.blit( lletres[0][1], ( postextx, linia_act ) )
+			# i el sombrejem per fer l'efecte de desapariió
+			# també pintem el logotip del peu a l'hora que esborrem el fons de pantalla
+			self.pantalla.blit( self.mascara_de_fons, (0, 0) )
 
-	pantalla.blit( sfc_respostaA, (postextx + 180 , linia_act + 20) )	
+			# preparem el sobrejat de l'opció seleccionada
+			ympos = self.ypos + 300
+			ympos %= 768
+			self.mascara.blit( self.fons[ self.pregunta[0] - 1], (0,0), (0, (768 - ympos), self.mida_pantalla_x, min( 200, ympos )))
 
-	linia_act += 150
-	if( seleccio == 2 ):
-		pantalla.blit( lletres[1][0], ( postextx, linia_act ) )
-	else:
-		pantalla.blit( lletres[1][1], ( postextx, linia_act ) )
+			if( ympos < 200): 
+				self.mascara.blit( self.fons[ self.pregunta[0] - 1], (0, min( 200, ympos)), (0, 0, self.mida_pantalla_x, 200 - min( 200, ympos)))
 
-	pantalla.blit( sfc_respostaB, (postextx + 180 , linia_act + 20) )	
+			# i el mesclem amb la mascara per donar-li forma
+			self.mascara.blit( self.retalla_sel, (0,0))
 
-	linia_act += 150
+			# pintem l'ombrejat on correspongui	
+			if( self.seleccio == 1): self.pantalla.blit( self.mascara, ( self.postextx, 260))
+			if( self.seleccio == 2): self.pantalla.blit( self.mascara, ( self.postextx, 260+150))
+			if( self.seleccio == 3): self.pantalla.blit( self.mascara, ( self.postextx, 260+300))
 
-	if( seleccio == 3 ):
-		pantalla.blit( lletres[2][0], ( postextx, linia_act ) )
-	else:
-		pantalla.blit( lletres[2][1], ( postextx, linia_act ) )
+			# mostrem l'autor i el mombre de pregunta
+			if ( mostranpregunta != 0 ):
+				self.pantalla.blit( self.sfc_npregunta, (1024 - ( self.sfc_npregunta.get_width() + 25),0))
+				self.pantalla.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94))
+				
+			# mostrem la pregunta
+			self.pantalla.blit( self.sfc_pregunta, (self.postextx, self.postexty) )	
 
-	pantalla.blit( sfc_respostaC, (postextx + 180 , linia_act + 20) )	
+			# i les solucions			
+			linia_act = 270
+				
+			for compta in range(0, 3):
+				self.pantalla.blit( self.lletres[compta][(self.seleccio != compta + 1)], ( self.postextx, linia_act + (150 * compta)) )
+				self.pantalla.blit( self.sfc_resposta[ compta ], (self.postextx + 180 , linia_act + 20 + (150 * compta)) )		
 
-	segons_act = 60- int( (time.time() - temps_inici_pregunta) )
-	if( segons_act < 0 ) : 
-		segons_act = 0
-		segons = 0
+			#comprovem l'estat del temps
+			segons_act = 60- int( (time.time() - self.temps_inici_pregunta) )
+			if( segons_act < 0 ) : 
+				segons_act = 0
+				self.segons = 0
 
-	if( mostrasolucions == 0):
-		if( segons != segons_act ):
-			segons = segons_act 
-			font1 = pygame.font.Font( "lb.ttf", 600)
-			pinta_segons = font1.render( str(segons).zfill(2), 0, (255,255,255) )
-			print float(segons) / 60.0
-			if ( segons < 20 ) :
-				so_ticking2.set_volume( (20 -float(segons)) / 20.0  ) 
-				so_ticking2.play()
-		
-		pinta_segons.set_alpha( (60 - segons_act) )
-		pantalla.blit( pinta_segons, ( 300 , 150) )
+			# si no estem en l'estat de mostrar les soŀlucions mostrem el temps restant
+			if( self.mostrasolucions == 0):
+				if( self.segons != segons_act ):
+					#el segon actual ha canviat
+					self.segons = segons_act 
+					self.pinta_segons = self.render_text( str( self.segons ).zfill(2), (255,255,255), 600)
+					# s'acaba el temps indiquem'ho amb so
+					if ( self.segons < 20 ) :
+						self.so_ticking2.set_volume( (20 - float( self.segons )) / 20.0  ) 
+						self.so_ticking2.play()
+				
+				#pintem els segons que queden, posant.los cada cop menys transparents
+				self.pinta_segons.set_alpha( (60 - segons_act) )
+				self.pantalla.blit( self.pinta_segons, ( 300 , 150) )
 
-#	if( segons <= 10):
-#		pinta_segons.set_alpha( random.random() * 10 + 5 )
-#		for compta in range(1, 10):
-#			pantalla.blit( pinta_segons, ( random.random() * 1500 - 500 , random.random() * 1000 - 300) )
+			# Pintem les solucions
 
+			linia_act = 270
+			posn = 700
+			posnook = 700 + cos(time.time()) * 25
+			posok = 700 + cos(time.time() * 2) * 50
 
-	linia_act = 270
-	posn = 700
-	posnook = 700 + cos(time.time()) * 25
-	posok = 700 + cos(time.time() * 2) * 50
+			if( self.mostrasolucions > 0):
 
+				for compta in range (0, 3):
+					if( self.pregunta[5] == (compta + 1)  ):
+						if( self.seleccio != (compta + 1) ):
+							self.pantalla.blit( self.solucio_ok, (posnook, linia_act + (150 * compta)) )
+						else:
+							self.pantalla.blit( self.solucio_ok, (posok, linia_act + (150 * compta)) )
+				
+					else:
+						if( self.seleccio == (compta + 1) ):
+							self.pantalla.blit( self.solucio_nook, (posn, linia_act + (150 * compta)) )
 
-	if( mostrasolucions > 0):
-
-		if( pregunta[5] == 1 ):
-			if( seleccio != 1):
-				pantalla.blit( solucio_ok, (posnook ,linia_act ) )
-			else:
-				pantalla.blit( solucio_ok, (posok ,linia_act ) )
-	
-		else:
-			if( seleccio == 1 ):
-				pantalla.blit( solucio_nook, (posn,linia_act ) )
-
-	if( mostrasolucions > 1):
-		if( pregunta[5] == 2 ):
-
-			if( seleccio != 2):
-				pantalla.blit( solucio_ok, (posnook ,linia_act + 150) )
-			else:
-				pantalla.blit( solucio_ok, (posok ,linia_act + 150) )
-		else:
-			if( seleccio == 2 ):
-				pantalla.blit( solucio_nook, (posn,linia_act+ 150) )
-
-	if( mostrasolucions > 2):
-		if( pregunta[5] == 3 ):
-			if( seleccio != 3):
-				pantalla.blit( solucio_ok, (posnook ,linia_act +300) )
-			else:
-				pantalla.blit( solucio_ok, (posok ,linia_act +300) )
-	
-		else:
-			if( seleccio == 3 ):
-				pantalla.blit( solucio_nook, (posn,linia_act+ 150+ 150) )
+			#intercanviem els buffers de pantalla
+			pygame.display.flip()
 
 
-
-
-	pygame.display.flip()
-
-	pygame.time.Clock().tick( Limit_FPS )
-
-	
-	
+joc = Preguntador()
+joc.juguem()
+			
