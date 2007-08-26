@@ -235,8 +235,10 @@ class Preguntador:
 
 				if event.type == pygame.QUIT: sys.exit()
 				if event.type == pygame.KEYUP and event.key == pygame.K_q: sys.exit()
+				if event.type == pygame.KEYUP and event.key == pygame.K_ESCAPE: sys.exit()
 
 				if event.type == pygame.KEYUP and event.key == pygame.K_f: pygame.display.toggle_fullscreen()
+				if event.type == pygame.KEYUP and event.key == pygame.K_F11: pygame.display.toggle_fullscreen()
 
 				if ( self.mostrasolucions == 0 ):
 					if event.type == pygame.KEYUP and event.key == pygame.K_a:	
@@ -251,7 +253,7 @@ class Preguntador:
 						self.seleccio = 3
 						self.so_sub.play()
 
-					if event.type == pygame.KEYUP and event.key == pygame.K_DOWN: 
+					if event.type == pygame.KEYUP and ( event.key == pygame.K_DOWN or event.key == pygame.K_TAB ): 
 						self.seleccio += 1
 						if( self.seleccio == 4):
 							self.seleccio = 1
@@ -287,8 +289,9 @@ class Preguntador:
 				if event.type == pygame.KEYUP and event.key == pygame.K_0:	self.atzar( 0 )
 
 				if (event.type == pygame.KEYUP and event.key == pygame.K_RETURN): acaba = 1
+				if (event.type == pygame.KEYUP and event.key == pygame.K_SPACE): acaba = 1
 
-			# Si hem apretat a return o s'ha acabat el temps finalitzem
+			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if (acaba == 1 or self.segons <= 0):
 				if ( self.mostrasolucions == 0 ):
 					self.mostrasolucions = 3		

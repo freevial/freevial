@@ -56,6 +56,7 @@ while 1:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT: sys.exit()
 		if event.type == pygame.KEYUP and event.key == pygame.K_q: sys.exit()
+		if event.type == pygame.KEYUP and event.key == pygame.K_ESCAPE: sys.exit()
 
 		if event.type == pygame.MOUSEBUTTONUP and rodant == 0:
 			so_cher.stop()
@@ -66,6 +67,7 @@ while 1:
 			rodant = 1
 			pos = -random.random() * 1200
 		if event.type == pygame.KEYUP and event.key == pygame.K_f: pygame.display.toggle_fullscreen()
+		if event.type == pygame.KEYUP and event.key == pygame.K_F11: pygame.display.toggle_fullscreen()
 
 		
 	#pos = pos + velocitat / 10

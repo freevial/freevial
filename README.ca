@@ -1,26 +1,25 @@
 Instruccions del preguntador
 -------
 
-Tecles
+1..6 - Pregunta de la categoria seleccionada
+0 - Pregunta d'una categoria a l'atzar
 
-1..6	- Pregunta de la categoria seleccionada
-0 	- Pregunta d'una categoria a l'atzar
+Fletxa dreta - Pregunta següent
+Fletxa esquerra - Pregunta anterior
 
-Fletxa dreta	- Pregunta següent
-Fletxa esquerra	- Pregunta anterior
+a, b, c - Tria la resposta
+Fletxa amunt - Tria la resposta anterior
+Fletxa avall o tabulador - Tria la resposta següent
 
-a, b, c	- Tria la resposta
-Fletxa amunt - Tria la resposta següent
-Fletxa avall - Tria la resposta anterior
+intro	o espai - Selecciona la resposta
 
-intro	- Selecciona la resposta
-
-q	- Acaba
-f	- Pantalla sencera
+q o Esc - Acaba
+f o F11 - Pantalla sencera
 
 
 Històric
 -------
 
+27/08/2007 - Creació del projecte al Launchpad
 26/08/2007 - Creació d'aquest document
 24/08/2007 - Creació de la versió 0.01
