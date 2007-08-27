@@ -12,6 +12,7 @@
 import sys, pygame
 import random
 import os
+import time
 
 import freevialglob
 from freevialglob import Freevial_globals
@@ -59,21 +60,26 @@ class Roda:
 		rodant = 0
 		
 		self.joc.pantalla.blit( self.fons, (0,0) )		
-		
+
+		resultat = 0
+
 		while 1:
 		
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT or ( event.type == pygame.KEYUP and ( event.key == pygame.K_q or event.key == pygame.K_ESCAPE ) ):
 					self.stopSound()
-					return -1
+					return 0
 				
-				if event.type == pygame.MOUSEBUTTONUP and rodant == 0:
-					self.so_cher.stop()
-					self.so_dot.play(100)
-					velocitat = 100.0 + random.random() * 300.0
-					deceleracio = int(5 + random.random() * 4)
-					rodant = 1
-					pos = -random.random() * 1200
+				if ((event.type == pygame.MOUSEBUTTONUP or (event.type == pygame.KEYUP and event.key in (pygame.K_RETURN, pygame.K_SPACE) )) and rodant == 0):
+					if ( resultat == 0):
+						self.so_cher.stop()
+						self.so_dot.play(100)
+						velocitat = 100.0 + random.random() * 300.0
+						deceleracio = int(5 + random.random() * 4)
+						rodant = 1
+						pos = -random.random() * 1200
+					else:
+						return resultat
 					
 				if event.type == pygame.KEYUP and (event.key == pygame.K_f or event.key == pygame.K_F11): pygame.display.toggle_fullscreen()
 			
@@ -96,12 +102,12 @@ class Roda:
 						if( pos <= -1200): pos += 1200
 				
 				else:
-					cat = 1 + int( ( ( - ( pos - 1550 ) / 200 ) ) % 6)
+					resultat = 1 + int( ( ( - ( pos - 1550 ) / 200 ) ) % 6)
 					self.so_dot.stop()
-					self.so_cat[ cat - 1].play()
+					self.so_cat[ resultat - 1].play()
 					self.so_cher.play()
 					rodant = 0
-					
+				
 			if rodant == 1:
 				pos_fons += velocitat * 2
 				if pos_fons >= 768:	pos_fons -= 768
@@ -125,3 +131,5 @@ class Roda:
 			
 			#limitem els FPS			
 			pygame.time.Clock().tick( self.joc.Limit_FPS )
+
+

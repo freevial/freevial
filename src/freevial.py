@@ -64,14 +64,17 @@ class Freevial:
 	#
 	def juguem( self ):
 	
-		self.inici()
+		self.inici()		
+	
+		while( 1 ):
+			roda = Roda( self.dades_joc )
+			resultat = roda.juguem()
 		
-		roda = Roda( self.dades_joc )
-		roda.juguem()
-		
-		fespregunta = Preguntador( self.dades_joc )
-		fespregunta.juguem() 
-
+			if ( resultat != 0):
+				fespregunta = Preguntador( self.dades_joc )
+				fespregunta.juguem( resultat ) 
+			else:
+				sys.exit()
 
 joc = Freevial()
 joc.juguem()
