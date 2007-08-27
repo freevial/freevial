@@ -8,52 +8,53 @@
 # 
 # Cal sobreposar la pregunta i les respostes
 #
-# Carles 22/8/2007
+# Carles 22/08/2007
+# RainCT 27/08/2007
 #
 
-
-
-import sys, pygame
+import sys, random, pygame
 
 mida_pantalla_x = 1024
 mida_pantalla_y = 768
 
-
-pantalla = pygame.display.set_mode((mida_pantalla_x,mida_pantalla_y))
-nil = pygame.image.load('../../data/images/categoria2.png').convert()
-
 ypos = 0
-
 nomove = 0	
 
-def Scroll( surface, x, y, w, h, dx, dy ):
+def getImage( i ):
+	# Adjustments for the manual image switching
+	if i == 0: i = 7
+	if i == 7: i = 1
+	
+	global currentImage; currentImage = i
+	return pygame.image.load('../data/images/categoria' + str(i) + '.png').convert()
 
+def Scroll( surface, x, y, w, h, dx, dy ):
 	surface.blit( surface, (x + dx, y + dy), (x, y, w - dx , h - dy) )
 
-pantalla.blit( nil, (0,ypos) )		
+pantalla = pygame.display.set_mode((mida_pantalla_x, mida_pantalla_y))
+image = getImage( random.randint(1, 6) )
+
+pantalla.blit( image, (0,ypos) )
 
 while 1:
 
 	for event in pygame.event.get():
-		if event.type == pygame.QUIT: sys.exit()
+		if event.type == pygame.QUIT or ( event.type == pygame.KEYUP and (event.key == pygame.K_q or event.key == pygame.K_ESCAPE) ): sys.exit()
 		if event.type == pygame.MOUSEBUTTONDOWN: nomove = 1
 		if event.type == pygame.MOUSEBUTTONUP: nomove = 0
-		if event.type == pygame.KEYUP and event.key == pygame.K_f: pygame.display.toggle_fullscreen()
-
+		if event.type == pygame.KEYUP and ( event.key == pygame.K_f or event.key == pygame.K_F11 ): pygame.display.toggle_fullscreen()
+		if event.type == pygame.KEYUP and event.key == pygame.K_LEFT: image = getImage( currentImage - 1 )
+		if event.type == pygame.KEYUP and event.key == pygame.K_RIGHT: image = getImage( currentImage + 1 )
 	
-	if( nomove == 0 ):
+	if nomove == 0:
 		Scroll( pantalla, 0, 0, mida_pantalla_x, mida_pantalla_y, 0, 1 )
-
-		for compta in range(100, mida_pantalla_y / 2, 30):
-			Scroll( pantalla, 0, compta, mida_pantalla_x, mida_pantalla_y - compta * 2, 0, 1 )
 		
+		for num in range(100, mida_pantalla_y / 2, 30):
+			Scroll( pantalla, 0, num, mida_pantalla_x, mida_pantalla_y - num * 2, 0, 1 )
+	
 	ypos = ypos + 1	
 	if ypos >= mida_pantalla_y: ypos = 0
-
-
-	pantalla.blit( nil, (0, 0), (0, (mida_pantalla_y-1)-ypos, mida_pantalla_x, 1) )
-
+	
+	pantalla.blit( image, (0, 0), (0, (mida_pantalla_y-1)-ypos, mida_pantalla_x, 1) )
+	
 	pygame.display.flip()
-
-	
-	

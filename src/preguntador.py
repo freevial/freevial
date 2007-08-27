@@ -5,7 +5,7 @@
 # Freevial
 # Realitzador de preguntes
 #
-# Carles 24/8/2007
+# Carles 24/08/2007
 #
 
 import sys

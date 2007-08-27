@@ -5,7 +5,7 @@
 # Freevial
 # Preguntes
 #
-# Carles 24/8/2007
+# Carles 24/08/2007
 #
 
 global textpreguntes

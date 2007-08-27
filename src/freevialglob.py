@@ -5,7 +5,7 @@
 # Freevial
 # Estructura de dades globals
 #
-# Carles 24/8/2007
+# Carles 24/08/2007
 #
 
 class Freevial_globals:

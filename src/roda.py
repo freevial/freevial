@@ -5,7 +5,7 @@
 # Freevial
 # Selector de categories
 #
-# Carles 22/8/2007
+# Carles 22/08/2007
 #
 
 import sys, pygame
