@@ -9,20 +9,12 @@
 # RainCT 27/08/2007
 #
 
-import sys
-import pygame
-import Numeric
-import pygame.surfarray
-import random
-import re
-import math
-import time
-import os
-
+import sys, os, random, re, math, time
+import pygame, pygame.surfarray
 from Numeric import *
 from pygame.locals import *
 
-from freevialglob import Freevial_globals
+from freevialglob import *
 from preguntes import textpreguntes
 
 
@@ -41,62 +33,52 @@ class Preguntador:
 		
 		self.color_de_fons = (0, 0, 0)
 		self.color_de_text = (255, 255, 255)
-
+		
 		self.mida_font = 40
 		self.altlinies = self.mida_font + 5
 		self.postextx= 80
 		self.postexty = 40
-
+		
 		self.pregunta_actual = 0
-		self.pregunta = textpreguntes [self.pregunta_actual]
+		self.pregunta = textpreguntes[self.pregunta_actual]
 		self.mostrasolucions = 0
 		
 		self.seleccio = 0
 		self.ypos = 190
-
+		
 		# carrega d'imatges
-		self.fons = [
-							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria1.png') ), 
-							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria2.png') ), 
-							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria3.png') ), 
-							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria4.png') ), 
-							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria5.png') ), 
-							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria6.png') ),
-						]
-
-		self.mascara_de_fons = pygame.image.load(os.path.join(self.joc.folders['images'], 'mascara_de_fons.png'))
-		self.retalla_sel = pygame.image.load(os.path.join(self.joc.folders['images'], 'retalla_sel.png'))
-
-		self.solucio_ok = pygame.image.load(os.path.join(self.joc.folders['images'], 'ok.png'))
-		self.solucio_nook = pygame.image.load(os.path.join(self.joc.folders['images'], 'nook.png'))
-
+		self.fons = range(0, 6)
+		for num in range(0, 6):
+			self.fons[num] = loadImage( 'categoria' + str(num + 1) + '.png' )
+		
+		self.mascara_de_fons = loadImage('mascara_de_fons.png')
+		self.retalla_sel = loadImage('retalla_sel.png')
+		
+		self.solucio_ok = loadImage('ok.png')
+		self.solucio_nook = loadImage('nook.png')
+		
 		self.mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
-
+		
 		self.lletres = [
-								[pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraA.png')), pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraA_off.png'))], 
-								[pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraB.png')), pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraB_off.png'))], 				
-								[pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraC.png')), pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraC_off.png'))],
+								[ loadImage('lletraA.png'), loadImage('lletraA_off.png') ], 
+								[ loadImage('lletraB.png'), loadImage('lletraB_off.png') ], 				
+								[ loadImage('lletraC.png'), loadImage('lletraC_off.png') ],
 							]
-
+		
 		# carreguem els arxius de so
-		self.so_ticking2 = pygame.mixer.Sound( os.path.join(self.joc.folders['sounds'], 'ticking2.ogg'))
-		self.so_drum2 = pygame.mixer.Sound( os.path.join(self.joc.folders['sounds'], 'drum2.ogg' ))
-		self.so_sub = pygame.mixer.Sound( os.path.join(self.joc.folders['sounds'], 'sub.ogg' ))
-		self.so_sub.set_volume( 0.1 )
-		self.so_ok = pygame.mixer.Sound( os.path.join(self.joc.folders['sounds'], 'evil.ogg' ))
-		self.so_nook = pygame.mixer.Sound( os.path.join(self.joc.folders['sounds'], 'crboo.ogg' ))
+		self.so_ticking2 = loadSound('ticking2.ogg')
+		self.so_drum2 = loadSound('drum2.ogg')
+		self.so_sub = loadSound('sub.ogg', volume = 0.1)
+		self.so_ok = loadSound('evil.ogg')
+		self.so_nook = loadSound('crboo.ogg')
 
 	###########################################
 	#
 	# Funció per veure el nombre de linies que té una frase a mostrar
 	# basant-nos en que el separador és el caracter #
 	def comptalinies( self, cadena ):
-		compta = 1
-
-		for caracter in cadena:
-			if ( '#' == caracter ) : compta += 1
-
-		return compta
+		
+		return cadena.count('#')
 
 	###########################################
 	#
@@ -258,15 +240,17 @@ class Preguntador:
 					mostranpregunta ^= 1
 				
 				if event.type == pygame.KEYUP and event.key == pygame.K_RIGHT: 
+					pygame.mixer.fadeout(300)
 					self.pregunta_actual += 1;
 					self.pregunta_actual %= len ( textpreguntes )
-					self.pregunta = textpreguntes [self.pregunta_actual]
+					self.pregunta = textpreguntes[self.pregunta_actual]
 					self.inicialitza_pregunta()
 
 				if event.type == pygame.KEYUP and event.key == pygame.K_LEFT: 
+					pygame.mixer.fadeout(300)
 					self.pregunta_actual -= 1;
 					self.pregunta_actual %= len ( textpreguntes )			
-					self.pregunta = textpreguntes [self.pregunta_actual]
+					self.pregunta = textpreguntes[self.pregunta_actual]
 					self.inicialitza_pregunta()
 
 				if event.type == pygame.KEYUP and event.key == pygame.K_1: 	self.atzar( 1 )

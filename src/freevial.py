@@ -9,20 +9,12 @@
 # RainCT 27/08/2007
 #
 
-import sys
-import pygame
-import Numeric
-import pygame.surfarray
-import random
-import re
-import math
-import time
-import os
-
+import sys, os, random, re, time
+import pygame, pygame.surfarray
 from Numeric import *
 from pygame.locals import *
 
-from freevialglob import Freevial_globals
+from freevialglob import *
 from preguntador import Preguntador
 from roda import Roda
 
