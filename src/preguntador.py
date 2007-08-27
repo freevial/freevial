@@ -207,61 +207,61 @@ class Preguntador:
 			for event in pygame.event.get():
 
 				if event.type == pygame.QUIT: sys.exit()
-				if event.type == pygame.KEYUP and  event.key in ( pygame.K_q, pygame.K_ESCAPE ): return -1
+				if keyPress(event, ('K_q', 'K_ESCAPE')): return -1
 
-				if event.type == pygame.KEYUP and event.key in ( pygame.K_f, pygame.K_F11 ): pygame.display.toggle_fullscreen()
+				if keyPress(event, ('K_f', 'K_F11')): pygame.display.toggle_fullscreen()
 
 				if ( self.mostrasolucions == 0 ):
-					if event.type == pygame.KEYUP and event.key == pygame.K_a:	
+					if keyPress(event, 'a'):	
 						self.seleccio = 1
 						self.so_sub.play()
 
-					if event.type == pygame.KEYUP and event.key == pygame.K_b:	
+					if keyPress(event, 'b'):	
 						self.seleccio = 2
 						self.so_sub.play()
 
-					if event.type == pygame.KEYUP and event.key == pygame.K_c:	
+					if keyPress(event, 'c'):	
 						self.seleccio = 3
 						self.so_sub.play()
 
-					if event.type == pygame.KEYUP and event.key in (pygame.K_DOWN,pygame.K_TAB): 
+					if keyPress(event, ('DOWN', 'TAB')): 
 						self.seleccio += 1
 						if( self.seleccio == 4):
 							self.seleccio = 1
 						self.so_sub.play()
 
-					if event.type == pygame.KEYUP and event.key == pygame.K_UP: 
+					if keyPress(event, 'UP'): 
 						self.seleccio -= 1
 						if( self.seleccio <= 0):
 							self.seleccio = 3	
 						self.so_sub.play()
 
-				if event.type == pygame.KEYUP and event.key == pygame.K_z:	
+				if keyPress(event, 'z'):	
 					mostranpregunta ^= 1
 				
-				if event.type == pygame.KEYUP and event.key == pygame.K_RIGHT: 
+				if keyPress(event, 'RIGHT'): 
 					pygame.mixer.fadeout(500)
 					self.pregunta_actual += 1;
 					self.pregunta_actual %= len ( textpreguntes )
 					self.pregunta = textpreguntes[self.pregunta_actual]
 					self.inicialitza_pregunta()
 
-				if event.type == pygame.KEYUP and event.key == pygame.K_LEFT: 
+				if keyPress(event, 'LEFT'): 
 					pygame.mixer.fadeout(500)
 					self.pregunta_actual -= 1;
 					self.pregunta_actual %= len ( textpreguntes )			
 					self.pregunta = textpreguntes[self.pregunta_actual]
 					self.inicialitza_pregunta()
 
-				if event.type == pygame.KEYUP and event.key == pygame.K_1: 	self.atzar( 1 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_2:	self.atzar( 2 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_3:	self.atzar( 3 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_4:	self.atzar( 4 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_5:	self.atzar( 5 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_6:	self.atzar( 6 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_0:	self.atzar( 0 )
+				if keyPress(event, ('1', 'KP1')): 	self.atzar( 1 )
+				if keyPress(event, ('2', 'KP2')):	self.atzar( 2 )
+				if keyPress(event, ('3', 'KP3')):	self.atzar( 3 )
+				if keyPress(event, ('4', 'KP4')):	self.atzar( 4 )
+				if keyPress(event, ('5', 'KP5')):	self.atzar( 5 )
+				if keyPress(event, ('6', 'KP6')):	self.atzar( 6 )
+				if keyPress(event, ('0', 'KP0')):	self.atzar( 0 )
 
-				if (event.type == pygame.KEYUP and event.key in (pygame.K_RETURN, pygame.K_SPACE) ): acaba = 1
+				if keyPress(event, ('RETURN', 'SPACE')): acaba = 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if (acaba == 1 or self.segons <= 0):

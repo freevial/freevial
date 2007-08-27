@@ -10,6 +10,7 @@
 #
 
 import os.path, pygame
+from pygame.locals import *
 
 
 class Freevial_globals:
@@ -47,3 +48,26 @@ def loadSound( filename, volume = '' ):
 	
 	return obj
 
+def keyPress( event, keys ):
+	""" Returns true if the given event is the release of one of the indicated keys. 
+	Just a key can be passed or a whole bunch inside a tuple, and in both cases they may be 
+	either a string or directly it's pygame object. """
+	
+	if type(keys) is str or type(keys) is int:
+		keys = ( keys, )
+	
+	
+	# Check if any of the indicated keys matches
+	found = 0
+	for key in keys:
+		
+		if key[:2] != 'K_':
+			key = 'K_' + key
+		
+		if type(key) is str:
+			key = getattr(pygame, key)
+		
+		if event.type == pygame.KEYUP and event.key == key:
+			found = 1
+	
+	return True if found == 1 else False

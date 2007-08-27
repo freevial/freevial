@@ -52,12 +52,12 @@ class Roda:
 		while 1:
 		
 			for event in pygame.event.get():
-				if event.type == pygame.QUIT or ( event.type == pygame.KEYUP and ( event.key == pygame.K_q or event.key == pygame.K_ESCAPE ) ):
+				if event.type == pygame.QUIT or keyPress(event, ('ESCAPE', 'q')):
 					pygame.mixer.fadeout(500)
 					return 0
 				
-				if ((event.type == pygame.MOUSEBUTTONUP or (event.type == pygame.KEYUP and event.key in (pygame.K_RETURN, pygame.K_SPACE) )) and rodant == 0):
-					if ( resultat == 0):
+				if ( event.type == pygame.MOUSEBUTTONUP or keyPress(event, ('RETURN', 'SPACE')) ) and rodant == 0:
+					if resultat == 0:
 						self.so_cher.stop()
 						self.so_dot.play(100)
 						velocitat = 100.0 + random.random() * 300.0
@@ -67,7 +67,7 @@ class Roda:
 					else:
 						return resultat
 					
-				if event.type == pygame.KEYUP and event.key in (pygame.K_f, pygame.K_F11): pygame.display.toggle_fullscreen()
+				if keyPress(event, ('f', 'F11')): pygame.display.toggle_fullscreen()
 			
 			# decelerem
 			velocitat -= deceleracio
