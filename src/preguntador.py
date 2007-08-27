@@ -5,7 +5,8 @@
 # Freevial
 # Realitzador de preguntes
 #
-# Carles 24/08/2007
+# Carles 26/08/2007
+# RainCT 27/08/2007
 #
 
 import sys
@@ -21,10 +22,7 @@ import os
 from Numeric import *
 from pygame.locals import *
 
-import freevialglob
 from freevialglob import Freevial_globals
-
-import preguntes
 from preguntes import textpreguntes
 
 
@@ -32,21 +30,15 @@ from preguntes import textpreguntes
 #
 # Empaquetat en una classe del preguntador
 #
-# Carles 26/08/2007
-# RainCT 26/08/2007
-#
 
 class Preguntador:
 
 	###########################################
 	#
-	def __init__( self, carpeta_dades='../data/' ):
-	
-		self.carpeta_imatges = os.path.join(carpeta_dades, 'images') 
-		self.carpeta_sons = os.path.join(carpeta_dades, 'sounds') 
-		self.carpeta_fonts = os.path.join(carpeta_dades, 'fonts') 
-
-
+	def __init__( self, joc ):
+		
+		self.joc = joc
+		
 		self.color_de_fons = (0, 0, 0)
 		self.color_de_text = (255, 255, 255)
 
@@ -64,35 +56,35 @@ class Preguntador:
 
 		# carrega d'imatges
 		self.fons = [
-							pygame.image.load( os.path.join(self.carpeta_imatges, 'categoria1.png') ), 
-							pygame.image.load( os.path.join(self.carpeta_imatges, 'categoria2.png') ), 
-							pygame.image.load( os.path.join(self.carpeta_imatges, 'categoria3.png') ), 
-							pygame.image.load( os.path.join(self.carpeta_imatges, 'categoria4.png') ), 
-							pygame.image.load( os.path.join(self.carpeta_imatges, 'categoria5.png') ), 
-							pygame.image.load( os.path.join(self.carpeta_imatges, 'categoria6.png') ),
+							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria1.png') ), 
+							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria2.png') ), 
+							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria3.png') ), 
+							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria4.png') ), 
+							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria5.png') ), 
+							pygame.image.load( os.path.join(self.joc.folders['images'], 'categoria6.png') ),
 						]
 
-		self.mascara_de_fons = pygame.image.load(os.path.join(self.carpeta_imatges, 'mascara_de_fons.png'))
-		self.retalla_sel = pygame.image.load(os.path.join(self.carpeta_imatges, 'retalla_sel.png'))
+		self.mascara_de_fons = pygame.image.load(os.path.join(self.joc.folders['images'], 'mascara_de_fons.png'))
+		self.retalla_sel = pygame.image.load(os.path.join(self.joc.folders['images'], 'retalla_sel.png'))
 
-		self.solucio_ok = pygame.image.load(os.path.join(self.carpeta_imatges, 'ok.png'))
-		self.solucio_nook = pygame.image.load(os.path.join(self.carpeta_imatges, 'nook.png'))
+		self.solucio_ok = pygame.image.load(os.path.join(self.joc.folders['images'], 'ok.png'))
+		self.solucio_nook = pygame.image.load(os.path.join(self.joc.folders['images'], 'nook.png'))
 
 		self.mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
 
 		self.lletres = [
-								[pygame.image.load(os.path.join(self.carpeta_imatges, 'lletraA.png')), pygame.image.load(os.path.join(self.carpeta_imatges, 'lletraA_off.png'))], 
-								[pygame.image.load(os.path.join(self.carpeta_imatges, 'lletraB.png')), pygame.image.load(os.path.join(self.carpeta_imatges, 'lletraB_off.png'))], 				
-								[pygame.image.load(os.path.join(self.carpeta_imatges, 'lletraC.png')), pygame.image.load(os.path.join(self.carpeta_imatges, 'lletraC_off.png'))],
+								[pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraA.png')), pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraA_off.png'))], 
+								[pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraB.png')), pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraB_off.png'))], 				
+								[pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraC.png')), pygame.image.load(os.path.join(self.joc.folders['images'], 'lletraC_off.png'))],
 							]
 
 		# carreguem els arxius de so
-		self.so_ticking2 = pygame.mixer.Sound( os.path.join(self.carpeta_sons, 'ticking2.ogg'))
-		self.so_drum2 = pygame.mixer.Sound( os.path.join(self.carpeta_sons, 'drum2.ogg' ))
-		self.so_sub = pygame.mixer.Sound( os.path.join(self.carpeta_sons, 'sub.ogg' ))
+		self.so_ticking2 = pygame.mixer.Sound( os.path.join(self.joc.folders['sounds'], 'ticking2.ogg'))
+		self.so_drum2 = pygame.mixer.Sound( os.path.join(self.joc.folders['sounds'], 'drum2.ogg' ))
+		self.so_sub = pygame.mixer.Sound( os.path.join(self.joc.folders['sounds'], 'sub.ogg' ))
 		self.so_sub.set_volume( 0.1 )
-		self.so_ok = pygame.mixer.Sound( os.path.join(self.carpeta_sons, 'evil.ogg' ))
-		self.so_nook = pygame.mixer.Sound( os.path.join(self.carpeta_sons, 'crboo.ogg' ))
+		self.so_ok = pygame.mixer.Sound( os.path.join(self.joc.folders['sounds'], 'evil.ogg' ))
+		self.so_nook = pygame.mixer.Sound( os.path.join(self.joc.folders['sounds'], 'crboo.ogg' ))
 
 	###########################################
 	#
@@ -111,7 +103,7 @@ class Preguntador:
 	# Assistent pel renderitzat fàcil del text
 	def render_text( self, cadena, color, mida, antialias = 0, nomfont = "" ):
 
-		if (nomfont == ""): nomfont = os.path.join(self.carpeta_fonts,'lb.ttf')
+		if (nomfont == ""): nomfont = os.path.join(self.joc.folders['fonts'],'lb.ttf')
 
 		font1 = pygame.font.Font( nomfont, mida)
 		return font1.render( cadena, antialias, color )
@@ -190,7 +182,7 @@ class Preguntador:
 	#
 	# Bucle principal del programa
 	#
-	def juguem( self, joc ):
+	def juguem( self ):
 
 		# de moment per fer proves agafem una pregunta a l'atzar
 		self.atzar( 0 )
@@ -202,7 +194,7 @@ class Preguntador:
 
 		imatges_x_segon = 0
 
-		joc.pantalla.fill( (0,0,0,0) )
+		self.joc.pantalla.fill( (0,0,0,0) )
 
 		# mostra nombre de pregunta i autor
 		mostranpregunta = 1
@@ -221,7 +213,7 @@ class Preguntador:
 				imatges_x_segon = imatges_x_segon  + 1
 		
 			# No cal limitador de frames actualment ja que estem en 7 aprox
-			dif_fps = 1000 / joc.Limit_FPS 
+			dif_fps = 1000 / self.joc.Limit_FPS 
 			dif_ticks = pygame.time.get_ticks() - darrer_temps
 			if( dif_ticks < dif_fps ):
 				pygame.time.wait(  dif_fps - dif_ticks )
@@ -297,47 +289,47 @@ class Preguntador:
 			
 			# Animem el fons
 			self.ypos += 2
-			if self.ypos >= joc.mida_pantalla_y: self.ypos %= joc.mida_pantalla_y
+			if self.ypos >= self.joc.mida_pantalla_y: self.ypos %= self.joc.mida_pantalla_y
 
 			# Pintem el fons animat
-			joc.pantalla.blit( self.fons[self.pregunta[0] - 1], (0,0), (0, (768 - self.ypos), joc.mida_pantalla_x, min(200, self.ypos)))
+			self.joc.pantalla.blit( self.fons[self.pregunta[0] - 1], (0,0), (0, (768 - self.ypos), self.joc.mida_pantalla_x, min(200, self.ypos)))
 			if( self.ypos < 200):
-				joc.pantalla.blit( self.fons[self.pregunta[0] - 1], (0, min( 200, self.ypos)), (0, 0, joc.mida_pantalla_x, 200 - min( 200, self.ypos)))
+				self.joc.pantalla.blit( self.fons[self.pregunta[0] - 1], (0, min( 200, self.ypos)), (0, 0, self.joc.mida_pantalla_x, 200 - min( 200, self.ypos)))
 		
 			# i el sombrejem per fer l'efecte de desapariió
-			# també pintem el logotip del peu a l'hora que esborrem el fons de joc.pantalla
-			joc.pantalla.blit( self.mascara_de_fons, (0, 0) )
+			# també pintem el logotip del peu a l'hora que esborrem el fons de self.joc.pantalla
+			self.joc.pantalla.blit( self.mascara_de_fons, (0, 0) )
 
 			# preparem el sobrejat de l'opció seleccionada
 			ympos = self.ypos + 300
 			ympos %= 768
-			self.mascara.blit( self.fons[ self.pregunta[0] - 1], (0,0), (0, (768 - ympos), joc.mida_pantalla_x, min( 200, ympos )))
+			self.mascara.blit( self.fons[ self.pregunta[0] - 1], (0,0), (0, (768 - ympos), self.joc.mida_pantalla_x, min( 200, ympos )))
 
 			if( ympos < 200): 
-				self.mascara.blit( self.fons[ self.pregunta[0] - 1], (0, min( 200, ympos)), (0, 0, joc.mida_pantalla_x, 200 - min( 200, ympos)))
+				self.mascara.blit( self.fons[ self.pregunta[0] - 1], (0, min( 200, ympos)), (0, 0, self.joc.mida_pantalla_x, 200 - min( 200, ympos)))
 
 			# i el mesclem amb la mascara per donar-li forma
 			self.mascara.blit( self.retalla_sel, (0,0))
 
 			# pintem l'ombrejat on correspongui	
-			if( self.seleccio == 1): joc.pantalla.blit( self.mascara, ( self.postextx, 260))
-			if( self.seleccio == 2): joc.pantalla.blit( self.mascara, ( self.postextx, 260+150))
-			if( self.seleccio == 3): joc.pantalla.blit( self.mascara, ( self.postextx, 260+300))
+			if( self.seleccio == 1): self.joc.pantalla.blit( self.mascara, ( self.postextx, 260))
+			if( self.seleccio == 2): self.joc.pantalla.blit( self.mascara, ( self.postextx, 260+150))
+			if( self.seleccio == 3): self.joc.pantalla.blit( self.mascara, ( self.postextx, 260+300))
 
 			# mostrem l'autor i el mombre de pregunta
 			if ( mostranpregunta != 0 ):
-				joc.pantalla.blit( self.sfc_npregunta, (1024 - ( self.sfc_npregunta.get_width() + 25),0))
-				joc.pantalla.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94))
+				self.joc.pantalla.blit( self.sfc_npregunta, (1024 - ( self.sfc_npregunta.get_width() + 25),0))
+				self.joc.pantalla.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94))
 				
 			# mostrem la pregunta
-			joc.pantalla.blit( self.sfc_pregunta, (self.postextx, self.postexty) )	
+			self.joc.pantalla.blit( self.sfc_pregunta, (self.postextx, self.postexty) )	
 
 			# i les solucions			
 			linia_act = 270
 				
 			for compta in range(0, 3):
-				joc.pantalla.blit( self.lletres[compta][(self.seleccio != compta + 1)], ( self.postextx, linia_act + (150 * compta)) )
-				joc.pantalla.blit( self.sfc_resposta[ compta ], (self.postextx + 180 , linia_act + 20 + (150 * compta)) )		
+				self.joc.pantalla.blit( self.lletres[compta][(self.seleccio != compta + 1)], ( self.postextx, linia_act + (150 * compta)) )
+				self.joc.pantalla.blit( self.sfc_resposta[ compta ], (self.postextx + 180 , linia_act + 20 + (150 * compta)) )		
 
 			#comprovem l'estat del temps
 			segons_act = 60- int( (time.time() - self.temps_inici_pregunta) )
@@ -358,7 +350,7 @@ class Preguntador:
 				
 				#pintem els segons que queden, posant.los cada cop menys transparents
 				self.pinta_segons.set_alpha( (60 - segons_act) )
-				joc.pantalla.blit( self.pinta_segons, ( 300 , 150) )
+				self.joc.pantalla.blit( self.pinta_segons, ( 300 , 150) )
 
 			# Pintem les solucions
 
@@ -372,15 +364,15 @@ class Preguntador:
 				for compta in range (0, 3):
 					if( self.pregunta[5] == (compta + 1)  ):
 						if( self.seleccio != (compta + 1) ):
-							joc.pantalla.blit( self.solucio_ok, (posnook, linia_act + (150 * compta)) )
+							self.joc.pantalla.blit( self.solucio_ok, (posnook, linia_act + (150 * compta)) )
 						else:
-							joc.pantalla.blit( self.solucio_ok, (posok, linia_act + (150 * compta)) )
+							self.joc.pantalla.blit( self.solucio_ok, (posok, linia_act + (150 * compta)) )
 				
 					else:
 						if( self.seleccio == (compta + 1) ):
-							joc.pantalla.blit( self.solucio_nook, (posn, linia_act + (150 * compta)) )
+							self.joc.pantalla.blit( self.solucio_nook, (posn, linia_act + (150 * compta)) )
 
-			#intercanviem els buffers de joc.pantalla
+			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
 
 		return 0
