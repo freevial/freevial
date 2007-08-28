@@ -65,6 +65,7 @@ class Preguntador:
 								[ loadImage('lletraC.png'), loadImage('lletraC_off.png') ],
 							]
 		
+
 		# carreguem els arxius de so
 		self.so_ticking2 = loadSound('ticking2.ogg')
 		self.so_drum2 = loadSound('drum2.ogg')
@@ -182,6 +183,14 @@ class Preguntador:
 		nom_equip_sfc = render_text( self.joc.equips[self.joc.equip_actual].nom, (64,64,64), 30, 1 )	
 		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
 		nom_equip_sfc.set_alpha( 64 )
+
+		mostra_punt_de_categoria = False
+
+		if ( (self.joc.equips[self.joc.equip_actual].figureta & bitCategoria ( selcat )) == 0 ):
+			mostra_punt_de_categoria = True
+			figureta_no = loadImage('points/freevial_tot' + str( self.joc.equips[self.joc.equip_actual].figureta).zfill(2) + '.png')
+			figureta_si = loadImage('points/freevial_tot' + str( self.joc.equips[self.joc.equip_actual].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
+
 
 		while 1:
 
@@ -356,6 +365,9 @@ class Preguntador:
 					else:
 						if self.seleccio == (num + 1):
 							self.joc.pantalla.blit( self.solucio_nook, (posn, linia_act + (150 * num)) )
+
+			if( mostra_punt_de_categoria ):
+				self.joc.pantalla.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (880, 130) )
 
 			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
 
