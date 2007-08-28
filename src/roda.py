@@ -46,7 +46,7 @@ class Roda:
 		
 		self.joc.pantalla.blit( self.fons, (0,0) )		
 
-		resultat = 0
+		resultat = -1
 
 		fesrodar = 1
 
@@ -58,7 +58,7 @@ class Roda:
 					return 0
 				
 				if  (( event.type == pygame.MOUSEBUTTONUP or keyPress(event, ('RETURN', 'SPACE')) ) and rodant == 0):
-					if resultat == 0: 	fesrodar = 1
+					if resultat == -1: 	fesrodar = 1
 					else:
 						return resultat
 					

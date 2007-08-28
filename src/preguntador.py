@@ -99,7 +99,7 @@ class Preguntador:
 		cadenes = textapintar.split('#')
 		nlinia = 0
 
-		sfc = pygame.Surface( ( 1024, ( self.numlinies ( textapintar ) + 1 ) * self.altlinies ), pygame.SRCALPHA, 32 )
+		sfc = pygame.Surface( ( 1024, ( self.numlinies ( textapintar ) + 1 ) * (mida + 25) ), pygame.SRCALPHA, 32 )
 
 		for cadena in cadenes:
 			text_pregunta = self.render_text( cadena, self.color_de_fons, mida, 1 )
@@ -186,7 +186,11 @@ class Preguntador:
 		#segons restants per fi de pregunta
 		self.segons = 61
 
-		
+		#nom = self.joc.equips[self.joc.equip_actual].nom.encode( 'utf-8')
+		#nom_equip_sfc = self.render_text( self.joc.equips[self.joc.equip_actual].nom, (255,255,255), 50, 1 )
+		nom_equip_sfc = self.render_text( self.joc.equips[self.joc.equip_actual].nom, (64,64,64), 30, 1 )	
+		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
+		nom_equip_sfc.set_alpha( 64 )
 
 		while 1:
 
@@ -204,7 +208,6 @@ class Preguntador:
 			if( dif_ticks < dif_fps ):
 				pygame.time.wait(  dif_fps - dif_ticks )
 				darrer_temps = pygame.time.get_ticks()
-
 			acaba = 0
 			
 			# Iterador d'events
@@ -362,6 +365,8 @@ class Preguntador:
 					else:
 						if( self.seleccio == (num + 1) ):
 							self.joc.pantalla.blit( self.solucio_nook, (posn, linia_act + (150 * num)) )
+
+			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
 
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
