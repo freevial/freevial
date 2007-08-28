@@ -68,13 +68,15 @@ class Score:
 		darrer_temps = pygame.time.get_ticks()
 
 		ypos = 0
-		element_seleccionat = 0
+		element_seleccionat = self.joc.equip_actual
 
 		escriu = 0
 	
 #		for compta in range(0,6):
 #			self.joc.equips[compta].figureta = int(random.random() * 64)
 #			self.joc.equips[compta].punts = int(random.random() * 30)
+
+		atzar = 0
 
 
 		while 1:
@@ -155,6 +157,16 @@ class Score:
 							element_seleccionat = anteriorEquipActiu( self.joc.equips, element_seleccionat )
 							self.so_sub.play() 
 
+					if ( keyPress(event, ('r')) ): 
+						atzar = 6 + int(random.random() * 12 )
+ 
+					if ( keyPress(event, ('RETURN', 'SPACE')) and self.joc.equips[element_seleccionat].actiu  ): 
+						return element_seleccionat  
+
+			if( atzar != 0 and equipsActius( self.joc.equips ) >= 2):
+				element_seleccionat = seguentEquipActiu( self.joc.equips, element_seleccionat )
+				atzar -= 1 
+				self.so_sub.play() 
 		
 			# Animem el fons
 			ypos += 1

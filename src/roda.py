@@ -48,6 +48,8 @@ class Roda:
 
 		resultat = 0
 
+		fesrodar = 1
+
 		while 1:
 		
 			for event in pygame.event.get():
@@ -55,19 +57,22 @@ class Roda:
 					pygame.mixer.fadeout(500)
 					return 0
 				
-				if ( event.type == pygame.MOUSEBUTTONUP or keyPress(event, ('RETURN', 'SPACE')) ) and rodant == 0:
-					if resultat == 0:
-						self.so_cher.stop()
-						self.so_dot.play(100)
-						velocitat = 100.0 + random.random() * 300.0
-						deceleracio = int(5 + random.random() * 4)
-						rodant = 1
-						pos = -random.random() * 1200
+				if  (( event.type == pygame.MOUSEBUTTONUP or keyPress(event, ('RETURN', 'SPACE')) ) and rodant == 0):
+					if resultat == 0: 	fesrodar = 1
 					else:
 						return resultat
 					
 				if keyPress(event, ('f', 'F11')): pygame.display.toggle_fullscreen()
 			
+			if ( fesrodar ):
+				self.so_cher.stop()
+				self.so_dot.play(100)
+				velocitat = 100.0 + random.random() * 300.0
+				deceleracio = int(5 + random.random() * 4)
+				rodant = 1
+				pos = -random.random() * 1200
+				fesrodar = 0
+
 			# decelerem
 			velocitat -= deceleracio
 			if velocitat < 0: velocitat = 0

@@ -62,7 +62,7 @@ class Freevial_globals:
 	# Rainct ... aquesta linia no m'agrada gens. però així funciona... segur que tens alguna idea millor
 	equips = ( Equip(), Equip(), Equip(), Equip(), Equip(), Equip() )
 
-	jugador_actual = 0
+	equip_actual = 0
 
 def loadImage( filename ):
 	""" Returns a Surface of the indicated image, which is expected to be in the images folder. """

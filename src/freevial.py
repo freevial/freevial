@@ -60,17 +60,23 @@ class Freevial:
 	
 		self.inici()		
 	
-		score = Score ( self.dades_joc )
-		score.juguem()
-		sys.exit()
 
 		while( 1 ):
-			roda = Roda( self.dades_joc )
-			resultat = roda.juguem()
-		
-			if ( resultat != 0):
-				fespregunta = Preguntador( self.dades_joc )
-				fespregunta.juguem( resultat ) 
+			score = Score ( self.dades_joc )
+			self.dades_joc.equip_actual = score.juguem()
+
+			if( self.dades_joc.equip_actual != -1 ):
+				roda = Roda( self.dades_joc )
+				resultat = roda.juguem()
+			
+				if ( resultat != 0):
+					fespregunta = Preguntador( self.dades_joc )
+					resultat = fespregunta.juguem( resultat )
+					if( resultat > 0):
+						self.dades_joc.equips[ self.dades_joc.equip_actual].punts += 1
+						self.dades_joc.equips[ self.dades_joc.equip_actual].activaCategoria( resultat ) 
+
+					self.dades_joc.equip_actual = seguentEquipActiu( self.dades_joc.equips, self.dades_joc.equip_actual )
 			else:
 				sys.exit()
 

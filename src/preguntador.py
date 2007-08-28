@@ -186,6 +186,8 @@ class Preguntador:
 		#segons restants per fi de pregunta
 		self.segons = 61
 
+		
+
 		while 1:
 
 			# Calculem el nombre de FPS
@@ -263,7 +265,9 @@ class Preguntador:
 				if keyPress(event, ('6', 'KP6')):	self.atzar( 6 )
 				if keyPress(event, ('0', 'KP0')):	self.atzar( 0 )
 
-				if keyPress(event, ('RETURN', 'SPACE')): acaba = 1
+				if keyPress(event, ('RETURN', 'SPACE')):
+					acaba = 1
+					print "pas"
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if (acaba == 1 or self.segons <= 0):
@@ -271,7 +275,9 @@ class Preguntador:
 					self.mostrasolucions = 3		
 					if( self.pregunta[5] == self.seleccio): self.so_ok.play()
 					else: self.so_nook.play()	
-			
+				else:
+					return self.pregunta[0] if ( self.pregunta[5] == self.seleccio) else 0
+
 			# Animem el fons
 			self.ypos += 2
 			if self.ypos >= self.joc.mida_pantalla_y: self.ypos %= self.joc.mida_pantalla_y
