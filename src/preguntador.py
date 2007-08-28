@@ -9,10 +9,8 @@
 # RainCT 27/08/2007
 #
 
-import sys, os.path, random, math, time
-import pygame, pygame.surfarray
+import sys, os.path, random, math, time, pygame
 from Numeric import *
-from pygame.locals import *
 
 from freevialglob import *
 from preguntes import *
@@ -246,7 +244,7 @@ class Preguntador:
 				if keyPress(event, ('5', 'KP5')):	self.atzar( 5 )
 				if keyPress(event, ('6', 'KP6')):	self.atzar( 6 )
 
-				if event.type == pygame.MOUSEBUTTONDOWN  or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
+				if event.type == pygame.MOUSEBUTTONDOWN or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 					acaba = 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
@@ -258,6 +256,7 @@ class Preguntador:
 					else:
 						self.so_nook.play()	
 				elif acaba == 1:
+					pygame.mixer.fadeout(500)
 					return self.pregunta_actual[0] if ( self.pregunta_actual[5] == self.seleccio) else 0
 
 			# Animem el fons
