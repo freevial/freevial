@@ -15,7 +15,6 @@ from Numeric import *
 from pygame.locals import *
 
 from freevialglob import *
-from preguntes import textpreguntes
 
 
 ##################################################
@@ -55,16 +54,8 @@ class Score:
 		imatges_x_segon = 0
 		darrer_temps = pygame.time.get_ticks()
 
-		ypos = 0
+		ypos = escriu = atzar = 0
 		element_seleccionat = self.joc.equip_actual
-
-		escriu = 0
-	
-#		for compta in range(0,6):
-#			self.joc.equips[compta].figureta = int(random.random() * 64)
-#			self.joc.equips[compta].punts = int(random.random() * 30)
-
-		atzar = 0
 
 		while 1:
 

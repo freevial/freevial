@@ -9,7 +9,7 @@
 # RainCT 28/08/2007
 #
 
-import os.path, pygame
+import os.path, random, pygame
 from pygame.locals import *
 
 DEBUG_MODE = False
@@ -110,6 +110,15 @@ def render_text( cadena, color, mida, antialias = 0, nomfont = '' ):
 	
 	font1 = pygame.font.Font( nomfont, mida )
 	return font1.render( cadena, antialias, color )
+
+
+def shuffleQuestions( questions ):
+	""" Returns the given questions list, but shuffled. """
+	
+	for num in range(0, 6):
+		random.shuffle( questions[num] )
+	
+	return questions
 
 
 def maxPunts( equips ):
