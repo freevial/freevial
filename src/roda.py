@@ -62,6 +62,8 @@ class Roda:
 		figureta =  loadImage('points/freevial_tot' + str(self.joc.equips[self.joc.equip_actual].figureta).
 zfill(2) + '.png')	
 		
+		time_fi = 0
+
 		while 1:
 		
 			for event in pygame.event.get():
@@ -80,10 +82,14 @@ zfill(2) + '.png')
 			
 			if ( atura == 1):
 				pas = 3
-				deceleracio = 10
+				deceleracio = 20
 				rodant = 1
 				atura = 0
 				self.so_sub.play()
+				time_fi = time.time()
+
+			if( time_fi != 0 and time.time() - time_fi > 5):
+				return resultat
 
 			# decelerem
 			velocitat -= deceleracio
