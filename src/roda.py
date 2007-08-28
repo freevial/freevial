@@ -34,22 +34,34 @@ class Roda:
 		self.so_cat = range(0, 6)
 		for num in range(0, 6):
 			self.so_cat[num] = loadSound( 'c' + str(num + 1) + '.ogg' )
+
+		self.so_sub = loadSound('sub.ogg', volume = 0.3)
 	
 	def juguem( self ):
 		
-		velocitat = 0
-		deceleracio = 6
+		self.so_cher.stop()
+		self.so_dot.play(100)
+
+		velocitat = 100
+		deceleracio = 0
 		
 		pos = 0
 		pos_fons = 0
-		rodant = 0
+		rodant = 1
 		
 		self.joc.pantalla.blit( self.fons, (0,0) )		
 
 		resultat = -1
 
-		fesrodar = 1
+		atura = 0
 
+		nom_equip_sfc = render_text( self.joc.equips[self.joc.equip_actual].nom, (255,255,255), 30, 1 )	
+		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
+
+		
+		figureta =  loadImage('points/freevial_tot' + str(self.joc.equips[self.joc.equip_actual].figureta).
+zfill(2) + '.png')	
+		
 		while 1:
 		
 			for event in pygame.event.get():
@@ -57,21 +69,21 @@ class Roda:
 					pygame.mixer.fadeout(500)
 					return 0
 				
-				if  (( event.type == pygame.MOUSEBUTTONUP or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')) ) and rodant == 0):
-					if resultat == -1: 	fesrodar = 1
+				if  (( event.type == pygame.MOUSEBUTTONUP or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')) ) and rodant == 1):
+	
+					if resultat == -1: 	
+						atura = 1
 					else:
 						return resultat
 					
 				if keyPress(event, ('f', 'F11')): pygame.display.toggle_fullscreen()
 			
-			if ( fesrodar ):
-				self.so_cher.stop()
-				self.so_dot.play(100)
-				velocitat = 100.0 + random.random() * 300.0
-				deceleracio = int(5 + random.random() * 4)
+			if ( atura == 1):
+				pas = 3
+				deceleracio = 10
 				rodant = 1
-				pos = -random.random() * 1200
-				fesrodar = 0
+				atura = 0
+				self.so_sub.play()
 
 			# decelerem
 			velocitat -= deceleracio
@@ -116,8 +128,13 @@ class Roda:
 			#pintem els marges vermells i degradats
 			self.joc.pantalla.blit( self.front, (0,0) )	
 			
+			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
+			self.joc.pantalla.blit( figureta, (70, 630) )
+
+
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
+
 			
 			#limitem els FPS
 			pygame.time.Clock().tick( self.joc.Limit_FPS )
