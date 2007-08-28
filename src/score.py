@@ -58,6 +58,8 @@ class Score:
 		ypos = escriu = atzar = 0
 		element_seleccionat = self.joc.equip_actual
 
+		mou_fons = 0
+
 		while 1:
 
 			# Calculem el nombre de FPS
@@ -161,9 +163,9 @@ class Score:
 
 			# Pintem el fons animat
 
-
+			mou_fons += 8
 			for compta in range(0, 768):
-				self.joc.pantalla.blit( self.fons, (cos(time.time() +(float(ypos) + float(compta)) / 100.0) * 25, compta), (0, (ypos + compta) % 768, 1024, 1) )
+				self.joc.pantalla.blit( self.fons, (cos((float(mou_fons +ypos+compta)) / 100.0) * 25, compta), (0, (ypos + compta) % 768, 1024, 1) )
 			#self.joc.pantalla.blit( self.fons, (0, ypos - 765 ) )
 			#self.joc.pantalla.blit( self.fons, (0, ypos) )
 

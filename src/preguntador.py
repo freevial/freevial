@@ -202,24 +202,25 @@ class Preguntador:
 			# Iterador d'events
 			for event in pygame.event.get():
 
-				if event.type == pygame.QUIT: sys.exit()
-				if keyPress(event, ('q', 'ESCAPE')): return -1
+				if event.type == pygame.QUIT or keyPress(event, ('q', 'ESCAPE')):
+					pygame.mixer.fadeout(500)
+					return -1
 
 				if keyPress(event, ('f', 'F11')): pygame.display.toggle_fullscreen()
 
 				if self.mostrasolucions == 0:
-					if keyPress(event, 'a'):
-						acaba = 1	
+					if keyPress(event, ('a', 'i')):
+						if keyPress(event, 'a'): acaba = 1	
 						self.seleccio = 1
 						self.so_sub.play()
 
-					if keyPress(event, 'b'):	
-						acaba = 1
+					if keyPress(event, ('b', 'o')):	
+						if keyPress(event, 'b'): acaba = 1
 						self.seleccio = 2
 						self.so_sub.play()
 
-					if keyPress(event, 'c'):	
-						acaba = 1
+					if keyPress(event, ('c', 'p')):	
+						if keyPress(event, 'c'): acaba = 1
 						self.seleccio = 3
 						self.so_sub.play()
 
