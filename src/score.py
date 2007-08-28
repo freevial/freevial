@@ -10,6 +10,7 @@
 #
 
 import sys, os.path, random, time
+import math
 import pygame, pygame.surfarray
 from Numeric import *
 from pygame.locals import *
@@ -160,8 +161,13 @@ class Score:
 
 			# Pintem el fons animat
 
-			self.joc.pantalla.blit( self.fons, (0, ypos - 765 ) )
-			self.joc.pantalla.blit( self.fons, (0, ypos) )
+
+			for compta in range(0, 768):
+				self.joc.pantalla.blit( self.fons, (cos(time.time() +(float(ypos) + float(compta)) / 100.0) * 25, compta), (0, (ypos + compta) % 768, 1024, 1) )
+			#self.joc.pantalla.blit( self.fons, (0, ypos - 765 ) )
+			#self.joc.pantalla.blit( self.fons, (0, ypos) )
+
+
 			self.joc.pantalla.blit( self.mascara_de_fons, (0, 0) )
 
 			# pintem les puntuacions
