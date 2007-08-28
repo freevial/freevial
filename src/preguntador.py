@@ -174,7 +174,7 @@ class Preguntador:
 		# mostra nombre de pregunta i autor
 		mostranpregunta = 1
 
-		#segons restants per fi de pregunta
+		# segons restants per fi de pregunta
 		self.segons = 61
 
 		#nom = self.joc.equips[self.joc.equip_actual].nom.encode( 'utf-8')
@@ -209,7 +209,7 @@ class Preguntador:
 
 				if keyPress(event, ('K_f', 'K_F11')): pygame.display.toggle_fullscreen()
 
-				if ( self.mostrasolucions == 0 ):
+				if self.mostrasolucions == 0:
 					if keyPress(event, 'a'):	
 						self.seleccio = 1
 						self.so_sub.play()
@@ -224,13 +224,13 @@ class Preguntador:
 
 					if keyPress(event, ('DOWN', 'TAB')): 
 						self.seleccio += 1
-						if( self.seleccio == 4):
+						if self.seleccio == 4:
 							self.seleccio = 1
 						self.so_sub.play()
 
 					if keyPress(event, 'UP'): 
 						self.seleccio -= 1
-						if( self.seleccio <= 0):
+						if self.seleccio <= 0:
 							self.seleccio = 3	
 						self.so_sub.play()
 
@@ -263,12 +263,14 @@ class Preguntador:
 					acaba = 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
-			if (acaba == 1 or self.segons <= 0):
-				if ( self.mostrasolucions == 0 ):
+			if acaba == 1 or self.segons <= 0:
+				if self.mostrasolucions == 0:
 					self.mostrasolucions = 3		
-					if( self.pregunta[5] == self.seleccio): self.so_ok.play()
-					else: self.so_nook.play()	
-				else:
+					if self.pregunta[5] == self.seleccio:
+						self.so_ok.play()
+					else:
+						self.so_nook.play()	
+				elif acaba == 1:
 					return self.pregunta[0] if ( self.pregunta[5] == self.seleccio) else 0
 
 			# Animem el fons
@@ -277,7 +279,7 @@ class Preguntador:
 
 			# Pintem el fons animat
 			self.joc.pantalla.blit( self.fons[self.pregunta[0] - 1], (0,0), (0, (768 - self.ypos), self.joc.mida_pantalla_x, min(200, self.ypos)))
-			if( self.ypos < 200):
+			if self.ypos < 200:
 				self.joc.pantalla.blit( self.fons[self.pregunta[0] - 1], (0, min( 200, self.ypos)), (0, 0, self.joc.mida_pantalla_x, 200 - min( 200, self.ypos)))
 		
 			# i el sombrejem per fer l'efecte de desapariió
@@ -296,9 +298,9 @@ class Preguntador:
 			self.mascara.blit( self.retalla_sel, (0,0))
 
 			# pintem l'ombrejat on correspongui	
-			if( self.seleccio == 1): self.joc.pantalla.blit( self.mascara, ( self.postextx, 260))
-			if( self.seleccio == 2): self.joc.pantalla.blit( self.mascara, ( self.postextx, 260+150))
-			if( self.seleccio == 3): self.joc.pantalla.blit( self.mascara, ( self.postextx, 260+300))
+			if self.seleccio == 1: self.joc.pantalla.blit( self.mascara, ( self.postextx, 260))
+			if self.seleccio == 2: self.joc.pantalla.blit( self.mascara, ( self.postextx, 260+150))
+			if self.seleccio == 3: self.joc.pantalla.blit( self.mascara, ( self.postextx, 260+300))
 
 			# mostrem l'autor i el mombre de pregunta
 			if ( mostranpregunta != 0 ):
@@ -315,45 +317,44 @@ class Preguntador:
 				self.joc.pantalla.blit( self.lletres[num][(self.seleccio != num + 1)], ( self.postextx, linia_act + (150 * num)) )
 				self.joc.pantalla.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
 
-			#comprovem l'estat del temps
-			segons_act = 60- int( (time.time() - self.temps_inici_pregunta) )
-			if( segons_act < 0 ) : 
+			# comprovem l'estat del temps
+			segons_act = 60 - int( (time.time() - self.temps_inici_pregunta) )
+			if segons_act < 0: 
 				segons_act = 0
 				self.segons = 0
 
 			# si no estem en l'estat de mostrar les soŀlucions mostrem el temps restant
-			if( self.mostrasolucions == 0):
-				if( self.segons != segons_act ):
-					#el segon actual ha canviat
+			if self.mostrasolucions == 0:
+				if self.segons != segons_act:
+					# el segon actual ha canviat
 					self.segons = segons_act 
 					self.pinta_segons = render_text( str( self.segons ).zfill(2), (255,255,255), 600)
 					# s'acaba el temps indiquem'ho amb so
-					if ( self.segons < 20 ) :
+					if self.segons < 20:
 						self.so_ticking2.set_volume( (20 - float( self.segons )) / 20.0  ) 
 						self.so_ticking2.play()
 				
-				#pintem els segons que queden, posant.los cada cop menys transparents
+				# pintem els segons que queden, posant-los cada cop menys transparents
 				self.pinta_segons.set_alpha( (60 - segons_act) )
 				self.joc.pantalla.blit( self.pinta_segons, ( 300 , 150) )
 
 			# Pintem les solucions
-
 			linia_act = 270
 			posn = 700
 			posnook = 700 + cos(time.time()) * 25
 			posok = 700 + cos(time.time() * 2) * 50
 
-			if( self.mostrasolucions > 0):
+			if self.mostrasolucions > 0:
 
 				for num in range (0, 3):
-					if( self.pregunta[5] == (num + 1)  ):
-						if( self.seleccio != (num + 1) ):
+					if self.pregunta[5] == (num + 1):
+						if self.seleccio != (num + 1):
 							self.joc.pantalla.blit( self.solucio_ok, (posnook, linia_act + (150 * num)) )
 						else:
 							self.joc.pantalla.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
 				
 					else:
-						if( self.seleccio == (num + 1) ):
+						if self.seleccio == (num + 1):
 							self.joc.pantalla.blit( self.solucio_nook, (posn, linia_act + (150 * num)) )
 
 			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))

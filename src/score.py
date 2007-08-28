@@ -97,6 +97,8 @@ class Score:
 							self.joc.equips[element_seleccionat].nom += escriuTecla( event.key )
 
 				else:
+					nou_grup = 0
+					
 					if event.type == pygame.QUIT: sys.exit()
 					if keyPress(event, ('q', 'ESCAPE')): return -1
 
@@ -112,16 +114,24 @@ class Score:
 						element_seleccionat = (element_seleccionat - 2) % 6
 						self.so_sub.play() 
 
-					if keyPress(event, ('a')): 
+					if keyPress(event, ('a')):
+						nou_grup = 1
+
+					if keyPress(event, ('n')):
+						if self.joc.equips[element_seleccionat].actiu:
+							escriu ^= 1
+						else:
+							nou_grup = 1
+
+					if nou_grup == 1:
 						self.joc.equips[element_seleccionat].actiu ^= 1
 						if self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].nom == "": escriu ^= 1
-
-					if keyPress(event, ('n')) and self.joc.equips[element_seleccionat].actiu: escriu ^= 1
 
 					if keyPress(event, ('K_f', 'K_F11')): pygame.display.toggle_fullscreen()
 
 					if keyPress(event, ('z')): 
 						if self.joc.equips[element_seleccionat].actiu: self.joc.equips[element_seleccionat].punts += 1
+					
 					if keyPress(event, ('x')): 
 						if self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].punts > 0: self.joc.equips[element_seleccionat].punts -= 1
 					

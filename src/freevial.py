@@ -68,14 +68,8 @@ class Freevial:
 			if self.dades_joc.equip_actual != -1:
 				roda = Roda( self.dades_joc )
 				resultat = roda.juguem()
-<<<<<<< TREE
-			
-
-				if ( resultat != 0):
-=======
 				
 				if resultat != 0:
->>>>>>> MERGE-SOURCE
 					fespregunta = Preguntador( self.dades_joc )
 					resultat = fespregunta.juguem( resultat )
 					if resultat > 0:
@@ -90,5 +84,10 @@ class Freevial:
 if '-d' in sys.argv or '--debug' in sys.argv:
 	DEBUG_MODE = True
 
-joc = Freevial()
-joc.juguem()
+try:
+	joc = Freevial()
+	joc.juguem()
+	
+except KeyboardInterrupt:
+	print 'Manual abort.'
+	sys.exit()
