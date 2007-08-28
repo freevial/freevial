@@ -144,10 +144,10 @@ class Preguntador:
 	#
 	# Cercador de preguntes a l'atzar
 	# si la categoria és 0 no té en compte el valor
-	def atzar( self, categoria ):
+	def atzar( self, categoria, inici = 0 ):
 		
 		cerca = categoria	
-		anterior = self.pregunta[9] - 1
+		anterior = self.pregunta[9] - 1 if (inici == 0) else -1
 		nova = anterior
 		
 		while nova == anterior or self.pregunta[0] != cerca:
@@ -169,7 +169,8 @@ class Preguntador:
 	def juguem( self , selcat):
 
 		# de moment per fer proves agafem una pregunta a l'atzar
-		self.atzar( selcat )
+
+		self.atzar( selcat, 1)
 
 		self.inicialitza_pregunta()
 

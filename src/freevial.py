@@ -68,7 +68,6 @@ class Freevial:
 			if( self.dades_joc.equip_actual != -1 ):
 				roda = Roda( self.dades_joc )
 				resultat = roda.juguem()
-				print "passa"
 			
 
 				if ( resultat != 0):
