@@ -15,7 +15,7 @@ from Numeric import *
 from pygame.locals import *
 
 from freevialglob import *
-from preguntes import textpreguntes
+from preguntes import *
 
 
 ##################################################
@@ -39,11 +39,8 @@ class Preguntador:
 		self.postextx= 80
 		self.postexty = 40
 		
-		self.pregunta_actual = 0
-		self.pregunta = textpreguntes[self.pregunta_actual]
-		self.mostrasolucions = 0
-		
-		self.seleccio = 0
+		self.pregunta_actual = None
+		self.mostrasolucions = self.seleccio = 0
 		self.ypos = 190
 		
 		# carrega d'imatges
@@ -72,6 +69,9 @@ class Preguntador:
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
 		self.so_ok = loadSound('evil.ogg')
 		self.so_nook = loadSound('crboo.ogg')
+		
+		# mostra nombre de pregunta i autor?
+		self.mostranpregunta = 0 if not DEBUG_MODE else 1
 
 	###########################################
 	#
@@ -112,16 +112,16 @@ class Preguntador:
 
 		self.seleccio = 0
 
-		self.sfc_pregunta  = self.pintatext( self.pregunta[1], self.mida_font )
+		self.sfc_pregunta  = self.pintatext( self.pregunta_actual[1], self.mida_font )
 
 		self.sfc_resposta = range(0, 3)
 		for num in range(0, 3):
-			self.sfc_resposta[ num ] = self.pintatext( self.pregunta[ num + 2 ], self.mida_font )
+			self.sfc_resposta[ num ] = self.pintatext( self.pregunta_actual[ num + 2 ], self.mida_font )
 
-		self.sfc_npregunta = render_text( str(self.pregunta[9]), (255,255,255), 100 )
+		self.sfc_npregunta = render_text( str(self.pregunta_actual[9]), (255,255,255), 100 )
 		self.sfc_npregunta.set_alpha( 64 )
 
-		self.sfc_apregunta = render_text( str(self.pregunta[6]), (255,255,255), 16 )
+		self.sfc_apregunta = render_text( str(self.pregunta_actual[6]), (255,255,255), 16 )
 		self.sfc_apregunta.set_alpha( 64 )	
 
 		self.temps_inici_pregunta = time.time()
@@ -135,20 +135,12 @@ class Preguntador:
 	#
 	# Cercador de preguntes a l'atzar
 	# si la categoria és 0 no té en compte el valor
-	def atzar( self, categoria, inici = 0 ):
+	def atzar( self, categoria ):
 		
-		cerca = categoria	
-		anterior = self.pregunta[9] - 1 if (inici == 0) else -1
-		nova = anterior
+		if len(preguntes[ categoria - 1 ]):
+			preguntes[ categoria - 1 ].extend(preguntes_backup[ categoria - 1 ])
 		
-		while nova == anterior or self.pregunta[0] != cerca:
-			nova = int( random.random() * len( textpreguntes ) )
-			self.pregunta = textpreguntes[ nova ]
-			
-			if categoria == 0:
-				cerca = self.pregunta[0]
-		
-		self.pregunta_actual =  self.pregunta[9]
+		self.pregunta_actual = preguntes[ categoria - 1 ].pop()
 		
 		self.inicialitza_pregunta()
 
@@ -161,7 +153,7 @@ class Preguntador:
 
 		# de moment per fer proves agafem una pregunta a l'atzar
 
-		self.atzar( selcat, 1)
+		self.atzar( selcat )
 
 		self.inicialitza_pregunta()
 
@@ -171,9 +163,6 @@ class Preguntador:
 		imatges_x_segon = 0
 
 		self.joc.pantalla.fill( (0,0,0,0) )
-
-		# mostra nombre de pregunta i autor
-		mostranpregunta = 1
 
 		# segons restants per fi de pregunta
 		self.segons = 61
@@ -244,21 +233,7 @@ class Preguntador:
 						self.so_sub.play()
 
 				if keyPress(event, 'z'):	
-					mostranpregunta ^= 1
-				
-				if keyPress(event, 'RIGHT'): 
-					pygame.mixer.fadeout(500)
-					self.pregunta_actual += 1;
-					self.pregunta_actual %= len ( textpreguntes )
-					self.pregunta = textpreguntes[self.pregunta_actual]
-					self.inicialitza_pregunta()
-
-				if keyPress(event, 'LEFT'): 
-					pygame.mixer.fadeout(500)
-					self.pregunta_actual -= 1;
-					self.pregunta_actual %= len ( textpreguntes )			
-					self.pregunta = textpreguntes[self.pregunta_actual]
-					self.inicialitza_pregunta()
+					self.mostranpregunta ^= 1
 
 				if keyPress(event, ('1', 'KP1')): 	self.atzar( 1 )
 				if keyPress(event, ('2', 'KP2')):	self.atzar( 2 )
@@ -266,7 +241,6 @@ class Preguntador:
 				if keyPress(event, ('4', 'KP4')):	self.atzar( 4 )
 				if keyPress(event, ('5', 'KP5')):	self.atzar( 5 )
 				if keyPress(event, ('6', 'KP6')):	self.atzar( 6 )
-				if keyPress(event, ('0', 'KP0')):	self.atzar( 0 )
 
 				if event.type == pygame.MOUSEBUTTONDOWN  or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 					acaba = 1
@@ -275,21 +249,21 @@ class Preguntador:
 			if acaba == 1 or self.segons <= 0:
 				if self.mostrasolucions == 0:
 					self.mostrasolucions = 3		
-					if self.pregunta[5] == self.seleccio:
+					if self.pregunta_actual[5] == self.seleccio:
 						self.so_ok.play()
 					else:
 						self.so_nook.play()	
 				elif acaba == 1:
-					return self.pregunta[0] if ( self.pregunta[5] == self.seleccio) else 0
+					return self.pregunta_actual[0] if ( self.pregunta_actual[5] == self.seleccio) else 0
 
 			# Animem el fons
 			self.ypos += 2
 			if self.ypos >= self.joc.mida_pantalla_y: self.ypos %= self.joc.mida_pantalla_y
 
 			# Pintem el fons animat
-			self.joc.pantalla.blit( self.fons[self.pregunta[0] - 1], (0,0), (0, (768 - self.ypos), self.joc.mida_pantalla_x, min(200, self.ypos)))
+			self.joc.pantalla.blit( self.fons[self.pregunta_actual[0] - 1], (0,0), (0, (768 - self.ypos), self.joc.mida_pantalla_x, min(200, self.ypos)))
 			if self.ypos < 200:
-				self.joc.pantalla.blit( self.fons[self.pregunta[0] - 1], (0, min( 200, self.ypos)), (0, 0, self.joc.mida_pantalla_x, 200 - min( 200, self.ypos)))
+				self.joc.pantalla.blit( self.fons[self.pregunta_actual[0] - 1], (0, min( 200, self.ypos)), (0, 0, self.joc.mida_pantalla_x, 200 - min( 200, self.ypos)))
 		
 			# i el sombrejem per fer l'efecte de desapariió
 			# també pintem el logotip del peu a l'hora que esborrem el fons de self.joc.pantalla
@@ -298,10 +272,10 @@ class Preguntador:
 			# preparem el sobrejat de l'opció seleccionada
 			ympos = self.ypos + 300
 			ympos %= 768
-			self.mascara.blit( self.fons[ self.pregunta[0] - 1], (0,0), (0, (768 - ympos), self.joc.mida_pantalla_x, min( 200, ympos )))
+			self.mascara.blit( self.fons[ self.pregunta_actual[0] - 1], (0,0), (0, (768 - ympos), self.joc.mida_pantalla_x, min( 200, ympos )))
 
 			if( ympos < 200): 
-				self.mascara.blit( self.fons[ self.pregunta[0] - 1], (0, min( 200, ympos)), (0, 0, self.joc.mida_pantalla_x, 200 - min( 200, ympos)))
+				self.mascara.blit( self.fons[ self.pregunta_actual[0] - 1], (0, min( 200, ympos)), (0, 0, self.joc.mida_pantalla_x, 200 - min( 200, ympos)))
 
 			# i el mesclem amb la mascara per donar-li forma
 			self.mascara.blit( self.retalla_sel, (0,0))
@@ -312,7 +286,7 @@ class Preguntador:
 			if self.seleccio == 3: self.joc.pantalla.blit( self.mascara, ( self.postextx, 260+300))
 
 			# mostrem l'autor i el mombre de pregunta
-			if ( mostranpregunta != 0 ):
+			if ( self.mostranpregunta != 0 ):
 				self.joc.pantalla.blit( self.sfc_npregunta, (1024 - ( self.sfc_npregunta.get_width() + 25),0))
 				self.joc.pantalla.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94))
 				
@@ -356,7 +330,7 @@ class Preguntador:
 			if self.mostrasolucions > 0:
 
 				for num in range (0, 3):
-					if self.pregunta[5] == (num + 1):
+					if self.pregunta_actual[5] == (num + 1):
 						if self.seleccio != (num + 1):
 							self.joc.pantalla.blit( self.solucio_ok, (posnook, linia_act + (150 * num)) )
 						else:

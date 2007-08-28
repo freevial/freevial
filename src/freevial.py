@@ -80,7 +80,7 @@ class Freevial:
 						fig_abans = self.dades_joc.equips[ self.dades_joc.equip_actual].figureta
 						self.dades_joc.equips[ self.dades_joc.equip_actual].activaCategoria( resultat ) 
 				
-						if( fig_abans != 63 and self.dades_joc.equips[ self.dades_joc.equip_actual].figureta == 63):
+						if fig_abans != 63 and self.dades_joc.equips[ self.dades_joc.equip_actual].figureta == 63:
 							self.dades_joc.equips[ self.dades_joc.equip_actual].punts += 2
 						
 					self.dades_joc.equip_actual = seguentEquipActiu( self.dades_joc.equips, self.dades_joc.equip_actual )
