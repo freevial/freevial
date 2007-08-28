@@ -155,7 +155,7 @@ class Score:
 					if keyPress(event, ('r')): 
 						atzar = 6 + int(random.random() * 12 )
  
-					if keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')) and self.joc.equips[element_seleccionat].actiu: 
+					if  (event.type == pygame.MOUSEBUTTONDOWN  or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER'))) and self.joc.equips[element_seleccionat].actiu: 
 						return element_seleccionat  
 
 			if atzar != 0 and equipsActius( self.joc.equips ) >= 2:

@@ -259,7 +259,7 @@ class Preguntador:
 				if keyPress(event, ('6', 'KP6')):	self.atzar( 6 )
 				if keyPress(event, ('0', 'KP0')):	self.atzar( 0 )
 
-				if keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
+				if (event.type == pygame.MOUSEBUTTONDOWN  or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER'))):
 					acaba = 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem

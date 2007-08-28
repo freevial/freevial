@@ -43,6 +43,8 @@ class Freevial:
 		self.dades_joc.pantalla = pygame.display.set_mode( ( self.dades_joc.mida_pantalla_x, self.dades_joc.mida_pantalla_y), 0, 32)
 		pygame.display.set_caption('Freevial')
 		pygame.display.set_icon( pygame.image.load(os.path.join(self.dades_joc.folders['images'], 'logo.png')) )
+
+		pygame.mouse.set_visible( False )
 		
 		if not DEBUG_MODE:
 			pygame.display.toggle_fullscreen()
