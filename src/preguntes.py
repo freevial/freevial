@@ -22,3 +22,17 @@ textpreguntes = (
 
 #fi_importació
 )
+
+
+##########################################
+# RainCT
+
+preguntes = []
+
+for num in range(0,6):
+	preguntes.append( [] )
+
+for element in textpreguntes:
+	preguntes[ element[0] - 1 ].append( element )
+
+print preguntes[0]
