@@ -71,7 +71,7 @@ class Preguntador:
 		self.so_nook = loadSound('crboo.ogg')
 		
 		# mostra nombre de pregunta i autor?
-		self.mostranpregunta = 0 if not DEBUG_MODE else 1
+		self.mostranpregunta = 1
 
 	###########################################
 	#
@@ -173,7 +173,7 @@ class Preguntador:
 		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
 		nom_equip_sfc.set_alpha( 64 )
 
-		mostra_punt_de_categoria = True
+		mostra_punt_de_categoria = False
 
 		if ( (self.joc.equips[self.joc.equip_actual].figureta & bitCategoria ( selcat )) == 0 ):
 			mostra_punt_de_categoria = True
