@@ -65,7 +65,7 @@ class Freevial_globals:
 def loadImage( filename ):
 	""" Returns a Surface of the indicated image, which is expected to be in the images folder. """
 	
-	return pygame.image.load( os.path.join(Freevial_globals.folders['images'], str(filename) ))
+	return pygame.image.load( os.path.join(Freevial_globals.folders['images'], str(filename) )).convert_alpha()
 
 
 def loadSound( filename, volume = '' ):

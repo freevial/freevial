@@ -34,7 +34,7 @@ class Score:
 		self.mascara_de_fons = loadImage('fons_score.png')
 		self.fons = loadImage('score_fons.png')	
 
-		self.element_score = loadImage('element_score.png')	
+		self.element_score = loadImage('element_score.png')
 		self.seleccio_score = loadImage('seleccio_score.png')
 
 		self.figureta = range(0,64)
