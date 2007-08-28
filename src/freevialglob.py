@@ -5,8 +5,8 @@
 # Freevial
 # Estructura de dades globals
 #
-# Carles 24/08/2007
-# RainCT 27/08/2007
+# Carles 28/08/2007
+# RainCT 28/08/2007
 #
 
 import os.path, pygame
@@ -15,30 +15,28 @@ from pygame.locals import *
 DEBUG_MODE = False
 
 class Equip:
-
-	nom = ""
-	punts = 0
-	figureta = 0
-
+	
+	nom = ''
+	punts = figureta = 0
 	actiu = False
-
+	
 	def canviaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
-		if( categoria == 6 ): self.figureta ^= 0x1
-		if( categoria == 5 ): self.figureta ^= 0x2
-		if( categoria == 1 ): self.figureta ^= 0x4
-		if( categoria == 2 ): self.figureta ^= 0x8
-		if( categoria == 4 ): self.figureta ^= 0x10
-		if( categoria == 3 ): self.figureta ^= 0x20
-
+		if categoria == 6: self.figureta ^= 0x1
+		if categoria == 5: self.figureta ^= 0x2
+		if categoria == 1: self.figureta ^= 0x4
+		if categoria == 2: self.figureta ^= 0x8
+		if categoria == 4: self.figureta ^= 0x10
+		if categoria == 3: self.figureta ^= 0x20
+	
 	def activaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
-		if( categoria == 6 ): self.figureta |= 0x1
-		if( categoria == 5 ): self.figureta |= 0x2
-		if( categoria == 1 ): self.figureta |= 0x4
-		if( categoria == 2 ): self.figureta |= 0x8
-		if( categoria == 4 ): self.figureta |= 0x10
-		if( categoria == 3 ): self.figureta |= 0x20
+		if categoria == 6: self.figureta |= 0x1
+		if categoria == 5: self.figureta |= 0x2
+		if categoria == 1: self.figureta |= 0x4
+		if categoria == 2: self.figureta |= 0x8
+		if categoria == 4: self.figureta |= 0x10
+		if categoria == 3: self.figureta |= 0x20
 
 
 class Freevial_globals:
@@ -58,10 +56,10 @@ class Freevial_globals:
 						'sounds': os.path.join(basefolder, 'sounds'),
 						'fonts': os.path.join(basefolder, 'fonts'),
 					}
-
-	# Rainct ... aquesta linia no m'agrada gens. però així funciona... segur que tens alguna idea millor
+	
+	# TODO: Reemplaçar la següent línia per un mètode millor
 	equips = ( Equip(), Equip(), Equip(), Equip(), Equip(), Equip() )
-
+	
 	equip_actual = 0
 
 def loadImage( filename ):
@@ -79,6 +77,7 @@ def loadSound( filename, volume = '' ):
 		obj.set_volume( float(volume) )
 	
 	return obj
+
 
 def keyPress( event, keys ):
 	""" Returns true if the given event is the release of one of the indicated keys. 
@@ -104,60 +103,74 @@ def keyPress( event, keys ):
 	
 	return True if found == 1 else False
 
+
+def render_text( cadena, color, mida, antialias = 0, nomfont = '' ):
+	""" Function for easier text rendering. """
+	
+	if nomfont == '':
+		nomfont = os.path.join(Freevial_globals.folders['fonts'], 'lb.ttf')
+	
+	font1 = pygame.font.Font( nomfont, mida )
+	return font1.render( cadena, antialias, color )
+
+
 def maxPunts( equips ):
 
 	puntsmax = 0
 
 	for compta in range(0,6):
-		if( equips[compta].actiu ):
+		if equips[compta].actiu:
 			puntsmax = max( puntsmax, equips[compta].punts )
 	
 	return puntsmax
+
 
 def equipsActius( equips ):
 
 	actius = 0
 
 	for compta in range(0,6):
-		if( equips[compta].actiu ): actius += 1
+		if equips[compta].actiu: actius += 1
 	
 	return actius
+
 
 def seguentEquipActiu( equips, actual ):
 
 	actual += 1
 
 	for compta in range(0,6):
-		if( equips[(actual + compta) % 6].actiu ): 
+		if equips[(actual + compta) % 6].actiu: 
 			return (actual + compta) % 6
 	
 	return -1
+
 
 def anteriorEquipActiu( equips, actual ):
 
 	actual -= 1
 
 	for compta in range(0,6):
-		if( equips[(actual - compta ) % 6].actiu ): 
+		if equips[(actual - compta ) % 6].actiu: 
 			return (actual - compta ) % 6
 	
 	return -1
 
 anterior = ""
 
-def escriutecla(  tecla ):
 
-	print tecla
+def escriuTecla( tecla ):
+	
 	anterior = tecla
 	torna = pygame.key.name( tecla )
-
-	if( torna == 'space'): torna = ' '
-	if( torna == 'world 71'): torna = 'ç'
-	if( torna in( 'compose', 'left shift', 'right shift', 'left ctrl', 'right ctrl', 'alt gr', 'right alt', 'left alt')): torna = ''
-
-	print pygame.key.get_mods()
-	if( pygame.key.get_mods() & 0x1 ): torna = torna.upper()
-
+	
+	if torna == 'space': torna = ' '
+	if torna == 'world 71': torna = 'ç'
+	if torna in ( 'left', 'right', 'up', 'down', 'enter', 'numlock', 'compose', 'left shift', 'right shift', 'left ctrl', 'right ctrl', 'alt gr', 'right alt', 'left alt'): torna = ''
+	
+	if len(torna) == 3 and torna[:1] == '[' and torna[2:] == ']':
+		torna = torna[1:2]
+	
+	if pygame.key.get_mods() & 0x1: torna = torna.upper()
+	
 	return torna
-
-
