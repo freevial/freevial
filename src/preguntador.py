@@ -5,11 +5,11 @@
 # Freevial
 # Realitzador de preguntes
 #
-# Carles 26/08/2007
+# Carles 28/08/2007
 # RainCT 27/08/2007
 #
 
-import sys, os, random, math, time
+import sys, os.path, random, math, time
 import pygame, pygame.surfarray
 from Numeric import *
 from pygame.locals import *
@@ -79,17 +79,7 @@ class Preguntador:
 	def numlinies( self, cadena ):
 		
 		return cadena.count('#')
-
-	###########################################
-	#
-	# Assistent pel renderitzat fàcil del text
-	def render_text( self, cadena, color, mida, antialias = 0, nomfont = '' ):
-
-		if (nomfont == ""): nomfont = os.path.join(self.joc.folders['fonts'],'lb.ttf')
-
-		font1 = pygame.font.Font( nomfont, mida)
-		return font1.render( cadena, antialias, color )
-
+	
 	###########################################
 	#
 	# Funció per pintar el text i les preguntes sobre una nova superficie
@@ -102,10 +92,10 @@ class Preguntador:
 		sfc = pygame.Surface( ( 1024, ( self.numlinies ( textapintar ) + 1 ) * (mida + 25) ), pygame.SRCALPHA, 32 )
 
 		for cadena in cadenes:
-			text_pregunta = self.render_text( cadena, self.color_de_fons, mida, 1 )
+			text_pregunta = render_text( cadena, self.color_de_fons, mida, 1 )
 			sfc.blit( text_pregunta, (0 + 2, self.altlinies * nlinia + 2))
 
-			text_pregunta = self.render_text( cadena, self.color_de_text, mida, 1 )
+			text_pregunta = render_text( cadena, self.color_de_text, mida, 1 )
 			sfc.blit( text_pregunta, (0, self.altlinies * nlinia))
 
 			nlinia += 1
@@ -127,10 +117,10 @@ class Preguntador:
 		for num in range(0, 3):
 			self.sfc_resposta[ num ] = self.pintatext( self.pregunta[ num + 2 ], self.mida_font )
 
-		self.sfc_npregunta = self.render_text( str(self.pregunta[9]), (255,255,255), 100 )
+		self.sfc_npregunta = render_text( str(self.pregunta[9]), (255,255,255), 100 )
 		self.sfc_npregunta.set_alpha( 64 )
 
-		self.sfc_apregunta = self.render_text( str(self.pregunta[6]), (255,255,255), 16 )
+		self.sfc_apregunta = render_text( str(self.pregunta[6]), (255,255,255), 16 )
 		self.sfc_apregunta.set_alpha( 64 )	
 
 		self.temps_inici_pregunta = time.time()
@@ -188,8 +178,8 @@ class Preguntador:
 		self.segons = 61
 
 		#nom = self.joc.equips[self.joc.equip_actual].nom.encode( 'utf-8')
-		#nom_equip_sfc = self.render_text( self.joc.equips[self.joc.equip_actual].nom, (255,255,255), 50, 1 )
-		nom_equip_sfc = self.render_text( self.joc.equips[self.joc.equip_actual].nom, (64,64,64), 30, 1 )	
+		#nom_equip_sfc = render_text( self.joc.equips[self.joc.equip_actual].nom, (255,255,255), 50, 1 )
+		nom_equip_sfc = render_text( self.joc.equips[self.joc.equip_actual].nom, (64,64,64), 30, 1 )	
 		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
 		nom_equip_sfc.set_alpha( 64 )
 
@@ -269,9 +259,8 @@ class Preguntador:
 				if keyPress(event, ('6', 'KP6')):	self.atzar( 6 )
 				if keyPress(event, ('0', 'KP0')):	self.atzar( 0 )
 
-				if keyPress(event, ('RETURN', 'SPACE')):
+				if keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 					acaba = 1
-					print "pas"
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if (acaba == 1 or self.segons <= 0):
@@ -337,7 +326,7 @@ class Preguntador:
 				if( self.segons != segons_act ):
 					#el segon actual ha canviat
 					self.segons = segons_act 
-					self.pinta_segons = self.render_text( str( self.segons ).zfill(2), (255,255,255), 600)
+					self.pinta_segons = render_text( str( self.segons ).zfill(2), (255,255,255), 600)
 					# s'acaba el temps indiquem'ho amb so
 					if ( self.segons < 20 ) :
 						self.so_ticking2.set_volume( (20 - float( self.segons )) / 20.0  ) 

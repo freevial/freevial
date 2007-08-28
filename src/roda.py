@@ -57,7 +57,7 @@ class Roda:
 					pygame.mixer.fadeout(500)
 					return 0
 				
-				if  (( event.type == pygame.MOUSEBUTTONUP or keyPress(event, ('RETURN', 'SPACE')) ) and rodant == 0):
+				if  (( event.type == pygame.MOUSEBUTTONUP or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')) ) and rodant == 0):
 					if resultat == -1: 	fesrodar = 1
 					else:
 						return resultat

@@ -3,13 +3,13 @@
 ##########################################
 #
 # Freevial
-# Realitzador de preguntes
+# Control de puntuació
 #
-# Carles 26/08/2007
-# RainCT 27/08/2007
+# Carles 28/08/2007
+# RainCT 28/08/2007
 #
 
-import sys, os, random, re, math, time
+import sys, os.path, random, time
 import pygame, pygame.surfarray
 from Numeric import *
 from pygame.locals import *
@@ -22,7 +22,6 @@ from preguntes import textpreguntes
 #
 # Empaquetat en una classe del selector d'equips
 #
-
 
 class Score:
 
@@ -43,18 +42,7 @@ class Score:
 			self.figureta[compta] = loadImage('points/freevial_tot' + str( compta ).zfill(2) + '.png')	
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
-
-	###########################################
-	#
-	# Assistent pel renderitzat fàcil del text
-	def render_text( self, cadena, color, mida, antialias = 0, nomfont = "" ):
-
-		if (nomfont == ""): nomfont = os.path.join(self.joc.folders['fonts'],'lb.ttf')
-
-		font1 = pygame.font.Font( nomfont, mida)
-		return font1.render( cadena, antialias, color )
-
-
+		
 	###########################################
 	#
 	# Bucle principal del programa
@@ -78,7 +66,6 @@ class Score:
 
 		atzar = 0
 
-
 		while 1:
 
 			# Calculem el nombre de FPS
@@ -99,18 +86,15 @@ class Score:
 			# Iterador d'events
 			for event in pygame.event.get():
 
-				if( escriu ):
+				if escriu:
 					if event.type == pygame.KEYUP:
-						if( event.key in (K_RETURN, K_ESCAPE) ): 
+						if event.key in (K_RETURN, K_ESCAPE, K_KP_ENTER): 
 							escriu ^= 1
-						elif ( event.key == K_BACKSPACE ):
-							llarg = len(self.joc.equips[element_seleccionat].nom)
-							if( llarg > 0):
-								self.joc.equips[element_seleccionat].nom = self.joc.equips[element_seleccionat].nom[:llarg-1]
+						elif event.key == K_BACKSPACE:
+							if len(self.joc.equips[element_seleccionat].nom) > 0:
+								self.joc.equips[element_seleccionat].nom = self.joc.equips[element_seleccionat].nom[:-1]
 						else:
-							tecla = escriutecla( event.key )
-							
-							self.joc.equips[element_seleccionat].nom += tecla
+							self.joc.equips[element_seleccionat].nom += escriuTecla( event.key )
 
 				else:
 					if event.type == pygame.QUIT: sys.exit()
@@ -130,40 +114,41 @@ class Score:
 
 					if keyPress(event, ('a')): 
 						self.joc.equips[element_seleccionat].actiu ^= 1
-						if( self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].nom == ""): escriu ^= 1
+						if self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].nom == "": escriu ^= 1
 
 					if keyPress(event, ('n')) and self.joc.equips[element_seleccionat].actiu: escriu ^= 1
 
 					if keyPress(event, ('K_f', 'K_F11')): pygame.display.toggle_fullscreen()
 
 					if keyPress(event, ('z')): 
-						if( self.joc.equips[element_seleccionat].actiu ): self.joc.equips[element_seleccionat].punts += 1
+						if self.joc.equips[element_seleccionat].actiu: self.joc.equips[element_seleccionat].punts += 1
 					if keyPress(event, ('x')): 
-						if( self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].punts > 0): self.joc.equips[element_seleccionat].punts -= 1
-						
-					if ( keyPress(event, ('1', 'KP1')) and self.joc.equips[element_seleccionat].actiu ): self.joc.equips[element_seleccionat].canviaCategoria( 1 )
-					if ( keyPress(event, ('2', 'KP1')) and self.joc.equips[element_seleccionat].actiu ): self.joc.equips[element_seleccionat].canviaCategoria( 2 )
-					if ( keyPress(event, ('3', 'KP1')) and self.joc.equips[element_seleccionat].actiu ): self.joc.equips[element_seleccionat].canviaCategoria( 3 )
-					if ( keyPress(event, ('4', 'KP1')) and self.joc.equips[element_seleccionat].actiu ): self.joc.equips[element_seleccionat].canviaCategoria( 4 )
-					if ( keyPress(event, ('5', 'KP1')) and self.joc.equips[element_seleccionat].actiu ): self.joc.equips[element_seleccionat].canviaCategoria( 5 )
-					if ( keyPress(event, ('6', 'KP1')) and self.joc.equips[element_seleccionat].actiu ): self.joc.equips[element_seleccionat].canviaCategoria( 6 )
+						if self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].punts > 0: self.joc.equips[element_seleccionat].punts -= 1
+					
+					if self.joc.equips[element_seleccionat].actiu:
+						if keyPress(event, ('1', 'KP1')): self.joc.equips[element_seleccionat].canviaCategoria( 1 )
+						if keyPress(event, ('2', 'KP2')): self.joc.equips[element_seleccionat].canviaCategoria( 2 )
+						if keyPress(event, ('3', 'KP3')): self.joc.equips[element_seleccionat].canviaCategoria( 3 )
+						if keyPress(event, ('4', 'KP4')): self.joc.equips[element_seleccionat].canviaCategoria( 4 )
+						if keyPress(event, ('5', 'KP5')): self.joc.equips[element_seleccionat].canviaCategoria( 5 )
+						if keyPress(event, ('6', 'KP6')): self.joc.equips[element_seleccionat].canviaCategoria( 6 )
  
-					if ( keyPress(event, ('PAGEDOWN')) ): 
-						if( equipsActius( self.joc.equips ) >= 1):
+					if keyPress(event, ('PAGEDOWN')): 
+						if equipsActius( self.joc.equips ) >= 1:
 							element_seleccionat = seguentEquipActiu( self.joc.equips, element_seleccionat )
 							self.so_sub.play() 
-					if ( keyPress(event, ('PAGEUP')) ): 
-						if( equipsActius( self.joc.equips ) >= 1):
+					if keyPress(event, ('PAGEUP')): 
+						if equipsActius( self.joc.equips ) >= 1:
 							element_seleccionat = anteriorEquipActiu( self.joc.equips, element_seleccionat )
 							self.so_sub.play() 
 
-					if ( keyPress(event, ('r')) ): 
+					if keyPress(event, ('r')): 
 						atzar = 6 + int(random.random() * 12 )
  
-					if ( keyPress(event, ('RETURN', 'SPACE')) and self.joc.equips[element_seleccionat].actiu  ): 
+					if keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')) and self.joc.equips[element_seleccionat].actiu: 
 						return element_seleccionat  
 
-			if( atzar != 0 and equipsActius( self.joc.equips ) >= 2):
+			if atzar != 0 and equipsActius( self.joc.equips ) >= 2:
 				element_seleccionat = seguentEquipActiu( self.joc.equips, element_seleccionat )
 				atzar -= 1 
 				self.so_sub.play() 
@@ -176,32 +161,29 @@ class Score:
 
 			self.joc.pantalla.blit( self.fons, (0, ypos - 765 ) )
 			self.joc.pantalla.blit( self.fons, (0, ypos) )
-
 			self.joc.pantalla.blit( self.mascara_de_fons, (0, 0) )
 
-
 			# pintem les puntuacions
-
-			for compta in range(0,6):
+			for compta in range(0, 6):
 				ycaixa = (int(compta / 2) * 200) + 135
 				xcaixa = 75 if ((compta % 2) == 0) else 515
 
-				if (element_seleccionat == compta):
+				if element_seleccionat == compta:
 					self.joc.pantalla.blit( self.seleccio_score, (xcaixa - 58, ycaixa - 36) )
 				
-				if( self.joc.equips[compta].actiu ):
+				if self.joc.equips[compta].actiu:
 	
 					self.joc.pantalla.blit( self.element_score, (xcaixa, ycaixa ) )
 					self.joc.pantalla.blit( self.figureta[self.joc.equips[compta].figureta], (xcaixa + 15, ycaixa  ) )
 
 					text_nom = self.joc.equips[compta].nom
-					if( escriu and compta == element_seleccionat):
-						if( (int(time.time() * 4) % 2) == 0): text_nom += "_"  
-					pinta = self.render_text( text_nom, (0,0,0), 30, 1)
+					if escriu and compta == element_seleccionat:
+						if (int(time.time() * 4) % 2) == 0: text_nom += "_"  
+					pinta = render_text( text_nom, (0,0,0), 30, 1)
 					self.joc.pantalla.blit( pinta, (xcaixa + 25 , ycaixa + 125 ) )
 
 					color = (128,0,0) if (maxPunts( self.joc.equips) > self.joc.equips[compta].punts ) else (0,128,0)
-					pinta = self.render_text( str(self.joc.equips[compta].punts).zfill(2), color, 150, 1)
+					pinta = render_text( str(self.joc.equips[compta].punts).zfill(2), color, 150, 1)
 					self.joc.pantalla.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 
 
@@ -209,5 +191,3 @@ class Score:
 			pygame.display.flip()
 
 		return 0
-
-
