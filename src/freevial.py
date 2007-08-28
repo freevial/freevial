@@ -70,6 +70,7 @@ class Freevial:
 				resultat = roda.juguem()
 				
 				if resultat != 0:
+
 					fespregunta = Preguntador( self.dades_joc )
 					resultat = fespregunta.juguem( resultat )
 					if resultat > 0:
