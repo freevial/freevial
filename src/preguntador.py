@@ -9,7 +9,7 @@
 # RainCT 27/08/2007
 #
 
-import sys, os, random, re, math, time
+import sys, os, random, math, time
 import pygame, pygame.surfarray
 from Numeric import *
 from pygame.locals import *
@@ -76,14 +76,14 @@ class Preguntador:
 	#
 	# Funció per veure el nombre de linies que té una frase a mostrar
 	# basant-nos en que el separador és el caracter #
-	def comptalinies( self, cadena ):
+	def numlinies( self, cadena ):
 		
 		return cadena.count('#')
 
 	###########################################
 	#
 	# Assistent pel renderitzat fàcil del text
-	def render_text( self, cadena, color, mida, antialias = 0, nomfont = "" ):
+	def render_text( self, cadena, color, mida, antialias = 0, nomfont = '' ):
 
 		if (nomfont == ""): nomfont = os.path.join(self.joc.folders['fonts'],'lb.ttf')
 
@@ -96,16 +96,16 @@ class Preguntador:
 	# usant el color del text i el sobrejat
 	def pintatext( self, textapintar, mida ):
 
-		cadenes = re.split( '#', textapintar )
+		cadenes = textapintar.split('#')
 		nlinia = 0
 
-		sfc = pygame.Surface( ( 1024, ( self.comptalinies ( textapintar ) + 1 ) * self.altlinies ), pygame.SRCALPHA, 32)
+		sfc = pygame.Surface( ( 1024, ( self.numlinies ( textapintar ) + 1 ) * self.altlinies ), pygame.SRCALPHA, 32 )
 
 		for cadena in cadenes:
-			text_pregunta = self.render_text( cadena, self.color_de_fons, mida, 1)
+			text_pregunta = self.render_text( cadena, self.color_de_fons, mida, 1 )
 			sfc.blit( text_pregunta, (0 + 2, self.altlinies * nlinia + 2))
 
-			text_pregunta = self.render_text( cadena, self.color_de_text, mida, 1)
+			text_pregunta = self.render_text( cadena, self.color_de_text, mida, 1 )
 			sfc.blit( text_pregunta, (0, self.altlinies * nlinia))
 
 			nlinia += 1
@@ -124,8 +124,8 @@ class Preguntador:
 		self.sfc_pregunta  = self.pintatext( self.pregunta[1], self.mida_font )
 
 		self.sfc_resposta = range(0, 3)
-		for compta in range(0, 3):
-			self.sfc_resposta[ compta ] = self.pintatext( self.pregunta[ compta + 2], self.mida_font )
+		for num in range(0, 3):
+			self.sfc_resposta[ num ] = self.pintatext( self.pregunta[ num + 2 ], self.mida_font )
 
 		self.sfc_npregunta = self.render_text( str(self.pregunta[9]), (255,255,255), 100 )
 		self.sfc_npregunta.set_alpha( 64 )
@@ -145,16 +145,18 @@ class Preguntador:
 	# Cercador de preguntes a l'atzar
 	# si la categoria és 0 no té en compte el valor
 	def atzar( self, categoria ):
-
+		
 		cerca = categoria	
 		anterior = self.pregunta[9] - 1
 		nova = anterior
-
-		while( nova == anterior or self.pregunta[0] != cerca ):		
-			nova = 	int( random.random() * len( textpreguntes ) )
-			self.pregunta = textpreguntes [ nova ]
-			if( categoria == 0 ): cerca = self.pregunta[0]
-
+		
+		while nova == anterior or self.pregunta[0] != cerca:
+			nova = int( random.random() * len( textpreguntes ) )
+			self.pregunta = textpreguntes[ nova ]
+			
+			if categoria == 0:
+				cerca = self.pregunta[0]
+		
 		self.pregunta_actual =  self.pregunta[9]
 		
 		self.inicialitza_pregunta()
@@ -192,7 +194,7 @@ class Preguntador:
 				temps = time.time()
 				imatges_x_segon = 0
 			else:
-				imatges_x_segon = imatges_x_segon  + 1
+				imatges_x_segon +=  1
 		
 			# No cal limitador de frames actualment ja que estem en 7 aprox
 			dif_fps = 1000 / self.joc.Limit_FPS 
@@ -207,61 +209,61 @@ class Preguntador:
 			for event in pygame.event.get():
 
 				if event.type == pygame.QUIT: sys.exit()
-				if event.type == pygame.KEYUP and  event.key in ( pygame.K_q, pygame.K_ESCAPE ): return -1
+				if keyPress(event, ('K_q', 'K_ESCAPE')): return -1
 
-				if event.type == pygame.KEYUP and event.key in ( pygame.K_f, pygame.K_F11 ): pygame.display.toggle_fullscreen()
+				if keyPress(event, ('K_f', 'K_F11')): pygame.display.toggle_fullscreen()
 
 				if ( self.mostrasolucions == 0 ):
-					if event.type == pygame.KEYUP and event.key == pygame.K_a:	
+					if keyPress(event, 'a'):	
 						self.seleccio = 1
 						self.so_sub.play()
 
-					if event.type == pygame.KEYUP and event.key == pygame.K_b:	
+					if keyPress(event, 'b'):	
 						self.seleccio = 2
 						self.so_sub.play()
 
-					if event.type == pygame.KEYUP and event.key == pygame.K_c:	
+					if keyPress(event, 'c'):	
 						self.seleccio = 3
 						self.so_sub.play()
 
-					if event.type == pygame.KEYUP and event.key in (pygame.K_DOWN,pygame.K_TAB): 
+					if keyPress(event, ('DOWN', 'TAB')): 
 						self.seleccio += 1
 						if( self.seleccio == 4):
 							self.seleccio = 1
 						self.so_sub.play()
 
-					if event.type == pygame.KEYUP and event.key == pygame.K_UP: 
+					if keyPress(event, 'UP'): 
 						self.seleccio -= 1
 						if( self.seleccio <= 0):
 							self.seleccio = 3	
 						self.so_sub.play()
 
-				if event.type == pygame.KEYUP and event.key == pygame.K_z:	
+				if keyPress(event, 'z'):	
 					mostranpregunta ^= 1
 				
-				if event.type == pygame.KEYUP and event.key == pygame.K_RIGHT: 
+				if keyPress(event, 'RIGHT'): 
 					pygame.mixer.fadeout(500)
 					self.pregunta_actual += 1;
 					self.pregunta_actual %= len ( textpreguntes )
 					self.pregunta = textpreguntes[self.pregunta_actual]
 					self.inicialitza_pregunta()
 
-				if event.type == pygame.KEYUP and event.key == pygame.K_LEFT: 
+				if keyPress(event, 'LEFT'): 
 					pygame.mixer.fadeout(500)
 					self.pregunta_actual -= 1;
 					self.pregunta_actual %= len ( textpreguntes )			
 					self.pregunta = textpreguntes[self.pregunta_actual]
 					self.inicialitza_pregunta()
 
-				if event.type == pygame.KEYUP and event.key == pygame.K_1: 	self.atzar( 1 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_2:	self.atzar( 2 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_3:	self.atzar( 3 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_4:	self.atzar( 4 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_5:	self.atzar( 5 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_6:	self.atzar( 6 )
-				if event.type == pygame.KEYUP and event.key == pygame.K_0:	self.atzar( 0 )
+				if keyPress(event, ('1', 'KP1')): 	self.atzar( 1 )
+				if keyPress(event, ('2', 'KP2')):	self.atzar( 2 )
+				if keyPress(event, ('3', 'KP3')):	self.atzar( 3 )
+				if keyPress(event, ('4', 'KP4')):	self.atzar( 4 )
+				if keyPress(event, ('5', 'KP5')):	self.atzar( 5 )
+				if keyPress(event, ('6', 'KP6')):	self.atzar( 6 )
+				if keyPress(event, ('0', 'KP0')):	self.atzar( 0 )
 
-				if (event.type == pygame.KEYUP and event.key in (pygame.K_RETURN, pygame.K_SPACE) ): acaba = 1
+				if keyPress(event, ('RETURN', 'SPACE')): acaba = 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if (acaba == 1 or self.segons <= 0):
@@ -310,9 +312,9 @@ class Preguntador:
 			# i les solucions			
 			linia_act = 270
 				
-			for compta in range(0, 3):
-				self.joc.pantalla.blit( self.lletres[compta][(self.seleccio != compta + 1)], ( self.postextx, linia_act + (150 * compta)) )
-				self.joc.pantalla.blit( self.sfc_resposta[ compta ], (self.postextx + 180 , linia_act + 20 + (150 * compta)) )		
+			for num in range(0, 3):
+				self.joc.pantalla.blit( self.lletres[num][(self.seleccio != num + 1)], ( self.postextx, linia_act + (150 * num)) )
+				self.joc.pantalla.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
 
 			#comprovem l'estat del temps
 			segons_act = 60- int( (time.time() - self.temps_inici_pregunta) )
@@ -344,16 +346,16 @@ class Preguntador:
 
 			if( self.mostrasolucions > 0):
 
-				for compta in range (0, 3):
-					if( self.pregunta[5] == (compta + 1)  ):
-						if( self.seleccio != (compta + 1) ):
-							self.joc.pantalla.blit( self.solucio_ok, (posnook, linia_act + (150 * compta)) )
+				for num in range (0, 3):
+					if( self.pregunta[5] == (num + 1)  ):
+						if( self.seleccio != (num + 1) ):
+							self.joc.pantalla.blit( self.solucio_ok, (posnook, linia_act + (150 * num)) )
 						else:
-							self.joc.pantalla.blit( self.solucio_ok, (posok, linia_act + (150 * compta)) )
+							self.joc.pantalla.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
 				
 					else:
-						if( self.seleccio == (compta + 1) ):
-							self.joc.pantalla.blit( self.solucio_nook, (posn, linia_act + (150 * compta)) )
+						if( self.seleccio == (num + 1) ):
+							self.joc.pantalla.blit( self.solucio_nook, (posn, linia_act + (150 * num)) )
 
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()

@@ -1,3 +1,11 @@
+Instruccions de la pantalla d'equips
+-------
+
+Fletxes - Canvien la selecció
+q o Esc - Acaba
+a - Activa/desactiva un equip
+n - Edita el nom de l'equip
+
 Instruccions del preguntador
 -------
 
@@ -20,6 +28,7 @@ f o F11 - Pantalla sencera
 Històric
 -------
 
+28/08/2007 - Pantalla d'equips
 27/08/2007 - Creació del projecte al Launchpad
 26/08/2007 - Creació d'aquest document
 24/08/2007 - Creació de la versió 0.01

@@ -10,7 +10,17 @@
 #
 
 import os.path, pygame
+from pygame.locals import *
 
+DEBUG_MODE = False
+
+class Equip:
+
+	nom = ""
+	punts = 0
+	figureta = 0
+
+	actiu = False
 
 class Freevial_globals:
 	""" Contains all variables that are commonly used by all components of Freevial. """
@@ -30,6 +40,10 @@ class Freevial_globals:
 						'fonts': os.path.join(basefolder, 'fonts'),
 					}
 
+	# Rainct ... aquesta linia no m'agrada gens. però així funciona... segur que tens alguna idea millor
+	equips = ( Equip(), Equip(), Equip(), Equip(), Equip(), Equip() )
+
+	jugador_actual = 0
 
 def loadImage( filename ):
 	""" Returns a Surface of the indicated image, which is expected to be in the images folder. """
@@ -46,4 +60,50 @@ def loadSound( filename, volume = '' ):
 		obj.set_volume( float(volume) )
 	
 	return obj
+
+def keyPress( event, keys ):
+	""" Returns true if the given event is the release of one of the indicated keys. 
+	Just a key can be passed or a whole bunch inside a tuple, and in both cases they may be 
+	either a string or directly it's pygame object. """
+	
+	if type(keys) is str or type(keys) is int:
+		keys = ( keys, )
+	
+	
+	# Check if any of the indicated keys matches
+	found = 0
+	for key in keys:
+		
+		if key[:2] != 'K_':
+			key = 'K_' + key
+		
+		if type(key) is str:
+			key = getattr(pygame, key)
+		
+		if event.type == pygame.KEYUP and event.key == key:
+			found = 1
+	
+	return True if found == 1 else False
+
+def maxpunts( equips ):
+
+	puntsmax = 0
+
+	for compta in range(0,6):
+		if( equips[compta].actiu ):
+			puntsmax = max( puntsmax, equips[compta].punts )
+	
+	return puntsmax
+
+def escriutecla(  tecla ):
+	torna = tecla
+
+	if( torna == 'space'): torna = ' '
+	if( torna == 'world 71'): torna = 'ç'
+	if( torna == 'left shift'): torna = ''
+	if( torna == 'right shift'): torna = ''
+
+
+	return torna
+
 

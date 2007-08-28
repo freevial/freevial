@@ -43,7 +43,8 @@ class Freevial:
 		self.dades_joc.pantalla = pygame.display.set_mode( ( self.dades_joc.mida_pantalla_x, self.dades_joc.mida_pantalla_y), 0, 32)
 		pygame.display.set_caption('Freevial')
 		pygame.display.set_icon( pygame.image.load(os.path.join(self.dades_joc.folders['images'], 'logo.png')) )
-		pygame.display.toggle_fullscreen()
+
+		if( not DEBUG_MODE ): pygame.display.toggle_fullscreen()
 		
 		# inicialitzem el sistema de so
 		pygame.mixer.pre_init( 44100 )
@@ -72,6 +73,9 @@ class Freevial:
 				fespregunta.juguem( resultat ) 
 			else:
 				sys.exit()
+
+
+if( '-d' in sys.argv): DEBUG_MODE = True
 
 joc = Freevial()
 joc.juguem()
