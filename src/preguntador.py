@@ -214,9 +214,9 @@ class Preguntador:
 			for event in pygame.event.get():
 
 				if event.type == pygame.QUIT: sys.exit()
-				if keyPress(event, ('K_q', 'K_ESCAPE')): return -1
+				if keyPress(event, ('q', 'ESCAPE')): return -1
 
-				if keyPress(event, ('K_f', 'K_F11')): pygame.display.toggle_fullscreen()
+				if keyPress(event, ('f', 'F11')): pygame.display.toggle_fullscreen()
 
 				if self.mostrasolucions == 0:
 					if keyPress(event, 'a'):	
@@ -268,7 +268,7 @@ class Preguntador:
 				if keyPress(event, ('6', 'KP6')):	self.atzar( 6 )
 				if keyPress(event, ('0', 'KP0')):	self.atzar( 0 )
 
-				if (event.type == pygame.MOUSEBUTTONDOWN  or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER'))):
+				if event.type == pygame.MOUSEBUTTONDOWN  or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 					acaba = 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
