@@ -14,6 +14,7 @@ import pygame, pygame.surfarray
 from Numeric import *
 from pygame.locals import *
 
+from score import Score
 from freevialglob import *
 from preguntador import Preguntador
 from roda import Roda
@@ -58,6 +59,10 @@ class Freevial:
 	
 		self.inici()		
 	
+		score = Score ( self.dades_joc )
+		score.juguem()
+		sys.exit()
+
 		while( 1 ):
 			roda = Roda( self.dades_joc )
 			resultat = roda.juguem()
