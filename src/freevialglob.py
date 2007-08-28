@@ -22,21 +22,19 @@ class Equip:
 	
 	def canviaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
-		if categoria == 6: self.figureta ^= 0x1
-		if categoria == 5: self.figureta ^= 0x2
-		if categoria == 1: self.figureta ^= 0x4
-		if categoria == 2: self.figureta ^= 0x8
-		if categoria == 4: self.figureta ^= 0x10
-		if categoria == 3: self.figureta ^= 0x20
-	
+		self.figureta ^= bitCategoria( categoria )
+
 	def activaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
-		if categoria == 6: self.figureta |= 0x1
-		if categoria == 5: self.figureta |= 0x2
-		if categoria == 1: self.figureta |= 0x4
-		if categoria == 2: self.figureta |= 0x8
-		if categoria == 4: self.figureta |= 0x10
-		if categoria == 3: self.figureta |= 0x20
+		self.figureta ^= bitCategoria( categoria )
+		
+def bitCategoria ( categoria ):
+		if categoria == 6: return 0x1
+		if categoria == 5: return 0x2
+		if categoria == 1: return 0x4
+		if categoria == 2: return 0x8
+		if categoria == 4: return 0x10
+		if categoria == 3: return 0x20
 
 
 class Freevial_globals:
