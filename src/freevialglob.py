@@ -26,7 +26,7 @@ class Equip:
 
 	def activaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
-		self.figureta ^= bitCategoria( categoria )
+		self.figureta &= bitCategoria( categoria )
 		
 def bitCategoria ( categoria ):
 		if categoria == 6: return 0x1
