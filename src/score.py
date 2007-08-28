@@ -1,0 +1,174 @@
+# -*- coding: utf-8 -*-
+ 
+##########################################
+#
+# Freevial
+# Realitzador de preguntes
+#
+# Carles 26/08/2007
+# RainCT 27/08/2007
+#
+
+import sys, os, random, re, math, time
+import pygame, pygame.surfarray
+from Numeric import *
+from pygame.locals import *
+
+from freevialglob import *
+from preguntes import textpreguntes
+
+
+##################################################
+#
+# Empaquetat en una classe del preguntador
+#
+
+
+class Score:
+
+	###########################################
+	#
+	def __init__( self, joc ):
+		
+		self.joc = joc
+		
+		self.mascara_de_fons = loadImage('fons_score.png')
+		self.fons = loadImage('score_fons.png')	
+
+		self.element_score = loadImage('element_score.png')	
+		self.seleccio_score = loadImage('seleccio_score.png')
+
+		self.figureta = range(0,64)
+		for compta in range(0, 64):
+			self.figureta[compta] = loadImage('points/freevial_tot' + str( compta ).zfill(2) + '.png')	
+
+	###########################################
+	#
+	# Assistent pel renderitzat fàcil del text
+	def render_text( self, cadena, color, mida, antialias = 0, nomfont = "" ):
+
+		if (nomfont == ""): nomfont = os.path.join(self.joc.folders['fonts'],'lb.ttf')
+
+		font1 = pygame.font.Font( nomfont, mida)
+		return font1.render( cadena, antialias, color )
+
+
+	###########################################
+	#
+	# Bucle principal del programa
+	#
+	def juguem( self ):
+
+		self.joc.pantalla.fill( (0,0,0,0) )
+
+		temps = time.time()
+		imatges_x_segon = 0
+		darrer_temps = pygame.time.get_ticks()
+
+		ypos = 0
+		element_seleccionat = 0
+
+		escriu = 0
+	
+		for compta in range(0,6):
+			self.joc.equips[compta].figureta = int(random.random() * 64)
+			self.joc.equips[compta].punts = int(random.random() * 30)
+
+
+		while 1:
+
+			# Calculem el nombre de FPS
+			if time.time() > temps + 1:
+				#print "FPS: " + str( imatges_x_segon )
+				temps = time.time()
+				imatges_x_segon = 0
+			else:
+				imatges_x_segon +=  1
+		
+			# No cal limitador de frames actualment ja que estem en 7 aprox
+			dif_fps = 1000 / self.joc.Limit_FPS 
+			dif_ticks = pygame.time.get_ticks() - darrer_temps
+			if( dif_ticks < dif_fps ):
+				pygame.time.wait(  dif_fps - dif_ticks )
+				darrer_temps = pygame.time.get_ticks()
+
+			# Iterador d'events
+			for event in pygame.event.get():
+
+				if( escriu ):
+					if event.type == pygame.KEYUP:
+						if( event.key in (K_RETURN, K_ESCAPE) ): 
+							escriu ^= 1
+						elif ( event.key == K_BACKSPACE ):
+							llarg = len(self.joc.equips[element_seleccionat].nom)
+							if( llarg > 0):
+								self.joc.equips[element_seleccionat].nom = self.joc.equips[element_seleccionat].nom[:llarg-1]
+						else:
+							tecla = escriutecla(pygame.key.name( event.key ))
+							if( pygame.key.get_mods() == 1): tecla = tecla.upper()
+							self.joc.equips[element_seleccionat].nom += tecla
+							print self.joc.equips[element_seleccionat].nom
+
+				else:
+					if event.type == pygame.QUIT: sys.exit()
+					if keyPress(event, ('q', 'ESCAPE')): return -1
+
+					if keyPress(event, ('RIGHT', 'LEFT')): 
+						element_seleccionat += +1 if (0 == (element_seleccionat % 2)) else -1  
+				
+					if keyPress(event, ('DOWN')): 
+						element_seleccionat = (element_seleccionat + 2) % 6
+
+					if keyPress(event, ('UP')): 
+						element_seleccionat = (element_seleccionat - 2) % 6
+
+					if keyPress(event, ('a')): 
+						self.joc.equips[element_seleccionat].actiu ^= 1
+						if( self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].nom == ""): escriu ^= 1
+
+					if keyPress(event, ('n')) and self.joc.equips[element_seleccionat].actiu: escriu ^= 1
+		
+			# Animem el fons
+			ypos += 1
+			if ypos >= self.joc.mida_pantalla_y: ypos %= self.joc.mida_pantalla_y
+
+			# Pintem el fons animat
+
+			self.joc.pantalla.blit( self.fons, (0, ypos - 765 ) )
+			self.joc.pantalla.blit( self.fons, (0, ypos) )
+
+			self.joc.pantalla.blit( self.mascara_de_fons, (0, 0) )
+
+
+			# pintem les puntuacions
+
+			for compta in range(0,6):
+				ycaixa = (int(compta / 2) * 200) + 135
+				xcaixa = 75 if ((compta % 2) == 0) else 515
+
+				if (element_seleccionat == compta):
+					self.joc.pantalla.blit( self.seleccio_score, (xcaixa - 58, ycaixa - 36) )
+				
+				if( self.joc.equips[compta].actiu ):
+	
+					self.joc.pantalla.blit( self.element_score, (xcaixa, ycaixa ) )
+					self.joc.pantalla.blit( self.figureta[self.joc.equips[compta].figureta], (xcaixa + 15, ycaixa  ) )
+
+					text_nom = self.joc.equips[compta].nom
+					if( escriu and compta == element_seleccionat):
+						print (int(time.time() * 4) % 2)
+						if( (int(time.time() * 4) % 2) == 0): text_nom += "_"  
+					pinta = self.render_text( text_nom, (0,0,0), 30, 1)
+					self.joc.pantalla.blit( pinta, (xcaixa + 25 , ycaixa + 125 ) )
+
+					color = (128,0,0) if (maxpunts( self.joc.equips) > self.joc.equips[compta].punts ) else (0,128,0)
+					pinta = self.render_text( str(self.joc.equips[compta].punts).zfill(2), color, 150, 1)
+					self.joc.pantalla.blit( pinta, (xcaixa + 200, ycaixa - 15) )
+
+
+			#intercanviem els buffers de self.joc.pantalla
+			pygame.display.flip()
+
+		return 0
+
+
