@@ -22,6 +22,25 @@ class Equip:
 
 	actiu = False
 
+	def canviaCategoria( self, categoria ):
+		# Les tenim desendreçades i això ho complica una mica
+		if( categoria == 6 ): self.figureta ^= 0x1
+		if( categoria == 5 ): self.figureta ^= 0x2
+		if( categoria == 1 ): self.figureta ^= 0x4
+		if( categoria == 2 ): self.figureta ^= 0x8
+		if( categoria == 4 ): self.figureta ^= 0x10
+		if( categoria == 3 ): self.figureta ^= 0x20
+
+	def activaCategoria( self, categoria ):
+		# Les tenim desendreçades i això ho complica una mica
+		if( categoria == 6 ): self.figureta |= 0x1
+		if( categoria == 5 ): self.figureta |= 0x2
+		if( categoria == 1 ): self.figureta |= 0x4
+		if( categoria == 2 ): self.figureta |= 0x8
+		if( categoria == 4 ): self.figureta |= 0x10
+		if( categoria == 3 ): self.figureta |= 0x20
+
+
 class Freevial_globals:
 	""" Contains all variables that are commonly used by all components of Freevial. """
 	
@@ -85,7 +104,7 @@ def keyPress( event, keys ):
 	
 	return True if found == 1 else False
 
-def maxpunts( equips ):
+def maxPunts( equips ):
 
 	puntsmax = 0
 
@@ -95,14 +114,49 @@ def maxpunts( equips ):
 	
 	return puntsmax
 
+def equipsActius( equips ):
+
+	actius = 0
+
+	for compta in range(0,6):
+		if( equips[compta].actiu ): actius += 1
+	
+	return actius
+
+def seguentEquipActiu( equips, actual ):
+
+	actual += 1
+
+	for compta in range(0,6):
+		if( equips[(actual + compta) % 6].actiu ): 
+			return (actual + compta) % 6
+	
+	return -1
+
+def anteriorEquipActiu( equips, actual ):
+
+	actual -= 1
+
+	for compta in range(0,6):
+		if( equips[(actual - compta ) % 6].actiu ): 
+			return (actual - compta ) % 6
+	
+	return -1
+
+anterior = ""
+
 def escriutecla(  tecla ):
-	torna = tecla
+
+	print tecla
+	anterior = tecla
+	torna = pygame.key.name( tecla )
 
 	if( torna == 'space'): torna = ' '
 	if( torna == 'world 71'): torna = 'ç'
-	if( torna == 'left shift'): torna = ''
-	if( torna == 'right shift'): torna = ''
+	if( torna in( 'compose', 'left shift', 'right shift', 'left ctrl', 'right ctrl', 'alt gr', 'right alt', 'left alt')): torna = ''
 
+	print pygame.key.get_mods()
+	if( pygame.key.get_mods() & 0x1 ): torna = torna.upper()
 
 	return torna
 
