@@ -219,15 +219,18 @@ class Preguntador:
 				if keyPress(event, ('f', 'F11')): pygame.display.toggle_fullscreen()
 
 				if self.mostrasolucions == 0:
-					if keyPress(event, 'a'):	
+					if keyPress(event, 'a'):
+						acaba = 1	
 						self.seleccio = 1
 						self.so_sub.play()
 
 					if keyPress(event, 'b'):	
+						acaba = 1
 						self.seleccio = 2
 						self.so_sub.play()
 
 					if keyPress(event, 'c'):	
+						acaba = 1
 						self.seleccio = 3
 						self.so_sub.play()
 

@@ -153,7 +153,7 @@ class Score:
 							self.so_sub.play() 
 
 					if keyPress(event, ('r')): 
-						atzar = 6 + int(random.random() * 12 )
+						atzar = 30 + int(random.random() * 30 )
  
 					if  (event.type == pygame.MOUSEBUTTONDOWN  or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER'))) and self.joc.equips[element_seleccionat].actiu: 
 						return element_seleccionat  
