@@ -350,7 +350,7 @@ union {
          <0, 0.5, 0>, <0, -0.5, 0>, 1
          
          pigment {
-            color rgbft <0, 0, 1, punt_intens, punt_blau>
+            color rgbft <0, 1, 1, punt_intens, punt_blau>
          }
          
          finish {
