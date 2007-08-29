@@ -43,26 +43,7 @@ class Score:
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
 
-
-		# INICI DE MARRANADA
-		
-		help_string = ['Benvinguts al mon de les mones', '------------------------------------', '', 'Les mones no canten', 'A - Per que cantin les mones', '', '', '', '', '(c) Microsoft Corporation 1982']
-		self.help_overlay = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
-		
-		self.help_overlay.fill( (0,0,32,200), ( 100, 100, 1024 - 100 * 2, 768 - 150) )
-
-		nlinia = 0
-
-		for cadena in help_string:
-			text_pregunta = render_text( cadena, (0,0,0), 30, 1 )
-			self.help_overlay.blit( text_pregunta, (150 + 2, 35 * nlinia + 152))
-
-			text_pregunta = render_text( cadena, (255,255,0), 30, 1 )
-			self.help_overlay.blit( text_pregunta, (150, 35 * nlinia + 150))
-
-			nlinia += 1
-
-		# FI DE MARRANADA
+		self.help_overlay = createHelpScreen(  ['Benvinguts al mon de les mones', '------------------------------------', '', 'Les mones no canten', 'A - Per que cantin les mones', '', '', '', '', '(c) Microsoft Corporation 1982'] )
 
 	###########################################
 	#
@@ -105,6 +86,8 @@ class Score:
 
 			# Iterador d'events
 			for event in pygame.event.get():
+
+				if keyPress(event, ('F1')): mostra_ajuda ^= 1
 
 				if escriu:
 					if event.type == pygame.KEYUP:

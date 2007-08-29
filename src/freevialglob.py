@@ -223,3 +223,26 @@ def printKey( tecla ):
 		keyname = keyname.upper()
 
 	return keyname
+
+def createHelpScreen( help_string ):
+	""" Creates a help overlay surface based on a help string list. """
+
+	help_overlay = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
+	
+	for compta in range( 0, 10):
+		#self.help_overlay.fill( (0,0,16,200), ( 100, 100, 1024 - 100 * 2, 768 - 150) )
+		help_overlay.fill( (0,0,16,compta * 25), ( 100 + (compta*2), 100+ (compta*2), 1024 - 100 * 2 - (compta * 4), 768 - 150 - (compta *4)) )
+
+	nlinia = 0
+
+	for cadena in help_string:
+		text_pregunta = render_text( cadena, (0,0,0), 30, 1 )
+		help_overlay.blit( text_pregunta, (150 + 2, 35 * nlinia + 152))
+
+		text_pregunta = render_text( cadena, (255,255,0), 30, 1 )
+		help_overlay.blit( text_pregunta, (150, 35 * nlinia + 150))
+
+		nlinia += 1
+
+	return help_overlay
+
