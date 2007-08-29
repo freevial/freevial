@@ -29,7 +29,7 @@ class Roda:
 		self.paper = loadImage('ruleta_paper.png')
 		
 		self.so_dot = loadSound('dot.ogg')
-		self.so_cher = loadSound('cheer.ogg')
+		self.so_evil = loadSound('evil.ogg')
 		
 		self.so_cat = range(0, 6)
 		for num in range(0, 6):
@@ -39,7 +39,7 @@ class Roda:
 	
 	def juguem( self ):
 		
-		self.so_cher.stop()
+		self.so_evil.stop()
 		self.so_dot.play(100)
 
 		velocitat = 100
@@ -113,7 +113,8 @@ zfill(2) + '.png')
 					resultat = 1 + int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
 					self.so_dot.stop()
 					self.so_cat[ resultat - 1].play()
-					self.so_cher.play()
+					if not  self.joc.equips[self.joc.equip_actual].teCategoria( resultat ):
+						self.so_evil.play()
 					rodant = 0
 				
 			if rodant == 1:

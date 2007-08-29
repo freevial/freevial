@@ -71,7 +71,7 @@ class Freevial:
 			
 			if self.dades_joc.equip_actual != -1:
 
-				self.rondes += 1
+				self.dades_joc.rondes += 1
 
 				roda = Roda( self.dades_joc )
 				resultat = roda.juguem()

@@ -28,6 +28,8 @@ class Equip:
 		# Les tenim desendreçades i això ho complica una mica
 		self.figureta |= bitCategoria( categoria )
 
+	def teCategoria( self, categoria ) :
+		return (self.figureta & bitCategoria( categoria )) != 0
 
 def bitCategoria ( categoria ):
 	if categoria == 6: return 0x1

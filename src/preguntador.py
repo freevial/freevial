@@ -65,7 +65,7 @@ class Preguntador:
 		self.so_ticking2 = loadSound('ticking2.ogg')
 		self.so_drum2 = loadSound('drum2.ogg')
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
-		self.so_ok = loadSound('evil.ogg')
+		self.so_ok = loadSound('cheer.ogg')
 		self.so_nook = loadSound('crboo.ogg')
 		
 		# mostra nombre de pregunta i autor?
@@ -173,11 +173,14 @@ class Preguntador:
 
 		mostra_punt_de_categoria = False
 
+		match_point = False
+
 		if ( (self.joc.equips[self.joc.equip_actual].figureta & bitCategoria ( selcat )) == 0 ):
 			mostra_punt_de_categoria = True
 			figureta_no = loadImage('points/freevial_tot' + str( self.joc.equips[self.joc.equip_actual].figureta).zfill(2) + '.png')
 			figureta_si = loadImage('points/freevial_tot' + str( self.joc.equips[self.joc.equip_actual].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
 
+			match_point = True if (self.joc.equips[self.joc.equip_actual].figureta | bitCategoria ( selcat ) == 63) else False
 
 		while 1:
 
@@ -202,7 +205,10 @@ class Preguntador:
 
 				if event.type == pygame.QUIT or keyPress(event, ('q', 'ESCAPE')):
 					pygame.mixer.fadeout(500)
-					return -1
+					if( self.mostrasolucions == 0):
+						self.mostrasolucions = 1
+						self.seleccio = 0
+					acaba = 1
 
 				if keyPress(event, ('f', 'F11')): pygame.display.toggle_fullscreen()
 
@@ -344,7 +350,14 @@ class Preguntador:
 							self.joc.pantalla.blit( self.solucio_nook, (posn, linia_act + (150 * num)) )
 
 			if( mostra_punt_de_categoria ):
-				self.joc.pantalla.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (880, 130) )
+			
+				if( match_point ):
+					t = time.time()
+					for compta in range( 0, 16) :
+						self.joc.pantalla.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (500+ cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
+				else :
+					self.joc.pantalla.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (880, 130) )
+	
 
 			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
 
@@ -352,3 +365,5 @@ class Preguntador:
 			pygame.display.flip()
 
 		return 0
+
+

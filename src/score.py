@@ -60,8 +60,7 @@ class Score:
 
 		mou_fons = 0
 
-		nou_grup = 1
-
+		nou_grup = 1 if( equipsActius( self.joc.equips ) == 0) else 0
 
 		if( not self.joc.rondes ):
 			loadSound('ma1.ogg', volume = 0.5, music = 1)
@@ -162,10 +161,10 @@ class Score:
 						else:
 							nou_grup = 1
 					
-					if nou_grup == 1:
-						nou_grup = 0
-						self.joc.equips[element_seleccionat].actiu ^= 1
-						if self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].nom == "": escriu ^= 1
+			if nou_grup == 1:
+				nou_grup = 0
+				self.joc.equips[element_seleccionat].actiu ^= 1
+				if self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].nom == "": escriu ^= 1
 
 			if atzar != 0 and equipsActius( self.joc.equips ) >= 2:
 				element_seleccionat = seguentEquipActiu( self.joc.equips, element_seleccionat )
