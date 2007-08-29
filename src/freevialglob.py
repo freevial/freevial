@@ -27,14 +27,15 @@ class Equip:
 	def activaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
 		self.figureta |= bitCategoria( categoria )
-		
+
+
 def bitCategoria ( categoria ):
-		if categoria == 6: return 0x1
-		if categoria == 5: return 0x2
-		if categoria == 1: return 0x4
-		if categoria == 2: return 0x8
-		if categoria == 4: return 0x10
-		if categoria == 3: return 0x20
+	if categoria == 6: return 0x1
+	if categoria == 5: return 0x2
+	if categoria == 1: return 0x4
+	if categoria == 2: return 0x8
+	if categoria == 4: return 0x10
+	if categoria == 3: return 0x20
 
 
 class Freevial_globals:
@@ -57,8 +58,9 @@ class Freevial_globals:
 						'fonts': os.path.join(basefolder, 'fonts'),
 					}
 	
-	# TODO: Reemplaçar la següent línia per un mètode millor
-	equips = ( Equip(), Equip(), Equip(), Equip(), Equip(), Equip() )
+	equips = []
+	for num in range(0, 6): equips.append( Equip() )
+	equips = tuple(equips)
 	
 	equip_actual = 0
 
@@ -76,13 +78,11 @@ def loadSound( filename, volume = '' , music = 0 ):
 	if not music:
 		obj = pygame.mixer.Sound( filename )
 	else:
-		obj = pygame.mixer.music.load( filename )
+		obj = pygame.mixer.music
+		obj.load( filename )
 	
 	if volume != '':
-		if not music:
-			obj.set_volume( float(volume) )
-		else:
-			pygame.mixer.music.set_volume( float(volume) )
+		obj.set_volume( float(volume) )
 	
 	return obj
 
@@ -94,7 +94,6 @@ def keyPress( event, keys ):
 	
 	if type(keys) is str or type(keys) is int:
 		keys = ( keys, )
-	
 	
 	# Check if any of the indicated keys matches
 	found = 0

@@ -51,6 +51,7 @@ class Freevial:
 		pygame.mixer.pre_init(44100, -16, True, 2048)
 		pygame.mixer.init()
 		pygame.font.init()
+
 	
 	###########################################
 	#
@@ -61,6 +62,10 @@ class Freevial:
 		self.inici()
 
 		while 1:
+			
+			for event in pygame.event.get():
+				if event.type == pygame.QUIT: sys.exit()
+			
 			score = Score( self.dades_joc )
 			self.dades_joc.equip_actual = score.juguem()
 			
