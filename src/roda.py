@@ -36,6 +36,8 @@ class Roda:
 			self.so_cat[num] = loadSound( 'c' + str(num + 1) + '.ogg' )
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.3)
+		
+		self.help_overlay = createHelpScreen( 'roda' )
 	
 	def juguem( self, joc = '' ):
 		
@@ -47,7 +49,7 @@ class Roda:
 		velocitat = 100
 		deceleracio = 0
 		
-		pos = pos_fons = atura = frenant = time_fi = 0
+		pos = pos_fons = atura = frenant = time_fi = mostra_ajuda = 0
 		rodant = 1
 		resultat = -1
 		
@@ -65,8 +67,14 @@ class Roda:
 					sys.exit()
 				
 				if keyPress(event, ('ESCAPE', 'q')):
-					pygame.mixer.fadeout(500)
-					return 0
+					if not mostra_ajuda:
+						pygame.mixer.fadeout(500)
+						return 0
+					else:
+						mostra_ajuda = 0
+				
+				if keyPress(event, ('F1')) or keyPress(event, ('h')):
+					mostra_ajuda ^= 1
 				
 				if ( mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')) ) and rodant == 1:
 	
@@ -137,11 +145,12 @@ class Roda:
 			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
 			self.joc.pantalla.blit( figureta, (70, 630) )
 
+			if mostra_ajuda:
+				self.joc.pantalla.blit( self.help_overlay, (0,0))
 
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
 
-			
 			#limitem els FPS
 			pygame.time.Clock().tick( self.joc.Limit_FPS )
 
