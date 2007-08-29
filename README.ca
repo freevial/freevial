@@ -1,28 +1,8 @@
 Instruccions de la pantalla d'equips
 -------
 
-Fletxes - Canvien la selecció
-q o Esc - Acaba
-a - Activa/desactiva un equip
-n - Edita el nom de l'equip
-
-Instruccions del preguntador
--------
-
-1..6 - Pregunta de la categoria seleccionada
-0 - Pregunta d'una categoria a l'atzar
-
-Fletxa dreta - Pregunta següent
-Fletxa esquerra - Pregunta anterior
-
-a, b, c - Tria la resposta
-Fletxa amunt - Tria la resposta anterior
-Fletxa avall o tabulador - Tria la resposta següent
-
-intro	o espai - Selecciona la resposta
-
-q o Esc - Acaba
-f o F11 - Pantalla sencera
+Prem la tecla "F1" dins d'un joc per veure les instruccions de
+l'apartat actual.
 
 
 Històric

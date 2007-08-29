@@ -1,0 +1,15 @@
+INSTRUCCIONS DELS EQUIPS
+
+FLETXES - Canvien la selecció
+PÀG SEG / ANT - Equip actiu següent o anterior
+R - Tria un equip a l'atzar
+
+A - Activa / desactiva un equip
+N - Edita el nom de l'equip
+
+INTRO - Sobre un equip, inicia el torn
+
+Z, X - Puja o resta punts
+1..6 - Activa o desactiva una categoria
+
+F1 - Ajuda | F2 - Crèdits | Q o ESC - Acaba

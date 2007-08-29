@@ -45,29 +45,24 @@ class Roda:
 		velocitat = 100
 		deceleracio = 0
 		
-		pos = 0
-		pos_fons = 0
+		pos = pos_fons = atura = frenant = time_fi = 0
 		rodant = 1
-		
-		self.joc.pantalla.blit( self.fons, (0,0) )		
-
 		resultat = -1
+		
+		self.joc.pantalla.blit( self.fons, (0,0) )
 
-		atura = 0
-
-		nom_equip_sfc = render_text( self.joc.equips[self.joc.equip_actual].nom, (255,255,255), 30, 1 )	
+		nom_equip_sfc = render_text( self.joc.equips[self.joc.equip_actual].nom, (255,255,255), 30, 1 )
 		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
-
 		
-		figureta =  loadImage('points/freevial_tot' + str(self.joc.equips[self.joc.equip_actual].figureta).
-zfill(2) + '.png')	
-		
-		time_fi = 0
+		figureta =  loadImage('points/freevial_tot' + str(self.joc.equips[self.joc.equip_actual].figureta).zfill(2) + '.png')
 
 		while 1:
 		
 			for event in pygame.event.get():
-				if event.type == pygame.QUIT or keyPress(event, ('ESCAPE', 'q')):
+				if event.type == pygame.QUIT:
+					sys.exit()
+				
+				if keyPress(event, ('ESCAPE', 'q')):
 					pygame.mixer.fadeout(500)
 					return 0
 				
@@ -80,15 +75,17 @@ zfill(2) + '.png')
 					
 				if keyPress(event, ('f', 'F11')): pygame.display.toggle_fullscreen()
 			
-			if ( atura == 1):
+			if atura == 1:
+				atura = 0
 				pas = 3
 				deceleracio = 20
-				rodant = 1
-				atura = 0
-				self.so_sub.play()
 				time_fi = time.time()
+				
+				if not frenant:
+					frenant = 1
+					self.so_sub.play()
 
-			if( time_fi != 0 and time.time() - time_fi > 5):
+			if time_fi != 0 and time.time() - time_fi > 5:
 				return resultat
 
 			# decelerem
@@ -122,7 +119,7 @@ zfill(2) + '.png')
 				if pos_fons >= 768:	pos_fons -= 768
 				
 				pos -= velocitat
-				if( pos <= -1200): pos += 1200
+				if pos <= -1200: pos += 1200
 				
 			#pintem el paper freevial
 			self.joc.pantalla.blit( self.fons, ( 0, pos_fons ) )

@@ -9,15 +9,11 @@
 # RainCT 28/08/2007
 #
 
-import sys, os.path, random, time
-import math
-import pygame, pygame.surfarray
+import sys, os.path, random, time, math, pygame
 from Numeric import *
 from pygame.locals import *
 
 from freevialglob import *
-
-from textos import ajuda_score
 
 
 ##################################################
@@ -45,7 +41,7 @@ class Score:
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
 
-		self.help_overlay = createHelpScreen( ajuda_score )
+		self.help_overlay = createHelpScreen( 'score' )
 
 	###########################################
 	#
@@ -88,10 +84,17 @@ class Score:
 
 			# Iterador d'events
 			for event in pygame.event.get():
-
-				if keyPress(event, ('F1')): mostra_ajuda ^= 1
-
+				if event.type == pygame.QUIT:
+					sys.exit()
+				
+				if keyPress(event, ('F1')) or ( not escriu and keyPress(event, ('h')) ):
+					mostra_ajuda ^= 1
+				
+				if keyPress(event, 'F11') or ( not escriu and keyPress(event, 'f') ):
+					pygame.display.toggle_fullscreen()
+				
 				if escriu:
+					
 					if event.type == pygame.KEYUP:
 						if event.key in (K_RETURN, K_ESCAPE, K_KP_ENTER):
 							escriu = 0
@@ -102,12 +105,15 @@ class Score:
 								self.joc.equips[element_seleccionat].nom = self.joc.equips[element_seleccionat].nom[:-1]
 						else:
 							self.joc.equips[element_seleccionat].nom += printKey( event.key )
-
-				else:
 				
+				else:
+					
 					if keyPress(event, ('q', 'ESCAPE')):
-						# TODO: Ask for confirmation before exit.
-						return -1
+						if not mostra_ajuda:
+							# TODO: Ask for confirmation before exit.
+							return -1
+						else:
+							mostra_ajuda = 0
 					
 					if keyPress(event, ('RIGHT', 'LEFT')): 
 						element_seleccionat += +1 if (0 == (element_seleccionat % 2)) else -1 
@@ -123,17 +129,12 @@ class Score:
 					
 					if keyPress(event, ('a')):
 						nou_grup = 1
-					
-					if keyPress(event, ('h')):
-						mostra_ajuda ^= 1
 
 					if keyPress(event, ('n')):
 						if self.joc.equips[element_seleccionat].actiu:
 							escriu ^= 1
 						else:
 							nou_grup = 1
-					
-					if keyPress(event, ('K_f', 'K_F11')): pygame.display.toggle_fullscreen()
 					
 					if keyPress(event, ('z')): 
 						if self.joc.equips[element_seleccionat].actiu: self.joc.equips[element_seleccionat].punts += 1
@@ -160,7 +161,7 @@ class Score:
 							self.so_sub.play() 
 					
 					if keyPress(event, ('r')): 
-						atzar = 30 + int(random.random() * 30 )
+						atzar = 30 + int( random.randint(0, 30) )
  					
 					if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 						if self.joc.equips[element_seleccionat].actiu: 
@@ -177,7 +178,9 @@ class Score:
 			if atzar != 0 and equipsActius( self.joc.equips ) >= 2:
 				element_seleccionat = seguentEquipActiu( self.joc.equips, element_seleccionat )
 				atzar -= 1 
-				self.so_sub.play() 
+				self.so_sub.play()
+			else:
+				atzar = 0
 		
 			# Animem el fons
 			ypos += 1
@@ -215,7 +218,7 @@ class Score:
 					pinta = render_text( str(self.joc.equips[num].punts).zfill(2), color, 150, 1)
 					self.joc.pantalla.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 
-			if(mostra_ajuda):
+			if mostra_ajuda:
 				self.joc.pantalla.blit( self.help_overlay, (0,0))
 
 			#intercanviem els buffers de self.joc.pantalla

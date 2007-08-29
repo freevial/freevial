@@ -165,8 +165,6 @@ class Preguntador:
 		# segons restants per fi de pregunta
 		self.segons = 61
 
-		#nom = self.joc.equips[self.joc.equip_actual].nom.encode( 'utf-8')
-		#nom_equip_sfc = render_text( self.joc.equips[self.joc.equip_actual].nom, (255,255,255), 50, 1 )
 		nom_equip_sfc = render_text( self.joc.equips[self.joc.equip_actual].nom, (64,64,64), 30, 1 )	
 		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
 		nom_equip_sfc.set_alpha( 64 )
@@ -175,7 +173,7 @@ class Preguntador:
 
 		match_point = False
 
-		if ( (self.joc.equips[self.joc.equip_actual].figureta & bitCategoria ( selcat )) == 0 ):
+		if (self.joc.equips[self.joc.equip_actual].figureta & bitCategoria( selcat )) == 0:
 			mostra_punt_de_categoria = True
 			figureta_no = loadImage('points/freevial_tot' + str( self.joc.equips[self.joc.equip_actual].figureta).zfill(2) + '.png')
 			figureta_si = loadImage('points/freevial_tot' + str( self.joc.equips[self.joc.equip_actual].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
@@ -202,10 +200,12 @@ class Preguntador:
 			
 			# Iterador d'events
 			for event in pygame.event.get():
-
+				if event.type == pygame.QUIT:
+					sys.exit()
+				
 				if keyPress(event, ('q', 'ESCAPE')):
 					pygame.mixer.fadeout(500)
-					if( self.mostrasolucions == 0):
+					if self.mostrasolucions == 0:
 						self.mostrasolucions = 1
 						self.seleccio = 0
 					acaba = 1

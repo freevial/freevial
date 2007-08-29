@@ -9,8 +9,7 @@
 # RainCT 27/08/2007
 #
 
-import sys, os.path
-import pygame, pygame.surfarray
+import sys, os.path, pygame
 from Numeric import *
 
 from freevialglob import *
@@ -65,6 +64,8 @@ class Freevial:
 			
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT: sys.exit()
+			
+				if keyPress(event, 'm'): print "Yeah!"
 			
 			score = Score( self.dades_joc )
 			self.dades_joc.equip_actual = score.juguem()

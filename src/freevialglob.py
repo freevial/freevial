@@ -57,6 +57,7 @@ class Freevial_globals:
 						'images': os.path.join(basefolder, 'images'),
 						'sounds': os.path.join(basefolder, 'sounds'),
 						'fonts': os.path.join(basefolder, 'fonts'),
+						'help': os.path.join(basefolder, 'help'),
 					}
 	
 	equips = []
@@ -150,9 +151,9 @@ def maxPunts( equips ):
 
 	puntsmax = 0
 
-	for compta in range(0,6):
-		if equips[compta].actiu:
-			puntsmax = max( puntsmax, equips[compta].punts )
+	for num in range(0,6):
+		if equips[num].actiu:
+			puntsmax = max( puntsmax, equips[num].punts )
 	
 	return puntsmax
 
@@ -160,8 +161,8 @@ def puntsTotals( equips ):
 
 	punts = 0
 
-	for compta in range(0,6):
-		punts += equips[compta].punts
+	for num in range(0,6):
+		punts += equips[num].punts
 	
 	return punts
 
@@ -169,8 +170,8 @@ def equipsActius( equips ):
 
 	actius = 0
 
-	for compta in range(0,6):
-		if equips[compta].actiu: actius += 1
+	for num in range(0,6):
+		if equips[num].actiu: actius += 1
 	
 	return actius
 
@@ -179,9 +180,9 @@ def seguentEquipActiu( equips, actual ):
 
 	actual += 1
 
-	for compta in range(0,6):
-		if equips[(actual + compta) % 6].actiu: 
-			return (actual + compta) % 6
+	for num in range(0,6):
+		if equips[(actual + num) % 6].actiu: 
+			return (actual + num) % 6
 	
 	return -1
 
@@ -190,9 +191,9 @@ def anteriorEquipActiu( equips, actual ):
 
 	actual -= 1
 
-	for compta in range(0,6):
-		if equips[(actual - compta ) % 6].actiu: 
-			return (actual - compta ) % 6
+	for num in range(0,6):
+		if equips[(actual - num ) % 6].actiu: 
+			return (actual - num ) % 6
 	
 	return -1
 
@@ -224,25 +225,27 @@ def printKey( tecla ):
 
 	return keyname
 
-def createHelpScreen( help_string ):
+def createHelpScreen( help_section ):
 	""" Creates a help overlay surface based on a help string list. """
-
+	
 	help_overlay = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
 	
-	for compta in range( 0, 10):
-		#self.help_overlay.fill( (0,0,16,200), ( 100, 100, 1024 - 100 * 2, 768 - 150) )
-		help_overlay.fill( (0,0,16,compta * 25), ( 100 + (compta*2), 100+ (compta*2), 1024 - 100 * 2 - (compta * 4), 768 - 150 - (compta *4)) )
-
-	nlinia = 0
-
-	for cadena in help_string:
-		text_pregunta = render_text( cadena, (0,0,0), 30, 1 )
-		help_overlay.blit( text_pregunta, (150 + 2, 35 * nlinia + 152))
-
-		text_pregunta = render_text( cadena, (255,255,0), 30, 1 )
-		help_overlay.blit( text_pregunta, (150, 35 * nlinia + 150))
-
-		nlinia += 1
-
+	for num in range( 0, 10):
+		help_overlay.fill( (0, 0, 16, num * 25), ( 100 + (num * 2), 100 + (num * 2), 1024 - 100 * 2 - (num * 4), 768 - 150 - (num * 4)) )
+	
+	nline = 0
+	for line in open( os.path.join(Freevial_globals.folders['help'], (help_section + '.txt')), 'r' ).xreadlines():
+		# skip comments
+		if line[:1] == '#': continue
+		
+		line = unicode(line, 'utf-8')
+		
+		text_pregunta = render_text( line, (0,0,0), 30, 1 )
+		help_overlay.blit( text_pregunta, (150 + 2, 35 * nline + 152))
+		
+		text_pregunta = render_text( line, (255,255,0), 30, 1 )
+		help_overlay.blit( text_pregunta, (150, 35 * nline + 150))
+		
+		nline += 1
+	
 	return help_overlay
-
