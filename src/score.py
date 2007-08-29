@@ -43,6 +43,27 @@ class Score:
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
 
+
+		# INICI DE MARRANADA
+		
+		help_string = ['Benvinguts al mon de les mones', '------------------------------------', '', 'Les mones no canten', 'A - Per que cantin les mones', '', '', '', '', '(c) Microsoft Corporation 1982']
+		self.help_overlay = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
+		
+		self.help_overlay.fill( (0,0,32,200), ( 100, 100, 1024 - 100 * 2, 768 - 150) )
+
+		nlinia = 0
+
+		for cadena in help_string:
+			text_pregunta = render_text( cadena, (0,0,0), 30, 1 )
+			self.help_overlay.blit( text_pregunta, (150 + 2, 35 * nlinia + 152))
+
+			text_pregunta = render_text( cadena, (255,255,0), 30, 1 )
+			self.help_overlay.blit( text_pregunta, (150, 35 * nlinia + 150))
+
+			nlinia += 1
+
+		# FI DE MARRANADA
+
 	###########################################
 	#
 	# Bucle principal del programa
@@ -61,6 +82,8 @@ class Score:
 		mou_fons = 0
 
 		nou_grup = 1 if( equipsActius( self.joc.equips ) == 0) else 0
+
+		mostra_ajuda = False
 
 		if not self.joc.rondes:
 			loadSound('ma1.ogg', volume = 0.6, music = 1)
@@ -119,6 +142,9 @@ class Score:
 					if keyPress(event, ('a')):
 						nou_grup = 1
 					
+					if keyPress(event, ('h')):
+						mostra_ajuda ^= 1
+
 					if keyPress(event, ('n')):
 						if self.joc.equips[element_seleccionat].actiu:
 							escriu ^= 1
@@ -207,6 +233,8 @@ class Score:
 					pinta = render_text( str(self.joc.equips[num].punts).zfill(2), color, 150, 1)
 					self.joc.pantalla.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 
+			if(mostra_ajuda):
+				self.joc.pantalla.blit( self.help_overlay, (0,0))
 
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
