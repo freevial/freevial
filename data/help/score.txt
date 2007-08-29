@@ -1,10 +1,10 @@
 INSTRUCCIONS DELS EQUIPS
 
-FLETXES - Canvien la selecció
+FLETXES - Canvia la selecció
 PÀG SEG / ANT - Equip actiu següent o anterior
 R - Tria un equip a l'atzar
 
-A - Activa / desactiva un equip
+A - Activa / desactiva l'equip seŀlecionat
 N - Edita el nom de l'equip
 
 INTRO - Sobre un equip, inicia el torn

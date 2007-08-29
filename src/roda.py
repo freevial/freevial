@@ -37,8 +37,10 @@ class Roda:
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.3)
 	
-	def juguem( self ):
+	def juguem( self, joc = '' ):
 		
+		if joc != '': self.joc = joc
+				
 		self.so_evil.stop()
 		self.so_dot.play(100)
 

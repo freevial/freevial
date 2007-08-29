@@ -47,19 +47,18 @@ class Score:
 	#
 	# Bucle principal del programa
 	#
-	def juguem( self ):
+	def juguem( self, joc = '' ):
+
+		if joc != '': self.joc = joc
 
 		self.joc.pantalla.fill( (0,0,0,0) )
 
 		temps = time.time()
-		imatges_x_segon = 0
 		darrer_temps = pygame.time.get_ticks()
 
-		imatges_x_segon = ypos = escriu = atzar = mou_fons = 0
+		imatges_x_segon = ypos = escriu = atzar = mou_fons = mostra_ajuda = 0
 		element_seleccionat = self.joc.equip_actual
 		nou_grup = 1 if ( equipsActius( self.joc.equips ) == 0 ) else 0
-
-		mostra_ajuda = False
 
 		if not self.joc.rondes:
 			loadSound('ma1.ogg', volume = 0.6, music = 1)
@@ -78,7 +77,7 @@ class Score:
 			# No cal limitador de frames actualment ja que estem en 7 aprox
 			dif_fps = 1000 / self.joc.Limit_FPS 
 			dif_ticks = pygame.time.get_ticks() - darrer_temps
-			if( dif_ticks < dif_fps ):
+			if dif_ticks < dif_fps:
 				pygame.time.wait(  dif_fps - dif_ticks )
 				darrer_temps = pygame.time.get_ticks()
 
@@ -221,7 +220,7 @@ class Score:
 			if mostra_ajuda:
 				self.joc.pantalla.blit( self.help_overlay, (0,0))
 
-			#intercanviem els buffers de self.joc.pantalla
+			# intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
 
 		return 0
