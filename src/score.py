@@ -62,6 +62,11 @@ class Score:
 
 		nou_grup = 1
 
+
+		if( not self.joc.rondes ):
+			loadSound('ma1.ogg', volume = 0.5, music = 1)
+			pygame.mixer.music.play(-1)
+
 		while 1:
 
 			# Calculem el nombre de FPS
@@ -151,6 +156,7 @@ class Score:
  					
 					if  event.type == pygame.MOUSEBUTTONDOWN or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 						if self.joc.equips[element_seleccionat].actiu: 
+							pygame.mixer.music.fadeout( 2000 )
 							return element_seleccionat
 						else:
 							nou_grup = 1

@@ -48,7 +48,7 @@ class Freevial:
 			pygame.display.toggle_fullscreen()
 		
 		# inicialize sound and text systems
-		pygame.mixer.pre_init( 44100 )
+		pygame.mixer.pre_init(44100, -16, True, 2048)
 		pygame.mixer.init()
 		pygame.font.init()
 	
@@ -65,6 +65,9 @@ class Freevial:
 			self.dades_joc.equip_actual = score.juguem()
 			
 			if self.dades_joc.equip_actual != -1:
+
+				self.rondes += 1
+
 				roda = Roda( self.dades_joc )
 				resultat = roda.juguem()
 				

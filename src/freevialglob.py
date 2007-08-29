@@ -47,6 +47,8 @@ class Freevial_globals:
 	pantalla = ""
 	
 	basefolder = '../data'
+
+	rondes = 0
 	
 	folders = {
 						'base': basefolder,
@@ -139,6 +141,14 @@ def maxPunts( equips ):
 	
 	return puntsmax
 
+def puntsTotals( equips ):
+
+	punts = 0
+
+	for compta in range(0,6):
+		punts += equips[compta].punts
+	
+	return punts
 
 def equipsActius( equips ):
 
@@ -194,4 +204,7 @@ def printKey( tecla ):
 	if not re.search("^[a-zA-Z0-9,.+'-/* ]$", keyname):
 		return ''
 	
+	if (pygame.key.get_mods() & 0x1) :
+		keyname = keyname.upper()
+
 	return keyname
