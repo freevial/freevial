@@ -112,6 +112,21 @@ def keyPress( event, keys ):
 	return True if found == 1 else False
 
 
+def mouseClick( event, request ):
+	
+	mouseButtons = {
+			'primary': 1,
+			'secondary': 2,
+			'middle': 3,
+		}
+	
+	if type(request) is not int:
+		request = mouseButtons[ request ]
+	
+	if event.type == pygame.MOUSEBUTTONDOWN and event.button == request:
+		return True
+
+
 def render_text( cadena, color, mida, antialias = 0, nomfont = '' ):
 	""" Function for easier text rendering. """
 	

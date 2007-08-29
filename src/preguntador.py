@@ -203,7 +203,7 @@ class Preguntador:
 			# Iterador d'events
 			for event in pygame.event.get():
 
-				if event.type == pygame.QUIT or keyPress(event, ('q', 'ESCAPE')):
+				if keyPress(event, ('q', 'ESCAPE')):
 					pygame.mixer.fadeout(500)
 					if( self.mostrasolucions == 0):
 						self.mostrasolucions = 1
@@ -250,7 +250,7 @@ class Preguntador:
 				if keyPress(event, ('5', 'KP5')):	self.atzar( 5 )
 				if keyPress(event, ('6', 'KP6')):	self.atzar( 6 )
 
-				if event.type == pygame.MOUSEBUTTONDOWN or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
+				if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 					acaba = 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
