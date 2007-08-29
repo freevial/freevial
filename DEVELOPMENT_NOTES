@@ -1,0 +1,53 @@
+
+#############################################
+##                                         ##
+##  NOTES DE DESENVOLUPAMENT DEL FREEVIAL  ##
+##                                         ##
+#############################################
+
+#############################################
+# TODO
+
+* Llicenciar el programa
+  Serà millor que començem a triar una llicència (GPL et sembla
+  bé?) i la possem a les capçeleres, el README i el text complet
+  al COPYING. Al README també s'haurien d'indicar totes aquelles
+  coses que has agafat d'altres autors i especificar-ne exactament
+  què és, de qui, i quina llicència té.  -- RainCT
+
+  Prioritat: Normal
+  Estat: Pendent
+  Desenvolupadors: Carles, RainCT
+
+
+* Tasca d'exemple
+  Explicació de la tasca...
+  
+  Prioritat: Baixa / Normal / Alta / Crítica
+  Estat: Pendent / En progrés / En proves / Retocs / Finalitzada
+  Desenvolupador: Carles / RainCT
+
+
+
+#############################################
+# LIMITACIONS CONEGUDES
+
+* [score.py] Text en majúscules
+  He provat de fer que es pugui escriure text també text
+  però, tot i que ha funcionat minimament, el resultat
+  NO és prou satisfactori com per a utilitzar-lo. L'única
+  possibilitat d'aconseguir-ho funcionant decentment és
+  canviar el mètode de processament d'input per un de
+  directe, cosa que no veig del tot viable (entre d'altres
+  perquè es poden perdre botons premuts) no tampoc crec que
+  calgui. Ho millor crec que és deixar-ho tal com està, o
+  bé escriure tot en majúscules, cosa que eliminaria el
+  problema.  -- RainCT
+
+
+
+#############################################
+# NOTES
+
+* print "Sí" if resultat else "No"
+
