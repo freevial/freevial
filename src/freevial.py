@@ -51,12 +51,6 @@ class Freevial:
 		pygame.mixer.pre_init( 44100 )
 		pygame.mixer.init()
 		pygame.font.init()
-		
-		# load the background sound
-		self.music = loadSound('ma1.ogg', volume = 0.5, music = 1)
-		
-		# ... and play it forever
-		pygame.mixer.music.play(-1)
 	
 	###########################################
 	#
