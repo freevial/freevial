@@ -14,25 +14,22 @@
 
 import sys, random, pygame
 
+pantalla = pygame.display.set_mode( ( 1024, 768), 0, 32)
+
 mida_pantalla_x = 1024
 mida_pantalla_y = 768
 
 ypos = 0
 nomove = 0	
 
-def getImage( i ):
-	# Adjustments for the manual image switching
-	if i == 0: i = 7
-	if i == 7: i = 1
-	
-	global currentImage; currentImage = i
-	return pygame.image.load('../data/images/categoria' + str(i) + '.png').convert()
+i = 1	
+image = pygame.image.load('../data/images/categoria' + str(i) + '.png').convert_alpha()
 
 def Scroll( surface, x, y, w, h, dx, dy ):
 	surface.blit( surface, (x + dx, y + dy), (x, y, w - dx , h - dy) )
 
 pantalla = pygame.display.set_mode((mida_pantalla_x, mida_pantalla_y))
-image = getImage( random.randint(1, 6) )
+
 
 pantalla.blit( image, (0,ypos) )
 

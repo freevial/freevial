@@ -61,7 +61,7 @@ class Freevial:
 	def juguem( self ):
 		
 		self.inici()
-		
+
 		while 1:
 			score = Score( self.dades_joc )
 			self.dades_joc.equip_actual = score.juguem()

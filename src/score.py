@@ -43,6 +43,8 @@ class Score:
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
 		
+		self.so_fons = loadSound('ma1.ogg', volume = 0.5)
+
 	###########################################
 	#
 	# Bucle principal del programa
@@ -59,6 +61,10 @@ class Score:
 		element_seleccionat = self.joc.equip_actual
 
 		mou_fons = 0
+
+		nou_grup = 1
+
+		#self.so_fons.play( 0 )
 
 		while 1:
 
@@ -91,8 +97,7 @@ class Score:
 							self.joc.equips[element_seleccionat].nom += escriuTecla( event.key )
 
 				else:
-					nou_grup = 0
-					
+				
 					if event.type == pygame.QUIT or keyPress(event, ('q', 'ESCAPE')):
 						return -1
 					
@@ -148,11 +153,13 @@ class Score:
  					
 					if  (event.type == pygame.MOUSEBUTTONDOWN or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER'))):
 						if self.joc.equips[element_seleccionat].actiu: 
+							self.so_fons.stop()
 							return element_seleccionat
 						else:
 							nou_grup = 1
 					
 					if nou_grup == 1:
+						nou_grup = 0
 						self.joc.equips[element_seleccionat].actiu ^= 1
 						if self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].nom == "": escriu ^= 1
 
@@ -168,7 +175,7 @@ class Score:
 			# Pintem el fons animat
 			mou_fons += 8
 			for compta in range(0, 768):
-				self.joc.pantalla.blit( self.fons, (cos((float(mou_fons +ypos+compta)) / 100.0) * 25, compta), (0, (ypos + compta) % 768, 1024, 1) )
+				self.joc.pantalla.blit( self.fons, (cos((float(mou_fons +compta)) / 100.0) * 20, compta), (0, (ypos + compta) % 768, 1024, 1) )
 			#self.joc.pantalla.blit( self.fons, (0, ypos - 765 ) )
 			#self.joc.pantalla.blit( self.fons, (0, ypos) )
 
