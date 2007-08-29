@@ -97,6 +97,7 @@ class Score:
 				else:
 				
 					if event.type == pygame.QUIT or keyPress(event, ('q', 'ESCAPE')):
+						# TODO: Ask for confirmation before exit.
 						return -1
 					
 					if keyPress(event, ('RIGHT', 'LEFT')): 

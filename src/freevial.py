@@ -53,10 +53,10 @@ class Freevial:
 		pygame.font.init()
 		
 		# load the background sound
-		self.music = loadSound('ma1.ogg', volume = 0.5, music = 1)
+		self.music = loadSound('ma1.ogg', volume = 0.6, music = 1)
 		
 		# ... and play it forever
-		pygame.mixer.music.play(-1)
+		self.music.play(-1)
 	
 	###########################################
 	#
@@ -67,6 +67,10 @@ class Freevial:
 		self.inici()
 
 		while 1:
+			
+			for event in pygame.event.get():
+				if event.type == pygame.QUIT: sys.exit()
+			
 			score = Score( self.dades_joc )
 			self.dades_joc.equip_actual = score.juguem()
 			

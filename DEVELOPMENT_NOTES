@@ -49,5 +49,11 @@
 #############################################
 # NOTES
 
-* print "Sí" if resultat else "No"
+* [Python] if shorthand: print "Sí" if cert else "No"
+
+* [Freevial] loadSound(): tingues en compte que només hi
+  pot haver una música a la vegada, així doncs, si assignes
+  el resultat de loadSound(X, Y, music = 1) a més d'una
+  variable, totes acabaran sent igual que l'última que
+  defineixis.
 
