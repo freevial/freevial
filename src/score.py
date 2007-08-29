@@ -42,8 +42,6 @@ class Score:
 			self.figureta[num] = loadImage('points/freevial_tot' + str( num ).zfill(2) + '.png')	
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
-		
-		self.so_fons = loadSound('ma1.ogg', volume = 0.5)
 
 	###########################################
 	#
@@ -63,8 +61,6 @@ class Score:
 		mou_fons = 0
 
 		nou_grup = 1
-
-		#self.so_fons.play( 0 )
 
 		while 1:
 
@@ -155,7 +151,6 @@ class Score:
  					
 					if  event.type == pygame.MOUSEBUTTONDOWN or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 						if self.joc.equips[element_seleccionat].actiu: 
-							self.so_fons.stop()
 							return element_seleccionat
 						else:
 							nou_grup = 1

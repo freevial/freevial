@@ -38,7 +38,7 @@ class Freevial:
 	#
 	def inici( self ):
 		
-		# inicialitzem la superficie de presentació
+		# inicialize presentation surface
 		self.dades_joc.pantalla = pygame.display.set_mode( ( self.dades_joc.mida_pantalla_x, self.dades_joc.mida_pantalla_y), 0, 32)
 		pygame.display.set_caption('Freevial')
 		pygame.display.set_icon( pygame.image.load(os.path.join(self.dades_joc.folders['images'], 'logo.png')) )
@@ -47,11 +47,16 @@ class Freevial:
 			pygame.mouse.set_visible( False )
 			pygame.display.toggle_fullscreen()
 		
-		# inicialitzem els sistemes de so i text
+		# inicialize sound and text systems
 		pygame.mixer.pre_init( 44100 )
 		pygame.mixer.init()
 		pygame.font.init()
-	
+		
+		# load the background sound
+		self.music = loadSound('ma1.ogg', volume = 0.5, music = 1)
+		
+		# ... and play it forever
+		pygame.mixer.music.play(-1)
 	
 	###########################################
 	#

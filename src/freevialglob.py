@@ -3,7 +3,7 @@
 ##########################################
 #
 # Freevial
-# Estructura de dades globals
+# Estructura de dades i funcions globals
 #
 # Carles 28/08/2007
 # RainCT 28/08/2007
@@ -66,13 +66,21 @@ def loadImage( filename ):
 	return pygame.image.load( os.path.join(Freevial_globals.folders['images'], str(filename) )).convert_alpha()
 
 
-def loadSound( filename, volume = '' ):
+def loadSound( filename, volume = '' , music = 0 ):
 	""" Returns a sound object of the indicated audio file, which is expected to be in the sounds folder. """
 	
-	obj = pygame.mixer.Sound( os.path.join(Freevial_globals.folders['sounds'], str(filename) ))
+	filename = os.path.join(Freevial_globals.folders['sounds'], str(filename))
+	
+	if not music:
+		obj = pygame.mixer.Sound( filename )
+	else:
+		obj = pygame.mixer.music.load( filename )
 	
 	if volume != '':
-		obj.set_volume( float(volume) )
+		if not music:
+			obj.set_volume( float(volume) )
+		else:
+			pygame.mixer.music.set_volume( float(volume) )
 	
 	return obj
 

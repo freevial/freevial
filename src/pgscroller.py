@@ -3,6 +3,8 @@
  
 ##########################################
 #
+# Freevial - Superseded Component
+#
 # Iterador de fons mentre el concursant 
 # pensa la pregunta
 # 
