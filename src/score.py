@@ -55,12 +55,9 @@ class Score:
 		imatges_x_segon = 0
 		darrer_temps = pygame.time.get_ticks()
 
-		ypos = escriu = atzar = 0
+		imatges_x_segon = ypos = escriu = atzar = mou_fons = 0
 		element_seleccionat = self.joc.equip_actual
-
-		mou_fons = 0
-
-		nou_grup = 1 if( equipsActius( self.joc.equips ) == 0) else 0
+		nou_grup = 1 if ( equipsActius( self.joc.equips ) == 0 ) else 0
 
 		if not self.joc.rondes:
 			loadSound('ma1.ogg', volume = 0.6, music = 1)
@@ -100,7 +97,7 @@ class Score:
 
 				else:
 				
-					if event.type == pygame.QUIT or keyPress(event, ('q', 'ESCAPE')):
+					if keyPress(event, ('q', 'ESCAPE')):
 						# TODO: Ask for confirmation before exit.
 						return -1
 					
@@ -154,7 +151,7 @@ class Score:
 					if keyPress(event, ('r')): 
 						atzar = 30 + int(random.random() * 30 )
  					
-					if  event.type == pygame.MOUSEBUTTONDOWN or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
+					if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 						if self.joc.equips[element_seleccionat].actiu: 
 							pygame.mixer.music.fadeout( 2000 )
 							return element_seleccionat

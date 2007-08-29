@@ -71,7 +71,7 @@ zfill(2) + '.png')
 					pygame.mixer.fadeout(500)
 					return 0
 				
-				if  (( event.type == pygame.MOUSEBUTTONDOWN or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')) ) and rodant == 1):
+				if ( mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')) ) and rodant == 1:
 	
 					if resultat == -1: 	
 						atura = 1
