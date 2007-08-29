@@ -48,7 +48,7 @@ class Freevial:
 			pygame.display.toggle_fullscreen()
 		
 		# inicialize sound and text systems
-		pygame.mixer.pre_init(44100, -16, True, 2048)
+		pygame.mixer.pre_init(44100, -16, 2, 2048)
 		pygame.mixer.init()
 		pygame.font.init()
 

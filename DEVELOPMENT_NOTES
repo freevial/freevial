@@ -32,17 +32,7 @@
 #############################################
 # LIMITACIONS CONEGUDES
 
-* [score.py] Text en majúscules
-  He provat de fer que es pugui escriure text també text
-  però, tot i que ha funcionat minimament, el resultat
-  NO és prou satisfactori com per a utilitzar-lo. L'única
-  possibilitat d'aconseguir-ho funcionant decentment és
-  canviar el mètode de processament d'input per un de
-  directe, cosa que no veig del tot viable (entre d'altres
-  perquè es poden perdre botons premuts) no tampoc crec que
-  calgui. Ho millor crec que és deixar-ho tal com està, o
-  bé escriure tot en majúscules, cosa que eliminaria el
-  problema.  -- RainCT
+* N/a.
 
 
 

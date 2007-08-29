@@ -47,11 +47,10 @@ class Freevial_globals:
 	mida_pantalla_y = 768
 	Limit_FPS = 40
 
-	pantalla = ""
+	pantalla = ''
+	rondes = 0
 	
 	basefolder = '../data'
-
-	rondes = 0
 	
 	folders = {
 						'base': basefolder,
@@ -205,7 +204,7 @@ def printKey( tecla ):
 	if not re.search("^[a-zA-Z0-9,.+'-/* ]$", keyname):
 		return ''
 	
-	if (pygame.key.get_mods() & 0x1) :
+	if pygame.key.get_mods() & pygame.KMOD_SHIFT:
 		keyname = keyname.upper()
 
 	return keyname

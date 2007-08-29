@@ -62,8 +62,8 @@ class Score:
 
 		nou_grup = 1 if( equipsActius( self.joc.equips ) == 0) else 0
 
-		if( not self.joc.rondes ):
-			loadSound('ma1.ogg', volume = 0.5, music = 1)
+		if not self.joc.rondes:
+			loadSound('ma1.ogg', volume = 0.6, music = 1)
 			pygame.mixer.music.play(-1)
 
 		while 1:
