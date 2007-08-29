@@ -17,6 +17,8 @@ from pygame.locals import *
 
 from freevialglob import *
 
+from textos import ajuda_score
+
 
 ##################################################
 #
@@ -43,7 +45,7 @@ class Score:
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
 
-		self.help_overlay = createHelpScreen(  ['Benvinguts al mon de les mones', '------------------------------------', '', 'Les mones no canten', 'A - Per que cantin les mones', '', '', '', '', '(c) Microsoft Corporation 1982'] )
+		self.help_overlay = createHelpScreen( ajuda_score )
 
 	###########################################
 	#
