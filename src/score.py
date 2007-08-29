@@ -38,8 +38,8 @@ class Score:
 		self.seleccio_score = loadImage('seleccio_score.png')
 
 		self.figureta = range(0,64)
-		for compta in range(0, 64):
-			self.figureta[compta] = loadImage('points/freevial_tot' + str( compta ).zfill(2) + '.png')	
+		for num in range(0, 64):
+			self.figureta[num] = loadImage('points/freevial_tot' + str( num ).zfill(2) + '.png')	
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
 		
@@ -88,13 +88,15 @@ class Score:
 
 				if escriu:
 					if event.type == pygame.KEYUP:
-						if event.key in (K_RETURN, K_ESCAPE, K_KP_ENTER): 
+						if event.key in (K_RETURN, K_ESCAPE, K_KP_ENTER):
 							escriu = 0
+							if self.joc.equips[element_seleccionat].nom == '' and event.key == K_ESCAPE:
+								self.joc.equips[element_seleccionat].actiu = 0
 						elif event.key == K_BACKSPACE:
 							if len(self.joc.equips[element_seleccionat].nom) > 0:
 								self.joc.equips[element_seleccionat].nom = self.joc.equips[element_seleccionat].nom[:-1]
 						else:
-							self.joc.equips[element_seleccionat].nom += escriuTecla( event.key )
+							self.joc.equips[element_seleccionat].nom += printKey( event.key )
 
 				else:
 				
@@ -151,7 +153,7 @@ class Score:
 					if keyPress(event, ('r')): 
 						atzar = 30 + int(random.random() * 30 )
  					
-					if  (event.type == pygame.MOUSEBUTTONDOWN or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER'))):
+					if  event.type == pygame.MOUSEBUTTONDOWN or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 						if self.joc.equips[element_seleccionat].actiu: 
 							self.so_fons.stop()
 							return element_seleccionat
@@ -174,34 +176,34 @@ class Score:
 
 			# Pintem el fons animat
 			mou_fons += 8
-			for compta in range(0, 768):
-				self.joc.pantalla.blit( self.fons, (cos((float(mou_fons +compta)) / 100.0) * 20, compta), (0, (ypos + compta) % 768, 1024, 1) )
+			for num in range(0, 768):
+				self.joc.pantalla.blit( self.fons, (cos((float(mou_fons +num)) / 100.0) * 20, num), (0, (ypos + num) % 768, 1024, 1) )
 			#self.joc.pantalla.blit( self.fons, (0, ypos - 765 ) )
 			#self.joc.pantalla.blit( self.fons, (0, ypos) )
 
 			self.joc.pantalla.blit( self.mascara_de_fons, (0, 0) )
 
 			# pintem les puntuacions
-			for compta in range(0, 6):
-				ycaixa = (int(compta / 2) * 200) + 135
-				xcaixa = 75 if ((compta % 2) == 0) else 515
+			for num in range(0, 6):
+				ycaixa = (int(num / 2) * 200) + 135
+				xcaixa = 75 if ((num % 2) == 0) else 515
 
-				if element_seleccionat == compta:
+				if element_seleccionat == num:
 					self.joc.pantalla.blit( self.seleccio_score, (xcaixa - 58, ycaixa - 36) )
 				
-				if self.joc.equips[compta].actiu:
+				if self.joc.equips[num].actiu:
 	
 					self.joc.pantalla.blit( self.element_score, (xcaixa, ycaixa ) )
-					self.joc.pantalla.blit( self.figureta[self.joc.equips[compta].figureta], (xcaixa + 15, ycaixa  ) )
+					self.joc.pantalla.blit( self.figureta[self.joc.equips[num].figureta], (xcaixa + 15, ycaixa  ) )
 
-					text_nom = self.joc.equips[compta].nom
-					if escriu and compta == element_seleccionat:
+					text_nom = self.joc.equips[num].nom
+					if escriu and num == element_seleccionat:
 						if (int(time.time() * 4) % 2) == 0: text_nom += "_"  
 					pinta = render_text( text_nom, (0,0,0), 30, 1)
 					self.joc.pantalla.blit( pinta, (xcaixa + 25 , ycaixa + 125 ) )
 
-					color = (128,0,0) if (maxPunts( self.joc.equips) > self.joc.equips[compta].punts ) else (0,128,0)
-					pinta = render_text( str(self.joc.equips[compta].punts).zfill(2), color, 150, 1)
+					color = (128,0,0) if (maxPunts( self.joc.equips) > self.joc.equips[num].punts ) else (0,128,0)
+					pinta = render_text( str(self.joc.equips[num].punts).zfill(2), color, 150, 1)
 					self.joc.pantalla.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 
 

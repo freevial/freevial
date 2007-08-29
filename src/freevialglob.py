@@ -9,7 +9,7 @@
 # RainCT 28/08/2007
 #
 
-import os.path, random, pygame
+import os.path, random, re, pygame
 from pygame.locals import *
 
 DEBUG_MODE = False
@@ -166,18 +166,24 @@ def anteriorEquipActiu( equips, actual ):
 anterior = ""
 
 
-def escriuTecla( tecla ):
+def printKey( tecla ):
+	""" Translates a pygame Key object for on-game printing of it's value. """
 	
-	anterior = tecla
-	torna = pygame.key.name( tecla )
+	keyname = pygame.key.name( tecla )
 	
-	if torna == 'space': torna = ' '
-	if torna == 'world 71': torna = 'ç'
-	if torna in ( 'left', 'right', 'up', 'down', 'enter', 'numlock', 'compose', 'left shift', 'right shift', 'left ctrl', 'right ctrl', 'alt gr', 'right alt', 'left alt'): torna = ''
+	if keyname == 'space': 
+		return ' '
 	
-	if len(torna) == 3 and torna[:1] == '[' and torna[2:] == ']':
-		torna = torna[1:2]
+	if keyname == 'world 71':
+		return u'ç'
 	
-	if pygame.key.get_mods() & 0x1: torna = torna.upper()
+	if keyname == 'tab':
+		return '    '
 	
-	return torna
+	if len(keyname) == 3 and keyname[:1] == '[' and keyname[2:] == ']':
+		keyname = keyname[1:2]
+	
+	if not re.search("^[a-zA-Z0-9,.+'-/* ]$", keyname):
+		return ''
+	
+	return keyname

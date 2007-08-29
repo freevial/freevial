@@ -12,7 +12,6 @@
 import sys, os.path
 import pygame, pygame.surfarray
 from Numeric import *
-from pygame.locals import *
 
 from freevialglob import *
 from score import Score
