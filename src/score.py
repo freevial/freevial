@@ -70,7 +70,7 @@ class Score:
 		temps = time.time()
 		darrer_temps = pygame.time.get_ticks()
 
-		imatges_x_segon = ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = 0
+		imatges_x_segon = ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = mostra_estad = 0
 		element_seleccionat = self.joc.equip_actual
 		nou_grup = 1 if ( equipsActius( self.joc.equips ) == 0 ) else 0
 
@@ -188,6 +188,9 @@ class Score:
 							return element_seleccionat
 						else:
 							nou_grup = 1
+
+					if keyPress(event, ('s')): 
+						mostra_estad ^= 1
 					
 			if nou_grup == 1:
 				nou_grup = 0
@@ -237,10 +240,10 @@ class Score:
 					pinta = render_text( str(self.joc.equips[num].punts).zfill(2), color, 150, 1)
 					self.joc.pantalla.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 			
-					colors_barres = ( (0,0,128), (64,64,32), (0,128,0),(128,0,0),(128,0,128), (128,128,0) )
-					for num2 in range(0,6):
-						self.joc.pantalla.blit( self.barra_pos( self.joc.equips[num].preguntes_tot[num2], self.joc.equips[num].preguntes_ok[num2], colors_barres[num2], 50, 14 ), (xcaixa + 140, ycaixa + 21 + num2 * 16) )
-					
+					if( mostra_estad ):
+						colors_barres = ( (0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,255,0) )
+						for cat in range(0,6):
+							self.joc.pantalla.blit( self.barra_pos( self.joc.equips[num].preguntes_tot[cat], self.joc.equips[num].preguntes_ok[cat], colors_barres[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )
 
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))

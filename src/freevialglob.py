@@ -19,9 +19,18 @@ class Equip:
 	nom = ''
 	punts = figureta = 0
 	actiu = False
-	
-	preguntes_tot = [0,0,0,0,0,0]
-	preguntes_ok  = [0,0,0,0,0,0]
+
+
+	def __init__( self ):
+
+		# AIXÒ DEL PYTHON ÉS UNA PUTA MERDA
+		self.preguntes_tot = []
+		self.preguntes_ok = []
+
+		for num in range(0, 6): 
+			self.preguntes_tot.append( 0 )
+			self.preguntes_ok.append( 0 )
+
 
 	def canviaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
