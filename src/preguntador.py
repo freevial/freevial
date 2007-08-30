@@ -160,7 +160,7 @@ class Preguntador:
 		temps = time.time()
 		darrer_temps = pygame.time.get_ticks()
 
-		imatges_x_segon = mostra_ajuda = 0
+		imatges_x_segon = mostra_ajuda = mostra_credits = 0
 
 		self.joc.pantalla.fill( (0,0,0,0) )
 
@@ -205,17 +205,22 @@ class Preguntador:
 					sys.exit()
 				
 				if keyPress(event, ('q', 'ESCAPE')):
-					if not mostra_ajuda:
+					if not mostra_ajuda and not mostra_credits:
 						pygame.mixer.fadeout(500)
 						if self.mostrasolucions == 0:
 							self.mostrasolucions = 1
 							self.seleccio = 0
 						acaba = 1
 					else:
-						mostra_ajuda = 0
+						mostra_ajuda = mostra_credits = 0
 				
 				if keyPress(event, ('F1')) or keyPress(event, ('h')):
 					mostra_ajuda ^= 1
+					mostra_credits = 0
+
+				if keyPress(event, ('F2')):
+					mostra_ajuda = 0
+					mostra_credits ^= 1
 				
 				if keyPress(event, ('f', 'F11')): pygame.display.toggle_fullscreen()
 				
@@ -366,9 +371,9 @@ class Preguntador:
 			
 			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
 			
-			if mostra_ajuda:
-				self.joc.pantalla.blit( self.help_overlay, (0,0))
-			
+			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
+			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
+
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
 		

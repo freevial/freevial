@@ -56,7 +56,7 @@ class Score:
 		temps = time.time()
 		darrer_temps = pygame.time.get_ticks()
 
-		imatges_x_segon = ypos = escriu = atzar = mou_fons = mostra_ajuda = 0
+		imatges_x_segon = ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = 0
 		element_seleccionat = self.joc.equip_actual
 		nou_grup = 1 if ( equipsActius( self.joc.equips ) == 0 ) else 0
 
@@ -88,11 +88,16 @@ class Score:
 				
 				if keyPress(event, ('F1')) or ( not escriu and keyPress(event, ('h')) ):
 					mostra_ajuda ^= 1
+					mostra_credits = 0
+
+				if keyPress(event, ('F2')) :
+					mostra_credits ^= 1
+					mostra_ajuda = 0
 				
 				if keyPress(event, 'F11') or ( not escriu and keyPress(event, 'f') ):
 					pygame.display.toggle_fullscreen()
 				
-				if escriu:
+				if escriu and not mostra_ajuda and not mostra_credits:
 					
 					if event.type == pygame.KEYUP:
 						if event.key in (K_RETURN, K_ESCAPE, K_KP_ENTER):
@@ -108,11 +113,12 @@ class Score:
 				else:
 					
 					if keyPress(event, ('q', 'ESCAPE')):
-						if not mostra_ajuda:
+						if not mostra_ajuda and not mostra_credits:
 							# TODO: Ask for confirmation before exit.
 							return -1
 						else:
-							mostra_ajuda = 0
+							mostra_ajuda = mostra_credits = 0
+							
 					
 					if keyPress(event, ('RIGHT', 'LEFT')): 
 						element_seleccionat += +1 if (0 == (element_seleccionat % 2)) else -1 
@@ -217,8 +223,8 @@ class Score:
 					pinta = render_text( str(self.joc.equips[num].punts).zfill(2), color, 150, 1)
 					self.joc.pantalla.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 
-			if mostra_ajuda:
-				self.joc.pantalla.blit( self.help_overlay, (0,0))
+			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
+			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
 
 			# intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()

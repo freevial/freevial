@@ -69,6 +69,8 @@ class Freevial_globals:
 	
 	equip_actual = 0
 
+	sfc_credits = ""
+
 def loadImage( filename ):
 	""" Returns a Surface of the indicated image, which is expected to be in the images folder. """
 	
@@ -228,13 +230,32 @@ def printKey( tecla ):
 
 	return keyname
 
-def createHelpScreen( help_section ):
-	""" Creates a help overlay surface based on a help string list. """
+
+def createTextSurface( frases, color ):
+	""" Creates a help overlay surface based on a help file. """
 	
+	font_size = 25
+
 	help_overlay = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
 	
 	for num in range( 0, 10):
 		help_overlay.fill( (0, 0, 16, num * 25), ( 100 + (num * 2), 100 + (num * 2), 1024 - 100 * 2 - (num * 4), 768 - 150 - (num * 4)) )
+
+	nline = 0
+	for line in frases:
+		
+		text_pregunta = render_text( line, (0,0,0), font_size, 1 )
+		help_overlay.blit( text_pregunta, (150 + 2, (font_size + 5) * nline + 152))
+		
+		text_pregunta = render_text( line, color, font_size, 1 )
+		help_overlay.blit( text_pregunta, (150, (font_size + 5) * nline + 150))
+		
+		nline += 1
+	
+	return help_overlay
+
+def readLocalizedHelpFile( help_section ):
+	""" Reads a localized unicodized (he he) array. """
 	
 	filename = os.path.join(Freevial_globals.folders['help'], (help_section + "_"+ locale.getdefaultlocale()[0][:2] +'.txt'))
 
@@ -242,18 +263,31 @@ def createHelpScreen( help_section ):
 		filename = os.path.join(Freevial_globals.folders['help'], (help_section + '.txt'))
 
 	nline = 0
+	cadenes = []
+
 	for line in open( filename, 'r' ).xreadlines():
 		# skip comments
 		if line[:1] == '#': continue
 		
-		line = unicode(line, 'utf-8')
-		
-		text_pregunta = render_text( line, (0,0,0), 30, 1 )
-		help_overlay.blit( text_pregunta, (150 + 2, 35 * nline + 152))
-		
-		text_pregunta = render_text( line, (255,255,0), 30, 1 )
-		help_overlay.blit( text_pregunta, (150, 35 * nline + 150))
-		
+		cadenes.append ( unicode(line, 'utf-8') )
+	
 		nline += 1
 	
-	return help_overlay
+	return cadenes
+
+def createHelpScreen( help_section ):
+	""" Creates a help overlay surface based on a help file. """
+	
+	return createTextSurface( readLocalizedHelpFile( help_section ), (255,255,0) )
+
+
+def createCreditsScreen(  ):
+	""" Creates a credits overlay surface based on a credits file and quiz creators. """
+
+	cadenes = readLocalizedHelpFile( "credits" )
+	return createTextSurface( cadenes, (0,255,255) )
+	
+
+
+
+
