@@ -233,6 +233,34 @@ def printKey( tecla ):
 	return keyname
 
 
+def list2string( list, wordsEachLine = 5, lineEnd = ',' ):
+	""" Converts a list of words into a list of comma-separated string with 'wordsEachLine' words. """
+	
+	lines = []
+	string = ''
+	i = 0
+	
+	for author in list:
+		
+		if string != '':
+			string += ', '
+		
+		string += author
+		
+		if (wordsEachLine - 1) == (i % wordsEachLine):
+			lines.append( str(string + lineEnd) )
+			string = ''
+
+		i += 1
+		
+	if string != '':
+		lines.append( str(string + lineEnd) )
+	
+	lines[-1] = lines[-1][:-len(lineEnd)]
+	
+	return lines
+
+
 def createTextSurface( frases, color ):
 	""" Creates a help overlay surface based on a help file. """
 	
@@ -260,6 +288,21 @@ def createTextSurface( frases, color ):
 	return help_overlay
 
 
+def replaceKeywoards( content ):
+	""" Replaces keywoards found in the content a help file. """
+	
+	i = 0
+	
+	for line in content:
+		
+		if line.startswith( '##replace:question-authors' ):
+			content[ i : (i + 1) ] = list2string( preguntes_autors )
+	
+		i += 1
+	
+	return content
+
+
 def readLocalizedHelpFile( help_section ):
 	""" Reads a localized file into an unicoded array. """
 	
@@ -270,36 +313,22 @@ def readLocalizedHelpFile( help_section ):
 	
 	lines = []
 	
-	for line in open( filename, 'r' ).xreadlines():
+	for line in replaceKeywoards(open( filename, 'r' ).readlines()):
+		
 		# skip comments
-		if line[:1] == '#': continue
+		#if line[:1] == '#': continue
 		
 		lines.append ( unicode(line, 'utf-8') )
 	
 	return lines
 
 
-def createHelpScreen( help_section ):
+def createHelpScreen( help_section, alternate_text = False ):
 	""" Creates a help overlay surface based on a help file. """
 	
-	return createTextSurface( readLocalizedHelpFile( help_section ), (255, 255, 0) )
-
-def createCreditsScreen(  ):
-
-	elements_per_linia = 5
-	lines = readLocalizedHelpFile( 'credits' )
+	if alternate_text:
+		color = (0, 255, 255)   # Blue
+	else:
+		color = (255, 255, 0)   #Yellow
 	
-	entra = ""
-	compta = 0
-	for autor in preguntes_autors:
-		if entra != "": entra += ", "
-		entra += autor
-		if (elements_per_linia - 1) == (compta % elements_per_linia):
-			lines.append ( entra )
-			entra = ""
-
-		compta += 1
-		
-	if entra != "": lines.append ( entra )
-	
-	return createTextSurface( lines, (0, 255, 255) )
+	return createTextSurface( readLocalizedHelpFile( help_section ), color )
