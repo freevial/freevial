@@ -51,7 +51,7 @@ class Freevial:
 		pygame.mixer.init()
 		pygame.font.init()
 		
-		self.joc.sfc_credits = createCreditsScreen( )
+		self.joc.sfc_credits = createHelpScreen( 'credits', alternate_text = True )
 	
 	###########################################
 	#
