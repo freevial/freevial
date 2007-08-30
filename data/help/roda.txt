@@ -1,15 +1,18 @@
 INSTRUCTIONS
 
-Prem INTRO o ESPAI per aturar l'escurabutxaques.
+Pres INTRO or SPACE to stop gablmbling machine
 
-La categoria sobre la que es quedi parat, definirà
-quin tipus de pregunta s'haurà de contestar a
-continuació.
+Stoped category will choose the kind of 
+question you are going to answer.
 
-En el cas de que toqui una categoria de la que
-encara no s'hagi encertat cap pregunta, si aquest
-cop es resol bé, es completarà una part del logotip.
-Un cop un dels aquips aconsegueixi completar-lo
-del tot, acabarà el joc.
+If you get a category where you haven't right 
+answered any question, you'll could win the 
+part of the logo of the same color.
 
-F1 - Ajuda | F2 - Crèdits | Q o ESC - Acaba
+Once a player has all colors game stops and 
+the winer is ho has more points.
+
+Being first on answer all categories has an 
+extra 3 points 
+
+F1 - Help | F2 - About freevial | Q or ESC - Quit

@@ -1,15 +1,23 @@
-INSTRUCCIONS DELS EQUIPS
+TEAM INSTRUCTIONS
 
-FLETXES - Canvia la selecció
-PÀG SEG / ANT - Equip actiu següent o anterior
-R - Tria un equip a l'atzar
+Team creation mode
+-----------------
+ARROWS - Changes current selection
+PAG SEG / ANT - Chooses next or previous team
 
-A - Activa / desactiva l'equip seŀlecionat
-N - Edita el nom de l'equip
+INTRO - Enables selected team
+A - Enables / Disables selected team
+N - Changes team name
 
-INTRO - Sobre un equip, inicia el torn
+R - Chooses a random team / start game mode
 
-Z, X - Puja o resta punts
-1..6 - Activa o desactiva una categoria
+Game mode
+-----------------
+INTRO - Over a team, starts turn
 
-F1 - Ajuda | F2 - Crèdits | Q o ESC - Acaba
+Presentation mode
+-----------------
+Z, X - Increment or decrease score
+1..6 - Enables / Disables seleced category
+
+F1 - Help | F2 - About freevial | Q or ESC - Quit

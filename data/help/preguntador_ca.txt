@@ -1,12 +1,15 @@
 INSTRUCCIONS
 
-
+Mode joc
+-----------------
 A, B, C - Trien la resposta A, B o C
 
 FLETXES - Canvien la selecció
 I, O, P - Seŀlecionen la resposta A, B o C
 INTRO - Tria la resposta seŀlecionada
 
+Mode presentació
+-----------------
 Z - Mostra/Amaga el nombre de pregunta i l'autor
 1..6 - Mostra una pregunta d'una categoria
 

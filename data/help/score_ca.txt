@@ -1,15 +1,24 @@
 INSTRUCCIONS DELS EQUIPS
 
-FLETXES - Canvia la selecció
-PÀG SEG / ANT - Equip actiu següent o anterior
-R - Tria un equip a l'atzar
+Mode de creació d'equips
+-----------------
+ARROWS - Changes current selection
+PAG SEG / ANT - Chooses next or previous team
 
+INTRO - Activa l'equip seŀlecionat
 A - Activa / desactiva l'equip seŀlecionat
 N - Edita el nom de l'equip
 
-INTRO - Sobre un equip, inicia el torn
+R - Tria un equip a l'atzar / Inicia el mode joc
 
+Mode joc
+-----------------
+INTRO - Inicia el torn
+
+Mode presenació
+-----------------
 Z, X - Puja o resta punts
 1..6 - Activa o desactiva una categoria
 
 F1 - Ajuda | F2 - Crèdits | Q o ESC - Acaba
+

@@ -1,15 +1,23 @@
 TEAM INSTRUCTIONS
 
+Team creation mode
+-----------------
 ARROWS - Changes current selection
 PAG SEG / ANT - Chooses next or previous team
-R - Chooses a random team
 
+INTRO - Enables selected team
 A - Enables / Disables selected team
 N - Changes team name
 
-INTRO - Over a team, starts turn
+R - Chooses a random team / start game mode
 
+Game mode
+-----------------
+INTRO - Starts turn
+
+Presentation mode
+-----------------
 Z, X - Increment or decrease score
 1..6 - Enables / Disables seleced category
 
-F1 - Help | F2 - About freevial | Q o ESC - Quit
+F1 - Help | F2 - About freevial | Q or ESC - Quit
