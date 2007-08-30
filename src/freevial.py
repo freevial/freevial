@@ -59,42 +59,30 @@ class Freevial:
 	def juguem( self ):
 		
 		self.inici()
+
+		score = Score( self.dades_joc )
+		roda = Roda( self.dades_joc )
+		fespregunta = Preguntador( self.dades_joc )
 		
 		while 1:
-			
-			for event in pygame.event.get():
-				if event.type == pygame.QUIT: sys.exit()
-				
-				if keyPress(event, 'm'): print "Yeah!"
-			
-			try:
-				score
-			except NameError:
-				score = Score( self.dades_joc )
-			
+
 			self.dades_joc.equip_actual = score.juguem( self.dades_joc )
 			
 			if self.dades_joc.equip_actual != -1:
 				
-				self.dades_joc.rondes += 1
-				
-				try:
-					roda
-				except NameError:
-					roda = Roda( self.dades_joc )
+				self.dades_joc.rondes += 1		
 				
 				resultat = roda.juguem( self.dades_joc )
 				
 				if resultat != 0:
-					
-					try:
-						fespregunta
-					except NameError:
-						fespregunta = Preguntador( self.dades_joc )
-					
+
+					self.dades_joc.equips[ self.dades_joc.equip_actual].preguntes_tot[resultat] += 1									
+
 					resultat = fespregunta.juguem( resultat )
 					
+
 					if resultat > 0:
+						self.dades_joc.equips[ self.dades_joc.equip_actual].preguntes_ok[resultat] += 1
 						self.dades_joc.equips[ self.dades_joc.equip_actual].punts += 1
 						
 						fig_abans = self.dades_joc.equips[ self.dades_joc.equip_actual].figureta

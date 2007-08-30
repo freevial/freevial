@@ -9,7 +9,7 @@
 # RainCT 28/08/2007
 #
 
-import os.path, random, re, pygame
+import os.path, random, re, pygame, locale
 from pygame.locals import *
 
 DEBUG_MODE = False
@@ -20,6 +20,9 @@ class Equip:
 	punts = figureta = 0
 	actiu = False
 	
+	preguntes_tot = [0,0,0,0,0,0]
+	preguntes_ok  = [0,0,0,0,0,0]
+
 	def canviaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
 		self.figureta ^= bitCategoria( categoria )
@@ -233,8 +236,13 @@ def createHelpScreen( help_section ):
 	for num in range( 0, 10):
 		help_overlay.fill( (0, 0, 16, num * 25), ( 100 + (num * 2), 100 + (num * 2), 1024 - 100 * 2 - (num * 4), 768 - 150 - (num * 4)) )
 	
+	filename = os.path.join(Freevial_globals.folders['help'], (help_section + "_"+ locale.getdefaultlocale()[0][:2] +'.txt'))
+
+	if not os.path.exists (filename):
+		filename = os.path.join(Freevial_globals.folders['help'], (help_section + '.txt'))
+
 	nline = 0
-	for line in open( os.path.join(Freevial_globals.folders['help'], (help_section + '.txt')), 'r' ).xreadlines():
+	for line in open( filename, 'r' ).xreadlines():
 		# skip comments
 		if line[:1] == '#': continue
 		
