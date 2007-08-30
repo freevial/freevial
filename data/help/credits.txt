@@ -14,4 +14,3 @@ Música:
 Manel Almagro
 
 Quiz on loaded database:
-

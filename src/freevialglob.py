@@ -11,6 +11,7 @@
 
 import os.path, random, re, pygame, locale
 from pygame.locals import *
+from preguntes import preguntes_autors
 
 DEBUG_MODE = False
 
@@ -150,13 +151,6 @@ def render_text( cadena, color, mida, antialias = 0, nomfont = '' ):
 	return font1.render( cadena, antialias, color )
 
 
-def shuffleQuestions( questions ):
-	""" Returns the given questions list, but shuffled. """
-	
-	for num in range(0, 6):
-		random.shuffle( questions[num] )
-	
-	return questions
 
 
 def maxPunts( equips ):
@@ -284,13 +278,27 @@ def readLocalizedHelpFile( help_section ):
 	return lines
 
 
-def createHelpScreen( help_section, alternate_text = False ):
+def createHelpScreen( help_section ):
 	""" Creates a help overlay surface based on a help file. """
 	
-	if alternate_text:
-		color = (0, 255, 255)	# Blue
-	else:
-		color = (255, 255, 0)	#Yellow
-	
-	return createTextSurface( readLocalizedHelpFile( help_section ), color )
+	return createTextSurface( readLocalizedHelpFile( help_section ), (255, 255, 0) )
 
+def createCreditsScreen(  ):
+
+	elements_per_linia = 5
+	lines = readLocalizedHelpFile( 'credits' )
+	
+	entra = ""
+	compta = 0
+	for autor in preguntes_autors:
+		if entra != "": entra += ", "
+		entra += autor
+		if (elements_per_linia - 1) == (compta % elements_per_linia):
+			lines.append ( entra )
+			entra = ""
+
+		compta += 1
+		
+	if entra != "": lines.append ( entra )
+	
+	return createTextSurface( lines, (0, 255, 255) )
