@@ -152,7 +152,9 @@ class Preguntador:
 	def juguem( self , selcat):
 
 		# de moment per fer proves agafem una pregunta a l'atzar
-
+		loadSound('preguntador.ogg', volume = 0.4, music = 1)
+		pygame.mixer.music.play(1)
+			
 		self.atzar( selcat )
 
 		self.inicialitza_pregunta()
