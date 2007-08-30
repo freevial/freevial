@@ -243,8 +243,10 @@ def printKey( tecla ):
 def createTextSurface( frases, color ):
 	""" Creates a help overlay surface based on a help file. """
 	
-	font_size = (768 - (300 )) / len(frases) 
-	font_size = min( font_size, 25 )
+	font_step = (768 - (315 )) / len(frases) 
+	font_step = min( font_step, 25 )
+
+	font_size = font_step - (font_step * 10) / 100
  
 	help_overlay = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
 	
@@ -255,10 +257,10 @@ def createTextSurface( frases, color ):
 	for line in frases:
 		
 		text_pregunta = render_text( line, (0,0,0), font_size, 1 )
-		help_overlay.blit( text_pregunta, (150 + 2, (font_size + 5) * nline + 142))
+		help_overlay.blit( text_pregunta, (150 + 2, (font_step + 5) * nline + 142))
 		
 		text_pregunta = render_text( line, color, font_size, 1 )
-		help_overlay.blit( text_pregunta, (150, (font_size + 5) * nline + 140))
+		help_overlay.blit( text_pregunta, (150, (font_step + 5) * nline + 140))
 		
 		nline += 1
 	

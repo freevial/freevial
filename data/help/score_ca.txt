@@ -1,7 +1,7 @@
 INSTRUCCIONS DELS EQUIPS
 
 Mode de creació d'equips
------------------
+-------------------------------------------------------------------------------------
 ARROWS - Changes current selection
 PAG SEG / ANT - Chooses next or previous team
 
@@ -14,11 +14,12 @@ F1,F - Canvia el mode de pantalla sencera
 R - Tria un equip a l'atzar / Inicia el mode joc
 
 Mode joc
------------------
-INTRO - Inicia el torn
+-------------------------------------------------------------------------------------
+INTRO - Inicia el torn         
+S - Mostra / amaga estadístiques
 
 Mode presenació
------------------
+-------------------------------------------------------------------------------------
 Z, X - Puja o resta punts
 1..6 - Activa o desactiva una categoria
 

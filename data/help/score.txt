@@ -1,7 +1,7 @@
 TEAM INSTRUCTIONS
 
 Team creation mode
------------------
+-------------------------------------------------------------------------------------
 ARROWS - Changes current selection
 PAG SEG / ANT - Chooses next or previous team
 
@@ -14,11 +14,12 @@ R - Chooses a random team / start game mode
 F1 - Changes full screen mode
 
 Game mode
------------------
-INTRO - Starts turn
+-------------------------------------------------------------------------------------
+INTRO - Starts turn            
+S - Shows / hides stats
 
 Presentation mode
------------------
+-------------------------------------------------------------------------------------
 Z, X - Increment or decrease score
 1..6 - Enables / Disables seleced category
 
