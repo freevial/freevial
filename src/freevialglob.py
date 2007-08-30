@@ -24,7 +24,8 @@ class Equip:
 
 	def __init__( self ):
 
-		self.preguntes_tot = self.preguntes_ok = []
+		self.preguntes_tot = []
+		self.preguntes_ok = []
 
 		for num in range(0, 6): 
 			self.preguntes_tot.append( 0 )

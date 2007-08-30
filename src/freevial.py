@@ -78,7 +78,7 @@ class Freevial:
 				resultat = roda.juguem( self.joc )
 				
 				if resultat != 0:
-					
+						
 					self.joc.equips[ self.joc.equip_actual].preguntes_tot[resultat-1] += 1		
 					
 					if not fespregunta:	fespregunta = Preguntador( self.joc )
