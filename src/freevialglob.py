@@ -327,9 +327,7 @@ def readLocalizedHelpFile( help_section ):
 def createHelpScreen( help_section, alternate_text = False ):
 	""" Creates a help overlay surface based on a help file. """
 	
-	if alternate_text:
-		color = (0, 255, 255)   # Blue
-	else:
-		color = (255, 255, 0)   #Yellow
-	
-	return createTextSurface( readLocalizedHelpFile( help_section ), color )
+	return createTextSurface( readLocalizedHelpFile( help_section ), (0, 255, 255) if alternate_text else (255, 255, 0) )
+
+
+
