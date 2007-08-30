@@ -61,15 +61,11 @@ class Freevial:
 		
 		self.inici()
 		
+		score = roda = fespregunta = None
+
 		while 1:
 			
-			try:
-				score
-			except NameError:
-				# If it isn't already loaded, load this section of the game
-				# If we would load everything outside the 'while', it would need...
-				# ... more time to start. This way the program runs smother.
-				score = Score( self.joc )
+			if not score: score = Score( self.joc )
 			
 			self.joc.equip_actual = score.juguem( self.joc )
 			
@@ -77,10 +73,7 @@ class Freevial:
 				
 				self.joc.rondes += 1		
 				
-				try:
-					roda
-				except NameError:
-					roda = Roda( self.joc )
+				if not roda: roda = Roda( self.joc )
 				
 				resultat = roda.juguem( self.joc )
 				
@@ -88,10 +81,7 @@ class Freevial:
 					
 					self.joc.equips[ self.joc.equip_actual].preguntes_tot[resultat-1] += 1		
 					
-					try:
-						fespregunta
-					except NameError:
-						fespregunta = Preguntador( self.joc )
+					if not fespregunta:	fespregunta = Preguntador( self.joc )
 					
 					resultat = fespregunta.juguem( resultat )	
 					
