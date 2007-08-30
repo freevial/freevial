@@ -43,6 +43,20 @@ class Score:
 
 		self.help_overlay = createHelpScreen( 'score' )
 
+	def barra_pos( self, total, posicio, color, ample, alt ):
+
+		sfc = pygame.Surface( ( ample, alt), pygame.SRCALPHA, 32 )
+		pygame.draw.rect(sfc, color, (0,0,ample-1,alt-1), 2)
+
+		ample_rect = ample - 8
+
+		pygame.draw.rect(sfc, (color[0], color[1], color[2], 64), (4, 4, ample_rect, alt - 8))
+		if( total != 0 and posicio != 0): 
+			pos_ample = ( posicio * ample_rect ) / total 
+			pygame.draw.rect(sfc, color, (4, 4, pos_ample, alt - 8))
+
+		return sfc
+	
 	###########################################
 	#
 	# Bucle principal del programa
@@ -222,6 +236,11 @@ class Score:
 					color = (128,0,0) if (maxPunts( self.joc.equips) > self.joc.equips[num].punts ) else (0,128,0)
 					pinta = render_text( str(self.joc.equips[num].punts).zfill(2), color, 150, 1)
 					self.joc.pantalla.blit( pinta, (xcaixa + 200, ycaixa - 15) )
+			
+					colors_barres = ( (0,0,128), (64,64,32), (0,128,0),(128,0,0),(128,0,128), (128,128,0) )
+					for num2 in range(0,6):
+						self.joc.pantalla.blit( self.barra_pos( self.joc.equips[num].preguntes_tot[num2], self.joc.equips[num].preguntes_ok[num2], colors_barres[num2], 50, 14 ), (xcaixa + 140, ycaixa + 21 + num2 * 16) )
+					
 
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))

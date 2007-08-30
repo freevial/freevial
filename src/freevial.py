@@ -77,13 +77,13 @@ class Freevial:
 				
 				if resultat != 0:
 
-					self.dades_joc.equips[ self.dades_joc.equip_actual].preguntes_tot[resultat] += 1									
+					self.dades_joc.equips[ self.dades_joc.equip_actual].preguntes_tot[resultat-1] += 1									
 
 					resultat = fespregunta.juguem( resultat )
 					
 
 					if resultat > 0:
-						self.dades_joc.equips[ self.dades_joc.equip_actual].preguntes_ok[resultat] += 1
+						self.dades_joc.equips[ self.dades_joc.equip_actual].preguntes_ok[resultat-1] += 1
 						self.dades_joc.equips[ self.dades_joc.equip_actual].punts += 1
 						
 						fig_abans = self.dades_joc.equips[ self.dades_joc.equip_actual].figureta
