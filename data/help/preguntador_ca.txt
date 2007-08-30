@@ -8,9 +8,11 @@ FLETXES - Canvien la selecció
 I, O, P - Seŀlecionen la resposta A, B o C
 INTRO - Tria la resposta seŀlecionada
 
+F1,F - Canvia el mode de pantalla sencera
+
 Mode presentació
 -----------------
 Z - Mostra/Amaga el nombre de pregunta i l'autor
 1..6 - Mostra una pregunta d'una categoria
 
-F1 - Ajuda | F2 - Crèdits | Q o ESC - Acaba
+F1,H - Ajuda | F2 - Crèdits | Q o ESC - Acaba

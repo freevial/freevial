@@ -1,6 +1,8 @@
 INSTRUCCIONS
 
-Prem INTRO o ESPAI per aturar l'escurabutxaques.
+INTRO, ESPAI - Atura l'escurabutxaques.
+
+F1,F - Canvia el mode de pantalla sencera
 
 La categoria sobre la que es quedi parat, definirà
 quin tipus de pregunta s'haurà de contestar a
@@ -15,4 +17,4 @@ per finalitzar.
 
 Guanyarà el concursant que tingui més punts.
 
-F1 - Ajuda | F2 - Crèdits | Q o ESC - Acaba
+F1,H - Ajuda | F2 - Crèdits | Q o ESC - Acaba

@@ -11,6 +11,8 @@ N - Changes team name
 
 R - Chooses a random team / start game mode
 
+F1 - Changes full screen mode
+
 Game mode
 -----------------
 INTRO - Starts turn
@@ -20,4 +22,4 @@ Presentation mode
 Z, X - Increment or decrease score
 1..6 - Enables / Disables seleced category
 
-F1 - Help | F2 - About freevial | Q or ESC - Quit
+F1,H - Help | F2 - About freevial | Q or ESC - Quit
