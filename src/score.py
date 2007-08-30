@@ -30,7 +30,7 @@ class Score:
 		self.joc = joc
 		
 		self.mascara_de_fons = loadImage('fons_score.png')
-		self.fons = loadImage('score_fons.png')	
+		self.fons = loadImage('score_fons.png')
 
 		self.element_score = loadImage('element_score.png')
 		self.seleccio_score = loadImage('seleccio_score.png')
@@ -212,8 +212,6 @@ class Score:
 			mou_fons += 8
 			for num in range(0, 768):
 				self.joc.pantalla.blit( self.fons, (cos((float(mou_fons +num)) / 100.0) * 20, num), (0, (ypos + num) % 768, 1024, 1) )
-			#self.joc.pantalla.blit( self.fons, (0, ypos - 765 ) )
-			#self.joc.pantalla.blit( self.fons, (0, ypos) )
 
 			self.joc.pantalla.blit( self.mascara_de_fons, (0, 0) )
 

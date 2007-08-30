@@ -13,6 +13,7 @@ import os.path, random, re, pygame, locale
 from pygame.locals import *
 from preguntes import preguntes_autors
 
+
 DEBUG_MODE = False
 
 class Equip:
@@ -262,7 +263,7 @@ def list2string( list, wordsEachLine = 5, lineEnd = ',' ):
 
 
 def createTextSurface( frases, color ):
-	""" Creates a help overlay surface based on a help file. """
+	""" Creates a help overlay surface and prints the passed text on it. """
 	
 	font_step = (768 - (315)) / len(frases) 
 	font_step = min( font_step, 25 )
