@@ -165,9 +165,7 @@ class Preguntador:
 	#
 	def juguem( self , selcat):
 
-		# de moment per fer proves agafem una pregunta a l'atzar
-		loadSound('preguntador.ogg', volume = 0.4, music = 1)
-		pygame.mixer.music.play(1)
+		loadSound('preguntador.ogg', volume = 0.4, music = 1).play(-1)
 			
 		self.atzar( selcat )
 
@@ -291,6 +289,7 @@ class Preguntador:
 						self.so_nook.play()	
 				elif acaba == 1:
 					pygame.mixer.fadeout(500)
+					pygame.mixer.music.fadeout(500)
 					return self.pregunta_actual[0] if ( self.pregunta_actual[5] == self.seleccio) else 0
 			
 			# Animem el fons
