@@ -23,9 +23,7 @@ class Equip:
 
 	def __init__( self ):
 
-		# AIXÒ DEL PYTHON ÉS UNA PUTA MERDA
-		self.preguntes_tot = []
-		self.preguntes_ok = []
+		self.preguntes_tot = self.preguntes_ok = []
 
 		for num in range(0, 6): 
 			self.preguntes_tot.append( 0 )
@@ -243,7 +241,7 @@ def printKey( tecla ):
 def createTextSurface( frases, color ):
 	""" Creates a help overlay surface based on a help file. """
 	
-	font_step = (768 - (315 )) / len(frases) 
+	font_step = (768 - (315)) / len(frases) 
 	font_step = min( font_step, 25 )
 
 	font_size = font_step - (font_step * 10) / 100
@@ -252,7 +250,7 @@ def createTextSurface( frases, color ):
 	
 	for num in range( 0, 10):
 		help_overlay.fill( (0, 0, 16, num * 25), ( 100 + (num * 2), 100 + (num * 2), 1024 - 100 * 2 - (num * 4), 768 - 150 - (num * 4)) )
-
+	
 	nline = 0
 	for line in frases:
 		
@@ -266,40 +264,33 @@ def createTextSurface( frases, color ):
 	
 	return help_overlay
 
+
 def readLocalizedHelpFile( help_section ):
-	""" Reads a localized unicodized (he he) array. """
+	""" Reads a localized file into an unicoded array. """
 	
 	filename = os.path.join(Freevial_globals.folders['help'], (help_section + "_"+ locale.getdefaultlocale()[0][:2] +'.txt'))
-
+	
 	if not os.path.exists (filename):
 		filename = os.path.join(Freevial_globals.folders['help'], (help_section + '.txt'))
-
-	nline = 0
-	cadenes = []
-
+	
+	lines = []
+	
 	for line in open( filename, 'r' ).xreadlines():
 		# skip comments
 		if line[:1] == '#': continue
 		
-		cadenes.append ( unicode(line, 'utf-8') )
+		lines.append ( unicode(line, 'utf-8') )
 	
-		nline += 1
-	
-	return cadenes
+	return lines
 
-def createHelpScreen( help_section ):
+
+def createHelpScreen( help_section, alternate_text = False ):
 	""" Creates a help overlay surface based on a help file. """
 	
-	return createTextSurface( readLocalizedHelpFile( help_section ), (255,255,0) )
-
-
-def createCreditsScreen(  ):
-	""" Creates a credits overlay surface based on a credits file and quiz creators. """
-
-	cadenes = readLocalizedHelpFile( "credits" )
-	return createTextSurface( cadenes, (0,255,255) )
+	if alternate_text:
+		color = (0, 255, 255)	# Blue
+	else:
+		color = (255, 255, 0)	#Yellow
 	
-
-
-
+	return createTextSurface( readLocalizedHelpFile( help_section ), color )
 

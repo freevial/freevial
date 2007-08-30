@@ -50,8 +50,8 @@ class Freevial:
 		pygame.mixer.pre_init(44100, -16, 2, 2048)
 		pygame.mixer.init()
 		pygame.font.init()
-	
-		self.joc.sfc_credits = createCreditsScreen(  )
+		
+		self.joc.sfc_credits = createHelpScreen( 'credits', alternate_text = True )
 	
 	###########################################
 	#
@@ -60,27 +60,41 @@ class Freevial:
 	def juguem( self ):
 		
 		self.inici()
-
-		score = Score( self.joc )
-		roda = Roda( self.joc )
-		fespregunta = Preguntador( self.joc )
 		
 		while 1:
-
+			
+			try:
+				score
+			except NameError:
+				# If it isn't already loaded, load this section of the game
+				# If we would load everything outside the 'while', it would need...
+				# ... more time to start. This way the program runs smother.
+				score = Score( self.joc )
+			
 			self.joc.equip_actual = score.juguem( self.joc )
 			
 			if self.joc.equip_actual != -1:
 				
 				self.joc.rondes += 1		
 				
+				try:
+					roda
+				except NameError:
+					roda = Roda( self.joc )
+				
 				resultat = roda.juguem( self.joc )
 				
 				if resultat != 0:
-
+					
 					self.joc.equips[ self.joc.equip_actual].preguntes_tot[resultat-1] += 1		
-
+					
+					try:
+						fespregunta
+					except NameError:
+						fespregunta = Preguntador( self.joc )
+					
 					resultat = fespregunta.juguem( resultat )	
-
+					
 					if resultat > 0:
 						self.joc.equips[ self.joc.equip_actual].preguntes_ok[resultat-1] += 1
 						self.joc.equips[ self.joc.equip_actual].punts += 1

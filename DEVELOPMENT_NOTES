@@ -1,8 +1,8 @@
 
 #############################################
-##                                         ##
-##  NOTES DE DESENVOLUPAMENT DEL FREEVIAL  ##
-##                                         ##
+##
+##  NOTES DE DESENVOLUPAMENT DEL FREEVIAL
+##
 #############################################
 
 #############################################
@@ -38,6 +38,8 @@
 
 #############################################
 # NOTES
+
+* Carles: NO FACIS CAP PUSH SENSE PROVAR SI TOT FUNCIONA BÉ!
 
 * [Python] if shorthand: print "Sí" if cert else "No"
 

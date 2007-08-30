@@ -1,20 +1,21 @@
 INSTRUCTIONS
 
-INTRO, SPACE - Stop gablmbling machine
+INTRO or SPACE - Stop gambling machine
 
-F1 - Changes full screen mode
+F12 or F - Changes full screen mode
 
 Stoped category will choose the kind of 
 question you are going to answer.
 
-If you get a category where you haven't right 
-answered any question, you'll could win the 
-part of the logo of the same color.
+If you get a category where you haven't already
+answered correctly any question, you'll win the 
+part of the logo of the same color if you know the
+right answer.
 
 Once a player has all colors game stops and 
-the winer is ho has more points.
+the team with the mostr points wins.
 
-Being first on answer all categories has an 
-extra 3 points 
+Being first on answer all categories gives 3
+extra points.
 
-F1,H - Help | F2 - About freevial | Q or ESC - Quit
+F1 or H - Help | F2 - About freevial | Q or ESC - Quit

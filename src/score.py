@@ -51,7 +51,7 @@ class Score:
 		ample_rect = ample - 8
 
 		pygame.draw.rect(sfc, (color[0], color[1], color[2], 64), (4, 4, ample_rect, alt - 8))
-		if( total != 0 and posicio != 0): 
+		if total != 0 and posicio != 0: 
 			pos_ample = ( posicio * ample_rect ) / total 
 			pygame.draw.rect(sfc, color, (4, 4, pos_ample, alt - 8))
 
@@ -240,7 +240,7 @@ class Score:
 					pinta = render_text( str(self.joc.equips[num].punts).zfill(2), color, 150, 1)
 					self.joc.pantalla.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 			
-					if( mostra_estad ):
+					if mostra_estad:
 						colors_barres = ( (0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,255,0) )
 						for cat in range(0,6):
 							self.joc.pantalla.blit( self.barra_pos( self.joc.equips[num].preguntes_tot[cat], self.joc.equips[num].preguntes_ok[cat], colors_barres[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )

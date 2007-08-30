@@ -8,11 +8,11 @@ ARROWS - Changes current selecion
 I, O, P - Select answer A, B or C
 INTRO - Choose selected answer
 
-F1,F - Changes full screen mode
+F11 or F - Changes full screen mode
 
 Presentation mode
 -----------------
 Z - Show/hide quiz author and number
 1..6 - Shows random quiz from selected category
 
-F1,H - Help | F2 - About freevial | Q or ESC - Quit
+F1 or H - Help | F2 - About freevial | Q or ESC - Quit
