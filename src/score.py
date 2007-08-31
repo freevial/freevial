@@ -238,6 +238,14 @@ class Score:
 					if keyPress(event, ('s')): 
 						mostra_estad ^= 1
 					
+					if keyPress(event, ('m')):
+						replaceModes = {
+								0: 1,
+								1: 0,
+								2: 1,
+							}
+						estat = replaceModes[ estat ]
+					
 			if nou_grup == 1:
 				self.so_sub2.play()
 				nou_grup = 0

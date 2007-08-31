@@ -10,6 +10,7 @@ A - Enables / Disables selected team
 N - Changes team name
 
 R - Choose a random team / start game mode
+M - Change between team creation mode and game mode
 
 F11 or F - Changes full screen mode
 

@@ -142,18 +142,32 @@ def keyPress( event, keys ):
 	return True if found == 1 else False
 
 
-def mouseClick( event, request ):
+mouseButtons = {
+		'primary': 1,
+		'secondary': 2,
+		'middle': 3,
+	}
+
+
+def mouseClick( event, request = 0 ):
 	
-	mouseButtons = {
-			'primary': 1,
-			'secondary': 2,
-			'middle': 3,
-		}
+	global mouseButtons
 	
 	if type(request) is not int:
 		request = mouseButtons[ request ]
 	
-	if event.type == pygame.MOUSEBUTTONDOWN and event.button == request:
+	if event.type == pygame.MOUSEBUTTONDOWN and (event.button == request or request == 0):
+		return True
+
+
+def mouseRelease( event, request = 0 ):
+	
+	global mouseButtons
+	
+	if type(request) is not int:
+		request = mouseButtons[ request ]
+	
+	if event.type == pygame.MOUSEBUTTONUP and (event.button == request or request == 0):
 		return True
 
 

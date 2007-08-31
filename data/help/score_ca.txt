@@ -10,6 +10,7 @@ A - Activa / desactiva l'equip seŀlecionat
 N - Edita el nom de l'equip
 
 R - Tria un equip a l'atzar / Inicia el mode joc
+M - Canvia entre mode de creació d'equips i mode joc
 
 F11 o F - Canvia el mode de pantalla sencera
 

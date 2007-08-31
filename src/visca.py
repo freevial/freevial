@@ -1,24 +1,32 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
- 
-##########################################
+
 #
-# Iterador de fons mentre el concursant 
-# pensa la pregunta
-# 
-# Cal sobreposar la pregunta i les respostes
+# Freevial
+# End Screen
 #
-# Carles 22/08/2007
-# RainCT 27/08/2007
+# Copyright (C) 2007 The Freevial Team
+#
+# By Carles Oriol i Margarit <carles@kumbaworld.com>
+# By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
 import sys, random, pygame, time
 import math
 
 from freevialglob import *
-
-#from pygame import *
-#from pygame.overlay import *
 
 
 class Nau:
@@ -52,6 +60,7 @@ def ensegments( llista_freevial, segons ):
 
 	return False
 
+
 class Visca:
 
 	def __init__( self, joc ):
@@ -64,7 +73,6 @@ class Visca:
 		self.nau_sfc = []
 		for num in range( 0, 72 ): 
 			self.nau_sfc.append( loadImage('ovnis/freevial_tot' + str( num ).zfill(2) + '.png') )
-
 
 
 	def juguem( self, joc, nomguanya ):
@@ -103,7 +111,7 @@ class Visca:
 					nova_nau.vel = surten * 2
 					self.naus.append( nova_nau )
 
-			if( segons > 5.5 ):
+			if segons > 5.5:
 				if segons >= 35 and segons <= 48:
 					nova_nau = Nau( segons *5 )
 					nova_nau.velociat = segons - 30
@@ -123,7 +131,6 @@ class Visca:
 					nau.x += math.cos( nau.dir ) * nau.vel
 					nau.y += math.sin( nau.dir ) * nau.vel
 
-
 			# Calculem el nombre de FPS
 			if time.time() > temps + 1:
 				#print "FPS: " + str( imatges_x_segon )
@@ -139,19 +146,18 @@ class Visca:
 				pygame.time.wait(  dif_fps - dif_ticks )
 				darrer_temps = pygame.time.get_ticks()
 
-
-
 			for event in pygame.event.get():
-				if event.type == pygame.QUIT or ( event.type == pygame.KEYUP and (event.key == pygame.K_q or event.key == pygame.K_ESCAPE) ): sys.exit()
-				if event.type == pygame.MOUSEBUTTONDOWN: nomove = 1
-				if event.type == pygame.MOUSEBUTTONUP: nomove = 0
-				if event.type == pygame.KEYUP and ( event.key == pygame.K_f or event.key == pygame.K_F11 ): pygame.display.toggle_fullscreen()
-
-				if event.type == pygame.KEYUP and event.key == pygame.K_a:
-					print "surt", segons
-
-				if event.type == pygame.KEYDOWN and event.key == pygame.K_a:
-					print "entra", segons
+				if event.type == pygame.QUIT or keyPress(event, ('q', 'ESCAPE')):
+					sys.exit()
+				
+				if mouseClick(event):
+					nomove = 1
+				
+				if mouseRelease(event):
+					nomove = 0
+				
+				if keyPress(event, ('f', 'F11')):
+					pygame.display.toggle_fullscreen()
 
 			if segons >= 68: return
 
@@ -160,12 +166,11 @@ class Visca:
 			xpos += 1
 			xpos %= self.joc.mida_pantalla_x
 
-
 			mou_fons += 10
 	#		for num in range(0, 1024):
 	#			self.fons_2.blit( self.fons, (num, math.cos((float(mou_fons +num)) / 100.0) * 10), ((xpos + num) % 1024, 0, 1, 768) )
  
-			if( segons > 5.5 ):
+			if segons > 5.5:
 
 				self.joc.pantalla.blit( self.fons, (0,0))
 
@@ -178,13 +183,12 @@ class Visca:
 					for compta in range( 0, 5):
 						self.joc.pantalla.blit( sfc_freevial, (random.randint(	-sfc_freevial.get_width(), 1024), random.randint(-sfc_freevial.get_height(), 768 )) ) 	
 			else:
-				self.joc.pantalla.fill( (0,0,0) )		
-
+				self.joc.pantalla.fill( (0,0,0) )
 
 			for nau in self.naus:
 				self.joc.pantalla.blit( self.nau_sfc[nau.img], (nau.x, nau.y ) )
 			
-			if( segons > 5.5 ):
+			if segons > 5.5:
 				text_pos -= 20
 				if( text_pos < -(sfc_guanyadors.get_width() + 50)):
 					text_pos = 1024 + 50
@@ -192,4 +196,3 @@ class Visca:
 				self.joc.pantalla.blit( sfc_guanyadors, (text_pos, 150 + math.cos((float(mou_fons +num)) / 100.0) * 200) )
 
 			pygame.display.flip()
-
