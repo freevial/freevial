@@ -126,7 +126,7 @@ class Visca:
 
 			# Calculem el nombre de FPS
 			if time.time() > temps + 1:
-				print "FPS: " + str( imatges_x_segon )
+				#print "FPS: " + str( imatges_x_segon )
 				temps = time.time()
 				imatges_x_segon = 0
 			else:

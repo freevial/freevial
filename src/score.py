@@ -93,11 +93,10 @@ class Score:
 		nou_grup = 1 if ( equipsActius( self.joc.equips ) == 0 ) else 0
 
 
-		
-		#estat 0 -triant equips, 1- jugant 2- final
+		# Estats: 0 (triant equips), 1 (jugant),  2 (final)
 		estat = 1
-		if( nou_grup ) : estat = 1
-		if( equipsGuanyador( self.joc.equips ) != -1) : 
+		if nou_grup: estat = 0
+		if equipsGuanyador( self.joc.equips ) != -1: 
 			estat = 2
 			mostra_estad = 1
 			element_seleccionat = equipsGuanyador( self.joc.equips )
@@ -229,7 +228,7 @@ class Score:
 						estat = 1 					
 
 					if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
-						if self.joc.equips[element_seleccionat].actiu and estat == 1: 
+						if self.joc.equips[element_seleccionat].actiu: 
 							pygame.mixer.music.fadeout( 2000 )
 							return element_seleccionat
 						else:
