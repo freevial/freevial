@@ -281,6 +281,7 @@ class Preguntador:
 				
 			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if acaba == 1 or self.segons <= 0:
+				pygame.mixer.music.fadeout(500)
 				if self.mostrasolucions == 0:
 					self.mostrasolucions = 3		
 					if self.pregunta_actual[5] == self.seleccio:
@@ -289,7 +290,6 @@ class Preguntador:
 						self.so_nook.play()	
 				elif acaba == 1:
 					pygame.mixer.fadeout(500)
-					pygame.mixer.music.fadeout(500)
 					return self.pregunta_actual[0] if ( self.pregunta_actual[5] == self.seleccio) else 0
 			
 			# Animem el fons
