@@ -54,6 +54,7 @@ class Score:
 			self.figureta[num] = loadImage('points/freevial_tot' + str( num ).zfill(2) + '.png')	
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
+		self.so_sub2 = loadSound('sub2.ogg', volume = 0.4)
 
 		self.help_overlay = createHelpScreen( 'score' )
 
@@ -205,6 +206,7 @@ class Score:
 						mostra_estad ^= 1
 					
 			if nou_grup == 1:
+				self.so_sub2.play()
 				nou_grup = 0
 				self.joc.equips[element_seleccionat].actiu ^= 1
 				if self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].nom == "": escriu ^= 1
