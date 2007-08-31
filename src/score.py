@@ -29,6 +29,7 @@ from pygame.locals import *
 
 from freevialglob import *
 
+from visca import Visca
 
 ##################################################
 #
@@ -57,6 +58,8 @@ class Score:
 		self.so_sub2 = loadSound('sub2.ogg', volume = 0.4)
 
 		self.help_overlay = createHelpScreen( 'score' )
+
+		self.so_ok = loadSound('cheer.ogg')
 
 	def barra_pos( self, total, posicio, color, ample, alt ):
 
@@ -89,9 +92,38 @@ class Score:
 		element_seleccionat = self.joc.equip_actual
 		nou_grup = 1 if ( equipsActius( self.joc.equips ) == 0 ) else 0
 
-		loadSound( 'score.ogg', volume = 0.6, music = 1).play( -1 )
+
+		
+		#estat 0 -triant equips, 1- jugant 2- final
+		estat = 1
+		if( nou_grup ) : estat = 1
+		if( equipsGuanyador( self.joc.equips ) != -1) : 
+			estat = 2
+			mostra_estad = 1
+			element_seleccionat = equipsGuanyador( self.joc.equips )
+			self.so_ok.play()
+		else:
+			loadSound( 'score.ogg', volume = 0.6, music = 1).play( -1 )
+		
+
+		inici = time.time()
+
+		surten = 0
+		mostrada_victoria = False
 
 		while 1:
+
+			segons = time.time() - inici
+
+			if estat == 2:
+				if segons < 4.1 and int(segons) > surten:
+					surten = int( segons )
+					self.so_ok.play()
+				if segons > 4.1 and not mostrada_victoria:
+					visca = Visca( self.joc )
+					resultat = visca.juguem( self.joc, self.joc.equips[equipsGuanyador( self.joc.equips )].nom )
+					mostrada_victoria = True
+					loadSound( 'score.ogg', volume = 0.6, music = 1).play( -1 )
 
 			# Calculem el nombre de FPS
 			if time.time() > temps + 1:
@@ -147,28 +179,28 @@ class Score:
 							mostra_ajuda = mostra_credits = 0
 							
 					
-					if keyPress(event, ('RIGHT', 'LEFT')): 
+					if keyPress(event, ('RIGHT', 'LEFT')) and estat == 0: 
 						element_seleccionat += +1 if (0 == (element_seleccionat % 2)) else -1 
 						self.so_sub.play() 
 					
-					if keyPress(event, ('DOWN')): 
+					if keyPress(event, ('DOWN')) and estat == 0: 
 						element_seleccionat = (element_seleccionat + 2) % 6
 						self.so_sub.play() 
 					
-					if keyPress(event, ('UP')): 
+					if keyPress(event, ('UP')) and estat == 0 : 
 						element_seleccionat = (element_seleccionat - 2) % 6
 						self.so_sub.play() 
 					
-					if keyPress(event, ('a')):
+					if keyPress(event, ('a')) and estat == 0:
 						nou_grup = 1
 
-					if keyPress(event, ('n')):
+					if keyPress(event, ('n')) and estat == 0:
 						if self.joc.equips[element_seleccionat].actiu:
 							escriu ^= 1
 						else:
 							nou_grup = 1
 					
-					if keyPress(event, ('z')): 
+					if keyPress(event, ('z')) : 
 						if self.joc.equips[element_seleccionat].actiu: self.joc.equips[element_seleccionat].punts += 1
 					
 					if keyPress(event, ('x')): 
@@ -182,25 +214,27 @@ class Score:
 						if keyPress(event, ('5', 'KP5')): self.joc.equips[element_seleccionat].canviaCategoria( 5 )
 						if keyPress(event, ('6', 'KP6')): self.joc.equips[element_seleccionat].canviaCategoria( 6 )
  					
-					if keyPress(event, ('PAGEDOWN')): 
+					if keyPress(event, ('PAGEDOWN')) and estat == 0:  
 						if equipsActius( self.joc.equips ) >= 1:
 							element_seleccionat = seguentEquipActiu( self.joc.equips, element_seleccionat )
 							self.so_sub.play() 
 					
-					if keyPress(event, ('PAGEUP')): 
+					if keyPress(event, ('PAGEUP')) and estat == 0: 
 						if equipsActius( self.joc.equips ) >= 1:
 							element_seleccionat = anteriorEquipActiu( self.joc.equips, element_seleccionat )
 							self.so_sub.play() 
 					
-					if keyPress(event, ('r')): 
+					if keyPress(event, ('r')) and estat == 0: 
 						atzar = 30 + int( random.randint(0, 30) )
- 					
+						estat = 1 					
+
 					if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
-						if self.joc.equips[element_seleccionat].actiu: 
+						if self.joc.equips[element_seleccionat].actiu and estat == 1: 
 							pygame.mixer.music.fadeout( 2000 )
 							return element_seleccionat
 						else:
-							nou_grup = 1
+							if estat == 0:
+								nou_grup = 1
 
 					if keyPress(event, ('s')): 
 						mostra_estad ^= 1
@@ -220,7 +254,7 @@ class Score:
 		
 			# Animem el fons
 			ypos += 1
-			if ypos >= self.joc.mida_pantalla_y: ypos %= self.joc.mida_pantalla_y
+			ypos %= self.joc.mida_pantalla_y
 
 			# Pintem el fons animat
 			mou_fons += 8

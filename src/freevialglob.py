@@ -198,6 +198,35 @@ def equipsActius( equips ):
 	return actius
 
 
+def equipsTancat( equips ):
+
+	for num in range(0,6):
+		if equips[num].figureta == 63:
+			return True
+	
+	return False
+
+def equipsGuanyador( equips ):
+
+	puntsmax = 0
+	equipmax = -1
+
+	if( equipsTancat( equips )):
+
+		for num in range(0,6):
+			if equips[num].actiu:
+				if( equips[num].punts == puntsmax ):
+					# empat a punts
+					equipmax = -1 
+
+				if( equips[num].punts > puntsmax ):
+					equipmax = num
+					puntsmax = equips[num].punts
+	
+	return equipmax
+
+
+
 def seguentEquipActiu( equips, actual ):
 
 	actual += 1

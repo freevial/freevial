@@ -165,11 +165,11 @@ class Preguntador:
 	#
 	def juguem( self , selcat):
 
-		loadSound('preguntador.ogg', volume = 0.4, music = 1).play(1)
-			
 		self.atzar( selcat )
 
 		self.inicialitza_pregunta()
+		pygame.time.wait( 2500 )
+		loadSound('preguntador.ogg', volume = 0.4, music = 1).play(1)
 
 		temps = time.time()
 		darrer_temps = pygame.time.get_ticks()
