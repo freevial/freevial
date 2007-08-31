@@ -31,6 +31,7 @@ from freevialglob import *
 
 from visca import Visca
 
+
 ##################################################
 #
 # Empaquetat en una classe del selector d'equips
@@ -95,8 +96,10 @@ class Score:
 
 		# Estats: 0 (triant equips), 1 (jugant),  2 (final)
 		estat = 1
+
 		if nou_grup: estat = 0
 		if equipsGuanyador( self.joc.equips ) != -1: 
+
 			estat = 2
 			mostra_estad = 1
 			element_seleccionat = equipsGuanyador( self.joc.equips )
@@ -245,6 +248,13 @@ class Score:
 								2: 1,
 							}
 						estat = replaceModes[ estat ]
+
+					if keyPress(event, ('e')):
+						self.so_ok.play()
+						visca = Visca( self.joc )
+						resultat = visca.juguem( self.joc, self.joc.equips[element_seleccionat].nom )
+						mostrada_victoria = True
+						loadSound( 'score.ogg', volume = 0.6, music = 1).play( -1 )
 					
 			if nou_grup == 1:
 				self.so_sub2.play()

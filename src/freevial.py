@@ -30,6 +30,7 @@ from freevialglob import *
 from score import Score
 from preguntador import Preguntador
 from roda import Roda
+from freevialglob import DEBUG_MODE
 
 
 ##################################################

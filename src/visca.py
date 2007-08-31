@@ -116,8 +116,7 @@ class Visca:
 					nova_nau = Nau( segons *5 )
 					nova_nau.velociat = segons - 30
 					self.naus.append( nova_nau )
-				else:
-					if not random.randint(0, 1):
+				elif not random.randint(0, 1):
 						nova_nau = Nau()
 						self.naus.append( nova_nau )
 			
@@ -128,8 +127,19 @@ class Visca:
 				else:
 					nau.img += nau.spin
 					nau.img %= 72
-					nau.x += math.cos( nau.dir ) * nau.vel
-					nau.y += math.sin( nau.dir ) * nau.vel
+
+					dist = math.sqrt( abs(nau.x - 1024/2) * abs(nau.x - 1024/2) + abs(nau.y - 768/2) * abs(nau.y - 768/2))
+					dist /= 150
+		
+					if( segons < 48 ):					
+						nau.x += math.cos( nau.dir ) * nau.vel
+						nau.y += math.sin( nau.dir ) * nau.vel
+					elif (segons < 58):
+						nau.x += math.cos( nau.dir + dist) * nau.vel
+						nau.y += math.sin( nau.dir + dist) * nau.vel
+					else :
+						nau.x += math.cos( nau.dir - dist) * nau.vel
+						nau.y += math.sin( nau.dir - dist) * nau.vel
 
 			# Calculem el nombre de FPS
 			if time.time() > temps + 1:
