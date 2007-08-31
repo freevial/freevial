@@ -11,7 +11,7 @@ Quiz database:
 Carles Oriol, Nil Oriol, Josep Sanchez, Lluïsa Nuñez
 
 Music:
-Manel Almagro & Carles Oriol
+Carles Oriol
 
 Quiz on loaded database:
 ##replace:question-authors

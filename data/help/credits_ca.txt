@@ -11,7 +11,7 @@ Base de preguntes:
 Carles Oriol, Nil Oriol, Josep Sanchez, Lluïsa Nuñez
 
 Música:
-Manel Almagro i Carles Oriol
+Carles Oriol
 
 Credits de la bateria de preguntes carregada:
 ##replace:question-authors
