@@ -165,7 +165,7 @@ class Preguntador:
 	#
 	def juguem( self , selcat):
 
-		loadSound('preguntador.ogg', volume = 0.4, music = 1).play(-1)
+		loadSound('preguntador.ogg', volume = 0.4, music = 1).play(1)
 			
 		self.atzar( selcat )
 
