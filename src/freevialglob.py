@@ -319,7 +319,7 @@ def list2string( list, wordsEachLine = 5, lineEnd = ',' ):
 	return lines
 
 
-def createTextSurface( frases, color ):
+def createTextSurface( frases, color, intensitat = 25 ):
 	""" Creates a help overlay surface and prints the passed text on it. """
 	
 	font_step = (768 - (315)) / len(frases) 
@@ -330,7 +330,7 @@ def createTextSurface( frases, color ):
 	help_overlay = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
 	
 	for num in range( 0, 10):
-		help_overlay.fill( (0, 0, 16, num * 25), ( 100 + (num * 2), 100 + (num * 2), 1024 - 100 * 2 - (num * 4), 768 - 150 - (num * 4)) )
+		help_overlay.fill( (0, 0, 16, num * intensitat), ( 100 + (num * 2), 100 + (num * 2), 1024 - 100 * 2 - (num * 4), 768 - 150 - (num * 4)) )
 	
 	nline = 0
 	for line in frases:

@@ -10,6 +10,11 @@ INTRO - Tria la resposta seŀlecionada
 
 F11 o F - Canvia el mode de pantalla sencera
 
+Despres de la pregunta
+-----------------
+
+F3 - Mostra/Amaga notes a la pregunta
+
 Mode presentació
 -----------------
 Z - Mostra/Amaga el nombre de pregunta i l'autor
