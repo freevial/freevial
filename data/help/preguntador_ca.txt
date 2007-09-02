@@ -15,4 +15,4 @@ Mode presentació
 Z - Mostra/Amaga el nombre de pregunta i l'autor
 1..6 - Mostra una pregunta d'una categoria
 
-F1 or H - Ajuda | F2 - Crèdits | Q o ESC - Acaba
+F1 o H - Ajuda | F2 - Crèdits | Q o ESC - Acaba
