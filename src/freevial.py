@@ -30,7 +30,6 @@ from freevialglob import *
 from score import Score
 from preguntador import Preguntador
 from roda import Roda
-from freevialglob import DEBUG_MODE
 
 
 ##################################################
@@ -117,6 +116,15 @@ class Freevial:
 
 if '-d' in sys.argv or '--debug' in sys.argv:
 	DEBUG_MODE = True
+
+if '-m' in sys.argv or '--mute' in sys.argv:
+	mute( sound = True, music = True )
+
+if '--no-sound' in sys.argv:
+	mute( sound = True )
+
+if '--no-music' in sys.argv:
+	mute( music = True )
 
 try:
 	joc = Freevial()

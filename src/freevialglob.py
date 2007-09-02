@@ -29,6 +29,9 @@ from preguntes import preguntes_autors
 
 
 DEBUG_MODE = False
+SOUND_MUTE = False
+MUSIC_MUTE = False
+
 
 class Equip:
 	
@@ -51,12 +54,15 @@ class Equip:
 		# Les tenim desendreçades i això ho complica una mica
 		self.figureta ^= bitCategoria( categoria )
 
+
 	def activaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
 		self.figureta |= bitCategoria( categoria )
 
+
 	def teCategoria( self, categoria ) :
 		return (self.figureta & bitCategoria( categoria )) != 0
+
 
 def bitCategoria ( categoria ):
 	if categoria == 6: return 0x1
@@ -95,6 +101,21 @@ class Freevial_globals:
 
 	sfc_credits = ""
 
+
+def mute( sound = '', music = '' ):
+	""" Mute sound or music. """
+	
+	global SOUND_MUTE, MUSIC_MUTE
+	
+	if sound != '': SOUND_MUTE = sound
+	if music != '': MUSIC_MUTE = music
+	
+	return {
+			'sound': SOUND_MUTE,
+			'music': MUSIC_MUTE,
+		}
+
+
 def loadImage( filename ):
 	""" Returns a Surface of the indicated image, which is expected to be in the images folder. """
 	
@@ -103,6 +124,16 @@ def loadImage( filename ):
 
 def loadSound( filename, volume = '' , music = 0 ):
 	""" Returns a sound object of the indicated audio file, which is expected to be in the sounds folder. """
+	
+	if ( mute()['music'] and music ) or ( mute()['sound'] and not music ) :
+		
+		class voidClass:
+			def load( var ): pass
+			def set_volume( var ): pass
+			def play( var, var2 = '' ): pass
+			def stop( var ): pass
+		
+		return voidClass()
 	
 	filename = os.path.join(Freevial_globals.folders['sounds'], str(filename))
 	
@@ -181,8 +212,6 @@ def render_text( cadena, color, mida, antialias = 0, nomfont = '' ):
 	return font1.render( cadena, antialias, color )
 
 
-
-
 def maxPunts( equips ):
 
 	puntsmax = 0
@@ -193,6 +222,7 @@ def maxPunts( equips ):
 	
 	return puntsmax
 
+
 def puntsTotals( equips ):
 
 	punts = 0
@@ -201,6 +231,7 @@ def puntsTotals( equips ):
 		punts += equips[num].punts
 	
 	return punts
+
 
 def equipsActius( equips ):
 
@@ -220,6 +251,7 @@ def equipsTancat( equips ):
 	
 	return False
 
+
 def equipsGuanyador( equips ):
 
 	puntsmax = 0
@@ -238,7 +270,6 @@ def equipsGuanyador( equips ):
 					puntsmax = equips[num].punts
 	
 	return equipmax
-
 
 
 def seguentEquipActiu( equips, actual ):
@@ -385,6 +416,3 @@ def createHelpScreen( help_section, alternate_text = False ):
 	""" Creates a help overlay surface based on a help file. """
 	
 	return createTextSurface( readLocalizedHelpFile( help_section ), (0, 255, 255) if alternate_text else (255, 255, 0) )
-
-
-

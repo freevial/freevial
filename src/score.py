@@ -28,7 +28,6 @@ from Numeric import *
 from pygame.locals import *
 
 from freevialglob import *
-
 from visca import Visca
 
 
@@ -81,7 +80,7 @@ class Score:
 	# Bucle principal del programa
 	#
 	def juguem( self, joc = '' ):
-
+		
 		if joc != '': self.joc = joc
 
 		self.joc.pantalla.fill( (0,0,0,0) )

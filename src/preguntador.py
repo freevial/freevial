@@ -168,7 +168,7 @@ class Preguntador:
 		self.atzar( selcat )
 
 		self.inicialitza_pregunta()
-		pygame.time.wait( 2500 )
+		if not mute()['sound']: pygame.time.wait( 2500 )
 		loadSound('preguntador.ogg', volume = 0.4, music = 1).play(1)
 
 		temps = time.time()

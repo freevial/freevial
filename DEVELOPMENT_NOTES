@@ -8,18 +8,6 @@
 #############################################
 # TODO
 
-* Llicenciar el programa
-  Serà millor que començem a triar una llicència (GPL et sembla
-  bé?) i la possem a les capçeleres, el README i el text complet
-  al COPYING. Al README també s'haurien d'indicar totes aquelles
-  coses que has agafat d'altres autors i especificar-ne exactament
-  què és, de qui, i quina llicència té.  -- RainCT
-
-  Prioritat: Normal
-  Estat: Pendent
-  Desenvolupadors: Carles, RainCT
-
-
 * Tasca d'exemple
   Explicació de la tasca...
   
