@@ -10,6 +10,11 @@ INTRO - Choose selected answer
 
 F11 or F - Changes full screen mode
 
+After answer
+-----------------
+
+F3 - Show/hide quiz notes
+
 Presentation mode
 -----------------
 Z - Show/hide quiz author and number

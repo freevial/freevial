@@ -194,6 +194,9 @@ class Preguntador:
 
 			match_point = True if (self.joc.equips[self.joc.equip_actual].figureta | bitCategoria ( selcat ) == 63) else False
 
+		mostra_comentaris = False	
+		sfc_comentaris = None
+
 		while 1:
 
 			# Calculem el nombre de FPS
@@ -279,17 +282,25 @@ class Preguntador:
 				if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 					acaba = 1
 				
+				if keyPress(event, ('F3')) and self.mostrasolucions == 3 and self.pregunta_actual[8] != "":		
+					mostra_comentaris ^= 1
+
 			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if acaba == 1 or self.segons <= 0:
-				pygame.mixer.music.fadeout(500)
+				pygame.mixer.music.fadeout(2500)
 				if self.mostrasolucions == 0:
 					self.mostrasolucions = 3		
 					if self.pregunta_actual[5] == self.seleccio:
 						self.so_ok.play()
 					else:
 						self.so_nook.play()	
+					if self.pregunta_actual[8] != "":
+						notes = self.pregunta_actual[8].split('#')
+						notes.append ( "" )
+						notes.append ( "F3" )
+						sfc_comentaris =  createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
-					pygame.mixer.fadeout(500)
+					pygame.mixer.fadeout(2500)
 					return self.pregunta_actual[0] if ( self.pregunta_actual[5] == self.seleccio) else 0
 			
 			# Animem el fons
@@ -388,6 +399,7 @@ class Preguntador:
 			
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
+			if mostra_comentaris: self.joc.pantalla.blit( sfc_comentaris, (0,0))
 
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
