@@ -130,7 +130,7 @@ def loadSound( filename, volume = '' , music = 0 ):
 		
 		class voidClass:
 			def load( var ): pass
-			def set_volume( var ): pass
+			def set_volume( var, var2 = '' ): pass
 			def play( var, var2 = '' ): pass
 			def stop( var ): pass
 		
