@@ -63,7 +63,7 @@ class Score:
 
 		self.so_ok = loadSound('cheer.ogg')
 
-
+		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
 
 	def barra_pos( self, total, posicio, color, ample, alt ):
 
@@ -116,6 +116,8 @@ class Score:
 		surten = 0
 		mostrada_victoria = False
 
+		self.help_on_screen.activitat( )
+
 		while 1:
 
 			segons = time.time() - inici
@@ -147,6 +149,9 @@ class Score:
 
 			# Iterador d'events
 			for event in pygame.event.get():
+
+				self.help_on_screen.activitat( event )
+
 				if event.type == pygame.QUIT:
 					sys.exit()
 				
@@ -330,6 +335,8 @@ class Score:
 
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
+
+			self.help_on_screen.draw( self.joc.pantalla, (450, 55), HOS_SCORE_MODEW if escriu else estat)
 
 			# intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()

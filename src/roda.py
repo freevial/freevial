@@ -52,6 +52,9 @@ class Roda:
 		self.so_sub = loadSound('sub.ogg', volume = 0.3)
 		
 		self.help_overlay = createHelpScreen( 'roda' )
+
+		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
+		self.help_on_screen.sec_timeout = 15
 	
 	def juguem( self, joc = '' ):
 		
@@ -74,9 +77,14 @@ class Roda:
 		
 		figureta =  loadImage('points/freevial_tot' + str(self.joc.equips[self.joc.equip_actual].figureta).zfill(2) + '.png')
 
+		self.help_on_screen.activitat( )
+
 		while 1:
 		
 			for event in pygame.event.get():
+
+				self.help_on_screen.activitat( event )
+
 				if event.type == pygame.QUIT:
 					sys.exit()
 				
@@ -169,6 +177,8 @@ class Roda:
 
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
+
+			self.help_on_screen.draw( self.joc.pantalla, (400, 725 ) )
 
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
