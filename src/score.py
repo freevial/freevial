@@ -54,12 +54,16 @@ class Score:
 		for num in range(0, 64):
 			self.figureta[num] = loadImage('points/freevial_tot' + str( num ).zfill(2) + '.png')	
 
+		self.sfc_cursor = render_text( "_", (0,0,0), 30, 1)
+
 		self.so_sub = loadSound('sub.ogg', volume = 0.1)
 		self.so_sub2 = loadSound('sub2.ogg', volume = 0.4)
 
 		self.help_overlay = createHelpScreen( 'score' )
 
 		self.so_ok = loadSound('cheer.ogg')
+
+
 
 	def barra_pos( self, total, posicio, color, ample, alt ):
 
@@ -164,12 +168,20 @@ class Score:
 							escriu = 0
 							if self.joc.equips[element_seleccionat].nom == '' and event.key == K_ESCAPE:
 								self.joc.equips[element_seleccionat].actiu = 0
-						elif event.key == K_BACKSPACE:
-							if len(self.joc.equips[element_seleccionat].nom) > 0:
-								self.joc.equips[element_seleccionat].nom = self.joc.equips[element_seleccionat].nom[:-1]
 						else:
-							self.joc.equips[element_seleccionat].nom += printKey( event.key )
-				
+							nounom = None
+							if event.key == K_BACKSPACE:
+								if len(self.joc.equips[element_seleccionat].nom) > 0:
+									nounom = self.joc.equips[element_seleccionat].nom[:-1]
+							else:
+								nounom = joc.equips[element_seleccionat].nom + printKey( event.key )
+
+							if nounom != None:
+								sfc = render_text( nounom, (0,0,0), 30, 1)
+								if( sfc.get_width() < 340 ):
+									self.joc.equips[element_seleccionat].nom = nounom
+									self.joc.equips[element_seleccionat].sfc_nom = sfc
+					
 				else:
 					
 					if keyPress(event, ('q', 'ESCAPE')):
@@ -292,16 +304,22 @@ class Score:
 					self.joc.pantalla.blit( self.element_score, (xcaixa, ycaixa ) )
 					self.joc.pantalla.blit( self.figureta[self.joc.equips[num].figureta], (xcaixa + 15, ycaixa  ) )
 
-					text_nom = self.joc.equips[num].nom
+					#text_nom = self.joc.equips[num].nom
+					#if escriu and num == element_seleccionat:
+					#	if (int(time.time() * 4) % 2) == 0: text_nom += "_"  
+					#pinta = render_text( text_nom, (0,0,0), 30, 1)
+					#self.joc.pantalla.blit( pinta, (xcaixa + 25 , ycaixa + 125 ) )
+					if self.joc.equips[num].sfc_nom:
+						self.joc.pantalla.blit( self.joc.equips[num].sfc_nom, (xcaixa + 25 , ycaixa + 125 ) )
+					ampletext = self.joc.equips[num].sfc_nom.get_width() if self.joc.equips[num].sfc_nom else 0
 					if escriu and num == element_seleccionat:
-						if (int(time.time() * 4) % 2) == 0: text_nom += "_"  
-					pinta = render_text( text_nom, (0,0,0), 30, 1)
-					self.joc.pantalla.blit( pinta, (xcaixa + 25 , ycaixa + 125 ) )
+						if (int(time.time() * 4) % 2) == 0: 
+							self.joc.pantalla.blit( self.sfc_cursor, (xcaixa + 25 + ampletext, ycaixa + 125 )) 
 
 					color = (128,0,0) if (maxPunts( self.joc.equips) > self.joc.equips[num].punts ) else (0,128,0)
 					pinta = render_text( str(self.joc.equips[num].punts).zfill(2), color, 150, 1)
 					self.joc.pantalla.blit( pinta, (xcaixa + 200, ycaixa - 15) )
-			
+
 					if mostra_estad:
 						colors_barres = ( (0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,255,0) )
 						for cat in range(0,6):

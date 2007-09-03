@@ -39,6 +39,7 @@ class Equip:
 	punts = figureta = 0
 	actiu = False
 
+	sfc_nom = None
 
 	def __init__( self ):
 
