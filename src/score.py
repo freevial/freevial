@@ -250,7 +250,7 @@ class Score:
 						estat = 1 					
 
 					if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
-						if self.joc.equips[element_seleccionat].actiu: 
+						if self.joc.equips[element_seleccionat].actiu and estat == 1:
 							pygame.mixer.music.fadeout( 2000 )
 							return element_seleccionat
 						else:
