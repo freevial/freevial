@@ -87,6 +87,9 @@ class Preguntador:
 		
 		self.help_overlay = createHelpScreen( 'preguntador' )
 
+		self.help_on_screen = helpOnScreen( HOS_PREGUNTADOR_RUN )
+		self.help_on_screen.sec_timeout = 3
+
 	###########################################
 	#
 	# Funció per veure el nombre de linies que té una frase a mostrar
@@ -197,6 +200,8 @@ class Preguntador:
 		mostra_comentaris = False	
 		sfc_comentaris = None
 
+		self.help_on_screen.activitat( )
+
 		while 1:
 
 			# Calculem el nombre de FPS
@@ -218,6 +223,9 @@ class Preguntador:
 			
 			# Iterador d'events
 			for event in pygame.event.get():
+
+				self.help_on_screen.activitat( event )
+
 				if event.type == pygame.QUIT:
 					sys.exit()
 				
@@ -288,6 +296,7 @@ class Preguntador:
 			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if acaba == 1 or self.segons <= 0:
 				pygame.mixer.music.fadeout(2500)
+				self.help_on_screen.sec_timeout = 3  
 				if self.mostrasolucions == 0:
 					self.mostrasolucions = 3		
 					if self.pregunta_actual[5] == self.seleccio:
@@ -400,6 +409,8 @@ class Preguntador:
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
 			if mostra_comentaris: self.joc.pantalla.blit( sfc_comentaris, (0,0))
+
+			self.help_on_screen.draw( self.joc.pantalla, (500, 230 ), HOS_PREGUNTADOR_END if self.mostrasolucions else HOS_PREGUNTADOR_RUN )
 
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()

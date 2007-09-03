@@ -24,6 +24,7 @@
 #
 
 import os.path, random, re, pygame, locale
+import time
 from pygame.locals import *
 from preguntes import preguntes_autors
 
@@ -32,6 +33,7 @@ DEBUG_MODE = False
 SOUND_MUTE = False
 MUSIC_MUTE = False
 
+textos = []
 
 class Equip:
 	
@@ -50,6 +52,7 @@ class Equip:
 			self.preguntes_tot.append( 0 )
 			self.preguntes_ok.append( 0 )
 
+		
 
 	def canviaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
@@ -417,3 +420,61 @@ def createHelpScreen( help_section, alternate_text = False ):
 	""" Creates a help overlay surface based on a help file. """
 	
 	return createTextSurface( readLocalizedHelpFile( help_section ), (0, 255, 255) if alternate_text else (255, 255, 0) )
+
+def initTextos():
+	global textos
+	textos = readLocalizedHelpFile( "textos" )
+
+
+HOS_SCORE_MODE0 = 0
+HOS_SCORE_MODE1 = 1
+HOS_SCORE_MODE2 = 2
+HOS_QUIT = 3
+HOS_YES = 4
+HOS_NO = 5
+HOS_PREGUNTADOR_RUN = 6
+HOS_PREGUNTADOR_END = 7
+HOS_SCORE_MODEW = 8
+HOS_RODA_ATURA = 9
+
+
+class helpOnScreen():
+	
+	text = ""
+	scf_text = None
+	sec_darrera_activitat = -1
+	sec_timeout = 3
+
+	intensitat = 5
+
+	def __init__( self, itext ):
+
+		self.creaTextdeTextos ( itext )
+		sec_darrera_activitat = time.time()	
+
+	def creaTextdeTextos (self, itext ):
+
+		global textos
+		self.creaText( textos[itext] )
+
+	def creaText ( self, ptext ):
+
+		if self.text != ptext :
+			self.text = ptext
+			self.sfc_text = render_text( self.text, (128,128,128), 15, 1 )
+
+	def draw ( self, surface, pos, itext = None ):
+
+		if time.time() >= self.sec_darrera_activitat + self.sec_timeout :
+
+			if itext: self.creaTextdeTextos ( itext )
+			surface.blit( self.sfc_text, pos )
+
+	def activitat( self, event = None ):
+
+		if not event or event.type == pygame.KEYUP :
+			self.sec_darrera_activitat = time.time()
+
+
+
+
