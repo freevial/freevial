@@ -213,6 +213,25 @@ def render_text( cadena, color, mida, antialias = 0, nomfont = '' ):
 	return font1.render( cadena, antialias, color )
 
 
+def screenshot( surface, destination = os.path.join( os.path.expanduser('~'), 'Freevial/Screenshots/' ) ):
+	""" Save a screenshot of the indicated surface. """
+	
+	destination = os.path.normpath( destination )
+	
+	if not os.path.exists( destination ):
+		os.makedirs( destination )
+	
+	def nextFileNum( directory ):
+		files = os.listdir( directory )
+		files.sort()
+		fileNum = ( int( str.split(files[-1], '.')[0] ) if len(files) > 0 else 0 ) + 1
+		return fileNum
+	
+	destination = os.path.join( destination, str( nextFileNum( destination ) ) + '.png' )
+	
+	pygame.image.save( surface, destination )
+
+
 def maxPunts( equips ):
 
 	puntsmax = 0

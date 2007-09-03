@@ -87,6 +87,9 @@ class Roda:
 					else:
 						mostra_ajuda = mostra_credits = 0
 				
+				if keyPress(event, ('PRINT')):
+					screenshot( self.joc.pantalla )
+				
 				if keyPress(event, ('F1')) or keyPress(event, ('h')):
 					mostra_ajuda ^= 1	
 					mostra_credits = 0			

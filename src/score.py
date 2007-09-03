@@ -150,6 +150,9 @@ class Score:
 				if event.type == pygame.QUIT:
 					sys.exit()
 				
+				if keyPress(event, ('PRINT')):
+					screenshot( self.joc.pantalla )
+				
 				if keyPress(event, ('F1')) or ( not escriu and keyPress(event, ('h')) ):
 					mostra_ajuda ^= 1
 					mostra_credits = 0
