@@ -34,6 +34,7 @@ SOUND_MUTE = False
 MUSIC_MUTE = False
 
 textos = []
+categories = []
 
 class Equip:
 	
@@ -119,6 +120,8 @@ def mute( sound = '', music = '' ):
 			'music': MUSIC_MUTE,
 		}
 
+def ismute():
+	return SOUND_MUTE and MUSIC_MUTE
 
 def loadImage( filename ):
 	""" Returns a Surface of the indicated image, which is expected to be in the images folder. """
@@ -208,9 +211,8 @@ def mouseRelease( event, request = 0 ):
 
 def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
 	""" Function for easier text rendering. """
-	
-	if nomfont == '':
-		nomfont = os.path.join(Freevial_globals.folders['fonts'], 'lb.ttf')
+
+	nomfont = os.path.join(Freevial_globals.folders['fonts'], 'lb.ttf' if nomfont == '' else nomfont)
 	
 	font1 = pygame.font.Font( nomfont, mida )
 	
@@ -492,9 +494,21 @@ def createHelpScreen( help_section, alternate_text = False ):
 	
 	return createTextSurface( readLocalizedHelpFile( help_section ), (0, 255, 255) if alternate_text else (255, 255, 0) )
 
+i_colors_cat = ( (0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,255,0) )
+
 def initTextos():
 	global textos
+	global categories
 	textos = readLocalizedHelpFile( "textos" )
+	categories = readLocalizedHelpFile( "categories" )
+
+def textCategoria( ncat ):
+
+	return categories[ncat]
+
+def colorsCategories():
+
+	return i_colors_cat
 
 
 HOS_SCORE_MODE0 = 0

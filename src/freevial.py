@@ -61,8 +61,11 @@ class Freevial:
 			pygame.display.toggle_fullscreen()
 		
 		# inicialize sound and text systems
-		pygame.mixer.pre_init(44100, -16, 2, 2048)
-		pygame.mixer.init()
+
+		if not ismute(): 
+			pygame.mixer.pre_init(44100, -16, 2, 2048)
+			pygame.mixer.init()
+
 		pygame.font.init()
 		
 		self.joc.sfc_credits = createHelpScreen( 'credits', alternate_text = True )

@@ -231,7 +231,8 @@ class Preguntador:
 				
 				if keyPress(event, ('q', 'ESCAPE')):
 					if not mostra_ajuda and not mostra_credits:
-						pygame.mixer.fadeout(500)
+						if not ismute():
+							pygame.mixer.fadeout(500)
 						if self.mostrasolucions == 0:
 							self.mostrasolucions = 1
 							self.seleccio = 0
@@ -298,7 +299,8 @@ class Preguntador:
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if acaba == 1 or self.segons <= 0:
-				pygame.mixer.music.fadeout(2500)
+				if not ismute():
+					pygame.mixer.music.fadeout(2500)
 				self.help_on_screen.sec_timeout = 3  
 				if self.mostrasolucions == 0:
 					self.mostrasolucions = 3		
@@ -310,7 +312,8 @@ class Preguntador:
 						notes = self.pregunta_actual[8].split('#')
 						sfc_comentaris =  createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
-					pygame.mixer.fadeout(2500)
+					if not ismute():
+						pygame.mixer.fadeout(2500)
 					return self.pregunta_actual[0] if ( self.pregunta_actual[5] == self.seleccio) else 0
 			
 			# Animem el fons

@@ -251,7 +251,8 @@ class Score:
 
 					if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 						if self.joc.equips[element_seleccionat].actiu and estat == 1:
-							pygame.mixer.music.fadeout( 2000 )
+							if not ismute():
+								pygame.mixer.music.fadeout( 2000 )
 							return element_seleccionat
 						else:
 							if estat == 0:
@@ -324,9 +325,8 @@ class Score:
 					self.joc.pantalla.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 
 					if mostra_estad:
-						colors_barres = ( (0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,255,0) )
 						for cat in range(0,6):
-							self.joc.pantalla.blit( self.barra_pos( self.joc.equips[num].preguntes_tot[cat], self.joc.equips[num].preguntes_ok[cat], colors_barres[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )
+							self.joc.pantalla.blit( self.barra_pos( self.joc.equips[num].preguntes_tot[cat], self.joc.equips[num].preguntes_ok[cat],  colorsCategories()[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )
 
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))

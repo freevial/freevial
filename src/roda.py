@@ -41,6 +41,12 @@ class Roda:
 		self.fons = loadImage('ruleta_fons.png')
 		self.front = loadImage('ruleta_front.png')
 		self.paper = loadImage('ruleta_paper.png')
+
+		for compta in range(0,6):
+			sfc = render_text( textCategoria(compta), (0,0,0), 50, 1, 'Ubuntu-Title.ttf', 350 );
+			self.paper.blit( sfc, (122, 2+(compta * 200) + 100 - sfc.get_height() / 2 ))
+			sfc = render_text( textCategoria(compta), colorsCategories()[compta], 50, 1, 'Ubuntu-Title.ttf', 350 );
+			self.paper.blit( sfc, (120, (compta * 200) + 100 - sfc.get_height() / 2 ))
 		
 		self.so_dot = loadSound('dot.ogg')
 		self.so_evil = loadSound('evil.ogg')
@@ -90,7 +96,8 @@ class Roda:
 				
 				if keyPress(event, ('ESCAPE', 'q')):
 					if not mostra_ajuda and not mostra_credits:
-						pygame.mixer.fadeout(500)
+						if not ismute():
+							pygame.mixer.fadeout(500)
 						return 0
 					else:
 						mostra_ajuda = mostra_credits = 0

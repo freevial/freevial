@@ -1,6 +1,6 @@
-Personatges#i events
-ubuntu
-internet
-Jocs, llibres#i peŀlícules
-terminal i#llenguatges
-programari#i maquinari
+Personatges i events
+Ubuntu
+Internet
+Jocs, llibres i peŀlícules
+Terminal i llenguatges
+Programari i maquinari
