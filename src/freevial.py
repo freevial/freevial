@@ -24,7 +24,7 @@
 #
 
 import sys, os.path, pygame
-from Numeric import *
+from math import *
 
 from freevialglob import *
 from score import Score

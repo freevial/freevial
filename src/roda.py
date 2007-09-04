@@ -43,9 +43,9 @@ class Roda:
 		self.paper = loadImage('ruleta_paper.png')
 
 		for compta in range(0,6):
-			sfc = render_text( textCategoria(compta), (0,0,0), 50, 1, 'Ubuntu-Title.ttf', 350 );
+			sfc = render_text( textCategoria(compta), (0,0,0), 60, 1, 'Ubuntu-Title.ttf', 350 );
 			self.paper.blit( sfc, (122, 2+(compta * 200) + 100 - sfc.get_height() / 2 ))
-			sfc = render_text( textCategoria(compta), colorsCategories()[compta], 50, 1, 'Ubuntu-Title.ttf', 350 );
+			sfc = render_text( textCategoria(compta), colorsCategories()[compta], 60, 1, 'Ubuntu-Title.ttf', 350 );
 			self.paper.blit( sfc, (120, (compta * 200) + 100 - sfc.get_height() / 2 ))
 		
 		self.so_dot = loadSound('dot.ogg')

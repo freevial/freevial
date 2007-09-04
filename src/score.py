@@ -24,7 +24,7 @@
 #
 
 import sys, os.path, random, time, math, pygame
-from Numeric import *
+from math import *
 from pygame.locals import *
 
 from freevialglob import *
