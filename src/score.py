@@ -312,11 +312,6 @@ class Score:
 					self.joc.pantalla.blit( self.element_score, (xcaixa, ycaixa ) )
 					self.joc.pantalla.blit( self.figureta[self.joc.equips[num].figureta], (xcaixa + 15, ycaixa  ) )
 
-					#text_nom = self.joc.equips[num].nom
-					#if escriu and num == element_seleccionat:
-					#	if (int(time.time() * 4) % 2) == 0: text_nom += "_"  
-					#pinta = render_text( text_nom, (0,0,0), 30, 1)
-					#self.joc.pantalla.blit( pinta, (xcaixa + 25 , ycaixa + 125 ) )
 					if self.joc.equips[num].sfc_nom:
 						self.joc.pantalla.blit( self.joc.equips[num].sfc_nom, (xcaixa + 25 , ycaixa + 125 ) )
 					ampletext = self.joc.equips[num].sfc_nom.get_width() if self.joc.equips[num].sfc_nom else 0
@@ -337,6 +332,7 @@ class Score:
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
 
 			self.help_on_screen.draw( self.joc.pantalla, (450, 55), HOS_SCORE_MODEW if escriu else estat)
+
 
 			# intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()

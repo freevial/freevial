@@ -206,15 +206,61 @@ def mouseRelease( event, request = 0 ):
 		return True
 
 
-def render_text( cadena, color, mida, antialias = 0, nomfont = '' ):
+def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
 	""" Function for easier text rendering. """
 	
 	if nomfont == '':
 		nomfont = os.path.join(Freevial_globals.folders['fonts'], 'lb.ttf')
 	
 	font1 = pygame.font.Font( nomfont, mida )
-	return font1.render( cadena, antialias, color )
+	
+	text_restant = cadena
+	sfc = None
 
+	if maxwidth:
+		sfcs = []
+
+		while text_restant != "":
+
+			ample = maxwidth + 1
+			escriure = text_restant
+
+			while ample > maxwidth:
+
+				sfc = font1.render( escriure, antialias, color )
+				ample = sfc.get_width()		
+			
+				if ample > maxwidth:
+					tpos = escriure.rfind( ' ' )
+					if tpos == -1:
+						ample = maxwidth
+					else:
+						escriure = escriure[0:tpos]		
+
+			sfcs.append( sfc )
+
+			text_restant = text_restant[ len( escriure )+1:]
+
+		if len(sfcs) > 1:
+			iample = 0
+			ialt = 0
+			for compta in range( 0, len(sfcs) ):
+				ialt += max(sfcs[compta].get_height(), mida)
+				iample = min(maxwidth, max( iample, sfcs[compta].get_width() ))
+
+			sfc = pygame.Surface( ( iample, ialt), pygame.SRCALPHA, 32 )
+
+			pos = 0
+			for compta in range( 0, len(sfcs) ):
+				sfc.blit( sfcs[compta], (0, pos) )
+				pos += max(sfcs[compta].get_height(), mida)
+
+		else:
+			sfc = sfcs[0] if len(sfcs) == 1 else None
+	else:
+		sfc = font1.render( cadena, antialias, color )
+
+	return sfc
 
 def screenshot( surface, destination = os.path.join( os.path.expanduser('~'), 'Freevial/Screenshots/' ) ):
 	""" Save a screenshot of the indicated surface. """
@@ -387,14 +433,20 @@ def createTextSurface( frases, color, intensitat = 25 ):
 		help_overlay.fill( (0, 0, 16, num * intensitat), ( 100 + (num * 2), 100 + (num * 2), 1024 - 100 * 2 - (num * 4), 768 - 150 - (num * 4)) )
 	
 	nline = 0
+
+	pos = 0
 	for line in frases:
-		
-		text_pregunta = render_text( line, (0,0,0), font_size, 1 )
-		help_overlay.blit( text_pregunta, (150 + 2, (font_step + 5) * nline + 142))
-		
-		text_pregunta = render_text( line, color, font_size, 1 )
-		help_overlay.blit( text_pregunta, (150, (font_step + 5) * nline + 140))
-		
+		if line != "":	
+			text_pregunta = render_text( line, (0,0,0), font_size, 1, '', 700 )
+			help_overlay.blit( text_pregunta, (150 + 2, pos + 142))
+			
+			text_pregunta = render_text( line, color, font_size, 1, '', 700 )
+			help_overlay.blit( text_pregunta, (150, pos + 140))
+			
+			pos += text_pregunta.get_height()
+		else:
+			pos += 	font_size	
+
 		nline += 1
 	
 	return help_overlay

@@ -1,7 +1,7 @@
 "cat","Pregunta","Resposta 1 ","Resposta 2","Resposta 3","ok","Autor ","Data","Comentari o notes",
 1,"On es va fer la Guadec de l'any 2006?","Chicago","Vilanova i la Geltrú","Sao Paulo",2,"Carles",18/08/07,,1
 2,"Quins mesos de l'any surt cada#versió nova d'ubuntu?","Febrer i novembre","Març i setembre","Abril i octubre",3,"Carles",18/08/07,"El nombre de la versió correspon#a l'any i el mes.##(7.10=2007 octubre)",2
-3,"Qui va crear el format HTML?","Tim Berners-Lee","Wim Mertens","Manuel de Icaza",1,"Carles",18/08/07,,3
+3,"Qui va crear el format HTML?","Tim Berners-Lee","Wim Mertens","Manuel de Icaza",1,"Carles",18/08/07,"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",3
 4,"El wesnoth és un joc de tipus","Arcade Shooter","Aventura gràfica","Estratègia per torns",3,"Nil",18/08/07,,4
 5,"Per trinxar ben trinxat l'ordinador farem:","sudo rm -d -f -r /","sudo cp /dev/hdb1 > aixo.iso","echo destroy computer contents",1,"Carles",18/08/07,,5
 6,"El millor editor lliure d'imatges matricials és:","gimp","gaim","gcc",1,"Nil",18/08/07,"El gimp és un programa de# tractament d'imatges#el gaim de missatgeria instantània# (ara rebatejat com a pidgin)#i el gcc el compilador de# llenguatge c i c++. ",6

@@ -308,8 +308,6 @@ class Preguntador:
 						self.so_nook.play()	
 					if self.pregunta_actual[8] != "":
 						notes = self.pregunta_actual[8].split('#')
-						notes.append ( "" )
-						notes.append ( "F3" )
 						sfc_comentaris =  createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
 					pygame.mixer.fadeout(2500)
@@ -408,12 +406,12 @@ class Preguntador:
 					self.joc.pantalla.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (880, 130) )
 			
 			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
-			
+
+			self.help_on_screen.draw( self.joc.pantalla, (500, 230 ), HOS_PREGUNTADOR_END if self.mostrasolucions else HOS_PREGUNTADOR_RUN )
+
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
 			if mostra_comentaris: self.joc.pantalla.blit( sfc_comentaris, (0,0))
-
-			self.help_on_screen.draw( self.joc.pantalla, (500, 230 ), HOS_PREGUNTADOR_END if self.mostrasolucions else HOS_PREGUNTADOR_RUN )
 
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
