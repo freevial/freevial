@@ -1,4 +1,4 @@
-ARROWS - Select slot, INTRO create teams, R - Start game, F1 - Help
+ARROWS - Select slot, INTRO create teams, SPACE - Start game, F1 - Help
 INTRO - Star turn, F1 - Help, F2 - About freevial
 F1 - Help, F2 - About freevial
 Are you sure you want to quit the game?
@@ -7,4 +7,4 @@ No
 A, B, C choose answer. F1 - Help
 F3 - Show comments, INTRO/ESC - Back to score screen
 Write team name - INTRO Finalizes
-INTRO - To stop the wheel
+INTRO - Stop the wheel

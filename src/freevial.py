@@ -61,7 +61,6 @@ class Freevial:
 			pygame.display.toggle_fullscreen()
 		
 		# inicialize sound and text systems
-
 		if not ismute(): 
 			pygame.mixer.pre_init(44100, -16, 2, 2048)
 			pygame.mixer.init()
@@ -121,6 +120,9 @@ class Freevial:
 
 if '-d' in sys.argv or '--debug' in sys.argv:
 	DEBUG_MODE = True
+
+if '--fps' in sys.argv:
+	displayFPS( True )
 
 if '-m' in sys.argv or '--mute' in sys.argv:
 	mute( sound = True, music = True )

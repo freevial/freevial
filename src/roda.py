@@ -65,6 +65,7 @@ class Roda:
 	def juguem( self, joc = '' ):
 		
 		if joc != '': self.joc = joc
+		self.frate = frameRate( self.joc.Limit_FPS )
 				
 		self.so_evil.stop()
 		self.so_dot.play(100)
@@ -86,7 +87,9 @@ class Roda:
 		self.help_on_screen.activitat( )
 
 		while 1:
-		
+			
+			self.frate.next()
+			
 			for event in pygame.event.get():
 
 				self.help_on_screen.activitat( event )
@@ -186,11 +189,8 @@ class Roda:
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
 
 			self.help_on_screen.draw( self.joc.pantalla, (400, 725 ) )
-
+			
+			self.frate.display( self.joc.pantalla )
+			
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
-
-			#limitem els FPS
-			pygame.time.Clock().tick( self.joc.Limit_FPS )
-
-

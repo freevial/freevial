@@ -78,21 +78,15 @@ class Visca:
 	def juguem( self, joc, nomguanya ):
 
 		self.joc = joc
+		self.frate = frameRate( 50 )
+		inici = time.time()
 
 		self.naus = []
-
-		temps = time.time()
-		darrer_temps = pygame.time.get_ticks()
-		Limit_FPS = 50
-		imatges_x_segon = 0
-		
-		inici = time.time()
 
 		loadSound( 'wonfv.ogg', volume = 0.8, music = 1).play( 1 )
 		
 		mou_fons = ypos = xpos = 0
 
-		#sfc_guanyadors = render_text( self.joc.equips[self.joc.equip_actual].nom, (64,64,64), 30, 1 )	
 		sfc_guanyadors = render_text( nomguanya, (255,255,255), 300, 1 )	
 		text_pos = 1024 + 50
 
@@ -100,7 +94,10 @@ class Visca:
 		sfc_freevial.set_alpha( 64 )
 
 		surten = 0
+		
 		while 1:
+			
+			self.frate.next()
 
 			segons = time.time() - inici
 
@@ -140,21 +137,6 @@ class Visca:
 					else :
 						nau.x += math.cos( nau.dir - dist) * nau.vel
 						nau.y += math.sin( nau.dir - dist) * nau.vel
-
-			# Calculem el nombre de FPS
-			if time.time() > temps + 1:
-				#print "FPS: " + str( imatges_x_segon )
-				temps = time.time()
-				imatges_x_segon = 0
-			else:
-				imatges_x_segon +=  1
-
-			# No cal limitador de frames actualment ja que estem en 7 aprox
-			dif_fps = 1000 / Limit_FPS 
-			dif_ticks = pygame.time.get_ticks() - darrer_temps
-			if dif_ticks < dif_fps:
-				pygame.time.wait(  dif_fps - dif_ticks )
-				darrer_temps = pygame.time.get_ticks()
 
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT or keyPress(event, ('q', 'ESCAPE')):
@@ -203,9 +185,11 @@ class Visca:
 			
 			if segons > 5.5:
 				text_pos -= 20
-				if( text_pos < -(sfc_guanyadors.get_width() + 50)):
+				if text_pos < -(sfc_guanyadors.get_width() + 50):
 					text_pos = 1024 + 50
 
 				self.joc.pantalla.blit( sfc_guanyadors, (text_pos, 150 + math.cos((float(mou_fons +num)) / 100.0) * 200) )
+			
+			self.frate.display( self.joc.pantalla )
 
 			pygame.display.flip()

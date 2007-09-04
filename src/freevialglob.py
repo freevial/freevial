@@ -23,8 +23,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import os.path, random, re, pygame, locale
-import time
+import os.path, random, re, pygame, locale, time
 from pygame.locals import *
 from preguntes import preguntes_autors
 
@@ -32,6 +31,7 @@ from preguntes import preguntes_autors
 DEBUG_MODE = False
 SOUND_MUTE = False
 MUSIC_MUTE = False
+DISPLAY_FPS = False
 
 textos = []
 categories = []
@@ -328,15 +328,15 @@ def equipsGuanyador( equips ):
 	puntsmax = 0
 	equipmax = -1
 
-	if( equipsTancat( equips )):
+	if equipsTancat( equips ):
 
 		for num in range(0,6):
 			if equips[num].actiu:
-				if( equips[num].punts == puntsmax ):
+				if equips[num].punts == puntsmax:
 					# empat a punts
 					equipmax = -1 
 
-				if( equips[num].punts > puntsmax ):
+				if equips[num].punts > puntsmax:
 					equipmax = num
 					puntsmax = equips[num].punts
 	
@@ -496,15 +496,18 @@ def createHelpScreen( help_section, alternate_text = False ):
 
 i_colors_cat = ( (0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,255,0) )
 
+
 def initTextos():
 	global textos
 	global categories
 	textos = readLocalizedHelpFile( "textos" )
 	categories = readLocalizedHelpFile( "categories" )
 
+
 def textCategoria( ncat ):
 
 	return categories[ncat]
+
 
 def colorsCategories():
 
@@ -525,41 +528,87 @@ HOS_RODA_ATURA = 9
 
 class helpOnScreen():
 	
-	text = ""
+	text = ''
 	scf_text = None
 	sec_darrera_activitat = -1
 	sec_timeout = 3
 
 	intensitat = 5
-
+	
+	
 	def __init__( self, itext ):
-
+		
 		self.creaTextdeTextos ( itext )
-		sec_darrera_activitat = time.time()	
-
-	def creaTextdeTextos (self, itext ):
-
+		self.sec_darrera_activitat = time.time()	
+	
+	
+	def creaTextdeTextos(self, itext ):
+		
 		global textos
 		self.creaText( textos[itext] )
-
-	def creaText ( self, ptext ):
-
+	
+	
+	def creaText( self, ptext ):
+		
 		if self.text != ptext :
 			self.text = ptext
 			self.sfc_text = render_text( self.text, (128,128,128), 15, 1 )
-
-	def draw ( self, surface, pos, itext = None ):
-
+	
+	
+	def draw( self, surface, pos, itext = None ):
+		
 		if time.time() >= self.sec_darrera_activitat + self.sec_timeout :
-
+			
 			if itext: self.creaTextdeTextos ( itext )
 			surface.blit( self.sfc_text, pos )
-
+	
+	
 	def activitat( self, event = None ):
-
+		
 		if not event or event.type == pygame.KEYUP :
 			self.sec_darrera_activitat = time.time()
 
 
+def displayFPS( display = '' ):
+	""" Displays or hides the frame rate from screen. """
+	
+	global DISPLAY_FPS
+	
+	if display != '': DISPLAY_FPS = display
+	
+	return DISPLAY_FPS
 
 
+class frameRate():
+	""" Calculates the frame rate (FPS), limits it and, if choosen so, displays it on screen. """
+	
+	seconds = fps = fps_current = fps_limit = lastTicks = 0
+	textSurface = None
+	
+	def __init__( self, fps_limit = 0 ):
+		self.fps_limit = fps_limit
+		self.lastTicks = pygame.time.get_ticks()
+	
+	def next( self ):
+		
+		if time.time() > self.seconds + 1:
+			self.seconds = time.time()
+			self.fps = self.fps_current
+			self.fps_current = 0
+			if DISPLAY_FPS:
+				self.textSurface = render_text( 'FPS: ' + str( self.fps if self.fps > 0 else 'N/a' ), (128, 128, 128), 15, 1 )
+		else:
+			self.fps_current += 1
+		
+		limit_fps = 1000 / self.fps_limit
+		limit_ticks = pygame.time.get_ticks() - self.lastTicks
+		
+		if limit_ticks < limit_fps:
+			pygame.time.wait( limit_fps - limit_ticks )
+			self.lastTicks = pygame.time.get_ticks()
+	
+	
+	def display( self, surface ):
+		if self.textSurface and DISPLAY_FPS:
+			# display the frame rate on the middle of the screen's bottom
+			surface.blit( self.textSurface, ( (( Freevial_globals.mida_pantalla_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )

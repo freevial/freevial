@@ -23,12 +23,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import sys, os.path, random, time, math, pygame
+import sys, os.path, random, math, pygame
 from math import *
 from pygame.locals import *
 
 from freevialglob import *
-from visca import Visca
+from endscreen import Visca
 
 
 ##################################################
@@ -86,23 +86,22 @@ class Score:
 	def juguem( self, joc = '' ):
 		
 		if joc != '': self.joc = joc
-
+		self.frate = frameRate( self.joc.Limit_FPS )
+		
 		self.joc.pantalla.fill( (0,0,0,0) )
-
+		
 		temps = time.time()
 		darrer_temps = pygame.time.get_ticks()
-
-		imatges_x_segon = ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = mostra_estad = 0
+		
+		ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = mostra_estad = 0
 		element_seleccionat = self.joc.equip_actual
 		nou_grup = 1 if ( equipsActius( self.joc.equips ) == 0 ) else 0
-
-
+		
 		# Estats: 0 (triant equips), 1 (jugant),  2 (final)
 		estat = 1
-
+		
 		if nou_grup: estat = 0
 		if equipsGuanyador( self.joc.equips ) != -1: 
-
 			estat = 2
 			mostra_estad = 1
 			element_seleccionat = equipsGuanyador( self.joc.equips )
@@ -110,18 +109,15 @@ class Score:
 		else:
 			loadSound( 'score.ogg', volume = 0.6, music = 1).play( -1 )
 		
-
-		inici = time.time()
-
 		surten = 0
 		mostrada_victoria = False
-
-		self.help_on_screen.activitat( )
-
+		
+		self.help_on_screen.activitat()
+		
 		while 1:
-
-			segons = time.time() - inici
-
+			
+			self.frate.next()
+			
 			if estat == 2:
 				if segons < 4.1 and int(segons) > surten:
 					surten = int( segons )
@@ -131,23 +127,8 @@ class Score:
 					resultat = visca.juguem( self.joc, self.joc.equips[equipsGuanyador( self.joc.equips )].nom )
 					mostrada_victoria = True
 					loadSound( 'score.ogg', volume = 0.6, music = 1).play( -1 )
-
-			# Calculem el nombre de FPS
-			if time.time() > temps + 1:
-				#print "FPS: " + str( imatges_x_segon )
-				temps = time.time()
-				imatges_x_segon = 0
-			else:
-				imatges_x_segon +=  1
-		
-			# No cal limitador de frames actualment ja que estem en 7 aprox
-			dif_fps = 1000 / self.joc.Limit_FPS 
-			dif_ticks = pygame.time.get_ticks() - darrer_temps
-			if dif_ticks < dif_fps:
-				pygame.time.wait(  dif_fps - dif_ticks )
-				darrer_temps = pygame.time.get_ticks()
-
-			# Iterador d'events
+			
+			# Event iterator
 			for event in pygame.event.get():
 
 				self.help_on_screen.activitat( event )
@@ -170,24 +151,25 @@ class Score:
 					pygame.display.toggle_fullscreen()
 				
 				if escriu and not mostra_ajuda and not mostra_credits:
-					
 					if event.type == pygame.KEYUP:
 						if event.key in (K_RETURN, K_ESCAPE, K_KP_ENTER):
 							escriu = 0
 							if self.joc.equips[element_seleccionat].nom == '' and event.key == K_ESCAPE:
 								self.joc.equips[element_seleccionat].actiu = 0
 						else:
-							nounom = None
+							newname = None
+							
 							if event.key == K_BACKSPACE:
 								if len(self.joc.equips[element_seleccionat].nom) > 0:
-									nounom = self.joc.equips[element_seleccionat].nom[:-1]
+									newname = self.joc.equips[element_seleccionat].nom[:-1]
 							else:
-								nounom = joc.equips[element_seleccionat].nom + printKey( event.key )
-
-							if nounom != None:
-								sfc = render_text( nounom, (0,0,0), 30, 1)
-								if( sfc.get_width() < 340 ):
-									self.joc.equips[element_seleccionat].nom = nounom
+								newname = joc.equips[element_seleccionat].nom + printKey( event.key )
+							
+							if newname != None:
+								sfc = render_text( newname, (0,0,0), 30, 1)
+								if sfc.get_width() < 340:
+									# Name isn't too long, accept the new character
+									self.joc.equips[element_seleccionat].nom = newname
 									self.joc.equips[element_seleccionat].sfc_nom = sfc
 					
 				else:
@@ -198,7 +180,6 @@ class Score:
 							return -1
 						else:
 							mostra_ajuda = mostra_credits = 0
-							
 					
 					if keyPress(event, ('RIGHT', 'LEFT')) and estat == 0: 
 						element_seleccionat += +1 if (0 == (element_seleccionat % 2)) else -1 
@@ -245,13 +226,13 @@ class Score:
 							element_seleccionat = anteriorEquipActiu( self.joc.equips, element_seleccionat )
 							self.so_sub.play() 
 					
-					if keyPress(event, ('r')) and estat == 0: 
+					if keyPress(event, ('r')) and estat == 0 and equipsActius( self.joc.equips ) > 0:
 						atzar = 30 + int( random.randint(0, 30) )
-						estat = 1 					
+						estat = 1
 
 					if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
-						if self.joc.equips[element_seleccionat].actiu and estat == 1:
-							if not ismute():
+						if self.joc.equips[element_seleccionat].actiu and (keyPress(event, ('SPACE')) or estat == 1):
+							if not mute()['music']:
 								pygame.mixer.music.fadeout( 2000 )
 							return element_seleccionat
 						else:
@@ -284,7 +265,7 @@ class Score:
 
 			if atzar != 0 and equipsActius( self.joc.equips ) >= 2:
 				element_seleccionat = seguentEquipActiu( self.joc.equips, element_seleccionat )
-				atzar -= 1 
+				atzar -= 1
 				self.so_sub.play()
 			else:
 				atzar = 0
@@ -330,10 +311,11 @@ class Score:
 
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
-
+			
 			self.help_on_screen.draw( self.joc.pantalla, (450, 55), HOS_SCORE_MODEW if escriu else estat)
-
-
+			
+			self.frate.display( self.joc.pantalla )
+			
 			# intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
 

@@ -167,21 +167,20 @@ class Preguntador:
 	# Bucle principal del programa
 	#
 	def juguem( self , selcat):
+		
+		self.frate = frameRate( self.joc.Limit_FPS )
 
 		self.atzar( selcat )
 
 		self.inicialitza_pregunta()
 		if not mute()['sound']: pygame.time.wait( 2500 )
 		loadSound('preguntador.ogg', volume = 0.4, music = 1).play(1)
-
-		temps = time.time()
-		darrer_temps = pygame.time.get_ticks()
-
-		imatges_x_segon = mostra_ajuda = mostra_credits = 0
+		
+		mostra_ajuda = mostra_credits = 0
 
 		self.joc.pantalla.fill( (0,0,0,0) )
 
-		# segons restants per fi de pregunta
+		# remaining seconds until end of answer time
 		self.segons = 61
 
 		nom_equip_sfc = render_text( self.joc.equips[self.joc.equip_actual].nom, (64,64,64), 30, 1 )	
@@ -203,21 +202,8 @@ class Preguntador:
 		self.help_on_screen.activitat( )
 
 		while 1:
-
-			# Calculem el nombre de FPS
-			if time.time() > temps + 1:
-				#print "FPS: " + str( imatges_x_segon )
-				temps = time.time()
-				imatges_x_segon = 0
-			else:
-				imatges_x_segon +=  1
-		
-			# No cal limitador de frames actualment ja que estem en 7 aprox
-			dif_fps = 1000 / self.joc.Limit_FPS 
-			dif_ticks = pygame.time.get_ticks() - darrer_temps
-			if dif_ticks < dif_fps:
-				pygame.time.wait(  dif_fps - dif_ticks )
-				darrer_temps = pygame.time.get_ticks()
+			
+			self.frate.next()
 			
 			acaba = 0
 			
@@ -415,7 +401,9 @@ class Preguntador:
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
 			if mostra_comentaris: self.joc.pantalla.blit( sfc_comentaris, (0,0))
-
+			
+			self.frate.display( self.joc.pantalla )
+			
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
 		
