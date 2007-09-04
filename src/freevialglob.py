@@ -589,7 +589,7 @@ class frameRate():
 		self.fps_limit = fps_limit
 		self.lastTicks = pygame.time.get_ticks()
 	
-	def next( self ):
+	def next( self, surface = None ):
 		
 		if time.time() > self.seconds + 1:
 			self.seconds = time.time()
@@ -606,9 +606,9 @@ class frameRate():
 		if limit_ticks < limit_fps:
 			pygame.time.wait( limit_fps - limit_ticks )
 			self.lastTicks = pygame.time.get_ticks()
-	
-	
-	def display( self, surface ):
-		if self.textSurface and DISPLAY_FPS:
-			# display the frame rate on the middle of the screen's bottom
-			surface.blit( self.textSurface, ( (( Freevial_globals.mida_pantalla_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )
+
+		if surface:	
+			if self.textSurface and DISPLAY_FPS:
+				# display the frame rate on the middle of the screen's bottom
+				surface.blit( self.textSurface, ( (( Freevial_globals.mida_pantalla_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )
+

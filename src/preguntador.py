@@ -203,8 +203,6 @@ class Preguntador:
 
 		while 1:
 			
-			self.frate.next()
-			
 			acaba = 0
 			
 			# Iterador d'events
@@ -402,7 +400,7 @@ class Preguntador:
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
 			if mostra_comentaris: self.joc.pantalla.blit( sfc_comentaris, (0,0))
 			
-			self.frate.display( self.joc.pantalla )
+			self.frate.next( self.joc.pantalla )
 			
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()

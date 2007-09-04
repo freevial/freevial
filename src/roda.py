@@ -87,9 +87,7 @@ class Roda:
 		self.help_on_screen.activitat( )
 
 		while 1:
-			
-			self.frate.next()
-			
+
 			for event in pygame.event.get():
 
 				self.help_on_screen.activitat( event )
@@ -190,7 +188,7 @@ class Roda:
 
 			self.help_on_screen.draw( self.joc.pantalla, (400, 725 ) )
 			
-			self.frate.display( self.joc.pantalla )
+			self.frate.next( self.joc.pantalla )
 			
 			#intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()

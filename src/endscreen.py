@@ -96,8 +96,7 @@ class Visca:
 		surten = 0
 		
 		while 1:
-			
-			self.frate.next()
+
 
 			segons = time.time() - inici
 
@@ -190,6 +189,6 @@ class Visca:
 
 				self.joc.pantalla.blit( sfc_guanyadors, (text_pos, 150 + math.cos((float(mou_fons +num)) / 100.0) * 200) )
 			
-			self.frate.display( self.joc.pantalla )
+			self.frate.next( self.joc.pantalla )
 
 			pygame.display.flip()

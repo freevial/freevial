@@ -116,8 +116,6 @@ class Score:
 		
 		while 1:
 			
-			self.frate.next()
-			
 			if estat == 2:
 				if segons < 4.1 and int(segons) > surten:
 					surten = int( segons )
@@ -231,13 +229,21 @@ class Score:
 						estat = 1
 
 					if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
-						if self.joc.equips[element_seleccionat].actiu and (keyPress(event, ('SPACE')) or estat == 1):
+
+						if estat == 1:
 							if not mute()['music']:
 								pygame.mixer.music.fadeout( 2000 )
 							return element_seleccionat
+
 						else:
+							
 							if estat == 0:
-								nou_grup = 1
+								if self.joc.equips[element_seleccionat].actiu and keyPress(event, ('SPACE')) :
+									atzar = 30 + int( random.randint(0, 30) )
+									estat = 1
+								else:
+									if self.joc.equips[element_seleccionat].actiu: escriu ^= 1
+									else: nou_grup = 1
 
 					if keyPress(event, ('s')): 
 						mostra_estad ^= 1
@@ -314,7 +320,7 @@ class Score:
 			
 			self.help_on_screen.draw( self.joc.pantalla, (450, 55), HOS_SCORE_MODEW if escriu else estat)
 			
-			self.frate.display( self.joc.pantalla )
+			self.frate.next( self.joc.pantalla )
 			
 			# intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
