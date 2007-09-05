@@ -236,16 +236,27 @@ class Score:
 								pygame.mixer.music.fadeout( 2000 )
 							return element_seleccionat
 
-						else:
-							
-							if estat == 0:
-								if self.joc.equips[element_seleccionat].actiu and keyPress(event, ('SPACE')) :
-									atzar = 30 + int( random.randint(0, 30) )
-									estat = 1
-								else:
-									if self.joc.equips[element_seleccionat].actiu: escriu ^= 1
-									else: nou_grup = 1
+						elif estat == 0:
+							if self.joc.equips[element_seleccionat].actiu and keyPress(event, ('SPACE')) :
+								atzar = 30 + int( random.randint(0, 30) )
+								estat = 1
+							else:
+								if self.joc.equips[element_seleccionat].actiu: escriu ^= 1
+								else: nou_grup = 1
+						else :
+							if fesPregunta( self.joc.pantalla , valorText( HOS_NEW_GAME ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0 :
+								estat = 0
+				
+								for equip in self.joc.equips:
+									for num in range(0, 6): 
+										equip.preguntes_tot[num] = 0
+										equip.preguntes_ok[num] = 0
+									equip.punts = 0
+									equip.figureta = 0				
 
+					if keyPress(event, ('t')): estat = 2
+					print estat
+					
 					if keyPress(event, ('s')): 
 						mostra_estad ^= 1
 					

@@ -139,7 +139,7 @@ class Visca:
 
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT or keyPress(event, ('q', 'ESCAPE')):
-					sys.exit()
+					return
 				
 				if keyPress(event, ('PRINT')):
 					screenshot( self.joc.pantalla )

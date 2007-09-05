@@ -40,7 +40,8 @@ categories = []
 class Equip:
 	
 	nom = ''
-	punts = figureta = 0
+	punts = 0
+	figureta = 0
 	actiu = False
 
 	sfc_nom = None
@@ -53,8 +54,6 @@ class Equip:
 		for num in range(0, 6): 
 			self.preguntes_tot.append( 0 )
 			self.preguntes_ok.append( 0 )
-
-		
 
 	def canviaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
@@ -106,6 +105,7 @@ class Freevial_globals:
 	equip_actual = 0
 
 	sfc_credits = ""
+
 
 
 def mute( sound = '', music = '' ):
@@ -551,6 +551,7 @@ HOS_PREGUNTADOR_RUN = 6
 HOS_PREGUNTADOR_END = 7
 HOS_SCORE_MODEW = 8
 HOS_RODA_ATURA = 9
+HOS_NEW_GAME = 10
 
 
 class helpOnScreen():
