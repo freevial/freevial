@@ -60,7 +60,7 @@ class Roda:
 		self.help_overlay = createHelpScreen( 'roda' )
 
 		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
-		self.help_on_screen.sec_timeout = 15
+		self.help_on_screen.sec_timeout = 10
 	
 	def juguem( self, joc = '' ):
 		
