@@ -28,6 +28,7 @@ from pygame.locals import *
 from preguntes import preguntes_autors
 
 
+
 DEBUG_MODE = False
 SOUND_MUTE = False
 MUSIC_MUTE = False
@@ -503,6 +504,8 @@ def initTextos():
 	textos = readLocalizedHelpFile( "textos" )
 	categories = readLocalizedHelpFile( "categories" )
 
+def valorText( ntext ):
+	return textos[ ntext ]
 
 def textCategoria( ncat ):
 

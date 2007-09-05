@@ -29,7 +29,7 @@ from pygame.locals import *
 
 from freevialglob import *
 from endscreen import Visca
-
+from question import fesPregunta
 
 ##################################################
 #
@@ -173,7 +173,8 @@ class Score:
 					if keyPress(event, ('q', 'ESCAPE')):
 						if not mostra_ajuda and not mostra_credits:
 							# TODO: Ask for confirmation before exit.
-							return -1
+							if fesPregunta( self.joc.pantalla , valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0 :
+								return -1
 						else:
 							mostra_ajuda = mostra_credits = 0
 					
