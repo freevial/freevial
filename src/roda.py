@@ -186,7 +186,7 @@ class Roda:
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
 
-			self.help_on_screen.draw( self.joc.pantalla, (400, 725 ) )
+			self.help_on_screen.draw( self.joc.pantalla, (350, 740) )
 			
 			self.frate.next( self.joc.pantalla )
 			

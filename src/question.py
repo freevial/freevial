@@ -97,7 +97,7 @@ class Question:
 
 				if seleccio == compta:
 					for salt in range(0, 25):
-						pantalla.fill( (0,0,salt * 10), (posx - 25 + salt, 450, sfc_respostes[compta].get_width() + 25-salt*2, sfc_respostes[compta].get_height()  ))
+						pantalla.fill( (salt * 10,0,0), (posx - 25 + salt, 450, sfc_respostes[compta].get_width() + 25-salt*2, sfc_respostes[compta].get_height()  ))
 
 				pantalla.blit( sfc_respostes[compta], (posx, 450) )
 				posx += sfc_respostes[compta].get_width() + espai_entre_respostes

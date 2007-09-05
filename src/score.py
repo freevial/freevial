@@ -174,6 +174,8 @@ class Score:
 						if not mostra_ajuda and not mostra_credits:
 							# TODO: Ask for confirmation before exit.
 							if fesPregunta( self.joc.pantalla , valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0 :
+								pygame.mixer.music.fadeout( 500 )
+								pygame.time.wait( 500 )
 								return -1
 						else:
 							mostra_ajuda = mostra_credits = 0
@@ -317,7 +319,7 @@ class Score:
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
 			
-			self.help_on_screen.draw( self.joc.pantalla, (450, 55), HOS_SCORE_MODEW if escriu else estat)
+			self.help_on_screen.draw( self.joc.pantalla, (350, 740), HOS_SCORE_MODEW if escriu else estat)
 			
 			frate.next( self.joc.pantalla )
 			

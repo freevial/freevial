@@ -617,5 +617,6 @@ class frameRate():
 		if surface:	
 			if self.textSurface and DISPLAY_FPS:
 				# display the frame rate on the middle of the screen's bottom
-				surface.blit( self.textSurface, ( (( Freevial_globals.mida_pantalla_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )
+				#surface.blit( self.textSurface, ( (( Freevial_globals.mida_pantalla_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )
+				surface.blit( self.textSurface, (250, 740 ) )
 

@@ -88,7 +88,7 @@ class Preguntador:
 		self.help_overlay = createHelpScreen( 'preguntador' )
 
 		self.help_on_screen = helpOnScreen( HOS_PREGUNTADOR_RUN )
-		self.help_on_screen.sec_timeout = 3
+		self.help_on_screen.sec_timeout = 10
 
 	###########################################
 	#
@@ -168,6 +168,8 @@ class Preguntador:
 	#
 	def juguem( self , selcat):
 		
+		self.help_on_screen.sec_timeout = 10
+
 		self.frate = frameRate( self.joc.Limit_FPS )
 
 		self.atzar( selcat )
@@ -286,6 +288,7 @@ class Preguntador:
 				if not ismute():
 					pygame.mixer.music.fadeout(2500)
 				self.help_on_screen.sec_timeout = 3  
+				print "******************************************"
 				if self.mostrasolucions == 0:
 					self.mostrasolucions = 3		
 					if self.pregunta_actual[5] == self.seleccio:
@@ -394,7 +397,7 @@ class Preguntador:
 			
 			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
 
-			self.help_on_screen.draw( self.joc.pantalla, (500, 230 ), HOS_PREGUNTADOR_END if self.mostrasolucions else HOS_PREGUNTADOR_RUN )
+			self.help_on_screen.draw( self.joc.pantalla, (350, 740), HOS_PREGUNTADOR_END if self.mostrasolucions else HOS_PREGUNTADOR_RUN )
 
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
