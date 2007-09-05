@@ -582,13 +582,17 @@ def displayFPS( display = '' ):
 class frameRate():
 	""" Calculates the frame rate (FPS), limits it and, if choosen so, displays it on screen. """
 	
-	seconds = fps = fps_current = fps_limit = lastTicks = 0
+	seconds = fps = fps_current = fps_limit = lastTicks = t_inici = 0
 	textSurface = None
 	
 	def __init__( self, fps_limit = 0 ):
 		self.fps_limit = fps_limit
 		self.lastTicks = pygame.time.get_ticks()
+		self.t_inici = time.time()
 	
+	def segons( self ):
+		return time.time() - self.t_inici
+
 	def next( self, surface = None ):
 		
 		if time.time() > self.seconds + 1:

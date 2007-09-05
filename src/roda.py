@@ -70,7 +70,7 @@ class Roda:
 		self.so_evil.stop()
 		self.so_dot.play(100)
 
-		velocitat = 100
+		velocitat = 75
 		deceleracio = 0
 		
 		pos = pos_fons = atura = frenant = time_fi = mostra_ajuda = mostra_credits = 0

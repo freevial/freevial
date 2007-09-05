@@ -86,13 +86,11 @@ class Score:
 	def juguem( self, joc = '' ):
 		
 		if joc != '': self.joc = joc
-		self.frate = frameRate( self.joc.Limit_FPS )
+		frate = frameRate( self.joc.Limit_FPS )
 		
 		self.joc.pantalla.fill( (0,0,0,0) )
 		
-		temps = time.time()
-		darrer_temps = pygame.time.get_ticks()
-		
+	
 		ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = mostra_estad = 0
 		element_seleccionat = self.joc.equip_actual
 		nou_grup = 1 if ( equipsActius( self.joc.equips ) == 0 ) else 0
@@ -117,10 +115,10 @@ class Score:
 		while 1:
 			
 			if estat == 2:
-				if segons < 4.1 and int(segons) > surten:
-					surten = int( segons )
+				if frate.segons() < 4.1 and int(frate.segons()) > surten:
+					surten = int( frate.segons() )
 					self.so_ok.play()
-				if segons > 4.1 and not mostrada_victoria:
+				if frate.segons() > 4.1 and not mostrada_victoria:
 					visca = Visca( self.joc )
 					resultat = visca.juguem( self.joc, self.joc.equips[equipsGuanyador( self.joc.equips )].nom )
 					mostrada_victoria = True
@@ -320,7 +318,7 @@ class Score:
 			
 			self.help_on_screen.draw( self.joc.pantalla, (450, 55), HOS_SCORE_MODEW if escriu else estat)
 			
-			self.frate.next( self.joc.pantalla )
+			frate.next( self.joc.pantalla )
 			
 			# intercanviem els buffers de self.joc.pantalla
 			pygame.display.flip()
