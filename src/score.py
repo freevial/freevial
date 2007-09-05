@@ -147,26 +147,26 @@ class Score:
 					pygame.display.toggle_fullscreen()
 				
 				if escriu and not mostra_ajuda and not mostra_credits:
-					if event.type == pygame.KEYUP:
-						if event.key in (K_RETURN, K_ESCAPE, K_KP_ENTER):
-							escriu = 0
-							if self.joc.equips[element_seleccionat].nom == '' and event.key == K_ESCAPE:
-								self.joc.equips[element_seleccionat].actiu = 0
+
+					if event.type == pygame.KEYUP and event.key in (K_RETURN, K_ESCAPE, K_KP_ENTER):
+						escriu = 0
+						if self.joc.equips[element_seleccionat].nom == '' and event.key == K_ESCAPE:
+							self.joc.equips[element_seleccionat].actiu = 0
+					elif event.type == pygame.KEYDOWN:
+						newname = None
+						
+						if event.key == K_BACKSPACE:
+							if len(self.joc.equips[element_seleccionat].nom) > 0:
+								newname = self.joc.equips[element_seleccionat].nom[:-1]
 						else:
-							newname = None
-							
-							if event.key == K_BACKSPACE:
-								if len(self.joc.equips[element_seleccionat].nom) > 0:
-									newname = self.joc.equips[element_seleccionat].nom[:-1]
-							else:
-								newname = joc.equips[element_seleccionat].nom + printKey( event.key )
-							
-							if newname != None:
-								sfc = render_text( newname, (0,0,0), 30, 1)
-								if sfc.get_width() < 340:
-									# Name isn't too long, accept the new character
-									self.joc.equips[element_seleccionat].nom = newname
-									self.joc.equips[element_seleccionat].sfc_nom = sfc
+							newname = joc.equips[element_seleccionat].nom + printKey( event.key )
+						
+						if newname != None:
+							sfc = render_text( newname, (0,0,0), 30, 1)
+							if sfc.get_width() < 340:
+								# Name isn't too long, accept the new character
+								self.joc.equips[element_seleccionat].nom = newname
+								self.joc.equips[element_seleccionat].sfc_nom = sfc
 					
 				else:
 					

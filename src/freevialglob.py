@@ -367,12 +367,16 @@ def anteriorEquipActiu( equips, actual ):
 
 anterior = ""
 
+aobert = atancat = adieresi = acirc = False
+accents = [u"aeiou", u"àèìòù", u"áéíóú", u"äëïöü", u"âêîôû" ]
 
 def printKey( tecla ):
 	""" Translates a pygame Key object for on-game printing of it's value. """
+
+	global aobert, atancat, adieresi, acirc, accents
 	
 	keyname = pygame.key.name( tecla )
-	
+
 	if keyname == 'space': 
 		return ' '
 	
@@ -385,11 +389,31 @@ def printKey( tecla ):
 	if len(keyname) == 3 and keyname[:1] == '[' and keyname[2:] == ']':
 		keyname = keyname[1:2]
 	
-	if not re.search("^[a-zA-Z0-9,.+'-/* ]$", keyname):
-		return ''
-	
+	pos = accents[0].find( keyname )
+	if pos != -1:
+		if aobert: keyname = accents[1][pos]
+		if atancat: keyname = accents[2][pos]
+		if adieresi: keyname = accents[3][pos]
+		if acirc: keyname = accents[4][pos]
+
 	if pygame.key.get_mods() & pygame.KMOD_SHIFT:
 		keyname = keyname.upper()
+
+	if tecla == 314:
+		print 314
+		if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+			atancat = True
+		elif pygame.key.get_mods() & pygame.KMOD_CTRL:
+			adieresi = True
+		elif pygame.key.get_mods() & pygame.KMOD_ALT:
+			acirc = True
+		else:
+			aobert = True
+	else:
+		aobert = atancat = adieresi = acirc = False
+
+	if not re.search(u"^[a-zA-Z0-9,.+'-/*àèìòùáéíóúäëïöüâêîôû ]$", keyname):
+		return ''
 
 	return keyname
 
