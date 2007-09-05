@@ -55,8 +55,6 @@ class Question:
 
 			sfc_respostes.append( sfc )
 
-		
-
 		while 1:
 
 			for event in pygame.event.get():
@@ -66,16 +64,19 @@ class Question:
 				
 				if keyPress(event, ('ESCAPE', 'q')):
 					return cancel		
-
+				
+				if keyPress(event, ('f', 'F11')):
+					pygame.display.toggle_fullscreen()
+				
 				if keyPress(event, ('RIGHT')):	
 					seleccio += 1
 					seleccio %= len(respostes)
-
+				
 				if keyPress(event, ('LEFT')):	
 					seleccio -= 1
 					seleccio %= len(respostes)
 				
-				if ( mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')) ) :
+				if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
 					return seleccio
 				
 			if duracio_fadeout:
@@ -84,7 +85,7 @@ class Question:
 	
 				duracio_fadeout -= 1
 
-#			pantalla.fill( (0,0,0,0) )
+			#pantalla.fill( (0,0,0,0) )
 						
 			pantalla.blit( sfc_copiapantalla, (0,0) )
 			pantalla.blit( sfc_pantalla2, (0,0) )
@@ -112,7 +113,3 @@ def fesPregunta( pantalla, pregunta, respostes, predeterminat = 0, cancel = -1 )
 	question = Question()
 
 	return question.ask( pantalla, pregunta, respostes, predeterminat = 0, cancel = -1 )
-
-
-
-
