@@ -328,8 +328,7 @@ class Score:
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
 			
-			if estat != 2:
-				self.help_on_screen.draw( self.joc.pantalla, (350, 740), HOS_SCORE_MODEW if escriu else estat)
+			self.help_on_screen.draw( self.joc.pantalla, (350, 740), HOS_SCORE_MODEW if escriu else estat)
 			
 			frate.next( self.joc.pantalla )
 			

@@ -132,7 +132,7 @@ def loadImage( filename ):
 
 def loadSound( filename, volume = '' , music = 0 ):
 	""" Returns a sound object of the indicated audio file, which is expected to be in the sounds folder. """
-	
+
 	if ( mute()['music'] and music ) or ( mute()['sound'] and not music ) :
 		
 		class voidClass:
@@ -560,7 +560,7 @@ class helpOnScreen():
 	text = ''
 	scf_text = None
 	sec_darrera_activitat = -1
-	sec_timeout = 3
+	sec_timeout = 10
 
 	intensitat = 5
 	
@@ -649,7 +649,7 @@ class frameRate():
 Jstick = None
 
 # Alies per comandament tipus PS2
-j_alias = { 2: K_RETURN, 8: K_SPACE, 12: K_UP, 13: K_RIGHT, 14: K_DOWN, 15: K_LEFT, 0: K_ESCAPE, 9: K_ESCAPE, 3: K_s, 7: K_F3, 6: K_F1, 4: K_F2 }
+j_alias = { 0: K_RETURN, 1: K_ESCAPE, 2: K_RETURN, 8: K_SPACE, 12: K_UP, 13: K_RIGHT, 14: K_DOWN, 15: K_LEFT, 9: K_ESCAPE, 3: K_s, 7: K_F3, 6: K_F1, 4: K_F2, 5: K_a}
 
 def init_joystick():
 
