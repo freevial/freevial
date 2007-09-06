@@ -140,7 +140,10 @@ class Visca:
 			for event in pygame.event.get():
 				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
 
-				if event.type == pygame.QUIT or keyPress(event, ('q', 'ESCAPE')):
+				if event.type == pygame.QUIT:
+					sys.exit()
+					
+				if keyPress(event, ('q', 'ESCAPE')):
 					return
 				
 				if keyPress(event, ('PRINT')):

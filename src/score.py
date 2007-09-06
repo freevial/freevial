@@ -150,7 +150,7 @@ class Score:
 				
 				if escriu and not mostra_ajuda and not mostra_credits:
 
-					if event.type == pygame.KEYUP and event.key in (K_RETURN, K_ESCAPE, K_KP_ENTER):
+					if keyPress(event, ('RETURN', 'ESCAPE', 'KP_ENTER')):
 						escriu = 0
 						if self.joc.equips[element_seleccionat].nom == '' and event.key == K_ESCAPE:
 							self.joc.equips[element_seleccionat].actiu = 0
@@ -174,7 +174,6 @@ class Score:
 					
 					if keyPress(event, ('q', 'ESCAPE')):
 						if not mostra_ajuda and not mostra_credits:
-							# TODO: Ask for confirmation before exit.
 							if fesPregunta( self.joc.pantalla , valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0 :
 								pygame.mixer.music.fadeout( 500 )
 								pygame.time.wait( 500 )
@@ -329,7 +328,8 @@ class Score:
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
 			
-			self.help_on_screen.draw( self.joc.pantalla, (350, 740), HOS_SCORE_MODEW if escriu else estat)
+			if estat != 2:
+				self.help_on_screen.draw( self.joc.pantalla, (350, 740), HOS_SCORE_MODEW if escriu else estat)
 			
 			frate.next( self.joc.pantalla )
 			

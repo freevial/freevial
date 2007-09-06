@@ -9,21 +9,29 @@
 # TODO
 
 * Tasca d'exemple
-  Explicació de la tasca...
-  
-  Prioritat: Baixa / Normal / Alta / Crítica
-  Estat: Pendent / En progrés / En proves / Retocs / Finalitzada
-  Desenvolupador: Carles / RainCT
+   Explicació de la tasca...
+   
+   Prioritat: Baixa / Normal / Alta / Crítica
+   Estat: Pendent / En progrés / En proves / Retocs / Finalitzada
+   Desenvolupador: Carles / RainCT
 
-* pantalla sortida de joc si/no
+* Debianitzar-lo
+   
+   Prioritat: Normal
+   Estat: En progrés, Bloquejat
+   Desenvolupador: RainCT
 
-* reiniciar joc despres de finalitzar partida
+* Pàgina web per al Freevial
+   
+   Prioritat: Baixa
+   Estat: Pendent
+   Desenvolupador: N/a
 
-* deb ejar-lo
-
-* web freevial
-
-* web formulari preguntes
+* Formulari per a enviar preguntes
+   
+   Prioritat: Normal
+   Estat: Pendent
+   Desenvolupador: N/a
 
 
 
