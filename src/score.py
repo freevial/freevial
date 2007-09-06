@@ -129,6 +129,8 @@ class Score:
 
 				self.help_on_screen.activitat( event )
 
+				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
+
 				if event.type == pygame.QUIT:
 					sys.exit()
 				
@@ -253,9 +255,6 @@ class Score:
 										equip.preguntes_ok[num] = 0
 									equip.punts = 0
 									equip.figureta = 0				
-
-					if keyPress(event, ('t')): estat = 2
-					print estat
 					
 					if keyPress(event, ('s')): 
 						mostra_estad ^= 1

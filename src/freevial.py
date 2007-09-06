@@ -70,6 +70,7 @@ class Freevial:
 		self.joc.sfc_credits = createHelpScreen( 'credits', alternate_text = True )
 
 		initTextos()
+		init_joystick()
 	
 	###########################################
 	#

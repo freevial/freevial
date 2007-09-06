@@ -210,6 +210,8 @@ class Preguntador:
 			# Iterador d'events
 			for event in pygame.event.get():
 
+				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
+
 				self.help_on_screen.activitat( event )
 
 				if event.type == pygame.QUIT:
@@ -288,7 +290,6 @@ class Preguntador:
 				if not ismute():
 					pygame.mixer.music.fadeout(2500)
 				self.help_on_screen.sec_timeout = 3  
-				print "******************************************"
 				if self.mostrasolucions == 0:
 					self.mostrasolucions = 3		
 					if self.pregunta_actual[5] == self.seleccio:

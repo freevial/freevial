@@ -279,7 +279,8 @@ def screenshot( surface, destination = os.path.join( os.path.expanduser('~'), 'F
 		fileNum = ( int( str.split(files[-1], '.')[0] ) if len(files) > 0 else 0 ) + 1
 		return fileNum
 	
-	destination = os.path.join( destination, str( nextFileNum( destination ) ) + '.png' )
+	#PNG, JPEG saving new in pygame 1.8.
+	destination = os.path.join( destination, str( nextFileNum( destination ) ) + '.tga' )
 	
 	pygame.image.save( surface, destination )
 
@@ -644,4 +645,28 @@ class frameRate():
 				# display the frame rate on the middle of the screen's bottom
 				#surface.blit( self.textSurface, ( (( Freevial_globals.mida_pantalla_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )
 				surface.blit( self.textSurface, (250, 740 ) )
+
+Jstick = None
+
+# Alies per comandament tipus PS2
+j_alias = { 2: K_RETURN, 8: K_SPACE, 12: K_UP, 13: K_RIGHT, 14: K_DOWN, 15: K_LEFT, 0: K_ESCAPE, 9: K_ESCAPE, 3: K_s, 7: K_F3, 6: K_F1, 4: K_F2 }
+
+def init_joystick():
+
+	pygame.joystick.init ()
+
+	if pygame.joystick.get_count():
+		Jstick = pygame.joystick.Joystick( 0 )
+		Jstick.init()
+
+def translateJoystickEvent( event ):
+
+	alies = j_alias.get( event.button )
+	if alies:
+		event = pygame.event.Event( pygame.KEYUP, {'key': alies, 'unicode': u's', 'mod': 0})
+		pygame.event.post( event )
+
+
+
+
 

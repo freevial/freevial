@@ -92,6 +92,8 @@ class Roda:
 
 				self.help_on_screen.activitat( event )
 
+				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
+
 				if event.type == pygame.QUIT:
 					sys.exit()
 				

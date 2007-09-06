@@ -138,6 +138,8 @@ class Visca:
 						nau.y += math.sin( nau.dir - dist) * nau.vel
 
 			for event in pygame.event.get():
+				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
+
 				if event.type == pygame.QUIT or keyPress(event, ('q', 'ESCAPE')):
 					return
 				

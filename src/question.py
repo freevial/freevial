@@ -59,6 +59,8 @@ class Question:
 
 			for event in pygame.event.get():
 
+				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
+
 				if event.type == pygame.QUIT:
 					sys.exit()
 				

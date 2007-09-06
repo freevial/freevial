@@ -26,19 +26,44 @@
 
 import sys, random, pygame, os
 
+pygame.joystick.init ()
 
 
+print pygame.joystick.get_count()
+
+j = pygame.joystick.Joystick( 0 )
+j.init()
+
+pantalla = pygame.display.set_mode( ( 100, 100), 0, 32)
 
 
-pantalla = pygame.display.set_mode( ( 1024, 768), 0, 32)
 
 while 1:
 
+
+
 	for event in pygame.event.get():
-		if event.type == pygame.QUIT or ( event.type == pygame.KEYUP and (event.key == pygame.K_q or event.key == pygame.K_ESCAPE) ): sys.exit()
+		if event.type == pygame.QUIT or ( event.type == pygame.KEYUP and (event.key == pygame.K_q or event.key == 	pygame.K_ESCAPE) ): sys.exit()
 
 		if event.type == pygame.KEYDOWN:
-			print event.key
-			print os.system('kbd_mode -s')
+			print event
+
+		if event.type == pygame.JOYBUTTONDOWN:
+			print event.joy
+			print event.button
+
+			
+
+	#print "b0 = ", j.get_button( 0 )
 	
 	pygame.display.flip()
+
+
+
+
+
+
+
+
+
+
