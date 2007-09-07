@@ -52,7 +52,7 @@ class Freevial:
 	def inici( self ):
 		
 		# inicialize presentation surface
-		self.joc.pantalla = pygame.display.set_mode( ( self.joc.mida_pantalla_x, self.joc.mida_pantalla_y), 0, 32)
+		self.joc.pantalla = pygame.display.set_mode( ( self.joc.mida_pantalla_x, self.joc.mida_pantalla_y), HWSURFACE, 32)
 		pygame.display.set_caption('Freevial')
 		pygame.display.set_icon( pygame.image.load(os.path.join(self.joc.folders['images'], 'logo.png')) )
 		

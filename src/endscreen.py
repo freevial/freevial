@@ -52,6 +52,13 @@ class Nau:
 			return self.x < -marge or self.x > 1024 + marge or self.y < -marge or self.y > 768 + marge
 
 
+class Cua:
+
+	def __init__( self, punt ):
+		self.pos = punt
+		self.time = time.time()
+
+
 def ensegments( llista_freevial, segons ):
 	
 	for segment in llista_freevial:
@@ -74,6 +81,7 @@ class Visca:
 		for num in range( 0, 72 ): 
 			self.nau_sfc.append( loadImage('ovnis/freevial_tot' + str( num ).zfill(2) + '.png') )
 
+		self.sfc_llum = loadImage( 'llum.png' )
 
 	def juguem( self, joc, nomguanya ):
 
@@ -94,11 +102,18 @@ class Visca:
 		sfc_freevial.set_alpha( 64 )
 
 		surten = 0
+
+		cues = []
 		
 		while 1:
 
-
 			segons = time.time() - inici
+
+			for cua in cues:
+				if time.time() - cua.time > .4 :
+					cues.remove( cua )
+
+
 
 			if segons < 5.5 and int(segons) > surten:
 				surten = int( segons)
@@ -181,8 +196,16 @@ class Visca:
 				if ensegments( llista_freevial, segons ):
 					for compta in range( 0, 5):
 						self.joc.pantalla.blit( sfc_freevial, (random.randint(	-sfc_freevial.get_width(), 1024), random.randint(-sfc_freevial.get_height(), 768 )) ) 	
+
+					if segons >= 20 and segons <=34:
+						for nau in self.naus:
+							cues.append ( Cua( (nau.x + 32 - 8, nau.y + 32 - 4) ) )
+
 			else:
 				self.joc.pantalla.fill( (0,0,0) )
+
+			for cua in cues:
+				self.joc.pantalla.blit( self.sfc_llum, ( cua.pos[0] + random.randint(-2,2), cua.pos[1] + random.randint(-2,2)) )
 
 			for nau in self.naus:
 				self.joc.pantalla.blit( self.nau_sfc[nau.img], (nau.x, nau.y ) )
