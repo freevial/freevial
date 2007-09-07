@@ -23,7 +23,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import csv
+import csv, copy
 from freevialglob import *
 
 
@@ -81,8 +81,7 @@ for element in csv_questions:
 	
 	preguntes[ element[0] - 1 ].append( element )
 
-	for num in range(0, 6): 
-		preguntes_backup[num].extend( preguntes[num] )
+	preguntes_backup = copy.deepcopy( preguntes )
 
 # Copy the questions to get them back if a categories gets empty
 

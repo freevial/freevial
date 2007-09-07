@@ -23,7 +23,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import sys, os.path, random, math, time, pygame
+import sys, os.path, random, math, time, pygame, copy
 from math import *
 
 from freevialglob import *
@@ -155,7 +155,7 @@ class Preguntador:
 	def atzar( self, categoria ):
 		
 		if 0 == len(preguntes[ categoria - 1 ]):
-			preguntes[ categoria - 1 ].extend(preguntes_backup[ categoria - 1 ])
+			preguntes[ categoria - 1 ] = copy.copy( preguntes_backup[ categoria - 1 ])
 		
 		self.pregunta_actual = preguntes[ categoria - 1 ].pop()
 		
