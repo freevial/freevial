@@ -87,7 +87,7 @@ class Visca:
 	def juguem( self, joc, nomguanya ):
 
 		self.joc = joc
-		self.frate = frameRate( 50 )
+		self.frate = frameRate( self.joc.Limit_FPS )
 		inici = time.time()
 
 		self.naus = []
@@ -124,7 +124,7 @@ class Visca:
 				print cua.pos[1]
 
 			fes_llums = False
-			if (llums == 0 and segons > 1) or (llums == 1 and segons > 55) or (llums == 2 and segons > 65) or (llums == 3 and segons > 6) or (llums == 4 and segons > 67):
+			if (llums == 0 and segons > 45) or (llums == 1 and segons > 55) or (llums == 2 and segons > 64) or (llums == 3 and segons > 65) or (llums == 4 and segons > 66):
 				llums += 1
 				fes_llums = True
  
