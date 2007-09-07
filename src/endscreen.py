@@ -55,8 +55,9 @@ class Nau:
 class Cua:
 
 	def __init__( self, punt ):
-		self.pos = punt
+		self.pos = [punt[0], punt[1]]
 		self.time = time.time()
+		self.cau = 0
 
 
 def ensegments( llista_freevial, segons ):
@@ -105,15 +106,35 @@ class Visca:
 
 		cues = []
 		
+		llums = 0
+	
 		while 1:
 
 			segons = time.time() - inici
 
 			for cua in cues:
-				if time.time() - cua.time > .4 :
+				if time.time() - cua.time > .4 and cua.cau == 0: 
 					cues.remove( cua )
+					print "caca"
+				if cua.cau:
+					cua.pos[1] += cua.cau
+					if cua.pos[1] > 768:
+						cues.remove( cua )
 
+				print cua.pos[1]
 
+			fes_llums = False
+			if (llums == 0 and segons > 1) or (llums == 1 and segons > 55) or (llums == 2 and segons > 65) or (llums == 3 and segons > 6) or (llums == 4 and segons > 67):
+				llums += 1
+				fes_llums = True
+ 
+			if fes_llums:
+				pos = 0
+				while pos < 1024:
+					pos += random.randint(1, 10)
+					cua = Cua( (pos, random.randint(0,5)) )
+					cua.cau = random.randint( 5, 25 ) 
+					cues.append ( cua ) 
 
 			if segons < 5.5 and int(segons) > surten:
 				surten = int( segons)
@@ -205,7 +226,8 @@ class Visca:
 				self.joc.pantalla.fill( (0,0,0) )
 
 			for cua in cues:
-				self.joc.pantalla.blit( self.sfc_llum, ( cua.pos[0] + random.randint(-2,2), cua.pos[1] + random.randint(-2,2)) )
+				dist = int((time.time() - cua.time) * 40) if cua.cau == 0 else 0
+				self.joc.pantalla.blit( self.sfc_llum, ( cua.pos[0] + random.randint(-dist,dist), cua.pos[1] + random.randint(-dist,dist)) )
 
 			for nau in self.naus:
 				self.joc.pantalla.blit( self.nau_sfc[nau.img], (nau.x, nau.y ) )
