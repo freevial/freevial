@@ -154,7 +154,7 @@ class Preguntador:
 	# si la categoria és 0 no té en compte el valor
 	def atzar( self, categoria ):
 		
-		if len(preguntes[ categoria - 1 ]):
+		if 0 == len(preguntes[ categoria - 1 ]):
 			preguntes[ categoria - 1 ].extend(preguntes_backup[ categoria - 1 ])
 		
 		self.pregunta_actual = preguntes[ categoria - 1 ].pop()
