@@ -30,8 +30,8 @@ arxius_de_preguntes = [ 'preguntes_ca01.csv',
 						'preguntes_ca02.csv', 
 						'preguntes_ca03.csv',
 						'preguntes_ca04.csv', 
-						'preguntes_ca05.csv', 
-						'preguntes_ca06.csv' ]
+						'preguntes_cakw.csv', 
+						'preguntes_camc.csv' ]
 
 carpeta_de_preguntes = '../'
 
