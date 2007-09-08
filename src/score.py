@@ -247,6 +247,7 @@ class Score:
 						else :
 							if fesPregunta( self.joc.pantalla , valorText( HOS_NEW_GAME ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0 :
 								estat = 0
+								mostra_estad = 0 
 				
 								for equip in self.joc.equips:
 									for num in range(0, 6): 

@@ -37,7 +37,7 @@ carpeta_de_preguntes = '../'
 
 class CategoriaPreguntes:
 
-	def __init__( self ):
+	def __init__( self, num ):
 
 		self.versio = 0
 		self.nom = ''
@@ -50,6 +50,8 @@ class CategoriaPreguntes:
 
 		self.preguntes = []
 		self.preguntes_backup = []
+	
+		self.num = num
 
 
 	def importQuestions( self, csvFile ):
@@ -77,12 +79,13 @@ class CategoriaPreguntes:
 				for num in range(0, 10):
 					line[ num ] = unicode(line[ num ], 'utf-8')
 				
-				for num in (0, 5, 8):
+				for num in (5, 8):
 					try:
 						line[ num ] = int(line[ num ])
 					except ValueError:
 						line[ num ] = 0
 			
+				line[0] = self.num
 				self.preguntes.append(line)
 		
 		self.preguntes_backup = copy.deepcopy( self.preguntes )
@@ -109,7 +112,7 @@ class CategoriaPreguntes:
 categoriespreguntes = []
 
 for num in range(0, 6):
-	cat = CategoriaPreguntes()
+	cat = CategoriaPreguntes( num + 1 )
 	cat.importQuestions( os.path.join(carpeta_de_preguntes, arxius_de_preguntes[num]) )
 	categoriespreguntes.append( cat )
 
