@@ -1,0 +1,32 @@
+"Versió:",1,,,,,,,,
+"Categoria:","Terminal i llenguatges",,,,,,,,
+"Data creació:",08/09/07,,,,,,,,
+"Data Darrera revisió:",08/09/07,,,,,,,,
+"Autors:","Nil Oriol, Josep Sanchez, Lluïsa Nuñez, Carles Oriol ",,,,,,,,
+"Descripció:","Comandes del sistema, coneixement sobre diversos llenguages de programació",,,,,,,,
+"Jugadors","Interessos mínims en el funcionament d'ordinadors",,,,,,,,
+"Idioma","ca",,,,,,,,
+,,,,,,,,,
+"cat","Pregunta","Resposta 1 ","Resposta 2","Resposta 3","ok","Autor ","Data","Num","Comentari o notes"
+5,"ls serveix per:","llistar fitxers","comprimir arxius","veure l'espai lliure al disc",1,"carles",26/08/07,1,
+5,"Què son les expressions regulars?","Les que no estan bé del tot","Una cadena que s'usa per descriure, enumerar#o filtrar un grup de cadenes, d'acord#amb unes normes de sintaxi","Un component algoritmic per#mimetizar el contingut referent#a la comanda grep",2,"carles",07/09/07,2,
+5,"Quin d'aquests és el#Llengüatge estructurat de consultes?","LEC","SQL","COL",3,"carles",07/09/07,3,"Structured query language"
+5,"Hi ha un llenguatge de programació que#comparteix nom amb una illa d'Indonesia.#Com es diu l'empresa que el va fer?","Novell","Sun microsystems","Canonical",2,"carles",07/09/07,4,"El llenguatge/màquina virtual java va ser realitzat per Sun Microsystems"
+5,"Què vol dir PHP?","PHP: Hypertext Preprocessor","Python Hypertext Preprocessor","Plug Hibrid Processor",1,"carles",07/09/07,5,"Hi ha diversos acrònims recursius. I aquest n'és un la P de PHP vol dir PHP. "
+5,"Què vol dir la G de les sigles GNU?","Gnome","Gtk","GNU",3,"carles",07/09/07,6,"Es tracta d'unes sigles recursives. GNU No és Unix"
+5,"La combinació control+C, en un terminal,#serveix per a:","Aturar el procés en marxa","Copiar","Compilar",1,"lluisanunez",24/08/07,7,"https://wiki.ubuntu.com/JosepS%c3%a0nchez/documentaci%c3%b3/interpret_comandes :-)"
+5,"GTK Vol dir","Gimp ToolKit","Graphics Team Kit","Gnome Toolkit",1,"carles",18/08/07,8,"Les llibreries GTK sobre les que després es va basar el gnome  van crear-se per realitzar el programa gimp"
+5,"Una mica de C#Si: define MAX(A,B) ( ((A) > B) ? (A) : (B) )#i assignem x = 1; y = 2; #el resultat de MAX( ++x, ++y ) és?",2,3,4,3,"Carles",18/08/07,9,"Ja que al ser una macro i no una funció al substituir paràmetres es realitza 2 cops el preincrement de y (++y)"
+5,"A què anomenem hacker?","Expert","Persona que trenca#els sistemes de seguretat","Pirata",1,"carles",24/08/07,10,"Un hacker és un expert ... pot ser-ho en art (japó) o en en nucli del linux o en el funcionament d'un programa. Cal no confondre-ho com fan els mitjans amb els crackers o els pirates."
+5,"Per què el C++ s'anomena així?","Per que és un C millorat#(més i millor ++)","Per què C + 1 en C s'escriu C++","Les dues creus son en memòria#dels desenvolupadors del C",2,"carles",24/08/07,11,"Abans hi havia el B després va venir el C (B+1) i C + 1 en C s'escriu C++"
+5,"Quin d'aquests llenguatges no funciona#sobre una màquina virtual","java","python","c#",2,"Carles",18/08/07,12,"És un llenguatge semi-interpretat"
+5,"Quina variant té la disposició#catalana de teclat?","La Ç en lloc de la Ñ","La ŀl es fà amb Alt Gr + L","La satisfacció d'usar#el nostre teclat",2,"carles",07/09/07,13,
+5,"Podem muntar i accedir a una carpeta#ssh on hi hagi un enllaç a unaa carpeta nfs#i dins un enllaç a una ftpfs?","Si es clar","Tu aŀlucines","No la ftp, no",1,"carles",07/09/07,14,
+5,"Per veure tots els arxius que#comencin per s o t farem:","ls [st]*","ls st?","ls st[*]",1,"carles",26/08/07,15,
+5,"Per què serveix la comanda CD?","Per canviar de directori","Per copiar un directori","Per res en majúscules",3,"carles",26/08/07,16,
+5,"Quants processadors suporta#Debian directament al seu web#d'enllaços de descàrregues?",10,5,3,1,"carles",26/08/07,17,"Tot i que al ser totalment obert és il·limitat en aquest sentit."
+5,"Per veure el contingut d'un arxiu#de text, quina comanda NO serveix?","cat","less","type",3,"carles",26/08/07,18,"Això no és dos company"
+5,"cp serveix per a:","copiar arxius","coupé: pujar la prioritat#d'un procés","copy paste: duplcar el contingut#del portapapers",1,"carles",26/08/07,19,
+5,"Què passa quan copiem#cosa.txt i Cosa.TXT#en un disc en fat32","Que es copien","Que esborrem el primer","Que es sumen",2,"carles",26/08/07,20,
+5,"Per què serveix la comanda md?","Per crear un directori","Per moure un arxiu","Per res",3,"carles",26/08/07,21,"Evidenment. Per fer un directori farem mkdir. Això no és dos!"
+5,"Per trinxar ben trinxat l'ordinador farem:","sudo rm -d -f -r /","sudo cp /dev/hdb1 > aixo.iso","echo destroy computer contents",1,"Carles",18/08/07,22,

@@ -1,0 +1,25 @@
+"Versió:",1,,,,,,,,
+"Categoria:","Ubuntu",,,,,,,,
+"Data creació:",08/09/07,,,,,,,,
+"Data Darrera revisió:",08/09/07,,,,,,,,
+"Autors:","Nil Oriol, Josep Sanchez, Lluïsa Nuñez, Carles Oriol ",,,,,,,,
+"Descripció:","Preguntes del mon de l'ubuntu i ubuntaire. ",,,,,,,,
+"Jugadors","Persones amb interessos en ubuntu",,,,,,,,
+"Idioma","ca",,,,,,,,
+,,,,,,,,,
+"cat","Pregunta","Resposta 1 ","Resposta 2","Resposta 3","ok","Autor ","Data","Num","Comentari o notes"
+2,"En Mark Shuttleworth va considerar#que el LoCo Català era","Una colla de merdetes","Una llàstima","Un exemple a seguir",3,"carles",18/08/07,1,"sabdfl  this is pretty fantastic - i love the fact that there is participation from cultural, artistic, development, linguisitic and educational sources"
+2,"Quina d'aquestes característiques#no inclou l'edubuntu?","Gestionar horaris d'una escola","Iniciar ordinadors en xarxa#sense instaŀlar, ni posar CDs","Veure DVDs zona 2",3,"carles",26/08/07,2,
+2,"L'ubuntu és un sistema operatiu del tipus","Unix","Linux","GNU amb Linux",3,"carles",18/08/07,3,"EL sistema operatiu és GNU amb Linux. Linux sols és el nucli d'aquest i es un component més tant important com qualsevol altre"
+2,"GoBUNTU és:","Una versió d'Ubuntu amb#només Gnome","Una versió d'UBUNTU amb#només programari lliure","La distribució, basada en#UBUNTU, dels aficionats al GO",2,"lluisanunez",24/08/07,4,"http://en.wikipedia.org/wiki/Gobuntu"
+2,"Quin és el nick a l'irc#d'en Mark Shuttleworth?","sabdfl","sticsis","rtfm",1,"papapep",18/08/07,5,"Self-Appointed Benevolent Dictator For Life"
+2,"Quin d'aquests paquets no#serveix per instaŀlar programes","synaptic","ginstaller","adept",2,"carles",25/08/07,6,
+2,"Quin d'aquests sistema d'arxius no es#pot llegir i escriure en ubuntu","ext3","ntfs","sata",3,"carles",18/08/07,7,"sata no és un sistema d'arxius"
+2,"Quins són els colors del logotip de kubuntu?","Tons de blau","Blau, gris i blanc","Blau, verd i blanc",1,"Nil",,8,
+2,"Com es dirà la versió 8.04 LTS d'ubuntu","Hangy Haseforg","Hungry Hippo","Hardy Heron",3,"carles",07/09/07,9,
+2,"Quin d'aquests Linux NO és#una variant d'ubuntu?","ubuntu studio","Guadalinex","Linkat",3,"carles",07/09/07,10,"LinKat és la distribució GNU/Linux del Departament d'Educació de la Generalitat de Catalunya. Està basada en la distribució Suse i el funcionament del seu programari es basa amb paquets rpm"
+2,"Quins mesos de l'any surt cada#versió nova d'ubuntu?","Febrer i novembre","Març i setembre","Abril i octubre",3,"Carles",18/08/07,11,"El nombre de la versió correspon#a l'any i el mes.##(7.10=2007 octubre)"
+2,"Quins son els colors del logotip d'ubuntu?","Tons de taronja","Groc, vermell i taronja","Groc, blau i taronja",2,"Nil",,12,
+2,"Quina d'aquestes funcions#no té el launchpad","Reportar bugs","Traduir programes","Descarregar actualitzacions",3,"carles",25/08/07,13,
+2,"En quina d'aquestes distribucions#està basat l'ubuntu?","Debian","Fedora","Suse",1,"carles",26/08/07,14,
+2,"Quin d'aquests formats es pot llegir#amb la instaŀlació predeterminada#d'ubuntu","mp3","dvd","ogg",3,"carles",18/08/07,15,"Els formats mp3 i dvd (mpeg) son formats restrictius, un protegit per patents i l'altre en alguns països no es pot ni mostrar les fonts ja que implica el rebentar la protecció dels dvds. Malgrat tot no hi ha cap problema per usar qualsevol d'ells un cop instaŀlat el sistema"

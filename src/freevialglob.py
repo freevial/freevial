@@ -27,15 +27,13 @@ import os.path, random, re, pygame, locale, time
 from pygame.locals import *
 from preguntes import preguntes_autors
 
-
-
 DEBUG_MODE = False
 SOUND_MUTE = False
 MUSIC_MUTE = False
 DISPLAY_FPS = False
 
 textos = []
-categories = []
+
 
 class Equip:
 	
@@ -482,14 +480,17 @@ def createTextSurface( frases, color, intensitat = 25 ):
 
 def replaceKeywoards( content ):
 	""" Replaces keywoards found in the content a help file. """
-	
+
+	for num in range(0, len(content)):
+		content[num] = unicode(content[num], 'utf-8')
+
 	i = 0
-	
 	for line in content:
 		
 		if line.startswith( '##replace:question-authors' ):
-			content[ i : (i + 1) ] = list2string( preguntes_autors )
-	
+			#content[ i : (i + 1) ] = list2string( preguntes_autors )
+			content[ i : (i + 1) ] = preguntes_autors()
+
 		i += 1
 	
 	return content
@@ -510,7 +511,7 @@ def readLocalizedHelpFile( help_section ):
 		# skip comments
 		#if line[:1] == '#': continue
 		
-		lines.append ( unicode(line, 'utf-8') )
+		lines.append ( line )
 	
 	return lines
 
@@ -525,16 +526,14 @@ i_colors_cat = ( (0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,2
 
 def initTextos():
 	global textos
-	global categories
+
 	textos = readLocalizedHelpFile( "textos" )
-	categories = readLocalizedHelpFile( "categories" )
+
 
 def valorText( ntext ):
 	return textos[ ntext ]
 
-def textCategoria( ncat ):
 
-	return categories[ncat]
 
 
 def colorsCategories():

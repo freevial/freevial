@@ -1,0 +1,28 @@
+"Versió:",1,,,,,,,,
+"Categoria:","Programari i maquinari",,,,,,,,
+"Data creació:",08/09/07,,,,,,,,
+"Data Darrera revisió:",08/09/07,,,,,,,,
+"Autors:","Nil Oriol, Josep Sanchez, Lluïsa Nuñez, Carles Oriol ",,,,,,,,
+"Descripció:","Preguntes sobre els programes i els aparells que podem usar en el mon gnu/linux",,,,,,,,
+"Jugadors","Coneixements mínims entorn GNU",,,,,,,,
+"Idioma","ca",,,,,,,,
+,,,,,,,,,
+"cat","Pregunta","Resposta 1 ","Resposta 2","Resposta 3","ok","Autor ","Data","Num","Comentari o notes"
+6,"Quin d'aquests no és un gestor#de finestres en ubuntu","openbox","fartbox","fluxbox",2,"carles",18/08/07,1,"fartbox vol dir la capsa dels pets"
+6,"Quin d'aquests no és un gestor de#finestres modern per l'ubuntu?","Beryl","Compiz - Fusion","Aero",3,"carles",07/09/07,2,"Evidentment l'aereo és pel Hasefrog Diòptries"
+6,"Quin d'aquests no és un#entorn Linux per dispositius mòbils?","Yunki","Sato","Opie",1,"carles",07/09/07,3,
+6,"Com es diu el gestor de fitxers#del KDE 4?","konqueror","nautilus","Dolphin",3,"carles",07/09/07,4,"Tot i que ja el trobem predeterminat a les darreres versions de kde"
+6,"Quin d'aquests programes#que permeten accés remot#no està als repositoris d'ubuntu.","Les mateixes X","vnc","nx",3,"carles",26/08/07,5,
+6,"Com ho farien 4 usuaris de hasefrog#per engegar un cotxe que no funciona?","Reiniciarien el servei del motor","Sortirien i tornarien a entrar","Desmuntant el cotxe",2,"carles",07/09/07,6,"he he"
+6,"Un d'aquests no és un programa#per manipular so.","Adour","Audacity","Blender",3,"carles",07/09/07,7,"El Ardour és un gran programa multipista per treballar en temps real.#L'audacity és gran programa per tractar so#I el blender és programa bonissim de diseny gràfic en 3D. "
+6,"Quin d'aquests programes#no és un programa de diseny#vectorial","scribus","inkscape","xaralx",1,"carles",25/08/07,8,"es un programa d'autoedició"
+6,"El millor editor lliure d'imatges matricials és:","gimp","gaim","gcc",1,"Nil",18/08/07,9,"El gimp és un programa de# tractament d'imatges#el gaim de missatgeria instantània# (ara rebatejat com a pidgin)#i el gcc el compilador de# llenguatge c i c++. "
+6,"El mythtv no permet","Veure i enregistrar la tele","Fer video trucades","Fer PDFs",3,"carles",18/08/07,10,"És un sistema media center collonut però no serveix per fer PDFs"
+6,"Com es diu la mascota del projecte kde?","Tronki","Mongui","Konqui",3,"carles",07/09/07,11,"Deixeu al Konqui conquerir el vostre escriptori."
+6,"Quina de les següents aplicacions#NO es troba als repositoris d'Ubuntu?","Karacul","Caca","Moc",1,"lluisanunez",24/08/07,12,"Kalcul és una aplicació de KDE, Karacul és inventat "
+6,"Quin es el nou nom del Gaim?","Pidgin","Gaim (no ha canviat)","Amsn",1,"Nil",,13,
+6,"Quin animal d'aquests és germà#però no amic de la guineu de foc","L'escarabat de neu","La llúdriga de gel","La gavina de foc",2,"carles",18/08/07,14,"L'any 2006 l'equip de debian va fer una separació de la versió oficial del firefox per que l'equip de treball de mozilla no incorporava les seves actualitzacions a temps. Al fer-ho van haver de canviar el logotip d'aquest per un altre ja que estava protegit per drets d'autor."
+6,"Què volen dir les sigles KDE?","K Desktop Enviroment","KDE Data Extruded","Kentucky Department of Education",1,"carles",07/09/07,15,"La 3a també és correcta, però no es el nostre cas"
+6,"Quan l'equip de traductors del#KDE ens parlen de la mida#de la caixa. Es refereixen a:","Majúscules / minúscules","Marges de les finestres","Tipus de monitor",1,"carles",26/08/07,16,"Això que ens pot sonar estrany no és un error de traducció. Ve de la mida e les caselles (caixes) que s'usaven en les impremtes. On les majúscules eren més grans. "
+6,"Quin animal és la mascota del kde?","Un drac","Una salamandra","Un pingüí",1,"carles",25/08/07,17,
+6,"Com es diu aquest escriptori?","Enlighement","Enlightement","Enlightenement",2,"carles",07/09/07,18," "

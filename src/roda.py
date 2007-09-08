@@ -25,6 +25,7 @@
 
 import sys, os, random, time, pygame
 from freevialglob import *
+from preguntes import *
 
 
 ##################################################

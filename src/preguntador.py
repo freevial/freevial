@@ -135,7 +135,7 @@ class Preguntador:
 		for num in range(0, 3):
 			self.sfc_resposta[ num ] = self.pintatext( self.pregunta_actual[ num + 2 ], self.mida_font )
 
-		self.sfc_npregunta = render_text( str(self.pregunta_actual[9]), (255,255,255), 100 )
+		self.sfc_npregunta = render_text( str(self.pregunta_actual[8]), (255,255,255), 100 )
 		self.sfc_npregunta.set_alpha( 64 )
 
 		self.sfc_apregunta = render_text( str(self.pregunta_actual[6]), (255,255,255), 16 )
@@ -154,10 +154,7 @@ class Preguntador:
 	# si la categoria és 0 no té en compte el valor
 	def atzar( self, categoria ):
 		
-		if 0 == len(preguntes[ categoria - 1 ]):
-			preguntes[ categoria - 1 ] = copy.copy( preguntes_backup[ categoria - 1 ])
-		
-		self.pregunta_actual = preguntes[ categoria - 1 ].pop()
+		self.pregunta_actual = categoriespreguntes[categoria - 1 ].agafaPregunta()
 		
 		self.inicialitza_pregunta()
 
@@ -296,9 +293,9 @@ class Preguntador:
 						self.so_ok.play()
 					else:
 						self.so_nook.play()	
-					if self.pregunta_actual[8] != "":
-						notes = self.pregunta_actual[8].split('#')
-						sfc_comentaris =  createTextSurface( notes, (128,255,255), 25 )
+					
+					notes = self.pregunta_actual[9].split('#') if self.pregunta_actual[9] != "" else "."
+					sfc_comentaris =  createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
 					if not ismute():
 						pygame.mixer.fadeout(2500)

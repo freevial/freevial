@@ -1,0 +1,33 @@
+"Versió:",1,,,,,,,,
+"Categoria:","Jocs, llibres i peŀlícules",,,,,,,,
+"Data creació:",08/09/07,,,,,,,,
+"Data Darrera revisió:",08/09/07,,,,,,,,
+"Autors:","Nil Oriol, Josep Sanchez, Lluïsa Nuñez, Carles Oriol ",,,,,,,,
+"Descripció:","Video jocs, peŀlicules i llibres de ciència ficció o de culte",,,,,,,,
+"Jugadors","Diversos",,,,,,,,
+"Idioma","ca",,,,,,,,
+,,,,,,,,,
+"cat","Pregunta","Resposta 1 ","Resposta 2","Resposta 3","ok","Autor ","Data","Num","Comentari o notes"
+4,"En un capítol de la sèria 'Porca missèria'#es veu un entorn gràfic de Linux, quin?","KDE","Gnome","XFCE",1,"papapep",18/08/07,1,
+4,"Quin any es va fer el joc Pong?",1982,1978,1972,3,"carles",26/08/07,2,"El 29 de novembre del 1972 atari va treure aquest joc. "
+4,"Quin d'aquests mmorpgs te versio per linux?","World of Warcaft","Hellbreath","Regnum",3,"Nil",,3,
+4,"Quants jocs de cartes de solitari hi ha#als repositoris d'ubuntu?",3,12,"Més de 100",3,"carles",26/08/07,4,
+4,"Quin d'aquests ordinadors NO#duia el procesador Zilog Z80-A","ZX Spectrum","Commodore","MSX",2,"carles",26/08/07,5,"Duia un MOS 6510"
+4,"El cartell de proves del freevial està#copiat de la publicitat d'un video joc#de 8 bits.#Com es deia la empresa que va fer-lo?","Ultimate","Melbourne house","Dynamic",2,"Carles",06/09/07,6,"El joc The Hobbit de Melbourne House. Un dels clàssics més grans del ZX Spectrum"
+4,"Quants anells toquen als Reis Elfs?",3,5,6,1,"carles",07/09/07,7,"Tres anells per als Reis Elfs sota el cel.#Set per als Senyors Nans a cases de pedra.#Nou per als Homes Mortals condemnats a morir.#Un per al Senyor Obscur, sobre el tron obscur.#a la Terra de Mordor on s'estenen les Ombres.#Un Anell per governar-los a tots. Un Anell per trobar-los,#un Anell per atreure'ls tots i lligar-los en les tenebres.#a la Terra de Mordor on s'estenen les Ombres.#
+.#             
+-J.R.R. Tolkien, ""El Senyor dels Anells"".#"
+4,"Com avisa Maurice Moss als bombers#quan es crema el seu despatx?","IRC","Missatgeria instantània","correu electrònic",3,"Carles",18/08/07,8,"A la serie IT crowd quan s'estan cremant les oficinies i devant l'impossibilitat de recordar el telèfon dels bombers en Maurice Moss envia un mail per avisar-los. ( Fire... exclamation mark.)"
+4,"Quina eina usa la Trinity a Matrix Reloaded#per petar l'ordinador.","nmap","aircrack","el càssic dir c:\ de totes les pelis",1,"Carles",18/08/07,9,"En la película Matrix Reloaded podem veure a Trinity petant un ordinador i a la pantalla es veu com realitza un escaneig de seguretat amb l'eina nmap!!! Un com fet això és mostra una vulnerabilitat real (exploit SSHv1 CRC32) un error de buffer, que amb una eina fingida sshnuke aprofita."
+4,"Quina versió del wine esta especialitzada#per fer rutllar jocs?","CrossOver","Cedega","xmame",2,"Carles",18/08/07,10,"El xmame és un emulador de màquines de videjocs i no una versió del wine"
+4,"Què vol dir MUD?","Multi-User Dungeon","Massive users dungeon","Monster under drugstore",1,"Nil",,11,
+4,"Que vol dir MMORPG","Monsters mission on role play game","Massive multiplayer online role play game","MMORPG must organize region part",2,"Nil",,12,
+4,"Quin model eren els replicants?","Andros 5","Nexus 6","Redmon 4",2,"carles",07/09/07,13,"Els robots replicants de la genial peŀlícula blade runner eren el model nexus 6"
+4,"Per què serveix la comanda#klatu barada nikto","Per reorganitzar l'espai al disc dur","Per evitar la destrucció de la terra","Per instaŀlar el fedora",2,"carles",07/09/07,14,"A la peŀlícula “ultimatum a la terra” la frase per aturar el robot que anava a destruir la terra fou: klatu barada nikto"
+4,"Quin personatge de videojoc considerava#que els noms no eren importants?","Lara Croft","Guybrush Threepwood","Larry Laffer",2,"Carles",18/08/07,15,"En Guybrush Threepod.##Protagonista de la saga monkey island#que podem jugar amb l'scummvm.##Quan els dissenyadors van crear#el personatge el programa que usaven#per fer-ho s'anomenava brush i no van#decidir el nom fins al final.#Ells l'anomenaven el noi del brush (Guy_Brush)#i així és com es va dir.#En tota la serie monkey island els#personatges se'n foten#continuament del seu nom"
+4,"Quan es va fer la pelicula Tron#Què volia dir aquest comanda?","TRace ON. Per debugar","Transient on-line","TeRminal ON",1,"carles",25/08/07,16,
+4,"De què és acrònim HAL a la película 2001#(tot i que ho negui Arthur C Clarck) ","Hardware Adapter Layer","Home and leisure","International Busines Machines",2,"carles",24/08/07,17,"IBM = I - 1 = H, B - 1 = A, M - 1 = L"
+4,"El wesnoth és un joc de tipus","Arcade Shooter","Aventura gràfica","Estratègia per torns",3,"Nil",18/08/07,18,
+4,"El clon per linux dels famosos#Lemmings es diu:","SuperTux","Tux Race","Pingus",3,"lluisanunez",25/08/07,19,"Supertux és un clon de Super Mario, Tux Racer és un joc d'animació 3D "
+4,"En quina peli un ordinador deia:#Quin joc més extrany, la unica#manera de guanyar és no jugar.","Matrix","Tron","Jocs de guerra",3,"carles",25/08/07,20,"Quan l'ordinador descrobria la insensatesa de la guerra"
+4,"Com es deia el noi que duia el#Mazinger Z?","Akira Toriyama","Koji Kabuto","Yawara Inokuma",2,"carles",25/08/07,21,

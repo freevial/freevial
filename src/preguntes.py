@@ -23,67 +23,109 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import csv, copy
+import csv, copy, random
 from freevialglob import *
 
+arxius_de_preguntes = [ 'preguntes_ca01.csv', 
+						'preguntes_ca02.csv', 
+						'preguntes_ca03.csv',
+						'preguntes_ca04.csv', 
+						'preguntes_ca05.csv', 
+						'preguntes_ca06.csv' ]
 
-def shuffleQuestions( questions ):
-	""" Returns the given questions list, but shuffled. """
-	
-	for num in range(0, 6):
-		random.shuffle( questions[num] )
-	
-	return questions
+carpeta_de_preguntes = '../'
+
+class CategoriaPreguntes:
+
+	def __init__( self ):
+
+		self.versio = 0
+		self.nom = ''
+		self.data_creacio = ''
+		self.data_revisio = ''
+		self.autors = ''
+		self.descripcio = ''
+		self.jugadors = ''
+		self.idioma = ''
+
+		self.preguntes = []
+		self.preguntes_backup = []
 
 
-def importQuestions( csvFile ):
-	""" Imports the questions from a CSV file and returns them in a list. """
-	
-	questions = []
-	seen_header = 0
-	
-	csv_read = csv.reader( open( csvFile ) )
-	
-	for line in csv_read:
+	def importQuestions( self, csvFile ):
+		""" Imports the questions from a CSV file and returns them in a list. """
 		
-		# skip the header (first line)
-		if seen_header == 0:
-			seen_header = 1; continue
+		csv_read = csv.reader( open( csvFile ) )
+			
+		comptaline  = 0
+
+		for line in csv_read:
+			
+			comptaline += 1
+
+			if   comptaline == 1: self.versio = int( line[1] )
+			elif comptaline == 2: self.nom = unicode( line[1], 'utf-8' )
+			elif comptaline == 3: self.data_creacio = unicode( line[1], 'utf-8' )
+			elif comptaline == 4: self.data_revisio = unicode( line[1], 'utf-8' )
+			elif comptaline == 5: self.autors = unicode( line[1], 'utf-8' )
+			elif comptaline == 6: self.descripcio = unicode( line[1], 'utf-8' )			
+			elif comptaline == 7: self.jugadors = unicode( line[1], 'utf-8' )
+			elif comptaline == 8: self.idioma = unicode( line[1], 'utf-8' )
+
+			elif comptaline > 10:
+
+				for num in range(0, 10):
+					line[ num ] = unicode(line[ num ], 'utf-8')
+				
+				for num in (0, 5, 8):
+					try:
+						line[ num ] = int(line[ num ])
+					except ValueError:
+						line[ num ] = 0
+			
+				self.preguntes.append(line)
 		
-		for num in range(0, 9):
-			line[ num ] = unicode(line[ num ], 'utf-8')
+		self.preguntes_backup = copy.deepcopy( self.preguntes )
+
+		self.shuffleQuestions( )
+
+	def shuffleQuestions( self ):
+		""" Returns the given questions list, but shuffled. """
+
+		self.preguntes = copy.deepcopy( self.preguntes_backup )
 		
-		for num in (0, 5, 9):
-			line[ num ] = int(line[ num ])
+		random.shuffle( self.preguntes )
+
+	def agafaPregunta ( self ):
+
+		if 0 == len(self.preguntes): self.shuffleQuestions()
 		
-		questions.append(line)
-	
-	return questions
+		return self.preguntes.pop()
 
 
 ###########################################
 
-csv_questions = importQuestions('../preguntes.csv')
-preguntes = []
-preguntes_autors = []
 
-preguntes_backup = []
+categoriespreguntes = []
 
 for num in range(0, 6):
-	# Add a list for each category
-	preguntes.append( [] )
-	preguntes_backup.append( [] )
+	cat = CategoriaPreguntes()
+	cat.importQuestions( os.path.join(carpeta_de_preguntes, arxius_de_preguntes[num]) )
+	categoriespreguntes.append( cat )
 
-for element in csv_questions:
+
+def textCategoria( ncat ):
+
+	return categoriespreguntes[ncat].nom
+
+def preguntes_autors():
+
+	llista = []
+
+	for num in range(0, 6):	
+		llista.append(  categoriespreguntes[num].nom + ": " + categoriespreguntes[num].autors )
 	
-	if element[6] not in preguntes_autors:
-		preguntes_autors.append( element[6] )
+	return llista
+
 	
-	preguntes[ element[0] - 1 ].append( element )
 
-	preguntes_backup = copy.deepcopy( preguntes )
-
-# Copy the questions to get them back if a categories gets empty
-
-
-preguntes = shuffleQuestions(preguntes)

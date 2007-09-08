@@ -11,15 +11,100 @@
 1,"Qui va fundar el projecte gnome?","Mark Shuttlework","Manuel de Icaza","George Moustaki",2,"Carles",18/08/07,,10
 1,"Quan em Mark Shuttleworth va fer# la seva fortuna venent#una empresa de claus va anar de viatge a:","Vilanova i la Geltrú","L'espai","Everest",2,"Carles",18/08/07,"Mark Shuttleworth va ser el 2on turista espacial#de la història de la humanitat.##Després d'aconseguir la seva fortuna#va fer un viatge a l'estació espacial#internacional amb un grup de científics#per tal de realitzar investigacions amb#celules mare.",11
 4,"El cartell de proves del freevial està#copiat de la publicitat d'un video joc#de 8 bits.#Com es deia la empresa que va fer-lo?","Ultimate","Melbourne house","Dynamic",2,"Carles",06/09/07,"El joc The Hobbit de Melbourne House. Un dels clàssics més grans del ZX Spectrum",12
-5,"Què vol dir PHP?","PHP: Hypertext Preprocessor","Python Hypertext Preprocessor","Plug Hibrid Processor",1,"carles",07/09/07,"Hi ha diversos acrònims recursius. I aquest n'és un la P de PHP vol dir PHP. ",13
-4,"Quin model eren els replicants?","Andros 5","Nexus 6","Redmon 4",2,"carles",07/09/07,"Els robots replicants de la genial peŀlícula blade runner eren el model nexus 6",14
-4,"Per què serveix la comanda#klatu barada nikto","Per reorganitzar l'espai al disc dur","Per evitar la destrucció de la terra","Per instaŀlar el fedora",2,"carles",07/09/07,"A la peŀlícula “ultimatum a la terra” la frase per aturar el robot que anava a destruir la terra fou: klatu barada nikto",15
-5,"Què vol dir la G de les sigles GNU?","Gnome","Gtk","GNU",3,"carles",07/09/07,"Es tracta d'unes sigles recursives. GNU No és Unix",16
+3,"El fòrum de l'equip Català d'ubuntaires#el podem trobar a:","ubuntuforums.org","forum.ubuntu.pl","ubuntu-fr.org",1,"Carles",18/08/07,"Concretament a http://ubuntuforums.org/forumdisplay.php?f=206. També podem anar-hi desde el portal www.ubuntu.cat",13
+5,"Una mica de C.#Si: define MAX(A,B) ( ((A) > B) ? (A) : (B) )#i assignem x = 1; y = 2; #el resultat de MAX( ++x, ++y ) és?",2,3,4,3,"Carles",18/08/07,"Ja que al ser una macro i no una funció al substituir paràmetres es realitza 2 cops el preincrement de y (++y)",14
+4,"Quina versió del wine esta especialitzada#per fer rutllar jocs?","CrossOver","Cedega","xmame",2,"Carles",18/08/07,"El xmame és un emulador de màquines de videjocs i no una versió del wine",15
+4,"Quina eina usa la Trinity a Matrix Reloaded#per petar l'ordinador.","nmap","aircrack","el càssic dir c:\ de totes les pelis",1,"Carles",18/08/07,"En la película Matrix Reloaded podem veure a Trinity petant un ordinador i a la pantalla es veu com realitza un escaneig de seguretat amb l'eina nmap!!! Un com fet això és mostra una vulnerabilitat real (exploit SSHv1 CRC32) un error de buffer, que amb una eina fingida sshnuke aprofita.",16
+4,"Com avisa Maurice Moss als bombers#quan es crema el seu despatx?","IRC","Missatgeria instantània","correu electrònic",3,"Carles",18/08/07,"A la serie IT crowd quan s'estan cremant les oficinies i devant l'impossibilitat de recordar el telèfon dels bombers en Maurice Moss envia un mail per avisar-los. ( Fire... exclamation mark.)",17
+1,"L'any 1977 la policia d'alburquerque va#detenir i fitxar a Bill Gates per","Tenir drogues","Robar una pastisseria","Fer curses amb un 911 al desert",3,"Carles",18/08/07,"A la xarxa podem trobar la foto d'un jove Bill amb la seva fitxa policial... una monada. http://news.bbc.co.uk/1/hi/sci/tech/152803.stm",18
+5,"Quin d'aquests llenguatges no funciona#sobre una màquina virtual","java","python","c#",2,"Carles",18/08/07,"És un llenguatge semi-interpretat",19
+5,"GTK Vol dir","Gimp ToolKit","Graphics Team Kit","Gnome Toolkit",1,"carles",18/08/07,"Les llibreries GTK sobre les que després es va basar el gnome  van crear-se per realitzar el programa gimp",20
+1,"Com es diu l'associació d'usuaris de linux#més important de Catalunya","Cobrem","Caliu","Carlux",3,"carles",18/08/07,"I el seu Secretari Rafael Carreras és un dels fundadors del LoCo Català d'ubuntaires",21
+6,"El mythtv no permet","Veure i enregistrar la tele","Fer video trucades","Fer PDFs",3,"carles",18/08/07,"És un sistema media center collonut però no serveix per fer PDFs",22
+2,"Quin d'aquests formats es pot llegir#amb la instaŀlació predeterminada#d'ubuntu","mp3","dvd","ogg",3,"carles",18/08/07,"Els formats mp3 i dvd (mpeg) son formats restrictius, un protegit per patents i l'altre en alguns països no es pot ni mostrar les fonts ja que implica el rebentar la protecció dels dvds. Malgrat tot no hi ha cap problema per usar qualsevol d'ells un cop instaŀlat el sistema",23
+1,"Que va patentar Microsoft#el 24 de setembre del 96","El CD parcialment reescribible","El doble click","La bola del mouse",2,"carles",18/08/07,"Patent number: 5559943",24
+1,"Què es va patentar el 2006","El teletransport","La inserció de xips al cervell humà","El windows segur",1,"carles",18/08/07,"United States Patent 20060071122. Brutal no!!!",25
+6,"Quin animal d'aquests és germà#però no amic de la guineu de foc","L'escarabat de neu","La llúdriga de gel","La gavina de foc",2,"carles",18/08/07,"L'any 2006 l'equip de debian va fer una separació de la versió oficial del firefox per que l'equip de treball de mozilla no incorporava les seves actualitzacions a temps. Al fer-ho van haver de canviar el logotip d'aquest per un altre ja que estava protegit per drets d'autor.",26
+1,"Qui ha estat un l'abanderat de la traducció#del programari al català?","softcatalà","la generalitat","microsoft",1,"carles",18/08/07,"Per cert... el clic dels nois de redmon ja s'a convertit en clico.",27
+2,"L'ubuntu és un sistema operatiu del tipus","Unix","Linux","GNU amb Linux",3,"carles",18/08/07,"EL sistema operatiu és GNU amb Linux. Linux sols és el nucli d'aquest i es un component més tant important com qualsevol altre",28
+2,"En Mark Shuttleworth va considerar#que el LoCo Català era","Una colla de merdetes","Una llàstima","Un exemple a seguir",3,"carles",18/08/07,"sabdfl  this is pretty fantastic - i love the fact that there is participation from cultural, artistic, development, linguisitic and educational sources",29
+6,"Quin d'aquests no és un gestor#de finestres en ubuntu","openbox","fartbox","fluxbox",2,"carles",18/08/07,"fartbox vol dir la capsa dels pets",30
+2,"Quin d'aquests sistema d'arxius no es#pot llegir i escriure en ubuntu","ext3","ntfs","sata",3,"carles",18/08/07,"sata no és un sistema d'arxius",31
+1,"Què es va celebrar el passat abril al#Centre cultural de les Corts??","Una reunió tupperware","L'RMS hi va fer una conferència","La Festa Feisty del CatalanTeam",3,"papapep",18/08/07,,32
+2,"Quin és el nick a l'irc#d'en Mark Shuttleworth?","sabdfl","sticsis","rtfm",1,"papapep",18/08/07,"Self-Appointed Benevolent Dictator For Life",33
+4,"En un capítol de la sèria 'Porca missèria'#es veu un entorn gràfic de Linux, quin?","KDE","Gnome","XFCE",1,"papapep",18/08/07,,34
+1,"Qui son Dennis Ritchie i Keneth Thompson?","Els desenvolupadors del C i del unix","Els pares d'internet","Els creadors del projecte GNU",1,"carles",24/08/07,"De l'any 1969 al 1971 Dennis Ritchie i Keneth Thompson ven desenvolupar el sistema unix. Per fer-ho van haver de millorar el lleguatge B creat per Ritchie convertint-lo en C ",35
+5,"Per què el C++ s'anomena així?","Per que és un C millorat#(més i millor ++)","Per què C + 1 en C s'escriu C++","Les dues creus son en memòria#dels desenvolupadors del C",2,"carles",24/08/07,"Abans hi havia el B després va venir el C (B+1) i C + 1 en C s'escriu C++",36
+4,"De què és acrònim HAL a la película 2001#(tot i que ho negui Arthur C Clarck) ","Hardware Adapter Layer","Home and leisure","International Busines Machines",2,"carles",24/08/07,"IBM = I - 1 = H, B - 1 = A, M - 1 = L",37
+3,"Existeix una entrada explicant#la viquipèdia a la viquièdia?","Clar","No.","Sols si cerquem wikipedia",1,"carles",24/08/07,"I doncs que us pensàveu?",38
+3,"Quin any es va fundar google?",1995,1998,2000,2,"carles",24/08/07,"Oi que sembla que fes més temps?",39
+3,"Quina d'aquestes xarxes#no existia abans d'internet?","fidonet","compuserve","comnet",3,"carles",24/08/07,"Compuserve va ser la primera xarxa pública mundial d'accés públic. Fidonet (anterior a compuserve) era una xarxa d'enllaços entre les anteriors BBS.",40
+5,"A què anomenem hacker?","Expert","Persona que trenca#els sistemes de seguretat","Pirata",1,"carles",24/08/07,"Un hacker és un expert ... pot ser-ho en art (japó) o en en nucli del linux o en el funcionament d'un programa. Cal no confondre-ho com fan els mitjans amb els crackers o els pirates.",41
+3,"Quin d'aquests no és un “hoax”?","La llet es repasteuritza segons#el nombre inferior del tetrabrick","Un nombre fa que la facturació#del telèfon d'un altre te la cobrin a tu","El microsoft vista fa que l'ordinador#vagi malament si detecta un dispositiu#que permet copiar películes",3,"carles",24/08/07,".... si... lamentable. Si el sistema de control de copies DRM detecta que tens algun mitjà que permet realitzar copies de peŀlicules o videos aquest baixarà la qualitat per que no ho puguis fer correctament. A l'hora totes aquestes comprovacions fan que l'ordinador funcioni molt més lent.",42
+1,"Hans Reiser, creador del sistema#d'arxius ReiserFS, va ser acusat#l'any passat de:","Signar un acord amb Microsoft","Matar la seva dona","Violar la GPLv3",2,"lluisanunez",24/08/07,"http://en.wikipedia.org/wiki/Hans_Reiser",43
+2,"GoBUNTU és:","Una versió d'Ubuntu amb#només Gnome","Una versió d'UBUNTU amb#només programari lliure","La distribució, basada en#UBUNTU, dels aficionats al GO",2,"lluisanunez",24/08/07,"http://en.wikipedia.org/wiki/Gobuntu",44
+3,"La tecnologia que fa possible l'alimentació#automàtica de notícies web es diu:","CSS","RSS","SMS",2,"lluisanunez",24/08/07,,45
+4,"El clon per linux dels famosos#Lemmings es diu:","SuperTux","Tux Race","Pingus",3,"lluisanunez",25/08/07,"Supertux és un clon de Super Mario, Tux Racer és un joc d'animació 3D ",46
+5,"La combinació control+C, en un terminal,#serveix per a:","Aturar el procés en marxa","Copiar","Compilar",1,"lluisanunez",24/08/07,"https://wiki.ubuntu.com/JosepS%c3%a0nchez/documentaci%c3%b3/interpret_comandes :-)",47
+6,"Quina de les següents aplicacions#NO es troba als repositoris d'Ubuntu?","Karacul","Caca","Moc",1,"lluisanunez",24/08/07,"Kalcul és una aplicació de KDE, Karacul és inventat ",48
+6,"Quin animal és la mascota del kde?","Un drac","Una salamandra","Un pingüí",1,"carles",25/08/07,,49
+1,"Quan Mark Shuttleworth va ser a Catalunya#Quina televisió el va entrevistar?","Barcelona TV","Mataró TV","TV3",2,"carles",25/08/07,,50
+4,"En quina peli un ordinador deia:#Quin joc més extrany, la unica#manera de guanyar és no jugar.","Matrix","Tron","Jocs de guerra",3,"carles",25/08/07,"Quan l'ordinador descrobria la insensatesa de la guerra",51
+4,"Com es deia el noi que duia el#Mazinger Z?","Akira Toriyama","Koji Kabuto","Yawara Inokuma",2,"carles",25/08/07,,52
+1,"Per què els errors informàtics es diuen 'bugs'?","Per què sona simpàtic","per que quan van engegar el primer#ordinador dins d'una valvula#hi havia un insecte","En honor a John Bughs",2,"carles",25/08/07,,53
+2,"Quina d'aquestes funcions#no té el launchpad","Reportar bugs","Traduir programes","Descarregar actualitzacions",3,"carles",25/08/07,,54
+2,"Quin d'aquests paquets no#serveix per instaŀlar programes","synaptic","ginstaller","adept",2,"carles",25/08/07,,55
+4,"Quan es va fer la pelicula Tron#Què volia dir aquest comanda?","TRace ON. Per debugar","Transient on-line","TeRminal ON",1,"carles",25/08/07,,56
+3,"Com es coneixen popularment#a la xarxa els jocs que han deixat#de comercialitzar-se.","oldwares","abandonwares","softdeads",2,"carles",25/08/07,,57
+1,"Quans euros va recaptar l'sgae el 2005?","318.772.000","31.877.200","3.187.720",1,"carles",25/08/07,"i encara no cobraven ni de bon tros tot el que cobren ara",58
+6,"Quin d'aquests programes#no és un programa de diseny#vectorial","scribus","inkscape","xaralx",1,"carles",25/08/07,"es un programa d'autoedició",59
+3,"Quin ha estat considerat per omnium#cultural el#'Més gran cançoner català del mon '","cantar i xerinola","kumbaworld","yahoo lyrics",2,"carles",26/08/07,"he he... ha estat superior a mi... ha havia de fer...",60
+3,"Què vol dir CC?","CertifiCations","creative comons","computer case",2,"carles",26/08/07,,61
+4,"Quin any es va fer el joc Pong?",1982,1978,1972,3,"carles",26/08/07,"El 29 de novembre del 1972 atari va treure aquest joc. ",62
+5,"ls serveix per:","llistar fitxers","comprimir arxius","veure l'espai lliure al disc",1,"carles",26/08/07,,63
+2,"Quina d'aquestes característiques#no inclou l'edubuntu?","Gestionar horaris d'una escola","Iniciar ordinadors en xarxa#sense instaŀlar, ni posar CDs","Veure DVDs zona 2",3,"carles",26/08/07,,64
+5,"Per veure el contingut d'un arxiu#de text, quina comanda NO serveix?","cat","less","type",3,"carles",26/08/07,"Això no és dos company",65
+5,"Per què serveix la comanda CD?","Per canviar de directori","Per copiar un directori","Per res en majúscules",3,"carles",26/08/07,,66
+5,"Per què serveix la comanda md?","Per crear un directori","Per moure un arxiu","Per res",3,"carles",26/08/07,"Evidenment. Per fer un directori farem mkdir. Això no és dos!",67
+5,"Per veure tots els arxius que#comencin per s o t farem:","ls [st]*","ls st?","ls st[*]",1,"carles",26/08/07,,68
+5,"cp serveix per a:","copiar arxius","coupé: pujar la prioritat#d'un procés","copy paste: duplcar el contingut#del portapapers",1,"carles",26/08/07,,69
+6,"Quin d'aquests programes#que permeten accés remot#no està als repositoris d'ubuntu.","Les mateixes X","vnc","nx",3,"carles",26/08/07,,70
+5,"Què passa quan copiem#cosa.txt i Cosa.TXT#en un disc en fat32","Que es copien","Que esborrem el primer","Que es sumen",2,"carles",26/08/07,,71
+6,"Quan l'equip de traductors del#KDE ens parlen de la mida#de la caixa. Es refereixen a:","Majúscules / minúscules","Marges de les finestres","Tipus de monitor",1,"carles",26/08/07,"Això que ens pot sonar estrany no és un error de traducció. Ve de la mida e les caselles (caixes) que s'usaven en les impremtes. On les majúscules eren més grans. ",72
+4,"Quants jocs de cartes de solitari hi ha#als repositoris d'ubuntu?",3,12,"Més de 100",3,"carles",26/08/07,,73
+4,"Quin d'aquests ordinadors NO#duia el procesador Zilog Z80-A","ZX Spectrum","Commodore","MSX",2,"carles",26/08/07,"Duia un MOS 6510",74
+2,"En quina d'aquestes distribucions#està basat l'ubuntu?","Debian","Fedora","Suse",1,"carles",26/08/07,,75
+5,"Quants processadors suporta#Debian directament al seu web#d'enllaços de descàrregues?",10,5,3,1,"carles",26/08/07,"Tot i que al ser totalment obert és il·limitat en aquest sentit.",76
+2,"Quins son els colors del logotip d'ubuntu?","Tons de taronja","Groc, vermell i taronja","Groc, blau i taronja",2,"Nil",,,77
+2,"Quins són els colors del logotip de kubuntu?","Tons de blau","Blau, gris i blanc","Blau, verd i blanc",1,"Nil",,,78
+6,"Quin es el nou nom del Gaim?","Pidgin","Gaim (no ha canviat)","Amsn",1,"Nil",,,79
+4,"Quin d'aquests mmorpgs te versio per linux?","World of Warcaft","Hellbreath","Regnum",3,"Nil",,,80
+1,"De que es disfrasa Richard Stallman a les seves conferencies?","De nyu (gnu en anglès)","Sant Ignucius","Pokemon",2,"Nil",,,81
+4,"Què vol dir MUD?","Multi-User Dungeon","Massive users dungeon","Monster under drugstore",1,"Nil",,,82
+4,"Que vol dir MMORPG","Monsters mission on role play game","Massive multiplayer online role play game","MMORPG must organize region part",2,"Nil",,,83
+5,"Què vol dir PHP?","PHP: Hypertext Preprocessor","Python Hypertext Preprocessor","Plug Hibrid Processor",1,"carles",07/09/07,"Hi ha diversos acrònims recursius. I aquest n'és un la P de PHP vol dir PHP. ",84
+4,"Quin model eren els replicants?","Andros 5","Nexus 6","Redmon 4",2,"carles",07/09/07,"Els robots replicants de la genial peŀlícula blade runner eren el model nexus 6",85
+4,"Per què serveix la comanda#klatu barada nikto","Per reorganitzar l'espai al disc dur","Per evitar la destrucció de la terra","Per instaŀlar el fedora",2,"carles",07/09/07,"A la peŀlícula “ultimatum a la terra” la frase per aturar el robot que anava a destruir la terra fou: klatu barada nikto",86
+5,"Què vol dir la G de les sigles GNU?","Gnome","Gtk","GNU",3,"carles",07/09/07,"Es tracta d'unes sigles recursives. GNU No és Unix",87
 4,"Quants anells toquen als Reis Elfs?",3,5,6,1,"carles",07/09/07,"Tres anells per als Reis Elfs sota el cel.#Set per als Senyors Nans a cases de pedra.#Nou per als Homes Mortals condemnats a morir.#Un per al Senyor Obscur, sobre el tron obscur.#a la Terra de Mordor on s'estenen les Ombres.#Un Anell per governar-los a tots. Un Anell per trobar-los,#un Anell per atreure'ls tots i lligar-los en les tenebres.#a la Terra de Mordor on s'estenen les Ombres.#
 .#             
--J.R.R. Tolkien, ""El Senyor dels Anells"".#",17
-5,"Què son les expressions regulars?","Les que no estan bé del tot","Una cadena que s'usa per descriure, enumerar#o filtrar un grup de cadenes, d'acord#amb unes normes de sintaxi","Un component algoritmic per#mimetizar el contingut referent#a la comanda grep",2,"carles",07/09/07,,18
-5,"Quin d'aquests és el#Llengüatge estructurat de consultes?","LEC","SQL","COL",3,"carles",07/09/07,"Structured query language",19
-5,"Hi ha un llenguatge de programació que#comparteix nom amb una illa d'Indonesia.#Com es diu l'empresa que el va fer?","Novell","Sun microsystems","Canonical",2,"carles",07/09/07,"El llenguatge/màquina virtual java va ser realitzat per Sun Microsystems",20
-6,"Com es diu la mascota del projecte kde?","Tronki","Mongui","Konqui",3,"carles",07/09/07,"Deixeu al Konqui conquerir el vostre escriptori.",21
-3,"Quina d'aquestes llengües té més#presencia que el català a internet?","Tailandes","Grec","Hebreu",1,"carles",07/09/07,"Actualment el català és la 21ena llengua a la xarxa. Per damunt del grec, hebreu, rumanès, vietnamita, hungarès, Islandès, eslovac i l'eslovè.",22
+-J.R.R. Tolkien, ""El Senyor dels Anells"".#",88
+5,"Què son les expressions regulars?","Les que no estan bé del tot","Una cadena que s'usa per descriure, enumerar#o filtrar un grup de cadenes, d'acord#amb unes normes de sintaxi","Un component algoritmic per#mimetizar el contingut referent#a la comanda grep",2,"carles",07/09/07,,89
+5,"Quin d'aquests és el#Llengüatge estructurat de consultes?","LEC","SQL","COL",3,"carles",07/09/07,"Structured query language",90
+5,"Hi ha un llenguatge de programació que#comparteix nom amb una illa d'Indonesia.#Com es diu l'empresa que el va fer?","Novell","Sun microsystems","Canonical",2,"carles",07/09/07,"El llenguatge/màquina virtual java va ser realitzat per Sun Microsystems",91
+6,"Com es diu la mascota del projecte kde?","Tronki","Mongui","Konqui",3,"carles",07/09/07,"Deixeu al Konqui conquerir el vostre escriptori.",92
+3,"Quina d'aquestes llengües té més#presencia que el català a internet?","Tailandes","Grec","Hebreu",1,"carles",07/09/07,"Actualment el català és la 21ena llengua a la xarxa. Per damunt del grec, hebreu, rumanès, vietnamita, hungarès, Islandès, eslovac i l'eslovè.",93
+2,"Com es dirà la versió 8.04 LTS d'ubuntu","Hangy Haseforg","Hungry Hippo","Hardy Heron",3,"carles",07/09/07,,94
+6,"Com es diu aquest escriptori?","Enlighement","Enlightement","Enlightenement",2,"carles",07/09/07,,95
+6,"Què volen dir les sigles KDE?","K Desktop Enviroment","KDE Data Extruded","Kentucky Department of Education",1,"carles",07/09/07,"La 3a també és correcta, però no es el nostre cas",96
+5,"Quina variant té la disposició#catalana de teclat?","La Ç en lloc de la Ñ","La ŀl es fà amb Alt Gr + L","La satisfacció d'usar#el nostre teclat",2,"carles",07/09/07,,97
+5,"Podem muntar i accedir a una carpeta#ssh on hi hagi un enllaç a unaa carpeta nfs#i dins un enllaç a una ftpfs?","Si es clar","Tu aŀlucines","No la ftp, no",1,"carles",07/09/07,,98
+6,"Com es diu el gestor de fitxers#del KDE 4?","konqueror","nautilus","Dolphin",3,"carles",07/09/07,"Tot i que ja el trobem predeterminat a les darreres versions de kde",99
+2,"Quin d'aquests Linux NO és#una variant d'ubuntu?","ubuntu studio","Guadalinex","Linkat",3,"carles",07/09/07,"LinKat és la distribució GNU/Linux del Departament d'Educació de la Generalitat de Catalunya. Està basada en la distribució Suse i el funcionament del seu programari es basa amb paquets rpm",100
+6,"Quin d'aquests no és un gestor de#finestres modern per l'ubuntu?","Beryl","Compiz - Fusion","Aero",3,"carles",07/09/07,"Evidentment l'aereo és pel Hasefrog Diòptries",101
+6,"Quin d'aquests no és un#entorn Linux per dispositius mòbils?","Yunki","Sato","Opie",1,"carles",07/09/07,,102
+1,"On es va fer l'akademy de l'any 2006?","Vilanova i la Geltrú","Dublin","Chicago",1,"carles",07/09/07,"Akademi és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer al Trinity College Dublin a Irlanda",103
+1,"On es va fer l'akademy de l'any 2007?","Glasgow","Dublin","Vilanova i la Geltrú",1,"carles",07/09/07,"Akademi és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer a Glasgow a Escòcia",
+6,"Com ho farien 4 usuaris de hasefrog#per engegar un cotxe que no funciona?","Reiniciarien el servei del motor","Sortirien i tornarien a entrar","Desmuntant el cotxe",2,"carles",07/09/07,"he he",
+6,"Un d'aquests no és un programa#per manipular so.","Adour","Audacity","Blender",3,"carles",07/09/07,"El Ardour és un gran programa multipista per treballar en temps real.#L'audacity és gran programa per tractar so#I el blender és programa bonissim de diseny gràfic en 3D. ",
+3,"L'eyeos és un “sistema operariu” web#realitzat a:","Catalunya","Helsinki","La illa de man",1,"carles",07/09/07,,

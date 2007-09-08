@@ -1,0 +1,29 @@
+"Versió:",1,,,,,,,,
+"Categoria:","Personatges i actes",,,,,,,,
+"Data creació:",08/09/07,,,,,,,,
+"Data Darrera revisió:",08/09/07,,,,,,,,
+"Autors:","Nil Oriol, Josep Sanchez, Lluïsa Nuñez, Carles Oriol ",,,,,,,,
+"Descripció:","Gent i fets al voltant del mon del programari lliure. També informació sobre llicències.",,,,,,,,
+"Jugadors","Coneixements mínims entorn GNU",,,,,,,,
+"Idioma","ca",,,,,,,,
+,,,,,,,,,
+"cat","Pregunta","Resposta 1 ","Resposta 2","Resposta 3","ok","Autor ","Data","Num","Comentari o notes"
+1,"L'any 1977 la policia d'alburquerque va#detenir i fitxar a Bill Gates per","Tenir drogues","Robar una pastisseria","Fer curses amb un 911 al desert",3,"Carles",18/08/07,1,"A la xarxa podem trobar la foto d'un jove Bill amb la seva fitxa policial... una monada. http://news.bbc.co.uk/1/hi/sci/tech/152803.stm"
+1,"Qui ha estat un l'abanderat de la traducció#del programari al català?","softcatalà","la generalitat","microsoft",1,"carles",18/08/07,2,"Per cert... el clic dels nois de redmon ja s'a convertit en clico."
+1,"Què es va celebrar el passat abril al#Centre cultural de les Corts??","Una reunió tupperware","L'RMS hi va fer una conferència","La Festa Feisty del CatalanTeam",3,"papapep",18/08/07,3,
+1,"Qui son Dennis Ritchie i Keneth Thompson?","Els desenvolupadors del C i del unix","Els pares d'internet","Els creadors del projecte GNU",1,"carles",24/08/07,4,"De l'any 1969 al 1971 Dennis Ritchie i Keneth Thompson ven desenvolupar el sistema unix. Per fer-ho van haver de millorar el lleguatge B creat per Ritchie convertint-lo en C "
+1,"Com es diu l'associació d'usuaris de linux#més important de Catalunya","Cobrem","Caliu","Carlux",3,"carles",18/08/07,5,"I el seu Secretari Rafael Carreras és un dels fundadors del LoCo Català d'ubuntaires"
+1,"Que va patentar Microsoft#el 24 de setembre del 96","El CD parcialment reescribible","El doble click","La bola del mouse",2,"carles",18/08/07,6,"Patent number: 5559943"
+1,"Què es va patentar el 2006","El teletransport","La inserció de xips al cervell humà","El windows segur",1,"carles",18/08/07,7,"United States Patent 20060071122. Brutal no!!!"
+1,"Hans Reiser, creador del sistema#d'arxius ReiserFS, va ser acusat#l'any passat de:","Signar un acord amb Microsoft","Matar la seva dona","Violar la GPLv3",2,"lluisanunez",24/08/07,8,"http://en.wikipedia.org/wiki/Hans_Reiser"
+1,"De que es disfrasa Richard Stallman a les seves conferencies?","De nyu (gnu en anglès)","Sant Ignucius","Pokemon",2,"Nil",,9,
+1,"On es va fer l'akademy de l'any 2006?","Vilanova i la Geltrú","Dublin","Chicago",1,"carles",07/09/07,10,"Akademi és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer al Trinity College Dublin a Irlanda"
+1,"On es va fer l'akademy de l'any 2007?","Glasgow","Dublin","Vilanova i la Geltrú",1,"carles",07/09/07,11,"Akademi és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer a Glasgow a Escòcia"
+1,"Quan Mark Shuttleworth va ser a Catalunya#Quina televisió el va entrevistar?","Barcelona TV","Mataró TV","TV3",2,"carles",25/08/07,12,
+1,"Per què els errors informàtics es diuen 'bugs'?","Per què sona simpàtic","per que quan van engegar el primer#ordinador dins d'una valvula#hi havia un insecte","En honor a John Bughs",2,"carles",25/08/07,13,
+1,"Quans euros va recaptar l'sgae el 2005?",318772000,31877200,3187720,1,"carles",25/08/07,14,"i encara no cobraven ni de bon tros tot el que cobren ara"
+1,"Qui va dir#'Don't think free as in free beer;#think free as in free speech.'","Richard Stallman","Linus Torvalds","Mark Shuttlework",1,"Carles",18/08/07,15,"Richard Stallman per referir-se que#el programari hauria de ser lliure referint-se#a llibertat.##(És un error de polisemia en anglès#al ser lliure i gratuit la mateixa#paraula: free)"
+1,"Quants anys ha fet l'escriptori gnome?#(2007)",10,15,20,1,"Carles",18/08/07,16,
+1,"Quan em Mark Shuttleworth va fer# la seva fortuna venent#una empresa de claus va anar de viatge a:","Vilanova i la Geltrú","L'espai","Everest",2,"Carles",18/08/07,17,"Mark Shuttleworth va ser el 2on turista espacial#de la història de la humanitat.##Després d'aconseguir la seva fortuna#va fer un viatge a l'estació espacial#internacional amb un grup de científics#per tal de realitzar investigacions amb#celules mare."
+1,"Qui va fundar el projecte gnome?","Mark Shuttlework","Manuel de Icaza","George Moustaki",2,"Carles",18/08/07,18,
+1,"On es va fer la Guadec de l'any 2006?","Chicago","Vilanova i la Geltrú","Sao Paulo",2,"Carles",18/08/07,19,
