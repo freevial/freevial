@@ -53,6 +53,7 @@ class CategoriaPreguntes:
 	
 		self.num = num
 
+		self.nomimatge = ''
 
 	def importQuestions( self, csvFile ):
 		""" Imports the questions from a CSV file and returns them in a list. """
@@ -73,6 +74,7 @@ class CategoriaPreguntes:
 			elif comptaline == 6: self.descripcio = unicode( line[1], 'utf-8' )			
 			elif comptaline == 7: self.jugadors = unicode( line[1], 'utf-8' )
 			elif comptaline == 8: self.idioma = unicode( line[1], 'utf-8' )
+			elif comptaline == 9: self.nomimatge = unicode( line[1], 'utf-8' )
 
 			elif comptaline > 10:
 
@@ -130,5 +132,8 @@ def preguntes_autors():
 	
 	return llista
 
-	
+def nomImatgeCategoria( ncat ):
+
+	return categoriespreguntes[ncat].nomimatge
+
 

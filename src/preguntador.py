@@ -58,7 +58,9 @@ class Preguntador:
 		# carrega d'imatges
 		self.fons = range(0, 6)
 		for num in range(0, 6):
-			self.fons[num] = loadImage( 'categoria' + str(num + 1) + '.png' )
+			self.fons[num] = loadImage( nomImatgeCategoria( num ) )
+			sfcmask = loadImage( 'filtre_c' + str(num+1) + '.png' )
+			self.fons[num].blit( sfcmask, (0,0))
 		
 		self.mascara_de_fons = loadImage('mascara_de_fons.png')
 		self.retalla_sel = loadImage('retalla_sel.png')
