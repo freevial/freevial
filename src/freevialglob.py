@@ -692,7 +692,7 @@ def setLockedMode( mode ):
 	global LOCKED_MODE
 
 	LOCKED_MODE = mode
-	print mode
+
 
 def getLockedMode( ):
 

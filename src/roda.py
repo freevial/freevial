@@ -136,7 +136,7 @@ class Roda:
 					frenant = 1
 					self.so_sub.play()
 
-			if time_fi != 0 and time.time() - time_fi > 5:
+			if time_fi != 0 and time.time() - time_fi > 2.5:
 				return resultat
 
 			# decelerem
