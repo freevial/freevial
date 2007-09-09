@@ -2,7 +2,7 @@ FLETXES - Selecciona, INTRO - Crea equips, ESPAI - Inicia, F1 - Ajuda
 INTRO - Inicia el torn, F1 - Ajuda, F2 - Crèdits
 F1 - Ajuda, F2 - Crèdits, INTRO - Un altre partida
 Segur que voleu finalitzar el joc?
-Si
+Sí
 No
 A, B, C tria resposta. F1 - Ajuda
 F3 - Mostra comentaris, INTRO/ESC - Torna

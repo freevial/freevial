@@ -7,6 +7,11 @@
 "Jugadors","Interessos mínims en el funcionament d'ordinadors",,,,,,,,
 "Idioma","ca",,,,,,,,
 "Fons","categoria5.png",,,,,,,,
+"So","c5.ogg",,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
 ,"Pregunta","Resposta 1 ","Resposta 2","Resposta 3","ok","Autor ","Data","Num","Comentari o notes"
 ,"ls serveix per:","llistar fitxers","comprimir arxius","veure l'espai lliure al disc",1,"carles",26/08/07,1,
 ,"Què son les expressions regulars?","Les que no estan bé del tot","Una cadena que s'usa per descriure, enumerar#o filtrar un grup de cadenes, d'acord#amb unes normes de sintaxi","Un component algoritmic per#mimetizar el contingut referent#a la comanda grep",2,"carles",07/09/07,2,

@@ -30,8 +30,11 @@ arxius_de_preguntes = [ 'preguntes_ca01.csv',
 						'preguntes_ca02.csv', 
 						'preguntes_ca03.csv',
 						'preguntes_ca04.csv', 
-						'preguntes_cakw.csv', 
-						'preguntes_camc.csv' ]
+						'preguntes_ca05.csv', 
+						'preguntes_ca06.csv' ]
+
+						#'preguntes_cakw.csv', 
+						#'preguntes_camc.csv', ]
 
 carpeta_de_preguntes = '../'
 
@@ -54,6 +57,8 @@ class CategoriaPreguntes:
 		self.num = num
 
 		self.nomimatge = ''
+		self.so = ''
+
 
 	def importQuestions( self, csvFile ):
 		""" Imports the questions from a CSV file and returns them in a list. """
@@ -75,8 +80,9 @@ class CategoriaPreguntes:
 			elif comptaline == 7: self.jugadors = unicode( line[1], 'utf-8' )
 			elif comptaline == 8: self.idioma = unicode( line[1], 'utf-8' )
 			elif comptaline == 9: self.nomimatge = unicode( line[1], 'utf-8' )
+			elif comptaline == 10: self.so = unicode( line[1], 'utf-8' )
 
-			elif comptaline > 10:
+			elif comptaline > 16:
 
 				for num in range(0, 10):
 					line[ num ] = unicode(line[ num ], 'utf-8')
@@ -136,4 +142,7 @@ def nomImatgeCategoria( ncat ):
 
 	return categoriespreguntes[ncat].nomimatge
 
+def soCategoria( ncat ):
+
+	return categoriespreguntes[ncat].so
 

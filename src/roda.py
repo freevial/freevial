@@ -54,7 +54,7 @@ class Roda:
 		
 		self.so_cat = range(0, 6)
 		for num in range(0, 6):
-			self.so_cat[num] = loadSound( 'c' + str(num + 1) + '.ogg' )
+			self.so_cat[num] = loadSound( soCategoria( num ) )
 
 		self.so_sub = loadSound('sub.ogg', volume = 0.3)
 		
