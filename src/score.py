@@ -279,7 +279,7 @@ class Score:
 						loadSound( 'score.ogg', volume = 0.6, music = 1).play( -1 )
 					
 					if keyPress(event, ('l')): 
-						setLockedMode ( not getLockedMode )
+						setLockedMode ( not getLockedMode() )
 
 			if nou_grup == 1:
 				self.so_sub2.play()
