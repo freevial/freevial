@@ -23,7 +23,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import sys, os.path, pygame
+import sys, os.path, pygame, gettext
 from math import *
 
 from freevialglob import *
@@ -31,6 +31,7 @@ from score import Score
 from preguntador import Preguntador
 from roda import Roda
 
+FS_MODE = False
 
 ##################################################
 #
@@ -58,7 +59,9 @@ class Freevial:
 		
 		if not DEBUG_MODE:
 			pygame.mouse.set_visible( False )
-			pygame.display.toggle_fullscreen()
+
+			if not FS_MODE:
+				pygame.display.toggle_fullscreen()
 		
 		# inicialize sound and text systems
 		if not ismute():
@@ -123,22 +126,27 @@ class Freevial:
 				sys.exit()
 
 
+gettext.install('freevial', '/usr/share/locale', unicode=1)
+
 if '-h' in sys.argv or '--help' in sys.argv:
-	print """
- Freevial
- --------
- 
- -d, --debug\tDebug mode (start without fullscren)
- -m, --mute\tDisable all sounds and music
- --no-sound\tDisable sound
- --no-music\tDisable music
- --fps\t\tPrint framerate on screen
- --help\t\tDisplay this message
-"""
- 	exit(0)
+	print _('use freevial [OPTIONS]')
+	print
+	print _('-d, --debug\tDebug mode')
+	print _('-m, --mute\tDisable all sounds and music')
+	print _('-no-sound\tDisable sound')
+	print _('--no-music\tDisable music')
+	print _('--fps\t\tPrint framerate on screen')
+	print _('--help\t\tDisplay this message')
+	print _('--fullscreen\t\tStart in full screen') # Aka Alèx ets un tocacollons
+
+
+ 	exit( 0 )
 
 if '-d' in sys.argv or '--debug' in sys.argv:
 	DEBUG_MODE = True
+
+if '--fullscreen' in sys.argv or '--debug' in sys.argv:
+	FS_MODE = True
 
 if '--fps' in sys.argv:
 	displayFPS( True )

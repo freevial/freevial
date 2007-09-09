@@ -64,8 +64,6 @@ class CategoriaPreguntes:
 
 	def importQuestions( self, csvFile ):
 		""" Imports the questions from a CSV file and returns them in a list. """
-		
-		print csvFile
 
 		csv_read = csv.reader( open( csvFile ) )
 			
