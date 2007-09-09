@@ -105,19 +105,19 @@ class Freevial_globals:
 	sfc_credits = ""
 
 
-
-def mute( sound = '', music = '' ):
+def mute( sound = None, music = None ):
 	""" Mute sound or music. """
 	
 	global SOUND_MUTE, MUSIC_MUTE
 	
-	if sound != '': SOUND_MUTE = sound
-	if music != '': MUSIC_MUTE = music
+	if sound: SOUND_MUTE = sound
+	if music: MUSIC_MUTE = music
 	
 	return {
 			'sound': SOUND_MUTE,
 			'music': MUSIC_MUTE,
 		}
+
 
 def ismute():
 	return SOUND_MUTE and MUSIC_MUTE
@@ -297,14 +297,8 @@ def screenshot( surface, destination = os.path.join( os.path.expanduser('~'), 'F
 	if not os.path.exists( destination ):
 		os.makedirs( destination )
 	
-	def nextFileNum( directory ):
-		files = os.listdir( directory )
-		files.sort()
-		fileNum = ( int( str.split(files[-1], '.')[0] ) if len(files) > 0 else 0 ) + 1
-		return fileNum
-	
 	#PNG, JPEG saving new in pygame 1.8.
-	destination = os.path.join( destination, str( nextFileNum( destination ) ) + '.tga' )
+	destination = os.path.join( destination, str( time.time() ) + '.tga' )
 	
 	pygame.image.save( surface, destination )
 
