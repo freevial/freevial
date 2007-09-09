@@ -297,14 +297,8 @@ def screenshot( surface, destination = os.path.join( os.path.expanduser('~'), 'F
 	if not os.path.exists( destination ):
 		os.makedirs( destination )
 	
-	def nextFileNum( directory ):
-		files = os.listdir( directory )
-		files.sort()
-		fileNum = ( int( str.split(files[-1], '.')[0] ) if len(files) > 0 else 0 ) + 1
-		return fileNum
-	
 	#PNG, JPEG saving new in pygame 1.8.
-	destination = os.path.join( destination, str( nextFileNum( destination ) ) + '.tga' )
+	destination = os.path.join( destination, str( time.time() ) + '.tga' )
 	
 	pygame.image.save( surface, destination )
 
