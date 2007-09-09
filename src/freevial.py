@@ -61,10 +61,14 @@ class Freevial:
 			pygame.display.toggle_fullscreen()
 		
 		# inicialize sound and text systems
-		if not ismute(): 
-			pygame.mixer.pre_init(44100, -16, 2, 2048)
-			pygame.mixer.init()
-
+		if not ismute():
+			try:
+				pygame.mixer.pre_init(44100, -16, 2, 2048)
+				pygame.mixer.init()
+			except pygame.error, message:
+				print 'Sound initialization failed.', message
+				mute( sound = True, music = True )
+		
 		pygame.font.init()
 		
 		self.joc.sfc_credits = createHelpScreen( 'credits', alternate_text = True )
@@ -118,6 +122,20 @@ class Freevial:
 			else:
 				sys.exit()
 
+
+if '-h' in sys.argv or '--help' in sys.argv:
+	print """
+ Freevial
+ --------
+ 
+ -d, --debug\tDebug mode (start without fullscren)
+ -m, --mute\tDisable all sounds and music
+ --no-sound\tDisable sound
+ --no-music\tDisable music
+ --fps\t\tPrint framerate on screen
+ --help\t\tDisplay this message
+"""
+ 	exit(0)
 
 if '-d' in sys.argv or '--debug' in sys.argv:
 	DEBUG_MODE = True

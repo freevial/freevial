@@ -105,19 +105,19 @@ class Freevial_globals:
 	sfc_credits = ""
 
 
-
-def mute( sound = '', music = '' ):
+def mute( sound = None, music = None ):
 	""" Mute sound or music. """
 	
 	global SOUND_MUTE, MUSIC_MUTE
 	
-	if sound != '': SOUND_MUTE = sound
-	if music != '': MUSIC_MUTE = music
+	if sound: SOUND_MUTE = sound
+	if music: MUSIC_MUTE = music
 	
 	return {
 			'sound': SOUND_MUTE,
 			'music': MUSIC_MUTE,
 		}
+
 
 def ismute():
 	return SOUND_MUTE and MUSIC_MUTE
