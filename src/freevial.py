@@ -60,7 +60,7 @@ class Freevial:
 		if not DEBUG_MODE:
 			pygame.mouse.set_visible( False )
 
-			if not FS_MODE:
+			if FS_MODE:
 				pygame.display.toggle_fullscreen()
 		
 		# inicialize sound and text systems
@@ -137,15 +137,18 @@ if '-h' in sys.argv or '--help' in sys.argv:
 	print _('--no-music\tDisable music')
 	print _('--fps\t\tPrint framerate on screen')
 	print _('--help\t\tDisplay this message')
-	print _('--fullscreen\t\tStart in full screen') # Aka Alèx ets un tocacollons
-
+	print _('-fs, --fullscreen\tStart in full screen') # Aka Alèx ets un tocacollons
+	print _('-l\t--locked\tStart game in locked mode')
 
  	exit( 0 )
 
 if '-d' in sys.argv or '--debug' in sys.argv:
 	DEBUG_MODE = True
 
-if '--fullscreen' in sys.argv or '--debug' in sys.argv:
+if '-l' in sys.argv or '--locked' in sys.argv:
+	setLockedMode( True )
+
+if '--fullscreen' in sys.argv or '--fs' in sys.argv:
 	FS_MODE = True
 
 if '--fps' in sys.argv:

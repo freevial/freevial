@@ -98,7 +98,7 @@ class Roda:
 				if event.type == pygame.QUIT:
 					sys.exit()
 				
-				if keyPress(event, ('ESCAPE', 'q')):
+				if keyPress(event, ('ESCAPE', 'q')) and not getLockedMode():
 					if not mostra_ajuda and not mostra_credits:
 						if not ismute():
 							pygame.mixer.fadeout(500)

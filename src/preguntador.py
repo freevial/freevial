@@ -216,7 +216,7 @@ class Preguntador:
 				if event.type == pygame.QUIT:
 					sys.exit()
 				
-				if keyPress(event, ('q', 'ESCAPE')):
+				if keyPress(event, ('q', 'ESCAPE')) and not getLockedMode():
 					if not mostra_ajuda and not mostra_credits:
 						if not ismute():
 							pygame.mixer.fadeout(500)
@@ -279,7 +279,8 @@ class Preguntador:
 				if keyPress(event, ('6', 'KP6')):	self.atzar( 6 )
 				
 				if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
-					acaba = 1
+					if self.seleccio != 0:
+						acaba = 1
 				
 				if keyPress(event, ('F3')) and self.mostrasolucions == 3 and self.pregunta_actual[8] != "":		
 					mostra_comentaris ^= 1

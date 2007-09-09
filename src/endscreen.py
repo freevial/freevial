@@ -177,18 +177,13 @@ class Visca:
 
 				if event.type == pygame.QUIT:
 					sys.exit()
-					
-				if keyPress(event, ('q', 'ESCAPE')):
+				
+									
+				if keyPress(event, ('q', 'ESCAPE')) and not getLockedMode():
 					return
 				
 				if keyPress(event, ('PRINT')):
 					screenshot( self.joc.pantalla )
-				
-				if mouseClick(event):
-					nomove = 1
-				
-				if mouseRelease(event):
-					nomove = 0
 				
 				if keyPress(event, ('f', 'F11')):
 					pygame.display.toggle_fullscreen()

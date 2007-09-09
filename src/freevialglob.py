@@ -32,6 +32,8 @@ SOUND_MUTE = False
 MUSIC_MUTE = False
 DISPLAY_FPS = False
 
+LOCKED_MODE = False
+
 textos = []
 
 
@@ -685,7 +687,16 @@ def translateJoystickEvent( event ):
 		event = pygame.event.Event( pygame.KEYUP, {'key': alies, 'unicode': u's', 'mod': 0})
 		pygame.event.post( event )
 
+def setLockedMode( mode ):
 
+	global LOCKED_MODE
 
+	LOCKED_MODE = mode
+	print mode
 
+def getLockedMode( ):
+
+	global LOCKED_MODE
+
+	return LOCKED_MODE
 

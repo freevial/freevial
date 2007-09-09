@@ -65,6 +65,8 @@ class Score:
 
 		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
 
+		self.sfc_llum = loadImage( 'llum.png' )
+
 	def barra_pos( self, total, posicio, color, ample, alt ):
 
 		sfc = pygame.Surface( ( ample, alt), pygame.SRCALPHA, 32 )
@@ -84,7 +86,8 @@ class Score:
 	# Bucle principal del programa
 	#
 	def juguem( self, joc = '' ):
-		
+
+
 		if joc != '': self.joc = joc
 		frate = frameRate( self.joc.Limit_FPS )
 		
@@ -174,10 +177,11 @@ class Score:
 					
 					if keyPress(event, ('q', 'ESCAPE')):
 						if not mostra_ajuda and not mostra_credits:
-							if fesPregunta( self.joc.pantalla , valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0 :
-								pygame.mixer.music.fadeout( 500 )
-								pygame.time.wait( 500 )
-								return -1
+							if not getLockedMode():
+								if fesPregunta( self.joc.pantalla , valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0 :
+									pygame.mixer.music.fadeout( 500 )
+									pygame.time.wait( 500 )
+									return -1
 						else:
 							mostra_ajuda = mostra_credits = 0
 					
@@ -274,6 +278,9 @@ class Score:
 						mostrada_victoria = True
 						loadSound( 'score.ogg', volume = 0.6, music = 1).play( -1 )
 					
+					if keyPress(event, ('l')): 
+						setLockedMode ( not getLockedMode )
+
 			if nou_grup == 1:
 				self.so_sub2.play()
 				nou_grup = 0
@@ -304,7 +311,11 @@ class Score:
 				xcaixa = 75 if ((num % 2) == 0) else 515
 
 				if element_seleccionat == num:
-					self.joc.pantalla.blit( self.seleccio_score, (xcaixa - 58, ycaixa - 36) )
+					for compta in range( 0, self.seleccio_score.get_height() ):
+						desp = 0 if not estat else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
+						self.joc.pantalla.blit( self.seleccio_score, (xcaixa - 58 + desp, ycaixa - 36 + compta), (0,compta, self.seleccio_score.get_width(),1) )
+
+
 				
 				if self.joc.equips[num].actiu:
 	
@@ -328,6 +339,8 @@ class Score:
 
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
+
+			if getLockedMode(): self.joc.pantalla.blit( self.sfc_llum, (0, 0) )
 			
 			self.help_on_screen.draw( self.joc.pantalla, (350, 740), HOS_SCORE_MODEW if escriu else estat)
 			
