@@ -122,35 +122,61 @@ def mute( sound = '', music = '' ):
 def ismute():
 	return SOUND_MUTE and MUSIC_MUTE
 
-def loadImage( filename ):
+
+def loadImage( name, colorkey = None, rotate = 0 ):
 	""" Returns a Surface of the indicated image, which is expected to be in the images folder. """
 	
-	return pygame.image.load( os.path.join(Freevial_globals.folders['images'], str(filename) )).convert_alpha()
-
-
-def loadSound( filename, volume = '' , music = 0 ):
-	""" Returns a sound object of the indicated audio file, which is expected to be in the sounds folder. """
-
-	if ( mute()['music'] and music ) or ( mute()['sound'] and not music ) :
-		
-		class voidClass:
-			def load( var ): pass
-			def set_volume( var, var2 = '' ): pass
-			def play( var, var2 = '' ): pass
-			def stop( var ): pass
-		
-		return voidClass()
+	fullname = os.path.join(Freevial_globals.folders['images'], str(name))
 	
-	filename = os.path.join(Freevial_globals.folders['sounds'], str(filename))
+	try:
+		image = pygame.image.load(fullname)
+	except pygame.error, message:
+		print 'Failed loading image: ', fullname
+		raise SystemExit, message
 	
-	if not music:
-		obj = pygame.mixer.Sound( filename )
+	if colorkey is not None:
+		if colorkey is -1:
+			colorkey = image.get_at((0,0))
+		image = image.convert()
+		image.set_colorkey(colorkey, pygame.RLEACCEL)
 	else:
-		obj = pygame.mixer.music
-		obj.load( filename )
+		image = image.convert_alpha()
 	
-	if volume != '':
-		obj.set_volume( float(volume) )
+	if rotate != 0:
+		image = rotateImage(image, rotate)
+	
+	return image	# [ image, image.get_rect()
+
+
+def loadSound( name, volume = 1.0, music = False ):
+	""" Returns a sound object of the indicated audio file, which is expected to be in the sounds folder. """
+	
+	if ( mute()['music'] and music ) or ( mute()['sound'] and not music ) or not pygame.mixer or not pygame.mixer.get_init():
+	
+		class NoneSound:
+			def load( *args ): pass
+			def play( *args ): pass
+			def stop( *args ): pass
+			def set_volume( *args ): pass
+		
+		return NoneSound()
+	
+	fullname = os.path.join(Freevial_globals.folders['sounds'], name)
+	
+	try:
+		if not music:
+			obj = pygame.mixer.Sound(fullname)
+		else:
+			obj = pygame.mixer.music
+			obj.load(fullname)
+	except pygame.error, message:
+		
+		print 'Failed loading sound: ', fullname
+		
+		if not music:
+			raise SystemExit, message
+	
+	obj.set_volume(float(volume))
 	
 	return obj
 
