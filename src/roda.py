@@ -63,9 +63,8 @@ class Roda:
 		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
 		self.help_on_screen.sec_timeout = 10
 	
-	def juguem( self, joc = '' ):
+	def juguem( self ):
 		
-		if joc != '': self.joc = joc
 		self.frate = frameRate( self.joc.Limit_FPS )
 				
 		self.so_evil.stop()

@@ -93,7 +93,7 @@ class Freevial:
 			
 			if not score: score = Score( self.joc )
 			
-			self.joc.equip_actual = score.juguem( self.joc )
+			self.joc.equip_actual = score.juguem( )
 			
 			if self.joc.equip_actual != -1:
 				
@@ -101,7 +101,7 @@ class Freevial:
 				
 				if not roda: roda = Roda( self.joc )
 				
-				resultat = roda.juguem( self.joc )
+				resultat = roda.juguem( )
 				
 				if resultat != 0:
 						

@@ -85,10 +85,9 @@ class Score:
 	#
 	# Bucle principal del programa
 	#
-	def juguem( self, joc = '' ):
+	def juguem( self ):
 
 
-		if joc != '': self.joc = joc
 		frate = frameRate( self.joc.Limit_FPS )
 		
 		self.joc.pantalla.fill( (0,0,0,0) )
@@ -164,7 +163,7 @@ class Score:
 							if len(self.joc.equips[element_seleccionat].nom) > 0:
 								newname = self.joc.equips[element_seleccionat].nom[:-1]
 						else:
-							newname = joc.equips[element_seleccionat].nom + printKey( event.key )
+							newname = self.joc.equips[element_seleccionat].nom + printKey( event.key )
 						
 						if newname != None:
 							sfc = render_text( newname, (0,0,0), 30, 1)

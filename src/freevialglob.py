@@ -70,12 +70,7 @@ class Equip:
 
 
 def bitCategoria ( categoria ):
-	if categoria == 6: return 0x1
-	if categoria == 5: return 0x2
-	if categoria == 1: return 0x4
-	if categoria == 2: return 0x8
-	if categoria == 4: return 0x10
-	if categoria == 3: return 0x20
+	return (0x4,0x8,0x20,0x10,0x2,0x1)[ categoria - 1 ]
 
 
 class Freevial_globals:
