@@ -152,6 +152,8 @@ class SelCat:
 			# Event iterator
 			for event in pygame.event.get():
 
+				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
+
 				if keyPress(event, ('q', 'ESCAPE', 'KP_ENTER')):
 					if( estat == 0 ): self.refa_cats();
 					return
