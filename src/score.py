@@ -30,6 +30,7 @@ from pygame.locals import *
 from freevialglob import *
 from endscreen import Visca
 from question import fesPregunta
+from selcat import *
 
 ##################################################
 #
@@ -279,6 +280,10 @@ class Score:
 					
 					if keyPress(event, ('l')): 
 						setLockedMode ( not getLockedMode() )
+
+					if keyPress(event, ('k', 'F5')) and estat < 2 :
+						selcat = SelCat ( self.joc )
+						selcat.juguem( estat )
 
 			if nou_grup == 1:
 				self.so_sub2.play()

@@ -118,7 +118,7 @@ class CategoriaPreguntes:
 
 ###########################################
 
-random.shuffle( arxius_de_preguntes )
+#random.shuffle( arxius_de_preguntes )
 
 categoriespreguntes = []
 
@@ -148,4 +148,9 @@ def nomImatgeCategoria( ncat ):
 def soCategoria( ncat ):
 
 	return categoriespreguntes[ncat].so
+
+def get_categoriespreguntes( ):
+
+	return categoriespreguntes
+
 
