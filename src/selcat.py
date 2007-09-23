@@ -129,7 +129,7 @@ class SelCat:
 	#
 	def juguem( self, estat ):
 
-		# estat 0 = edició, 1 = veure categories
+		# estat 0 = edició, 1/2 = veure categories
 
 		frate = frameRate( self.joc.Limit_FPS )
 		
