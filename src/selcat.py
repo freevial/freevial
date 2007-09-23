@@ -80,6 +80,13 @@ class SelCat:
 		for compta in range(0, 6):
 			self.sfc_nombres[compta] = render_text( str(compta+1), colorsCategories()[compta], 35, 1, '', 50 )
 
+	def refa_cats( self ):
+		for cat in range(0, 6):
+			for compta in range(0, len( self.cp[cat].preguntes) ):
+				self.cp[cat].preguntes[compta][0] = cat+1
+			for compta in range(0, len( self.cp[cat].preguntes_backup) ):
+				self.cp[cat].preguntes_backup[compta][0] = cat+1
+	
 	def reinicia_cats( self ):
 		self.categories_seleccionades = [0,1,2,3,4,5];
 	
@@ -146,6 +153,7 @@ class SelCat:
 			for event in pygame.event.get():
 
 				if keyPress(event, ('q', 'ESCAPE', 'KP_ENTER')):
+					if( estat == 0 ): self.refa_cats();
 					return
 				
 				if keyPress(event, ('DOWN')) :
@@ -178,7 +186,8 @@ class SelCat:
 						self.PosaPrimer( seleccio )
 
 				else:
-					if keyPress(event, ('RETURN')):										
+					if keyPress(event, ('RETURN')):			
+						if( estat == 0 ): self.refa_cats();							
 						return
 		
 			# Animem el fons
