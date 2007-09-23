@@ -233,13 +233,13 @@ class SelCat:
 			self.joc.pantalla.blit( self.sfc_preguntes[seleccio], ( 475, 220 ))	
 
 			if( seleccio != self.darrera_info): 	
-				self.sfc_text_info0 = render_text( self.cp[seleccio].autors, (255,255,255), 14, 1, '', 220 )
-				self.sfc_text_info1 = render_text( self.cp[seleccio].descripcio, (255,255,255), 14, 1, '', 350 )
-				self.sfc_text_info2 = render_text( self.cp[seleccio].jugadors, (255,255,255), 14, 1, '', 350 )
-				self.sfc_text_info3 = render_text( u"N. Pregutes: " + str(len(self.cp[seleccio].preguntes_backup)), (255,255,255), 14, 1, '', 350 )
-				self.sfc_text_info4 = render_text( u"Idioma: " + self.cp[compta].idioma, (255,255,255), 14, 1, '', 100 )
-				self.sfc_text_info5 = render_text( u"Data creació: " + self.cp[compta].data_creacio , (255,255,255), 14, 1, '', 350 )
-				self.sfc_text_info6 = render_text( u"Data darrera modificació: " + self.cp[seleccio].data_revisio, (255,255,255), 14, 1, '', 350 )
+				self.sfc_text_info0 = render_text( self.cp[seleccio].autors, (255,255,255), 18, 1, '', 220 )
+				self.sfc_text_info1 = render_text( self.cp[seleccio].descripcio, (255,255,255), 18, 1, '', 350 )
+				self.sfc_text_info2 = render_text( self.cp[seleccio].jugadors, (255,255,255), 18, 1, '', 350 )
+				self.sfc_text_info3 = render_text( u"N. Pregutes: " + str(len(self.cp[seleccio].preguntes_backup)), (255,255,255), 18, 1, '', 350 )
+				self.sfc_text_info4 = render_text( u"Idioma: " + self.cp[compta].idioma, (255,255,255), 18, 1, '', 100 )
+				self.sfc_text_info5 = render_text( u"Data creació: " + self.cp[compta].data_creacio , (255,255,255), 18, 1, '', 350 )
+				self.sfc_text_info6 = render_text( u"Data darrera modificació: " + self.cp[seleccio].data_revisio, (255,255,255), 18, 1, '', 350 )
 
 				self.sfc_cat = loadImage( self.cp[seleccio].nomimatge )
 				if seleccio < 6:
@@ -249,13 +249,13 @@ class SelCat:
 
 				self.darrera_info = seleccio
 			
-			self.joc.pantalla.blit( self.sfc_text_info0, ( 475, 325 ))	
+			self.joc.pantalla.blit( self.sfc_text_info0, ( 475, 305 ))	
 			self.joc.pantalla.blit( self.sfc_text_info1, ( 490, 380 ))	
 			self.joc.pantalla.blit( self.sfc_text_info2, ( 490, 495 ))	
 			self.joc.pantalla.blit( self.sfc_text_info3, ( 490, 606 ))	
 			self.joc.pantalla.blit( self.sfc_text_info4, ( 765, 606 ))	
 			self.joc.pantalla.blit( self.sfc_text_info5, ( 490, 635 ))	
-			self.joc.pantalla.blit( self.sfc_text_info6, ( 490, 660 ))	
+			self.joc.pantalla.blit( self.sfc_text_info6, ( 490, 655 ))	
 	
 			self.joc.pantalla.blit( self.sfc_cat, ( 697, 221 ))	
 			
