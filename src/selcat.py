@@ -83,9 +83,8 @@ class SelCat:
 		# colorsCategories():
 		for compta in range(0, len(self.cp)):
 			color = (128, 128, 128)
-			trobat = FindList( self.categories_seleccionades, compta )
-			if trobat != -1:
-				color = colorsCategories()[trobat]
+			if compta < 6:
+				color = colorsCategories()[compta]
 			self.sfc_preguntes[compta] = render_text( self.cp[compta].nom, color, 27, 1, '', 220 )
 
 	def CanviaElements( self, aposar, atreure):
@@ -99,6 +98,18 @@ class SelCat:
 		self.cp[aposar] = self.cp[atreure]
 		self.cp[atreure] = queda
 
+		self.darrera_info = -1
+		self.reinicia_cats( )
+
+	def PosaPrimer( self, seleccio ):
+
+		self.so_sub2.play() 
+		if seleccio == 0:
+			return
+
+		actual = self.cp[seleccio]
+		self.cp.remove( actual )
+		self.cp.insert( 0, actual )
 		self.darrera_info = -1
 		self.reinicia_cats( )
 
@@ -131,7 +142,7 @@ class SelCat:
 			# Event iterator
 			for event in pygame.event.get():
 
-				if keyPress(event, ('q', 'ESCAPE', 'RETURN', 'KP_ENTER')):
+				if keyPress(event, ('q', 'ESCAPE', 'KP_ENTER')):
 					return
 				
 				if keyPress(event, ('DOWN')) :
@@ -159,6 +170,12 @@ class SelCat:
 							self.CanviaElements( seleccio, compta )
 							seleccio = compta
 
+					if keyPress(event, ('RETURN')):										
+						self.PosaPrimer( seleccio )
+
+				else:
+					if keyPress(event, ('RETURN')):										
+						return
 		
 			# Animem el fons
 			ypos += 1
@@ -209,9 +226,8 @@ class SelCat:
 				self.sfc_text_info6 = render_text( u"Data darrera modificació: " + self.cp[seleccio].data_revisio, (255,255,255), 14, 1, '', 350 )
 
 				self.sfc_cat = loadImage( self.cp[seleccio].nomimatge )
-				trobat = FindList( self.categories_seleccionades, seleccio )
-				if trobat != -1:
-					sfcmask = loadImage( 'filtre_c' + str(trobat+1) + '.png' )
+				if seleccio < 6:
+					sfcmask = loadImage( 'filtre_c' + str(seleccio+1) + '.png' )
 					self.sfc_cat.blit( sfcmask, (0,0))
 				self.sfc_cat = pygame.transform.scale(self.sfc_cat, (184, 138) )
 
