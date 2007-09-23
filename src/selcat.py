@@ -76,6 +76,9 @@ class SelCat:
 
 		self.reinicia_cats()
 
+		self.sfc_nombres = range(0,6)
+		for compta in range(0, 6):
+			self.sfc_nombres[compta] = render_text( str(compta+1), colorsCategories()[compta], 35, 1, '', 50 )
 
 	def reinicia_cats( self ):
 		self.categories_seleccionades = [0,1,2,3,4,5];
@@ -163,6 +166,7 @@ class SelCat:
 					if keyPress(event, ('r') ):
 						random.shuffle( categoriespreguntes )
 						self.reinicia_cats( )
+						self.so_sub2.play()
 						self.darrera_info = -1
 
 					for compta in range( 0, 6 ):
@@ -194,9 +198,12 @@ class SelCat:
 			for compta in range(primer_element_a_la_vista, len(self.cp)):	
 				if posact + self.sfc_preguntes[compta].get_height() > (768 -80)	:
 					break
-
+			
 				if compta == seleccio:
 					self.joc.pantalla.fill( (64,64,64), (100, posact, 300, self.sfc_preguntes[compta].get_height() +3 ) )
+
+				if compta < 6 :
+					self.joc.pantalla.blit( self.sfc_nombres[compta], (120, posact-3) )
 
 				darrer_element_a_la_vista = compta
 				self.joc.pantalla.blit( self.sfc_preguntes[compta], ( 160,posact ))	
