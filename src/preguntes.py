@@ -26,17 +26,15 @@
 import csv, copy, random
 from freevialglob import *
 
-arxius_de_preguntes = [ #'preguntes_ca01.csv', 
+arxius_de_preguntes = [ 'preguntes_ca01.csv', 
 						'preguntes_ca02.csv', 
 						'preguntes_ca03.csv',
+						'preguntes_ca04.csv', 						
+						'preguntes_ca05.csv', 
+						'preguntes_ca06.csv', 
 						'preguntes_cakw.csv', 
-						'preguntes_camc.csv',
-						'preguntes_ca04.csv', 
-#						'preguntes_ca05.csv', 
-						'preguntes_ca06.csv' ]
+						'preguntes_camc.csv' ]
 
-			#			'preguntes_cakw.csv', 
-			#			'preguntes_camc.csv', 
 
 carpeta_de_preguntes = '../'
 
@@ -120,10 +118,11 @@ class CategoriaPreguntes:
 
 ###########################################
 
+random.shuffle( arxius_de_preguntes )
 
 categoriespreguntes = []
 
-for num in range(0, 6):
+for num in range(0, len(arxius_de_preguntes) ):
 	cat = CategoriaPreguntes( num + 1 )
 	cat.importQuestions( os.path.join(carpeta_de_preguntes, arxius_de_preguntes[num]) )
 	categoriespreguntes.append( cat )

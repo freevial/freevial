@@ -76,6 +76,8 @@ class Preguntador:
 								[ loadImage('lletraC.png'), loadImage('lletraC_off.png') ],
 							]
 		
+		self.info = [ loadImage('itr1.png'), loadImage('itr2.png') ]	
+		
 
 		# carreguem els arxius de so
 		self.so_ticking2 = loadSound('ticking2.ogg')
@@ -282,7 +284,7 @@ class Preguntador:
 					if self.seleccio != 0:
 						acaba = 1
 				
-				if keyPress(event, ('F3')) and self.mostrasolucions == 3 and self.pregunta_actual[8] != "":		
+				if keyPress(event, ('F3')) and self.mostrasolucions == 3 and len(self.pregunta_actual[9])> 5:		
 					mostra_comentaris ^= 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
@@ -387,7 +389,10 @@ class Preguntador:
 					else:
 						if self.seleccio == (num + 1):
 							self.joc.pantalla.blit( self.solucio_nook, (posn, linia_act + (150 * num)) )
-			
+		
+				if len( self.pregunta_actual[9] ) > 5:
+					self.joc.pantalla.blit( self.info[0] if (int(time.time() * 3) % 3) == 0 else self.info[1], (self.postextx, 150) )
+	
 			if mostra_punt_de_categoria:
 				if match_point:
 					t = time.time()
@@ -395,7 +400,8 @@ class Preguntador:
 						self.joc.pantalla.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (500+ cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
 				else:
 					self.joc.pantalla.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (880, 130) )
-			
+
+		
 			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
 
 			self.help_on_screen.draw( self.joc.pantalla, (350, 740), HOS_PREGUNTADOR_END if self.mostrasolucions else HOS_PREGUNTADOR_RUN )
