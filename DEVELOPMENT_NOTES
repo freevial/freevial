@@ -15,6 +15,15 @@
    Estat: Pendent / En progrés / En proves / Retocs / Finalitzada
    Desenvolupador: Carles / RainCT
 
+* Neteja de dades temporals
+   Esborrar el directori temporal que s'hagi creat un cop el programa
+   hagi finalitzat, en el cas de que hagi llegit les preguntes des d'un
+   arxiu comprimit.
+   
+   Prioritat: Normal
+   Estat: Pendent
+   Desenvolupador: RainCT
+
 * Debianitzar-lo
    
    Prioritat: Normal

@@ -17,28 +17,65 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#GNU General Public License for more details.
+# GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import csv, copy, random
+import os, csv, copy, random
 from freevialglob import *
 
 carpeta_de_preguntes = '../questions_db'
+
 
 class LoadDatabase:
 	
 	def __init__(self, directory):
 		""" Load a question database (directory or compressed file). """
 		
-		self.files = self._csv_in_path(directory)
+		self.files = self._csv_in_path(self._get_real_path(directory))
 	
 	
 	def get(self):
 		
 		return self.files
+	
+	
+	def _get_real_path(self, directory):
+		""" If the given path is directory it is returned as-is, if it's
+		is a compressed file the path to a extracted version to it (on a
+		temporal directory) is returned. Else ValueError is raised. """
+		
+		if os.path.isdir(directory):
+			return directory
+		
+		ext = os.path.splitext(directory)[1][1:]	# Get the extension
+		
+		if ext in ('gz', 'bz2', 'zip'):
+			return self._extract(directory)
+		
+		raise ValueError, "Expected a directory or compressed file."
+	
+	
+	def _extract(self, directory):
+		""" Extracts a compressed file to a temporal directory and returns
+		the URL to it. """
+		
+		from uncompress import Uncompressor
+		
+		file = Uncompressor(directory)
+		tempdir = self._get_temp()
+		
+		file.extractall(tempdir)
+		return tempdir
+	
+	
+	def _get_temp(self):
+		""" Creates a temporary directory."""
+		
+		import tempfile
+		return tempfile.mkdtemp('', 'freevial-') + '/'
 	
 	
 	def _csv_in_path(self, directory):
