@@ -1,0 +1,21 @@
+#! /bin/sh
+
+currentLocation=$(readlink -f "$0")
+
+# Find the correct location
+if [ -f src/freevial.py ]
+then
+	cd src
+elif type readlink > /dev/null &>2 && [ -f $currentLocation/freevial.py ]
+then
+	cd $currentLocation
+fi
+
+# Check if the script actually exists
+if [ -f ./freevial.py ]
+then
+	# Execute it
+	./freevial.py
+else
+	echo "Error - Couldn\'t find any existing Freevial installation."
+fi

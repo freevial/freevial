@@ -69,7 +69,7 @@ class Freevial:
 				pygame.mixer.pre_init(44100, -16, 2, 2048)
 				pygame.mixer.init()
 			except pygame.error, message:
-				print 'Sound initialization failed.', message
+				print _('Sound initialization failed. %s' % message)
 				mute( sound = True, music = True )
 		
 		pygame.font.init()

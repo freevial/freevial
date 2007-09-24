@@ -26,17 +26,27 @@
 import csv, copy, random
 from freevialglob import *
 
-arxius_de_preguntes = [ 'preguntes_ca01.csv', 
-						'preguntes_ca02.csv', 
-						'preguntes_ca03.csv',
-						'preguntes_ca04.csv', 						
-						'preguntes_ca05.csv', 
-						'preguntes_ca06.csv', 
-						'preguntes_cakw.csv', 
-						'preguntes_camc.csv' ]
+carpeta_de_preguntes = '../questions_db'
 
+class LoadDatabase:
+	
+	def __init__(self, directory):
+		""" Load a question database (directory or compressed file). """
+		
+		self.files = self._files_in_folder(directory)
+	
+	
+	def get(self):
+		
+		return self.files
+	
+	
+	def _files_in_folder(self, directory):
+		""" Returns a list with the name of all the files in the given directory. """
+		
+		for files in (files for dirpath, dirnames, files in os.walk(directory)):
+			return [ '%s' % os.path.abspath(os.path.join(directory, file)) for file in files ]
 
-carpeta_de_preguntes = '../'
 
 class CategoriaPreguntes:
 
@@ -101,12 +111,14 @@ class CategoriaPreguntes:
 
 		self.shuffleQuestions( )
 
+
 	def shuffleQuestions( self ):
 		""" Returns the given questions list, but shuffled. """
 
 		self.preguntes = copy.deepcopy( self.preguntes_backup )
 		
 		random.shuffle( self.preguntes )
+
 
 	def agafaPregunta ( self ):
 
@@ -117,9 +129,8 @@ class CategoriaPreguntes:
 
 ###########################################
 
-#random.shuffle( arxius_de_preguntes )
-
 categoriespreguntes = []
+arxius_de_preguntes = LoadDatabase(carpeta_de_preguntes).get()
 
 for num in range(0, len(arxius_de_preguntes) ):
 	cat = CategoriaPreguntes( num + 1 )
@@ -138,7 +149,7 @@ def preguntes_autors():
 	llista = []
 
 	for num in range(0, 6):	
-		llista.append(  categoriespreguntes[num].nom + ": " + categoriespreguntes[num].autors )
+		llista.append( categoriespreguntes[num].nom + ": " + categoriespreguntes[num].autors )
 	
 	return llista
 
@@ -153,5 +164,3 @@ def soCategoria( ncat ):
 def get_categoriespreguntes( ):
 
 	return categoriespreguntes
-
-
