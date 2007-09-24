@@ -63,7 +63,6 @@ class CategoriaPreguntes:
 	def importQuestions( self, csvFile ):
 		""" Imports the questions from a CSV file and returns them in a list. """
 
-		print csvFile
 
 		csv_read = csv.reader( open( csvFile ) )
 			
@@ -124,9 +123,11 @@ categoriespreguntes = []
 
 for num in range(0, len(arxius_de_preguntes) ):
 	cat = CategoriaPreguntes( num + 1 )
-	cat.importQuestions( os.path.join(carpeta_de_preguntes, arxius_de_preguntes[num]) )
-	categoriespreguntes.append( cat )
-
+	try:
+		cat.importQuestions( os.path.join(carpeta_de_preguntes, arxius_de_preguntes[num]) )
+		categoriespreguntes.append( cat )
+	except ValueError:
+		print "Error in " + arxius_de_preguntes[num]
 
 def textCategoria( ncat ):
 

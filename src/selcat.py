@@ -147,6 +147,8 @@ class SelCat:
 			
 		seleccio = 0
 
+		nelements = len(self.cp) if estat == 0 else 6
+
 		while 1:
 				
 			# Event iterator
@@ -154,18 +156,18 @@ class SelCat:
 
 				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
 
-				if keyPress(event, ('q', 'ESCAPE', 'KP_ENTER')):
+				if keyPress(event, ('q', 'ESCAPE', 'KP_ENTER', 'F3', 'F5')):
 					if( estat == 0 ): self.refa_cats();
 					return
 				
 				if keyPress(event, ('DOWN')) :
 					seleccio += 1
-					seleccio %=  len(self.cp)
+					seleccio %=  nelements
 					self.so_sub.play() 
 				
 				if keyPress(event, ('UP')) :
 					seleccio -= 1
-					seleccio %=  len(self.cp) 
+					seleccio %=  nelements 
 					self.so_sub.play() 
 									
 				if keyPress(event, ('F11', 'f') ):
@@ -205,8 +207,10 @@ class SelCat:
 			self.joc.pantalla.blit( self.sel_quadres, (0, 0) )
 
 
+			nelements = len(self.cp) if estat == 0 else 6
+
 			posact= 220
-			for compta in range(primer_element_a_la_vista, len(self.cp)):	
+			for compta in range(primer_element_a_la_vista, nelements):	
 				if posact + self.sfc_preguntes[compta].get_height() > (768 -80)	:
 					break
 			
@@ -224,7 +228,7 @@ class SelCat:
 			if( primer_element_a_la_vista > 0 ): 
 				self.joc.pantalla.blit( self.sel_fletxap, ( 386,216 + 10 + cos(time.time() * 10) * 10))
 
-			if( darrer_element_a_la_vista < len(self.cp) - 1):
+			if( darrer_element_a_la_vista < nelements - 1):
 				self.joc.pantalla.blit( self.sel_fletxab, ( 386, 651 - 10 - cos(time.time()*10) * 10 ))
 
 			if( darrer_element_a_la_vista < seleccio): 	primer_element_a_la_vista += 1
@@ -235,13 +239,13 @@ class SelCat:
 			self.joc.pantalla.blit( self.sfc_preguntes[seleccio], ( 475, 220 ))	
 
 			if( seleccio != self.darrera_info): 	
-				self.sfc_text_info0 = render_text( self.cp[seleccio].autors, (255,255,255), 18, 1, '', 220 )
-				self.sfc_text_info1 = render_text( self.cp[seleccio].descripcio, (255,255,255), 18, 1, '', 350 )
-				self.sfc_text_info2 = render_text( self.cp[seleccio].jugadors, (255,255,255), 18, 1, '', 350 )
-				self.sfc_text_info3 = render_text( u"N. Pregutes: " + str(len(self.cp[seleccio].preguntes_backup)), (255,255,255), 18, 1, '', 350 )
-				self.sfc_text_info4 = render_text( u"Idioma: " + self.cp[compta].idioma, (255,255,255), 18, 1, '', 100 )
-				self.sfc_text_info5 = render_text( u"Data creació: " + self.cp[compta].data_creacio , (255,255,255), 18, 1, '', 350 )
-				self.sfc_text_info6 = render_text( u"Data darrera modificació: " + self.cp[seleccio].data_revisio, (255,255,255), 18, 1, '', 350 )
+				self.sfc_text_info0 = render_text( self.cp[seleccio].autors, (255,255,255), 14, 1, '', 220 )
+				self.sfc_text_info1 = render_text( self.cp[seleccio].descripcio, (255,255,255), 16, 1, '', 350 )
+				self.sfc_text_info2 = render_text( self.cp[seleccio].jugadors, (255,255,255), 16, 1, '', 350 )
+				self.sfc_text_info3 = render_text( u"N. Pregutes: " + str(len(self.cp[seleccio].preguntes_backup)), (255,255,255), 16, 1, '', 350 )
+				self.sfc_text_info4 = render_text( u"Idioma: " + self.cp[compta].idioma, (255,255,255), 16, 1, '', 100 )
+				self.sfc_text_info5 = render_text( u"Data creació: " + self.cp[compta].data_creacio , (255,255,255), 16, 1, '', 350 )
+				self.sfc_text_info6 = render_text( u"Data darrera modificació: " + self.cp[seleccio].data_revisio, (255,255,255), 16, 1, '', 350 )
 
 				self.sfc_cat = loadImage( self.cp[seleccio].nomimatge )
 				if seleccio < 6:

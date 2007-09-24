@@ -148,7 +148,7 @@ if '-d' in sys.argv or '--debug' in sys.argv:
 if '-l' in sys.argv or '--locked' in sys.argv:
 	setLockedMode( True )
 
-if '--fullscreen' in sys.argv or '--fs' in sys.argv:
+if '--fullscreen' in sys.argv or '-fs' in sys.argv:
 	FS_MODE = True
 
 if '--fps' in sys.argv:

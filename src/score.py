@@ -281,7 +281,7 @@ class Score:
 					if keyPress(event, ('l')): 
 						setLockedMode ( not getLockedMode() )
 
-					if keyPress(event, ('k', 'F5')) :
+					if keyPress(event, ('k', 'F3', 'F5')) :
 						selcat = SelCat ( self.joc )
 						selcat.juguem( estat )
 

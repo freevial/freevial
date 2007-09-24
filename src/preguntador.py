@@ -204,6 +204,8 @@ class Preguntador:
 
 		self.help_on_screen.activitat( )
 
+		compos = 768
+	
 		while 1:
 			
 			acaba = 0
@@ -284,7 +286,8 @@ class Preguntador:
 					if self.seleccio != 0:
 						acaba = 1
 				
-				if keyPress(event, ('F3')) and self.mostrasolucions == 3 and len(self.pregunta_actual[9])> 5:		
+				if keyPress(event, ('F3')) and self.mostrasolucions == 3 and len(self.pregunta_actual[9])> 5:	
+					compos = 768	
 					mostra_comentaris ^= 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
@@ -302,9 +305,13 @@ class Preguntador:
 					notes = self.pregunta_actual[9].split('#') if self.pregunta_actual[9] != "" else "."
 					sfc_comentaris =  createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
-					if not ismute():
-						pygame.mixer.fadeout(2500)
-					return self.pregunta_actual[0] if ( self.pregunta_actual[5] == self.seleccio) else 0
+					if not getLockedMode( ) or mostra_comentaris == True or len( self.pregunta_actual[9] ) <= 5:
+						if not ismute():
+							pygame.mixer.fadeout(2500)
+						return self.pregunta_actual[0] if ( self.pregunta_actual[5] == self.seleccio) else 0
+					else:
+						compos = 768
+						mostra_comentaris = True;
 			
 			# Animem el fons
 			self.ypos += 2
@@ -408,7 +415,9 @@ class Preguntador:
 
 			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
-			if mostra_comentaris: self.joc.pantalla.blit( sfc_comentaris, (0,0))
+			if mostra_comentaris:
+				if compos > 0: compos -= 100 
+				self.joc.pantalla.blit( sfc_comentaris, (0,compos))
 			
 			self.frate.next( self.joc.pantalla )
 			
