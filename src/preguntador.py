@@ -287,7 +287,6 @@ class Preguntador:
 						acaba = 1
 				
 				if keyPress(event, ('F3')) and self.mostrasolucions == 3 and len(self.pregunta_actual[9])> 5:	
-					compos = 768	
 					mostra_comentaris ^= 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
@@ -418,6 +417,10 @@ class Preguntador:
 			if mostra_comentaris:
 				if compos > 0: compos -= 100 
 				self.joc.pantalla.blit( sfc_comentaris, (0,compos))
+			else:
+				if compos < 768: 
+					compos += 100
+					self.joc.pantalla.blit( sfc_comentaris, (0,compos))
 			
 			self.frate.next( self.joc.pantalla )
 			
