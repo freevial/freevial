@@ -33,7 +33,7 @@ class LoadDatabase:
 	def __init__(self, directory):
 		""" Load a question database (directory or compressed file). """
 		
-		self.files = self._files_in_folder(directory)
+		self.files = self._csv_in_path(directory)
 	
 	
 	def get(self):
@@ -41,7 +41,17 @@ class LoadDatabase:
 		return self.files
 	
 	
-	def _files_in_folder(self, directory):
+	def _csv_in_path(self, directory):
+		
+		files = []
+		
+		for file in self._files_in_path(directory):
+			if file[-4:] == '.csv': files.append(file)
+		
+		return files
+	
+	
+	def _files_in_path(self, directory):
 		""" Returns a list with the name of all the files in the given directory. """
 		
 		for files in (files for dirpath, dirnames, files in os.walk(directory)):

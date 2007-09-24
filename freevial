@@ -15,7 +15,7 @@ fi
 if [ -f ./freevial.py ]
 then
 	# Execute it
-	./freevial.py
+	./freevial.py $*
 else
 	echo "Error - Couldn\'t find any existing Freevial installation."
 fi
