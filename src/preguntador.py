@@ -106,20 +106,30 @@ class Preguntador:
 	#
 	# Funció per pintar el text i les preguntes sobre una nova superficie
 	# usant el color del text i el sobrejat
-	def pintatext( self, textapintar, mida ):
+	def pintatext( self, textapintar, mida, maxample = 0 ):
+
+		nalt = 0
 
 		cadenes = textapintar.split('#')
+		sfc_pregunta = range(0, len(cadenes) )
+		sfc_shad = range(0, len(cadenes) )
+
 		nlinia = 0
 
-		sfc = pygame.Surface( ( 1024, ( self.numlinies ( textapintar ) + 1 ) * (mida + 25) ), pygame.SRCALPHA, 32 )
-
 		for cadena in cadenes:
-			text_pregunta = render_text( cadena, self.color_de_fons, mida, 1 )
-			sfc.blit( text_pregunta, (0 + 2, self.altlinies * nlinia + 2))
+			sfc_pregunta[nlinia] = render_text( cadena if cadena != "" else " ", self.color_de_text, mida, 1, '', maxample - 2)
+			sfc_shad[nlinia] = render_text( cadena if cadena != "" else " ", self.color_de_fons, mida, 1, '', maxample - 2)
+			nalt += sfc_pregunta[nlinia].get_height() + 2
+			nlinia += 1
+		
+		sfc = pygame.Surface( ( 1024 if maxample == 0 else maxample, nalt ), pygame.SRCALPHA, 32 )
 
-			text_pregunta = render_text( cadena, self.color_de_text, mida, 1 )
-			sfc.blit( text_pregunta, (0, self.altlinies * nlinia))
-
+		nalt = 0
+		nlinia = 0
+		for cadena in cadenes:
+			sfc.blit( sfc_shad[nlinia], (0 + 2, nalt + 2))
+			sfc.blit( sfc_pregunta[nlinia], (0, nalt ))
+			nalt += sfc_pregunta[nlinia].get_height() + 2
 			nlinia += 1
 
 		return sfc
@@ -133,11 +143,11 @@ class Preguntador:
 
 		self.seleccio = 0
 
-		self.sfc_pregunta  = self.pintatext( self.pregunta_actual[1], self.mida_font )
+		self.sfc_pregunta  = self.pintatext( self.pregunta_actual[1], self.mida_font, 1024 - 175 )
 
 		self.sfc_resposta = range(0, 3)
 		for num in range(0, 3):
-			self.sfc_resposta[ num ] = self.pintatext( self.pregunta_actual[ num + 2 ], self.mida_font )
+			self.sfc_resposta[ num ] = self.pintatext( self.pregunta_actual[ num + 2 ], self.mida_font, 1024 - 260 )
 
 		self.sfc_npregunta = render_text( str(self.pregunta_actual[8]), (255,255,255), 100 )
 		self.sfc_npregunta.set_alpha( 64 )
@@ -217,7 +227,7 @@ class Preguntador:
 
 				self.help_on_screen.activitat( event )
 
-				if event.type == pygame.QUIT:
+				if event.type == pygame.QUIT and not getLockedMode( ):
 					sys.exit()
 				
 				if keyPress(event, ('q', 'ESCAPE')) and not getLockedMode():
