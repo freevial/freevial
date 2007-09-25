@@ -169,11 +169,14 @@ class SelCat:
 					seleccio -= 1
 					seleccio %=  nelements 
 					self.so_sub.play() 
-									
+				
+				if keyPress(event, ('PRINT')):
+					screenshot( self.joc.pantalla )
+				
 				if keyPress(event, ('F11', 'f') ):
 					pygame.display.toggle_fullscreen()
 
-				if( estat == 0 ):
+				if estat == 0:
 
 					if keyPress(event, ('r') ):
 						random.shuffle( categoriespreguntes )
@@ -182,7 +185,7 @@ class SelCat:
 						self.darrera_info = -1
 
 					for compta in range( 0, 6 ):
-						if keyPress(event, (str(compta+1)) ): 	
+						if keyPress(event, (str(compta+1), str('KP' + str(compta+1))) ): 	
 							self.CanviaElements( seleccio, compta )
 							seleccio = compta
 

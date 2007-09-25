@@ -24,6 +24,15 @@
    Estat: Pendent
    Desenvolupador: RainCT
 
+* Refractoring de la gestió d'events
+   Reprogramar, en una classe, tot el que és la gestió d'events, per tal
+   de fer-ne més fàcil l'ús, no repetir les tecles comunes i en general
+   millorar-ne el funcionament.
+   
+   Prioritat: Normal
+   Estat: En progrés
+   Desenvolupador: RainCT
+
 * Debianitzar-lo
    
    Prioritat: Normal
