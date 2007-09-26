@@ -96,7 +96,7 @@ class EventHandle:
 		if type(request) is not int:
 			request = mouseButtons[ request ]
 		
-		return True if self.event.type == pygame.MOUSEBUTTONDOWN and (event.button == request or request == 0) else False
+		return True if self.event.type == pygame.MOUSEBUTTONDOWN and (self.event.button == request or request == 0) else False
 	
 	
 	def isRelease( self, request = 0 ):
@@ -140,7 +140,7 @@ class EventHandle:
 	def str( self ):
 		
 		if not self._isKeyEvent():
-			return False
+			return ''
 		
 		return printKey(self.event.key)
 

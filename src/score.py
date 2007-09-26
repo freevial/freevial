@@ -238,13 +238,9 @@ class Score:
 							self.joc.equips[element_seleccionat].punts -= 1
 					
 					if self.joc.equips[element_seleccionat].actiu:
-						if eventhandle.keyUp('1', 'KP1'): self.joc.equips[element_seleccionat].canviaCategoria( 1 )
-						if eventhandle.keyUp('2', 'KP2'): self.joc.equips[element_seleccionat].canviaCategoria( 2 )
-						if eventhandle.keyUp('3', 'KP3'): self.joc.equips[element_seleccionat].canviaCategoria( 3 )
-						if eventhandle.keyUp('4', 'KP4'): self.joc.equips[element_seleccionat].canviaCategoria( 4 )
-						if eventhandle.keyUp('5', 'KP5'): self.joc.equips[element_seleccionat].canviaCategoria( 5 )
-						if eventhandle.keyUp('6', 'KP6'): self.joc.equips[element_seleccionat].canviaCategoria( 6 )
-					
+						for num in range(1, 7):
+							if eventhandle.keyUp(str(num), 'KP' + str(num)):
+								self.joc.equips[element_seleccionat].canviaCategoria( str(num) )
 					
 					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 
@@ -254,7 +250,7 @@ class Score:
 							return element_seleccionat
 
 						elif estat == 0:
-							if self.joc.equips[element_seleccionat].actiu and keyPress(event, ('SPACE')) :
+							if self.joc.equips[element_seleccionat].actiu and eventhandle.keyUp('SPACE') :
 								atzar = 30 + int( random.randint(0, 30) )
 								estat = 1
 							else:

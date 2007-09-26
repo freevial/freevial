@@ -267,17 +267,17 @@ class Preguntador:
 				
 				if self.mostrasolucions == 0:
 					if eventhandle.keyUp('a', 'i'):
-						if keyPress(event, 'a'): acaba = 1	
+						if eventhandle.isKey('a'): acaba = 1	
 						self.seleccio = 1
 						self.so_sub.play()
 					
 					if eventhandle.keyUp('b', 'o'):	
-						if keyPress(event, 'b'): acaba = 1
+						if eventhandle.isKey('b'): acaba = 1
 						self.seleccio = 2
 						self.so_sub.play()
 					
 					if eventhandle.keyUp('c', 'p'):	
-						if keyPress(event, 'c'): acaba = 1
+						if eventhandle.isKey('c'): acaba = 1
 						self.seleccio = 3
 						self.so_sub.play()
 					
