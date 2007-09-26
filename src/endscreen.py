@@ -23,10 +23,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import sys, random, pygame, time
+import sys
+import random
+import pygame
+import time
 import math
 
-from freevialglob import *
+from common.freevialglob import *
+from common.events import EventHandle
 
 
 class Nau:
@@ -173,19 +177,22 @@ class Visca:
 						nau.y += math.sin( nau.dir - dist) * nau.vel
 
 			for event in pygame.event.get():
-				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
-
-				if event.type == pygame.QUIT:
-					sys.exit()
 				
-									
-				if keyPress(event, ('q', 'ESCAPE')) and not getLockedMode():
+				eventhandle = EventHandle(event)
+				
+				if event.type == pygame.JOYBUTTONDOWN:
+					translateJoystickEvent(event)
+				
+				if eventhandle.isQuit():
+					sys.exit()
+							
+				if eventhandle.keyUp('q', 'ESCAPE') and not getLockedMode():
 					return
 				
-				if keyPress(event, ('PRINT')):
-					screenshot( self.joc.pantalla )
+				if eventhandle.keyDown('PRINT'):
+					screenshot(self.joc.pantalla)
 				
-				if keyPress(event, ('f', 'F11')):
+				if eventhandle.keyUp('f', 'F11'):
 					pygame.display.toggle_fullscreen()
 
 			if segons >= 68: return

@@ -23,10 +23,17 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import sys, os.path, random, math, time, pygame, copy
+import sys
+import os.path
+import random
+import time
+import pygame
+import copy
+import math
 from math import *
 
-from freevialglob import *
+from common.freevialglob import *
+from common.events import EventHandle
 from preguntes import *
 
 
@@ -222,15 +229,24 @@ class Preguntador:
 			
 			# Iterador d'events
 			for event in pygame.event.get():
-
-				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
-
-				self.help_on_screen.activitat( event )
-
-				if event.type == pygame.QUIT and not getLockedMode( ):
+				
+				eventhandle = EventHandle(event)
+				
+				self.help_on_screen.activitat(event)
+				
+				if event.type == pygame.JOYBUTTONDOWN:
+					translateJoystickEvent(event)
+				
+				if eventhandle.isQuit():
 					sys.exit()
 				
-				if keyPress(event, ('q', 'ESCAPE')) and not getLockedMode():
+				if eventhandle.keyDown('PRINT'):
+					screenshot(self.joc.pantalla)
+				
+				if eventhandle.keyUp('f', 'F11'):
+					pygame.display.toggle_fullscreen()
+				
+				if eventhandle.keyUp('q', 'ESCAPE') and not getLockedMode():
 					if not mostra_ajuda and not mostra_credits:
 						if not ismute():
 							pygame.mixer.fadeout(500)
@@ -241,62 +257,54 @@ class Preguntador:
 					else:
 						mostra_ajuda = mostra_credits = 0
 				
-				if keyPress(event, ('PRINT')):
-					screenshot( self.joc.pantalla )
-				
-				if keyPress(event, ('F1')) or keyPress(event, ('h')):
+				if eventhandle.keyUp('F1', 'h'):
 					mostra_ajuda ^= 1
 					mostra_credits = 0
 
-				if keyPress(event, ('F2')):
+				if eventhandle.keyUp('F2'):
 					mostra_ajuda = 0
 					mostra_credits ^= 1
 				
-				if keyPress(event, ('f', 'F11')): pygame.display.toggle_fullscreen()
-				
 				if self.mostrasolucions == 0:
-					if keyPress(event, ('a', 'i')):
+					if eventhandle.keyUp('a', 'i'):
 						if keyPress(event, 'a'): acaba = 1	
 						self.seleccio = 1
 						self.so_sub.play()
 					
-					if keyPress(event, ('b', 'o')):	
+					if eventhandle.keyUp('b', 'o'):	
 						if keyPress(event, 'b'): acaba = 1
 						self.seleccio = 2
 						self.so_sub.play()
 					
-					if keyPress(event, ('c', 'p')):	
+					if eventhandle.keyUp('c', 'p'):	
 						if keyPress(event, 'c'): acaba = 1
 						self.seleccio = 3
 						self.so_sub.play()
 					
-					if keyPress(event, ('DOWN', 'TAB')): 
+					if eventhandle.keyUp('DOWN', 'TAB'): 
 						self.seleccio += 1
 						if self.seleccio == 4:
 							self.seleccio = 1
 						self.so_sub.play()
 					
-					if keyPress(event, 'UP'): 
+					if eventhandle.keyUp(event, 'UP'): 
 						self.seleccio -= 1
 						if self.seleccio <= 0:
 							self.seleccio = 3	
 						self.so_sub.play()
 				
-				if keyPress(event, 'z'):	
+				if eventhandle.keyUp('z'):	
 					self.mostranpregunta ^= 1
 				
-				if keyPress(event, ('1', 'KP1')): 	self.atzar( 1 )
-				if keyPress(event, ('2', 'KP2')):	self.atzar( 2 )
-				if keyPress(event, ('3', 'KP3')):	self.atzar( 3 )
-				if keyPress(event, ('4', 'KP4')):	self.atzar( 4 )
-				if keyPress(event, ('5', 'KP5')):	self.atzar( 5 )
-				if keyPress(event, ('6', 'KP6')):	self.atzar( 6 )
+				for num in range(1, 7):
+					if eventhandle.keyUp(str(num), 'KP' + str(num)):
+						self.atzar( num )
 				
-				if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
+				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 					if self.seleccio != 0:
 						acaba = 1
 				
-				if keyPress(event, ('F3')) and self.mostrasolucions == 3 and len(self.pregunta_actual[9])> 5:	
+				if eventhandle.keyUp('F3') and self.mostrasolucions == 3 and len(self.pregunta_actual[9]) > 5:	
 					mostra_comentaris ^= 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem

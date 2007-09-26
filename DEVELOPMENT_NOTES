@@ -24,13 +24,13 @@
    Estat: Pendent
    Desenvolupador: RainCT
 
-* Refractoring de la gestió d'events
-   Reprogramar, en una classe, tot el que és la gestió d'events, per tal
-   de fer-ne més fàcil l'ús, no repetir les tecles comunes i en general
-   millorar-ne el funcionament.
+* Gestió d'events (Fase II)
+   Reanomenar la classe EventHandler a EventHandlerBase i inheritar-ne
+   una nova classe EventHandler que tingui funcions d'ús general més
+   específiques al Freevial.
    
-   Prioritat: Normal
-   Estat: En progrés
+   Prioritat: Baixa
+   Estat: Pendent
    Desenvolupador: RainCT
 
 * Debianitzar-lo

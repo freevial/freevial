@@ -2,7 +2,7 @@
  
 #
 # Freevial
-# Game categoires selector
+# Game categories selector
 #
 # Copyright (C) 2007 The Freevial Team
 #
@@ -17,17 +17,21 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#GNU General Public License for more details.
+# GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import sys, os.path, random, math, pygame
+import sys
+import os.path
+import random
+import pygame
 from math import *
 from pygame.locals import *
 
-from freevialglob import *
+from common.freevialglob import *
+from common.events import EventHandle
 from preguntes import *
 
 ##################################################
@@ -154,47 +158,59 @@ class SelCat:
 			# Event iterator
 			for event in pygame.event.get():
 
-				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
-
-				if keyPress(event, ('q', 'ESCAPE', 'KP_ENTER', 'F3', 'F5')):
-					if( estat == 0 ): self.refa_cats();
+				eventhandle = EventHandle(event)
+				
+				if event.type == pygame.JOYBUTTONDOWN:
+					translateJoystickEvent(event)
+				
+				if eventhandle.isQuit():
+					sys.exit()
+				
+				if eventhandle.keyDown('PRINT'):
+					screenshot(self.joc.pantalla)
+				
+				if eventhandle.keyUp('f', 'F11'):
+					pygame.display.toggle_fullscreen()
+				
+				if eventhandle.keyUp('q', 'ESCAPE', 'KP_ENTER', 'F3', 'F5'):
+					if estat == 0: self.refa_cats();
 					return
 				
-				if keyPress(event, ('DOWN')) :
+				if eventhandle.keyUp('DOWN'):
 					seleccio += 1
 					seleccio %=  nelements
 					self.so_sub.play() 
 				
-				if keyPress(event, ('UP')) :
+				if eventhandle.keyUp('UP'):
 					seleccio -= 1
 					seleccio %=  nelements 
 					self.so_sub.play() 
 				
-				if keyPress(event, ('PRINT')):
+				if eventhandle.keyUp('PRINT'):
 					screenshot( self.joc.pantalla )
 				
-				if keyPress(event, ('F11', 'f') ):
+				if eventhandle.keyUp('F11', 'f'):
 					pygame.display.toggle_fullscreen()
 
 				if estat == 0:
 
-					if keyPress(event, ('r') ):
+					if eventhandle.keyUp('r'):
 						random.shuffle( categoriespreguntes )
 						self.reinicia_cats( )
 						self.so_sub2.play()
 						self.darrera_info = -1
 
-					for compta in range( 0, 6 ):
-						if keyPress(event, (str(compta+1), str('KP' + str(compta+1))) ): 	
-							self.CanviaElements( seleccio, compta )
-							seleccio = compta
+					for num in range(0, 6):
+						if eventhandle.keyUp(str(num + 1), 'KP' + str(num + 1)): 	
+							self.CanviaElements( seleccio, num )
+							seleccio = num
 
-					if keyPress(event, ('RETURN')):										
+					if eventhandle.keyUp('RETURN'):										
 						self.PosaPrimer( seleccio )
 
 				else:
-					if keyPress(event, ('RETURN')):			
-						if( estat == 0 ): self.refa_cats();							
+					if eventhandle.keyUp('RETURN'):			
+						if estat == 0: self.refa_cats();							
 						return
 		
 			# Animem el fons

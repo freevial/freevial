@@ -23,8 +23,13 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import os.path, random, re, pygame, locale, time
+import os.path
+import random
+import pygame
+import locale
+import time
 from pygame.locals import *
+
 from preguntes import preguntes_autors
 
 DEBUG_MODE = False
@@ -178,59 +183,6 @@ def loadSound( name, volume = 1.0, music = False ):
 	return obj
 
 
-def keyPress( event, keys ):
-	""" Returns true if the given event is the release of one of the indicated keys. 
-	Just a key can be passed or a whole bunch inside a tuple, and in both cases they may be 
-	either a string or directly it's pygame object. """
-	
-	if type(keys) is str or type(keys) is int:
-		keys = ( keys, )
-	
-	# Check if any of the indicated keys matches
-	found = 0
-	for key in keys:
-		
-		if key[:2] != 'K_':
-			key = 'K_' + key
-		
-		if type(key) is str:
-			key = getattr(pygame, key)
-		
-		if event.type == pygame.KEYUP and event.key == key:
-			found = 1
-	
-	return True if found == 1 else False
-
-
-mouseButtons = {
-		'primary': 1,
-		'secondary': 2,
-		'middle': 3,
-	}
-
-
-def mouseClick( event, request = 0 ):
-	
-	global mouseButtons
-	
-	if type(request) is not int:
-		request = mouseButtons[ request ]
-	
-	if event.type == pygame.MOUSEBUTTONDOWN and (event.button == request or request == 0):
-		return True
-
-
-def mouseRelease( event, request = 0 ):
-	
-	global mouseButtons
-	
-	if type(request) is not int:
-		request = mouseButtons[ request ]
-	
-	if event.type == pygame.MOUSEBUTTONUP and (event.button == request or request == 0):
-		return True
-
-
 def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
 	""" Function for easier text rendering. """
 
@@ -380,58 +332,6 @@ def anteriorEquipActiu( equips, actual ):
 			return (actual - num ) % 6
 	
 	return -1
-
-anterior = ""
-
-aobert = atancat = adieresi = acirc = False
-accents = [u"aeiou", u"àèìòù", u"áéíóú", u"äëïöü", u"âêîôû" ]
-
-def printKey( tecla ):
-	""" Translates a pygame Key object for on-game printing of it's value. """
-
-	global aobert, atancat, adieresi, acirc, accents
-	
-	keyname = pygame.key.name( tecla )
-
-	if keyname == 'space': 
-		return ' '
-	
-	if keyname == 'world 71':
-		return u'ç'
-	
-	if keyname == 'tab':
-		return '    '
-	
-	if len(keyname) == 3 and keyname[:1] == '[' and keyname[2:] == ']':
-		keyname = keyname[1:2]
-	
-	pos = accents[0].find( keyname )
-	if pos != -1:
-		if aobert: keyname = accents[1][pos]
-		if atancat: keyname = accents[2][pos]
-		if adieresi: keyname = accents[3][pos]
-		if acirc: keyname = accents[4][pos]
-
-	if pygame.key.get_mods() & pygame.KMOD_SHIFT:
-		keyname = keyname.upper()
-
-	if tecla == 314:
-		print 314
-		if pygame.key.get_mods() & pygame.KMOD_SHIFT:
-			atancat = True
-		elif pygame.key.get_mods() & pygame.KMOD_CTRL:
-			adieresi = True
-		elif pygame.key.get_mods() & pygame.KMOD_ALT:
-			acirc = True
-		else:
-			aobert = True
-	else:
-		aobert = atancat = adieresi = acirc = False
-
-	if not re.search(u"^[a-zA-Z0-9,.+'-/*àèìòùáéíóúäëïöüâêîôû ]$", keyname):
-		return ''
-
-	return keyname
 
 
 def list2string( list, wordsEachLine = 5, lineEnd = ',' ):

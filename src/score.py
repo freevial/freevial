@@ -17,17 +17,21 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#GNU General Public License for more details.
+# GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import sys, os.path, random, math, pygame
+import sys
+import os.path
+import random
+import pygame
 from math import *
 from pygame.locals import *
 
-from freevialglob import *
+from common.freevialglob import *
+from common.events import EventHandle
 from endscreen import Visca
 from question import fesPregunta
 from selcat import *
@@ -129,42 +133,47 @@ class Score:
 			
 			# Event iterator
 			for event in pygame.event.get():
-
-				self.help_on_screen.activitat( event )
-
-				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
-
-				if event.type == pygame.QUIT:
+				
+				eventhandle = EventHandle(event)
+				
+				self.help_on_screen.activitat(event)
+				
+				if event.type == pygame.JOYBUTTONDOWN:
+					translateJoystickEvent(event)
+				
+				if eventhandle.isQuit():
 					sys.exit()
 				
-				if keyPress(event, ('PRINT')):
-					screenshot( self.joc.pantalla )
+				if eventhandle.keyDown('PRINT'):
+					screenshot(self.joc.pantalla)
 				
-				if keyPress(event, ('F1')) or ( not escriu and keyPress(event, ('h')) ):
+				if eventhandle.keyUp('F11') or (not escriu and eventhandle.keyUp('f')):
+					pygame.display.toggle_fullscreen()
+				
+				if eventhandle.keyUp('F1') or (not escriu and eventhandle.keyUp('h')):
 					mostra_ajuda ^= 1
 					mostra_credits = 0
-
-				if keyPress(event, ('F2')) :
+				
+				if eventhandle.keyDown('F2'):
 					mostra_credits ^= 1
 					mostra_ajuda = 0
 				
-				if keyPress(event, 'F11') or ( not escriu and keyPress(event, 'f') ):
-					pygame.display.toggle_fullscreen()
 				
 				if escriu and not mostra_ajuda and not mostra_credits:
 
-					if keyPress(event, ('RETURN', 'ESCAPE', 'KP_ENTER')):
+					if eventhandle.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
 						escriu = 0
-						if self.joc.equips[element_seleccionat].nom == '' and event.key == K_ESCAPE:
+						if self.joc.equips[element_seleccionat].nom == '' and eventhandle.isKey('ESCAPE'):
 							self.joc.equips[element_seleccionat].actiu = 0
-					elif event.type == pygame.KEYDOWN:
+					
+					elif eventhandle.isDown():
 						newname = None
 						
-						if event.key == K_BACKSPACE:
+						if eventhandle.isKey('BACKSPACE'):
 							if len(self.joc.equips[element_seleccionat].nom) > 0:
 								newname = self.joc.equips[element_seleccionat].nom[:-1]
 						else:
-							newname = self.joc.equips[element_seleccionat].nom + printKey( event.key )
+							newname = self.joc.equips[element_seleccionat].nom + eventhandle.str()
 						
 						if newname != None:
 							sfc = render_text( newname, (0,0,0), 30, 1)
@@ -175,7 +184,7 @@ class Score:
 					
 				else:
 					
-					if keyPress(event, ('q', 'ESCAPE')):
+					if eventhandle.keyUp('q', 'ESCAPE'):
 						if not mostra_ajuda and not mostra_credits:
 							if not getLockedMode():
 								if fesPregunta( self.joc.pantalla , valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0 :
@@ -185,56 +194,59 @@ class Score:
 						else:
 							mostra_ajuda = mostra_credits = 0
 					
-					if keyPress(event, ('RIGHT', 'LEFT')) and estat == 0: 
-						element_seleccionat += +1 if (0 == (element_seleccionat % 2)) else -1 
-						self.so_sub.play() 
-					
-					if keyPress(event, ('DOWN')) and estat == 0: 
-						element_seleccionat = (element_seleccionat + 2) % 6
-						self.so_sub.play() 
-					
-					if keyPress(event, ('UP')) and estat == 0 : 
-						element_seleccionat = (element_seleccionat - 2) % 6
-						self.so_sub.play() 
-					
-					if keyPress(event, ('a')) and estat == 0:
-						nou_grup = 1
-
-					if keyPress(event, ('n')) and estat == 0:
-						if self.joc.equips[element_seleccionat].actiu:
-							escriu ^= 1
-						else:
+					if estat == 0:
+						
+						if eventhandle.keyUp('RIGHT', 'LEFT'):
+							element_seleccionat += +1 if (0 == (element_seleccionat % 2)) else -1 
+							self.so_sub.play() 
+						
+						if eventhandle.keyUp('DOWN'): 
+							element_seleccionat = (element_seleccionat + 2) % 6
+							self.so_sub.play() 
+						
+						if eventhandle.keyUp('UP'): 
+							element_seleccionat = (element_seleccionat - 2) % 6
+							self.so_sub.play() 
+						
+						if eventhandle.keyUp('a'):
 							nou_grup = 1
-					
-					if keyPress(event, ('z')) : 
-						if self.joc.equips[element_seleccionat].actiu: self.joc.equips[element_seleccionat].punts += 1
-					
-					if keyPress(event, ('x')): 
-						if self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].punts > 0: self.joc.equips[element_seleccionat].punts -= 1
-					
-					if self.joc.equips[element_seleccionat].actiu:
-						if keyPress(event, ('1', 'KP1')): self.joc.equips[element_seleccionat].canviaCategoria( 1 )
-						if keyPress(event, ('2', 'KP2')): self.joc.equips[element_seleccionat].canviaCategoria( 2 )
-						if keyPress(event, ('3', 'KP3')): self.joc.equips[element_seleccionat].canviaCategoria( 3 )
-						if keyPress(event, ('4', 'KP4')): self.joc.equips[element_seleccionat].canviaCategoria( 4 )
-						if keyPress(event, ('5', 'KP5')): self.joc.equips[element_seleccionat].canviaCategoria( 5 )
-						if keyPress(event, ('6', 'KP6')): self.joc.equips[element_seleccionat].canviaCategoria( 6 )
- 					
-					if keyPress(event, ('PAGEDOWN')) and estat == 0:  
-						if equipsActius( self.joc.equips ) >= 1:
+						
+						if eventhandle.keyUp('n'):
+							if self.joc.equips[element_seleccionat].actiu:
+								escriu ^= 1
+							else:
+								nou_grup = 1
+						
+						if eventhandle.keyUp('PAGEDOWN') and equipsActius( self.joc.equips ) >= 1:
 							element_seleccionat = seguentEquipActiu( self.joc.equips, element_seleccionat )
 							self.so_sub.play() 
-					
-					if keyPress(event, ('PAGEUP')) and estat == 0: 
-						if equipsActius( self.joc.equips ) >= 1:
+						
+						if eventhandle.keyUp('PAGEUP') and equipsActius( self.joc.equips ) >= 1:
 							element_seleccionat = anteriorEquipActiu( self.joc.equips, element_seleccionat )
 							self.so_sub.play() 
+						
+						if eventhandle.keyUp('r') and equipsActius( self.joc.equips ) > 0:
+							atzar = 30 + int( random.randint(0, 30) )
+							estat = 1
 					
-					if keyPress(event, ('r')) and estat == 0 and equipsActius( self.joc.equips ) > 0:
-						atzar = 30 + int( random.randint(0, 30) )
-						estat = 1
-
-					if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
+					if eventhandle.keyUp('z'): 
+						if self.joc.equips[element_seleccionat].actiu:
+							self.joc.equips[element_seleccionat].punts += 1
+					
+					if eventhandle.keyUp('x'): 
+						if self.joc.equips[element_seleccionat].actiu and self.joc.equips[element_seleccionat].punts > 0:
+							self.joc.equips[element_seleccionat].punts -= 1
+					
+					if self.joc.equips[element_seleccionat].actiu:
+						if eventhandle.keyUp('1', 'KP1'): self.joc.equips[element_seleccionat].canviaCategoria( 1 )
+						if eventhandle.keyUp('2', 'KP2'): self.joc.equips[element_seleccionat].canviaCategoria( 2 )
+						if eventhandle.keyUp('3', 'KP3'): self.joc.equips[element_seleccionat].canviaCategoria( 3 )
+						if eventhandle.keyUp('4', 'KP4'): self.joc.equips[element_seleccionat].canviaCategoria( 4 )
+						if eventhandle.keyUp('5', 'KP5'): self.joc.equips[element_seleccionat].canviaCategoria( 5 )
+						if eventhandle.keyUp('6', 'KP6'): self.joc.equips[element_seleccionat].canviaCategoria( 6 )
+					
+					
+					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 
 						if estat == 1:
 							if not mute()['music']:
@@ -248,7 +260,7 @@ class Score:
 							else:
 								if self.joc.equips[element_seleccionat].actiu: escriu ^= 1
 								else: nou_grup = 1
-						else :
+						else:
 							if fesPregunta( self.joc.pantalla , valorText( HOS_NEW_GAME ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0 :
 								estat = 0
 								mostra_estad = 0 
@@ -260,10 +272,10 @@ class Score:
 									equip.punts = 0
 									equip.figureta = 0				
 					
-					if keyPress(event, ('s')): 
+					if eventhandle.keyUp('s'): 
 						mostra_estad ^= 1
 					
-					if keyPress(event, ('m')):
+					if eventhandle.keyUp('m'):
 						replaceModes = {
 								0: 1,
 								1: 0,
@@ -271,18 +283,18 @@ class Score:
 							}
 						estat = replaceModes[ estat ]
 
-					if keyPress(event, ('e')):
+					if eventhandle.keyUp('e'):
 						self.so_ok.play()
 						visca = Visca( self.joc )
 						resultat = visca.juguem( self.joc, self.joc.equips[element_seleccionat].nom )
 						mostrada_victoria = True
 						loadSound( 'score.ogg', volume = 0.6, music = 1).play( -1 )
 					
-					if keyPress(event, ('l')): 
+					if eventhandle.keyUp('l'): 
 						setLockedMode ( not getLockedMode() )
 
-					if keyPress(event, ('k', 'F3', 'F5')) :
-						selcat = SelCat ( self.joc )
+					if eventhandle.keyUp('k', 'F3', 'F5'):
+						selcat = SelCat( self.joc )
 						selcat.juguem( estat )
 
 			if nou_grup == 1:

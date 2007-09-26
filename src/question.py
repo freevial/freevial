@@ -23,9 +23,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import sys, os, random, time, pygame
+import sys
+import os
+import random
+import time
+import pygame
 
-from freevialglob import *
+from common.freevialglob import *
+from common.events import EventHandle
 
 class Question:
 	
@@ -59,26 +64,32 @@ class Question:
 
 			for event in pygame.event.get():
 
-				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
-
-				if event.type == pygame.QUIT:
+				eventhandle = EventHandle(event)
+				
+				if event.type == pygame.JOYBUTTONDOWN:
+					translateJoystickEvent(event)
+				
+				if eventhandle.isQuit():
 					sys.exit()
 				
-				if keyPress(event, ('ESCAPE', 'q')):
-					return cancel		
+				if eventhandle.keyUp('ESCAPE', 'q'):
+					return cancel
 				
-				if keyPress(event, ('f', 'F11')):
+				if eventhandle.keyDown('PRINT'):
+					screenshot(self.joc.pantalla)
+				
+				if eventhandle.keyUp('f', 'F11'):
 					pygame.display.toggle_fullscreen()
 				
-				if keyPress(event, ('RIGHT')):	
+				if eventhandle.keyUp('RIGHT'):	
 					seleccio += 1
 					seleccio %= len(respostes)
 				
-				if keyPress(event, ('LEFT')):	
+				if eventhandle.keyUp('LEFT'):	
 					seleccio -= 1
 					seleccio %= len(respostes)
 				
-				if mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')):
+				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 					return seleccio
 				
 			if duracio_fadeout:
@@ -86,9 +97,7 @@ class Question:
 				sfc_pantalla2.fill( (0,0,0, total_duracio_fadeout * intensitat_fadeout - duracio_fadeout * intensitat_fadeout) ) 
 	
 				duracio_fadeout -= 1
-
-			#pantalla.fill( (0,0,0,0) )
-						
+				
 			pantalla.blit( sfc_copiapantalla, (0,0) )
 			pantalla.blit( sfc_pantalla2, (0,0) )
 

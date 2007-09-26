@@ -23,10 +23,13 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import sys, os.path, pygame, gettext
+import sys
+import os.path
+import pygame
+import gettext
 from math import *
 
-from freevialglob import *
+from common.freevialglob import *
 from score import Score
 from preguntador import Preguntador
 from roda import Roda

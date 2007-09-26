@@ -23,8 +23,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import os, csv, copy, random
-from freevialglob import *
+import os
+import csv
+import copy
+import random
+
+from common.freevialglob import *
 
 carpeta_de_preguntes = '../questions_db'
 

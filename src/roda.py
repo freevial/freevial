@@ -23,8 +23,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import sys, os, random, time, pygame
-from freevialglob import *
+import sys
+import os
+import random
+import time
+import pygame
+
+from common.freevialglob import *
+from common.events import EventHandle
 from preguntes import *
 
 
@@ -90,14 +96,23 @@ class Roda:
 
 			for event in pygame.event.get():
 
-				self.help_on_screen.activitat( event )
-
-				if event.type == pygame.JOYBUTTONDOWN: translateJoystickEvent( event )
-
-				if event.type == pygame.QUIT:
+				eventhandle = EventHandle(event)
+				
+				self.help_on_screen.activitat(event)
+				
+				if event.type == pygame.JOYBUTTONDOWN:
+					translateJoystickEvent(event)
+				
+				if eventhandle.isQuit():
 					sys.exit()
 				
-				if keyPress(event, ('ESCAPE', 'q')) and not getLockedMode():
+				if eventhandle.keyDown('PRINT'):
+					screenshot(self.joc.pantalla)
+				
+				if eventhandle.keyUp('f', 'F11'):
+					pygame.display.toggle_fullscreen()
+				
+				if eventhandle.keyUp('ESCAPE', 'q') and not getLockedMode():
 					if not mostra_ajuda and not mostra_credits:
 						if not ismute():
 							pygame.mixer.fadeout(500)
@@ -105,25 +120,22 @@ class Roda:
 					else:
 						mostra_ajuda = mostra_credits = 0
 				
-				if keyPress(event, ('PRINT')):
+				if eventhandle.keyUp('PRINT'):
 					screenshot( self.joc.pantalla )
 				
-				if keyPress(event, ('F1')) or keyPress(event, ('h')):
+				if eventhandle.keyUp('F1', 'h'):
 					mostra_ajuda ^= 1	
 					mostra_credits = 0			
 
-				if keyPress(event, ('F2')):
+				if eventhandle.keyUp('F2'):
 					mostra_credits ^= 1
 					mostra_ajuda = 0
 				
-				if ( mouseClick(event, 'primary') or keyPress(event, ('RETURN', 'SPACE', 'KP_ENTER')) ) and rodant == 1:
-	
+				if (eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER')) and rodant == 1:
 					if resultat == -1: 	
 						atura = 1
 					else:
 						return resultat
-					
-				if keyPress(event, ('f', 'F11')): pygame.display.toggle_fullscreen()
 			
 			if atura == 1:
 				atura = 0
