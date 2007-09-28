@@ -189,8 +189,6 @@ class SelCat:
 				if eventhandle.keyUp('PRINT'):
 					screenshot( self.joc.pantalla )
 				
-				if eventhandle.keyUp('F11', 'f'):
-					pygame.display.toggle_fullscreen()
 
 				if estat == 0:
 
