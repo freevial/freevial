@@ -29,8 +29,8 @@ import random
 import time
 import pygame
 
-from common.freevialglob import *
-from common.events import EventHandle
+from freevialglob import *
+from events import EventHandle
 
 class Question:
 	

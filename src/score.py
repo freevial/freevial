@@ -32,8 +32,8 @@ from pygame.locals import *
 
 from common.freevialglob import *
 from common.events import EventHandle
+from common.dialog_question import fesPregunta
 from endscreen import Visca
-from question import fesPregunta
 from selcat import *
 
 ##################################################

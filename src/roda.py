@@ -120,9 +120,6 @@ class Roda:
 					else:
 						mostra_ajuda = mostra_credits = 0
 				
-				if eventhandle.keyUp('PRINT'):
-					screenshot( self.joc.pantalla )
-				
 				if eventhandle.keyUp('F1', 'h'):
 					mostra_ajuda ^= 1	
 					mostra_credits = 0			

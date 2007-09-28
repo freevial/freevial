@@ -186,10 +186,6 @@ class SelCat:
 					seleccio %=  nelements 
 					self.so_sub.play() 
 				
-				if eventhandle.keyUp('PRINT'):
-					screenshot( self.joc.pantalla )
-				
-
 				if estat == 0:
 
 					if eventhandle.keyUp('r'):

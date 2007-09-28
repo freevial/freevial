@@ -34,7 +34,10 @@ from score import Score
 from preguntador import Preguntador
 from roda import Roda
 
+gettext.install('freevial', '/usr/share/locale', unicode=1)
+
 FS_MODE = False
+
 
 ##################################################
 #
@@ -129,8 +132,6 @@ class Freevial:
 				sys.exit()
 
 
-gettext.install('freevial', '/usr/share/locale', unicode=1)
-
 if '-h' in sys.argv or '--help' in sys.argv:
 	print _('use freevial [OPTIONS]')
 	print
@@ -171,5 +172,5 @@ try:
 	joc.juguem()
 	
 except KeyboardInterrupt:
-	print 'Manual abort.'
+	print _('Manual exit.')
 	sys.exit()

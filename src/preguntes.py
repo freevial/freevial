@@ -27,8 +27,12 @@ import os
 import csv
 import copy
 import random
+import gettext
 
 from common.freevialglob import *
+from common.uncompress import Uncompressor
+
+gettext.install('freevial', '/usr/share/locale', unicode=1)
 
 carpeta_de_preguntes = '../questions_db'
 
@@ -59,14 +63,12 @@ class LoadDatabase:
 		if ext in ('gz', 'bz2', 'zip'):
 			return self._extract(directory)
 		
-		raise ValueError, "Expected a directory or compressed file."
+		raise ValueError, _('Expected a directory or compressed file.')
 	
 	
 	def _extract(self, directory):
 		""" Extracts a compressed file to a temporal directory and returns
 		the URL to it. """
-		
-		from uncompress import Uncompressor
 		
 		file = Uncompressor(directory)
 		tempdir = self._get_temp()
@@ -189,7 +191,7 @@ for num in range(0, len(arxius_de_preguntes) ):
 		cat.importQuestions( os.path.join(carpeta_de_preguntes, arxius_de_preguntes[num]) )
 		categoriespreguntes.append( cat )
 	except ValueError:
-		print "Error in " + arxius_de_preguntes[num]
+		print _('Error in ' + arxius_de_preguntes[num])
 
 def textCategoria( ncat ):
 
