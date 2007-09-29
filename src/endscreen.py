@@ -29,6 +29,7 @@ import pygame
 import time
 import math
 
+from common.globals import Global
 from common.freevialglob import *
 from common.events import EventHandle
 
@@ -77,7 +78,7 @@ class Visca:
 
 	def __init__( self, joc ):
 
-		self.joc = joc
+		Global.game = joc
 	
 		self.fons = loadImage('score_fons.png')
 		self.fons_2 = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
@@ -90,8 +91,8 @@ class Visca:
 
 	def juguem( self, joc, nomguanya ):
 
-		self.joc = joc
-		self.frate = frameRate( self.joc.Limit_FPS )
+		Global.game = joc
+		self.frate = frameRate( Global.fps_limit )
 		inici = time.time()
 
 		self.naus = []
@@ -190,7 +191,7 @@ class Visca:
 					return
 				
 				if eventhandle.keyDown('PRINT'):
-					screenshot(self.joc.pantalla)
+					screenshot(Global.game.screen)
 				
 				if eventhandle.keyUp('f', 'F11'):
 					pygame.display.toggle_fullscreen()
@@ -198,9 +199,9 @@ class Visca:
 			if segons >= 68: return
 
 			ypos += 1
-			ypos %= self.joc.mida_pantalla_y
+			ypos %= Global.screen_y
 			xpos += 1
-			xpos %= self.joc.mida_pantalla_x
+			xpos %= Global.screen_x
 
 			mou_fons += 10
 	#		for num in range(0, 1024):
@@ -208,38 +209,38 @@ class Visca:
  
 			if segons > 5.5:
 
-				self.joc.pantalla.blit( self.fons, (0,0))
+				Global.game.screen.blit( self.fons, (0,0))
 
 				for num in range(0, 768):
-					self.joc.pantalla.blit( self.fons, (math.cos((float(mou_fons +num)) / 100.0) * 20, num), (0, (ypos + num) % 768, 1024, 1) )
+					Global.game.screen.blit( self.fons, (math.cos((float(mou_fons +num)) / 100.0) * 20, num), (0, (ypos + num) % 768, 1024, 1) )
 	
 				llista_freevial = [ [8.7, 12], [12.7, 17], [20, 23.5], [27.5, 31], [33, 35.5], [49.5, 52.5], [55.5, 57.5], [60.9, 63.5] ]
 
 				if ensegments( llista_freevial, segons ):
 					for compta in range( 0, 5):
-						self.joc.pantalla.blit( sfc_freevial, (random.randint(	-sfc_freevial.get_width(), 1024), random.randint(-sfc_freevial.get_height(), 768 )) ) 	
+						Global.game.screen.blit( sfc_freevial, (random.randint(	-sfc_freevial.get_width(), 1024), random.randint(-sfc_freevial.get_height(), 768 )) ) 	
 
 					if segons >= 20 and segons <=34:
 						for nau in self.naus:
 							cues.append ( Cua( (nau.x + 32 - 8, nau.y + 32 - 4) ) )
 
 			else:
-				self.joc.pantalla.fill( (0,0,0) )
+				Global.game.screen.fill( (0,0,0) )
 
 			for cua in cues:
 				dist = int((time.time() - cua.time) * 40) if cua.cau == 0 else 0
-				self.joc.pantalla.blit( self.sfc_llum, ( cua.pos[0] + random.randint(-dist,dist), cua.pos[1] + random.randint(-dist,dist)) )
+				Global.game.screen.blit( self.sfc_llum, ( cua.pos[0] + random.randint(-dist,dist), cua.pos[1] + random.randint(-dist,dist)) )
 
 			for nau in self.naus:
-				self.joc.pantalla.blit( self.nau_sfc[nau.img], (nau.x, nau.y ) )
+				Global.game.screen.blit( self.nau_sfc[nau.img], (nau.x, nau.y ) )
 			
 			if segons > 5.5:
 				text_pos -= 20
 				if text_pos < -(sfc_guanyadors.get_width() + 50):
 					text_pos = 1024 + 50
 
-				self.joc.pantalla.blit( sfc_guanyadors, (text_pos, 150 + math.cos((float(mou_fons +num)) / 100.0) * 200) )
+				Global.game.screen.blit( sfc_guanyadors, (text_pos, 150 + math.cos((float(mou_fons +num)) / 100.0) * 200) )
 			
-			self.frate.next( self.joc.pantalla )
+			self.frate.next( Global.game.screen )
 
 			pygame.display.flip()

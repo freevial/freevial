@@ -17,7 +17,7 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#GNU General Public License for more details.
+# GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -29,6 +29,7 @@ import pygame
 import gettext
 from math import *
 
+from common.globals import GlobalVar, Global
 from common.freevialglob import *
 from score import Score
 from preguntador import Preguntador
@@ -36,21 +37,21 @@ from roda import Roda
 
 gettext.install('freevial', '/usr/share/locale', unicode=1)
 
-FS_MODE = False
-
-
-##################################################
-#
-# Classe de control del programa
-#
 
 class Freevial:
-
-	###########################################
-	#
-	def __init__( self ):
 	
-		self.joc = Freevial_globals()
+	def __init__( self ):
+		
+		Global.game = GlobalVar()
+		
+		Global.game.screen = ''
+		Global.game.rounds = 0
+		
+		Global.game.teams = []
+		for num in range(0, 6): Global.game.teams.append( Equip() )
+		
+		Global.game.current_team = 0
+		Global.game.sfc_credits = ''
 	
 	
 	###########################################
@@ -59,29 +60,30 @@ class Freevial:
 	def inici( self ):
 		
 		# inicialize presentation surface
-		self.joc.pantalla = pygame.display.set_mode( ( self.joc.mida_pantalla_x, self.joc.mida_pantalla_y), HWSURFACE, 32)
+		Global.game.screen = pygame.display.set_mode( ( Global.screen_x, Global.screen_y), HWSURFACE, 32)
 		pygame.display.set_caption('Freevial')
-		pygame.display.set_icon( pygame.image.load(os.path.join(self.joc.folders['images'], 'logo.png')) )
+		pygame.display.set_icon( pygame.image.load(os.path.join(Global.folders['images'], 'logo.png')) )
 		
-		if not DEBUG_MODE:
+		if not Global.DEBUG_MODE:
 			pygame.mouse.set_visible( False )
 
-			if FS_MODE:
+			if Global.FS_MODE:
 				pygame.display.toggle_fullscreen()
 		
 		# inicialize sound and text systems
-		if not ismute():
+		if not (Global.SOUND_MUTE and Global.MUSIC_MUTE):
 			try:
 				pygame.mixer.pre_init(44100, -16, 2, 2048)
 				pygame.mixer.init()
 			except pygame.error, message:
 				print _('Sound initialization failed. %s' % message)
-				mute( sound = True, music = True )
+				Global.SOUND_MUTE = True
+				Global.MUSIC_MUTE = True
 		
 		pygame.font.init()
 		
-		self.joc.sfc_credits = createHelpScreen( 'credits', alternate_text = True )
-
+		Global.game.sfc_credits = createHelpScreen( 'credits', alternate_text = True )
+		
 		initTextos()
 		init_joystick()
 	
@@ -97,37 +99,37 @@ class Freevial:
 
 		while 1:
 			
-			if not score: score = Score( self.joc )
+			if not score: score = Score( Global.game )
 			
-			self.joc.equip_actual = score.juguem( )
+			Global.game.current_team = score.juguem()
 			
-			if self.joc.equip_actual != -1:
+			if Global.game.current_team != -1:
 				
-				self.joc.rondes += 1		
+				Global.game.rounds += 1		
 				
-				if not roda: roda = Roda( self.joc )
+				if not roda: roda = Roda( Global.game )
 				
 				resultat = roda.juguem( )
 				
 				if resultat != 0:
 						
-					self.joc.equips[ self.joc.equip_actual].preguntes_tot[resultat-1] += 1		
+					Global.game.teams[ Global.game.current_team ].preguntes_tot[ resultat - 1 ] += 1		
 					
-					if not fespregunta:	fespregunta = Preguntador( self.joc )
+					if not fespregunta:	fespregunta = Preguntador( Global.game )
 					
 					resultat = fespregunta.juguem( resultat )	
 					
 					if resultat > 0:
-						self.joc.equips[ self.joc.equip_actual].preguntes_ok[resultat-1] += 1
-						self.joc.equips[ self.joc.equip_actual].punts += 1
+						Global.game.teams[ Global.game.current_team ].preguntes_ok[ resultat - 1 ] += 1
+						Global.game.teams[ Global.game.current_team ].punts += 1
 						
-						fig_abans = self.joc.equips[ self.joc.equip_actual].figureta
-						self.joc.equips[ self.joc.equip_actual].activaCategoria( resultat ) 
+						fig_abans = Global.game.teams[ Global.game.current_team].figureta
+						Global.game.teams[ Global.game.current_team].activaCategoria( resultat ) 
 						
-						if fig_abans != 63 and self.joc.equips[ self.joc.equip_actual].figureta == 63:
-							self.joc.equips[ self.joc.equip_actual].punts += 2
+						if fig_abans != 63 and Global.game.teams[ Global.game.current_team].figureta == 63:
+							Global.game.teams[ Global.game.current_team].punts += 2
 						
-					self.joc.equip_actual = seguentEquipActiu( self.joc.equips, self.joc.equip_actual )
+					Global.game.current_team = seguentEquipActiu( Global.game.teams, Global.game.current_team )
 			else:
 				sys.exit()
 
@@ -147,30 +149,31 @@ if '-h' in sys.argv or '--help' in sys.argv:
  	exit( 0 )
 
 if '-d' in sys.argv or '--debug' in sys.argv:
-	DEBUG_MODE = True
+	Global.DEBUG_MODE = True
 
 if '-l' in sys.argv or '--locked' in sys.argv:
-	setLockedMode( True )
+	Global.LOCKED_MODE = True
 
 if '--fullscreen' in sys.argv or '-fs' in sys.argv:
-	FS_MODE = True
+	Global.FS_MODE = True
 
 if '--fps' in sys.argv:
-	displayFPS( True )
+	Global.DISPLAY_FPS = True
 
 if '-m' in sys.argv or '--mute' in sys.argv:
-	mute( sound = True, music = True )
+	Global.SOUND_MUTE = True
+	Global.MUSIC_MUTE = True
 
 if '--no-sound' in sys.argv:
-	mute( sound = True )
+	Global.SOUND_MUTE = True
 
 if '--no-music' in sys.argv:
-	mute( music = True )
+	Global.MUSIC_MUTE = True
 
 try:
 	joc = Freevial()
 	joc.juguem()
-	
+
 except KeyboardInterrupt:
 	print _('Manual exit.')
 	sys.exit()

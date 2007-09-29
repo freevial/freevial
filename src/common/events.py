@@ -104,7 +104,7 @@ class EventHandle:
 		if type(request) is not int:
 			request = mouseButtons[ request ]
 		
-		return True if self.event.type == pygame.MOUSEBUTTONUP and (event.button == request or request == 0) else False
+		return True if self.event.type == pygame.MOUSEBUTTONUP and (self.event.button == request or request == 0) else False
 	
 	
 	def keyUp( self, *keynames ):

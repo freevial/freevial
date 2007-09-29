@@ -2,7 +2,7 @@
 
 #
 # Freevial
-# Global Data and Functions
+# Commonly used stuff
 #
 # Copyright (C) 2007 The Freevial Team
 #
@@ -17,7 +17,7 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#GNU General Public License for more details.
+# GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -28,16 +28,13 @@ import random
 import pygame
 import locale
 import time
+import gettext
 from pygame.locals import *
 
+from common.globals import Global
 from preguntes import preguntes_autors
 
-DEBUG_MODE = False
-SOUND_MUTE = False
-MUSIC_MUTE = False
-DISPLAY_FPS = False
-
-LOCKED_MODE = False
+gettext.install('freevial', '/usr/share/locale', unicode=1)
 
 textos = []
 
@@ -78,62 +75,15 @@ def bitCategoria ( categoria ):
 	return (0x4,0x8,0x20,0x10,0x2,0x1)[ categoria - 1 ]
 
 
-class Freevial_globals:
-	""" Contains all variables that are commonly used by all components of Freevial. """
-	
-	mida_pantalla_x = 1024
-	mida_pantalla_y = 768
-	Limit_FPS = 40
-
-	pantalla = ''
-	rondes = 0
-	
-	basefolder = '../data'
-	
-	folders = {
-						'base': basefolder,
-						'images': os.path.join(basefolder, 'images'),
-						'sounds': os.path.join(basefolder, 'sounds'),
-						'fonts': os.path.join(basefolder, 'fonts'),
-						'help': os.path.join(basefolder, 'help'),
-					}
-	
-	equips = []
-	for num in range(0, 6): equips.append( Equip() )
-	equips = tuple(equips)
-	
-	equip_actual = 0
-
-	sfc_credits = ""
-
-
-def mute( sound = None, music = None ):
-	""" Mute sound or music. """
-	
-	global SOUND_MUTE, MUSIC_MUTE
-	
-	if sound: SOUND_MUTE = sound
-	if music: MUSIC_MUTE = music
-	
-	return {
-			'sound': SOUND_MUTE,
-			'music': MUSIC_MUTE,
-		}
-
-
-def ismute():
-	return SOUND_MUTE and MUSIC_MUTE
-
-
 def loadImage( name, colorkey = None, rotate = 0 ):
 	""" Returns a Surface of the indicated image, which is expected to be in the images folder. """
 	
-	fullname = os.path.join(Freevial_globals.folders['images'], str(name))
+	fullname = os.path.join(Global.folders['images'], str(name))
 	
 	try:
 		image = pygame.image.load(fullname)
 	except pygame.error, message:
-		print 'Failed loading image: ', fullname
+		print _('Failed loading image: %s' % fullname)
 		raise SystemExit, message
 	
 	if colorkey is not None:
@@ -153,7 +103,7 @@ def loadImage( name, colorkey = None, rotate = 0 ):
 def loadSound( name, volume = 1.0, music = False ):
 	""" Returns a sound object of the indicated audio file, which is expected to be in the sounds folder. """
 	
-	if ( mute()['music'] and music ) or ( mute()['sound'] and not music ) or not pygame.mixer or not pygame.mixer.get_init():
+	if ( Global.MUSIC_MUTE and music ) or ( Global.SOUND_MUTE and not music ) or not pygame.mixer or not pygame.mixer.get_init():
 	
 		class NoneSound:
 			def load( *args ): pass
@@ -163,7 +113,7 @@ def loadSound( name, volume = 1.0, music = False ):
 		
 		return NoneSound()
 	
-	fullname = os.path.join(Freevial_globals.folders['sounds'], name)
+	fullname = os.path.join(Global.folders['sounds'], str(name))
 	
 	try:
 		if not music:
@@ -173,7 +123,7 @@ def loadSound( name, volume = 1.0, music = False ):
 			obj.load(fullname)
 	except pygame.error, message:
 		
-		print 'Failed loading sound: ', fullname
+		print _('Failed loading sound: %s' % fullname)
 		
 		if not music:
 			raise SystemExit, message
@@ -186,7 +136,7 @@ def loadSound( name, volume = 1.0, music = False ):
 def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
 	""" Function for easier text rendering. """
 
-	nomfont = os.path.join(Freevial_globals.folders['fonts'], 'lb.ttf' if nomfont == '' else nomfont)
+	nomfont = os.path.join(Global.folders['fonts'], 'lb.ttf' if nomfont == '' else nomfont)
 	
 	font1 = pygame.font.Font( nomfont, mida )
 	
@@ -252,83 +202,83 @@ def screenshot( surface, destination = os.path.join( os.path.expanduser('~'), 'F
 	pygame.image.save( surface, destination )
 
 
-def maxPunts( equips ):
+def maxPunts( teams ):
 
 	puntsmax = 0
 
 	for num in range(0,6):
-		if equips[num].actiu:
-			puntsmax = max( puntsmax, equips[num].punts )
+		if teams[num].actiu:
+			puntsmax = max( puntsmax, teams[num].punts )
 	
 	return puntsmax
 
 
-def puntsTotals( equips ):
+def puntsTotals( teams ):
 
 	punts = 0
 
 	for num in range(0,6):
-		punts += equips[num].punts
+		punts += teams[num].punts
 	
 	return punts
 
 
-def equipsActius( equips ):
+def teamsActius( teams ):
 
 	actius = 0
 
 	for num in range(0,6):
-		if equips[num].actiu: actius += 1
+		if teams[num].actiu: actius += 1
 	
 	return actius
 
 
-def equipsTancat( equips ):
+def teamsTancat( teams ):
 
 	for num in range(0,6):
-		if equips[num].figureta == 63:
+		if teams[num].figureta == 63:
 			return True
 	
 	return False
 
 
-def equipsGuanyador( equips ):
+def teamsGuanyador( teams ):
 
 	puntsmax = 0
 	equipmax = -1
 
-	if equipsTancat( equips ):
+	if teamsTancat( teams ):
 
 		for num in range(0,6):
-			if equips[num].actiu:
-				if equips[num].punts == puntsmax:
+			if teams[num].actiu:
+				if teams[num].punts == puntsmax:
 					# empat a punts
 					equipmax = -1 
 
-				if equips[num].punts > puntsmax:
+				if teams[num].punts > puntsmax:
 					equipmax = num
-					puntsmax = equips[num].punts
+					puntsmax = teams[num].punts
 	
 	return equipmax
 
 
-def seguentEquipActiu( equips, actual ):
+def seguentEquipActiu( teams, actual ):
 
 	actual += 1
 
 	for num in range(0,6):
-		if equips[(actual + num) % 6].actiu: 
+		if teams[(actual + num) % 6].actiu: 
 			return (actual + num) % 6
 	
 	return -1
 
 
-def anteriorEquipActiu( equips, actual ):
+def anteriorEquipActiu( teams, actual ):
 
 	actual -= 1
 
 	for num in range(0,6):
-		if equips[(actual - num ) % 6].actiu: 
+		if teams[(actual - num ) % 6].actiu: 
 			return (actual - num ) % 6
 	
 	return -1
@@ -416,10 +366,10 @@ def replaceKeywoards( content ):
 def readLocalizedHelpFile( help_section ):
 	""" Reads a localized file into an unicoded array. """
 	
-	filename = os.path.join(Freevial_globals.folders['help'], (help_section + "_"+ locale.getdefaultlocale()[0][:2] +'.txt'))
+	filename = os.path.join(Global.folders['help'], (help_section + "_"+ locale.getdefaultlocale()[0][:2] +'.txt'))
 	
 	if not os.path.exists (filename):
-		filename = os.path.join(Freevial_globals.folders['help'], (help_section + '.txt'))
+		filename = os.path.join(Global.folders['help'], (help_section + '.txt'))
 	
 	lines = []
 	
@@ -514,16 +464,6 @@ class helpOnScreen():
 			self.sec_darrera_activitat = time.time()
 
 
-def displayFPS( display = '' ):
-	""" Displays or hides the frame rate from screen. """
-	
-	global DISPLAY_FPS
-	
-	if display != '': DISPLAY_FPS = display
-	
-	return DISPLAY_FPS
-
-
 class frameRate():
 	""" Calculates the frame rate (FPS), limits it and, if choosen so, displays it on screen. """
 	
@@ -544,7 +484,7 @@ class frameRate():
 			self.seconds = time.time()
 			self.fps = self.fps_current
 			self.fps_current = 0
-			if DISPLAY_FPS:
+			if Global.DISPLAY_FPS:
 				self.textSurface = render_text( 'FPS: ' + str( self.fps if self.fps > 0 else 'N/a' ), (128, 128, 128), 15, 1 )
 		else:
 			self.fps_current += 1
@@ -559,7 +499,7 @@ class frameRate():
 		if surface:	
 			if self.textSurface and DISPLAY_FPS:
 				# display the frame rate on the middle of the screen's bottom
-				#surface.blit( self.textSurface, ( (( Freevial_globals.mida_pantalla_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )
+				#surface.blit( self.textSurface, ( (( Global.screen_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )
 				surface.blit( self.textSurface, (250, 740 ) )
 
 Jstick = None
@@ -586,17 +526,3 @@ def translateJoystickEvent( event ):
 	if alies:
 		event = pygame.event.Event( pygame.KEYUP, {'key': alies, 'unicode': u's', 'mod': 0})
 		pygame.event.post( event )
-
-def setLockedMode( mode ):
-
-	global LOCKED_MODE
-
-	LOCKED_MODE = mode
-
-
-def getLockedMode( ):
-
-	global LOCKED_MODE
-
-	return LOCKED_MODE
-

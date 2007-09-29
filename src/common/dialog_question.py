@@ -34,16 +34,16 @@ from events import EventHandle
 
 class Question:
 	
-	def ask( self, pantalla, pregunta, respostes, predeterminat = 0, cancel = -1 ):
+	def ask( self, screen, pregunta, respostes, predeterminat = 0, cancel = -1 ):
 
 		frate = frameRate( 40 )
 
 		seleccio = predeterminat
 
-		sfc_copiapantalla = pygame.Surface( ( pantalla.get_width(), pantalla.get_height()), pygame.SRCALPHA, 32 )
-		sfc_pantalla2 = pygame.Surface( ( pantalla.get_width(), pantalla.get_height()), pygame.SRCALPHA, 32 )
+		sfc_copiascreen = pygame.Surface( ( screen.get_width(), screen.get_height()), pygame.SRCALPHA, 32 )
+		sfc_screen2 = pygame.Surface( ( screen.get_width(), screen.get_height()), pygame.SRCALPHA, 32 )
 
-		sfc_copiapantalla.blit( pantalla, (0,0) )
+		sfc_copiascreen.blit( screen, (0,0) )
 
 		total_duracio_fadeout = duracio_fadeout = 10
 		intensitat_fadeout = 20
@@ -76,7 +76,7 @@ class Question:
 					return cancel
 				
 				if eventhandle.keyDown('PRINT'):
-					screenshot(self.joc.pantalla)
+					screenshot(self.joc.screen)
 				
 				if eventhandle.keyUp('f', 'F11'):
 					pygame.display.toggle_fullscreen()
@@ -93,34 +93,34 @@ class Question:
 					return seleccio
 				
 			if duracio_fadeout:
-				sfc_pantalla2.blit( sfc_copiapantalla, (0,0) )
-				sfc_pantalla2.fill( (0,0,0, total_duracio_fadeout * intensitat_fadeout - duracio_fadeout * intensitat_fadeout) ) 
+				sfc_screen2.blit( sfc_copiascreen, (0,0) )
+				sfc_screen2.fill( (0,0,0, total_duracio_fadeout * intensitat_fadeout - duracio_fadeout * intensitat_fadeout) ) 
 	
 				duracio_fadeout -= 1
 				
-			pantalla.blit( sfc_copiapantalla, (0,0) )
-			pantalla.blit( sfc_pantalla2, (0,0) )
+			screen.blit( sfc_copiascreen, (0,0) )
+			screen.blit( sfc_screen2, (0,0) )
 
-			pantalla.blit( sfc_pregunta, (pantalla.get_width() / 2 -sfc_pregunta.get_width() / 2, 300) )
+			screen.blit( sfc_pregunta, (screen.get_width() / 2 -sfc_pregunta.get_width() / 2, 300) )
 
-			posx = (pantalla.get_width() / 2 - respostes_ample / 2 )
+			posx = (screen.get_width() / 2 - respostes_ample / 2 )
 
 			for compta in range(0, len(respostes) ):
 
 				if seleccio == compta:
 					for salt in range(0, 25):
-						pantalla.fill( (salt * 10,0,0), (posx - 25 + salt, 450, sfc_respostes[compta].get_width() + 25-salt*2, sfc_respostes[compta].get_height()  ))
+						screen.fill( (salt * 10,0,0), (posx - 25 + salt, 450, sfc_respostes[compta].get_width() + 25-salt*2, sfc_respostes[compta].get_height()  ))
 
-				pantalla.blit( sfc_respostes[compta], (posx, 450) )
+				screen.blit( sfc_respostes[compta], (posx, 450) )
 				posx += sfc_respostes[compta].get_width() + espai_entre_respostes
 
-			frate.next( pantalla )
+			frate.next( screen )
 
 			pygame.display.flip()
 
 
-def fesPregunta( pantalla, pregunta, respostes, predeterminat = 0, cancel = -1 ):
+def fesPregunta( screen, pregunta, respostes, predeterminat = 0, cancel = -1 ):
 
 	question = Question()
 
-	return question.ask( pantalla, pregunta, respostes, predeterminat = 0, cancel = -1 )
+	return question.ask( screen, pregunta, respostes, predeterminat = 0, cancel = -1 )

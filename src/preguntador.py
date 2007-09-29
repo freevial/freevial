@@ -17,7 +17,7 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#GNU General Public License for more details.
+# GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -188,33 +188,33 @@ class Preguntador:
 		
 		self.help_on_screen.sec_timeout = 10
 
-		self.frate = frameRate( self.joc.Limit_FPS )
+		self.frate = frameRate( Global.fps_limit )
 
 		self.atzar( selcat )
 
 		self.inicialitza_pregunta()
-		if not mute()['sound']: pygame.time.wait( 2500 )
+		if not Global.SOUND_MUTE: pygame.time.wait( 2500 )
 		loadSound('preguntador.ogg', volume = 0.4, music = 1).play(1)
 		
 		mostra_ajuda = mostra_credits = 0
 
-		self.joc.pantalla.fill( (0,0,0,0) )
+		self.joc.screen.fill( (0,0,0,0) )
 
 		# remaining seconds until end of answer time
 		self.segons = 61
 
-		nom_equip_sfc = render_text( self.joc.equips[self.joc.equip_actual].nom, (64,64,64), 30, 1 )	
+		nom_equip_sfc = render_text( self.joc.teams[self.joc.current_team].nom, (64,64,64), 30, 1 )	
 		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
 		nom_equip_sfc.set_alpha( 64 )
 
 		mostra_punt_de_categoria = match_point = False
 
-		if (self.joc.equips[self.joc.equip_actual].figureta & bitCategoria( selcat )) == 0:
+		if (self.joc.teams[self.joc.current_team].figureta & bitCategoria( selcat )) == 0:
 			mostra_punt_de_categoria = True
-			figureta_no = loadImage('points/freevial_tot' + str( self.joc.equips[self.joc.equip_actual].figureta).zfill(2) + '.png')
-			figureta_si = loadImage('points/freevial_tot' + str( self.joc.equips[self.joc.equip_actual].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
+			figureta_no = loadImage('points/freevial_tot' + str( self.joc.teams[self.joc.current_team].figureta).zfill(2) + '.png')
+			figureta_si = loadImage('points/freevial_tot' + str( self.joc.teams[self.joc.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
 
-			match_point = True if (self.joc.equips[self.joc.equip_actual].figureta | bitCategoria ( selcat ) == 63) else False
+			match_point = True if (self.joc.teams[self.joc.current_team].figureta | bitCategoria ( selcat ) == 63) else False
 
 		mostra_comentaris = False	
 		sfc_comentaris = None
@@ -241,14 +241,14 @@ class Preguntador:
 					sys.exit()
 				
 				if eventhandle.keyDown('PRINT'):
-					screenshot(self.joc.pantalla)
+					screenshot(self.joc.screen)
 				
 				if eventhandle.keyUp('f', 'F11'):
 					pygame.display.toggle_fullscreen()
 				
-				if eventhandle.keyUp('q', 'ESCAPE') and not getLockedMode():
+				if eventhandle.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
 					if not mostra_ajuda and not mostra_credits:
-						if not ismute():
+						if not (Global.SOUND_MUTE or Global.MUSIC_MUTE):
 							pygame.mixer.fadeout(500)
 						if self.mostrasolucions == 0:
 							self.mostrasolucions = 1
@@ -309,7 +309,7 @@ class Preguntador:
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if acaba == 1 or self.segons <= 0:
-				if not ismute():
+				if not Global.MUSIC_MUTE:
 					pygame.mixer.music.fadeout(2500)
 				self.help_on_screen.sec_timeout = 3  
 				if self.mostrasolucions == 0:
@@ -322,8 +322,8 @@ class Preguntador:
 					notes = self.pregunta_actual[9].split('#') if self.pregunta_actual[9] != "" else "."
 					sfc_comentaris =  createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
-					if not getLockedMode( ) or mostra_comentaris == True or len( self.pregunta_actual[9] ) <= 5:
-						if not ismute():
+					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.pregunta_actual[9] ) <= 5:
+						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(2500)
 						return self.pregunta_actual[0] if ( self.pregunta_actual[5] == self.seleccio) else 0
 					else:
@@ -332,47 +332,47 @@ class Preguntador:
 			
 			# Animem el fons
 			self.ypos += 2
-			if self.ypos >= self.joc.mida_pantalla_y: self.ypos %= self.joc.mida_pantalla_y
+			if self.ypos >= Global.screen_y: self.ypos %= Global.screen_y
 			
 			# Pintem el fons animat
-			self.joc.pantalla.blit( self.fons[self.pregunta_actual[0] - 1], (0,0), (0, (768 - self.ypos), self.joc.mida_pantalla_x, min(200, self.ypos)))
+			self.joc.screen.blit( self.fons[self.pregunta_actual[0] - 1], (0,0), (0, (768 - self.ypos), Global.screen_x, min(200, self.ypos)))
 			if self.ypos < 200:
-				self.joc.pantalla.blit( self.fons[self.pregunta_actual[0] - 1], (0, min( 200, self.ypos)), (0, 0, self.joc.mida_pantalla_x, 200 - min( 200, self.ypos)))
+				self.joc.screen.blit( self.fons[self.pregunta_actual[0] - 1], (0, min( 200, self.ypos)), (0, 0, Global.screen_x, 200 - min( 200, self.ypos)))
 			
 			# i el sombrejem per fer l'efecte de desapariió
-			# també pintem el logotip del peu a l'hora que esborrem el fons de self.joc.pantalla
-			self.joc.pantalla.blit( self.mascara_de_fons, (0, 0) )
+			# també pintem el logotip del peu a l'hora que esborrem el fons de self.joc.screen
+			self.joc.screen.blit( self.mascara_de_fons, (0, 0) )
 			
 			# preparem el sobrejat de l'opció seleccionada
 			ympos = self.ypos + 300
 			ympos %= 768
-			self.mascara.blit( self.fons[ self.pregunta_actual[0] - 1], (0,0), (0, (768 - ympos), self.joc.mida_pantalla_x, min( 200, ympos )))
+			self.mascara.blit( self.fons[ self.pregunta_actual[0] - 1], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
 			
 			if ympos < 200: 
-				self.mascara.blit( self.fons[ self.pregunta_actual[0] - 1], (0, min( 200, ympos)), (0, 0, self.joc.mida_pantalla_x, 200 - min( 200, ympos)))
+				self.mascara.blit( self.fons[ self.pregunta_actual[0] - 1], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
 			
 			# i el mesclem amb la mascara per donar-li forma
 			self.mascara.blit( self.retalla_sel, (0,0))
 			
 			# pintem l'ombrejat on correspongui	
-			if self.seleccio == 1: self.joc.pantalla.blit( self.mascara, ( self.postextx, 260))
-			if self.seleccio == 2: self.joc.pantalla.blit( self.mascara, ( self.postextx, 260+150))
-			if self.seleccio == 3: self.joc.pantalla.blit( self.mascara, ( self.postextx, 260+300))
+			if self.seleccio == 1: self.joc.screen.blit( self.mascara, ( self.postextx, 260))
+			if self.seleccio == 2: self.joc.screen.blit( self.mascara, ( self.postextx, 260+150))
+			if self.seleccio == 3: self.joc.screen.blit( self.mascara, ( self.postextx, 260+300))
 			
 			# mostrem l'autor i el mombre de pregunta
 			if  self.mostranpregunta != 0 :
-				self.joc.pantalla.blit( self.sfc_npregunta, (1024 - ( self.sfc_npregunta.get_width() + 25),0) )
-				self.joc.pantalla.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94) )
+				self.joc.screen.blit( self.sfc_npregunta, (1024 - ( self.sfc_npregunta.get_width() + 25),0) )
+				self.joc.screen.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94) )
 			
 			# mostrem la pregunta
-			self.joc.pantalla.blit( self.sfc_pregunta, (self.postextx, self.postexty) )	
+			self.joc.screen.blit( self.sfc_pregunta, (self.postextx, self.postexty) )	
 			
 			# i les solucions			
 			linia_act = 270
 			
 			for num in range(0, 3):
-				self.joc.pantalla.blit( self.lletres[num][(self.seleccio != num + 1)], ( self.postextx, linia_act + (150 * num)) )
-				self.joc.pantalla.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
+				self.joc.screen.blit( self.lletres[num][(self.seleccio != num + 1)], ( self.postextx, linia_act + (150 * num)) )
+				self.joc.screen.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
 			
 			# comprovem l'estat del temps
 			segons_act = 60 - int( (time.time() - self.temps_inici_pregunta) )
@@ -393,7 +393,7 @@ class Preguntador:
 				
 				# pintem els segons que queden, posant-los cada cop menys transparents
 				self.pinta_segons.set_alpha( (60 - segons_act) )
-				self.joc.pantalla.blit( self.pinta_segons, ( 300 , 150) )
+				self.joc.screen.blit( self.pinta_segons, ( 300 , 150) )
 			
 			# Pintem les solucions
 			linia_act = 270
@@ -406,43 +406,43 @@ class Preguntador:
 				for num in range (0, 3):
 					if self.pregunta_actual[5] == (num + 1):
 						if self.seleccio != (num + 1):
-							self.joc.pantalla.blit( self.solucio_ok, (posnook, linia_act + (150 * num)) )
+							self.joc.screen.blit( self.solucio_ok, (posnook, linia_act + (150 * num)) )
 						else:
-							self.joc.pantalla.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
+							self.joc.screen.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
 				
 					else:
 						if self.seleccio == (num + 1):
-							self.joc.pantalla.blit( self.solucio_nook, (posn, linia_act + (150 * num)) )
+							self.joc.screen.blit( self.solucio_nook, (posn, linia_act + (150 * num)) )
 		
 				if len( self.pregunta_actual[9] ) > 5:
-					self.joc.pantalla.blit( self.info[0] if (int(time.time() * 3) % 3) == 0 else self.info[1], (self.postextx, 150) )
+					self.joc.screen.blit( self.info[0] if (int(time.time() * 3) % 3) == 0 else self.info[1], (self.postextx, 150) )
 	
 			if mostra_punt_de_categoria:
 				if match_point:
 					t = time.time()
 					for compta in range( 0, 16) :
-						self.joc.pantalla.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (500+ cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
+						self.joc.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (500+ cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
 				else:
-					self.joc.pantalla.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (880, 130) )
+					self.joc.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (880, 130) )
 
 		
-			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
+			self.joc.screen.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
 
-			self.help_on_screen.draw( self.joc.pantalla, (350, 740), HOS_PREGUNTADOR_END if self.mostrasolucions else HOS_PREGUNTADOR_RUN )
+			self.help_on_screen.draw( self.joc.screen, (350, 740), HOS_PREGUNTADOR_END if self.mostrasolucions else HOS_PREGUNTADOR_RUN )
 
-			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
-			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
+			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
+			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))
 			if mostra_comentaris:
 				if compos > 0: compos -= 100 
-				self.joc.pantalla.blit( sfc_comentaris, (0,compos))
+				self.joc.screen.blit( sfc_comentaris, (0,compos))
 			else:
 				if compos < 768: 
 					compos += 100
-					self.joc.pantalla.blit( sfc_comentaris, (0,compos))
+					self.joc.screen.blit( sfc_comentaris, (0,compos))
 			
-			self.frate.next( self.joc.pantalla )
+			self.frate.next( self.joc.screen )
 			
-			#intercanviem els buffers de self.joc.pantalla
+			#intercanviem els buffers de self.joc.screen
 			pygame.display.flip()
 		
 		return 0

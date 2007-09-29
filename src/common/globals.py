@@ -30,54 +30,50 @@ import gettext
 
 gettext.install('freevial', '/usr/share/locale', unicode=1)
 
-
-class Global:
-	
-	def __init__( self ):
-		
-		self.elements = {}
-	
-	
-	def __contains__( self, var ):
-		
-		if not var in self.elements:
-			raise KeyError, _('There is no program-wide variable called «%s».' % var)
-		
-		return True
-	
-	
-	def __getitem__( self, var ):
-		
-		if self.__contains__(var):
-			return self.elements[var]
-	
-	
-	def __setitem__( self, var, val ):
-		
-		self.elements[var] = val
-	
-	
-	def __iter__( self ):
-		
-		for var in elements:
-			yield var
-	
+class GlobalVar:
 	
 	def __repr__( self ):
 		
-		return 'Global() instance holding %d program-wide variables.' % len(self.elements)
+		return str(vars(self))
 	
 	
 	def __str__( self ):
 		
-		string = self.__repr__() + '\n'
-		
-		for var in self.elements:
-			string += '\n%s -> %s' % (var, self.elements[var])
-		
-		return string
+		return self.__repr__()
+
+
+Global = GlobalVar()
+
+Global.DEBUG_MODE = False
+Global.SOUND_MUTE = False
+Global.MUSIC_MUTE = False
+Global.DISPLAY_FPS = False
+Global.LOCKED_MODE = False
+Global.FS_MODE = False	# Fullscreen Mode
+
+Global.screen_x = 1024
+Global.screen_y = 768
+Global.fps_limit = 40
+
+Global.basefolder = '../data'
+
+Global.folders = {
+		'images': os.path.join(Global.basefolder, 'images'),
+		'sounds': os.path.join(Global.basefolder, 'sounds'),
+		'fonts': os.path.join(Global.basefolder, 'fonts'),
+		'help': os.path.join(Global.basefolder, 'help'),
+	}
+
+
+def mute( sound = None, music = None ):
+	""" Mute sound or music. """
 	
+	global SOUND_MUTE, MUSIC_MUTE
 	
-	def extend( self, list ):
-		
-		self.elements.extend(list)
+	if sound: SOUND_MUTE = sound
+	if music: MUSIC_MUTE = music
+	
+	return {
+			'sound': SOUND_MUTE,
+			'music': MUSIC_MUTE,
+		}

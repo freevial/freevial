@@ -17,7 +17,7 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#GNU General Public License for more details.
+# GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -71,7 +71,7 @@ class Roda:
 	
 	def juguem( self ):
 		
-		self.frate = frameRate( self.joc.Limit_FPS )
+		self.frate = frameRate( Global.fps_limit )
 				
 		self.so_evil.stop()
 		self.so_dot.play(100)
@@ -83,12 +83,12 @@ class Roda:
 		rodant = 1
 		resultat = -1
 		
-		self.joc.pantalla.blit( self.fons, (0,0) )
+		self.joc.screen.blit( self.fons, (0,0) )
 
-		nom_equip_sfc = render_text( self.joc.equips[self.joc.equip_actual].nom, (255,255,255), 30, 1 )
+		nom_equip_sfc = render_text( self.joc.teams[self.joc.current_team].nom, (255,255,255), 30, 1 )
 		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
 		
-		figureta =  loadImage('points/freevial_tot' + str(self.joc.equips[self.joc.equip_actual].figureta).zfill(2) + '.png')
+		figureta =  loadImage('points/freevial_tot' + str(self.joc.teams[self.joc.current_team].figureta).zfill(2) + '.png')
 
 		self.help_on_screen.activitat( )
 
@@ -107,14 +107,14 @@ class Roda:
 					sys.exit()
 				
 				if eventhandle.keyDown('PRINT'):
-					screenshot(self.joc.pantalla)
+					screenshot(self.joc.screen)
 				
 				if eventhandle.keyUp('f', 'F11'):
 					pygame.display.toggle_fullscreen()
 				
-				if eventhandle.keyUp('ESCAPE', 'q') and not getLockedMode():
+				if eventhandle.keyUp('ESCAPE', 'q') and not Global.LOCKED_MODE:
 					if not mostra_ajuda and not mostra_credits:
-						if not ismute():
+						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(500)
 						return 0
 					else:
@@ -169,7 +169,7 @@ class Roda:
 					resultat = 1 + int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
 					self.so_dot.stop()
 					self.so_cat[ resultat - 1].play()
-					if not  self.joc.equips[self.joc.equip_actual].teCategoria( resultat ):
+					if not  self.joc.teams[self.joc.current_team].teCategoria( resultat ):
 						self.so_evil.play()
 					rodant = 0
 				
@@ -181,25 +181,25 @@ class Roda:
 				if pos <= -1200: pos += 1200
 				
 			#pintem el paper freevial
-			self.joc.pantalla.blit( self.fons, ( 0, pos_fons ) )
-			self.joc.pantalla.blit( self.fons, ( 0, - 768 + pos_fons ) )
+			self.joc.screen.blit( self.fons, ( 0, pos_fons ) )
+			self.joc.screen.blit( self.fons, ( 0, - 768 + pos_fons ) )
 			
 			#pintem el paper d'impressora
-			self.joc.pantalla.blit( self.paper, ( 178, pos ) )
-			self.joc.pantalla.blit( self.paper, ( 178, pos + 1200 ) )
+			self.joc.screen.blit( self.paper, ( 178, pos ) )
+			self.joc.screen.blit( self.paper, ( 178, pos + 1200 ) )
 			
 			#pintem els marges vermells i degradats
-			self.joc.pantalla.blit( self.front, (0,0) )	
+			self.joc.screen.blit( self.front, (0,0) )	
 			
-			self.joc.pantalla.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
-			self.joc.pantalla.blit( figureta, (70, 630) )
+			self.joc.screen.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
+			self.joc.screen.blit( figureta, (70, 630) )
 
-			if mostra_ajuda: self.joc.pantalla.blit( self.help_overlay, (0,0))
-			if mostra_credits: self.joc.pantalla.blit( self.joc.sfc_credits, (0,0))
+			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
+			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))
 
-			self.help_on_screen.draw( self.joc.pantalla, (350, 740) )
+			self.help_on_screen.draw( self.joc.screen, (350, 740) )
 			
-			self.frate.next( self.joc.pantalla )
+			self.frate.next( self.joc.screen )
 			
-			#intercanviem els buffers de self.joc.pantalla
+			#intercanviem els buffers de self.joc.screen
 			pygame.display.flip()
