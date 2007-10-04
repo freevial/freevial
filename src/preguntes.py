@@ -191,7 +191,7 @@ for num in range(0, len(arxius_de_preguntes) ):
 		cat.importQuestions( os.path.join(carpeta_de_preguntes, arxius_de_preguntes[num]) )
 		categoriespreguntes.append( cat )
 	except ValueError:
-		print _('Error in ' + arxius_de_preguntes[num])
+		print _('Error with «%s».' % arxius_de_preguntes[num])
 
 def textCategoria( ncat ):
 
