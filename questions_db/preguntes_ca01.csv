@@ -4,7 +4,7 @@
 "Data Darrera revisió:",08/09/07,,,,,,,,
 "Autors:","Nil Oriol, Josep Sanchez, Lluïsa Nuñez, Carles Oriol, Cortsenc, Julià Mestieri, Siegfried Gevatter",,,,,,,,
 "Descripció:","Gent i fets al voltant del mon del programari lliure. També informació sobre llicències.",,,,,,,,
-"Jugadors","Coneixements mínims entorn GNU",,,,,,,,
+"Jugadors","Coneixement dels esdeveniments i personatges més importants al món de GNU, el programari lliure i l'informàtica en general.",,,,,,,,
 "Idioma","ca",,,,,,,,
 "Fons","categoria1.png",,,,,,,,
 "So","c1.ogg",,,,,,,,
@@ -19,13 +19,13 @@
 ,"Qui son Dennis Ritchie i Keneth Thompson?","Els desenvolupadors del C i del unix","Els pares d'internet","Els creadors del projecte GNU",1,"carles",24/08/07,4,"De l'any 1969 al 1971 Dennis Ritchie i Keneth Thompson ven desenvolupar el sistema unix. Per fer-ho van haver de millorar el lleguatge B creat per Ritchie convertint-lo en C "
 ,"Com es diu l'associació d'usuaris de linux#més important de Catalunya","Cobrem","Caliu","Carlux",2,"carles",18/08/07,5,"I el seu Secretari Rafael Carreras és un dels fundadors del LoCo Català d'ubuntaires"
 ,"Que va patentar Microsoft#el 24 de setembre del 96","El CD parcialment reescribible","El doble click","La bola del mouse",2,"carles",18/08/07,6,"Patent number: 5559943"
-,"Què es va patentar el 2006","El teletransport","La inserció de xips al cervell humà","El windows segur",1,"carles",18/08/07,7,"United States Patent 20060071122. Brutal no!!!"
+,"Què es va patentar el 2006","El teletransport","La inserció de xips al cervell humà","El windows segur",1,"carles",18/08/07,7,"United States Patent 20060071122. Brutal!!!"
 ,"Hans Reiser, creador del sistema#d'arxius ReiserFS, va ser acusat#l'any passat de:","Signar un acord amb Microsoft","Matar la seva dona","Violar la GPLv3",2,"lluisanunez",24/08/07,8,"http://en.wikipedia.org/wiki/Hans_Reiser"
 ,"De que es disfrasa Richard Stallman a les seves conferencies?","De nyu (gnu en anglès)","Sant Ignucius","Pokemon",2,"Nil",24/08/07,9,
 ,"On es va fer l'akademy de l'any 2006?","Vilanova i la Geltrú","Dublin","Chicago",1,"carles",07/09/07,10,"Akademi és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer al Trinity College Dublin a Irlanda"
 ,"On es va fer l'akademy de l'any 2007?","Glasgow","Dublin","Vilanova i la Geltrú",1,"carles",07/09/07,11,"Akademi és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer a Glasgow a Escòcia"
 ,"Quan Mark Shuttleworth va ser a Catalunya#Quina televisió el va entrevistar?","Barcelona TV","Mataró TV","TV3",2,"carles",25/08/07,12,
-,"Per què els errors informàtics es diuen 'bugs'?","Per què sona simpàtic","per que quan van engegar el primer#ordinador dins d'una valvula#hi havia un insecte","En honor a John Bughs",2,"carles",25/08/07,13,
+,"Per què els errors informàtics es diuen 'bugs'?","Per què sona simpàtic","per que quan van engegar el primer#ordinador dins d'una vàlvula#hi havia un insecte","En honor a John Bughs",2,"carles",25/08/07,13,
 ,"Quans euros va recaptar l'sgae el 2005?",318772000,31877200,3187720,1,"carles",25/08/07,14,"i encara no cobraven ni de bon tros tot el que cobren ara"
 ,"Qui va dir#'Don't think free as in free beer;#think free as in free speech.'","Richard Stallman","Linus Torvalds","Mark Shuttlework",1,"Carles",18/08/07,15,"Richard Stallman per referir-se que#el programari hauria de ser lliure referint-se#a llibertat.##(És un error de polisemia en anglès#al ser lliure i gratuit la mateixa#paraula: free)"
 ,"Quants anys ha fet l'escriptori gnome?#(2007)",10,15,20,1,"Carles",18/08/07,16,
@@ -33,8 +33,8 @@
 ,"Qui va fundar el projecte gnome?","Mark Shuttlework","Manuel de Icaza","George Moustaki",2,"Carles",18/08/07,18,
 ,"On es va fer la Guadec de l'any 2006?","Chicago","Vilanova i la Geltrú","Sao Paulo",2,"Carles",18/08/07,19,
 ,"Al 1943, es creia que hi havia mercat#al mon per a només...","5 ordinadors.","500 ordinadors.","50000 ordinadors.",1,"Nil",07/09/07,20,"Thomas Watson de IBM va dir literalment que al mon hi havia mercat per a 5 ordinadors com a molt."
-,"On es va fer l'akademy de l'any 2006?","Vilanova i la Geltrú","Dublin","Chicago",1,"carles",07/09/07,21,"Akademi és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer al Trinity College Dublin a Irlanda"
-,"On es va fer l'akademy de l'any 2007?","Glasgow","Dublin","Vilanova i la Geltrú",1,"carles",07/09/07,22,"Akademi és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer a Glasgow a Escòcia"
+,"On es va fer l'Akademy de l'any 2006?","Vilanova i la Geltrú","Dublin","Chicago",1,"carles",07/09/07,21,"L'Akademy és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer al Trinity College Dublin a Irlanda."
+,"On es va fer l'Akademy de l'any 2007?","Glasgow","Dublin","Vilanova i la Geltrú",1,"carles",07/09/07,22,"L'Akademy és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer a Glasgow a Escòcia."
 ,"L'any 1977 la policia d'Alburquerque va#detenir i fitxar a Bill Gates per","Tenir drogues","Robar una pastisseria","Fer curses amb un 911 al desert",3,"Carles",18/08/07,23,"A la xarxa podem trobar la foto d'un jove Bill amb la seva fitxa policial... una monada. http://news.bbc.co.uk/1/hi/sci/tech/152803.stm"
 ,"Qui ha estat un l'abanderat de la traducció#del programari al català?","softcatalà","la generalitat","microsoft",1,"carles",18/08/07,24,"Per cert... el clic dels nois de redmon ja s'a convertit en clico."
 ,"Què es va celebrar el passat abril al#Centre cultural de les Corts??","Una reunió tupperware","L'RMS hi va fer una conferència","La Festa Feisty del CatalanTeam",3,"papapep",18/08/07,25,
@@ -64,4 +64,4 @@
 ,"Quin escriptori recomana fer#servir en Linus Tornvalds?","Gnome","KDE","WindowMaker",2,"quiron",09/09/07,49,
 ,"Quin programa fa servir en Jordi Mas#per traduir programari?","Poedit","emacs","vi",3,"quiron",09/09/07,50,
 ,"Quin va ser el primer any que es va celebrar#el dia de la llibertat del programari",2007,2003,1999,2,"quiron",09/09/07,51,
-,"Quin és l'estil de musica preferit del cordinador#de la comunitat d'ubuntu","Opera","Tecno","Metal",3,"quiron",09/09/07,52,
+,"Quin és l'estil de musica preferit del coordinador#de la comunitat d'ubuntu","Òpera","Tecno","Metal",3,"quiron",09/09/07,52,"En Jono Bacon, empleat de Canonical com a coordinador de la comunitat d'Ubuntu, és un gran amic del Metal. Fins i tot té el seu propi grup!"

@@ -2,9 +2,9 @@
 "Categoria:","Ubuntu",,,,,,,,
 "Data creació:",08/09/07,,,,,,,,
 "Data Darrera revisió:",08/09/07,,,,,,,,
-"Autors:","Nil Oriol, Josep Sanchez, Lluïsa Nuñez, Carles Oriol, RainCT, Julià Mestieri, Cortsenc",,,,,,,,
-"Descripció:","Preguntes del mon de l'ubuntu i ubuntaire. ",,,,,,,,
-"Jugadors","Persones amb interessos en ubuntu",,,,,,,,
+"Autors:","Nil Oriol, Josep Sanchez, Lluïsa Nuñez, Carles Oriol, Siegfried Gevatter, Julià Mestieri, Cortsenc",,,,,,,,
+"Descripció:","Preguntes del món de l'Ubuntu i la filosofia ubuntaire. ",,,,,,,,
+"Jugadors","Persones interessades per l'Ubuntu i tot el que hi ha al voltant.",,,,,,,,
 "Idioma","ca",,,,,,,,
 "Fons","categoria2.png",,,,,,,,
 "So","c2.ogg",,,,,,,,
@@ -52,3 +52,4 @@
 ,"Quan es fa oficialitzar el LoCo team Catala","15 de maig del 07","No es oficial","16 desembre del 06",1,"quiron",09/09/07,38,
 ,"Que vol dir MOTU?","Un mitja de transport","Master Of The Universe","Multitask operated time unit",2,"quiron",09/09/07,39,
 ,"Quin és el servidor del canal de chat de#IRC de la comunitat catalana d'ubuntu","Freenode","Quakenode","canonicalnode",1,"quiron",09/09/07,40,
+,"Quina tecnologia inclou per defecte la nova versió de l'Ubuntu (la Gutsy)?","Beryl","Compiz","Compiz Fusion",3,"RainCT",12/10/07,41,"La Gutsy Gibbon no només inclourà, sinò que també portarà habilitada per defecte en tots aquelles màquines que ho soportin, el Compiz Fusion, el producte resultat de la unió de Compiz amb la seva branca Beryl."
