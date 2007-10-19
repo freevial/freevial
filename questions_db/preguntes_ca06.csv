@@ -14,12 +14,12 @@
 ,,,,,,,,,
 ,"Pregunta","Resposta 1 ","Resposta 2","Resposta 3","ok","Autor ","Data","Num","Comentari o notes"
 ,"Quin d'aquests no és un gestor#de finestres de l'Ubuntu","Openbox","Fartbox","Fluxbox",2,"carles",18/08/07,1,"fartbox vol dir la capsa dels pets"
-,"Quin d'aquests no és un gestor de#finestres modern per l'ubuntu?","Beryl","Compiz Fusion","Aero",3,"carles",07/09/07,2,"Evidentment l'aereo és pel Hasefrog Diòptries"
+,"Quin d'aquests no és un gestor de#finestres modern per l'Ubuntu?","Beryl","Compiz Fusion","Aero",3,"carles",07/09/07,2,"Evidentment l'aereo és pel Hasefrog Diòptries"
 ,"Quin d'aquests no és un#entorn Linux per dispositius mòbils?","Yunki","Sato","Opie",1,"carles",07/09/07,3,
-,"Com es diu el gestor de fitxers#del KDE 4?","konqueror","nautilus","Dolphin",3,"carles",07/09/07,4,"Tot i que ja el trobem predeterminat a les darreres versions de kde"
-,"Quin d'aquests programes#que permeten accés remot#no està als repositoris d'ubuntu.","Les mateixes X","vnc","nx",3,"carles",26/08/07,5,
-,"Com ho farien 4 usuaris de hasefrog#per engegar un cotxe que no funciona?","Reiniciarien el servei del motor","Sortirien i tornarien a entrar","Desmuntant el cotxe",2,"carles",07/09/07,6,"he he"
-,"Un d'aquests no és un programa#per manipular so.","Adour","Audacity","Blender",3,"carles",07/09/07,7,"El Ardour és un gran programa multipista per treballar en temps real.#L'audacity és gran programa per tractar so#I el blender és programa bonissim de diseny gràfic en 3D. "
+,"Com es diu el gestor de fitxers#del KDE 4?","konqueror","nautilus","Dolphin",3,"carles",07/09/07,4,"Tot i que ja el trobem predeterminat a les darreres versions de KDE."
+,"Quin d'aquests programes#que permeten accés remot#no està als repositoris d'Ubuntu.","Les mateixes X","vnc","nx",3,"carles",26/08/07,5,
+,"Com ho farien 4 usuaris de hasefrog#per engegar un cotxe que no funciona?","Reiniciarien el servei del motor","Sortirien i tornarien a entrar","Desmuntant el cotxe",2,"carles",07/09/07,6,
+,"Quin d'aquests programes no és#per manipular so.","Adour","Audacity","Blender",3,"carles",07/09/07,7,"El Ardour és un gran programa multipista per treballar en temps real.#L'audacity és un gran programa per tractar so.#I el Blender és un programa boníssim de disseny gràfic en 3D."
 ,"Quin d'aquests programes#no és un programa de diseny#vectorial","scribus","inkscape","xaralx",1,"carles",25/08/07,8,"es un programa d'autoedició"
 ,"El millor editor lliure d'imatges matricials és:","gimp","gaim","gcc",1,"Nil",18/08/07,9,"El gimp és un programa de# tractament d'imatges#el gaim de missatgeria instantània# (ara rebatejat com a pidgin)#i el gcc el compilador de# llenguatge c i c++. "
 ,"El mythtv no permet","Veure i enregistrar la tele","Fer video trucades","Fer PDFs",3,"carles",18/08/07,10,"És un sistema media center collonut però no serveix per fer PDFs"
@@ -28,18 +28,13 @@
 ,"Quin es el nou nom del Gaim?","Pidgin","Gaim (no ha canviat)","Amsn",1,"Nil",24/08/07,13,
 ,"Quin animal d'aquests és germà#però no amic de la guineu de foc","L'escarabat de neu","La llúdriga de gel","La gavina de foc",2,"carles",18/08/07,14,"L'any 2006 l'equip de debian va fer una separació de la versió oficial del firefox per que l'equip de treball de mozilla no incorporava les seves actualitzacions a temps. Al fer-ho van haver de canviar el logotip d'aquest per un altre ja que estava protegit per drets d'autor."
 ,"Què volen dir les sigles KDE?","K Desktop Enviroment","KDE Data Extruded","Kentucky Department of Education",1,"carles",07/09/07,15,"La 3a també és correcta, però no es el nostre cas"
-,"Quan l'equip de traductors del#KDE ens parlen de la mida#de la caixa. Es refereixen a:","Majúscules / minúscules","Marges de les finestres","Tipus de monitor",1,"carles",26/08/07,16,"Això que ens pot sonar estrany no és un error de traducció. Ve de la mida e les caselles (caixes) que s'usaven en les impremtes. On les majúscules eren més grans. "
+,"Quan l'equip de traductors del#KDE ens parlen de la mida#de la caixa. Es refereixen a:","Majúscules / minúscules","Marges de les finestres","Tipus de monitor",1,"carles",26/08/07,16,"Això que ens pot sonar estrany no és un error de traducció. Ve de la mida de les caselles (caixes) que s'usaven en les impremtes. On les majúscules eren més grans."
 ,"Quin animal és la mascota del kde?","Un drac","Una salamandra","Un pingüí",1,"carles",25/08/07,17,
 ,"Com es diu aquest escriptori?","Enlighement","Enlightement","Enlightenement",2,"carles",07/09/07,18," "
 ,"Quin d'aquests programes no es un reproductor de video?","Totem","Xine","Pone",3,"Nil",07/09/07,19,
 ,"Com es diu el popular programa de Karaoke per a GNU/Linux inspirat amb un conegut joc de la PlayStation?","UltraStar-NG","SingStar","UltraStar",1,"Cortsenc",02/09/07,20,"UltraStar a seques, esta programat amb Delphi i només esta disponible per a Windows, i UltraStar-NG és una reescriptura del programa amb C pensada per a fer-se servir amb GNU/Linux."
 ,"Estas mirant el darrera de la torre i tens el cable MiniJack dels altaveus a la mà. L'has de colocar a un dels forats que li van be, però... n'hi ha tres!! De quin color és l'orifici per on has de posar el cable dels altaveus?","Rosa","Verd","Blau",2,"Cortsenc",02/09/07,21,
 ,"Quina d'aquestes Wikipedies te més articles que la Viquipèdia catalana?","Romanesa","Danesa","Turca",3,"Cortsenc",02/09/07,22,
-,"Com ho farien 4 usuaris de hasefrog#per engegar un cotxe que no funciona?","Reiniciarien el servei del motor","Sortirien i tornarien a entrar","Desmuntant el cotxe",2,"carles",07/09/07,23,"he he"
-,"Com es diu el gestor de fitxers#del KDE 4?","konqueror","nautilus","Dolphin",3,"carles",07/09/07,24,"Tot i que ja el trobem predeterminat a les darreres versions de kde"
-,"Quin d'aquests no és un gestor de#finestres modern per l'ubuntu?","Beryl","Compiz - Fusion","Aero",3,"carles",07/09/07,25,"Evidentment l'aereo és pel Hasefrog Diòptries"
-,"Un d'aquests no és un programa#per manipular so.","Adour","Audacity","Blender",3,"carles",07/09/07,26,"El Ardour és un gran programa multipista per treballar en temps real.#L'audacity és gran programa per tractar so#I el blender és programa bonissim de diseny gràfic en 3D."
-,"Quin d'aquests no és un#entorn Linux per dispositius mòbils?","Yunki","Sato","Opie",1,"carles",07/09/07,27,
 ,"Com es diuen els dos formats de dvd d'alta capacitat que pretenen governar-ne el mercat?","hd-dvd i blue-ray","vhs i hd-dvd","dvd-ram i nas",1,"papapep",08/09/07,28,
 ,"Quina d'aquestes tecnologies no és de descàrrega de fitxers ""entre iguals""?","riera","torrent","edonkey",2,"papapep",08/09/07,29,
 ,"Quin dels següents és un programa fet específicament per poder jugar a jocs del Windows sota Linux?","Cedega","Gamix","Wine",1,"RainCT",30/08/07,30,"Wine és per a tot tipus de programes, i Gamix és una especificació per a una consola de jocs lliure."
@@ -56,4 +51,5 @@
 ,"Quin programa de MSDOS va inspirar#les comandes de l'editor de text joe?","WordPerfect","WordStar","PageMaker",2,"quiron",09/09/07,41,
 ,"Que et respon l'aptitude quan li#preguntes per les vaques? (aptitude moo)","Et mostre l'ajuda del programa","Et diu que no li agraden les vaques","Et diu que no té ous de pasqua",3,"quiron",09/09/07,42,
 ,"On no podem connectar un disc dur amb l'Ubuntu?","Al cable SATA","El cable IDE ATA","Al cable ext3",3,"Carles",18/10/07,43,"El ext3 és un format lògic de disc, no un tipus de connector."
-,"Quin dels següents reproductors de música ve instaŀlat per defecte amb l'Ubuntu?","Rythmbox","Winamp","Windows Media Player",1,"RainCT",18/10/07,44
+,"Quin dels següents reproductors de música ve instaŀlat per defecte amb l'Ubuntu?","Rythmbox","Winamp","Windows Media Player",1,"RainCT",18/10/07,44,
+,"Segons la filosofia UNIX, un programa...","ha de fer una sola cosa ben feta","ha de poder fer com més coses millor","no existeix, el terme emprat és «aplicació»",1,"RainCT",18/10/07,45
