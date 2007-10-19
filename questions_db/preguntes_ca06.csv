@@ -13,8 +13,8 @@
 ,,,,,,,,,
 ,,,,,,,,,
 ,"Pregunta","Resposta 1 ","Resposta 2","Resposta 3","ok","Autor ","Data","Num","Comentari o notes"
-,"Quin d'aquests no és un gestor#de finestres en ubuntu","openbox","fartbox","fluxbox",2,"carles",18/08/07,1,"fartbox vol dir la capsa dels pets"
-,"Quin d'aquests no és un gestor de#finestres modern per l'ubuntu?","Beryl","Compiz - Fusion","Aero",3,"carles",07/09/07,2,"Evidentment l'aereo és pel Hasefrog Diòptries"
+,"Quin d'aquests no és un gestor#de finestres de l'Ubuntu","Openbox","Fartbox","Fluxbox",2,"carles",18/08/07,1,"fartbox vol dir la capsa dels pets"
+,"Quin d'aquests no és un gestor de#finestres modern per l'ubuntu?","Beryl","Compiz Fusion","Aero",3,"carles",07/09/07,2,"Evidentment l'aereo és pel Hasefrog Diòptries"
 ,"Quin d'aquests no és un#entorn Linux per dispositius mòbils?","Yunki","Sato","Opie",1,"carles",07/09/07,3,
 ,"Com es diu el gestor de fitxers#del KDE 4?","konqueror","nautilus","Dolphin",3,"carles",07/09/07,4,"Tot i que ja el trobem predeterminat a les darreres versions de kde"
 ,"Quin d'aquests programes#que permeten accés remot#no està als repositoris d'ubuntu.","Les mateixes X","vnc","nx",3,"carles",26/08/07,5,
@@ -55,3 +55,5 @@
 ,"Quin és el significat de les inicials Gnome?","No volen dir res","GNU Network Object Model Environment","GNU Notice Oriented Maked Enviroment",2,"quiron",09/09/07,40,
 ,"Quin programa de MSDOS va inspirar#les comandes de l'editor de text joe?","WordPerfect","WordStar","PageMaker",2,"quiron",09/09/07,41,
 ,"Que et respon l'aptitude quan li#preguntes per les vaques? (aptitude moo)","Et mostre l'ajuda del programa","Et diu que no li agraden les vaques","Et diu que no té ous de pasqua",3,"quiron",09/09/07,42,
+,"On no podem connectar un disc dur amb l'Ubuntu?","Al cable SATA","El cable IDE ATA","Al cable ext3",3,"Carles",18/10/07,43,"El ext3 és un format lògic de disc, no un tipus de connector."
+,"Quin dels següents reproductors de música ve instaŀlat per defecte amb l'Ubuntu?","Rythmbox","Winamp","Windows Media Player",1,"RainCT",18/10/07,44
