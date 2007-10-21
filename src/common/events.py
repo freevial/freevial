@@ -88,7 +88,7 @@ class EventHandle:
 	
 	def isDown( self ):
 		
-		return True if self.event.type != pygame.KEYDOWN else False
+		return True if self.event.type == pygame.KEYDOWN else False
 	
 	
 	def isClick( self, request = 0 ):

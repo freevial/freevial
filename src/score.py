@@ -162,13 +162,13 @@ class Score:
 				
 				if escriu and not mostra_ajuda and not mostra_credits:
 
+
 					if eventhandle.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
 						escriu = 0
 						if self.joc.teams[element_seleccionat].nom == '' and eventhandle.isKey('ESCAPE'):
 							self.joc.teams[element_seleccionat].actiu = 0
 					
 					elif eventhandle.isDown():
-						newname = None
 						
 						if eventhandle.isKey('BACKSPACE'):
 							if len(self.joc.teams[element_seleccionat].nom) > 0:
@@ -241,7 +241,7 @@ class Score:
 					if self.joc.teams[element_seleccionat].actiu:
 						for num in range(1, 7):
 							if eventhandle.keyUp(str(num), 'KP' + str(num)):
-								self.joc.teams[element_seleccionat].canviaCategoria( str(num) )
+								self.joc.teams[element_seleccionat].canviaCategoria( num )
 					
 					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 
@@ -280,7 +280,7 @@ class Score:
 							}
 						estat = replaceModes[ estat ]
 
-					if eventhandle.keyUp('e'):
+					if eventhandle.keyUp('e') and not Global.LOCKED_MODE :
 						self.so_ok.play()
 						visca = Visca( self.joc )
 						resultat = visca.juguem( self.joc, self.joc.teams[element_seleccionat].nom )

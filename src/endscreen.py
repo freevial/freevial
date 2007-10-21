@@ -187,7 +187,7 @@ class Visca:
 				if eventhandle.isQuit():
 					sys.exit()
 							
-				if eventhandle.keyUp('q', 'ESCAPE') and not getLockedMode():
+				if eventhandle.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
 					return
 				
 				if eventhandle.keyDown('PRINT'):
