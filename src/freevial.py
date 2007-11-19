@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 #
@@ -36,6 +35,10 @@ from preguntador import Preguntador
 from roda import Roda
 
 gettext.install('freevial', '/usr/share/locale', unicode=1)
+
+# Version information
+VERSION = '1.0'
+SERIES = 'gresca'
 
 
 class Freevial:
@@ -135,18 +138,31 @@ class Freevial:
 
 
 if '-h' in sys.argv or '--help' in sys.argv:
-	print _('use freevial [OPTIONS]')
 	print
-	print _('-d, --debug\tDebug mode')
-	print _('-m, --mute\tDisable all sounds and music')
-	print _('-no-sound\tDisable sound')
-	print _('--no-music\tDisable music')
-	print _('--fps\t\tPrint framerate on screen')
-	print _('--help\t\tDisplay this message')
-	print _('-fs, --fullscreen\tStart in full screen') # Aka Alèx ets un tocacollons
-	print _('-l\t--locked\tStart game in locked mode')
-
+	print _('Usage: freevial [OPTIONS]')
+	print
+	print _('-d, --debug\t\tDebug mode')
+	print _('-m, --mute\t\tDisable all sounds and music')
+	print _('-fs, --fullscreen\tStart in fullscreen mode')
+	print _('-l, --locked\t\tStart game in locked mode')
+	print _('-h, --help\t\tDisplay this message')
+	print _('-v, --version\t\tPrint information about the current version')
+	print _('--no-sound\t\tDisable sound')
+	print _('--no-music\t\tDisable music')
+	print _('--fps\t\t\tPrint framerate on screen')
+	print
+	
  	exit( 0 )
+
+if '-v' in sys.argv or '--version' in sys.argv:
+	print
+	print 'FREEVIAL, a trivia platform for use on community meetings'
+	print 'You are running version %s, which is part of the «%s» series.' % ( VERSION, SERIES )
+	print
+	print 'https://launchpad.net/freevial/%s' % SERIES
+	print ''
+	
+	sys.exit( 0 )
 
 if '-d' in sys.argv or '--debug' in sys.argv:
 	Global.DEBUG_MODE = True
