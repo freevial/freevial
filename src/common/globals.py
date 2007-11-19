@@ -56,6 +56,7 @@ Global.screen_y = 768
 Global.fps_limit = 40
 
 Global.basefolder = '../data'
+Global.database = '../questions_db'
 
 Global.folders = {
 		'images': os.path.join(Global.basefolder, 'images'),

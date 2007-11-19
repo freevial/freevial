@@ -24,14 +24,14 @@
 #
 
 import os
+import sys
 import csv
 import copy
 import random
 
 from common.freevialglob import *
 from common.uncompress import Uncompressor
-
-carpeta_de_preguntes = '../questions_db'
+from common.globals import GlobalVar, Global
 
 
 class LoadDatabase:
@@ -39,7 +39,14 @@ class LoadDatabase:
 	def __init__(self, directory):
 		""" Load a question database (directory or compressed file). """
 		
-		self.files = self._csv_in_path(self._get_real_path(directory))
+		try:
+			self.files = self._csv_in_path(self._get_real_path(directory))
+		
+		except IOError:
+			print _('Error: Couldn\'t find the current questions database.')
+			print _('You can provide the location to that one you want to use by passing the --database option.')
+			print _('For example: freevial --database ~/questions.tar.gz')
+			sys.exit(1)
 	
 	
 	def get(self):
@@ -50,7 +57,11 @@ class LoadDatabase:
 	def _get_real_path(self, directory):
 		""" If the given path is directory it is returned as-is, if it's
 		is a compressed file the path to a extracted version to it (on a
-		temporal directory) is returned. Else ValueError is raised. """
+		temporal directory) is returned. Else ValueError is raised; if
+		the directory/file doesn't exist at all, it raises IOError."""
+		
+		if not os.path.exists(directory):
+			raise IOError, _('Indicated directory of file doesn\'t exist or has wrong permissions.')
 		
 		if os.path.isdir(directory):
 			return directory
@@ -195,12 +206,12 @@ class CategoriaPreguntes:
 ###########################################
 
 categoriespreguntes = []
-arxius_de_preguntes = LoadDatabase(carpeta_de_preguntes).get()
+arxius_de_preguntes = LoadDatabase(Global.database).get()
 
 for num in range(0, len(arxius_de_preguntes) ):
 	cat = CategoriaPreguntes( num + 1 )
 	try:
-		cat.importQuestions( os.path.join(carpeta_de_preguntes, arxius_de_preguntes[num]) )
+		cat.importQuestions( os.path.join(Global.database, arxius_de_preguntes[num]) )
 		categoriespreguntes.append( cat )
 	except ValueError:
 		print 'Error with «%s».' % arxius_de_preguntes[num]

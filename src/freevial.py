@@ -29,6 +29,15 @@ import gettext
 from math import *
 
 from common.globals import GlobalVar, Global
+
+# This is provisionally here for technical reasons...
+if '--database' in sys.argv:
+	dbpath = ' '.join(sys.argv[1:])
+	dbpath = dbpath[dbpath.find('--database ') + 11:]
+	if dbpath.find(' ') != -1:
+		dbpath = dbpath[:dbpath.find(' ')]
+	Global.database = dbpath
+
 from common.freevialglob import *
 from score import Score
 from preguntador import Preguntador
@@ -147,6 +156,7 @@ if '-h' in sys.argv or '--help' in sys.argv:
 	print _('-l, --locked\t\tStart game in locked mode')
 	print _('-h, --help\t\tDisplay this message')
 	print _('-v, --version\t\tPrint information about the current version')
+	print _('--database <path>\tSet the absolute path to the database file / directory.')
 	print _('--no-sound\t\tDisable sound')
 	print _('--no-music\t\tDisable music')
 	print _('--fps\t\t\tPrint framerate on screen')
@@ -185,6 +195,9 @@ if '--no-sound' in sys.argv:
 
 if '--no-music' in sys.argv:
 	Global.MUSIC_MUTE = True
+
+# For technical reasons, the "--database" option is parsed somewhere
+# at the top of this file.
 
 try:
 	joc = Freevial()
