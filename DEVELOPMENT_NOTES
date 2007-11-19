@@ -42,8 +42,8 @@
 * Pàgina web per al Freevial
    
    Prioritat: Baixa
-   Estat: Pendent
-   Desenvolupador: N/a
+   Estat: En progrés
+   Desenvolupador: Carles Oriol, RainCT
 
 * Formulari per a enviar preguntes
    
@@ -63,7 +63,7 @@
 #############################################
 # NOTES
 
-* Carles: NO FACIS CAP PUSH SENSE PROVAR SI TOT FUNCIONA BÉ!
+* Carles: NO FACIS CAP PUSH SENSE PROVAR SI TOT FUNCIONA BÉ! :P
 
 * [Python] if shorthand: print "Sí" if cert else "No"
 
