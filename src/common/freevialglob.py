@@ -97,7 +97,7 @@ def loadImage( name, colorkey = None, rotate = 0 ):
 	if rotate != 0:
 		image = rotateImage(image, rotate)
 	
-	return image	# [ image, image.get_rect()
+	return image	# [ image, image.get_rect() ]
 
 
 def loadSound( name, volume = 1.0, music = False ):

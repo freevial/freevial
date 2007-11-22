@@ -189,8 +189,9 @@ class Score:
 						if not mostra_ajuda and not mostra_credits:
 							if not Global.LOCKED_MODE:
 								if fesPregunta( self.joc.screen , valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0:
-									pygame.mixer.music.fadeout( 500 )
-									pygame.time.wait( 500 )
+									if not Global.MUSIC_MUTE:
+										pygame.mixer.music.fadeout( 500 )
+										pygame.time.wait( 500 )
 									return -1
 						else:
 							mostra_ajuda = mostra_credits = 0
@@ -198,7 +199,7 @@ class Score:
 					if estat == 0:
 						
 						if eventhandle.keyUp('RIGHT', 'LEFT'):
-							element_seleccionat += +1 if (0 == (element_seleccionat % 2)) else -1 
+							element_seleccionat += 1 if (0 == (element_seleccionat % 2)) else -1 
 							self.so_sub.play() 
 						
 						if eventhandle.keyUp('DOWN'): 
