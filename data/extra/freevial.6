@@ -1,0 +1,66 @@
+.TH FREEVIAL "6" "November 24, 2007" "Freevial Gresca"
+
+.SH NAME
+freevial \- trivia platform for community events
+
+.SH SYNOPSIS
+.B freevial
+[\fIOPTIONS\fR] [\-\-database <PATH>]
+
+.SH DESCRIPTION
+This page briefly documents the \fBfreevial\fR command. Freevial is
+trivia-like game for community events (idealy to be played with a
+projector).
+
+.SH USAGE
+You may need to specify the path to the questions database you want to
+use with the \-\-database argument. The database can be a folder or a
+compressed file, but please remember that you have to indicate the absolute
+path to it.
+
+.SH OPTIONS
+.TP
+\fB-d\fR, \fB--debug\fR
+Run Freevial in debug mode (this doesn't change much at all).
+.TP
+\fB-m\fR, \fB--mute\fR
+Disable music and sounds.
+.TP
+\fB-f\fR, \fB--fullscreen\fR
+Start in fullscreen mode (it can be windowed ingame with F11).
+.TP
+\fB-l\fR, \fB--locked\fR
+Start in locked mode (game can't be closed nor questions aborted; unlock by pressing the
+l-key in the team selection screen).
+.TP
+\fB-h\fR, \fB--help\fR
+Prints the help and exists.
+.TP
+\fB-v\fR, \fB--version\fR
+Prints information about the current version and release series, and exists.
+.TP
+\fB--no-sound\fR
+Disables all sounds. You can use --mute to also disable the music.
+.TP
+\fB--no-music\fR
+Disables the music. You can use --mute to also disable sounds.
+.TP
+\fB--fps\fR
+Displays the framerate on screen.
+
+.SH REPORTING BUGS
+If you find any bug please report it on: https://bugs.launchpad.net/freevial/.
+
+.SH AUTHOR
+Freevial was written by Carles Oriol <carles@kumbaworld.com> and
+Siegfried-Angel Gevatter Pujals (RainCT) <siggi.gevatter@gmail.com>.
+
+.SH COPYRIGHT
+Copyright \(co 2007 The Freevial Team
+.PP
+Freevial is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License, either version 3 of
+the License or any later version.
+.PP
+Freevial is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; see the GNU General Public License for more details.

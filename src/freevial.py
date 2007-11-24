@@ -152,7 +152,7 @@ if '-h' in sys.argv or '--help' in sys.argv:
 	print
 	print _('-d, --debug\t\tDebug mode')
 	print _('-m, --mute\t\tDisable all sounds and music')
-	print _('-fs, --fullscreen\tStart in fullscreen mode')
+	print _('-f, --fullscreen\tStart in fullscreen mode')
 	print _('-l, --locked\t\tStart game in locked mode')
 	print _('-h, --help\t\tDisplay this message')
 	print _('-v, --version\t\tPrint information about the current version')
@@ -166,7 +166,7 @@ if '-h' in sys.argv or '--help' in sys.argv:
 
 if '-v' in sys.argv or '--version' in sys.argv:
 	print
-	print 'FREEVIAL, a trivia platform for use on community meetings'
+	print 'Freevial, a trivia platform for use on community events'
 	print 'You are running version %s, which is part of the «%s» series.' % ( VERSION, SERIES )
 	print
 	print 'https://launchpad.net/freevial/%s' % SERIES
@@ -180,7 +180,7 @@ if '-d' in sys.argv or '--debug' in sys.argv:
 if '-l' in sys.argv or '--locked' in sys.argv:
 	Global.LOCKED_MODE = True
 
-if '--fullscreen' in sys.argv or '-fs' in sys.argv:
+if '--fullscreen' in sys.argv or '-f' in sys.argv:
 	Global.FS_MODE = True
 
 if '--fps' in sys.argv:

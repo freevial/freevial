@@ -497,7 +497,7 @@ class frameRate():
 			self.lastTicks = pygame.time.get_ticks()
 
 		if surface:	
-			if self.textSurface and DISPLAY_FPS:
+			if self.textSurface and Global.DISPLAY_FPS:
 				# display the frame rate on the middle of the screen's bottom
 				#surface.blit( self.textSurface, ( (( Global.screen_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )
 				surface.blit( self.textSurface, (250, 740 ) )
