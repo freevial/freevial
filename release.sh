@@ -64,7 +64,7 @@ fi
 cp $TMPDIR/freevial-$VERSION.tar.gz releases/
 
 # Print a success message
-echo "File «$CURDIR/freevial-$VERSION.tar.gz» successfully generated."
+echo "File «./releases/freevial-$VERSION.tar.gz» successfully generated."
 
 # Clean up
 echo "Cleaning up..."
