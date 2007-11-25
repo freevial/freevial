@@ -14,10 +14,10 @@
 ,,,,,,,,,
 ,"Pregunta","Resposta 1 ","Resposta 2","Resposta 3","ok","Autor ","Data","Num","Comentari o notes"
 ,"En Mark Shuttleworth va considerar#que el LoCo Català és...","Una colla de merdetes","Una llàstima","Un exemple a seguir",3,"carles",18/08/07,1,"sabdfl: this is pretty fantastic - I love the fact that there is participation from cultural, artistic, development, linguisitic and educational sources"
-,"Quina d'aquestes característiques#no inclou l'edUbuntu?","Gestionar horaris d'una escola","Iniciar ordinadors en xarxa#sense instaŀlar, ni posar CDs","Veure DVDs zona 2",3,"carles",26/08/07,2,
-,"L'Ubuntu és reconegut com un sistema operatiu del tipus","Unix","Linux","GNU amb Linux",3,"carles",18/08/07,3,"EL sistema operatiu és GNU amb Linux. Linux sols és el nucli d'aquest i es un component més tant important com qualsevol altre"
-,"Quin d'aquests paquets no#serveix per instaŀlar programes","synaptic","ginstaller","adept",2,"carles",25/08/07,6,
-,"Quin d'aquests sistema d'arxius no es#pot llegir i escriure en Ubuntu","ext3","ntfs","sata",3,"carles",18/08/07,7,"sata no és un sistema d'arxius"
+,"Quina d'aquestes característiques#no inclou l'Edubuntu?","Gestionar horaris d'una escola","Iniciar ordinadors en xarxa#sense instaŀlar, ni posar CDs","Veure DVDs zona 2",3,"carles",26/08/07,2,
+,"L'Ubuntu és reconegut com un sistema operatiu del tipus","Unix","Linux","GNU amb Linux",3,"carles",18/08/07,3,"EL sistema operatiu és GNU amb Linux. Linux sols és el nucli d'aquest i es un component tant important com qualsevol altre.##En quant a la primera opció, encara que s'hi assembli molt GNU/Linux no és un sistema UNIX aprovat."
+,"Quin d'aquests paquets no#serveix per instaŀlar programes","Synaptic","Ginstaller","Adept",2,"carles",25/08/07,6,
+,"Quin d'aquests sistema d'arxius no es#pot llegir ni s'hi pot escriure en Ubuntu","ext3","ntfs","sata",3,"carles",18/08/07,7,"sata no és un sistema d'arxius"
 ,"Quins són els colors del logotip del Kubuntu?","Tons de blau","Blau, gris i blanc","Blau, verd i blanc",1,"Nil",18/08/07,8,
 ,"Com es dirà la versió 8.04 LTS d'Ubuntu","Hangy Haseforg","Hungry Hippo","Hardy Heron",3,"carles",07/09/07,9,
 ,"Quin d'aquests Linux NO és#una variant d'Ubuntu?","Ubuntu Studio","Guadalinex","Linkat",3,"carles",07/09/07,10,"LinKat és la distribució GNU/Linux del Departament d'Educació de la Generalitat de Catalunya. Està basada en la distribució Suse i el funcionament del seu programari es basa amb paquets rpm"
@@ -28,7 +28,6 @@
 ,"Quin d'aquests formats es pot llegir#amb la instaŀlació predeterminada#d'Ubuntu","mp3","dvd","ogg",3,"carles",18/08/07,15,"Els formats mp3 i dvd (mpeg) son formats restrictius, un protegit per patents i l'altre en alguns països no es pot ni mostrar les fonts ja que implica el rebentar la protecció dels dvds. Malgrat tot no hi ha cap problema per usar qualsevol d'ells un cop instaŀlat el sistema"
 ,"Quin és el bug número 1 del Launchpad?","Es penja","El monopoli de microsoft","Problemes amb les gràfiques",2,"Nil",07/09/07,16,
 ,"GoBUNTU és:","Una versió d'Ubuntu amb#només Gnome","Una versió d'Ubuntu amb#només programari lliure","La distribució, basada en#Ubuntu, dels aficionats al GO",2,"lluisanunez",24/08/07,19,"http://en.wikipedia.org/wiki/Gobuntu"
-,"Quina d'aquestes característiques#no inclou l'EdUbuntu?","Gestionar horaris d'una escola","Iniciar ordinadors en xarxa#sense instaŀlar, ni posar CDs","Veure DVDs zona 2",3,"carles",26/08/07,20,
 ,"Quin és el nick a l'IRC#d'en Mark Shuttleworth?","sabdfl","sticsis","rtfm",1,"papapep",18/08/07,22,"Self-Appointed Benevolent Dictator For Life"
 ,"Quina va ser la primera LTS d'Ubuntu?","6.04","7.10","5.10",1,"cortsenc",18/08/07,23,1
 ,"Quin d'aquests paquets no#serveix per a  instal·lar programes?","synaptic","ginstaller","adept",2,"carles",25/08/07,27,
@@ -40,7 +39,7 @@
 ,"En el desenvolupament d'una nova versió d'Ubuntu, quin d'aquests fets té lloc abans?","DebianImportFreeze","KernelFreeze","UpstreamVersionFreeze",1,"RainCT",30/08/07,35,"https://wiki.Ubuntu.com/GutsyReleaseSchedule"
 ,"La propera versió LTS d'Ubuntu s'anomenarà...","Gutsy Gibbon","Grumpy Groundhog","Hardy Heron",3,"RainCT",30/08/07,36,"La propera versió Long Term Support serà la Hardy Heron. Grumpy Groundhog és el nom que reben sempre els últims 'builds' del CVS."
 ,"Que cal fer abans de poder penjar coses al REVU?","Posar la clau GPG al launchpad","Assegurar-se que la llicència és competible amb la GPL","Mirar que no hi hagi un paquet per a la mateixa tasca",1,"quiron",09/09/07,37,
-,"Quan es fa oficialitzar el LoCo team Catala","15 de maig del 07","No es oficial","16 desembre del 06",1,"quiron",09/09/07,38,
+,"Quan es va oficialitzar el LoCo Team català","El 15 de maig del 07","No és oficial","El 16 desembre del 06",1,"quiron",09/09/07,38,
 ,"Que vol dir MOTU?","És un mitja de transport","Master Of The Universe","Multitask operated time unit",2,"quiron",09/09/07,39,"Els Masters Of The Universe (MOTU) són els empaquetadors d'Ubuntu dels repositoris Universe i Multiverse."
 ,"Quin és el servidor del canal de chat de#IRC de la comunitat catalana d'Ubuntu","Freenode","Quakenode","canonicalnode",1,"quiron",09/09/07,40,
 ,"Quina tecnologia inclou per defecte la nova versió de l'Ubuntu (la Gutsy)?","Beryl","Compiz","Compiz Fusion",3,"RainCT",12/10/07,41,"La Gutsy Gibbon no només inclourà, sinò que també portarà habilitada per defecte en tots aquelles màquines que ho soportin, el Compiz Fusion, el producte resultat de la unió de Compiz amb la seva branca Beryl."

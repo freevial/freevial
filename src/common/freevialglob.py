@@ -338,7 +338,7 @@ def createTextSurface( frases, color, intensitat = 25 ):
 			
 			pos += text_pregunta.get_height()
 		else:
-			pos += 	font_size	
+			pos += font_size	
 
 		nline += 1
 	
@@ -377,6 +377,9 @@ def readLocalizedHelpFile( help_section ):
 		
 		# skip comments
 		#if line[:1] == '#': continue
+		
+		if not line[-1:].isalnum():
+			line = line[:-1]
 		
 		lines.append ( line )
 	
