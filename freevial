@@ -37,7 +37,7 @@ if not isdir(directory):
 	else:
 		directory = '/usr/share/games/freevial/src'
 		if not isdir(directory):
-			print "Couldn't determine the path to Freevial's directory."
+			print "Couldn't determine the path to any existing Freevial installation."
 			sys.exit(1)
 
 os.chdir(directory)
