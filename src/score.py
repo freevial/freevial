@@ -287,7 +287,7 @@ class Score:
 
 			self.skin.scorePintaMascaraDeFons( self.joc.screen )
 
-			self.skin.scorePintaPuntuacions( self.joc.screen, self.joc, element_seleccionat, estat, escriu, mostra_estad )
+			self.skin.scorePintaPuntuacions( self.joc.screen, self.joc, element_seleccionat, estat, escriu, mostra_estad, frate )
 			
 			self.skin.scorePintaLocked( self.joc.screen )
 			

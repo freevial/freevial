@@ -179,7 +179,7 @@ class Skin:
 
 		screen.blit( self.mascara_de_fons, (0, 0) )
 		
-	def scorePintaPuntuacions( self, screen, joc, element_seleccionat, estat, escriu, mostra_estad ):
+	def scorePintaPuntuacions( self, screen, joc, element_seleccionat, estat, escriu, mostra_estad, frate ):
 			
 		# pintem les puntuacions
 		for num in range(0, self.skin_maxim_equips):
