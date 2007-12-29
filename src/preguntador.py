@@ -58,6 +58,7 @@ class Preguntador:
 		self.postextx= 80
 		self.postexty = 40
 		
+		self.categoria = None
 		self.pregunta_actual = None
 		self.mostrasolucions = self.seleccio = 0
 		self.ypos = 190
@@ -156,10 +157,10 @@ class Preguntador:
 		for num in range(0, 3):
 			self.sfc_resposta[ num ] = self.pintatext( self.pregunta_actual[ num + 2 ], self.mida_font, 1024 - 260 )
 
-		self.sfc_npregunta = render_text( str(self.pregunta_actual[8]), (255,255,255), 100 )
+		self.sfc_npregunta = render_text( str(categoriespreguntes[self.categoria].currentQuestionNumber()), (255,255,255), 100 )
 		self.sfc_npregunta.set_alpha( 64 )
 
-		self.sfc_apregunta = render_text( str(self.pregunta_actual[6]), (255,255,255), 16 )
+		self.sfc_apregunta = render_text( str(self.pregunta_actual[5]), (255,255,255), 16 )
 		self.sfc_apregunta.set_alpha( 64 )	
 
 		self.temps_inici_pregunta = time.time()
@@ -175,7 +176,8 @@ class Preguntador:
 	# si la categoria és 0 no té en compte el valor
 	def atzar( self, categoria ):
 		
-		self.pregunta_actual = categoriespreguntes[categoria - 1 ].agafaPregunta()
+		self.categoria = categoria - 1
+		self.pregunta_actual = categoriespreguntes[self.categoria].question()
 		
 		self.inicialitza_pregunta()
 
@@ -304,7 +306,7 @@ class Preguntador:
 					if self.seleccio != 0:
 						acaba = 1
 				
-				if eventhandle.keyUp('F3') and self.mostrasolucions == 3 and len(self.pregunta_actual[9]) > 5:	
+				if eventhandle.keyUp('F3') and self.mostrasolucions == 3 and len(self.pregunta_actual[6]) > 5:	
 					mostra_comentaris ^= 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
@@ -319,10 +321,10 @@ class Preguntador:
 					else:
 						self.so_nook.play()	
 					
-					notes = self.pregunta_actual[9].split('#') if self.pregunta_actual[9] != "" else "."
-					sfc_comentaris =  createTextSurface( notes, (128,255,255), 25 )
+					notes = self.pregunta_actual[6].split('#') if self.pregunta_actual[6] != "" else "."
+					sfc_comentaris = createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
-					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.pregunta_actual[9] ) <= 5:
+					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.pregunta_actual[5] ) <= 5:
 						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(2500)
 						return self.pregunta_actual[0] if ( self.pregunta_actual[5] == self.seleccio) else 0
@@ -413,15 +415,15 @@ class Preguntador:
 					else:
 						if self.seleccio == (num + 1):
 							self.joc.screen.blit( self.solucio_nook, (posn, linia_act + (150 * num)) )
-		
-				if len( self.pregunta_actual[9] ) > 5:
+				
+				if len( self.pregunta_actual[6] ) > 5:
 					self.joc.screen.blit( self.info[0] if (int(time.time() * 3) % 3) == 0 else self.info[1], (self.postextx, 150) )
-	
+			
 			if mostra_punt_de_categoria:
 				if match_point:
 					t = time.time()
-					for compta in range( 0, 16) :
-						self.joc.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (500+ cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
+					for compta in range( 0, 16 ) :
+						self.joc.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (500 + cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
 				else:
 					self.joc.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (880, 130) )
 

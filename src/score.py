@@ -76,12 +76,12 @@ class Score:
 		element_seleccionat = self.joc.current_team
 		nou_grup = 1 if ( teamsActius( self.joc.teams ) == 0 ) else 0
 		
-		# Estats: 0 (triant teams), 1 (jugant),  2 (final)
-		estat = 1
+		# Modes: 0 (choosing teams), 1 (playing),  2 (game ended)
+		mode = 1
 		
-		if nou_grup: estat = 0
+		if nou_grup: mode = 0
 		if teamsGuanyador( self.joc.teams ) != -1: 
-			estat = 2
+			mode = 2
 			mostra_estad = 1
 			element_seleccionat = teamsGuanyador( self.joc.teams )
 			self.skin.scoreSoOk()
@@ -95,7 +95,7 @@ class Score:
 		
 		while 1:
 			
-			if estat == 2:
+			if mode == 2:
 				if frate.segons() < 4.1 and int(frate.segons()) > surten:
 					surten = int( frate.segons() )
 					self.skin.scoreSoOk()
@@ -169,7 +169,7 @@ class Score:
 						else:
 							mostra_ajuda = mostra_credits = 0
 					
-					if estat == 0:
+					if mode == 0:
 						
 						if eventhandle.keyUp('RIGHT', 'LEFT'):
 							element_seleccionat += 1 if (0 == (element_seleccionat % 2)) else -1 
@@ -202,7 +202,7 @@ class Score:
 						
 						if eventhandle.keyUp('r') and teamsActius( self.joc.teams ) > 0:
 							atzar = 30 + int( random.randint(0, 30) )
-							estat = 1
+							mode = 1
 					
 					if eventhandle.keyUp('z'): 
 						if self.joc.teams[element_seleccionat].actiu:
@@ -219,21 +219,21 @@ class Score:
 					
 					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 
-						if estat == 1:
+						if mode == 1:
 							if not Global.MUSIC_MUTE:
 								pygame.mixer.music.fadeout( 2000 )
 							return element_seleccionat
 
-						elif estat == 0:
+						elif mode == 0:
 							if self.joc.teams[element_seleccionat].actiu and eventhandle.keyUp('SPACE') :
 								atzar = 30 + int( random.randint(0, 30) )
-								estat = 1
+								mode = 1
 							else:
 								if self.joc.teams[element_seleccionat].actiu: escriu ^= 1
 								else: nou_grup = 1
 						else:
 							if fesPregunta( self.joc.screen , valorText( HOS_NEW_GAME ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0:
-								estat = 0
+								mode = 0
 								mostra_estad = 0 
 				
 								for equip in self.joc.teams:
@@ -252,7 +252,7 @@ class Score:
 								1: 0,
 								2: 1,
 							}
-						estat = replaceModes[ estat ]
+						mode = replaceModes[ mode ]
 
 					if eventhandle.keyUp('e') and not Global.LOCKED_MODE :
 						self.skin.scoreSoOk()
@@ -264,9 +264,9 @@ class Score:
 					if eventhandle.keyUp('l'): 
 						Global.LOCKED_MODE = (not Global.LOCKED_MODE)
 
-					if eventhandle.keyUp('k', 'F3', 'F5'):
+					if eventhandle.keyUp('k', 'F3', 'F5') and mode == 0:
 						selcat = SelCat( self.joc )
-						selcat.juguem( estat )
+						selcat.juguem( mode )
 
 			if nou_grup == 1:
 				self.skin.scorePlayClic1
@@ -287,7 +287,7 @@ class Score:
 
 			self.skin.scorePintaMascaraDeFons( self.joc.screen )
 
-			self.skin.scorePintaPuntuacions( self.joc.screen, self.joc, element_seleccionat, estat, escriu, mostra_estad, frate )
+			self.skin.scorePintaPuntuacions( self.joc.screen, self.joc, element_seleccionat, mode, escriu, mostra_estad, frate )
 			
 			self.skin.scorePintaLocked( self.joc.screen )
 			
@@ -295,7 +295,7 @@ class Score:
 			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))
 			
-			self.help_on_screen.draw( self.joc.screen, (350, 740), HOS_SCORE_MODEW if escriu else estat)
+			self.help_on_screen.draw( self.joc.screen, (350, 740), HOS_SCORE_MODEW if escriu else mode)
 			
 			frate.next( self.joc.screen )
 			
