@@ -143,8 +143,15 @@ def GetDatabase( num, csvFile ):
 					line[ num ] = int(line[ num ])
 				except ValueError:
 					line[ num ] = 0
-			# 1) Pregunta.  2) Resposta 1.  3) Resposta 2.  4) Resposta 3.  5) Resposta correcta.  6) Autor.  7) Data.  8) Núm.  9) Comentari.
-			database.addQuestion( line[1], line[1 + line[5]], line[3] if line[5] != 2 else line[2], line[4] if line[5] != 3 else line[2], line[6], line[7], line[9] )
+			
+			database.addQuestion(
+				question = line[1],
+				answ1 = line[1 + line[5]],
+				answ2 = line[3] if line[5] != 2 else line[2],
+				answ3 = line[4] if line[5] != 3 else line[2],
+				author = line[6],
+				comments = line[9],
+				)
 		
 		# Get information from the header lines
 		elif comptaline == 1: continue

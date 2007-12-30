@@ -166,7 +166,7 @@ if '-h' in sys.argv or '--help' in sys.argv:
 
 if '-v' in sys.argv or '--version' in sys.argv:
 	print
-	print 'Freevial, a trivia platform for use on community events'
+	print _('Freevial, a trivia platform for use on community events')
 	print 'You are running version %s, which is part of the «%s» series.' % ( VERSION, SERIES )
 	print
 	print 'https://launchpad.net/freevial/%s' % SERIES

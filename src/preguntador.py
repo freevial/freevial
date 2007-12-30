@@ -59,11 +59,13 @@ class Preguntador:
 		self.postexty = 40
 		
 		self.categoria = None
-		self.pregunta_actual = None
-		self.mostrasolucions = self.seleccio = 0
+		self.current_question = None
+		self.num_asked_questions = 0
+		self.show_answers = 0
+		self.selected = 0
 		self.ypos = 190
 		
-		# carrega d'imatges
+		# Load images
 		self.fons = range(0, 6)
 		for num in range(0, 6):
 			self.fons[num] = loadImage( nomImatgeCategoria( num ) )
@@ -149,18 +151,18 @@ class Preguntador:
 	#
 	def inicialitza_pregunta( self ):
 
-		self.seleccio = 0
+		self.selected = 0
 
-		self.sfc_pregunta  = self.pintatext( self.pregunta_actual[1], self.mida_font, 1024 - 175 )
+		self.sfc_pregunta  = self.pintatext( self.current_question['text'], self.mida_font, 1024 - 175 )
 
 		self.sfc_resposta = range(0, 3)
-		for num in range(0, 3):
-			self.sfc_resposta[ num ] = self.pintatext( self.pregunta_actual[ num + 2 ], self.mida_font, 1024 - 260 )
+		for num in xrange(0, 3):
+			self.sfc_resposta[ num ] = self.pintatext( self.current_question[ 'opt' + str(num + 1) ], self.mida_font, 1024 - 260 )
 
-		self.sfc_npregunta = render_text( str(categoriespreguntes[self.categoria].currentQuestionNumber()), (255,255,255), 100 )
+		self.sfc_npregunta = render_text( str(self.num_asked_questions), (255,255,255), 100 )
 		self.sfc_npregunta.set_alpha( 64 )
 
-		self.sfc_apregunta = render_text( str(self.pregunta_actual[5]), (255,255,255), 16 )
+		self.sfc_apregunta = render_text( str(self.current_question['author']), (255,255,255), 16 )
 		self.sfc_apregunta.set_alpha( 64 )	
 
 		self.temps_inici_pregunta = time.time()
@@ -168,7 +170,7 @@ class Preguntador:
 		self.so_drum2.stop()
 		self.so_drum2.play()
 
-		self.mostrasolucions = 0
+		self.show_answers = 0
 
 	###########################################
 	#
@@ -177,7 +179,8 @@ class Preguntador:
 	def atzar( self, categoria ):
 		
 		self.categoria = categoria - 1
-		self.pregunta_actual = categoriespreguntes[self.categoria].question()
+		self.current_question = categoriespreguntes[self.categoria].question()
+		self.num_asked_questions += 1
 		
 		self.inicialitza_pregunta()
 
@@ -252,9 +255,9 @@ class Preguntador:
 					if not mostra_ajuda and not mostra_credits:
 						if not (Global.SOUND_MUTE or Global.MUSIC_MUTE):
 							pygame.mixer.fadeout(500)
-						if self.mostrasolucions == 0:
-							self.mostrasolucions = 1
-							self.seleccio = 0
+						if self.show_answers == 0:
+							self.show_answers = 1
+							self.selected = 0
 						acaba = 1
 					else:
 						mostra_ajuda = mostra_credits = 0
@@ -267,32 +270,32 @@ class Preguntador:
 					mostra_ajuda = 0
 					mostra_credits ^= 1
 				
-				if self.mostrasolucions == 0:
+				if self.show_answers == 0:
 					if eventhandle.keyUp('a', 'i'):
 						if eventhandle.isKey('a'): acaba = 1	
-						self.seleccio = 1
+						self.selected = 1
 						self.so_sub.play()
 					
 					if eventhandle.keyUp('b', 'o'):	
 						if eventhandle.isKey('b'): acaba = 1
-						self.seleccio = 2
+						self.selected = 2
 						self.so_sub.play()
 					
 					if eventhandle.keyUp('c', 'p'):	
 						if eventhandle.isKey('c'): acaba = 1
-						self.seleccio = 3
+						self.selected = 3
 						self.so_sub.play()
 					
 					if eventhandle.keyUp('DOWN', 'TAB'): 
-						self.seleccio += 1
-						if self.seleccio == 4:
-							self.seleccio = 1
+						self.selected += 1
+						if self.selected == 4:
+							self.selected = 1
 						self.so_sub.play()
 					
 					if eventhandle.keyUp(event, 'UP'): 
-						self.seleccio -= 1
-						if self.seleccio <= 0:
-							self.seleccio = 3	
+						self.selected -= 1
+						if self.selected <= 0:
+							self.selected = 3	
 						self.so_sub.play()
 				
 				if eventhandle.keyUp('z'):	
@@ -303,31 +306,31 @@ class Preguntador:
 						self.atzar( num )
 				
 				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
-					if self.seleccio != 0:
+					if self.selected != 0:
 						acaba = 1
 				
-				if eventhandle.keyUp('F3') and self.mostrasolucions == 3 and len(self.pregunta_actual[6]) > 5:	
+				if eventhandle.keyUp('F3') and self.show_answers == 3 and len(self.current_question['comment']) > 5:	
 					mostra_comentaris ^= 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if acaba == 1 or self.segons <= 0:
 				if not Global.MUSIC_MUTE:
 					pygame.mixer.music.fadeout(2500)
-				self.help_on_screen.sec_timeout = 3  
-				if self.mostrasolucions == 0:
-					self.mostrasolucions = 3		
-					if self.pregunta_actual[5] == self.seleccio:
+				self.help_on_screen.sec_timeout = 3
+				if self.show_answers == 0:
+					self.show_answers = 3
+					if self.current_question['answer'] == self.selected:
 						self.so_ok.play()
 					else:
-						self.so_nook.play()	
+						self.so_nook.play()
 					
-					notes = self.pregunta_actual[6].split('#') if self.pregunta_actual[6] != "" else "."
+					notes = self.current_question['comment'].split('#') if self.current_question['comment'] != "" else "."
 					sfc_comentaris = createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
-					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.pregunta_actual[5] ) <= 5:
+					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.current_question['answer'] ) <= 5:
 						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(2500)
-						return self.pregunta_actual[0] if ( self.pregunta_actual[5] == self.seleccio) else 0
+						return self.categoria if ( self.current_question['answer'] == self.selected) else 0
 					else:
 						compos = 768
 						mostra_comentaris = True;
@@ -337,9 +340,9 @@ class Preguntador:
 			if self.ypos >= Global.screen_y: self.ypos %= Global.screen_y
 			
 			# Pintem el fons animat
-			self.joc.screen.blit( self.fons[self.pregunta_actual[0] - 1], (0,0), (0, (768 - self.ypos), Global.screen_x, min(200, self.ypos)))
+			self.joc.screen.blit( self.fons[self.categoria - 1], (0,0), (0, (768 - self.ypos), Global.screen_x, min(200, self.ypos)))
 			if self.ypos < 200:
-				self.joc.screen.blit( self.fons[self.pregunta_actual[0] - 1], (0, min( 200, self.ypos)), (0, 0, Global.screen_x, 200 - min( 200, self.ypos)))
+				self.joc.screen.blit( self.fons[self.categoria - 1], (0, min( 200, self.ypos)), (0, 0, Global.screen_x, 200 - min( 200, self.ypos)))
 			
 			# i el sombrejem per fer l'efecte de desapariió
 			# també pintem el logotip del peu a l'hora que esborrem el fons de self.joc.screen
@@ -348,22 +351,22 @@ class Preguntador:
 			# preparem el sobrejat de l'opció seleccionada
 			ympos = self.ypos + 300
 			ympos %= 768
-			self.mascara.blit( self.fons[ self.pregunta_actual[0] - 1], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
+			self.mascara.blit( self.fons[ self.categoria - 1], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
 			
 			if ympos < 200: 
-				self.mascara.blit( self.fons[ self.pregunta_actual[0] - 1], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
+				self.mascara.blit( self.fons[ self.categoria - 1], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
 			
 			# i el mesclem amb la mascara per donar-li forma
 			self.mascara.blit( self.retalla_sel, (0,0))
 			
 			# pintem l'ombrejat on correspongui	
-			if self.seleccio == 1: self.joc.screen.blit( self.mascara, ( self.postextx, 260))
-			if self.seleccio == 2: self.joc.screen.blit( self.mascara, ( self.postextx, 260+150))
-			if self.seleccio == 3: self.joc.screen.blit( self.mascara, ( self.postextx, 260+300))
+			if self.selected == 1: self.joc.screen.blit( self.mascara, ( self.postextx, 260))
+			if self.selected == 2: self.joc.screen.blit( self.mascara, ( self.postextx, 260+150))
+			if self.selected == 3: self.joc.screen.blit( self.mascara, ( self.postextx, 260+300))
 			
 			# mostrem l'autor i el mombre de pregunta
-			if  self.mostranpregunta != 0 :
-				self.joc.screen.blit( self.sfc_npregunta, (1024 - ( self.sfc_npregunta.get_width() + 25),0) )
+			if self.mostranpregunta != 0 :
+				self.joc.screen.blit( self.sfc_npregunta, (1024 - ( self.sfc_npregunta.get_width() + 25), 0) )
 				self.joc.screen.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94) )
 			
 			# mostrem la pregunta
@@ -373,7 +376,7 @@ class Preguntador:
 			linia_act = 270
 			
 			for num in range(0, 3):
-				self.joc.screen.blit( self.lletres[num][(self.seleccio != num + 1)], ( self.postextx, linia_act + (150 * num)) )
+				self.joc.screen.blit( self.lletres[num][(self.selected != num + 1)], ( self.postextx, linia_act + (150 * num)) )
 				self.joc.screen.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
 			
 			# comprovem l'estat del temps
@@ -383,7 +386,7 @@ class Preguntador:
 				self.segons = 0
 			
 			# si no estem en l'estat de mostrar les soŀlucions mostrem el temps restant
-			if self.mostrasolucions == 0:
+			if self.show_answers == 0:
 				if self.segons != segons_act:
 					# el segon actual ha canviat
 					self.segons = segons_act 
@@ -403,20 +406,20 @@ class Preguntador:
 			posnook = 700 + cos(time.time()) * 25
 			posok = 700 + cos(time.time() * 2) * 50
 			
-			if self.mostrasolucions > 0:
+			if self.show_answers > 0:
 				
 				for num in range (0, 3):
-					if self.pregunta_actual[5] == (num + 1):
-						if self.seleccio != (num + 1):
+					if self.current_question['answer'] == (num + 1):
+						if self.selected != (num + 1):
 							self.joc.screen.blit( self.solucio_ok, (posnook, linia_act + (150 * num)) )
 						else:
 							self.joc.screen.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
-				
+					
 					else:
-						if self.seleccio == (num + 1):
-							self.joc.screen.blit( self.solucio_nook, (posn, linia_act + (150 * num)) )
+						if self.selected == (num + 1):
+							self.joc.screen.blit( self.solucio_nook, (posnook, linia_act + (150 * num)) )
 				
-				if len( self.pregunta_actual[6] ) > 5:
+				if len( self.current_question['comment'] ) > 5:
 					self.joc.screen.blit( self.info[0] if (int(time.time() * 3) % 3) == 0 else self.info[1], (self.postextx, 150) )
 			
 			if mostra_punt_de_categoria:
@@ -430,7 +433,7 @@ class Preguntador:
 		
 			self.joc.screen.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
 
-			self.help_on_screen.draw( self.joc.screen, (350, 740), HOS_PREGUNTADOR_END if self.mostrasolucions else HOS_PREGUNTADOR_RUN )
+			self.help_on_screen.draw( self.joc.screen, (350, 740), HOS_PREGUNTADOR_END if self.show_answers else HOS_PREGUNTADOR_RUN )
 
 			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))

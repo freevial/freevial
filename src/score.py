@@ -280,17 +280,12 @@ class Score:
 				self.skin.scorePlayClic2
 			else:
 				atzar = 0
-		
+			
 			# Animem el fons
-			
 			self.skin.scorePintaFons( self.joc.screen )
-
 			self.skin.scorePintaMascaraDeFons( self.joc.screen )
-
 			self.skin.scorePintaPuntuacions( self.joc.screen, self.joc, element_seleccionat, mode, escriu, mostra_estad, frate )
-			
 			self.skin.scorePintaLocked( self.joc.screen )
-			
 			
 			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))
@@ -299,7 +294,7 @@ class Score:
 			
 			frate.next( self.joc.screen )
 			
-			# intercanviem els buffers de self.joc.screen
+			# Exchange self.joc.screen buffers
 			pygame.display.flip()
 
 		return 0

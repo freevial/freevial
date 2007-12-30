@@ -201,5 +201,5 @@ class Roda:
 			
 			self.frate.next( self.joc.screen )
 			
-			#intercanviem els buffers de self.joc.screen
+			# Exchange self.joc.screen buffers
 			pygame.display.flip()
