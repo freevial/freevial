@@ -258,7 +258,7 @@ class Skin:
 
 
 		
-#		self.help_overlay = createHelpScreen( 'roda' )
+
 
 #		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
 #		self.help_on_screen.sec_timeout = 10

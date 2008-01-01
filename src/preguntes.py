@@ -26,12 +26,12 @@
 import os
 import sys
 import csv
-import copy
-import random
+import gettext
 
 from common.freevialglob import *
 from common.uncompress import Uncompressor
 from common.globals import GlobalVar, Global
+from common.database import Database
 
 
 class LoadDatabase:
@@ -109,99 +109,65 @@ class LoadDatabase:
 			return [ '%s' % os.path.abspath(os.path.join(directory, file)) for file in files ]
 
 
-class CategoriaPreguntes:
-
-	def __init__( self, num ):
-
-		self.versio = 0
-		self.nom = ''
-		self.data_creacio = ''
-		self.data_revisio = ''
-		self.autors = ''
-		self.descripcio = ''
-		self.jugadors = ''
-		self.idioma = ''
-
-		self.preguntes = []
-		self.preguntes_backup = []
+def GetDatabase( num, csvFile ):
+	""" Returns a Database instance with the questions from a CSV file. """
 	
-		self.num = num
-
-		self.nomimatge = ''
-		self.so = ''
-
-
-	def importQuestions( self, csvFile ):
-		""" Imports the questions from a CSV file and returns them in a list. """
+	csv_read = csv.reader( open( csvFile ) )
+	
+	comptaline  = 0
+	error_count = 0
+	
+	for line in csv_read:
 		
-		csv_read = csv.reader( open( csvFile ) )
+		comptaline += 1
 		
-		comptaline  = 0
-		error_count = 0
-		
-		for line in csv_read:
+		if comptaline > 16:
 			
-			comptaline += 1
+			if len(line) < 9:
+				print 'Error in database file «%s», line %d: expected %d values, found %d.' % (os.path.basename(csvFile), comptaline, 10, len(line))
+				error_count += 1
+				
+				if error_count < 3:
+					continue
+				else:
+					print 'Found 3 problems, this will abort the game.'
+					sys.exit(1)
+			elif len(line) == 9:
+				line.append('')
 			
-			if comptaline > 16:
-				
-				if len(line) < 9:
-					print 'Error in database file «%s», line %d: expected %d values, found %d.' % (os.path.basename(csvFile), comptaline, 10, len(line))
-					error_count += 1
-					
-					if error_count < 3:
-						continue
-					else:
-						print 'Found 3 problems, this will abort the game.'
-						import sys; sys.exit(1)
-				elif len(line) == 9:
-					line.append('')
-				
-				for num in range(0, 10):
-					line[ num ] = unicode(line[ num ], 'utf-8')
-				
-				for num in (5, 8):
-					try:
-						line[ num ] = int(line[ num ])
-					except ValueError:
-						line[ num ] = 0
-				
-				line[0] = self.num
-				self.preguntes.append(line)
+			for num in range(0, 10):
+				line[ num ] = unicode(line[ num ], 'utf-8')
 			
-			# Get information from the header lines
-			# (This is on the bottom to make processing faster, since 
-			#  there are more question than header lines)
-			elif comptaline == 1: self.versio = int( line[1] )
-			elif comptaline == 2: self.nom = unicode( line[1], 'utf-8' )
-			elif comptaline == 3: self.data_creacio = unicode( line[1], 'utf-8' )
-			elif comptaline == 4: self.data_revisio = unicode( line[1], 'utf-8' )
-			elif comptaline == 5: self.autors = unicode( line[1], 'utf-8' )
-			elif comptaline == 6: self.descripcio = unicode( line[1], 'utf-8' )			
-			elif comptaline == 7: self.jugadors = unicode( line[1], 'utf-8' )
-			elif comptaline == 8: self.idioma = unicode( line[1], 'utf-8' )
-			elif comptaline == 9: self.nomimatge = unicode( line[1], 'utf-8' )
-			elif comptaline == 10: self.so = unicode( line[1], 'utf-8' )
+			for num in (5, 8):
+				try:
+					line[ num ] = int(line[ num ])
+				except ValueError:
+					line[ num ] = 0
+			
+			database.addQuestion(
+				question = line[1],
+				answ1 = line[1 + line[5]],
+				answ2 = line[3] if line[5] != 2 else line[2],
+				answ3 = line[4] if line[5] != 3 else line[2],
+				author = line[6],
+				comments = line[9],
+				)
 		
-		self.preguntes_backup = copy.deepcopy( self.preguntes )
-		
-		self.shuffleQuestions()
-
-
-	def shuffleQuestions( self ):
-		""" Returns the given questions list, but shuffled. """
-
-		self.preguntes = copy.deepcopy( self.preguntes_backup )
-		
-		random.shuffle( self.preguntes )
-
-
-	def agafaPregunta ( self ):
-
-		if 0 == len(self.preguntes): self.shuffleQuestions()
-		
-		return self.preguntes.pop()
-
+		# Get information from the header lines
+		elif comptaline == 1: continue
+		elif comptaline == 2: name = unicode( line[1], 'utf-8' )
+		elif comptaline == 3: time = [ unicode( line[1], 'utf-8' ) ]
+		elif comptaline == 4: time.append( unicode( line[1], 'utf-8' ) )
+		elif comptaline == 5: authors = unicode( line[1], 'utf-8' )
+		elif comptaline == 6: description = unicode( line[1], 'utf-8' )			
+		elif comptaline == 7: players = unicode( line[1], 'utf-8' )
+		elif comptaline == 8: language = unicode( line[1], 'utf-8' )
+		elif comptaline == 9: image = unicode( line[1], 'utf-8' )
+		elif comptaline == 10:
+			sound = unicode( line[1], 'utf-8' )
+			database = Database( num, name, language, description, players, authors, time, image, sound )
+	
+	return database
 
 ###########################################
 
@@ -209,33 +175,32 @@ categoriespreguntes = []
 arxius_de_preguntes = LoadDatabase(Global.database).get()
 
 for num in range(0, len(arxius_de_preguntes) ):
-	cat = CategoriaPreguntes( num + 1 )
 	try:
-		cat.importQuestions( os.path.join(Global.database, arxius_de_preguntes[num]) )
+		cat = GetDatabase( num + 1, os.path.join(Global.database, arxius_de_preguntes[num]) )
 		categoriespreguntes.append( cat )
 	except ValueError:
 		print 'Error with «%s».' % arxius_de_preguntes[num]
 
 def textCategoria( ncat ):
 
-	return categoriespreguntes[ncat].nom
+	return categoriespreguntes[ncat].name
 
 def preguntes_autors():
 
 	llista = []
 
 	for num in range(0, 6):	
-		llista.append( categoriespreguntes[num].nom + ": " + categoriespreguntes[num].autors )
+		llista.append( categoriespreguntes[num].name + ": " + categoriespreguntes[num].authors )
 	
 	return llista
 
 def nomImatgeCategoria( ncat ):
 
-	return categoriespreguntes[ncat].nomimatge
+	return categoriespreguntes[ncat].image
 
 def soCategoria( ncat ):
 
-	return categoriespreguntes[ncat].so
+	return categoriespreguntes[ncat].sound
 
 def get_categoriespreguntes( ):
 

@@ -1,13 +1,11 @@
-#! /usr/bin/env python2.5
-# -*- coding: utf-8 -*-
+#! /bin/sh
 
 #
 # Freevial
-# Game Launcher
+# PO File Generator
 #
 # Copyright (C) 2007 The Freevial Team
 #
-# By Carles Oriol i Margarit <carles@kumbaworld.com>
 # By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -24,24 +22,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import os, sys
-
-directory = os.path.dirname(os.path.abspath(__file__))
-
-def isdir(path, addpath = ''):
-	return os.path.exists(os.path.join(path, addpath, 'freevial.py'))
-
-if not isdir(directory):
-	if isdir(directory, 'src'):
-		directory = os.path.join(directory, 'src')
-	else:
-		directory = '/usr/share/games/freevial/src'
-		if not isdir(directory):
-			print >> sys.stderr, "Couldn't determine the path to any existing Freevial installation."
-			sys.exit(1)
-
-os.chdir(directory)
-sys.path.insert(0, directory)
-
-# Start game
-import freevial
+xgettext ./src/*.py ./src/*/*.py  \
+	--default-domain=freevial  \
+	--output-dir=./  \
+	--language=Python  \
+	--keyword=_  \
+	--indent  \
+	--copyright-holder="The Freevial Team"    \
+	--msgid-bugs-address="freevial-dev@eurion.net"  \

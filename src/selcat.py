@@ -86,10 +86,7 @@ class SelCat:
 
 	def refa_cats( self ):
 		for cat in range(0, 6):
-			for compta in range(0, len( self.cp[cat].preguntes) ):
-				self.cp[cat].preguntes[compta][0] = cat+1
-			for compta in range(0, len( self.cp[cat].preguntes_backup) ):
-				self.cp[cat].preguntes_backup[compta][0] = cat+1
+			self.cp[cat].num = cat+1
 	
 	def reinicia_cats( self ):
 		self.categories_seleccionades = [0,1,2,3,4,5];
@@ -99,7 +96,7 @@ class SelCat:
 			color = (128, 128, 128)
 			if compta < 6:
 				color = colorsCategories()[compta]
-			self.sfc_preguntes[compta] = render_text( self.cp[compta].nom, color, 27, 1, '', 220 )
+			self.sfc_preguntes[compta] = render_text( self.cp[compta].name, color, 27, 1, '', 220 )
 
 	def CanviaElements( self, aposar, atreure):
 
@@ -252,15 +249,15 @@ class SelCat:
 			self.joc.screen.blit( self.sfc_preguntes[seleccio], ( 475, 220 ))	
 
 			if( seleccio != self.darrera_info): 	
-				self.sfc_text_info0 = render_text( self.cp[seleccio].autors, (255,255,255), 14, 1, '', 220 )
-				self.sfc_text_info1 = render_text( self.cp[seleccio].descripcio, (255,255,255), 16, 1, '', 350 )
-				self.sfc_text_info2 = render_text( self.cp[seleccio].jugadors, (255,255,255), 16, 1, '', 350 )
-				self.sfc_text_info3 = render_text( u"N. Pregutes: " + str(len(self.cp[seleccio].preguntes_backup)), (255,255,255), 16, 1, '', 350 )
-				self.sfc_text_info4 = render_text( u"Idioma: " + self.cp[compta].idioma, (255,255,255), 16, 1, '', 100 )
-				self.sfc_text_info5 = render_text( u"Data creació: " + self.cp[compta].data_creacio , (255,255,255), 16, 1, '', 350 )
-				self.sfc_text_info6 = render_text( u"Data darrera modificació: " + self.cp[seleccio].data_revisio, (255,255,255), 16, 1, '', 350 )
+				self.sfc_text_info0 = render_text( self.cp[seleccio].authors, (255,255,255), 14, 1, '', 220 )
+				self.sfc_text_info1 = render_text( self.cp[seleccio].description, (255,255,255), 16, 1, '', 350 )
+				self.sfc_text_info2 = render_text( self.cp[seleccio].players, (255,255,255), 16, 1, '', 350 )
+				self.sfc_text_info3 = render_text( u"N. Pregutes: " + str(len(self.cp[seleccio])), (255,255,255), 16, 1, '', 350 )
+				self.sfc_text_info4 = render_text( u"Idioma: " + self.cp[compta].language, (255,255,255), 16, 1, '', 100 )
+				self.sfc_text_info5 = render_text( u"Data creació: " + self.cp[compta].time[0] , (255,255,255), 16, 1, '', 350 )
+				self.sfc_text_info6 = render_text( u"Data darrera modificació: " + self.cp[seleccio].time[1], (255,255,255), 16, 1, '', 350 )
 
-				self.sfc_cat = loadImage( self.cp[seleccio].nomimatge )
+				self.sfc_cat = loadImage( self.cp[seleccio].image )
 				if seleccio < 6:
 					sfcmask = loadImage( 'filtre_c' + str(seleccio+1) + '.png' )
 					self.sfc_cat.blit( sfcmask, (0,0))

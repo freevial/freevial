@@ -8,6 +8,7 @@
 #
 # By Carles Oriol i Margarit <carles@kumbaworld.com>
 # By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>
+# By Nil Oriol <nil@kumbaworld.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -48,9 +49,10 @@ class Roda:
 		self.skin = Skin()
 		
 		self.skin.rodaCarrega()
+		self.help_overlay = createHelpScreen( 'roda' )		
 		
-		
-		
+		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
+		self.help_on_screen.sec_timeout = 10
 	
 	def juguem( self ):
 		
@@ -171,7 +173,16 @@ class Roda:
 				pos -= velocitat
 				if pos <= -1200: pos += 1200
 				
+
 			self.skin.rodaPinta( self.joc, pos_fons, pos )
 						
-			#intercanviem els buffers de self.joc.screen
+			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
+			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))
+
+			self.help_on_screen.draw( self.joc.screen, (350, 740) )
+			
+			self.frate.next( self.joc.screen )
+			
+			# Exchange self.joc.screen buffers
+
 			pygame.display.flip()
