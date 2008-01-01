@@ -25,55 +25,66 @@
 #
 
 from math import *
-import os
+import ConfigParser, os
 from common.freevialglob import *
 from preguntes import *
+
+skin_file='skin.ini'
+skin_folder = ''
+
+def setSkinName( nom ):
+	skin_folder = nom
+	skin_file = os.path.join( nom, 'skin.ini' )
 
 class Skin:
 	
 	def __init__( self ):
 				
-		self.skin_maxim_equips = 6
-		self.skin_folder = ''
+		self.config = ConfigParser.ConfigParser()
+		self.config.readfp(open(skin_file))
+				
+		self.skin_maxim_equips = int(self.config.get( 'game', 'max_teams' ))
 		
-		self.skin_score_fons = 'score_fons.png'
-		self.skin_score_mascara_de_fons = 'fons_score.png'
-		self.skin_score_element = 'element_score.png'
-		self.skin_score_element_sel = 'seleccio_score.png'
-		self.skin_score_element_sel_offsetx = -58
-		self.skin_score_element_sel_offsety = -36
-		self.skin_score_teams_offsetx = 25
-		self.skin_score_teams_offsety = 125
+		self.skin_folder = skin_folder
 		
-		self.skin_score_figureta_visible = True 
-		self.skin_score_figureta_mode = 0 # 0 - del 0 al 63 combinacions 1 - del 0 al 5 figures individuals
-		self.skin_score_figureta_mascara = 'points/freevial_tot'
+		self.skin_score_fons = self.config.get( 'score', 'background')
+		self.skin_score_mascara_de_fons = self.config.get( 'score', 'background_mask')
+		self.skin_score_element = self.config.get( 'score', 'element')
+		self.skin_score_element_sel = self.config.get( 'score', 'sel_element')
+		self.skin_score_element_sel_offsetx = int(self.config.get( 'score', 'sel_element_offsetx'))
+		self.skin_score_element_sel_offsety = int(self.config.get( 'score', 'sel_element_offsety'))
+		self.skin_score_teams_offsetx = int(self.config.get( 'score', 'teams_offsetx'))
+		self.skin_score_teams_offsety = int(self.config.get( 'score', 'teams_offsety'))
 		
-		self.skin_score_figureta_offsetx = 15
-		self.skin_score_figureta_offsety = 0
+		self.skin_score_figureta_visible = self.config.get( 'score', 'figureta_visible') 
+		self.skin_score_figureta_mode = self.config.get( 'score', 'figureta_mode') # 0 - del 0 al 63 combinacions 1 - del 0 al 5 figures individuals
+		self.skin_score_figureta_mascara = self.config.get( 'score', 'figureta_mask')
 		
-		self.skin_score_figureta_individual_pos = [[0,0], [10,0], [20,0], [30,0], [40,0], [50,0] ]
+		self.skin_score_figureta_offsetx = int(self.config.get( 'score', 'figureta_offsetx'))
+		self.skin_score_figureta_offsety = int(self.config.get( 'score', 'figureta_offsety'))
 		
-		self.skin_socre_figureta_show_hide = 0 # 0 - Es mostren les parts aconseguides, 1 - S'amaguen les parts aconseguides
+		self.skin_score_figureta_individual_pos = [[int(self.config.get( 'score', 'figureta_individual_pos_0_X')),int(self.config.get( 'score', 'figureta_individual_pos_0_Y'))], [int(self.config.get( 'score', 'figureta_individual_pos_1_X')),int(self.config.get( 'score', 'figureta_individual_pos_1_Y'))], [int(self.config.get( 'score', 'figureta_individual_pos_2_X')),int(self.config.get( 'score', 'figureta_individual_pos_2_Y'))], [int(self.config.get( 'score', 'figureta_individual_pos_3_X')),int(self.config.get( 'score', 'figureta_individual_pos_3_Y'))], [int(self.config.get( 'score', 'figureta_individual_pos_4_X')),int(self.config.get( 'score', 'figureta_individual_pos_4_Y'))], [int(self.config.get( 'score', 'figureta_individual_pos_5_X')),int(self.config.get( 'score', 'figureta_individual_pos_5_Y'))] ]
 		
-		self.skin_score_so_sub = 'sub.ogg'
-		self.skin_score_so_sub_vol = 0.1
-		self.skin_score_so_sub2 = 'sub.ogg'
-		self.skin_score_so_sub2_vol = 0.4
+		self.skin_score_figureta_show_hide = self.config.get( 'score', 'figureta_show_hide') # 0 - Es mostren les parts aconseguides, 1 - S'amaguen les parts aconseguides
 		
-		self.skin_score_ok = 'cheer.ogg'
-		self.skin_score_ok_vol = 1
+		self.skin_score_so_sub = self.config.get( 'score', 'sub_sound')
+		self.skin_score_so_sub_vol = self.config.get( 'score', 'sub_sound_vol')
+		self.skin_score_so_sub2 = self.config.get( 'score', 'sub_sound2')
+		self.skin_score_so_sub2_vol = self.config.get( 'score', 'sub_sound2_vol')
 		
-		self.skin_score_locked = 'llum.png'
-		self.skin_score_locked_pos = (0,0)
+		self.skin_score_ok = self.config.get( 'score', 'ok')
+		self.skin_score_ok_vol = self.config.get( 'score', 'ok_vol')
 		
-		self.skin_score_so_de_fons = 'score.ogg'
-		self.skin_score_so_de_fons_vol = 0.6
+		self.skin_score_locked = self.config.get( 'score', 'locked')
+		self.skin_score_locked_pos = (int(self.config.get( 'score', 'locked_pos_X')),int(self.config.get( 'score', 'locked_pos_Y')))
+		
+		self.skin_score_so_de_fons = self.config.get( 'score', 'background_sound')
+		self.skin_score_so_de_fons_vol = self.config.get( 'score', 'background_sound_vol')
 
-		self.skin_score_desplaca_el_fons = True # True o False = no hi ha scroll vertical
-		self.skin_score_ones_al_fons = True # True o False = quiet
+		self.skin_score_desplaca_el_fons = self.config.get( 'score', 'move_background') # True o False = no hi ha scroll vertical
+		self.skin_score_ones_al_fons = self.config.get( 'score', 'background_waves') # True o False = quiet
 		
-		self.skin_score_caixes = [75,135], [515,135], [75,335], [515,335], [75,535], [515,535]
+		self.skin_score_caixes = [int(self.config.get( 'score', 'boxes_0_X')),int(self.config.get( 'score', 'boxes_0_Y'))], [int(self.config.get( 'score', 'boxes_1_X')),int(self.config.get( 'score', 'boxes_1_Y'))], [int(self.config.get( 'score', 'boxes_2_X')),int(self.config.get( 'score', 'boxes_2_Y'))], [int(self.config.get( 'score', 'boxes_3_X')),int(self.config.get( 'score', 'boxes_3_Y'))], [int(self.config.get( 'score', 'boxes_4_X')),int(self.config.get( 'score', 'boxes_4_Y'))], [int(self.config.get( 'score', 'boxes_5_X')),int(self.config.get( 'score', 'boxes_5_Y'))]
 		
 		#------------------------------------------
 		
@@ -81,18 +92,18 @@ class Skin:
 		self.mou_fons = 0
 		#-----------------------------------------------
 	
-		self.skin_roda_fons = 'ruleta_fons.png'
-		self.skin_roda_front = 'ruleta_front.png'
-		self.skin_roda_paper = 'ruleta_paper.png'
+		self.skin_roda_fons = self.config.get( 'wheel', 'wheel_background')
+		self.skin_roda_front = self.config.get( 'wheel', 'wheel_front')
+		self.skin_roda_paper = self.config.get( 'wheel', 'wheel_paper')
 		
 
-		self.skin_roda_so_dot = 'dot.ogg'
-		self.skin_roda_so_dot_vol = 1
-		self.skin_roda_so_evil = 'evil.ogg'
-		self.skin_roda_so_evil_vol = 1
-		self.skin_roda_so_sub = 'sub.ogg'
-		self.skin_roda_so_sub_vol = 0,3
-		self.skin_roda_tipografia = 'Ubuntu-Title.ttf'
+		self.skin_roda_so_dot = self.config.get( 'wheel', 'sound_wheel_dot')
+		self.skin_roda_so_dot_vol = self.config.get( 'wheel', 'sound_wheel_dot_vol')
+		self.skin_roda_so_evil = self.config.get( 'wheel', 'sound_wheel_evil')
+		self.skin_roda_so_evil_vol = self.config.get( 'wheel', 'sound_wheel_evil_vol')
+		self.skin_roda_so_sub = self.config.get( 'wheel', 'sound_wheel_sub')
+		self.skin_roda_so_sub_vol = self.config.get( 'wheel', 'sound_wheel_sub_vol')
+		self.skin_roda_tipografia = self.config.get( 'wheel', 'wheel_tipografia')
 		
 	def carregaGeneral ( self ):
 		self.figureta = range(0,64)

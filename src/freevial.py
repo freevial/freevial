@@ -7,6 +7,7 @@
 #
 # By Carles Oriol i Margarit <carles@kumbaworld.com>
 # By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>
+# By Nil Oriol <nil@kumbaworld.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,16 +28,14 @@ import os.path
 import pygame
 import gettext
 from math import *
-
+from skiner import setSkinName
 from common.globals import GlobalVar, Global
 
 # This is provisionally here for technical reasons...
 if '--database' in sys.argv:
-	dbpath = ' '.join(sys.argv[1:])
-	dbpath = dbpath[dbpath.find('--database ') + 11:]
-	if dbpath.find(' ') != -1:
-		dbpath = dbpath[:dbpath.find(' ')]
-	Global.database = dbpath
+	Global.database = sys.argv[ sys.argv.index( '--database' ) + 1]
+	
+	
 
 from common.freevialglob import *
 from score import Score
@@ -160,8 +159,9 @@ if '-h' in sys.argv or '--help' in sys.argv:
 	print _('--no-sound\t\tDisable sound')
 	print _('--no-music\t\tDisable music')
 	print _('--fps\t\t\tPrint framerate on screen')
+	print _('--skin <path>\tSet the absolute path to the skin file / directory')
 	print
-	
+
  	exit( 0 )
 
 if '-v' in sys.argv or '--version' in sys.argv:
@@ -195,6 +195,9 @@ if '--no-sound' in sys.argv:
 
 if '--no-music' in sys.argv:
 	Global.MUSIC_MUTE = True
+
+if '--skin' in sys.argv:
+	setSkinName(sys.argv[ sys.argv.index( '--skin' ) + 1])
 
 # For technical reasons, the "--database" option is parsed somewhere
 # at the top of this file.
