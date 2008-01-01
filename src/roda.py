@@ -32,6 +32,7 @@ import pygame
 from common.freevialglob import *
 from common.events import EventHandle
 from preguntes import *
+from skiner import Skin
 
 
 ##################################################
@@ -44,38 +45,20 @@ class Roda:
 	def __init__( self, joc ):
 		
 		self.joc = joc
+		self.skin = Skin()
 		
-		self.fons = loadImage('ruleta_fons.png')
-		self.front = loadImage('ruleta_front.png')
-		self.paper = loadImage('ruleta_paper.png')
-
-		for compta in range(0,6):
-			sfc = render_text( textCategoria(compta), (0,0,0), 60, 1, 'Ubuntu-Title.ttf', 350 );
-			self.paper.blit( sfc, (122, 2+(compta * 200) + 100 - sfc.get_height() / 2 ))
-			sfc = render_text( textCategoria(compta), colorsCategories()[compta], 60, 1, 'Ubuntu-Title.ttf', 350 );
-			self.paper.blit( sfc, (120, (compta * 200) + 100 - sfc.get_height() / 2 ))
+		self.skin.rodaCarrega()
 		
-		self.so_dot = loadSound('dot.ogg')
-		self.so_evil = loadSound('evil.ogg')
 		
-		self.so_cat = range(0, 6)
-		for num in range(0, 6):
-			self.so_cat[num] = loadSound( soCategoria( num ) )
-
-		self.so_sub = loadSound('sub.ogg', volume = 0.3)
 		
-		self.help_overlay = createHelpScreen( 'roda' )
-
-		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
-		self.help_on_screen.sec_timeout = 10
 	
 	def juguem( self ):
 		
 		self.frate = frameRate( Global.fps_limit )
 				
-		self.so_evil.stop()
-		self.so_dot.play(100)
-
+		self.skin.rodaSoEvilStop()
+		self.skin.rodaSoDot()
+		
 		velocitat = 75
 		deceleracio = 0
 		
@@ -83,14 +66,22 @@ class Roda:
 		rodant = 1
 		resultat = -1
 		
-		self.joc.screen.blit( self.fons, (0,0) )
-
-		nom_equip_sfc = render_text( self.joc.teams[self.joc.current_team].nom, (255,255,255), 30, 1 )
-		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
+		self.skin.rodaGira( self.joc )
+#		velocitat = 75
+#		deceleracio = 0
 		
-		figureta =  loadImage('points/freevial_tot' + str(self.joc.teams[self.joc.current_team].figureta).zfill(2) + '.png')
+#		pos = pos_fons = atura = frenant = time_fi = mostra_ajuda = mostra_credits = 0
+#		rodant = 1
+#		resultat = -1
+		
+#		self.joc.screen.blit( self.fons, (0,0) )
 
-		self.help_on_screen.activitat( )
+#		nom_equip_sfc = render_text( self.joc.teams[self.joc.current_team].nom, (255,255,255), 30, 1 )
+#		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
+		
+#		figureta =  loadImage('points/freevial_tot' + str(self.joc.teams[self.joc.current_team].figureta).zfill(2) + '.png')
+
+#		self.help_on_screen.activitat( )
 
 		while 1:
 
@@ -98,7 +89,7 @@ class Roda:
 
 				eventhandle = EventHandle(event)
 				
-				self.help_on_screen.activitat(event)
+				#self.help_on_screen.activitat(event)
 				
 				if event.type == pygame.JOYBUTTONDOWN:
 					translateJoystickEvent(event)
@@ -142,7 +133,7 @@ class Roda:
 				
 				if not frenant:
 					frenant = 1
-					self.so_sub.play()
+					self.skin.rodaSoSub()
 
 			if time_fi != 0 and time.time() - time_fi > 2.5:
 				return resultat
@@ -167,10 +158,10 @@ class Roda:
 				
 				else:
 					resultat = 1 + int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
-					self.so_dot.stop()
-					self.so_cat[ resultat - 1].play()
+					self.skin.rodaSoDotStop()
+					self.skin.rodaSoCat( resultat )
 					if not  self.joc.teams[self.joc.current_team].teCategoria( resultat ):
-						self.so_evil.play()
+						self.skin.rodaSoEvil()
 					rodant = 0
 				
 			if rodant == 1:
@@ -180,26 +171,7 @@ class Roda:
 				pos -= velocitat
 				if pos <= -1200: pos += 1200
 				
-			#pintem el paper freevial
-			self.joc.screen.blit( self.fons, ( 0, pos_fons ) )
-			self.joc.screen.blit( self.fons, ( 0, - 768 + pos_fons ) )
-			
-			#pintem el paper d'impressora
-			self.joc.screen.blit( self.paper, ( 178, pos ) )
-			self.joc.screen.blit( self.paper, ( 178, pos + 1200 ) )
-			
-			#pintem els marges vermells i degradats
-			self.joc.screen.blit( self.front, (0,0) )	
-			
-			self.joc.screen.blit( nom_equip_sfc, (20, 748 - nom_equip_sfc.get_height()))
-			self.joc.screen.blit( figureta, (70, 630) )
-
-			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
-			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))
-
-			self.help_on_screen.draw( self.joc.screen, (350, 740) )
-			
-			self.frate.next( self.joc.screen )
-			
+			self.skin.rodaPinta( self.joc, pos_fons, pos )
+						
 			#intercanviem els buffers de self.joc.screen
 			pygame.display.flip()

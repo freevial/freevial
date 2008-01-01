@@ -27,13 +27,14 @@
 from math import *
 import os
 from common.freevialglob import *
+from preguntes import *
 
 class Skin:
 	
 	def __init__( self ):
 				
 		self.skin_maxim_equips = 6
-		self.skin_folder = ''		
+		self.skin_folder = ''
 		
 		self.skin_score_fons = 'score_fons.png'
 		self.skin_score_mascara_de_fons = 'fons_score.png'
@@ -78,6 +79,27 @@ class Skin:
 		
 		self.ypos = 0
 		self.mou_fons = 0
+		#-----------------------------------------------
+	
+		self.skin_roda_fons = 'ruleta_fons.png'
+		self.skin_roda_front = 'ruleta_front.png'
+		self.skin_roda_paper = 'ruleta_paper.png'
+		
+
+		self.skin_roda_so_dot = 'dot.ogg'
+		self.skin_roda_so_dot_vol = 1
+		self.skin_roda_so_evil = 'evil.ogg'
+		self.skin_roda_so_evil_vol = 1
+		self.skin_roda_so_sub = 'sub.ogg'
+		self.skin_roda_so_sub_vol = 0,3
+		self.skin_roda_tipografia = 'Ubuntu-Title.ttf'
+		
+	def carregaGeneral ( self ):
+		self.figureta = range(0,64)
+		for num in range(0, 64):
+			self.figureta[num] = self.skinLoadImage(( self.skin_score_figureta_mascara + str( num ).zfill(2) + '.png'), ('points/freevial_tot' + str( num ).zfill(2) + '.png' ))
+
+		
 			
 	def skinLoadImage ( self, name1, name2 ):
 	
@@ -110,15 +132,11 @@ class Skin:
 			
 	def scoreCarrega ( self ):
 		
+		self.carregaGeneral()
 		self.mascara_de_fons = self.skinLoadImage( self.skin_score_mascara_de_fons, 'fons_score.png' )
 		self.fons = self.skinLoadImage( self.skin_score_fons, 'score_fons.png' )
 		self.element_score = self.skinLoadImage( self.skin_score_element, 'element_score.png')
 		self.seleccio_score = self.skinLoadImage( self.skin_score_element_sel, 'seleccio_score.png' )
-		
-		self.figureta = range(0,64)
-		for num in range(0, 64):
-			self.figureta[num] = self.skinLoadImage(( self.skin_score_figureta_mascara + str( num ).zfill(2) + '.png'), ('points/freevial_tot' + str( num ).zfill(2) + '.png' ))
-
 		self.so_sub = self.skinLoadSound(self.skin_score_so_sub, self.skin_score_so_sub_vol, 'sub.ogg', 0.1)
 		self.so_sub2 = self.skinLoadSound( self.skin_score_so_sub2, self.skin_score_so_sub2_vol, 'sub2.ogg', 0.4)
 		self.so_ok = self.skinLoadSound( self.skin_score_ok, self.skin_score_ok_vol, 'cheer.ogg', 1 )
@@ -220,4 +238,65 @@ class Skin:
 			screen.blit( self.sfc_llum, (0, 0) )
 			
 			
+	def rodaCarrega( self ):
+		self.carregaGeneral()
+		self.fons = self.skinLoadImage( self.skin_roda_fons, 'ruleta_fons.png' )
+		self.front = self.skinLoadImage( self.skin_roda_front, 'ruleta_front.png' )
+		self.paper = self.skinLoadImage( self.skin_roda_paper, 'ruleta_paper.png')
+		self.so_dot = self.skinLoadSound(self.skin_roda_so_dot, self.skin_roda_so_dot_vol, 'dot.ogg', 1)
+		self.so_evil = self.skinLoadSound(self.skin_roda_so_evil, self.skin_roda_so_evil_vol, 'evil.ogg', 1)
+		self.so_sub = self.skinLoadSound(self.skin_roda_so_sub, self.skin_roda_so_sub_vol, 'sub.ogg', 0.3)
+		self.so_cat = range(0, 6)
+		for num in range(0, 6):
+			self.so_cat[num] = self.skinLoadSound(soCategoria( num ), 1, soCategoria( num ), 1)
 			
+		for compta in range(0, self.skin_maxim_equips):
+			sfc = render_text( textCategoria(compta), (0,0,0), 60, 1, self.skin_roda_tipografia, 350 );
+			self.paper.blit( sfc, (122, 2+(compta * 200) + 100 - sfc.get_height() / 2 ))
+			sfc = render_text( textCategoria(compta), colorsCategories()[compta], 60, 1, self.skin_roda_tipografia, 350 );
+			self.paper.blit( sfc, (120, (compta * 200) + 100 - sfc.get_height() / 2 ))
+
+
+		
+#		self.help_overlay = createHelpScreen( 'roda' )
+
+#		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
+#		self.help_on_screen.sec_timeout = 10
+	
+	def rodaSoEvil ( self ):
+		self.so_evil.play()
+	def rodaSoEvilStop ( self ):
+		self.so_evil.stop()
+	def rodaSoDot ( self ):
+		self.so_dot.play(100)
+	def rodaSoDotStop ( self ):
+		self.so_dot.stop()
+	def rodaSoSub ( self ):
+		self.so_sub.play()
+	def rodaSoCat ( self, resultat ):
+		self.so_cat[ resultat - 1].play()
+		
+	def rodaGira ( self, joc ):
+		joc.screen.blit( self.fons, (0,0) )
+
+		self.nom_equip_sfc = render_text( joc.teams[joc.current_team].nom, (255,255,255), 30, 1 )
+		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
+		
+#		self.help_on_screen.activitat( )
+	
+	def rodaPinta ( self, joc, pos_fons, pos ):
+		#pintem el paper freevial
+		joc.screen.blit( self.fons, ( 0, pos_fons ) )
+		joc.screen.blit( self.fons, ( 0, - 768 + pos_fons ) )
+		
+		#pintem el paper d'impressora
+		joc.screen.blit( self.paper, ( 178, pos ) )
+		joc.screen.blit( self.paper, ( 178, pos + 1200 ) )
+		
+		#pintem els marges vermells i degradats
+		joc.screen.blit( self.front, (0,0) )	
+		
+		joc.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
+		joc.screen.blit( self.figureta[joc.teams[joc.current_team].figureta], (70, 630) )
+
+	
