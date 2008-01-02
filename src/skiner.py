@@ -2,9 +2,9 @@
  
 #
 # Freevial
-# Game categories selector
+# Skin Stuff
 #
-# Copyright (C) 2007 The Freevial Team
+# Copyright (C) 2007, 2008 The Freevial Team
 #
 # By Nil Oriol <nil@kumbaworld.com>
 # By Carles Oriol <carles@kumbaworld.com>
@@ -26,6 +26,7 @@
 
 from math import *
 import ConfigParser, os
+
 from common.freevialglob import *
 from preguntes import *
 

@@ -4,7 +4,7 @@
 # Freevial
 # Compressed Files Extractor
 #
-# Copyright (C) 2007 The Freevial Team
+# Copyright (C) 2007, 2008 The Freevial Team
 #
 # By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>
 #

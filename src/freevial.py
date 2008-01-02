@@ -3,7 +3,7 @@
 #
 # Freevial
 #
-# Copyright (C) 2007 The Freevial Team
+# Copyright (C) 2007, 2008 The Freevial Team
 #
 # By Carles Oriol i Margarit <carles@kumbaworld.com>
 # By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>
@@ -33,9 +33,7 @@ from common.globals import GlobalVar, Global
 
 # This is provisionally here for technical reasons...
 if '--database' in sys.argv:
-	Global.database = sys.argv[ sys.argv.index( '--database' ) + 1]
-	
-	
+	Global.database = sys.argv[sys.argv.index( '--database' ) + 1]
 
 from common.freevialglob import *
 from score import Score
@@ -197,7 +195,7 @@ if '--no-music' in sys.argv:
 	Global.MUSIC_MUTE = True
 
 if '--skin' in sys.argv:
-	setSkinName(sys.argv[ sys.argv.index( '--skin' ) + 1])
+	setSkinName(sys.argv[sys.argv.index( '--skin' ) + 1])
 
 # For technical reasons, the "--database" option is parsed somewhere
 # at the top of this file.
