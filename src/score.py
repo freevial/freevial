@@ -150,7 +150,9 @@ class Score:
 							newname = self.joc.teams[element_seleccionat].nom + eventhandle.str()
 						
 						if newname != None:
-							sfc = render_text( newname, (0,0,0), 30, 1)
+						
+							sfc = self.skin.scoreSfcText( newname )
+							
 							if sfc.get_width() < 340:
 								# Name isn't too long, accept the new character
 								self.joc.teams[element_seleccionat].nom = newname
@@ -177,7 +179,7 @@ class Score:
 						
 						if eventhandle.keyUp('DOWN'): 
 							element_seleccionat = (element_seleccionat + 2) % 6
-							self.skin.scorePlayClic1()  
+							self.skin.scorePlayClic1() 
 						
 						if eventhandle.keyUp('UP'): 
 							element_seleccionat = (element_seleccionat - 2) % 6
