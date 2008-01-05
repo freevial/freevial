@@ -4,7 +4,7 @@
 # Freevial
 # Collection of commonly used classes and functions
 #
-# Copyright (C) 2007 The Freevial Team
+# Copyright (C) 2007, 2008 The Freevial Team
 #
 # By Carles Oriol <carles@kumbaworld.com>
 # By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>

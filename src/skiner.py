@@ -2,9 +2,9 @@
  
 #
 # Freevial
-# Game categories selector
+# Skin Stuff
 #
-# Copyright (C) 2007 The Freevial Team
+# Copyright (C) 2007, 2008 The Freevial Team
 #
 # By Nil Oriol <nil@kumbaworld.com>
 # By Carles Oriol <carles@kumbaworld.com>
@@ -24,24 +24,30 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import os
+import gettext
 from math import *
-import ConfigParser, os
+from ConfigParser import SafeConfigParser
+
 from common.freevialglob import *
 from preguntes import *
 
-skin_file='skin.ini'
+skin_file = 'skin.ini'
 skin_folder = ''
 
 def setSkinName( nom ):
+	global skin_folder, skin_file
 	skin_folder = nom
 	skin_file = os.path.join( nom, 'skin.ini' )
+	print _('Loading skin "%s"...') % unicode(skin_folder, 'utf-8')
 
 class Skin:
 	
 	def __init__( self ):
+		global skin_folder, skin_file
 				
-		self.config = ConfigParser.ConfigParser()
-		self.config.readfp(open(skin_file))
+		self.config = SafeConfigParser()
+		self.config.readfp(open(skin_file))		
 				
 		self.skin_maxim_equips = int(self.config.get( 'game', 'max_teams' ))
 		
@@ -51,6 +57,7 @@ class Skin:
 		self.skin_score_mascara_de_fons = self.config.get( 'score', 'background_mask')
 		self.skin_score_element = self.config.get( 'score', 'element')
 		self.skin_score_element_sel = self.config.get( 'score', 'sel_element')
+		self.skin_score_element_sobre = self.config.get( 'score', 'element_sobre')
 		self.skin_score_element_sel_offsetx = int(self.config.get( 'score', 'sel_element_offsetx'))
 		self.skin_score_element_sel_offsety = int(self.config.get( 'score', 'sel_element_offsety'))
 		self.skin_score_teams_offsetx = int(self.config.get( 'score', 'teams_offsetx'))
@@ -129,7 +136,7 @@ class Skin:
 		
 	def skinLoadSound ( self, name1, vol1, name2, vol2, music = 0 ):
 		
-		fullname = os.path.join( self.skin_folder, name1)
+		fullname = os.path.join( unicode(self.skin_folder, 'utf-8'), name1)
 		
 		retval = None
 		
@@ -215,14 +222,14 @@ class Skin:
 			ycaixa = self.skin_score_caixes[num][1]
 			xcaixa = self.skin_score_caixes[num][0]
 
-			if element_seleccionat == num:
+			if element_seleccionat == num and self.skin_score_element_sobre != "True":
 				for compta in range( 0, self.seleccio_score.get_height() ):
 					desp = 0 if not estat else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
 					screen.blit( self.seleccio_score, (xcaixa + self.skin_score_element_sel_offsetx + desp, ycaixa + self.skin_score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
 
 			
 			if joc.teams[num].actiu:
-
+				
 				screen.blit( self.element_score, (xcaixa, ycaixa ) )
 				
 				screen.blit( self.figureta[joc.teams[num].figureta], (xcaixa + self.skin_score_figureta_offsetx, ycaixa + self.skin_score_figureta_offsety ) )
@@ -241,6 +248,12 @@ class Skin:
 				if mostra_estad:
 					for cat in range(0,6):
 						screen.blit( self.barra_pos( joc.teams[num].preguntes_tot[cat], joc.teams[num].preguntes_ok[cat],  colorsCategories()[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )
+			
+			
+			if element_seleccionat == num and self.skin_score_element_sobre == "True":
+				for compta in range( 0, self.seleccio_score.get_height() ):
+					desp = 0 if not estat else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
+					screen.blit( self.seleccio_score, (xcaixa + self.skin_score_element_sel_offsetx + desp, ycaixa + self.skin_score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
 
 
 	def scorePintaLocked( self, screen ):
