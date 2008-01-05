@@ -327,7 +327,7 @@ class Preguntador:
 					notes = self.current_question['comment'].split('#') if self.current_question['comment'] != "" else "."
 					sfc_comentaris = createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
-					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.current_question['answer'] ) <= 5:
+					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.current_question['comment'] ) <= 5:
 						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(2500)
 						return self.categoria if ( self.current_question['answer'] == self.selected) else 0
