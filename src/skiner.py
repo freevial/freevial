@@ -191,7 +191,7 @@ class Skin:
 	
 	def scorePintaFons ( self, screen ):
 								
-		if self.skin_score_desplaca_el_fons:
+		if self.skin_score_desplaca_el_fons != "False":
 			# Animem el fons
 			self.ypos += 1
 			self.ypos %= Global.screen_y
