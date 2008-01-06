@@ -24,20 +24,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import os
+import gettext
 from math import *
-import ConfigParser, os
+from ConfigParser import SafeConfigParser
 
 from common.freevialglob import *
 from preguntes import *
 
-skin_file='skin.ini'
+skin_file = 'skin.ini'
 skin_folder = ''
 
 def setSkinName( nom ):
 	global skin_folder, skin_file
 	skin_folder = nom
 	skin_file = os.path.join( nom, 'skin.ini' )
-	print "entra SKIN", skin_folder
+	print _('Loading skin "%s"...') % unicode(skin_folder, 'utf-8')
 
 class Skin:
 	
@@ -68,7 +70,7 @@ class Skin:
 		self.defconfig = ConfigParser.ConfigParser()
 		self.defconfig.readfp(open('skin.ini'))				
 				
-		self.config = ConfigParser.ConfigParser()
+		self.config = SafeConfigParser()
 		self.config.readfp(open(skin_file))		
 				
 		self.skin_maxim_equips = self.configGetInt( 'game', 'max_teams' )
@@ -216,7 +218,7 @@ class Skin:
 		
 	def skinLoadSound ( self, name1, vol1, name2, vol2, music = 0 ):
 		
-		fullname = os.path.join( self.skin_folder, name1)
+		fullname = os.path.join( unicode(self.skin_folder, 'utf-8'), name1)
 		
 		retval = None
 		
@@ -274,7 +276,7 @@ class Skin:
 	
 	def scorePintaFons ( self, screen ):
 								
-		if self.skin_score_desplaca_el_fons:
+		if self.skin_score_desplaca_el_fons != "False":
 			# Animem el fons
 			self.ypos += 1
 			self.ypos %= Global.screen_y
