@@ -27,21 +27,33 @@
 import os
 import gettext
 from math import *
-from ConfigParser import SafeConfigParser
+from ConfigParser import ConfigParser
 
 from common.freevialglob import *
 from preguntes import *
 
-skin_file = 'skin.ini'
+skin_file = u'skin.ini'
 skin_folder = ''
 
 def setSkinName( nom ):
 	global skin_folder, skin_file
 	skin_folder = nom
-	skin_file = os.path.join( nom, 'skin.ini' )
+	skin_file = os.path.join( nom, u'skin.ini' )
 	print _('Loading skin "%s"...') % unicode(skin_folder, 'utf-8')
 
 class Skin:
+	
+	def __init__( self ):
+			
+		global skin_folder, skin_file
+		
+		self.defconfig = ConfigParser()
+		self.defconfig.readfp(open(u'skin.ini'))				
+				
+		self.config = ConfigParser()
+		self.config.readfp(open(skin_file))	
+	
+		self.skin_folder = skin_folder
 	
 	
 	def configGet( self, grup, entrada ):
@@ -56,15 +68,67 @@ class Skin:
 		
 		return text
 	
-	def configGetInt( self, grup, entrada ):		
+	def configGetInt( self, grup, entrada ):	
 		return int( self.configGet( grup, entrada) ) 
+	
+	def configGetFloat( self, grup, entrada ):	
+		return float( self.configGet( grup, entrada) ) 
 	
 	def configGetBool( self, grup, entrada ):
 		return True if self.configGet( grup, entrada ) == "True" else False
 	
+				
+	def LoadImage ( self, grup, name ):
+		print "Load Image", grup, name
+		
+		name1 = self.configGet( grup, name )
+		
+		fullname = os.path.join(  unicode(self.skin_folder, 'utf-8'), name1 )
+
+		retval = None
+		
+		if 	os.path.exists( fullname ):
+			retval = loadImage( fullname )
+		else:
+			retval = loadImage( name1 )			
+
+		return retval
+		
+	def LoadImageRange ( self, grup, name, maxrange, digits ):
+		
+		torna = range(0, maxrange)
+		pos = self.configGet( grup, name )
+		
+		for num in range(0, 64):
+			torna[num] = loadImage(pos + str( num ).zfill(digits) + '.png')
+	
+		return torna
+		
+	def LoadSound ( self, grup, name, vol, musics = "" ):
+		print "Load sound", grup, name
+		
+		name2 = self.configGet( grup, name )
+		vol1 = self.configGetFloat( grup, vol )
+		
+		if( musics != ""):
+			music = self.configGetInt( grup, musics )
+		else:
+			music = 0
+		
+				
+		fullname = os.path.join( unicode(self.skin_folder, 'utf-8'), name2)		
+		
+		retval = None
+		
+		if os.path.exists( fullname ):
+			retval = loadSound (fullname, volume = vol1, music = music)
+		else:	
+			retval = loadSound ( name2, volume = vol1, music = music )
+		
+		return retval
 	
 	
-	def __init__( self ):
+	def inicia_vell( self ):
 		global skin_folder, skin_file
 		
 		self.defconfig = ConfigParser.ConfigParser()
@@ -77,57 +141,7 @@ class Skin:
 		
 		self.skin_folder = skin_folder
 		
-		self.skin_score_color_text_red = self.configGetInt( 'score', 'color_text_red')
-		self.skin_score_color_text_green = self.configGetInt( 'score', 'color_text_green')
-		self.skin_score_color_text_blue = self.configGetInt( 'score', 'color_text_blue')
-		self.skin_score_color_text = (self.skin_score_color_text_red,self.skin_score_color_text_green,self.skin_score_color_text_blue)
-		self.skin_score_mida_text = self.configGetInt( 'score', 'mida_text')
-		
-		self.skin_score_fons = self.configGet( 'score', 'background')
-		self.skin_score_mascara_de_fons = self.configGet( 'score', 'background_mask')
-		self.skin_score_element = self.configGet( 'score', 'element')
-		self.skin_score_element_sel = self.configGet( 'score', 'sel_element')
-		self.skin_score_element_sobre = self.configGet( 'score', 'element_sobre')
-		self.skin_score_element_sel_offsetx = self.configGetInt( 'score', 'sel_element_offsetx')
-		self.skin_score_element_sel_offsety = self.configGetInt( 'score', 'sel_element_offsety')
-		self.skin_score_teams_offsetx = self.configGetInt( 'score', 'teams_offsetx')
-		self.skin_score_teams_offsety = self.configGetInt( 'score', 'teams_offsety')
-		self.skin_score_resultat_visible = self.configGet( 'score', 'resultat_visible')
-		self.skin_score_figureta_visible = self.configGet( 'score', 'figureta_visible') 
-		self.skin_score_figureta_mode = self.configGet( 'score', 'figureta_mode') # 0 - del 0 al 63 combinacions 1 - del 0 al 5 figures individuals
-		self.skin_score_figureta_mascara = self.configGet( 'score', 'figureta_mask')
-		
-		self.skin_score_figureta_offsetx = self.configGetInt( 'score', 'figureta_offsetx')
-		self.skin_score_figureta_offsety = self.configGetInt( 'score', 'figureta_offsety')
-		
-		self.skin_score_figureta_individual_pos = [[self.configGetInt( 'score', 'figureta_individual_pos_0_X'),self.configGetInt( 'score', 'figureta_individual_pos_0_Y')], [self.configGetInt( 'score', 'figureta_individual_pos_1_X'),self.configGetInt( 'score', 'figureta_individual_pos_1_Y')], [self.configGetInt( 'score', 'figureta_individual_pos_2_X'),self.configGetInt( 'score', 'figureta_individual_pos_2_Y')], [self.configGetInt( 'score', 'figureta_individual_pos_3_X'),self.configGetInt( 'score', 'figureta_individual_pos_3_Y')], [self.configGetInt( 'score', 'figureta_individual_pos_4_X'),self.configGetInt( 'score', 'figureta_individual_pos_4_Y')], [self.configGetInt( 'score', 'figureta_individual_pos_5_X'),self.configGetInt( 'score', 'figureta_individual_pos_5_Y')] ]
-		
-		self.skin_score_figureta_show_hide = self.configGet( 'score', 'figureta_show_hide') # 0 - Es mostren les parts aconseguides, 1 - S'amaguen les parts aconseguides
-		
-		self.skin_score_so_sub = self.configGet( 'score', 'sub_sound')
-		self.skin_score_so_sub_vol = self.configGet( 'score', 'sub_sound_vol')
-		self.skin_score_so_sub2 = self.configGet( 'score', 'sub_sound2')
-		self.skin_score_so_sub2_vol = self.configGet( 'score', 'sub_sound2_vol')
-		
-		self.skin_score_ok = self.configGet( 'score', 'ok')
-		self.skin_score_ok_vol = self.configGet( 'score', 'ok_vol')
-		
-		self.skin_score_locked = self.configGet( 'score', 'locked')
-		self.skin_score_locked_pos = (self.configGetInt( 'score', 'locked_pos_X'),self.configGetInt( 'score', 'locked_pos_Y'))
-		
-		self.skin_score_so_de_fons = self.configGet( 'score', 'background_sound')
-		self.skin_score_so_de_fons_vol = self.configGet( 'score', 'background_sound_vol')
 
-		self.skin_score_desplaca_el_fons = self.configGet( 'score', 'move_background') # True o False = no hi ha scroll vertical
-		self.skin_score_ones_al_fons = self.configGet( 'score', 'background_waves') # True o False = quiet
-		
-		self.skin_score_caixes = [self.configGetInt( 'score', 'boxes_0_X'),self.configGetInt( 'score', 'boxes_0_Y')], [self.configGetInt( 'score', 'boxes_1_X'),self.configGetInt( 'score', 'boxes_1_Y')], [self.configGetInt( 'score', 'boxes_2_X'),self.configGetInt( 'score', 'boxes_2_Y')], [self.configGetInt( 'score', 'boxes_3_X'),self.configGetInt( 'score', 'boxes_3_Y')], [self.configGetInt( 'score', 'boxes_4_X'),self.configGetInt( 'score', 'boxes_4_Y')], [self.configGetInt( 'score', 'boxes_5_X'),self.configGetInt( 'score', 'boxes_5_Y')]
-		
-		#------------------------------------------
-		
-		self.ypos = 0
-		self.mou_fons = 0
-		#-----------------------------------------------
 	
 		self.skin_roda_fons = self.configGet( 'wheel', 'wheel_background')
 		self.skin_roda_front = self.configGet( 'wheel', 'wheel_front')
@@ -194,159 +208,11 @@ class Skin:
 	#	self.skin_preguntador_match_point = self.configGet( 'preguntador', 'match_point')
 	
 		
-	def carregaGeneral ( self ):
-		self.figureta = range(0,64)
-		for num in range(0, 64):
-			self.figureta[num] = self.skinLoadImage(( self.skin_score_figureta_mascara + str( num ).zfill(2) + '.png'), ('points/freevial_tot' + str( num ).zfill(2) + '.png' ))
 
 		
-			
-	def skinLoadImage ( self, name1, name2 ):
-	
-		fullname = os.path.join( self.skin_folder, name1 )
-
-		retval = None
-		
-		if 	os.path.exists( fullname ):
-			retval = loadImage( fullname )
-		else:
-			retval = loadImage( name2 )
-			
-			
-		return retval
-		
-		
-	def skinLoadSound ( self, name1, vol1, name2, vol2, music = 0 ):
-		
-		fullname = os.path.join( unicode(self.skin_folder, 'utf-8'), name1)
-		
-		retval = None
-		
-		if os.path.exists( fullname ):
-			retval = loadSound (fullname, volume = vol1, music = music)
-		else:	
-			retval = loadSound ( name2, volume = vol2, music = music )
-		
-		return retval
-		
-			
-	def scoreCarrega ( self ):
-		
-		self.carregaGeneral()
-		self.mascara_de_fons = self.skinLoadImage( self.skin_score_mascara_de_fons, 'fons_score.png' )
-		self.fons = self.skinLoadImage( self.skin_score_fons, 'score_fons.png' )
-		self.element_score = self.skinLoadImage( self.skin_score_element, 'element_score.png')
-		self.seleccio_score = self.skinLoadImage( self.skin_score_element_sel, 'seleccio_score.png' )
-		self.so_sub = self.skinLoadSound(self.skin_score_so_sub, self.skin_score_so_sub_vol, 'sub.ogg', 0.1)
-		self.so_sub2 = self.skinLoadSound( self.skin_score_so_sub2, self.skin_score_so_sub2_vol, 'sub2.ogg', 0.4)
-		self.so_ok = self.skinLoadSound( self.skin_score_ok, self.skin_score_ok_vol, 'cheer.ogg', 1 )
-		self.sfc_llum = self.skinLoadImage( self.skin_score_locked, 'llum.png' )
-		self.sfc_cursor = render_text( "_", (self.skin_score_color_text), self.skin_score_mida_text, 1)
-	
-	def scoreSoDeFons ( self ) :
-		self.skinLoadSound( self.skin_score_so_de_fons, self.skin_score_so_de_fons_vol, 'score.ogg', 0.6, music = 1).play( -1 )
-	
-	def scoreSoOk ( self ):
-		self.so_ok.play()
-	
-	def scorePlayClic1 ( self ):
-		self.so_sub.play()
-	
-	def scorePlayClic2 ( self ):
-		self.so_sub2.play()
-	def scoreSfcText ( self, newname ):
-		sfc = render_text( newname, (self.skin_score_color_text), self.skin_score_mida_text, 1)
-		return sfc
-
-	def barra_pos( self, total, posicio, color, ample, alt ):
-
-		sfc = pygame.Surface( ( ample, alt), pygame.SRCALPHA, 32 )
-		pygame.draw.rect(sfc, color, (0,0,ample-1,alt-1), 2)
-
-		ample_rect = ample - 8
-
-		pygame.draw.rect(sfc, (color[0], color[1], color[2], 64), (4, 4, ample_rect, alt - 8))
-		if total != 0 and posicio != 0: 
-			pos_ample = ( posicio * ample_rect ) / total 
-			pygame.draw.rect(sfc, color, (4, 4, pos_ample, alt - 8))
-
-		return sfc
 
 
 	
-	def scorePintaFons ( self, screen ):
-								
-		if self.skin_score_desplaca_el_fons != "False":
-			# Animem el fons
-			self.ypos += 1
-			self.ypos %= Global.screen_y
-		
-		xpinta = 0
-		
-		if self.skin_score_ones_al_fons:
-			self.mou_fons += 8
-			
-
-		# Pintem el fons animat
-		for num in range(0, 768):
-			
-			if self.skin_score_ones_al_fons:
-				xpinta = cos((float(self.mou_fons +num)) / 100.0) * 20
-		
-			screen.blit( self.fons, (xpinta, num), (0, (self.ypos + num) % 768, 1024, 1) )
-
-
-	def scorePintaMascaraDeFons ( self, screen ):
-
-		screen.blit( self.mascara_de_fons, (0, 0) )
-		
-	def scorePintaPuntuacions( self, screen, joc, element_seleccionat, estat, escriu, mostra_estad, frate ):
-			
-		# pintem les puntuacions
-		for num in range(0, self.skin_maxim_equips):
-			ycaixa = self.skin_score_caixes[num][1]
-			xcaixa = self.skin_score_caixes[num][0]
-
-			if element_seleccionat == num and self.skin_score_element_sobre != "True":
-				for compta in range( 0, self.seleccio_score.get_height() ):
-					desp = 0 if not estat else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
-					screen.blit( self.seleccio_score, (xcaixa + self.skin_score_element_sel_offsetx + desp, ycaixa + self.skin_score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
-
-			
-			if joc.teams[num].actiu:
-				
-				screen.blit( self.element_score, (xcaixa, ycaixa ) )
-				
-				if self.skin_score_figureta_visible == 'True':
-					screen.blit( self.figureta[joc.teams[num].figureta], (xcaixa + self.skin_score_figureta_offsetx, ycaixa + self.skin_score_figureta_offsety ) )
-
-				if joc.teams[num].sfc_nom:
-					joc.screen.blit( joc.teams[num].sfc_nom, (xcaixa + self.skin_score_teams_offsetx , ycaixa + self.skin_score_teams_offsety ) )
-				ampletext = joc.teams[num].sfc_nom.get_width() if joc.teams[num].sfc_nom else 0
-				if escriu and num == element_seleccionat:
-					if (int(time.time() * 4) % 2) == 0: 
-						screen.blit( self.sfc_cursor, (xcaixa + 25 + ampletext, ycaixa + 125 )) 
-						
-				color = (128,0,0) if (maxPunts(joc.teams) > joc.teams[num].punts ) else (0,128,0)
-				pinta = render_text( str(joc.teams[num].punts).zfill(2), color, 150, 1)
-				if self.skin_score_resultat_visible == 'True':
-					screen.blit( pinta, (xcaixa + 200, ycaixa - 15) )
-
-				if mostra_estad:
-					for cat in range(0,6):
-						screen.blit( self.barra_pos( joc.teams[num].preguntes_tot[cat], joc.teams[num].preguntes_ok[cat],  colorsCategories()[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )
-			
-			
-			if element_seleccionat == num and self.skin_score_element_sobre == "True":
-				for compta in range( 0, self.seleccio_score.get_height() ):
-					desp = 0 if not estat else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
-					screen.blit( self.seleccio_score, (xcaixa + self.skin_score_element_sel_offsetx + desp, ycaixa + self.skin_score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
-
-
-	def scorePintaLocked( self, screen ):
-		
-		if Global.LOCKED_MODE: 
-			screen.blit( self.sfc_llum, (0, 0) )
 			
 			
 	def rodaCarrega( self ):

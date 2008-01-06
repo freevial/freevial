@@ -50,15 +50,96 @@ class Score:
 	def __init__( self, joc ):
 		
 		self.joc = joc
-		self.skin = Skin()
+		self.skin = Skin()				
 		
-		self.skin.scoreCarrega ()
-
-
 		self.help_overlay = createHelpScreen( 'score' )
 
 		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
 
+		self.score_color_text_red = self.skin.configGetInt( 'score', 'color_text_red')
+		self.score_color_text_green = self.skin.configGetInt( 'score', 'color_text_green')
+		self.score_color_text_blue = self.skin.configGetInt( 'score', 'color_text_blue')
+		self.score_color_text = (self.score_color_text_red, self.score_color_text_green, self.score_color_text_blue)
+		self.score_mida_text = self.skin.configGetInt( 'score', 'mida_text')
+		
+		self.score_fons = self.skin.configGet( 'score', 'background')
+		self.score_mascara_de_fons = self.skin.configGet( 'score', 'background_mask')
+		self.score_element = self.skin.configGet( 'score', 'element')
+		self.score_element_sel = self.skin.configGet( 'score', 'sel_element')
+		self.score_element_sobre = self.skin.configGet( 'score', 'element_sobre')
+		self.score_element_sel_offsetx = self.skin.configGetInt( 'score', 'sel_element_offsetx')
+		self.score_element_sel_offsety = self.skin.configGetInt( 'score', 'sel_element_offsety')
+		self.score_teams_offsetx = self.skin.configGetInt( 'score', 'teams_offsetx')
+		self.score_teams_offsety = self.skin.configGetInt( 'score', 'teams_offsety')
+		self.score_resultat_visible = self.skin.configGet( 'score', 'resultat_visible')
+		self.score_figureta_visible = self.skin.configGet( 'score', 'figureta_visible') 
+		self.score_figureta_mode = self.skin.configGet( 'score', 'figureta_mode') # 0 - del 0 al 63 combinacions 1 - del 0 al 5 figures individuals
+		self.score_figureta_mascara = self.skin.configGet( 'score', 'figureta_mask')
+		
+		self.score_figureta_offsetx = self.skin.configGetInt( 'score', 'figureta_offsetx')
+		self.score_figureta_offsety = self.skin.configGetInt( 'score', 'figureta_offsety')
+		
+		self.score_figureta_individual_pos = [[self.skin.configGetInt( 'score', 'figureta_individual_pos_0_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_0_Y')], [self.skin.configGetInt( 'score', 'figureta_individual_pos_1_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_1_Y')], [self.skin.configGetInt( 'score', 'figureta_individual_pos_2_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_2_Y')], [self.skin.configGetInt( 'score', 'figureta_individual_pos_3_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_3_Y')], [self.skin.configGetInt( 'score', 'figureta_individual_pos_4_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_4_Y')], [self.skin.configGetInt( 'score', 'figureta_individual_pos_5_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_5_Y')] ]
+		
+		self.score_figureta_show_hide = self.skin.configGet( 'score', 'figureta_show_hide') # 0 - Es mostren les parts aconseguides, 1 - S'amaguen les parts aconseguides
+		
+		self.score_so_sub = self.skin.configGet( 'score', 'sub_sound')
+		self.score_so_sub_vol = self.skin.configGet( 'score', 'sub_sound_vol')
+		self.score_so_sub2 = self.skin.configGet( 'score', 'sub_sound2')
+		self.score_so_sub2_vol = self.skin.configGet( 'score', 'sub_sound2_vol')
+		
+		self.score_ok = self.skin.configGet( 'score', 'ok')
+		self.score_ok_vol = self.skin.configGet( 'score', 'ok_vol')
+		
+		self.score_locked = self.skin.configGet( 'score', 'locked')
+		self.score_locked_pos = (self.skin.configGetInt( 'score', 'locked_pos_X'),self.skin.configGetInt( 'score', 'locked_pos_Y'))
+		
+		self.score_so_de_fons = self.skin.configGet( 'score', 'background_sound')
+		self.score_so_de_fons_vol = self.skin.configGet( 'score', 'background_sound_vol')
+
+		self.score_desplaca_el_fons = self.skin.configGet( 'score', 'move_background') # True o False = no hi ha scroll vertical
+		self.score_ones_al_fons = self.skin.configGet( 'score', 'background_waves') # True o False = quiet
+		
+		self.score_caixes = [self.skin.configGetInt( 'score', 'boxes_0_X'),self.skin.configGetInt( 'score', 'boxes_0_Y')], [self.skin.configGetInt( 'score', 'boxes_1_X'),self.skin.configGetInt( 'score', 'boxes_1_Y')], [self.skin.configGetInt( 'score', 'boxes_2_X'),self.skin.configGetInt( 'score', 'boxes_2_Y')], [self.skin.configGetInt( 'score', 'boxes_3_X'),self.skin.configGetInt( 'score', 'boxes_3_Y')], [self.skin.configGetInt( 'score', 'boxes_4_X'),self.skin.configGetInt( 'score', 'boxes_4_Y')], [self.skin.configGetInt( 'score', 'boxes_5_X'),self.skin.configGetInt( 'score', 'boxes_5_Y')]
+		
+		#------------------------------------------
+		
+		self.ypos = 0
+		self.mou_fons = 0
+		#-----------------------------------------------
+		
+		
+		self.figureta = self.skin.LoadImageRange( "score", "figureta_mask", 64, 2)		
+	
+		self.mascara_de_fons = self.skin.LoadImage( "score", 'background_mask' )
+		self.fons = self.skin.LoadImage( "score", 'background' )
+		self.element_score = self.skin.LoadImage( "score", 'element' )
+		self.seleccio_score = self.skin.LoadImage( "score", 'sel_element' )
+		self.so_sub = self.skin.LoadSound( "score", 'sub_sound', 'sub_sound_vol' )
+		self.so_sub2 = self.skin.LoadSound( "score", 'sub_sound2', 'sub_sound2_vol' )
+		self.so_ok = self.skin.LoadSound( "score", 'ok', 'ok_vol' )
+		self.sfc_llum = self.skin.LoadImage( "score", 'locked' )
+		self.sfc_cursor = render_text( "_", (self.score_color_text), self.score_mida_text, 1)
+		
+	
+	
+	def barra_pos( self, total, posicio, color, ample, alt ):
+
+		sfc = pygame.Surface( ( ample, alt), pygame.SRCALPHA, 32 )
+		pygame.draw.rect(sfc, color, (0,0,ample-1,alt-1), 2)
+
+		ample_rect = ample - 8
+
+		pygame.draw.rect(sfc, (color[0], color[1], color[2], 64), (4, 4, ample_rect, alt - 8))
+		if total != 0 and posicio != 0: 
+			pos_ample = ( posicio * ample_rect ) / total 
+			pygame.draw.rect(sfc, color, (4, 4, pos_ample, alt - 8))
+
+		return sfc
+
+	
+	
+		
 		
 	###########################################
 	#
@@ -84,9 +165,9 @@ class Score:
 			mode = 2
 			mostra_estad = 1
 			element_seleccionat = teamsGuanyador( self.joc.teams )
-			self.skin.scoreSoOk()
+			self.so_ok.play()
 		else:
-			self.skin.scoreSoDeFons ()
+			self.skin.skin.LoadSound( self.score_so_de_fons, self.score_so_de_fons_vol, 'score.ogg', 0.6, music = 1).play( -1 )
 		
 		surten = 0
 		mostrada_victoria = False
@@ -103,7 +184,7 @@ class Score:
 					visca = Visca( self.joc )
 					resultat = visca.juguem( self.joc, self.joc.teams[teamsGuanyador( self.joc.teams )].nom )
 					mostrada_victoria = True
-					self.skin.scoreSoDeFons ()
+					self.skin.LoadSound( self.score_so_de_fons, self.score_so_de_fons_vol, 'score.ogg', 0.6, music = 1).play( -1 )
 			
 			# Event iterator
 			for event in pygame.event.get():
@@ -150,8 +231,8 @@ class Score:
 							newname = self.joc.teams[element_seleccionat].nom + eventhandle.str()
 						
 						if newname != None:
-						
-							sfc = self.skin.scoreSfcText( newname )
+							sfc = render_text( newname, (self.score_color_text), self.score_mida_text, 1)
+							
 							
 							if sfc.get_width() < 340:
 								# Name isn't too long, accept the new character
@@ -175,15 +256,15 @@ class Score:
 						
 						if eventhandle.keyUp('RIGHT', 'LEFT'):
 							element_seleccionat += 1 if (0 == (element_seleccionat % 2)) else -1 
-							self.skin.scorePlayClic1() 
+							self.so_sub.play()
 						
 						if eventhandle.keyUp('DOWN'): 
 							element_seleccionat = (element_seleccionat + 2) % 6
-							self.skin.scorePlayClic1() 
+							self.so_sub.play()
 						
 						if eventhandle.keyUp('UP'): 
 							element_seleccionat = (element_seleccionat - 2) % 6
-							self.skin.scorePlayClic1() 
+							self.so_sub.play()
 						
 						if eventhandle.keyUp('a'):
 							nou_grup = 1
@@ -196,11 +277,11 @@ class Score:
 						
 						if eventhandle.keyUp('PAGEDOWN') and teamsActius( self.joc.teams ) >= 1:
 							element_seleccionat = seguentEquipActiu( self.joc.teams, element_seleccionat )
-							self.skin.scorePlayClic1() 
+							self.so_sub.play()
 						
 						if eventhandle.keyUp('PAGEUP') and teamsActius( self.joc.teams ) >= 1:
 							element_seleccionat = anteriorEquipActiu( self.joc.teams, element_seleccionat )
-							self.skin.scorePlayClic1()  
+							self.so_sub.play() 
 						
 						if eventhandle.keyUp('r') and teamsActius( self.joc.teams ) > 0:
 							atzar = 30 + int( random.randint(0, 30) )
@@ -261,7 +342,7 @@ class Score:
 						visca = Visca( self.joc )
 						resultat = visca.juguem( self.joc, self.joc.teams[element_seleccionat].nom )
 						mostrada_victoria = True
-						self.skin.scoreSoDeFons ()
+						self.skin.LoadSound( self.score_so_de_fons, self.score_so_de_fons_vol, 'score.ogg', 0.6, music = 1).play( -1 )
 					
 					if eventhandle.keyUp('l'): 
 						Global.LOCKED_MODE = (not Global.LOCKED_MODE)
@@ -271,7 +352,7 @@ class Score:
 						selcat.juguem( mode )
 
 			if nou_grup == 1:
-				self.skin.scorePlayClic1
+				self.so_sub.play()
 				nou_grup = 0
 				self.joc.teams[element_seleccionat].actiu ^= 1
 				if self.joc.teams[element_seleccionat].actiu and self.joc.teams[element_seleccionat].nom == "": escriu ^= 1
@@ -279,15 +360,73 @@ class Score:
 			if atzar != 0 and teamsActius( self.joc.teams ) >= 2:
 				element_seleccionat = seguentEquipActiu( self.joc.teams, element_seleccionat )
 				atzar -= 1
-				self.skin.scorePlayClic2
+				self.so_sub2.play()
 			else:
 				atzar = 0
 			
-			# Animem el fons
-			self.skin.scorePintaFons( self.joc.screen )
-			self.skin.scorePintaMascaraDeFons( self.joc.screen )
-			self.skin.scorePintaPuntuacions( self.joc.screen, self.joc, element_seleccionat, mode, escriu, mostra_estad, frate )
-			self.skin.scorePintaLocked( self.joc.screen )
+			if self.score_desplaca_el_fons != "False":
+				# Animem el fons
+				self.ypos += 1
+				self.ypos %= Global.screen_y
+			
+			xpinta = 0
+			
+			if self.score_ones_al_fons:
+				self.mou_fons += 8
+				
+
+			# Pintem el fons animat
+			for num in range(0, 768):
+				
+				if self.score_ones_al_fons:
+					xpinta = cos((float(self.mou_fons +num)) / 100.0) * 20
+			
+				screen.blit( self.fons, (xpinta, num), (0, (self.ypos + num) % 768, 1024, 1) )
+			
+			screen.blit( self.mascara_de_fons, (0, 0) )
+			# pintem les puntuacions
+			for num in range(0, self.skin_maxim_equips):
+				ycaixa = self.score_caixes[num][1]
+				xcaixa = self.score_caixes[num][0]
+
+				if element_seleccionat == num and self.score_element_sobre != "True":
+					for compta in range( 0, self.seleccio_score.get_height() ):
+						desp = 0 if not estat else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
+						screen.blit( self.seleccio_score, (xcaixa + self.score_element_sel_offsetx + desp, ycaixa + self.score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
+
+				
+				if joc.teams[num].actiu:
+					
+					screen.blit( self.element_score, (xcaixa, ycaixa ) )
+					
+					if self.score_figureta_visible == 'True':
+						screen.blit( self.figureta[joc.teams[num].figureta], (xcaixa + self.score_figureta_offsetx, ycaixa + self.score_figureta_offsety ) )
+
+					if joc.teams[num].sfc_nom:
+						joc.screen.blit( joc.teams[num].sfc_nom, (xcaixa + self.score_teams_offsetx , ycaixa + self.score_teams_offsety ) )
+					ampletext = joc.teams[num].sfc_nom.get_width() if joc.teams[num].sfc_nom else 0
+					if escriu and num == element_seleccionat:
+						if (int(time.time() * 4) % 2) == 0: 
+							screen.blit( self.sfc_cursor, (xcaixa + 25 + ampletext, ycaixa + 125 )) 
+							
+					color = (128,0,0) if (maxPunts(joc.teams) > joc.teams[num].punts ) else (0,128,0)
+					pinta = render_text( str(joc.teams[num].punts).zfill(2), color, 150, 1)
+					if self.score_resultat_visible == 'True':
+						screen.blit( pinta, (xcaixa + 200, ycaixa - 15) )
+
+					if mostra_estad:
+						for cat in range(0,6):
+							screen.blit( self.barra_pos( joc.teams[num].preguntes_tot[cat], joc.teams[num].preguntes_ok[cat],  colorsCategories()[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )
+				
+				
+				if element_seleccionat == num and self.score_element_sobre == "True":
+					for compta in range( 0, self.seleccio_score.get_height() ):
+						desp = 0 if not estat else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
+						screen.blit( self.seleccio_score, (xcaixa + self.score_element_sel_offsetx + desp, ycaixa + self.score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
+			
+			
+			if Global.LOCKED_MODE: 
+				screen.blit( self.sfc_llum, (0, 0) )
 			
 			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))
