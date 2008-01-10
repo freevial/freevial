@@ -126,8 +126,9 @@ class Skin:
 			retval = loadSound ( name2, volume = vol1, music = music )
 		
 		return retval
-	
-	
+		
+
+
 	def inicia_vell( self ):
 		global skin_folder, skin_file
 		
@@ -142,19 +143,6 @@ class Skin:
 		self.skin_folder = skin_folder
 		
 
-	
-		self.skin_roda_fons = self.configGet( 'wheel', 'wheel_background')
-		self.skin_roda_front = self.configGet( 'wheel', 'wheel_front')
-		self.skin_roda_paper = self.configGet( 'wheel', 'wheel_paper')
-		
-
-		self.skin_roda_so_dot = self.configGet( 'wheel', 'sound_wheel_dot')
-		self.skin_roda_so_dot_vol = self.configGet( 'wheel', 'sound_wheel_dot_vol')
-		self.skin_roda_so_evil = self.configGet( 'wheel', 'sound_wheel_evil')
-		self.skin_roda_so_evil_vol = self.configGet( 'wheel', 'sound_wheel_evil_vol')
-		self.skin_roda_so_sub = self.configGet( 'wheel', 'sound_wheel_sub')
-		self.skin_roda_so_sub_vol = self.configGet( 'wheel', 'sound_wheel_sub_vol')
-		self.skin_roda_tipografia = self.configGet( 'wheel', 'wheel_tipografia')
 		
 		#--------------------------------------------------------
 		
@@ -215,66 +203,18 @@ class Skin:
 	
 			
 			
-	def rodaCarrega( self ):
-		self.carregaGeneral()
-		self.fons = self.skinLoadImage( self.skin_roda_fons, 'ruleta_fons.png' )
-		self.front = self.skinLoadImage( self.skin_roda_front, 'ruleta_front.png' )
-		self.paper = self.skinLoadImage( self.skin_roda_paper, 'ruleta_paper.png')
-		self.so_dot = self.skinLoadSound(self.skin_roda_so_dot, self.skin_roda_so_dot_vol, 'dot.ogg', 1)
-		self.so_evil = self.skinLoadSound(self.skin_roda_so_evil, self.skin_roda_so_evil_vol, 'evil.ogg', 1)
-		self.so_sub = self.skinLoadSound(self.skin_roda_so_sub, self.skin_roda_so_sub_vol, 'sub.ogg', 0.3)
-		self.so_cat = range(0, 6)
-		for num in range(0, 6):
-			self.so_cat[num] = self.skinLoadSound(soCategoria( num ), 1, soCategoria( num ), 1)
-			
-		for compta in range(0, self.skin_maxim_equips):
-			sfc = render_text( textCategoria(compta), (0,0,0), 60, 1, self.skin_roda_tipografia, 350 );
-			self.paper.blit( sfc, (122, 2+(compta * 200) + 100 - sfc.get_height() / 2 ))
-			sfc = render_text( textCategoria(compta), colorsCategories()[compta], 60, 1, self.skin_roda_tipografia, 350 );
-			self.paper.blit( sfc, (120, (compta * 200) + 100 - sfc.get_height() / 2 ))
-
-
 		
 
 
 #		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
 #		self.help_on_screen.sec_timeout = 10
 	
-	def rodaSoEvil ( self ):
-		self.so_evil.play()
-	def rodaSoEvilStop ( self ):
-		self.so_evil.stop()
-	def rodaSoDot ( self ):
-		self.so_dot.play(100)
-	def rodaSoDotStop ( self ):
-		self.so_dot.stop()
-	def rodaSoSub ( self ):
-		self.so_sub.play()
-	def rodaSoCat ( self, resultat ):
-		self.so_cat[ resultat - 1].play()
-		
-	def rodaGira ( self, joc ):
-		joc.screen.blit( self.fons, (0,0) )
 
-		self.nom_equip_sfc = render_text( joc.teams[joc.current_team].nom, (255,255,255), 30, 1 )
-		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
-		
-#		self.help_on_screen.activitat( )
+
+
+
+
 	
-	def rodaPinta ( self, joc, pos_fons, pos ):
-		#pintem el paper freevial
-		joc.screen.blit( self.fons, ( 0, pos_fons ) )
-		joc.screen.blit( self.fons, ( 0, - 768 + pos_fons ) )
-		
-		#pintem el paper d'impressora
-		joc.screen.blit( self.paper, ( 178, pos ) )
-		joc.screen.blit( self.paper, ( 178, pos + 1200 ) )
-		
-		#pintem els marges vermells i degradats
-		joc.screen.blit( self.front, (0,0) )	
-		
-		joc.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
-		joc.screen.blit( self.figureta[joc.teams[joc.current_team].figureta], (70, 630) )
 
 	def preguntadorCarrega( self, joc ):
 		

@@ -48,7 +48,42 @@ class Roda:
 		self.joc = joc
 		self.skin = Skin()
 		
-		self.skin.rodaCarrega()
+		self.fons = self.skin.configGet( 'wheel', 'wheel_background')
+		self.front = self.skin.configGet( 'wheel', 'wheel_front')
+		self.paper = self.skin.configGet( 'wheel', 'wheel_paper')
+		
+		self.maxim_equips = self.skin.configGetInt( 'game', 'max_teams' )
+
+		self.roda_so_dot = self.skin.configGet( 'wheel', 'sound_wheel_dot')
+		self.roda_so_dot_vol = self.skin.configGet( 'wheel', 'sound_wheel_dot_vol')
+		self.roda_so_evil = self.skin.configGet( 'wheel', 'sound_wheel_evil')
+		self.roda_so_evil_vol = self.skin.configGet( 'wheel', 'sound_wheel_evil_vol')
+		self.roda_so_sub = self.skin.configGet( 'wheel', 'sound_wheel_sub')
+		self.roda_so_sub_vol = self.skin.configGet( 'wheel', 'sound_wheel_sub_vol')
+		self.tipografia = self.skin.configGet( 'wheel', 'wheel_tipografia')
+		
+		
+		
+		
+		self.figureta = self.skin.LoadImageRange( "wheel", "figureta_mask", 64, 2)
+		self.fons = self.skin.LoadImage( "wheel", 'wheel_background' )
+		self.front = self.skin.LoadImage( "wheel", 'wheel_front' )
+		self.paper = self.skin.LoadImage( "wheel", 'wheel_paper')
+		self.so_dot = self.skin.LoadSound( "wheel", 'sound_wheel_dot', 'sound_wheel_dot_vol')
+		self.so_evil = self.skin.LoadSound( "wheel", 'sound_wheel_evil', 'sound_wheel_evil_vol')
+		self.so_sub = self.skin.LoadSound( "wheel", 'sound_wheel_sub', 'sound_wheel_sub_vol')
+		self.so_cat = range(0, 6)
+
+		
+		for num in range(0, 6):
+			self.so_cat[num] = loadSound(soCategoria( num ), 1)
+						
+		for compta in range(0, self.maxim_equips):
+			sfc = render_text( textCategoria(compta), (0,0,0), 60, 1, self.tipografia, 350 );
+			self.paper.blit( sfc, (122, 2+(compta * 200) + 100 - sfc.get_height() / 2 ))
+			sfc = render_text( textCategoria(compta), colorsCategories()[compta], 60, 1, self.tipografia, 350 );
+			self.paper.blit( sfc, (120, (compta * 200) + 100 - sfc.get_height() / 2 ))
+
 		self.help_overlay = createHelpScreen( 'roda' )		
 		
 		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
@@ -58,8 +93,8 @@ class Roda:
 		
 		self.frate = frameRate( Global.fps_limit )
 				
-		self.skin.rodaSoEvilStop()
-		self.skin.rodaSoDot()
+		self.so_evil.stop()
+		self.so_dot.play(100)
 		
 		velocitat = 75
 		deceleracio = 0
@@ -68,7 +103,10 @@ class Roda:
 		rodant = 1
 		resultat = -1
 		
-		self.skin.rodaGira( self.joc )
+		self.joc.screen.blit( self.fons, (0,0) )
+
+		self.nom_equip_sfc = render_text( self.joc.teams[self.joc.current_team].nom, (255,255,255), 30, 1 )
+		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
 #		velocitat = 75
 #		deceleracio = 0
 		
@@ -135,7 +173,7 @@ class Roda:
 				
 				if not frenant:
 					frenant = 1
-					self.skin.rodaSoSub()
+					self.so_sub.play()
 
 			if time_fi != 0 and time.time() - time_fi > 2.5:
 				return resultat
@@ -160,10 +198,10 @@ class Roda:
 				
 				else:
 					resultat = 1 + int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
-					self.skin.rodaSoDotStop()
-					self.skin.rodaSoCat( resultat )
+					self.so_dot.stop()
+					self.so_cat[ resultat - 1].play()
 					if not  self.joc.teams[self.joc.current_team].teCategoria( resultat ):
-						self.skin.rodaSoEvil()
+						self.so_evil.play()
 					rodant = 0
 				
 			if rodant == 1:
@@ -174,7 +212,19 @@ class Roda:
 				if pos <= -1200: pos += 1200
 				
 
-			self.skin.rodaPinta( self.joc, pos_fons, pos )
+			#pintem el paper freevial
+			self.joc.screen.blit( self.fons, ( 0, pos_fons ) )
+			self.joc.screen.blit( self.fons, ( 0, - 768 + pos_fons ) )
+			
+			#pintem el paper d'impressora
+			self.joc.screen.blit( self.paper, ( 178, pos ) )
+			self.joc.screen.blit( self.paper, ( 178, pos + 1200 ) )
+			
+			#pintem els marges vermells i degradats
+			self.joc.screen.blit( self.front, (0,0) )	
+			
+			self.joc.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
+			self.joc.screen.blit( self.figureta[self.joc.teams[self.joc.current_team].figureta], (70, 630) )
 						
 			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))
