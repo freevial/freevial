@@ -32,7 +32,7 @@ import gettext
 from pygame.locals import *
 
 from common.globals import Global
-from preguntes import preguntes_autors
+from questions import get_databases
 
 gettext.install('freevial', '/usr/share/locale', unicode=1)
 
@@ -319,6 +319,7 @@ def createTextSurface( frases, color, intensitat = 25 ):
 	font_step = min( font_step, 25 )
 
 	font_size = font_step - (font_step * 10) / 100
+	if font_size < 10: font_size = 10
  
 	help_overlay = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
 	
@@ -347,24 +348,21 @@ def createTextSurface( frases, color, intensitat = 25 ):
 
 def replaceKeywoards( content ):
 	""" Replaces keywoards found in the content a help file. """
-
+	
 	for num in range(0, len(content)):
 		content[num] = unicode(content[num], 'utf-8')
-
-	i = 0
-	for line in content:
-		
+	
+	for (i, line) in enumerate(content):
 		if line.startswith( '##replace:question-authors' ):
-			#content[ i : (i + 1) ] = list2string( preguntes_autors )
-			content[ i : (i + 1) ] = preguntes_autors()
-
-		i += 1
+			content[ i : (i + 1) ] = sorted(["%s: %s" % (category.name, category.authors) for category in get_databases()])
 	
 	return content
 
 
 def readLocalizedHelpFile( help_section ):
 	""" Reads a localized file into an unicoded array. """
+	
+	# FIXME/TODO: Delete help files and use gettext strings instead.
 	
 	filename = os.path.join(Global.folders['help'], (help_section + "_"+ locale.getdefaultlocale()[0][:2] +'.txt'))
 	
@@ -374,9 +372,6 @@ def readLocalizedHelpFile( help_section ):
 	lines = []
 	
 	for line in replaceKeywoards(open( filename, 'r' ).readlines()):
-		
-		# skip comments
-		#if line[:1] == '#': continue
 		
 		if not line[-1:].isalnum():
 			line = line[:-1]

@@ -32,7 +32,7 @@ import pygame
 
 from common.freevialglob import *
 from common.events import EventHandle
-from preguntes import *
+from questions import get_databases
 from skiner import Skin
 
 
@@ -76,13 +76,13 @@ class Roda:
 
 		
 		for num in range(0, 6):
-			self.so_cat[num] = loadSound(soCategoria( num ), 1)
+			self.so_cat[num] = loadSound(get_databases(num).sound, volume = 1.0)
 						
-		for compta in range(0, self.maxim_equips):
-			sfc = render_text( textCategoria(compta), (0,0,0), 60, 1, self.tipografia, 350 );
-			self.paper.blit( sfc, (122, 2+(compta * 200) + 100 - sfc.get_height() / 2 ))
-			sfc = render_text( textCategoria(compta), colorsCategories()[compta], 60, 1, self.tipografia, 350 );
-			self.paper.blit( sfc, (120, (compta * 200) + 100 - sfc.get_height() / 2 ))
+		for num in range(0, self.maxim_equips):
+			sfc = render_text( get_databases(num).name, (0,0,0), 60, 1, self.tipografia, 350 );
+			self.paper.blit( sfc, (122, 2+(num * 200) + 100 - sfc.get_height() / 2 ))
+			sfc = render_text( get_databases(num).name, colorsCategories()[num], 60, 1, self.tipografia, 350 );
+			self.paper.blit( sfc, (120, (num * 200) + 100 - sfc.get_height() / 2 ))
 
 		self.help_overlay = createHelpScreen( 'roda' )		
 		

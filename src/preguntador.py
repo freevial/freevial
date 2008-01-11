@@ -35,7 +35,7 @@ from math import *
 
 from common.freevialglob import *
 from common.events import EventHandle
-from preguntes import *
+from questions import get_databases
 from skiner import Skin
 
 
@@ -72,7 +72,7 @@ class Preguntador:
 		# Load images
 #		self.fons = range(0, 6)
 #		for num in range(0, 6):
-#			self.fons[num] = loadImage( nomImatgeCategoria( num ) )
+#			self.fons[num] = loadImage( get_databases(num).image )
 #			sfcmask = loadImage( 'filtre_c' + str(num+1) + '.png' )
 #			self.fons[num].blit( sfcmask, (0,0))
 		

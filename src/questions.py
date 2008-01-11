@@ -171,37 +171,19 @@ def GetDatabase( num, csvFile ):
 
 ###########################################
 
-categoriespreguntes = []
+alldatabases = []
 arxius_de_preguntes = LoadDatabase(Global.database).get()
 
 for num in range(0, len(arxius_de_preguntes) ):
 	try:
 		cat = GetDatabase( num + 1, os.path.join(Global.database, arxius_de_preguntes[num]) )
-		categoriespreguntes.append( cat )
+		alldatabases.append( cat )
 	except ValueError:
 		print 'Error with «%s».' % arxius_de_preguntes[num]
 
-def textCategoria( ncat ):
-
-	return categoriespreguntes[ncat].name
-
-def preguntes_autors():
-
-	llista = []
-
-	for num in range(0, 6):	
-		llista.append( categoriespreguntes[num].name + ": " + categoriespreguntes[num].authors )
+def get_databases( database = None ):
 	
-	return llista
-
-def nomImatgeCategoria( ncat ):
-
-	return categoriespreguntes[ncat].image
-
-def soCategoria( ncat ):
-
-	return categoriespreguntes[ncat].sound
-
-def get_categoriespreguntes( ):
-
-	return categoriespreguntes
+	if database is not None:
+		return alldatabases[database]
+	else:
+		return alldatabases

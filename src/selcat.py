@@ -32,7 +32,7 @@ from pygame.locals import *
 
 from common.freevialglob import *
 from common.events import EventHandle
-from preguntes import *
+from questions import *
 
 ##################################################
 #
@@ -75,7 +75,7 @@ class SelCat:
 
 		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
 
-		self.cp = get_categoriespreguntes()
+		self.cp = get_databases()
 		self.sfc_preguntes = range(0, len(self.cp))
 
 		self.reinicia_cats()
