@@ -1,0 +1,334 @@
+<database version="1.0" id="Ubuntu" language="ca">
+  <information>
+    <name>Ubuntu</name>
+    <description>Preguntes del món de l'Ubuntu i la filosofia ubuntaire. </description>
+    <destination>Persones interessades per l'Ubuntu i tot el que hi ha al voltant.</destination>
+    <timestamp_creation>1189202400</timestamp_creation>
+    <timestamp_modification>1200087361</timestamp_modification>
+    <authors>
+      <author>Nil Oriol, &lt;email&gt;</author>
+      <author>Josep Sanchez, &lt;email&gt;</author>
+      <author>Lluïsa Nuñez, &lt;email&gt;</author>
+      <author>Carles Oriol, &lt;email&gt;</author>
+      <author>Siegfried Gevatter, &lt;email&gt;</author>
+      <author>Julià Mestieri, &lt;email&gt;</author>
+      <author>Cortsenc, &lt;email&gt;</author>
+    </authors>
+  </information>
+  <appearance>
+    <image>categoria2.png</image>
+    <sound>c2.ogg</sound>
+  </appearance>
+  <questions>
+    <question>
+      <sentence>En Mark Shuttleworth ha afirmat públicament...</sentence>
+      <author>RainCT</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">que no farà cap pacte amb Microsoft a causa dels patents de programari</answer>
+        <answer>que cada any inverteix 50 milions en l'Ubuntu</answer>
+        <answer>que el Windows Vista és el pitjor sistema operatiu del món</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu el bot d'IRC oficial de l'equip d'ubuntaires en català?</sentence>
+      <author>RainCT</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">UbuCat</answer>
+        <answer>Ubotu</answer>
+        <answer>CatBot</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina tecnologia inclou per defecte la nova versió de l'Ubuntu (la Gutsy)?</sentence>
+      <author>RainCT</author>
+      <comments>La Gutsy Gibbon no només inclourà, sinò que també portarà habilitada per defecte en tots aquelles màquines que ho soportin, el Compiz Fusion, el producte resultant de la unió de Compiz amb Beryl.</comments>
+      <answers>
+        <answer correct="True">Compiz Fusion</answer>
+        <answer>Compiz</answer>
+        <answer>Beryl</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el servidor del canal de chat de#IRC de la comunitat catalana d'Ubuntu</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Freenode</answer>
+        <answer>canonicalnode</answer>
+        <answer>Quakenode</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Que vol dir MOTU?</sentence>
+      <author>quiron</author>
+      <comments>Els Masters Of The Universe (MOTU) són els empaquetadors d'Ubuntu dels repositoris Universe i Multiverse.</comments>
+      <answers>
+        <answer correct="True">Master Of The Universe</answer>
+        <answer>Multitask operated time unit</answer>
+        <answer>Multitask operated time unit</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quan es va oficialitzar el LoCo Team català</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El 15 de maig del 07</answer>
+        <answer>No és oficial</answer>
+        <answer>El 16 desembre del 06</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Que cal fer abans de poder penjar coses al REVU?</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Posar la clau GPG al launchpad</answer>
+        <answer>Mirar que no hi hagi un paquet per a la mateixa tasca</answer>
+        <answer>Assegurar-se que la llicència és competible amb la GPL</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>La propera versió LTS d'Ubuntu s'anomenarà...</sentence>
+      <author>RainCT</author>
+      <comments>La propera versió Long Term Support serà la Hardy Heron. Grumpy Groundhog és el nom que reben sempre els últims 'builds' del CVS.</comments>
+      <answers>
+        <answer correct="True">Hardy Heron</answer>
+        <answer>Grumpy Groundhog</answer>
+        <answer>Grumpy Groundhog</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>En el desenvolupament d'una nova versió d'Ubuntu, quin d'aquests fets té lloc abans?</sentence>
+      <author>RainCT</author>
+      <comments>https://wiki.Ubuntu.com/GutsyReleaseSchedule</comments>
+      <answers>
+        <answer correct="True">DebianImportFreeze</answer>
+        <answer>KernelFreeze</answer>
+        <answer>UpstreamVersionFreeze</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina és la nova ordre per que substitueix "aptitude upgrade" des de Gutsy?</sentence>
+      <author>papapep</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">aptitude safe-upgrade</answer>
+        <answer>aptitude dist-upgrade</answer>
+        <answer>aptitude all-upgrade</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Canonical és una empresa amb seu social a:</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Illa de man</answer>
+        <answer>Zimbawe</answer>
+        <answer>Zimbawe</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quins mesos de l'any s'alliberen les#versions noves de l'Ubuntu?</sentence>
+      <author>Carles</author>
+      <comments>El nombre de la versió correspon amb l'any i el mes. (7.10=2007 octubre)</comments>
+      <answers>
+        <answer correct="True">Abril i octubre</answer>
+        <answer>Febrer i novembre</answer>
+        <answer>Març i setembre</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests formats es pot llegir#amb la instal·lació predeterminada#de l'Ubuntu?</sentence>
+      <author>carles</author>
+      <comments>Els formats mp3 i dvd (mpeg) son formats restrictius, un protegit per patents i l'altre en alguns països no es pot ni mostrar les fonts ja que implica el rebentar la protecció dels dvds. Malgrat tot no hi ha cap problema per usar qualsevol d'ells un cop instaŀlat el sistema</comments>
+      <answers>
+        <answer correct="True">ogg</answer>
+        <answer>mp3</answer>
+        <answer>dvd</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina d'aquestes NO és una funció#del Launchpad?</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Descarregar actualitzacions</answer>
+        <answer>Traduir programes</answer>
+        <answer>Traduir programes</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests paquets no#serveix per a  instal·lar programes?</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">ginstaller</answer>
+        <answer>synaptic</answer>
+        <answer>synaptic</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina va ser la primera LTS d'Ubuntu?</sentence>
+      <author>cortsenc</author>
+      <comments>1</comments>
+      <answers>
+        <answer correct="True">6.06</answer>
+        <answer>5.10</answer>
+        <answer>7.10</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el nick a l'IRC#d'en Mark Shuttleworth?</sentence>
+      <author>papapep</author>
+      <comments>Self-Appointed Benevolent Dictator For Life</comments>
+      <answers>
+        <answer correct="True">sabdfl</answer>
+        <answer>sticsis</answer>
+        <answer>rtfm</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>GoBUNTU és:</sentence>
+      <author>lluisanunez</author>
+      <comments>http://en.wikipedia.org/wiki/Gobuntu</comments>
+      <answers>
+        <answer correct="True">Una versió d'Ubuntu amb#només programari lliure</answer>
+        <answer>La distribució, basada en#Ubuntu, dels aficionats al GO</answer>
+        <answer>Una versió d'Ubuntu amb#només Gnome</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el bug número 1 del Launchpad?</sentence>
+      <author>Nil</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El monopoli de microsoft</answer>
+        <answer>Problemes amb les gràfiques</answer>
+        <answer>Es penja</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests formats es pot llegir#amb la instaŀlació predeterminada#d'Ubuntu</sentence>
+      <author>carles</author>
+      <comments>Els formats mp3 i dvd (mpeg) son formats restrictius, un protegit per patents i l'altre en alguns països no es pot ni mostrar les fonts ja que implica el rebentar la protecció dels dvds. Malgrat tot no hi ha cap problema per usar qualsevol d'ells un cop instaŀlat el sistema</comments>
+      <answers>
+        <answer correct="True">ogg</answer>
+        <answer>dvd</answer>
+        <answer>dvd</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>En quina d'aquestes distribucions#està basat l'Ubuntu?</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Debian</answer>
+        <answer>Suse</answer>
+        <answer>Fedora</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina d'aquestes funcions#no té el launchpad</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Descarregar actualitzacions</answer>
+        <answer>Reportar bugs</answer>
+        <answer>Reportar bugs</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quins son els colors del logotip de l'Ubuntu?</sentence>
+      <author>Nil</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Groc, vermell i taronja</answer>
+        <answer>Groc, blau i taronja</answer>
+        <answer>Tons de taronja</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quins mesos de l'any surt cada#versió nova d'Ubuntu?</sentence>
+      <author>Carles</author>
+      <comments>El nombre de la versió correspon#a l'any i el mes.##(7.10=2007 octubre)</comments>
+      <answers>
+        <answer correct="True">Abril i octubre</answer>
+        <answer>Febrer i novembre</answer>
+        <answer>Març i setembre</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests Linux NO és#una variant d'Ubuntu?</sentence>
+      <author>carles</author>
+      <comments>LinKat és la distribució GNU/Linux del Departament d'Educació de la Generalitat de Catalunya. Està basada en la distribució Suse i el funcionament del seu programari es basa amb paquets rpm</comments>
+      <answers>
+        <answer correct="True">Linkat</answer>
+        <answer>Ubuntu Studio</answer>
+        <answer>Guadalinex</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es dirà la versió 8.04 LTS d'Ubuntu</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Hardy Heron</answer>
+        <answer>Hungry Hippo</answer>
+        <answer>Hungry Hippo</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quins són els colors del logotip del Kubuntu?</sentence>
+      <author>Nil</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Tons de blau</answer>
+        <answer>Blau, gris i blanc</answer>
+        <answer>Blau, verd i blanc</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests sistema d'arxius no es#pot llegir ni s'hi pot escriure en Ubuntu</sentence>
+      <author>carles</author>
+      <comments>sata no és un sistema d'arxius</comments>
+      <answers>
+        <answer correct="True">sata</answer>
+        <answer>ext3</answer>
+        <answer>ntfs</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests paquets no#serveix per instaŀlar programes</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Ginstaller</answer>
+        <answer>Adept</answer>
+        <answer>Adept</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>L'Ubuntu és reconegut com un sistema operatiu del tipus</sentence>
+      <author>carles</author>
+      <comments>EL sistema operatiu és GNU amb Linux. Linux sols és el nucli d'aquest i es un component tant important com qualsevol altre.##En quant a la primera opció, encara que s'hi assembli molt GNU/Linux no és un sistema UNIX aprovat.</comments>
+      <answers>
+        <answer correct="True">GNU amb Linux</answer>
+        <answer>Linux</answer>
+        <answer>Unix</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina d'aquestes característiques#no inclou l'Edubuntu?</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Veure DVDs zona 2</answer>
+        <answer>Iniciar ordinadors en xarxa#sense instaŀlar, ni posar CDs</answer>
+        <answer>Gestionar horaris d'una escola</answer>
+      </answers>
+    </question>
+  </questions>
+</database>
