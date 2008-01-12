@@ -181,12 +181,12 @@ class Score:
 			if mode == 2:
 				if frate.segons() < 4.1 and int(frate.segons()) > surten:
 					surten = int( frate.segons() )
-					self.scoreSoOk()
+					self.so_ok.play()
 				if frate.segons() > 4.1 and not mostrada_victoria:
 					visca = Visca( self.joc )
 					resultat = visca.juguem( self.joc, self.joc.teams[teamsGuanyador( self.joc.teams )].nom )
 					mostrada_victoria = True
-					self.skin.LoadSound( self.score_so_de_fons, self.score_so_de_fons_vol, 'score.ogg', 0.6, music = 1).play( -1 )
+					self.skin.LoadSound( "score", 'background_sound', 'background_sound_vol' ).play( -1 )
 			
 			# Event iterator
 			for event in pygame.event.get():

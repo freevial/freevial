@@ -85,7 +85,8 @@ class Preguntador:
 		
 		self.so_ticking2 = self.skin.configGet( 'preguntador', 'so_ticking2')
 		self.so_ticking2_vol = self.skin.configGet( 'preguntador', 'so_ticking2_vol')
-		self.mostra_punt_de_categoria = self.skin.configGetBool( 'preguntador', 'mostra_punt_de_categoria')
+		self.mostra_punt_de_categoria = False
+		self.match_point = False
 		self.so_drum2 = self.skin.configGet( 'preguntador', 'so_drum2')
 		self.so_drum2_vol = self.skin.configGet( 'preguntador', 'so_drum2_vol')
 		
@@ -312,7 +313,10 @@ class Preguntador:
 
 
 		if (self.joc.teams[self.joc.current_team].figureta & bitCategoria( selcat )) == 0:
-			self.skin.preguntadorCarregaFiguretes( self.joc, selcat )
+			self.mostra_punt_de_categoria = True
+			self.figureta_no = loadImage('points/freevial_tot' + str( self.joc.teams[self.joc.current_team].figureta).zfill(2) + '.png')
+			self.figureta_si = loadImage('points/freevial_tot' + str( self.joc.teams[self.joc.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
+			self.match_point = True if (self.joc.teams[self.joc.current_team].figureta | bitCategoria ( selcat ) == 63) else False
 
 		mostra_comentaris = False
 		sfc_comentaris = None
