@@ -50,58 +50,65 @@ class Score:
 	def __init__( self, joc ):
 		
 		self.joc = joc
-		self.skin = Skin()				
+		self.skin = Skin('score')				
 		
 		self.help_overlay = createHelpScreen( 'score' )
 
 		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
-		self.skin_maxim_equips = self.skin.configGetInt( 'game', 'max_teams' )
+		self.skin_maxim_equips = self.skin.configGetInt( 'max_teams', domain = 'game' )
 		
-		self.score_color_text_red = self.skin.configGetInt( 'score', 'color_text_red')
-		self.score_color_text_green = self.skin.configGetInt( 'score', 'color_text_green')
-		self.score_color_text_blue = self.skin.configGetInt( 'score', 'color_text_blue')
+		self.score_color_text_red = self.skin.configGetInt( 'color_text_red')
+		self.score_color_text_green = self.skin.configGetInt( 'color_text_green')
+		self.score_color_text_blue = self.skin.configGetInt( 'color_text_blue')
 		self.score_color_text = (self.score_color_text_red, self.score_color_text_green, self.score_color_text_blue)
-		self.score_mida_text = self.skin.configGetInt( 'score', 'mida_text')
+		self.score_mida_text = self.skin.configGetInt( 'mida_text')
 		
-		self.score_fons = self.skin.configGet( 'score', 'background')
-		self.score_mascara_de_fons = self.skin.configGet( 'score', 'background_mask')
-		self.score_element = self.skin.configGet( 'score', 'element')
-		self.score_element_sel = self.skin.configGet( 'score', 'sel_element')
-		self.score_element_sobre = self.skin.configGet( 'score', 'element_sobre')
-		self.score_element_sel_offsetx = self.skin.configGetInt( 'score', 'sel_element_offsetx')
-		self.score_element_sel_offsety = self.skin.configGetInt( 'score', 'sel_element_offsety')
-		self.score_teams_offsetx = self.skin.configGetInt( 'score', 'teams_offsetx')
-		self.score_teams_offsety = self.skin.configGetInt( 'score', 'teams_offsety')
-		self.score_resultat_visible = self.skin.configGet( 'score', 'resultat_visible')
-		self.score_figureta_visible = self.skin.configGet( 'score', 'figureta_visible') 
-		self.score_figureta_mode = self.skin.configGet( 'score', 'figureta_mode') # 0 - del 0 al 63 combinacions 1 - del 0 al 5 figures individuals
-		self.score_figureta_mascara = self.skin.configGet( 'score', 'figureta_mask')
+		self.score_fons = self.skin.configGet( 'background')
+		self.score_mascara_de_fons = self.skin.configGet( 'background_mask')
+		self.score_element = self.skin.configGet( 'element')
+		self.score_element_sel = self.skin.configGet( 'sel_element')
+		self.score_element_sobre = self.skin.configGet( 'element_sobre')
+		self.score_element_sel_offsetx = self.skin.configGetInt( 'sel_element_offsetx')
+		self.score_element_sel_offsety = self.skin.configGetInt( 'sel_element_offsety')
+		self.score_teams_offsetx = self.skin.configGetInt( 'teams_offsetx')
+		self.score_teams_offsety = self.skin.configGetInt( 'teams_offsety')
+		self.score_resultat_visible = self.skin.configGet( 'resultat_visible')
+		self.score_figureta_visible = self.skin.configGet( 'figureta_visible') 
+		self.score_figureta_mode = self.skin.configGet( 'figureta_mode') # 0 - del 0 al 63 combinacions 1 - del 0 al 5 figures individuals
+		self.score_figureta_mascara = self.skin.configGet( 'figureta_mask')
 		
-		self.score_figureta_offsetx = self.skin.configGetInt( 'score', 'figureta_offsetx')
-		self.score_figureta_offsety = self.skin.configGetInt( 'score', 'figureta_offsety')
+		self.score_figureta_offsetx = self.skin.configGetInt( 'figureta_offsetx')
+		self.score_figureta_offsety = self.skin.configGetInt( 'figureta_offsety')
 		
-		self.score_figureta_individual_pos = [[self.skin.configGetInt( 'score', 'figureta_individual_pos_0_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_0_Y')], [self.skin.configGetInt( 'score', 'figureta_individual_pos_1_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_1_Y')], [self.skin.configGetInt( 'score', 'figureta_individual_pos_2_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_2_Y')], [self.skin.configGetInt( 'score', 'figureta_individual_pos_3_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_3_Y')], [self.skin.configGetInt( 'score', 'figureta_individual_pos_4_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_4_Y')], [self.skin.configGetInt( 'score', 'figureta_individual_pos_5_X'),self.skin.configGetInt( 'score', 'figureta_individual_pos_5_Y')] ]
+		self.score_figureta_individual_pos = [[self.skin.configGetInt( 'figureta_individual_pos_0_X'),self.skin.configGetInt( 'figureta_individual_pos_0_Y')], [self.skin.configGetInt( 'figureta_individual_pos_1_X'),self.skin.configGetInt( 'figureta_individual_pos_1_Y')], [self.skin.configGetInt( 'figureta_individual_pos_2_X'),self.skin.configGetInt( 'figureta_individual_pos_2_Y')], [self.skin.configGetInt( 'figureta_individual_pos_3_X'),self.skin.configGetInt( 'figureta_individual_pos_3_Y')], [self.skin.configGetInt( 'figureta_individual_pos_4_X'),self.skin.configGetInt( 'figureta_individual_pos_4_Y')], [self.skin.configGetInt( 'figureta_individual_pos_5_X'),self.skin.configGetInt( 'figureta_individual_pos_5_Y')] ]
 		
-		self.score_figureta_show_hide = self.skin.configGet( 'score', 'figureta_show_hide') # 0 - Es mostren les parts aconseguides, 1 - S'amaguen les parts aconseguides
+		self.score_figureta_show_hide = self.skin.configGet( 'figureta_show_hide') # 0 - Es mostren les parts aconseguides, 1 - S'amaguen les parts aconseguides
 		
-		self.score_so_sub = self.skin.configGet( 'score', 'sub_sound')
-		self.score_so_sub_vol = self.skin.configGet( 'score', 'sub_sound_vol')
-		self.score_so_sub2 = self.skin.configGet( 'score', 'sub_sound2')
-		self.score_so_sub2_vol = self.skin.configGet( 'score', 'sub_sound2_vol')
+		self.score_so_sub = self.skin.configGet( 'sub_sound')
+		self.score_so_sub_vol = self.skin.configGet( 'sub_sound_vol')
+		self.score_so_sub2 = self.skin.configGet( 'sub_sound2')
+		self.score_so_sub2_vol = self.skin.configGet( 'sub_sound2_vol')
 		
-		self.score_ok = self.skin.configGet( 'score', 'ok')
-		self.score_ok_vol = self.skin.configGet( 'score', 'ok_vol')
+		self.score_ok = self.skin.configGet( 'ok')
+		self.score_ok_vol = self.skin.configGet( 'ok_vol')
 		
-		self.score_locked = self.skin.configGet( 'score', 'locked')
-		self.score_locked_pos = (self.skin.configGetInt( 'score', 'locked_pos_X'),self.skin.configGetInt( 'score', 'locked_pos_Y'))
+		self.score_locked = self.skin.configGet( 'locked')
+		self.score_locked_pos = (self.skin.configGetInt( 'locked_pos_X'),self.skin.configGetInt( 'locked_pos_Y'))
 		
-		self.score_so_de_fons = self.skin.configGet( 'score', 'background_sound')
-		self.score_so_de_fons_vol = self.skin.configGet( 'score', 'background_sound_vol')
+		self.score_so_de_fons = self.skin.configGet( 'background_sound')
+		self.score_so_de_fons_vol = self.skin.configGet( 'background_sound_vol')
 
-		self.score_desplaca_el_fons = self.skin.configGet( 'score', 'move_background') # True o False = no hi ha scroll vertical
-		self.score_ones_al_fons = self.skin.configGet( 'score', 'background_waves') # True o False = quiet
+		self.score_desplaca_el_fons = self.skin.configGet( 'move_background') # True o False = no hi ha scroll vertical
+		self.score_ones_al_fons = self.skin.configGet( 'background_waves') # True o False = quiet
 		
-		self.score_caixes = [self.skin.configGetInt( 'score', 'boxes_0_X'),self.skin.configGetInt( 'score', 'boxes_0_Y')], [self.skin.configGetInt( 'score', 'boxes_1_X'),self.skin.configGetInt( 'score', 'boxes_1_Y')], [self.skin.configGetInt( 'score', 'boxes_2_X'),self.skin.configGetInt( 'score', 'boxes_2_Y')], [self.skin.configGetInt( 'score', 'boxes_3_X'),self.skin.configGetInt( 'score', 'boxes_3_Y')], [self.skin.configGetInt( 'score', 'boxes_4_X'),self.skin.configGetInt( 'score', 'boxes_4_Y')], [self.skin.configGetInt( 'score', 'boxes_5_X'),self.skin.configGetInt( 'score', 'boxes_5_Y')]
+		self.score_caixes = (
+			[self.skin.configGetInt( 'boxes_0_X' ), self.skin.configGetInt( 'boxes_0_Y' )],
+			[self.skin.configGetInt( 'boxes_1_X' ), self.skin.configGetInt( 'boxes_1_Y' )],
+			[self.skin.configGetInt( 'boxes_2_X' ), self.skin.configGetInt( 'boxes_2_Y' )],
+			[self.skin.configGetInt( 'boxes_3_X' ), self.skin.configGetInt( 'boxes_3_Y' )],
+			[self.skin.configGetInt( 'boxes_4_X' ), self.skin.configGetInt( 'boxes_4_Y' )],
+			[self.skin.configGetInt( 'boxes_5_X' ), self.skin.configGetInt( 'boxes_5_Y' )],
+			)
 		
 		#------------------------------------------
 		
@@ -110,16 +117,16 @@ class Score:
 		#-----------------------------------------------
 		
 		
-		self.figureta = self.skin.LoadImageRange( "score", "figureta_mask", 64, 2)		
+		self.figureta = self.skin.LoadImageRange( 'figureta_mask', 64, 2)		
 	
-		self.mascara_de_fons = self.skin.LoadImage( "score", 'background_mask' )
-		self.fons = self.skin.LoadImage( "score", 'background' )
-		self.element_score = self.skin.LoadImage( "score", 'element' )
-		self.seleccio_score = self.skin.LoadImage( "score", 'sel_element' )
-		self.so_sub = self.skin.LoadSound( "score", 'sub_sound', 'sub_sound_vol' )
-		self.so_sub2 = self.skin.LoadSound( "score", 'sub_sound2', 'sub_sound2_vol' )
-		self.so_ok = self.skin.LoadSound( "score", 'ok', 'ok_vol' )
-		self.sfc_llum = self.skin.LoadImage( "score", 'locked' )
+		self.mascara_de_fons = self.skin.LoadImage( 'background_mask' )
+		self.fons = self.skin.LoadImage( 'background' )
+		self.element_score = self.skin.LoadImage( 'element' )
+		self.seleccio_score = self.skin.LoadImage( 'sel_element' )
+		self.so_sub = self.skin.LoadSound( 'sub_sound', 'sub_sound_vol' )
+		self.so_sub2 = self.skin.LoadSound( 'sub_sound2', 'sub_sound2_vol' )
+		self.so_ok = self.skin.LoadSound( 'ok', 'ok_vol' )
+		self.sfc_llum = self.skin.LoadImage( 'locked' )
 		
 		self.sfc_cursor = self.skin.render_text( "_", (self.score_color_text), self.score_mida_text, 1)
 		
@@ -169,7 +176,7 @@ class Score:
 			element_seleccionat = teamsGuanyador( self.joc.teams )
 			self.so_ok.play()
 		else:
-			self.skin.LoadSound( "score", 'background_sound', 'background_sound_vol', 1 ).play( -1 )
+			self.skin.LoadSound( 'background_sound', 'background_sound_vol', 1 ).play( -1 )
 		
 		surten = 0
 		mostrada_victoria = False
