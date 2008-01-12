@@ -43,6 +43,7 @@ class Equip:
 	
 	nom = ''
 	punts = 0
+	errors = 0
 	figureta = 0
 	actiu = False
 
@@ -249,24 +250,52 @@ def teamsTancat( teams ):
 	return False
 
 
-def teamsGuanyador( teams ):
+def teamsGuanyador( teams, mode, extra ):
 
-	puntsmax = 0
-	equipmax = -1
+	# Mode 0 - Figureta de 6 peces completa i una diferència de més de 2 punts respecte a l'equip anterior. Guanyador a punts
+	# Mode 1 - Aconseguir un nombre determinat de punts
+	# Mode 2 - Ser el darrer equip en fer X cagades
+	# Mode 3 - Omplir la figureta de 6 peces
 
-	if teamsTancat( teams ):
+	guanyador = 0
 
-		for num in range(0,6):
-			if teams[num].actiu:
-				if teams[num].punts == puntsmax:
-					# empat a punts
-					equipmax = -1 
+	if mode == 0:
+		puntsmax = 0
+		equipmax = -1
 
-				if teams[num].punts > puntsmax:
-					equipmax = num
-					puntsmax = teams[num].punts
+		if teamsTancat( teams ):
+
+			for num in range(0,6):
+				if teams[num].actiu:
+					if teams[num].punts == puntsmax:
+						# empat a punts
+						equipmax = -1 
+
+					if teams[num].punts > puntsmax:
+						equipmax = num
+						puntsmax = teams[num].punts
 	
-	return equipmax
+		guanyador = equipmax
+			
+	if mode == 1:
+		for num in range(0,6):
+			if teams[num].punts >=  extra:
+				guanyador = num
+
+	if mode == 2:
+		nocagats = []
+		for num in range(0,6):
+			if teams[num].punts <  extra:
+				nocagats += num
+		if len(nocagats) == 1:
+			guanyador = nogacats[0]
+
+	if mode == 3:
+		for num in range(0,6):
+			if teams[num].figureta == 63:
+				guanyador = num
+
+	return guanyador
 
 
 def seguentEquipActiu( teams, actual ):
