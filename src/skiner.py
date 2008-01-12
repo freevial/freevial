@@ -150,8 +150,6 @@ class Skin:
 #		self.help_on_screen.sec_timeout = 10
 	
 
-
-
 		
 	def preguntadorCarregaFiguretes( self, joc, selcat ):
 		self.mostra_punt_de_categoria = True
@@ -160,22 +158,16 @@ class Skin:
 		self.match_point = True if (joc.teams[joc.current_team].figureta | bitCategoria ( selcat ) == 63) else False
 
 	def render_text( self, cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
-		
+
+
 		if nomfont == '':
 			nomfont = self.configGet( "game", "default_font" )
 
 		if nomfont != '':
 			if not os.path.exists( nomfont ):
 				fullname = os.path.join( unicode(self.skin_folder, 'utf-8'), nomfont)	
-				print "nom: ",fullname
 				if os.path.exists( fullname ):
 					nomfont = fullname
-				else:
-					fullname = pygame.font.match_font(nomfont)
-					if os.path.exists( fullname ):
-						nomfont = fullname
-					else:
-						nomfont = ''
 
 		return render_text( cadena, color, mida, antialias, nomfont, maxwidth )		
 
