@@ -163,9 +163,13 @@ class Skin:
 		if nomfont == '':
 			nomfont = self.configGet( "game", "default_font" )
 
+		print nomfont
+
 		if nomfont != '':
 			if not os.path.exists( nomfont ):
 				fullname = os.path.join( unicode(self.skin_folder, 'utf-8'), nomfont)	
+
+				print fullname
 				if os.path.exists( fullname ):
 					nomfont = fullname
 

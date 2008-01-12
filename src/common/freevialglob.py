@@ -136,17 +136,15 @@ def loadSound( name, volume = 1.0, music = False ):
 def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
 	""" Function for easier text rendering. """
 
-	
 	if os.path.exists( nomfont ):
 		font1 = pygame.font.Font( nomfont, mida )
 	else:
 		tnomfont = os.path.join(Global.folders['fonts'], '/usr/share/fonts/truetype/unfonts/UnBatangBold.ttf' if nomfont == '' else nomfont)
 		if os.path.exists( tnomfont ):
-			print "uops", tnomfont
 			font1 = pygame.font.Font( tnomfont, mida )
 		else:
+			# NOT WORKING IN PYGAME
 			font1 = pygame.font.SysFont( nomfont, mida )
-			print nomfont
 		
 	
 	text_restant = cadena
