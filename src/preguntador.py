@@ -25,12 +25,8 @@
 #
 
 import sys
-import os.path
-import random
 import time
 import pygame
-import copy
-import math
 from math import *
 
 from common.freevialglob import *
@@ -38,11 +34,6 @@ from common.events import EventHandle
 from questions import get_databases
 from skiner import Skin
 
-
-##################################################
-#
-# Empaquetat en una classe del preguntador
-#
 
 class Preguntador:
 
@@ -52,7 +43,6 @@ class Preguntador:
 		
 		self.joc = joc
 		self.skin = Skin()
-		
 		
 		self.color_de_fons_red = self.skin.configGetInt('preguntador','color_de_fons_red')
 		self.color_de_fons_green = self.skin.configGetInt('preguntador','color_de_fons_green')
@@ -135,7 +125,6 @@ class Preguntador:
 		
 		self.info = [ self.skin.LoadImage( "preguntador", 'itr1'), self.skin.LoadImage( "preguntador", 'itr2') ]	
 		
-		
 		self.so_ticking2 = self.skin.LoadSound( "preguntador", 'so_ticking2', 'so_ticking2_vol')
 		self.so_drum2 = self.skin.LoadSound( "preguntador", 'so_drum2', 'so_drum2_vol')
 		self.so_sub = self.skin.LoadSound( "preguntador", 'so_sub', 'so_sub_vol')
@@ -161,7 +150,6 @@ class Preguntador:
 		self.num_asked_questions = 0
 		self.show_answers = 0
 		self.selected = 0
-
 		
 		# Load images
 #		self.fons = range(0, 6)
@@ -199,7 +187,7 @@ class Preguntador:
 #		self.mostranpregunta = 1
 		
 		self.help_overlay = createHelpScreen( 'preguntador' )
-
+		
 		self.help_on_screen = helpOnScreen( HOS_PREGUNTADOR_RUN )
 		self.help_on_screen.sec_timeout = 10
 
@@ -210,8 +198,6 @@ class Preguntador:
 	def numlinies( self, cadena ):
 		
 		return cadena.count('#')
-	
-
 
 	###########################################
 	#
@@ -219,20 +205,18 @@ class Preguntador:
 	# si la categoria és 0 no té en compte el valor
 	def atzar( self, categoria ):
 		
-	
 		self.categoria = categoria - 1
 		self.current_question = get_databases(self.categoria).question()
 		self.num_asked_questions += 1
 		
 		self.selected = 0
-		self.Inicialitza_pregunta()
-
-		
-			###########################################
-		#
-		# Inicialitzador de nova pregunta
-		#
-	def Inicialitza_pregunta( self ):
+		self.initialize_question()
+	
+	###########################################
+	#
+	# Inicialitzador de nova pregunta
+	#
+	def initialize_question( self ):
 		
 		self.sfc_pregunta  = self.preguntadorPintatext( self.current_question['text'], 1024 - 175 )
 
@@ -252,7 +236,7 @@ class Preguntador:
 		self.so_drum2.stop()
 
 		self.show_answers = 0
-		
+
 	###########################################
 	#
 	# Funció per pintar el text i les preguntes sobre una nova superficie
@@ -284,8 +268,6 @@ class Preguntador:
 			nlinia += 1
 			
 		return sfc
-			
-
 
 	###########################################
 	#
@@ -302,14 +284,12 @@ class Preguntador:
 		if not Global.SOUND_MUTE: pygame.time.wait( 2500 )
 		self.skin.LoadSound( "preguntador", 'so_fons', 'so_fons_vol', 1).play(1)
 
-		
 		mostra_ajuda = mostra_credits = 0
 
 		self.joc.screen.fill( (0,0,0,0) )
 
 		# remaining seconds until end of answer time
 		self.segons = 61
-
 
 		if (self.joc.teams[self.joc.current_team].figureta & bitCategoria( selcat )) == 0:
 			self.skin.preguntadorCarregaFiguretes( self.joc, selcat )
@@ -318,8 +298,6 @@ class Preguntador:
 		sfc_comentaris = None
 
 		self.help_on_screen.activitat( )
-
-		
 	
 		while 1:
 			
@@ -427,8 +405,6 @@ class Preguntador:
 					else:
 						compos = 768
 						mostra_comentaris = True;
-			
-			
 
  			# Animem el fons
 			self.ypos += 2
@@ -525,22 +501,15 @@ class Preguntador:
 				else:
 					self.joc.screen.blit( self.figureta_no if (int(time.time() * 2) % 2) == 0 else self.figureta_si, (880, 130) )
 
-			
 			self.joc.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
 
-
-
-			if mostra_comentaris:
-				if self.compos > 0: self.compos -= 100 
-				self.joc.screen.blit( sfc_comentaris, (0,self.compos))
-			else:
+			if mostra_comentaris and sfc_comentaris is not None:
+				if self.compos > 0: self.compos -= 100
+				self.joc.screen.blit( sfc_comentaris, (0, self.compos))
+			elif sfc_comentaris is not None:
 				if self.compos < 768: 
 					self.compos += 100
-					self.joc.screen.blit( sfc_comentaris, (0,self.compos))
-			
-			
-
-
+					self.joc.screen.blit( sfc_comentaris, (0, self.compos))
  			
  			self.help_on_screen.draw( self.joc.screen, (350, 740), HOS_PREGUNTADOR_END if self.show_answers else HOS_PREGUNTADOR_RUN )
 			
@@ -551,7 +520,6 @@ class Preguntador:
 			
 			#intercanviem els buffers de self.joc.screen
 			pygame.display.flip()
-			
 		
 		pygame.mixer.music.stop()
 
