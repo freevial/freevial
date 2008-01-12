@@ -24,87 +24,87 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import os
+import os.path
 import gettext
 from math import *
-from ConfigParser import ConfigParser
+from ConfigParser import SafeConfigParser, NoOptionError, NoSectionError
 
 from common.freevialglob import *
+from common.globals import Global
 
-skin_file = u'skin.ini'
-skin_folder = ''
+skin_file = default_file = os.path.join(Global.basefolder, 'skin.ini')
+skin_folder = Global.basefolder
 
 def setSkinName( nom ):
-	global skin_folder, skin_file
+	
 	skin_folder = nom
 	skin_file = os.path.join( nom, u'skin.ini' )
+	
 	print _('Loading skin "%s"...') % unicode(skin_folder, 'utf-8')
 
 class Skin:
 	
-	def __init__( self ):
-			
-		global skin_folder, skin_file
+	def __init__( self, domain ):
 		
-		self.defconfig = ConfigParser()
-		self.defconfig.readfp(open(u'skin.ini'))				
-				
-		self.config = ConfigParser()
-		self.config.readfp(open(skin_file))	
-	
+		self.domain = domain
+		
+		self.defconfig = SafeConfigParser()
+		self.defconfig.readfp(open(default_file, 'r'))				
+		
+		self.config = SafeConfigParser()
+		self.config.readfp(open(skin_file, 'r'))	
+		
 		self.skin_folder = skin_folder
 	
-	def configGet( self, grup, entrada ):
+	def configGet( self, field, domain = None ):
 		
 		try:
-			text = self.config.get( grup, entrada)			
-		except Exception:
+			text = self.config.get( domain if domain else self.domain, field )
+		
+		except (NoOptionError, NoSectionError):
 			try:
-				text = self.defconfig.get( grup, entrada)	
-			except Exception:
-				text = ""
+				text = self.defconfig.get( domain if domain else self.domain, field )
+			except (NoOptionError, NoSectionError):
+				text = 0
 		
 		return text
 	
-	def configGetInt( self, grup, entrada ):	
-		return int( self.configGet( grup, entrada) ) 
+	def configGetInt( self, field, domain = None ):	
+		return int( self.configGet( field, domain ) ) 
 	
-	def configGetFloat( self, grup, entrada ):	
-		return float( self.configGet( grup, entrada) ) 
+	def configGetFloat( self, field, domain = None ):	
+		return float( self.configGet( field, domain ) ) 
 	
-	def configGetBool( self, grup, entrada ):
-		return True if self.configGet( grup, entrada ) == "True" else False
+	def configGetBool( self, field, domain = None ):
+		return True if self.configGet( field, domain ) == "True" else False
 	
-	def LoadImage ( self, grup, name ):
-
-		name1 = self.configGet( grup, name )
+	def LoadImage( self, field, domain = None ):
 		
-		fullname = os.path.join(  unicode(self.skin_folder, 'utf-8'), name1 )
-
-		retval = None
+		name = self.configGet( field, domain )
+		fullname = os.path.join( self.skin_folder, name )
 		
-		if 	os.path.exists( fullname ):
+		if os.path.exists( fullname ):
 			retval = loadImage( fullname )
 		else:
-			retval = loadImage( name1 )			
-
+			retval = loadImage( name )
+		
 		return retval
 	
-	def LoadImageRange ( self, grup, name, maxrange, digits ):
+	def LoadImageRange( self, name, maxrange, digits, domain = None ):
 		
 		torna = range(0, maxrange)
-		pos = self.configGet( grup, name )
+		pos = self.configGet( name, domain )
 		
 		for num in range(0, 64):
 			torna[num] = loadImage(pos + str( num ).zfill(digits) + '.png')
-	
+		
 		return torna
 	
-	def LoadSound ( self, grup, name, vol, music = 0 ):
+	def LoadSound( self, name, vol, music = 0, domain = None ):
 		
-		name2 = self.configGet( grup, name )
-		vol1 = self.configGetFloat( grup, vol )
-				
+		name2 = self.configGet( name, domain )
+		vol1 = self.configGetFloat( vol, domain )
+		
 		fullname = os.path.join( unicode(self.skin_folder, 'utf-8'), name2)		
 		
 		retval = None
@@ -117,11 +117,10 @@ class Skin:
 		return retval
 	
 	def inicia_vell( self ):
-		global skin_folder, skin_file
 		
 		self.defconfig = ConfigParser.ConfigParser()
-		self.defconfig.readfp(open('skin.ini'))				
-				
+		self.defconfig.readfp(open(default_file))				
+		
 		self.config = SafeConfigParser()
 		self.config.readfp(open(skin_file))		
 				
@@ -145,9 +144,9 @@ class Skin:
 
 	def render_text( self, cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
 
-
 		if nomfont == '':
-			nomfont = self.configGet( "game", "default_font" )
+			nomfont = self.configGet( 'default_font', 'game' )
+
 
 		if nomfont != '':
 			if not os.path.exists( nomfont ):
