@@ -30,10 +30,7 @@ from lxml import etree, objectify
 import time
 import gettext
 
-# Extend Python's search path with many different guesses, as it
-# needs the Database class from src/common.
-sys.path.extend(('../../src/common/', '../src/common', './src/common', '/usr/share/games/freevial/src/common'))
-
+sys.path.extend((os.path.join(os.path.abspath(os.path.dirname(sys.argv[0])), '../../src/common/'), '/usr/share/games/freevial/src/common'))
 from database import Database
 
 #######################################################################

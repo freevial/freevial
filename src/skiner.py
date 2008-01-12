@@ -30,7 +30,6 @@ from math import *
 from ConfigParser import ConfigParser
 
 from common.freevialglob import *
-from questions import get_databases
 
 skin_file = u'skin.ini'
 skin_folder = ''
@@ -55,7 +54,6 @@ class Skin:
 	
 		self.skin_folder = skin_folder
 	
-	
 	def configGet( self, grup, entrada ):
 		
 		try:
@@ -77,10 +75,8 @@ class Skin:
 	def configGetBool( self, grup, entrada ):
 		return True if self.configGet( grup, entrada ) == "True" else False
 	
-				
 	def LoadImage ( self, grup, name ):
-		print "Load Image", grup, name
-		
+
 		name1 = self.configGet( grup, name )
 		
 		fullname = os.path.join(  unicode(self.skin_folder, 'utf-8'), name1 )
@@ -93,7 +89,7 @@ class Skin:
 			retval = loadImage( name1 )			
 
 		return retval
-		
+	
 	def LoadImageRange ( self, grup, name, maxrange, digits ):
 		
 		torna = range(0, maxrange)
@@ -103,9 +99,8 @@ class Skin:
 			torna[num] = loadImage(pos + str( num ).zfill(digits) + '.png')
 	
 		return torna
-		
+	
 	def LoadSound ( self, grup, name, vol, music = 0 ):
-		print "Load sound", grup, name
 		
 		name2 = self.configGet( grup, name )
 		vol1 = self.configGetFloat( grup, vol )
@@ -120,9 +115,7 @@ class Skin:
 			retval = loadSound ( name2, volume = vol1, music = music )
 		
 		return retval
-		
-
-
+	
 	def inicia_vell( self ):
 		global skin_folder, skin_file
 		
@@ -135,22 +128,15 @@ class Skin:
 		self.skin_maxim_equips = self.configGetInt( 'game', 'max_teams' )
 		
 		self.skin_folder = skin_folder
-		
 
-		
 		#--------------------------------------------------------
-		
 
-		
 	#	self.skin_preguntador_mostra_punt_de_categoria = self.configGet( 'preguntador', 'mostra_punt_de_categoria')
 	#	self.skin_preguntador_match_point = self.configGet( 'preguntador', 'match_point')
-	
 
-#		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
-#		self.help_on_screen.sec_timeout = 10
-	
+	#	self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
+	#	self.help_on_screen.sec_timeout = 10
 
-		
 	def preguntadorCarregaFiguretes( self, joc, selcat ):
 		self.mostra_punt_de_categoria = True
 		self.figureta_no = loadImage('points/freevial_tot' + str( joc.teams[joc.current_team].figureta).zfill(2) + '.png')
@@ -174,6 +160,3 @@ class Skin:
 					nomfont = fullname
 
 		return render_text( cadena, color, mida, antialias, nomfont, maxwidth )		
-
-
-

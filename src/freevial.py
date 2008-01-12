@@ -33,7 +33,7 @@ from common.globals import GlobalVar, Global
 
 # This is provisionally here for technical reasons...
 if '--database' in sys.argv:
-	Global.database = sys.argv[sys.argv.index( '--database' ) + 1]
+	Global.database = os.path.expanduser(sys.argv[sys.argv.index( '--database' ) + 1])
 
 from common.freevialglob import *
 from score import Score
@@ -168,7 +168,30 @@ if '-v' in sys.argv or '--version' in sys.argv:
 	print 'You are running version %s, which is part of the «%s» series.' % ( VERSION, SERIES )
 	print
 	print 'https://launchpad.net/freevial/%s' % SERIES
-	print ''
+	print
+	
+	sys.exit( 0 )
+
+if '--info-db' in sys.argv or '--info-databases' in sys.argv:
+	total_categories = 0
+	total_questions = 0
+	categories = []
+	
+	for database in get_databases():
+		total_categories += 1
+		total_questions += len(database)
+		categories.append((database.name, len(database)))
+	
+	print
+	print 'Freevial - About the loaded database...\n'
+	
+	print 'Location:', os.path.abspath(Global.database)
+	print 'Amount of categories:', total_categories
+	print 'Amount of questions:', total_questions, '\n'
+	
+	for category in categories:
+		print u'%s: %s questions' % (category[0], category[1])
+	print
 	
 	sys.exit( 0 )
 
