@@ -160,3 +160,9 @@ class Skin:
 					nomfont = fullname
 
 		return render_text( cadena, color, mida, antialias, nomfont, maxwidth )		
+
+	def teamsGuanyador( self, teams ):
+	
+		return teamsGuanyador( teams, self.configGetInt("game", "game_mode") , self.configGetInt("game", "game_limit"))
+
+

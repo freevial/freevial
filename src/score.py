@@ -163,10 +163,10 @@ class Score:
 		mode = 1
 		
 		if nou_grup: mode = 0
-		if teamsGuanyador( self.joc.teams ) != -1: 
+		if self.skin.teamsGuanyador( self.joc.teams ) != -1: 
 			mode = 2
 			mostra_estad = 1
-			element_seleccionat = teamsGuanyador( self.joc.teams )
+			element_seleccionat = self.skin.teamsGuanyador( self.joc.teams )
 			self.so_ok.play()
 		else:
 			self.skin.LoadSound( "score", 'background_sound', 'background_sound_vol' ).play( -1 )
@@ -184,7 +184,7 @@ class Score:
 					self.so_ok.play()
 				if frate.segons() > 4.1 and not mostrada_victoria:
 					visca = Visca( self.joc )
-					resultat = visca.juguem( self.joc, self.joc.teams[teamsGuanyador( self.joc.teams )].nom )
+					resultat = visca.juguem( self.joc, self.joc.teams[self.skin.teamsGuanyador( self.joc.teams )].nom )
 					mostrada_victoria = True
 					self.skin.LoadSound( "score", 'background_sound', 'background_sound_vol' ).play( -1 )
 			
