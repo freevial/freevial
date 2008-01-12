@@ -104,17 +104,11 @@ class Skin:
 	
 		return torna
 		
-	def LoadSound ( self, grup, name, vol, musics = "" ):
+	def LoadSound ( self, grup, name, vol, music = 0 ):
 		print "Load sound", grup, name
 		
 		name2 = self.configGet( grup, name )
 		vol1 = self.configGetFloat( grup, vol )
-		
-		if( musics != ""):
-			music = self.configGetInt( grup, musics )
-		else:
-			music = 0
-		
 				
 		fullname = os.path.join( unicode(self.skin_folder, 'utf-8'), name2)		
 		

@@ -300,7 +300,8 @@ class Preguntador:
 		self.atzar( selcat )
 
 		if not Global.SOUND_MUTE: pygame.time.wait( 2500 )
-		loadSound('preguntador.ogg', volume = 0.4, music = 1).play(1)
+		self.skin.LoadSound( "preguntador", 'so_fons', 'so_fons_vol', 1).play(1)
+
 		
 		mostra_ajuda = mostra_credits = 0
 
@@ -551,4 +552,7 @@ class Preguntador:
 			#intercanviem els buffers de self.joc.screen
 			pygame.display.flip()
 			
+		
+		pygame.mixer.music.stop()
+
 		return 0
