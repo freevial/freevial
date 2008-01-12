@@ -151,9 +151,9 @@ def GetDatabase( num, xmlFile ):
 			print >> sys.stderr, _('Warning: «%»: Found question without any correct answer; ignoring it.') % xmlFile
 			continue
 		
-		try:
+		if hasattr(question, 'comments') and question.comments.text is not None:
 			comment = question.comments.text
-		except AttributeError:
+		else:
 			comment = u''
 		
 		database.addQuestion(

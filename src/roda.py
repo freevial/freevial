@@ -46,44 +46,40 @@ class Roda:
 	def __init__( self, joc ):
 		
 		self.joc = joc
-		self.skin = Skin()
+		self.skin = Skin('wheel')
 		
-		self.fons = self.skin.configGet( 'wheel', 'wheel_background')
-		self.front = self.skin.configGet( 'wheel', 'wheel_front')
-		self.paper = self.skin.configGet( 'wheel', 'wheel_paper')
+		self.fons = self.skin.configGet( 'wheel_background')
+		self.front = self.skin.configGet( 'wheel_front')
+		self.paper = self.skin.configGet( 'wheel_paper')
 		
-		self.maxim_equips = self.skin.configGetInt( 'game', 'max_teams' )
-
-		self.roda_so_dot = self.skin.configGet( 'wheel', 'sound_wheel_dot')
-		self.roda_so_dot_vol = self.skin.configGet( 'wheel', 'sound_wheel_dot_vol')
-		self.roda_so_evil = self.skin.configGet( 'wheel', 'sound_wheel_evil')
-		self.roda_so_evil_vol = self.skin.configGet( 'wheel', 'sound_wheel_evil_vol')
-		self.roda_so_sub = self.skin.configGet( 'wheel', 'sound_wheel_sub')
-		self.roda_so_sub_vol = self.skin.configGet( 'wheel', 'sound_wheel_sub_vol')
-		self.tipografia = self.skin.configGet( 'wheel', 'wheel_tipografia')
+		self.maxim_equips = self.skin.configGetInt( 'max_teams', 'game' )
 		
+		self.roda_so_dot = self.skin.configGet( 'sound_wheel_dot')
+		self.roda_so_dot_vol = self.skin.configGet( 'sound_wheel_dot_vol')
+		self.roda_so_evil = self.skin.configGet( 'sound_wheel_evil')
+		self.roda_so_evil_vol = self.skin.configGet( 'sound_wheel_evil_vol')
+		self.roda_so_sub = self.skin.configGet( 'sound_wheel_sub')
+		self.roda_so_sub_vol = self.skin.configGet( 'sound_wheel_sub_vol')
+		self.tipografia = self.skin.configGet( 'wheel_tipografia')
 		
-		
-		
-		self.figureta = self.skin.LoadImageRange( "wheel", "figureta_mask", 64, 2)
-		self.fons = self.skin.LoadImage( "wheel", 'wheel_background' )
-		self.front = self.skin.LoadImage( "wheel", 'wheel_front' )
-		self.paper = self.skin.LoadImage( "wheel", 'wheel_paper')
-		self.so_dot = self.skin.LoadSound( "wheel", 'sound_wheel_dot', 'sound_wheel_dot_vol')
-		self.so_evil = self.skin.LoadSound( "wheel", 'sound_wheel_evil', 'sound_wheel_evil_vol')
-		self.so_sub = self.skin.LoadSound( "wheel", 'sound_wheel_sub', 'sound_wheel_sub_vol')
+		self.figureta = self.skin.LoadImageRange( 'figureta_mask', 64, 2)
+		self.fons = self.skin.LoadImage( 'wheel_background' )
+		self.front = self.skin.LoadImage( 'wheel_front' )
+		self.paper = self.skin.LoadImage( 'wheel_paper')
+		self.so_dot = self.skin.LoadSound( 'sound_wheel_dot', 'sound_wheel_dot_vol')
+		self.so_evil = self.skin.LoadSound( 'sound_wheel_evil', 'sound_wheel_evil_vol')
+		self.so_sub = self.skin.LoadSound( 'sound_wheel_sub', 'sound_wheel_sub_vol')
 		self.so_cat = range(0, 6)
-
 		
 		for num in range(0, 6):
 			self.so_cat[num] = loadSound(get_databases(num).sound, volume = 1.0)
-						
+			
 		for num in range(0, self.maxim_equips):
 			sfc = self.skin.render_text( get_databases(num).name, (0,0,0), 60, 1, self.tipografia, 350 );
 			self.paper.blit( sfc, (122, 2+(num * 200) + 100 - sfc.get_height() / 2 ))
 			sfc = self.skin.render_text( get_databases(num).name, colorsCategories()[num], 60, 1, self.tipografia, 350 );
 			self.paper.blit( sfc, (120, (num * 200) + 100 - sfc.get_height() / 2 ))
-
+		
 		self.help_overlay = createHelpScreen( 'roda' )		
 		
 		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
