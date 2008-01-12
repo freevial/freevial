@@ -25,7 +25,7 @@
 
 import sys
 import os.path
-import random
+from random import randint
 import pygame
 from math import *
 from pygame.locals import *
@@ -295,7 +295,7 @@ class Score:
 							self.so_sub.play() 
 						
 						if eventhandle.keyUp('r') and teamsActius( self.joc.teams ) > 0:
-							atzar = 30 + int( random.randint(0, 30) )
+							atzar = 30 + int( randint(0, 30) )
 							mode = 1
 					
 					if eventhandle.keyUp('z'): 
