@@ -79,9 +79,9 @@ class Roda:
 			self.so_cat[num] = loadSound(get_databases(num).sound, volume = 1.0)
 						
 		for num in range(0, self.maxim_equips):
-			sfc = render_text( get_databases(num).name, (0,0,0), 60, 1, self.tipografia, 350 );
+			sfc = self.skin.render_text( get_databases(num).name, (0,0,0), 60, 1, self.tipografia, 350 );
 			self.paper.blit( sfc, (122, 2+(num * 200) + 100 - sfc.get_height() / 2 ))
-			sfc = render_text( get_databases(num).name, colorsCategories()[num], 60, 1, self.tipografia, 350 );
+			sfc = self.skin.render_text( get_databases(num).name, colorsCategories()[num], 60, 1, self.tipografia, 350 );
 			self.paper.blit( sfc, (120, (num * 200) + 100 - sfc.get_height() / 2 ))
 
 		self.help_overlay = createHelpScreen( 'roda' )		
@@ -105,7 +105,7 @@ class Roda:
 		
 		self.joc.screen.blit( self.fons, (0,0) )
 
-		self.nom_equip_sfc = render_text( self.joc.teams[self.joc.current_team].nom, (255,255,255), 30, 1 )
+		self.nom_equip_sfc = self.skin.render_text( self.joc.teams[self.joc.current_team].nom, (255,255,255), 30, 1 )
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
 #		velocitat = 75
 #		deceleracio = 0

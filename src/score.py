@@ -121,7 +121,7 @@ class Score:
 		self.so_ok = self.skin.LoadSound( "score", 'ok', 'ok_vol' )
 		self.sfc_llum = self.skin.LoadImage( "score", 'locked' )
 		
-		self.sfc_cursor = render_text( "_", (self.score_color_text), self.score_mida_text, 1)
+		self.sfc_cursor = self.skin.render_text( "_", (self.score_color_text), self.score_mida_text, 1)
 		
 	
 	
@@ -233,7 +233,7 @@ class Score:
 							newname = self.joc.teams[element_seleccionat].nom + eventhandle.str()
 						
 						if newname != None:
-							sfc = render_text( newname, (self.score_color_text), self.score_mida_text, 1)
+							sfc = self.skin.render_text( newname, (self.score_color_text), self.score_mida_text, 1)
 							
 							
 							if sfc.get_width() < 340:
@@ -412,7 +412,7 @@ class Score:
 							self.joc.screen.blit( self.sfc_cursor, (xcaixa + 25 + ampletext, ycaixa + 125 )) 
 							
 					color = (128,0,0) if (maxPunts(self.joc.teams) > self.joc.teams[num].punts ) else (0,128,0)
-					pinta = render_text( str(self.joc.teams[num].punts).zfill(2), color, 150, 1)
+					pinta = self.skin.render_text( str(self.joc.teams[num].punts).zfill(2), color, 150, 1)
 					if self.score_resultat_visible == 'True':
 						self.joc.screen.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 

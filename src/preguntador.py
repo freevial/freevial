@@ -142,7 +142,7 @@ class Preguntador:
 		self.so_ok = self.skin.LoadSound( "preguntador", 'so_ok', 'so_ok_vol')
 		self.so_nook = self.skin.LoadSound( "preguntador", 'so_nook', 'so_nook_vol')
 		
-		self.nom_equip_sfc = render_text( joc.teams[joc.current_team].nom, (64,64,64), 30, 1 )	
+		self.nom_equip_sfc = self.skin.render_text( joc.teams[joc.current_team].nom, (64,64,64), 30, 1 )	
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
 		self.nom_equip_sfc.set_alpha( 64 )
 
@@ -240,10 +240,10 @@ class Preguntador:
 		for num in xrange(0, 3):
 			self.sfc_resposta[ num ] = self.preguntadorPintatext( self.current_question[ 'opt' + str(num + 1) ], 1024 - 260 )
 
-		self.sfc_npregunta = render_text( str(self.num_asked_questions), (255,255,255), 100 )
+		self.sfc_npregunta = self.skin.render_text( str(self.num_asked_questions), (255,255,255), 100 )
 		self.sfc_npregunta.set_alpha( 64 )
 
-		self.sfc_apregunta = render_text( str(self.current_question['author']), (255,255,255), 16 )
+		self.sfc_apregunta = self.skin.render_text( str(self.current_question['author']), (255,255,255), 16 )
 		self.sfc_apregunta.set_alpha( 64 )	
 
 		self.temps_inici_pregunta = time.time()
@@ -268,8 +268,8 @@ class Preguntador:
 		nlinia = 0
 
 		for cadena in cadenes:
-			sfc_pregunta[nlinia] = render_text( cadena if cadena != "" else " ", self.color_de_text, self.mida_font, 1, '', maxample - 2)
-			sfc_shad[nlinia] = render_text( cadena if cadena != "" else " ", self.color_de_fons, self.mida_font, 1, '', maxample - 2)
+			sfc_pregunta[nlinia] = self.skin.render_text( cadena if cadena != "" else " ", self.color_de_text, self.mida_font, 1, '', maxample - 2)
+			sfc_shad[nlinia] = self.skin.render_text( cadena if cadena != "" else " ", self.color_de_fons, self.mida_font, 1, '', maxample - 2)
 			nalt += sfc_pregunta[nlinia].get_height() + 2				     
 			nlinia += 1
 		
@@ -485,7 +485,7 @@ class Preguntador:
 				if self.segons != segons_act:
 					# el segon actual ha canviat
 					self.segons = segons_act 
-					self.pinta_segons = render_text( str( self.segons ).zfill(2), (255,255,255), 600)
+					self.pinta_segons = self.skin.render_text( str( self.segons ).zfill(2), (255,255,255), 600)
 					# s'acaba el temps indiquem'ho amb so
 					if self.segons < 20:
 						self.so_ticking2.set_volume( (20 - float( self.segons )) / 20.0  ) 

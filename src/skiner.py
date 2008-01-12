@@ -145,16 +145,6 @@ class Skin:
 	#	self.skin_preguntador_mostra_punt_de_categoria = self.configGet( 'preguntador', 'mostra_punt_de_categoria')
 	#	self.skin_preguntador_match_point = self.configGet( 'preguntador', 'match_point')
 	
-		
-
-		
-
-
-	
-			
-			
-		
-
 
 #		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
 #		self.help_on_screen.sec_timeout = 10
@@ -168,6 +158,26 @@ class Skin:
 		self.figureta_no = loadImage('points/freevial_tot' + str( joc.teams[joc.current_team].figureta).zfill(2) + '.png')
 		self.figureta_si = loadImage('points/freevial_tot' + str( joc.teams[joc.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
 		self.match_point = True if (joc.teams[joc.current_team].figureta | bitCategoria ( selcat ) == 63) else False
+
+	def render_text( self, cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
+		
+		if nomfont == '':
+			nomfont = self.configGet( "game", "default_font" )
+
+		if nomfont != '':
+			if not os.path.exists( nomfont ):
+				fullname = os.path.join( unicode(self.skin_folder, 'utf-8'), nomfont)	
+				print "nom: ",fullname
+				if os.path.exists( fullname ):
+					nomfont = fullname
+				else:
+					fullname = pygame.font.match_font(nomfont)
+					if os.path.exists( fullname ):
+						nomfont = fullname
+					else:
+						nomfont = ''
+
+		return render_text( cadena, color, mida, antialias, nomfont, maxwidth )		
 
 
 
