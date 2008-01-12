@@ -176,7 +176,7 @@ class Score:
 			element_seleccionat = self.skin.teamsGuanyador( self.joc.teams )
 			self.so_ok.play()
 		else:
-			self.skin.LoadSound( 'background_sound', 'background_sound_vol' ).play( -1 )
+			self.skin.LoadSound( 'background_sound', 'background_sound_vol', 1 ).play( -1 )
 		
 		surten = 0
 		mostrada_victoria = False
