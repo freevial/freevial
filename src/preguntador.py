@@ -416,7 +416,6 @@ class Preguntador:
 						self.so_ok.play()
 					else:
 						self.so_nook.play()
-					
 					notes = self.current_question['comment'].split('#') if self.current_question['comment'] != "" else "."
 					sfc_comentaris = createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
