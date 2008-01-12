@@ -32,7 +32,7 @@ from pygame.locals import *
 
 from common.freevialglob import *
 from common.events import EventHandle
-from questions import *
+from questions import shuffle_databases, get_databases
 
 ##################################################
 #
@@ -186,7 +186,7 @@ class SelCat:
 				if estat == 0:
 
 					if eventhandle.keyUp('r'):
-						random.shuffle( categoriespreguntes )
+						shuffle_databases()
 						self.reinicia_cats( )
 						self.so_sub2.play()
 						self.darrera_info = -1

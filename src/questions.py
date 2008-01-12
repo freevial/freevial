@@ -152,16 +152,16 @@ def GetDatabase( num, xmlFile ):
 			continue
 		
 		try:
-			comment = question.comments
+			comment = question.comments.text
 		except AttributeError:
 			comment = ''
 		
 		database.addQuestion(
-			question = question.text,
+			question = question.sentence.text,
 			answ1 = answers[0],
 			answ2 = answers[1],
 			answ3 = answers[2],
-			author = question.author,
+			author = question.author.text,
 			comment = comment,
 		)
 	
@@ -177,6 +177,9 @@ for num in range(0, len(database_files) ):
 		alldatabases.append( cat )
 	except ValueError:
 		print 'Error with «%s».' % database_files[num]
+
+def shuffle_databases():
+	random.shuffle(alldatabases)
 
 def get_databases( database = None ):
 	

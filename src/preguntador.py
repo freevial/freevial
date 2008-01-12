@@ -222,7 +222,6 @@ class Preguntador:
 	
 		self.categoria = categoria - 1
 		self.current_question = get_databases(self.categoria).question()
-		print self.current_question
 		self.num_asked_questions += 1
 		
 		self.selected = 0
