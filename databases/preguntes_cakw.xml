@@ -4,7 +4,7 @@
     <description>Preguntes de cançons i músics</description>
     <destination>Gent amb coneixements sobre cançons en català</destination>
     <timestamp_creation>1189202400</timestamp_creation>
-    <timestamp_modification>1200087410</timestamp_modification>
+    <timestamp_modification>1200139485</timestamp_modification>
     <authors>
       <author>Carles Oriol, &lt;email&gt;</author>
     </authors>
@@ -37,7 +37,7 @@ With the Sounds of Silence.</comments>
       <comments>La gallina ha dit que no,#visca la revolució.</comments>
       <answers>
         <answer correct="True">No</answer>
-        <answer>Cantem!</answer>
+        <answer>Sí</answer>
         <answer>Cantem!</answer>
       </answers>
     </question>
@@ -48,7 +48,7 @@ With the Sounds of Silence.</comments>
       <answers>
         <answer correct="True">Umpah-pah</answer>
         <answer>Uni dori</answer>
-        <answer>Uni dori</answer>
+        <answer>Uncces</answer>
       </answers>
     </question>
     <question>
@@ -62,8 +62,8 @@ Sangtraït#
 </comments>
       <answers>
         <answer correct="True">Ocell</answer>
-        <answer>Ric</answer>
         <answer>Lliure</answer>
+        <answer>Ric</answer>
       </answers>
     </question>
     <question>
@@ -77,7 +77,7 @@ No,#jo dic no,#diguem no.#Nosaltres no som d'eixe món ##
 Raimon</comments>
       <answers>
         <answer correct="True">No</answer>
-        <answer>Llibertat</answer>
+        <answer>Si</answer>
         <answer>Llibertat</answer>
       </answers>
     </question>
@@ -122,8 +122,8 @@ Vella xiruca quantes hores passades#quanta alegria fa reviure el meu cor#quantes
 Pujant les muntanyes blanques de neu#fent ruta vers el cel blau#m´has fet descobrir la joia del bon Déu#i assaborir la pau#</comments>
       <answers>
         <answer correct="True">La vella xiruca</answer>
-        <answer>La lluna</answer>
         <answer>El foc de camp</answer>
+        <answer>La lluna</answer>
       </answers>
     </question>
     <question>
@@ -141,8 +141,8 @@ Pujant les muntanyes blanques de neu#fent ruta vers el cel blau#m´has fet desco
 </comments>
       <answers>
         <answer correct="True">Mesclat</answer>
-        <answer>Brams</answer>
         <answer>Som i serem</answer>
+        <answer>Brams</answer>
       </answers>
     </question>
     <question>
@@ -156,7 +156,7 @@ N'gai N'gai</comments>
       <answers>
         <answer correct="True">En Pol Petit</answer>
         <answer>En Joan Petit</answer>
-        <answer>En Joan Petit</answer>
+        <answer>La gent del món</answer>
       </answers>
     </question>
     <question>
@@ -165,8 +165,8 @@ N'gai N'gai</comments>
       <comments>Sau es va dissoldre l'any 1999 per la mort sobtada del cantant Carles Sabater al finalitzar un concert.</comments>
       <answers>
         <answer correct="True">Per la mort de Carles Sabater</answer>
-        <answer>Perquè no guanyaven prou diners</answer>
         <answer>Per mals rotllos entre els seus membres</answer>
+        <answer>Perquè no guanyaven prou diners</answer>
       </answers>
     </question>
     <question>
@@ -175,7 +175,7 @@ N'gai N'gai</comments>
       <comments></comments>
       <answers>
         <answer correct="True">Som els pets de Constantí#i visca la mare que ens va parir</answer>
-        <answer>Desperta ferro</answer>
+        <answer>Agafeu-vos fort que comencem</answer>
         <answer>Desperta ferro</answer>
       </answers>
     </question>
@@ -185,8 +185,8 @@ N'gai N'gai</comments>
       <comments></comments>
       <answers>
         <answer correct="True">Bona nit malparits</answer>
-        <answer>Apa, vinga, som-hi!</answer>
         <answer>Salut i peles</answer>
+        <answer>Apa, vinga, som-hi!</answer>
       </answers>
     </question>
     <question>
@@ -198,8 +198,8 @@ Bon dia,#ningú ho ha demanat però fa bon dia,#damunt els caps un sol ben insul
 Els pets#</comments>
       <answers>
         <answer correct="True">fa bon dia</answer>
-        <answer>jo canto</answer>
         <answer>jo ho vull dir</answer>
+        <answer>jo canto</answer>
       </answers>
     </question>
     <question>
@@ -234,7 +234,7 @@ Bob Dylan</comments>
       <comments>L'any 1983 la Dharma va treure el seu disc Catalluna. El tema principal és senzillament preciós</comments>
       <answers>
         <answer correct="True">Catalluna</answer>
-        <answer>Somniem</answer>
+        <answer>Mediterrani</answer>
         <answer>Somniem</answer>
       </answers>
     </question>
@@ -248,8 +248,8 @@ Cal que deixi la meva casa i prengui el bastó#cal que amb una esperança trenqu
 Esquirols</comments>
       <answers>
         <answer correct="True">Una cabana</answer>
-        <answer>Fotre el camp</answer>
         <answer>Cantar</answer>
+        <answer>Fotre el camp</answer>
       </answers>
     </question>
     <question>
@@ -268,8 +268,8 @@ Esquirols</comments>
 #</comments>
       <answers>
         <answer correct="True">Titot</answer>
-        <answer>Antoniet</answer>
         <answer>Titus</answer>
+        <answer>Antoniet</answer>
       </answers>
     </question>
     <question>
@@ -282,7 +282,7 @@ Antonia Font</comments>
       <answers>
         <answer correct="True">D'ikea</answer>
         <answer>Gruixut</answer>
-        <answer>Gruixut</answer>
+        <answer>De color blau</answer>
       </answers>
     </question>
     <question>
@@ -292,7 +292,7 @@ Antonia Font</comments>
       <answers>
         <answer correct="True">Kabul babà</answer>
         <answer>Gerard Quintana</answer>
-        <answer>Gerard Quintana</answer>
+        <answer>Josep Thió</answer>
       </answers>
     </question>
     <question>
@@ -306,7 +306,7 @@ Albert Pla#</comments>
       <answers>
         <answer correct="True">Albert Pla</answer>
         <answer>Joan Manuel Serrat</answer>
-        <answer>Joan Manuel Serrat</answer>
+        <answer>Josep Pla</answer>
       </answers>
     </question>
     <question>
@@ -317,8 +317,8 @@ Jo et duré a casa si fa mal temps#Jo t’empararé si un cas tens por#Jo te cui
 Tomeu Penya</comments>
       <answers>
         <answer correct="True">A casa</answer>
-        <answer>Al llit</answer>
         <answer>A un lloc segur</answer>
+        <answer>Al llit</answer>
       </answers>
     </question>
     <question>
@@ -339,8 +339,8 @@ La Trinca </comments>
 Joan Manuel Serrat </comments>
       <answers>
         <answer correct="True">Senzilles i tendres</answer>
-        <answer>Cantades i ballades</answer>
         <answer>Dolces i suaus</answer>
+        <answer>Cantades i ballades</answer>
       </answers>
     </question>
     <question>
@@ -363,8 +363,8 @@ Oh ! Benvinguts ! Passeu, passeu,#de les tristors en farem fum.#Que casa meva é
 Jaume Sisa#</comments>
       <answers>
         <answer correct="True">fum</answer>
-        <answer>riure</answer>
         <answer>alegries</answer>
+        <answer>riure</answer>
       </answers>
     </question>
     <question>
@@ -409,7 +409,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
       <comments>Els Segadors## Catalunya, triomfant,#tornarà a ser rica i plena!#Endarrere aquesta gent#tan ufana i tan superba!## Bon cop de falç!#Bon cop de falç, defensors de la terra!#Bon cop de falç!## Ara és hora, segadors!#Ara és hora d´estar alerta!#Per quan vingui un altre juny#esmolem ben bé les eines!## Bon cop de falç!...## Que tremoli l´enemic#en veient la nostra ensenya:#com fem caure espigues d´or,#quan convé seguem cadenes!## Bon cop de falç!...## # Himne nacional de Catalunya</comments>
       <answers>
         <answer correct="True">Quan convé seguem cadenes! </answer>
-        <answer>Quan arriba la tardor</answer>
+        <answer>La cançó de matinada</answer>
         <answer>Quan arriba la tardor</answer>
       </answers>
     </question>
@@ -420,7 +420,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
       <answers>
         <answer correct="True">Va morir</answer>
         <answer>Va anar a la muntanya</answer>
-        <answer>Va anar a la muntanya</answer>
+        <answer>Es va enamorar</answer>
       </answers>
     </question>
     <question>
@@ -439,8 +439,8 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
       <comments>Envia'm un àngel que sigui com tu.#Envia'm un àngel que s'assembli a tu.#Envia'm un àngel que em recordi a tu. ##Sau</comments>
       <answers>
         <answer correct="True">Un àngel</answer>
-        <answer>Un mail</answer>
         <answer>Un petó</answer>
+        <answer>Un mail</answer>
       </answers>
     </question>
     <question>

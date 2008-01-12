@@ -4,7 +4,7 @@
     <description>Coses sobre la xarxa els seus webs i protocols</description>
     <destination>Coneixements mínims Internet</destination>
     <timestamp_creation>1189202400</timestamp_creation>
-    <timestamp_modification>1200087367</timestamp_modification>
+    <timestamp_modification>1200139483</timestamp_modification>
     <authors>
       <author>Lluïsa Nuñez, &lt;email&gt;</author>
       <author>Carles Oriol, &lt;email&gt;</author>
@@ -24,8 +24,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Internet Relay Chat</answer>
-        <answer>Immediate Release Communications</answer>
         <answer>Instant Recognition Cable</answer>
+        <answer>Immediate Release Communications</answer>
       </answers>
     </question>
     <question>
@@ -34,8 +34,8 @@
       <comments>Una de les entitats principals en aquest camp, la qual ha dissenyat l'HTML i XHTML, entre d'altres, és el W3C (World Wide Web Consortium). L'OASIS és qui treballa en l'OpenDocument, i Microsoft és l'empresa que s'encarrega de trencar tots els estàndards que pot.</comments>
       <answers>
         <answer correct="True">W3C</answer>
-        <answer>Microsoft</answer>
         <answer>OASIS</answer>
+        <answer>Microsoft</answer>
       </answers>
     </question>
     <question>
@@ -64,9 +64,9 @@
       <comments></comments>
       <answers>
         <answer correct="True">Com un món</answer>
+        <answer>Com un nuvol</answer>
         <answer>Com una 
 I</answer>
-        <answer>Com un nuvol</answer>
       </answers>
     </question>
     <question>
@@ -75,7 +75,7 @@ I</answer>
       <comments></comments>
       <answers>
         <answer correct="True">Si</answer>
-        <answer>No</answer>
+        <answer>Depen</answer>
         <answer>No</answer>
       </answers>
     </question>
@@ -105,7 +105,7 @@ I</answer>
       <comments>I doncs, que us pensàveu?</comments>
       <answers>
         <answer correct="True">Clar</answer>
-        <answer>No.</answer>
+        <answer>Sols si cerquem wikipedia</answer>
         <answer>No.</answer>
       </answers>
     </question>
@@ -115,8 +115,8 @@ I</answer>
       <comments></comments>
       <answers>
         <answer correct="True">creative comons</answer>
-        <answer>computer case</answer>
         <answer>CertifiCations</answer>
+        <answer>computer case</answer>
       </answers>
     </question>
     <question>
@@ -135,7 +135,7 @@ I</answer>
       <comments></comments>
       <answers>
         <answer correct="True">abandonwares</answer>
-        <answer>softdeads</answer>
+        <answer>oldwares</answer>
         <answer>softdeads</answer>
       </answers>
     </question>
@@ -145,8 +145,8 @@ I</answer>
       <comments></comments>
       <answers>
         <answer correct="True">CCRTV</answer>
-        <answer>Vilaweb</answer>
         <answer>Planeta d'Ubuntu.cat</answer>
+        <answer>Vilaweb</answer>
       </answers>
     </question>
     <question>
@@ -155,7 +155,7 @@ I</answer>
       <comments>Compuserve va ser la primera xarxa pública mundial d'accés públic. Fidonet (anterior a compuserve) era una xarxa d'enllaços entre les anteriors BBS.</comments>
       <answers>
         <answer correct="True">comnet</answer>
-        <answer>compuserve</answer>
+        <answer>fidonet</answer>
         <answer>compuserve</answer>
       </answers>
     </question>
@@ -165,8 +165,8 @@ I</answer>
       <comments>Concretament a http://ubuntuforums.org/forumdisplay.php?f=206. També podem anar-hi des del portal www.ubuntu.cat</comments>
       <answers>
         <answer correct="True">ubuntuforums.org</answer>
-        <answer>forum.ubuntu.pl</answer>
         <answer>ubuntu-fr.org</answer>
+        <answer>forum.ubuntu.pl</answer>
       </answers>
     </question>
     <question>
@@ -175,8 +175,8 @@ I</answer>
       <comments>Oi que sembla que fes més temps?</comments>
       <answers>
         <answer correct="True">1998</answer>
-        <answer>2000</answer>
         <answer>1995</answer>
+        <answer>2000</answer>
       </answers>
     </question>
     <question>
@@ -185,8 +185,8 @@ I</answer>
       <comments>I doncs que us pensàveu?</comments>
       <answers>
         <answer correct="True">Clar</answer>
-        <answer>No.</answer>
         <answer>Sols si cerquem wikipedia</answer>
+        <answer>No.</answer>
       </answers>
     </question>
     <question>
@@ -195,7 +195,7 @@ I</answer>
       <comments>.... si... lamentable. Si el sistema de control de copies DRM detecta que tens algun mitjà que permet realitzar copies de peŀlicules o videos aquest baixarà la qualitat per que no ho puguis fer correctament. A l'hora totes aquestes comprovacions fan que l'ordinador funcioni molt més lent.</comments>
       <answers>
         <answer correct="True">El microsoft vista fa que l'ordinador#vagi malament si detecta un dispositiu#que permet copiar películes</answer>
-        <answer>La llet es repasteuritza segons#el nombre inferior del tetrabrick</answer>
+        <answer>Un nombre fa que la facturació#del telèfon d'un altre te la cobrin a tu</answer>
         <answer>La llet es repasteuritza segons#el nombre inferior del tetrabrick</answer>
       </answers>
     </question>
@@ -215,8 +215,8 @@ I</answer>
       <comments>he he... ha estat superior a mi... ha havia de fer...</comments>
       <answers>
         <answer correct="True">kumbaworld</answer>
-        <answer>yahoo lyrics</answer>
         <answer>cantar i xerinola</answer>
+        <answer>yahoo lyrics</answer>
       </answers>
     </question>
     <question>
@@ -235,7 +235,7 @@ I</answer>
       <comments></comments>
       <answers>
         <answer correct="True">creative comons</answer>
-        <answer>CertifiCations</answer>
+        <answer>computer case</answer>
         <answer>CertifiCations</answer>
       </answers>
     </question>
@@ -245,8 +245,8 @@ I</answer>
       <comments></comments>
       <answers>
         <answer correct="True">Catalunya</answer>
-        <answer>La Isle of Man</answer>
         <answer>Helsinki</answer>
+        <answer>La Isle of Man</answer>
       </answers>
     </question>
     <question>

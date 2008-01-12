@@ -4,7 +4,7 @@
     <description>Video jocs, peŀlicules i llibres de ciència ficció o de culte</description>
     <destination>Diversos</destination>
     <timestamp_creation>1189202400</timestamp_creation>
-    <timestamp_modification>1200087372</timestamp_modification>
+    <timestamp_modification>1200139484</timestamp_modification>
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
       <author>Josep Sanchez, &lt;email&gt;</author>
@@ -25,7 +25,7 @@
       <comments></comments>
       <answers>
         <answer correct="True"> "Han estat prohibides i substituïdes per una elit inteŀlectual"</answer>
-        <answer>Han estat inserides en els cossos d'una elit dominant, els anomenats ciborgs</answer>
+        <answer>Controlen la societat</answer>
         <answer>Han estat inserides en els cossos d'una elit dominant, els anomenats ciborgs</answer>
       </answers>
     </question>
@@ -55,8 +55,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Pirates of SillyconValley</answer>
-        <answer>War Games</answer>
         <answer>Begins of Computers</answer>
+        <answer>War Games</answer>
       </answers>
     </question>
     <question>
@@ -65,7 +65,7 @@
       <comments>Quan l'ordinador descrobria la insensatesa de la guerra.</comments>
       <answers>
         <answer correct="True">Jocs de guerra</answer>
-        <answer>Matrix</answer>
+        <answer>Tron</answer>
         <answer>Matrix</answer>
       </answers>
     </question>
@@ -95,8 +95,8 @@
       <comments>En la película Matrix Reloaded podem veure a Trinity petant un ordinador i a la pantalla es veu com realitza un escaneig de seguretat amb l'eina nmap!!! Un com fet això és mostra una vulnerabilitat real (exploit SSHv1 CRC32) un error de buffer, que amb una eina fingida sshnuke aprofita.</comments>
       <answers>
         <answer correct="True">nmap</answer>
-        <answer>aircrack</answer>
         <answer>el càssic dir c:\ de totes les pelis</answer>
+        <answer>aircrack</answer>
       </answers>
     </question>
     <question>
@@ -105,8 +105,8 @@
       <comments>Supertux és un clon de Super Mario, Tux Racer és un joc d'animació 3D </comments>
       <answers>
         <answer correct="True">Pingus</answer>
-        <answer>SuperTux</answer>
         <answer>Tux Race</answer>
+        <answer>SuperTux</answer>
       </answers>
     </question>
     <question>
@@ -116,7 +116,7 @@
       <answers>
         <answer correct="True">Home and leisure</answer>
         <answer>International Busines Machines</answer>
-        <answer>International Busines Machines</answer>
+        <answer>Hardware Adapter Layer</answer>
       </answers>
     </question>
     <question>
@@ -125,8 +125,8 @@
       <comments>El xmame és un emulador de màquines de videjocs i no una versió del wine</comments>
       <answers>
         <answer correct="True">Cedega</answer>
-        <answer>xmame</answer>
         <answer>CrossOver</answer>
+        <answer>xmame</answer>
       </answers>
     </question>
     <question>
@@ -135,8 +135,8 @@
       <comments>Duia un MOS 6510</comments>
       <answers>
         <answer correct="True">Commodore</answer>
-        <answer>MSX</answer>
         <answer>ZX Spectrum</answer>
+        <answer>MSX</answer>
       </answers>
     </question>
     <question>
@@ -146,7 +146,7 @@
       <answers>
         <answer correct="True">TRace ON. Per debugar</answer>
         <answer>TeRminal ON</answer>
-        <answer>TeRminal ON</answer>
+        <answer>Transient on-line</answer>
       </answers>
     </question>
     <question>
@@ -155,7 +155,7 @@
       <comments></comments>
       <answers>
         <answer correct="True">Regnum</answer>
-        <answer>Hellbreath</answer>
+        <answer>World of Warcaft</answer>
         <answer>Hellbreath</answer>
       </answers>
     </question>
@@ -175,8 +175,8 @@
       <comments>27</comments>
       <answers>
         <answer correct="True">ePSXe</answer>
-        <answer>DOSbox</answer>
         <answer>wine</answer>
+        <answer>DOSbox</answer>
       </answers>
     </question>
     <question>
@@ -185,7 +185,7 @@
       <comments>26</comments>
       <answers>
         <answer correct="True">DOSgame</answer>
-        <answer>DOSemu</answer>
+        <answer>DOSbox</answer>
         <answer>DOSemu</answer>
       </answers>
     </question>
@@ -195,7 +195,7 @@
       <comments>25</comments>
       <answers>
         <answer correct="True">Un tercer ull</answer>
-        <answer>Braços</answer>
+        <answer>Ales</answer>
         <answer>Braços</answer>
       </answers>
     </question>
@@ -215,8 +215,8 @@
       <comments>23</comments>
       <answers>
         <answer correct="True">Rata saltadora</answer>
-        <answer>Escorpí verinós</answer>
         <answer>Cuc gegant</answer>
+        <answer>Escorpí verinós</answer>
       </answers>
     </question>
     <question>
@@ -235,7 +235,7 @@
       <comments>21</comments>
       <answers>
         <answer correct="True">Koji Kabuto</answer>
-        <answer>Akira Toriyama</answer>
+        <answer>Yawara Inokuma</answer>
         <answer>Akira Toriyama</answer>
       </answers>
     </question>
@@ -255,8 +255,8 @@
       <comments>19</comments>
       <answers>
         <answer correct="True">Pingus</answer>
-        <answer>Tux Race</answer>
         <answer>SuperTux</answer>
+        <answer>Tux Race</answer>
       </answers>
     </question>
     <question>
@@ -265,8 +265,8 @@
       <comments>18</comments>
       <answers>
         <answer correct="True">Estratègia per torns</answer>
-        <answer>Arcade Shooter</answer>
         <answer>Aventura gràfica</answer>
+        <answer>Arcade Shooter</answer>
       </answers>
     </question>
     <question>
@@ -275,7 +275,7 @@
       <comments>17</comments>
       <answers>
         <answer correct="True">Home and leisure</answer>
-        <answer>International Busines Machines</answer>
+        <answer>Hardware Adapter Layer</answer>
         <answer>International Busines Machines</answer>
       </answers>
     </question>
@@ -316,7 +316,7 @@
       <answers>
         <answer correct="True">Nexus 6</answer>
         <answer>Redmon 4</answer>
-        <answer>Redmon 4</answer>
+        <answer>Andros 5</answer>
       </answers>
     </question>
     <question>
@@ -335,7 +335,7 @@
       <comments></comments>
       <answers>
         <answer correct="True">Multi-User Dungeon</answer>
-        <answer>Massive users dungeon</answer>
+        <answer>Monster under drugstore</answer>
         <answer>Massive users dungeon</answer>
       </answers>
     </question>
@@ -355,8 +355,8 @@
       <comments>9</comments>
       <answers>
         <answer correct="True">nmap</answer>
-        <answer>el càssic dir c:\ de totes les pelis</answer>
         <answer>aircrack</answer>
+        <answer>el càssic dir c:\ de totes les pelis</answer>
       </answers>
     </question>
     <question>
@@ -365,8 +365,8 @@
       <comments>8</comments>
       <answers>
         <answer correct="True">correu electrònic</answer>
-        <answer>Missatgeria instantània</answer>
         <answer>IRC</answer>
+        <answer>Missatgeria instantània</answer>
       </answers>
     </question>
     <question>
@@ -376,7 +376,7 @@
       <answers>
         <answer correct="True">3</answer>
         <answer>6</answer>
-        <answer>6</answer>
+        <answer>5</answer>
       </answers>
     </question>
     <question>
@@ -385,8 +385,8 @@
       <comments>6</comments>
       <answers>
         <answer correct="True">Melbourne house</answer>
-        <answer>Dynamic</answer>
         <answer>Ultimate</answer>
+        <answer>Dynamic</answer>
       </answers>
     </question>
     <question>
@@ -395,8 +395,8 @@
       <comments>5</comments>
       <answers>
         <answer correct="True">Commodore</answer>
-        <answer>ZX Spectrum</answer>
         <answer>MSX</answer>
+        <answer>ZX Spectrum</answer>
       </answers>
     </question>
     <question>
@@ -405,8 +405,8 @@
       <comments>4</comments>
       <answers>
         <answer correct="True">Més de 10</answer>
-        <answer>4</answer>
         <answer>1</answer>
+        <answer>4</answer>
       </answers>
     </question>
     <question>
@@ -415,7 +415,7 @@
       <comments></comments>
       <answers>
         <answer correct="True">Regnum</answer>
-        <answer>Hellbreath</answer>
+        <answer>World of Warcaft</answer>
         <answer>Hellbreath</answer>
       </answers>
     </question>

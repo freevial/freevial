@@ -154,7 +154,7 @@ def GetDatabase( num, xmlFile ):
 		try:
 			comment = question.comments.text
 		except AttributeError:
-			comment = ''
+			comment = u''
 		
 		database.addQuestion(
 			question = question.sentence.text,
