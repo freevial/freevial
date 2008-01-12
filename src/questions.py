@@ -25,7 +25,7 @@
 
 import os
 import sys
-import csv
+from lxml import etree, objectify
 import gettext
 
 from common.freevialglob import *
@@ -40,7 +40,7 @@ class LoadDatabase:
 		""" Load a question database (directory or compressed file). """
 		
 		try:
-			self.files = self._csv_in_path(self._get_real_path(directory))
+			self.files = self._xml_in_path(self._get_real_path(directory))
 		
 		except IOError:
 			print _('Error: Couldn\'t find the current questions database.')
@@ -48,11 +48,9 @@ class LoadDatabase:
 			print _('For example: freevial --database ~/questions.tar.gz')
 			sys.exit(1)
 	
-	
 	def get(self):
 		
 		return self.files
-	
 	
 	def _get_real_path(self, directory):
 		""" If the given path is directory it is returned as-is, if it's
@@ -73,7 +71,6 @@ class LoadDatabase:
 		
 		raise ValueError, _('Expected a directory or compressed file.')
 	
-	
 	def _extract(self, directory):
 		""" Extracts a compressed file to a temporal directory and returns
 		the URL to it. """
@@ -84,23 +81,20 @@ class LoadDatabase:
 		file.extractall(tempdir)
 		return tempdir
 	
-	
 	def _get_temp(self):
 		""" Creates a temporary directory."""
 		
 		import tempfile
 		return tempfile.mkdtemp('', 'freevial-') + '/'
 	
-	
-	def _csv_in_path(self, directory):
+	def _xml_in_path(self, directory):
 		
 		files = []
 		
 		for file in self._files_in_path(directory):
-			if file[-4:] == '.csv': files.append(file)
+			if file[-4:] == '.xml': files.append(file)
 		
 		return files
-	
 	
 	def _files_in_path(self, directory):
 		""" Returns a list with the name of all the files in the given directory. """
@@ -109,99 +103,84 @@ class LoadDatabase:
 			return [ '%s' % os.path.abspath(os.path.join(directory, file)) for file in files ]
 
 
-def GetDatabase( num, csvFile ):
-	""" Returns a Database instance with the questions from a CSV file. """
+# Create the XML parser
+parser = etree.XMLParser(remove_blank_text = True)
+parser.setElementClassLookup(objectify.ObjectifyElementClassLookup())
+
+def GetDatabase( num, xmlFile ):
+	""" Returns a Database instance loaded with the questions from a XML file. """
 	
-	csv_read = csv.reader( open( csvFile ) )
+	root = etree.parse(xmlFile, parser).getroot()
 	
-	comptaline  = 0
-	error_count = 0
+	if float(root.get('version')) != 1.0:
+		print >> sys.stderr, _('Warning: «%»: Database\'s version is %s, which is not supported by the installed version of Freevial. It might not work as expected.') % (xmlFile, root.get('version'))
 	
-	for line in csv_read:
+	database = Database(
+		num,
+		root.information.name.text,
+		root.get('language'),
+		root.information.description.text,
+		root.information.destination.text,
+		', '.join(["%s" % author.text.split(',')[0] for author in root.information.authors.getchildren()]),
+		(int(root.information.timestamp_creation.text), int(root.information.timestamp_modification.text)),
+		root.appearance.image.text,
+		root.appearance.sound.text,
+	)
+	
+	for question in root.questions.getchildren():
 		
-		comptaline += 1
+		if question.answers.countchildren() != 3:
+			print >> sys.stderr, _('Warning: «%»: Found question with an incorrect number of answers; ignoring it.') % xmlFile
+			continue
 		
-		if comptaline > 16:
-			
-			if len(line) < 9:
-				print 'Error in database file «%s», line %d: expected %d values, found %d.' % (os.path.basename(csvFile), comptaline, 10, len(line))
-				error_count += 1
-				
-				if error_count < 3:
+		answers = []
+		has_correct_answer = False
+		
+		# Process answers
+		for answer in question.answers.getchildren():
+			if answer.get('correct') is not None:
+				if has_correct_answer:
+					print >> sys.stderr, _('Warning: «%»: Found question with two correct answers; ignoring it.') % xmlFile
 					continue
-				else:
-					print 'Found 3 problems, this will abort the game.'
-					sys.exit(1)
-			elif len(line) == 9:
-				line.append('')
-			
-			for num in range(0, 10):
-				line[ num ] = unicode(line[ num ], 'utf-8')
-			
-			for num in (5, 8):
-				try:
-					line[ num ] = int(line[ num ])
-				except ValueError:
-					line[ num ] = 0
-			
-			database.addQuestion(
-				question = line[1],
-				answ1 = line[1 + line[5]],
-				answ2 = line[3] if line[5] != 2 else line[2],
-				answ3 = line[4] if line[5] != 3 else line[2],
-				author = line[6],
-				comments = line[9],
-				)
+				answers.insert(0, answer.text)
+				has_correct_answer = True
+			else:
+				answers.append(answer.text)
 		
-		# Get information from the header lines
-		elif comptaline == 1: continue
-		elif comptaline == 2: name = unicode( line[1], 'utf-8' )
-		elif comptaline == 3: time = [ unicode( line[1], 'utf-8' ) ]
-		elif comptaline == 4: time.append( unicode( line[1], 'utf-8' ) )
-		elif comptaline == 5: authors = unicode( line[1], 'utf-8' )
-		elif comptaline == 6: description = unicode( line[1], 'utf-8' )			
-		elif comptaline == 7: players = unicode( line[1], 'utf-8' )
-		elif comptaline == 8: language = unicode( line[1], 'utf-8' )
-		elif comptaline == 9: image = unicode( line[1], 'utf-8' )
-		elif comptaline == 10:
-			sound = unicode( line[1], 'utf-8' )
-			database = Database( num, name, language, description, players, authors, time, image, sound )
+		if not has_correct_answer:
+			print >> sys.stderr, _('Warning: «%»: Found question without any correct answer; ignoring it.') % xmlFile
+			continue
+		
+		try:
+			comment = question.comments
+		except AttributeError:
+			comment = ''
+		
+		database.addQuestion(
+			question = question.text,
+			answ1 = answers[0],
+			answ2 = answers[1],
+			answ3 = answers[2],
+			author = question.author,
+			comment = comment,
+		)
 	
 	return database
 
-###########################################
 
-categoriespreguntes = []
-arxius_de_preguntes = LoadDatabase(Global.database).get()
+alldatabases = []
+database_files = LoadDatabase(Global.database).get()
 
-for num in range(0, len(arxius_de_preguntes) ):
+for num in range(0, len(database_files) ):
 	try:
-		cat = GetDatabase( num + 1, os.path.join(Global.database, arxius_de_preguntes[num]) )
-		categoriespreguntes.append( cat )
+		cat = GetDatabase( num + 1, os.path.join(Global.database, database_files[num]) )
+		alldatabases.append( cat )
 	except ValueError:
-		print 'Error with «%s».' % arxius_de_preguntes[num]
+		print 'Error with «%s».' % database_files[num]
 
-def textCategoria( ncat ):
-
-	return categoriespreguntes[ncat].name
-
-def preguntes_autors():
-
-	llista = []
-
-	for num in range(0, 6):	
-		llista.append( categoriespreguntes[num].name + ": " + categoriespreguntes[num].authors )
+def get_databases( database = None ):
 	
-	return llista
-
-def nomImatgeCategoria( ncat ):
-
-	return categoriespreguntes[ncat].image
-
-def soCategoria( ncat ):
-
-	return categoriespreguntes[ncat].sound
-
-def get_categoriespreguntes( ):
-
-	return categoriespreguntes
+	if database is not None:
+		return alldatabases[database]
+	else:
+		return alldatabases

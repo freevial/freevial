@@ -76,9 +76,9 @@ class Database:
 		
 		return self._old_questions[-1]
 	
-	def addQuestion( self, question, answ1, answ2, answ3, author, comments):
+	def addQuestion( self, question, answ1, answ2, answ3, author, comment):
 		
-		self._questions.append( [question, answ1, answ2, answ3, 1, author, comments] )
+		self._questions.append( [question, answ1, answ2, answ3, 1, author, comment] )
 	
 	def question( self ):
 		""" Returns the next question in a dictionary (with the answers

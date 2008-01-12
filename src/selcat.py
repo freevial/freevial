@@ -32,7 +32,7 @@ from pygame.locals import *
 
 from common.freevialglob import *
 from common.events import EventHandle
-from preguntes import *
+from questions import *
 
 ##################################################
 #
@@ -75,7 +75,7 @@ class SelCat:
 
 		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
 
-		self.cp = get_categoriespreguntes()
+		self.cp = get_databases()
 		self.sfc_preguntes = range(0, len(self.cp))
 
 		self.reinicia_cats()
@@ -254,8 +254,8 @@ class SelCat:
 				self.sfc_text_info2 = render_text( self.cp[seleccio].players, (255,255,255), 16, 1, '', 350 )
 				self.sfc_text_info3 = render_text( u"N. Pregutes: " + str(len(self.cp[seleccio])), (255,255,255), 16, 1, '', 350 )
 				self.sfc_text_info4 = render_text( u"Idioma: " + self.cp[compta].language, (255,255,255), 16, 1, '', 100 )
-				self.sfc_text_info5 = render_text( u"Data creació: " + self.cp[compta].time[0] , (255,255,255), 16, 1, '', 350 )
-				self.sfc_text_info6 = render_text( u"Data darrera modificació: " + self.cp[seleccio].time[1], (255,255,255), 16, 1, '', 350 )
+				self.sfc_text_info5 = render_text( u"Data creació: " + time.strftime('%d/%m/%Y', time.gmtime(self.cp[compta].time[0])), (255,255,255), 16, 1, '', 350 )
+				self.sfc_text_info6 = render_text( u"Data darrera modificació: " + time.strftime('%d/%m/%Y', time.gmtime(self.cp[seleccio].time[1])), (255,255,255), 16, 1, '', 350 )
 
 				self.sfc_cat = loadImage( self.cp[seleccio].image )
 				if seleccio < 6:

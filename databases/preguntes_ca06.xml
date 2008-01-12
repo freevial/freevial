@@ -1,0 +1,414 @@
+<database version="1.0" id="Programari i maquinari" language="ca">
+  <information>
+    <name>Programari i maquinari</name>
+    <description>Preguntes sobre els programes i els aparells que podem usar en el mon gnu/linux</description>
+    <destination>Coneixements mínims entorn GNU</destination>
+    <timestamp_creation>1189202400</timestamp_creation>
+    <timestamp_modification>1200087381</timestamp_modification>
+    <authors>
+      <author>Nil Oriol, &lt;email&gt;</author>
+      <author>Josep Sanchez, &lt;email&gt;</author>
+      <author>Lluïsa Nuñez, &lt;email&gt;</author>
+      <author>Carles Oriol, &lt;email&gt;</author>
+      <author>Siegfried Gevatter, &lt;email&gt;</author>
+      <author>Cortsenc, &lt;email&gt;</author>
+      <author>Julià Mestieri, &lt;email&gt;</author>
+    </authors>
+  </information>
+  <appearance>
+    <image>categoria6.png</image>
+    <sound>c6.ogg</sound>
+  </appearance>
+  <questions>
+    <question>
+      <sentence>Segons la filosofia UNIX, un programa...</sentence>
+      <author>RainCT</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">ha de fer una sola cosa ben feta</answer>
+        <answer>no existeix, el terme emprat és «aplicació»</answer>
+        <answer>ha de poder fer com més coses millor</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin dels següents reproductors de música ve instaŀlat per defecte amb l'Ubuntu?</sentence>
+      <author>RainCT</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Rythmbox</answer>
+        <answer>Windows Media Player</answer>
+        <answer>Winamp</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On no podem connectar un disc dur amb l'Ubuntu?</sentence>
+      <author>Carles</author>
+      <comments>El ext3 és un format lògic de disc, no un tipus de connector.</comments>
+      <answers>
+        <answer correct="True">Al cable ext3</answer>
+        <answer>Al cable SATA</answer>
+        <answer>El cable IDE ATA</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Que et respon l'aptitude quan li#preguntes per les vaques? (aptitude moo)</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Et diu que no té ous de pasqua</answer>
+        <answer>Et mostre l'ajuda del programa</answer>
+        <answer>Et diu que no li agraden les vaques</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin programa de MSDOS va inspirar#les comandes de l'editor de text joe?</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">WordStar</answer>
+        <answer>WordPerfect</answer>
+        <answer>WordPerfect</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el significat de les inicials Gnome?</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">GNU Network Object Model Environment</answer>
+        <answer>GNU Notice Oriented Maked Enviroment</answer>
+        <answer>No volen dir res</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Dins de l'estructura de directoris POSIX, quin directori#esta previst per les configuracions?</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">/etc</answer>
+        <answer>/conf</answer>
+        <answer>/conf</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests no es un driver per targetes ati?</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">i810</answer>
+        <answer>ati</answer>
+        <answer>radeon</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>A quin programador Microsoft va comprar el DOS</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Gray Killday</answer>
+        <answer>Paul Allen</answer>
+        <answer>Richard Stallman</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu el programa de gestio de configuracions de KDE</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">kcontrol</answer>
+        <answer>kmanageconf</answer>
+        <answer>kconfig</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin programa ha substituit al telnet</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">ssh</answer>
+        <answer>ping</answer>
+        <answer>telnet2</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Que vol dir BSOD</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Blue Screen Of Death</answer>
+        <answer>Bad Screen Or Data</answer>
+        <answer>Bad System of Directorys</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Per que serveix el programa vrms</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Per verificar els paquets privatius que estan instalats</answer>
+        <answer>Per comprovar que les configuracions són respectuoses amb la GPL</answer>
+        <answer>Per mirar les llicències que tens en el PC</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què vol dir DRM?</sentence>
+      <author>quiron</author>
+      <comments>La FSF parla de restriccions per comptes de drets, com diuen algunes empreses</comments>
+      <answers>
+        <answer correct="True">Digital Restrictions Management</answer>
+        <answer>Digital Radio Messages</answer>
+        <answer>Digital Radio Messages</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Es pot distribuir lliurement la Linkat?</sentence>
+      <author>quiron</author>
+      <comments>Només la pot distribuir qui tingui un acord amb les empreses propietàries del programari privatiu que porta.</comments>
+      <answers>
+        <answer correct="True">No</answer>
+        <answer>Evidenment, és programari lliure</answer>
+        <answer>Només Novell</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin dels següents és un programa fet específicament per poder jugar a jocs del Windows sota Linux?</sentence>
+      <author>RainCT</author>
+      <comments>Wine és per a tot tipus de programes, i Gamix és una especificació per a una consola de jocs lliure.</comments>
+      <answers>
+        <answer correct="True">Cedega</answer>
+        <answer>Gamix</answer>
+        <answer>Wine</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina d'aquestes tecnologies no és de descàrrega de fitxers "entre iguals"?</sentence>
+      <author>papapep</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">torrent</answer>
+        <answer>edonkey</answer>
+        <answer>riera</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diuen els dos formats de dvd d'alta capacitat que pretenen governar-ne el mercat?</sentence>
+      <author>papapep</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">hd-dvd i blue-ray</answer>
+        <answer>dvd-ram i nas</answer>
+        <answer>vhs i hd-dvd</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina d'aquestes Wikipedies te més articles que la Viquipèdia catalana?</sentence>
+      <author>Cortsenc</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Turca</answer>
+        <answer>Danesa</answer>
+        <answer>Danesa</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Estas mirant el darrera de la torre i tens el cable MiniJack dels altaveus a la mà. L'has de colocar a un dels forats que li van be, però... n'hi ha tres!! De quin color és l'orifici per on has de posar el cable dels altaveus?</sentence>
+      <author>Cortsenc</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Verd</answer>
+        <answer>Rosa</answer>
+        <answer>Rosa</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu el popular programa de Karaoke per a GNU/Linux inspirat amb un conegut joc de la PlayStation?</sentence>
+      <author>Cortsenc</author>
+      <comments>UltraStar a seques, esta programat amb Delphi i només esta disponible per a Windows, i UltraStar-NG és una reescriptura del programa amb C pensada per a fer-se servir amb GNU/Linux.</comments>
+      <answers>
+        <answer correct="True">UltraStar-NG</answer>
+        <answer>SingStar</answer>
+        <answer>UltraStar</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests programes no es un reproductor de video?</sentence>
+      <author>Nil</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Pone</answer>
+        <answer>Xine</answer>
+        <answer>Totem</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu aquest escriptori?</sentence>
+      <author>carles</author>
+      <comments> </comments>
+      <answers>
+        <answer correct="True">Enlightement</answer>
+        <answer>Enlighement</answer>
+        <answer>Enlightenement</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin animal és la mascota del kde?</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Un drac</answer>
+        <answer>Una salamandra</answer>
+        <answer>Un pingüí</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quan l'equip de traductors del#KDE ens parlen de la mida#de la caixa. Es refereixen a:</sentence>
+      <author>carles</author>
+      <comments>Això que ens pot sonar estrany no és un error de traducció. Ve de la mida de les caselles (caixes) que s'usaven en les impremtes. On les majúscules eren més grans.</comments>
+      <answers>
+        <answer correct="True">Majúscules / minúscules</answer>
+        <answer>Tipus de monitor</answer>
+        <answer>Marges de les finestres</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què volen dir les sigles KDE?</sentence>
+      <author>carles</author>
+      <comments>La 3a també és correcta, però no es el nostre cas</comments>
+      <answers>
+        <answer correct="True">K Desktop Enviroment</answer>
+        <answer>KDE Data Extruded</answer>
+        <answer>KDE Data Extruded</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin animal d'aquests és germà#però no amic de la guineu de foc</sentence>
+      <author>carles</author>
+      <comments>L'any 2006 l'equip de debian va fer una separació de la versió oficial del firefox per que l'equip de treball de mozilla no incorporava les seves actualitzacions a temps. Al fer-ho van haver de canviar el logotip d'aquest per un altre ja que estava protegit per drets d'autor.</comments>
+      <answers>
+        <answer correct="True">La llúdriga de gel</answer>
+        <answer>La gavina de foc</answer>
+        <answer>L'escarabat de neu</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin es el nou nom del Gaim?</sentence>
+      <author>Nil</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Pidgin</answer>
+        <answer>Amsn</answer>
+        <answer>Gaim (no ha canviat)</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina de les següents aplicacions#NO es troba als repositoris d'Ubuntu?</sentence>
+      <author>lluisanunez</author>
+      <comments>Kalcul és una aplicació de KDE, Karacul és inventat </comments>
+      <answers>
+        <answer correct="True">Karacul</answer>
+        <answer>Moc</answer>
+        <answer>Moc</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu la mascota del projecte kde?</sentence>
+      <author>carles</author>
+      <comments>Deixeu al Konqui conquerir el vostre escriptori.</comments>
+      <answers>
+        <answer correct="True">Konqui</answer>
+        <answer>Mongui</answer>
+        <answer>Tronki</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>El mythtv no permet</sentence>
+      <author>carles</author>
+      <comments>És un sistema media center collonut però no serveix per fer PDFs</comments>
+      <answers>
+        <answer correct="True">Fer PDFs</answer>
+        <answer>Fer video trucades</answer>
+        <answer>Veure i enregistrar la tele</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>El millor editor lliure d'imatges matricials és:</sentence>
+      <author>Nil</author>
+      <comments>El gimp és un programa de# tractament d'imatges#el gaim de missatgeria instantània# (ara rebatejat com a pidgin)#i el gcc el compilador de# llenguatge c i c++. </comments>
+      <answers>
+        <answer correct="True">gimp</answer>
+        <answer>gcc</answer>
+        <answer>gcc</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests programes#no és un programa de diseny#vectorial</sentence>
+      <author>carles</author>
+      <comments>es un programa d'autoedició</comments>
+      <answers>
+        <answer correct="True">scribus</answer>
+        <answer>inkscape</answer>
+        <answer>xaralx</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests programes no és#per manipular so.</sentence>
+      <author>carles</author>
+      <comments>El Ardour és un gran programa multipista per treballar en temps real.#L'audacity és un gran programa per tractar so.#I el Blender és un programa boníssim de disseny gràfic en 3D.</comments>
+      <answers>
+        <answer correct="True">Blender</answer>
+        <answer>Adour</answer>
+        <answer>Audacity</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com ho farien 4 usuaris de hasefrog#per engegar un cotxe que no funciona?</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Sortirien i tornarien a entrar</answer>
+        <answer>Desmuntant el cotxe</answer>
+        <answer>Reiniciarien el servei del motor</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests programes#que permeten accés remot#no està als repositoris d'Ubuntu.</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">nx</answer>
+        <answer>Les mateixes X</answer>
+        <answer>vnc</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu el gestor de fitxers#del KDE 4?</sentence>
+      <author>carles</author>
+      <comments>Tot i que ja el trobem predeterminat a les darreres versions de KDE.</comments>
+      <answers>
+        <answer correct="True">Dolphin</answer>
+        <answer>nautilus</answer>
+        <answer>konqueror</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests no és un#entorn Linux per dispositius mòbils?</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Yunki</answer>
+        <answer>Opie</answer>
+        <answer>Opie</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests no és un gestor de#finestres modern per l'Ubuntu?</sentence>
+      <author>carles</author>
+      <comments>Evidentment l'aereo és pel Hasefrog Diòptries</comments>
+      <answers>
+        <answer correct="True">Aero</answer>
+        <answer>Compiz Fusion</answer>
+        <answer>Beryl</answer>
+      </answers>
+    </question>
+  </questions>
+</database>

@@ -1,0 +1,895 @@
+<database version="1.0" id="Personatges i actes" language="ca">
+  <information>
+    <name>Personatges i actes</name>
+    <description>Gent i fets al voltant del mon del programari lliure. També informació sobre llicències.</description>
+    <destination>Coneixement dels esdeveniments i personatges més importants al món de GNU, el programari lliure i l'informàtica en general.</destination>
+    <timestamp_creation>1189202400</timestamp_creation>
+    <timestamp_modification>1200087357</timestamp_modification>
+    <authors>
+      <author>Rafael Carreras, &lt;email&gt;</author>
+      <author>Nil Oriol, &lt;email&gt;</author>
+      <author>Josep Sanchez, &lt;email&gt;</author>
+      <author>Lluïsa Nuñez, &lt;email&gt;</author>
+      <author>Carles Oriol, &lt;email&gt;</author>
+      <author>Cortsenc, &lt;email&gt;</author>
+      <author>Julià Mestieri, &lt;email&gt;</author>
+      <author>Siegfried Gevatter, &lt;email&gt;</author>
+    </authors>
+  </information>
+  <appearance>
+    <image>categoria1.png</image>
+    <sound>c1.ogg</sound>
+  </appearance>
+  <questions>
+    <question>
+      <sentence>On es va celebrar el primer esdeveniment#d'Ubuntu a Europa?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Mataró</answer>
+        <answer>París</answer>
+        <answer>París</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va crear l'Emacs?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Stallman</answer>
+        <answer>John de Lacie</answer>
+        <answer>David Pini</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On se celebra la KOffice Conference?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">No n'hi ha</answer>
+        <answer>A Gijón</answer>
+        <answer>A Londres</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què cal per a ser LoCo Team Contact?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Ser elegit</answer>
+        <answer>Fundar el LoCo</answer>
+        <answer>Fundar el LoCo</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què cal per a ser sabdfl d'Ubuntu?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Ser en Mark Shuttlewoth</answer>
+        <answer>Ser elegit</answer>
+        <answer>Demostrar una feina feta</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què cal per a formar part del#Community Council d'Ubuntu?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Ser elegit</answer>
+        <answer>Apuntar-se a les llistes de correu</answer>
+        <answer>Demostrar una feina feta</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què cal per a ser un Ubuntu Member?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Demostrar una feina feta</answer>
+        <answer>Apuntar-se a les llistes de correu</answer>
+        <answer>Ser elegit</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què cal per a ser membre del#Catalan LoCo Team?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Demostrar una feina feta</answer>
+        <answer>Ser un friki</answer>
+        <answer>Ser un friki</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui coneix més personatges rellevants#del programari lliure a Catalunya?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Miquel Chicano</answer>
+        <answer>Lluís Sanz</answer>
+        <answer>Lluís Sanz</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui és el coordinador de les#traduccions de l'OpenOffice.org?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Jesús Corrius</answer>
+        <answer>Carles Mata</answer>
+        <answer>Carles Mata</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui parla Perl fluïdament?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Àlex Muntada</answer>
+        <answer>Miquel Chicano</answer>
+        <answer>Carles Mata</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On es va celebrar la Festa Feisty?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Les Corts</answer>
+        <answer>L'Hospitalet</answer>
+        <answer>Gràcia</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On convoca Softcatalà les seves reunions?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">The Shamrock</answer>
+        <answer>The O'Brien</answer>
+        <answer>The Baggins</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On convoca Caliu les seves reunions?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Estació de Sants</answer>
+        <answer>Centre Excursionista de Sants</answer>
+        <answer>Centre Bocanord</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On convoca els seus esdeveniments#el grup de traductors del KDE?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Centre Bocanord</answer>
+        <answer>Esplai Espurna</answer>
+        <answer>Esplai Espurna</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina activitat física realitza el#Catalan LoCo Team Contact?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Taiji Quan</answer>
+        <answer>Bàsquet</answer>
+        <answer>Excursionisme</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui forma part de Caliu, la Càtedra de Programari Lliure,#el Catalan LoCo Team i cat&gt;&gt;KDE?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Orestes Mas</answer>
+        <answer>Robert Millan</answer>
+        <answer>Albert Astals</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el GLUG de Barcelona?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Badopi</answer>
+        <answer>BarnaLinux</answer>
+        <answer>BCNGNU</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el GLUG de Tarragona?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">GPL Tarragona</answer>
+        <answer>Tarragona Linux</answer>
+        <answer>Tarragona Linux</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el GLUG de Girona?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Gilug</answer>
+        <answer>Girolinux</answer>
+        <answer>Girolinux</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui treballa a Xarxantoni?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Sergi Tur</answer>
+        <answer>Carles Mata</answer>
+        <answer>Carles Mata</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va desenvolupar la Lliurex?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Sergi Talens</answer>
+        <answer>Joan Puig</answer>
+        <answer>Carlos Bunyol</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui és el president de la FSFE?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Georg Greeve</answer>
+        <answer>George Lucas</answer>
+        <answer>George Lucas</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui fa la Knoppix?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Klaus Knopper</answer>
+        <answer>John Knoop</answer>
+        <answer>John Knoop</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui fa la Xarnoppix?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Lluís Gras</answer>
+        <answer>Toni Mirabete</answer>
+        <answer>Lluís Sanz</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui fa la K-DEMar?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Adonay Sanz</answer>
+        <answer>Sebastià Pla</answer>
+        <answer>Arnau Julià</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui prepara els CD catalanitzats#d'Ubuntu i Kubuntu hores després del#llençament oficial?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Walter i Orestes</answer>
+        <answer>Jordi i Joan</answer>
+        <answer>Jordi i Joan</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui fa la Càtix?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Toni Mirabete</answer>
+        <answer>Jordi Mas</answer>
+        <answer>Jordi Mas</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu la Xarxa de#Programari Lliure a l'Administració?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Guarà</answer>
+        <answer>Senglar</answer>
+        <answer>Senglar</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va escriure el llibre#«Programari Lliure i empresa a Catalunya»?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Jordi Mas</answer>
+        <answer>Miquel Chicano</answer>
+        <answer>Miquel Chicano</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va iniciar la traducció del Gnome#al català?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Jordi Mallach</answer>
+        <answer>Jordi Pla</answer>
+        <answer>Jordi Pla</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va iniciar la traducció del KDE#al català?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Sebastià Pla</answer>
+        <answer>Jordi Mas</answer>
+        <answer>Rafael Carreras</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va obtenir el premi al#desenvolupador a l'aKademy 2006?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Albert Astals</answer>
+        <answer>Orestes Mas</answer>
+        <answer>Robert Millan</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina és la distro de l'XTEC#basada en OpenSuse?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">LinKat</answer>
+        <answer>CatAstrofe</answer>
+        <answer>CatAstrofe</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui forma part de Caliu, Perl Mongers,#GNU, la Càtedra de Programari Lliure i#el Catalan LoCo Team?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Àlex Muntada</answer>
+        <answer>Miquel Chicano</answer>
+        <answer>Rafael Carreras</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui forma part de Caliu, Softcatalà#i CatPL?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Miquel Chicano</answer>
+        <answer>Francesc Genové</answer>
+        <answer>Nil Oriol</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va muntar l'Atzusac d'en Tux?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Julià i Arnau</answer>
+        <answer>Oriol i Marc</answer>
+        <answer>Oriol i Marc</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va ser el coordinador#de la campanya contra les patents de programari#a casa nostra?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Xavier Drudis</answer>
+        <answer>Júlia Casagrande</answer>
+        <answer>Ramon Pagès</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui és el president de Caliu?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Eduard Fabra</answer>
+        <answer>Francesc Genové</answer>
+        <answer>Francesc Genové</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va ser el fundador de la#Free Software Foundation?</sentence>
+      <author>rcarreras</author>
+      <comments>RMS: Richard M. Stallman</comments>
+      <answers>
+        <answer correct="True">RMS</answer>
+        <answer>FRT</answer>
+        <answer>LTV</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui ha fet la traducció de gnulinux.cat?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Cortsenc</answer>
+        <answer>Àlex Muntada</answer>
+        <answer>RainCT</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin mallorquí és orador oficial de l'FSF?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Ricardo Galli</answer>
+        <answer>Tomeu Penya</answer>
+        <answer>Benjamí Villoslada</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va ser el fundador d'OpenSSH?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Theo de Raadt</answer>
+        <answer>Mathew Flow</answer>
+        <answer>John de Lacie</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va ser el fundador d'OpenBSD?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Theo de Raadt</answer>
+        <answer>Theo de Yaan</answer>
+        <answer>Theo de Yaan</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin desenvolupador català de GNOME#treballa per Nokia a Finlàndia?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Quim Gil</answer>
+        <answer>Guillem Portes</answer>
+        <answer>David Pini</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui és el coordinador de Softcatalà?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Jordi Mas</answer>
+        <answer>Orestes Mas</answer>
+        <answer>Artur Mas</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què és un sabdfl?</sentence>
+      <author>rcarreras</author>
+      <comments>sabdfl és el nick d'en Mark Shuttleworth, fundador d'Ubuntu, i vol dir «Self-Appointed Benevolent Dictator for Life»</comments>
+      <answers>
+        <answer correct="True">Un dictador</answer>
+        <answer>Un tècnic</answer>
+        <answer>Un conferenciant</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què és un geek?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Qui li agrada la ciència ficció, els ordinadors, les maquinetes</answer>
+        <answer>Qui li agrada la tele</answer>
+        <answer>Qui li agrada molt algun tema poc habitual</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què és un friki?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Algú a qui li agrada molt algun tema poc habitual</answer>
+        <answer>Algú a qui li agrada la tele</answer>
+        <answer>Algú a qui li agrada la ciència ficció, els ordinadors, les maquinetes</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què és un pirata?</sentence>
+      <author>rcarreras</author>
+      <comments>Aquell que copia programes propietaris o es baixa música/vídeos amb drets d'autor és un «pirata informàtic».</comments>
+      <answers>
+        <answer correct="True">Algú que assalta vaixells</answer>
+        <answer>Algú que copia programes</answer>
+        <answer>Algú que es baixa música i pelis</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>A qui anomenem hacker?</sentence>
+      <author>Carles</author>
+      <comments>Un hacker és un expert ... Pot ser-ho en art (japó) o en el nucli del Linux, o en el funcionament d'un programa. Cal no confondre-ho, com fan els mitjans de comunicació, amb els crackers (pirates informàtics).</comments>
+      <answers>
+        <answer correct="True">A un expert</answer>
+        <answer>A algú que programa</answer>
+        <answer>A algú que programa</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què és un cracker?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Algú que trenca codis o sistemes</answer>
+        <answer>Algú que menja galetes</answer>
+        <answer>Algú que programa</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu la conferència anual#d'OpenOffice.org?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">OOo Conference</answer>
+        <answer>World OpenOffice</answer>
+        <answer>World OpenOffice</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu la conferència anual#de Gnome?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Guadec</answer>
+        <answer>Gnome Conference</answer>
+        <answer>Gnome Conference</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu la conferència anual#de KDE?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">aKademy</answer>
+        <answer>KDEistm</answer>
+        <answer>KDE Conference</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu el grup de programadors#en Perl que es reuneixen els dijous?</sentence>
+      <author>rcarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Perl Mongers</answer>
+        <answer>Perl Rangers</answer>
+        <answer>Perl Frikis</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui és el responsable#de Goodbye-Microsoft?</sentence>
+      <author>rcarreras</author>
+      <comments>És un programa que instal·la una Debian des d'un Windows.</comments>
+      <answers>
+        <answer correct="True">Robert Millan</answer>
+        <answer>Carles Oriol</answer>
+        <answer>Carles Oriol</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és l'estil de musica preferit del coordinador#de la comunitat d'Ubuntu?</sentence>
+      <author>quiron</author>
+      <comments>En Jono Bacon, empleat de Canonical com a coordinador de la comunitat d'Ubuntu, és un gran amic del Metal. Fins i tot té el seu propi grup!</comments>
+      <answers>
+        <answer correct="True">Metal</answer>
+        <answer>Tecno</answer>
+        <answer>Òpera</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin va ser el primer any que es va celebrar#el dia de la llibertat del programari?</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">2003</answer>
+        <answer>2007</answer>
+        <answer>1999</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin programa fa servir en Jordi Mas#per a traduir programari?</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">vi</answer>
+        <answer>Poedit</answer>
+        <answer>emacs</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin escriptori recomana fer#servir en Linus Torvalds?</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">KDE</answer>
+        <answer>Gnome</answer>
+        <answer>WindowMaker</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Segons en RMS la seva aureola és</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Una aureola</answer>
+        <answer>Un disc dur</answer>
+        <answer>Un disquet</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui és l'únic home que ha contat fins#a l'infinit amb tots els decimals?</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Chuck Norris</answer>
+        <answer>Bill Gates</answer>
+        <answer>Bill Gates</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin animal fa de mascota del projecte GNU?</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">En Gnu</answer>
+        <answer>Un pingüí</answer>
+        <answer>Un camaleó</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina és la distribució més vella que encara es manté?</sentence>
+      <author>quiron</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Slackware</answer>
+        <answer>Oldux</answer>
+        <answer>Debian</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>D'on surt el nom de Debian?</sentence>
+      <author>RainCT</author>
+      <comments>Ian, el fundador de Debian, i Deborah.</comments>
+      <answers>
+        <answer correct="True">El nom d'un paio i la seva nòvia</answer>
+        <answer>Un poble</answer>
+        <answer>Un poble</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>A què es refereix el terme «babau» en cercles linuxers?</sentence>
+      <author>RainCT</author>
+      <comments>Veure el document que en Vicent Cubells ha escrit al respecte.</comments>
+      <answers>
+        <answer correct="True">A aquell que ajuda desinteressadament a fer funcionar un PC amb Windows a algú altre.</answer>
+        <answer>A aquell que no sap utilitzar amb fluidesa una terminal.</answer>
+        <answer>A aquell que és estúpid.</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>En Richard Matthew Stallman va néixer a...</sentence>
+      <author>RainCT</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">New York City</answer>
+        <answer>Washington</answer>
+        <answer>Washington</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quants euros va recaptar l'SGAE#durant l'any 2005?</sentence>
+      <author>Carles</author>
+      <comments>I això que encara no cobraven ni de bon tros tot el que cobren ara...</comments>
+      <answers>
+        <answer correct="True">318.772.000</answer>
+        <answer>31.877.200</answer>
+        <answer>3.187.720</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Al 1943, es creia que al món només hi havia mercat#per a</sentence>
+      <author>Nil</author>
+      <comments>Thomas Watson de IBM va dir literalment que al món hi havia mercat per a com a molt 5 ordinadors.</comments>
+      <answers>
+        <answer correct="True">5 ordinadors.</answer>
+        <answer>50000 ordinadors.</answer>
+        <answer>500 ordinadors.</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On es va fer la Guadec de l'any 2006?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Vilanova i la Geltrú</answer>
+        <answer>Chicago</answer>
+        <answer>Chicago</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va fundar el projecte GNOME?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Manuel de Icaza</answer>
+        <answer>Mark Shuttlework</answer>
+        <answer>George Moustaki</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quan en Mark Shuttleworth va fer# la seva fortuna venent#una empresa de certificats digitals va anar de viatge a:</sentence>
+      <author>Carles</author>
+      <comments>Mark Shuttleworth va ser el 2on turista espacial#de la història de la humanitat.##Després d'aconseguir la seva fortuna#va fer un viatge a l'estació espacial#internacional amb un grup de científics#per tal de realitzar investigacions amb#celules mare.</comments>
+      <answers>
+        <answer correct="True">L'espai</answer>
+        <answer>Vilanova i la Geltrú</answer>
+        <answer>Vilanova i la Geltrú</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quants anys ha fet l'escriptori GNOME l'any 2007?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">10</answer>
+        <answer>15</answer>
+        <answer>15</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va dir#«Don't think free as in free beer;#think free as in free speech.»?</sentence>
+      <author>Carles</author>
+      <comments>Richard Stallman per referir-se que#el programari hauria de ser lliure referint-se#a llibertat.##(És un error de polisemia en anglès#al ser lliure i gratuit la mateixa#paraula: free)</comments>
+      <answers>
+        <answer correct="True">Richard Stallman</answer>
+        <answer>Linus Torvalds</answer>
+        <answer>Mark Shuttlework</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Per què els errors informàtics es diuen «bugs»?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Perquè quan van engegar el primer#ordinador dins d'una vàlvula#hi havia un insecte</answer>
+        <answer>En honor a John Bughs</answer>
+        <answer>En honor a John Bughs</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quan en Mark Shuttleworth va venir a Catalunya,#quina televisió el va entrevistar?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Mataró TV</answer>
+        <answer>TV3</answer>
+        <answer>TV3</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On es va fer l'Akademy de l'any 2007?</sentence>
+      <author>Carles</author>
+      <comments>L'Akademy és la trobada anual de desenvolupadors de KDE. L'any 2007 es va fer a Glasgow, a Escòcia.</comments>
+      <answers>
+        <answer correct="True">Glasgow</answer>
+        <answer>Dublin</answer>
+        <answer>Dublin</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On es va fer l'Akademy de l'any 2006?</sentence>
+      <author>Carles</author>
+      <comments>L'Akademy és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer al Trinity College Dublín, a Irlanda.</comments>
+      <answers>
+        <answer correct="True">Vilanova i la Geltrú</answer>
+        <answer>Chicago</answer>
+        <answer>Dublin</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>De que es disfressa en Richard Stallman a les seves conferencies?</sentence>
+      <author>Nil</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Sant Ignucius</answer>
+        <answer>De nyu (gnu en anglès)</answer>
+        <answer>Pokemon</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Hans Reiser, creador del sistema#d'arxius ReiserFS, va ser acusat#l'any 2006 de:</sentence>
+      <author>lluisanunez</author>
+      <comments>http://en.wikipedia.org/wiki/Hans_Reiser</comments>
+      <answers>
+        <answer correct="True">Matar la seva dona</answer>
+        <answer>Signar un acord amb Microsoft</answer>
+        <answer>Violar la llicència GPLv3</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què es va patentar el 2006</sentence>
+      <author>Carles</author>
+      <comments>United States Patent 20060071122. Brutal!</comments>
+      <answers>
+        <answer correct="True">El teletransport</answer>
+        <answer>La inserció de xips al cervell humà</answer>
+        <answer>El windows segur</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Que va patentar Microsoft#el 24 de setembre del 1996</sentence>
+      <author>Carles</author>
+      <comments>Patent number: 5559943</comments>
+      <answers>
+        <answer correct="True">El doble clic</answer>
+        <answer>La bola del ratolí</answer>
+        <answer>El CD parcialment regravable</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com es diu l'associació d'usuaris de GNU/Linux#més important de Catalunya?</sentence>
+      <author>Carles</author>
+      <comments>I el seu Secretari Rafael Carreras és un dels fundadors del LoCo Català d'ubuntaires</comments>
+      <answers>
+        <answer correct="True">Caliu</answer>
+        <answer>Cobrem</answer>
+        <answer>Carlux</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui són Dennis Ritchie i Keneth Thompson?</sentence>
+      <author>Carles</author>
+      <comments>De l'any 1969 al 1971 Dennis Ritchie i Keneth Thompson ven desenvolupar el sistema unix. Per fer-ho van haver de millorar el lleguatge B creat per Ritchie convertint-lo en C </comments>
+      <answers>
+        <answer correct="True">Els desenvolupadors del C i de l'Unix</answer>
+        <answer>Els pares d'internet</answer>
+        <answer>Els creadors del projecte GNU</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què es va celebrar el passat abril al#centre cultural de Les Corts??</sentence>
+      <author>papapep</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">La Festa Feisty del CatalanTeam</answer>
+        <answer>L'RMS hi va fer una conferència</answer>
+        <answer>Una reunió tupperware</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui ha estat l'abanderat de la traducció#del programari al català?</sentence>
+      <author>Carles</author>
+      <comments>Per cert... el clic dels nois de redmon ja s'a convertit en clico.</comments>
+      <answers>
+        <answer correct="True">Softcatalà</answer>
+        <answer>Microsoft</answer>
+        <answer>La Generalitat</answer>
+      </answers>
+    </question>
+  </questions>
+</database>
