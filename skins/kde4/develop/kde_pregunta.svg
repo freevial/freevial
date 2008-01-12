@@ -31,8 +31,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.59008835"
-     inkscape:cx="475.77275"
-     inkscape:cy="373.12832"
+     inkscape:cx="574.30445"
+     inkscape:cy="450.42172"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
@@ -44,6 +44,24 @@
      inkscape:guide-bbox="true" />
   <defs
      id="defs4">
+    <linearGradient
+       id="linearGradient2400">
+      <stop
+         style="stop-color:#5b559b;stop-opacity:1"
+         offset="0"
+         id="stop2402" />
+      <stop
+         style="stop-color:#c0c0c0;stop-opacity:0;"
+         offset="1"
+         id="stop2404" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       id="perspective31"
+       inkscape:vp_x="-50 : 600 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="700 : 600 : 1"
+       inkscape:persp3d-origin="300 : 400 : 1" />
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
        id="perspective30"
@@ -114,6 +132,24 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_z="700 : 600 : 1"
        inkscape:persp3d-origin="300 : 400 : 1" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath2393">
+      <path
+         style="opacity:1;fill:#ffffff;fill-opacity:0.21596243;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 949.8125,0 L 949.8125,151.0625 C 949.81248,164.07303 939.35428,174.53125 926.34375,174.53125 L 0,174.53125 L 0,768 L 1024,768 L 1024,0 L 949.8125,0 z"
+         id="path2395" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2400"
+       id="linearGradient2408"
+       x1="255.89389"
+       y1="174.27695"
+       x2="255.89389"
+       y2="146.24269"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.9973736,0,0,0.9861168,-2.9594953e-2,-6.785239e-2)" />
   </defs>
   <metadata
      id="metadata7">
@@ -137,21 +173,14 @@
        height="768"
        id="image2372"
        x="0"
-       y="0" />
+       y="0"
+       clip-path="url(#clipPath2393)" />
   </g>
   <g
      style="display:inline"
      inkscape:label="foreground"
      id="layer2"
      inkscape:groupmode="layer">
-    <rect
-       ry="23.484707"
-       y="-25.377501"
-       x="-35.003193"
-       height="199.91026"
-       width="984.81653"
-       id="rect2963"
-       style="opacity:0.79464285;fill:#c0c0c0;fill-opacity:0.18779345;stroke:#ffffff;stroke-width:1.99360859;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <g
        style="fill:#ffffff"
        transform="matrix(0.5119388,0,0,0.5119388,1327.554,752.30893)"
@@ -206,6 +235,11 @@
          id="tspan2978"
          x="-675.46979"
          y="1000.2239">freevial - Edició festa KDE4</tspan></text>
+    <path
+       style="opacity:0.79464285000000001;fill:url(#linearGradient2408);fill-opacity:1;stroke:#ffffff;stroke-width:1.97711980000000009;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1"
+       d="M -8.1373662,-4.3017684 L 950.9095,-4.3017684 L 950.66958,151.92432 C 950.66958,164.75423 940.22291,175.08299 927.24655,175.08299 L -8.1373662,175.08299 L -8.1373662,-4.3017684 z"
+       id="rect2388"
+       sodipodi:nodetypes="cccccc" />
   </g>
   <g
      inkscape:label="items"

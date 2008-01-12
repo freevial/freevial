@@ -504,8 +504,8 @@ class Preguntador:
 					
 				for num in range (0, 3):
 					if self.current_question['answer'] == (num + 1):
-						if self.selected != (num + 1):
-							self.joc.screen.blit( self.solucio_nook, (posnook, linia_act + (150 * num)) )
+						if self.selected != (num + 1):	
+							self.joc.screen.blit( self.solucio_ok, (posnook, linia_act + (150 * num)) )
 						else:
 							self.joc.screen.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
 						
