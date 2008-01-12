@@ -55,6 +55,10 @@ class Skin:
 		self.config.readfp(open(skin_file, 'r'))	
 		
 		self.skin_folder = skin_folder
+
+		fontname = self.search_font_name('' )
+		if fontname != '':
+			set_default_font( fontname )
 	
 	def configGet( self, field, domain = None ):
 		
@@ -142,11 +146,10 @@ class Skin:
 		self.figureta_si = loadImage('points/freevial_tot' + str( joc.teams[joc.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
 		self.match_point = True if (joc.teams[joc.current_team].figureta | bitCategoria ( selcat ) == 63) else False
 
-	def render_text( self, cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
+	def search_font_name( self, nomfont ):
 
 		if nomfont == '':
 			nomfont = self.configGet( 'default_font', 'game' )
-
 
 		if nomfont != '':
 			if not os.path.exists( nomfont ):
@@ -154,6 +157,12 @@ class Skin:
 
 				if os.path.exists( fullname ):
 					nomfont = fullname
+
+		return nomfont
+
+	def render_text( self, cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
+
+		nomfont == self.search_font_name( nomfont )
 
 		return render_text( cadena, color, mida, antialias, nomfont, maxwidth )		
 

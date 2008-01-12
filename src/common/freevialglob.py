@@ -133,14 +133,24 @@ def loadSound( name, volume = 1.0, music = False ):
 	
 	return obj
 
+default_font = '/usr/share/fonts/truetype/unfonts/UnBatangBold.ttf'
+
+
+def set_default_font( nomfont ):
+
+	if os.path.exists( nomfont ):
+		default_font = nomfont
+		
 
 def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
 	""" Function for easier text rendering. """
 
+	global default_font
+
 	if os.path.exists( nomfont ):
 		font1 = pygame.font.Font( nomfont, mida )
 	else:
-		tnomfont = os.path.join(Global.folders['fonts'], '/usr/share/fonts/truetype/unfonts/UnBatangBold.ttf' if nomfont == '' else nomfont)
+		tnomfont = os.path.join(Global.folders['fonts'], default_font if nomfont == '' else nomfont)
 		if os.path.exists( tnomfont ):
 			font1 = pygame.font.Font( tnomfont, mida )
 		else:
@@ -296,7 +306,6 @@ def teamsGuanyador( teams, mode, extra ):
 				guanyador = num
 
 
-	print "guanya:", guanyador
 	return guanyador
 
 
