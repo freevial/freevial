@@ -62,8 +62,10 @@ class Roda:
 		self.roda_so_sub_vol = self.skin.configGet( 'wheel', 'sound_wheel_sub_vol')
 		self.tipografia = self.skin.configGet( 'wheel', 'wheel_tipografia')
 		
-		
-		
+		self.paper_offsetX = self.skin.configGetInt( 'wheel', 'paper_offsetX' )
+		self.paper_text_offsetX = self.skin.configGetInt( 'wheel', 'paper_text_offsetX' )
+		self.paper_text_width = self.skin.configGetInt( 'wheel', 'paper_text_width' )
+
 		
 		self.figureta = self.skin.LoadImageRange( "wheel", "figureta_mask", 64, 2)
 		self.fons = self.skin.LoadImage( "wheel", 'wheel_background' )
@@ -74,15 +76,16 @@ class Roda:
 		self.so_sub = self.skin.LoadSound( "wheel", 'sound_wheel_sub', 'sound_wheel_sub_vol')
 		self.so_cat = range(0, 6)
 
-		
+		self.tipografia_mida = self.skin.configGetInt( 'wheel', 'wheel_tipografia_mida')
+
 		for num in range(0, 6):
 			self.so_cat[num] = loadSound(get_databases(num).sound, volume = 1.0)
 						
 		for num in range(0, self.maxim_equips):
-			sfc = self.skin.render_text( get_databases(num).name, (0,0,0), 60, 1, self.tipografia, 350 );
-			self.paper.blit( sfc, (122, 2+(num * 200) + 100 - sfc.get_height() / 2 ))
-			sfc = self.skin.render_text( get_databases(num).name, colorsCategories()[num], 60, 1, self.tipografia, 350 );
-			self.paper.blit( sfc, (120, (num * 200) + 100 - sfc.get_height() / 2 ))
+			sfc = self.skin.render_text( get_databases(num).name, (0,0,0), self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
+			self.paper.blit( sfc, (self.paper_text_offsetX+2, 2+(num * 200) + 100 - sfc.get_height() / 2 ))
+			sfc = self.skin.render_text( get_databases(num).name, colorsCategories()[num], self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
+			self.paper.blit( sfc, (self.paper_text_offsetX, (num * 200) + 100 - sfc.get_height() / 2 ))
 
 		self.help_overlay = createHelpScreen( 'roda' )		
 		
@@ -217,8 +220,8 @@ class Roda:
 			self.joc.screen.blit( self.fons, ( 0, - 768 + pos_fons ) )
 			
 			#pintem el paper d'impressora
-			self.joc.screen.blit( self.paper, ( 178, pos ) )
-			self.joc.screen.blit( self.paper, ( 178, pos + 1200 ) )
+			self.joc.screen.blit( self.paper, ( self.paper_offsetX, pos ) )
+			self.joc.screen.blit( self.paper, ( self.paper_offsetX, pos + 1200 ) )
 			
 			#pintem els marges vermells i degradats
 			self.joc.screen.blit( self.front, (0,0) )	
