@@ -70,9 +70,10 @@ class Roda:
 		self.so_sub = self.skin.LoadSound( 'sound_wheel_sub', 'sound_wheel_sub_vol')
 		self.so_cat = range(0, 6)
 
-
-		self.tipografia_mida = self.skin.configGetInt( 'wheel', 'wheel_tipografia_mida')
-
+		self.tipografia_mida = self.skin.configGetInt( 'wheel_tipografia_mida')
+		self.paper_text_width = self.skin.configGetInt( 'paper_text_width' )
+		self.paper_text_offsetX = self.skin.configGetInt( 'paper_text_offsetX' )
+		self.paper_offsetX = self.skin.configGetInt( 'paper_offsetX' )
 
 		for num in range(0, 6):
 			self.so_cat[num] = loadSound(get_databases(num).sound, volume = 1.0)

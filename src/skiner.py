@@ -32,15 +32,15 @@ from ConfigParser import SafeConfigParser, NoOptionError, NoSectionError
 from common.freevialglob import *
 from common.globals import Global
 
-skin_file = default_file = os.path.join(Global.basefolder, 'skin.ini')
-skin_folder = Global.basefolder
+Global.skin_file = default_file = os.path.join(Global.basefolder, 'skin.ini')
+Global.skin_folder = Global.basefolder
 
 def setSkinName( nom ):
 	
-	skin_folder = nom
-	skin_file = os.path.join( nom, u'skin.ini' )
+	Global.skin_folder = nom
+	Global.skin_file = os.path.join( nom, u'skin.ini' )
 	
-	print _('Loading skin "%s"...') % unicode(skin_folder, 'utf-8')
+	print _('Loading skin "%s"...') % unicode(Global.skin_folder, 'utf-8')
 
 class Skin:
 	
@@ -52,9 +52,9 @@ class Skin:
 		self.defconfig.readfp(open(default_file, 'r'))				
 		
 		self.config = SafeConfigParser()
-		self.config.readfp(open(skin_file, 'r'))	
+		self.config.readfp(open(Global.skin_file, 'r'))	
 		
-		self.skin_folder = skin_folder
+		Global.skin_folder = Global.skin_folder
 
 		fontname = self.search_font_name('' )
 		if fontname != '':
@@ -85,7 +85,7 @@ class Skin:
 	def LoadImage( self, field, domain = None ):
 		
 		name = self.configGet( field, domain )
-		fullname = os.path.join( self.skin_folder, name )
+		fullname = os.path.join( Global.skin_folder, name )
 		
 		if os.path.exists( fullname ):
 			retval = loadImage( fullname )
@@ -109,7 +109,7 @@ class Skin:
 		name2 = self.configGet( name, domain )
 		vol1 = self.configGetFloat( vol, domain )
 		
-		fullname = os.path.join( unicode(self.skin_folder, 'utf-8'), name2)		
+		fullname = os.path.join( unicode(Global.skin_folder, 'utf-8'), name2)		
 		
 		retval = None
 		
@@ -126,11 +126,11 @@ class Skin:
 		self.defconfig.readfp(open(default_file))				
 		
 		self.config = SafeConfigParser()
-		self.config.readfp(open(skin_file))		
+		self.config.readfp(open(Global.skin_file))		
 				
 		self.skin_maxim_equips = self.configGetInt( 'game', 'max_teams' )
 		
-		self.skin_folder = skin_folder
+		Global.skin_folder = Global.skin_folder
 
 		#--------------------------------------------------------
 
@@ -153,7 +153,7 @@ class Skin:
 
 		if nomfont != '':
 			if not os.path.exists( nomfont ):
-				fullname = os.path.join( unicode(self.skin_folder, 'utf-8'), nomfont)	
+				fullname = os.path.join( unicode(Global.skin_folder, 'utf-8'), nomfont)	
 
 				if os.path.exists( fullname ):
 					nomfont = fullname
