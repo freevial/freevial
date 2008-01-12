@@ -4,7 +4,7 @@
     <description>Preguntes sobre els programes i els aparells que podem usar en el mon gnu/linux</description>
     <destination>Coneixements mínims entorn GNU</destination>
     <timestamp_creation>1189202400</timestamp_creation>
-    <timestamp_modification>1200087381</timestamp_modification>
+    <timestamp_modification>1200139484</timestamp_modification>
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
       <author>Josep Sanchez, &lt;email&gt;</author>
@@ -26,8 +26,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">ha de fer una sola cosa ben feta</answer>
-        <answer>no existeix, el terme emprat és «aplicació»</answer>
         <answer>ha de poder fer com més coses millor</answer>
+        <answer>no existeix, el terme emprat és «aplicació»</answer>
       </answers>
     </question>
     <question>
@@ -46,8 +46,8 @@
       <comments>El ext3 és un format lògic de disc, no un tipus de connector.</comments>
       <answers>
         <answer correct="True">Al cable ext3</answer>
-        <answer>Al cable SATA</answer>
         <answer>El cable IDE ATA</answer>
+        <answer>Al cable SATA</answer>
       </answers>
     </question>
     <question>
@@ -66,7 +66,7 @@
       <comments></comments>
       <answers>
         <answer correct="True">WordStar</answer>
-        <answer>WordPerfect</answer>
+        <answer>PageMaker</answer>
         <answer>WordPerfect</answer>
       </answers>
     </question>
@@ -76,8 +76,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">GNU Network Object Model Environment</answer>
-        <answer>GNU Notice Oriented Maked Enviroment</answer>
         <answer>No volen dir res</answer>
+        <answer>GNU Notice Oriented Maked Enviroment</answer>
       </answers>
     </question>
     <question>
@@ -86,7 +86,7 @@
       <comments></comments>
       <answers>
         <answer correct="True">/etc</answer>
-        <answer>/conf</answer>
+        <answer>/etc/conf</answer>
         <answer>/conf</answer>
       </answers>
     </question>
@@ -136,8 +136,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Blue Screen Of Death</answer>
-        <answer>Bad Screen Or Data</answer>
         <answer>Bad System of Directorys</answer>
+        <answer>Bad Screen Or Data</answer>
       </answers>
     </question>
     <question>
@@ -146,8 +146,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Per verificar els paquets privatius que estan instalats</answer>
-        <answer>Per comprovar que les configuracions són respectuoses amb la GPL</answer>
         <answer>Per mirar les llicències que tens en el PC</answer>
+        <answer>Per comprovar que les configuracions són respectuoses amb la GPL</answer>
       </answers>
     </question>
     <question>
@@ -157,7 +157,7 @@
       <answers>
         <answer correct="True">Digital Restrictions Management</answer>
         <answer>Digital Radio Messages</answer>
-        <answer>Digital Radio Messages</answer>
+        <answer>Debian Ring Media</answer>
       </answers>
     </question>
     <question>
@@ -166,8 +166,8 @@
       <comments>Només la pot distribuir qui tingui un acord amb les empreses propietàries del programari privatiu que porta.</comments>
       <answers>
         <answer correct="True">No</answer>
-        <answer>Evidenment, és programari lliure</answer>
         <answer>Només Novell</answer>
+        <answer>Evidenment, és programari lliure</answer>
       </answers>
     </question>
     <question>
@@ -207,7 +207,7 @@
       <answers>
         <answer correct="True">Turca</answer>
         <answer>Danesa</answer>
-        <answer>Danesa</answer>
+        <answer>Romanesa</answer>
       </answers>
     </question>
     <question>
@@ -217,7 +217,7 @@
       <answers>
         <answer correct="True">Verd</answer>
         <answer>Rosa</answer>
-        <answer>Rosa</answer>
+        <answer>Blau</answer>
       </answers>
     </question>
     <question>
@@ -246,8 +246,8 @@
       <comments> </comments>
       <answers>
         <answer correct="True">Enlightement</answer>
-        <answer>Enlighement</answer>
         <answer>Enlightenement</answer>
+        <answer>Enlighement</answer>
       </answers>
     </question>
     <question>
@@ -256,8 +256,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Un drac</answer>
-        <answer>Una salamandra</answer>
         <answer>Un pingüí</answer>
+        <answer>Una salamandra</answer>
       </answers>
     </question>
     <question>
@@ -276,7 +276,7 @@
       <comments>La 3a també és correcta, però no es el nostre cas</comments>
       <answers>
         <answer correct="True">K Desktop Enviroment</answer>
-        <answer>KDE Data Extruded</answer>
+        <answer>Kentucky Department of Education</answer>
         <answer>KDE Data Extruded</answer>
       </answers>
     </question>
@@ -286,8 +286,8 @@
       <comments>L'any 2006 l'equip de debian va fer una separació de la versió oficial del firefox per que l'equip de treball de mozilla no incorporava les seves actualitzacions a temps. Al fer-ho van haver de canviar el logotip d'aquest per un altre ja que estava protegit per drets d'autor.</comments>
       <answers>
         <answer correct="True">La llúdriga de gel</answer>
-        <answer>La gavina de foc</answer>
         <answer>L'escarabat de neu</answer>
+        <answer>La gavina de foc</answer>
       </answers>
     </question>
     <question>
@@ -307,7 +307,7 @@
       <answers>
         <answer correct="True">Karacul</answer>
         <answer>Moc</answer>
-        <answer>Moc</answer>
+        <answer>Caca</answer>
       </answers>
     </question>
     <question>
@@ -336,7 +336,7 @@
       <comments>El gimp és un programa de# tractament d'imatges#el gaim de missatgeria instantània# (ara rebatejat com a pidgin)#i el gcc el compilador de# llenguatge c i c++. </comments>
       <answers>
         <answer correct="True">gimp</answer>
-        <answer>gcc</answer>
+        <answer>gaim</answer>
         <answer>gcc</answer>
       </answers>
     </question>
@@ -346,8 +346,8 @@
       <comments>es un programa d'autoedició</comments>
       <answers>
         <answer correct="True">scribus</answer>
-        <answer>inkscape</answer>
         <answer>xaralx</answer>
+        <answer>inkscape</answer>
       </answers>
     </question>
     <question>
@@ -366,8 +366,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Sortirien i tornarien a entrar</answer>
-        <answer>Desmuntant el cotxe</answer>
         <answer>Reiniciarien el servei del motor</answer>
+        <answer>Desmuntant el cotxe</answer>
       </answers>
     </question>
     <question>
@@ -397,7 +397,7 @@
       <answers>
         <answer correct="True">Yunki</answer>
         <answer>Opie</answer>
-        <answer>Opie</answer>
+        <answer>Sato</answer>
       </answers>
     </question>
     <question>

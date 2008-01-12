@@ -4,7 +4,7 @@
     <description>Preguntes sobre còmics i mangues</description>
     <destination>Persones amb coneixements sobre còmics</destination>
     <timestamp_creation>1189202400</timestamp_creation>
-    <timestamp_modification>1200087392</timestamp_modification>
+    <timestamp_modification>1200139485</timestamp_modification>
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
       <author>Marc Oriol, &lt;email&gt;</author>
@@ -21,8 +21,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">El bigoti</answer>
-        <answer>L'un és esquerrà i l'altre és dretà</answer>
         <answer>Són exactament iguals</answer>
+        <answer>L'un és esquerrà i l'altre és dretà</answer>
       </answers>
     </question>
     <question>
@@ -31,8 +31,8 @@
       <comments>AST?RIX EL GAL#</comments>
       <answers>
         <answer correct="True">Tutatis</answer>
-        <answer>Senglarus</answer>
         <answer>Balenus</answer>
+        <answer>Senglarus</answer>
       </answers>
     </question>
     <question>
@@ -51,8 +51,8 @@
       <comments>MAZINGER Z#A Tarragona s'hi anava a construir una urbanització (Mas de plata) que, com a reclam turístic, tenia un mazinger gegant, però la urbanització no es va acabar i hi va quedar el mazinger abandonat.</comments>
       <answers>
         <answer correct="True">Tarragona</answer>
-        <answer>Corea</answer>
         <answer>El Japó</answer>
+        <answer>Corea</answer>
       </answers>
     </question>
     <question>
@@ -62,7 +62,7 @@
       <answers>
         <answer correct="True">Bruce Banner</answer>
         <answer>Bruce Wayne</answer>
-        <answer>Bruce Wayne</answer>
+        <answer>Bruce Lee</answer>
       </answers>
     </question>
     <question>
@@ -72,7 +72,7 @@
       <answers>
         <answer correct="True">El nom</answer>
         <answer>La voluntat</answer>
-        <answer>La voluntat</answer>
+        <answer>La imaginació</answer>
       </answers>
     </question>
     <question>
@@ -81,7 +81,7 @@
       <comments>SUPERMAN#En Superman neix a Kriptó, essent el fill de Jor-El, un eminent científic i líder polític. En Superman fou batejat amb el nom de Kal-el</comments>
       <answers>
         <answer correct="True">Kal-el</answer>
-        <answer>Sar-el</answer>
+        <answer>Jor-el</answer>
         <answer>Sar-el</answer>
       </answers>
     </question>
@@ -91,8 +91,8 @@
       <comments>HEIDI#La seva tieta aconsegueix feina i l'envia a viure amb el seu avi, al qui ni tan sols coneixia</comments>
       <answers>
         <answer correct="True">Amb l'avi</answer>
-        <answer>Sola</answer>
         <answer>Amb els seus pares</answer>
+        <answer>Sola</answer>
       </answers>
     </question>
     <question>
@@ -101,7 +101,7 @@
       <comments>SUPERLÒPEZ#</comments>
       <answers>
         <answer correct="True">El Masnou</answer>
-        <answer>Barcelona</answer>
+        <answer>L'Hospitalet</answer>
         <answer>Barcelona</answer>
       </answers>
     </question>
@@ -112,7 +112,7 @@
       <answers>
         <answer correct="True">Espinacs</answer>
         <answer>Alls</answer>
-        <answer>Alls</answer>
+        <answer>Cebes</answer>
       </answers>
     </question>
     <question>
@@ -121,8 +121,8 @@
       <comments>BATMAN#L'únic poder que realment té es ser fill de papà</comments>
       <answers>
         <answer correct="True">Cap</answer>
-        <answer>Sent ultrasons</answer>
         <answer>Pot volar com els ratpenats</answer>
+        <answer>Sent ultrasons</answer>
       </answers>
     </question>
     <question>
@@ -132,7 +132,7 @@
       <answers>
         <answer correct="True">Criptó</answer>
         <answer>Terra</answer>
-        <answer>Terra</answer>
+        <answer>K-pax</answer>
       </answers>
     </question>
     <question>
@@ -141,8 +141,8 @@
       <comments>SPIDERMAN#</comments>
       <answers>
         <answer correct="True">El mossegui una aranya</answer>
-        <answer>Una radiació estranya l'afecti</answer>
         <answer>Entri en contacte amb un meteorit</answer>
+        <answer>Una radiació estranya l'afecti</answer>
       </answers>
     </question>
     <question>
@@ -171,7 +171,7 @@
       <comments>SUPERLÓPEZ#La personalitat secreta d'en Superlópez és una feina molt dura</comments>
       <answers>
         <answer correct="True">Fa ocellets de paper</answer>
-        <answer>Treballa</answer>
+        <answer>Juga amb el boli</answer>
         <answer>Treballa</answer>
       </answers>
     </question>
@@ -181,8 +181,8 @@
       <comments>EVANGELION#</comments>
       <answers>
         <answer correct="True">Àngels</answer>
-        <answer>Robots</answer>
         <answer>Dimonis</answer>
+        <answer>Robots</answer>
       </answers>
     </question>
     <question>
@@ -191,8 +191,8 @@
       <comments>BLEACH#Ichigo Kurosaki no és un noi de quize anys normal i corrent... pot veure esperits i té un contacte innat amb el més enllà, del que traurà profit després de conèixer a un shinigami (àngel de la mort) que li proporciona una espasa a joc amb les seves habilitats</comments>
       <answers>
         <answer correct="True">Veu fantasmes</answer>
-        <answer>Vol controlar el món</answer>
         <answer>Lluita contra monstres</answer>
+        <answer>Vol controlar el món</answer>
       </answers>
     </question>
     <question>
@@ -201,8 +201,8 @@
       <comments>NARUTO#Quan Naruto neix li segellen un monstre a dins, tot el poble li té por i per això el deixen de banda, per això en Naruto vol ser el Hokaje, el títol més important dels ninges</comments>
       <answers>
         <answer correct="True">Convertir-se en Hokaje</answer>
-        <answer>Venjar-se del seu germà gran</answer>
         <answer>Ser el millor ninja</answer>
+        <answer>Venjar-se del seu germà gran</answer>
       </answers>
     </question>
     <question>
@@ -222,7 +222,7 @@
       <answers>
         <answer correct="True">Tifó humanoide</answer>
         <answer>L'home dels 60.000.000$$</answer>
-        <answer>L'home dels 60.000.000$$</answer>
+        <answer>L'home que va foradar la lluna</answer>
       </answers>
     </question>
     <question>
@@ -241,8 +241,8 @@
       <comments>MARCO#En un poble italià al peu de les muntanyes hi viu el nostre amic Marco</comments>
       <answers>
         <answer correct="True">A un poble italià</answer>
-        <answer>A un poble romanès</answer>
         <answer>A un poble rus</answer>
+        <answer>A un poble romanès</answer>
       </answers>
     </question>
     <question>
@@ -251,8 +251,8 @@
       <comments>MAZINGER Z# El centre d'investigacions fotoatàmiques va descobrir aquest material per poder crear el robot Mazinger Z</comments>
       <answers>
         <answer correct="True">Japànium (aliatge Z)</answer>
-        <answer>Titànium (reforçat)</answer>
         <answer>Mazingànium (aliatge final)</answer>
+        <answer>Titànium (reforçat)</answer>
       </answers>
     </question>
     <question>
@@ -272,7 +272,7 @@
       <answers>
         <answer correct="True">Tortuga</answer>
         <answer>Energia</answer>
-        <answer>Energia</answer>
+        <answer>Bola</answer>
       </answers>
     </question>
     <question>
@@ -281,8 +281,8 @@
       <comments>FRUITS BASKET#Yuki es la rata de la famila Soma, mentre que Kyo es el Gat de la llegenda del zodíac xines (però el gat va ser enganyat per la rata perquè no anés a la festa i per això el gat odia tant a la rata)</comments>
       <answers>
         <answer correct="True">Es persegueixen com un gat i una rata</answer>
-        <answer>Són bons amics</answer>
         <answer>S'odien</answer>
+        <answer>Són bons amics</answer>
       </answers>
     </question>
     <question>
@@ -292,7 +292,7 @@
       <answers>
         <answer correct="True">El doctor Bacteri l'enganya</answer>
         <answer>Es disfressa de vell i no es pot treure#la calba falsa</answer>
-        <answer>Es disfressa de vell i no es pot treure#la calba falsa</answer>
+        <answer>Un indi li arrenca</answer>
       </answers>
     </question>
     <question>
@@ -301,7 +301,7 @@
       <comments>FRUITS BASKET#Es transformen quan es cansen massa o els toca una persona del sexe oposat que no sigui integrant de la família, per això són una família molt tancada.</comments>
       <answers>
         <answer correct="True">Els 12 animals del zodíac xinès</answer>
-        <answer>Una dotzena d'ous</answer>
+        <answer>Els 12 apòstols</answer>
         <answer>Una dotzena d'ous</answer>
       </answers>
     </question>
@@ -312,7 +312,7 @@
       <answers>
         <answer correct="True">Cambrer</answer>
         <answer>Jugador de futbol</answer>
-        <answer>Jugador de futbol</answer>
+        <answer>“Mindundi” d'oficina</answer>
       </answers>
     </question>
     <question>
@@ -321,8 +321,8 @@
       <comments>BOLA DE DRAC# El cor petit/deu, prové de Namek</comments>
       <answers>
         <answer correct="True">Namek</answer>
-        <answer>Vegeta</answer>
         <answer>La terra</answer>
+        <answer>Vegeta</answer>
       </answers>
     </question>
     <question>
@@ -351,8 +351,8 @@
       <comments>MIDORI NO HIBI#Sawamura ha passat 17 anys i 2 mesos sense xicota, amb un rècord històric al seu institut de 20 carabasses, quan ja ho dóna tot per perdut sent una veu femenina molt a prop del seu cap... Surt de la seva mà</comments>
       <answers>
         <answer correct="True">Una noia</answer>
-        <answer>Un ganxo</answer>
         <answer>Una destral</answer>
+        <answer>Un ganxo</answer>
       </answers>
     </question>
     <question>

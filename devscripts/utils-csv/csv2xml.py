@@ -178,7 +178,7 @@ for i in range(0, len(database)):
 	answs = range(0, 3)
 	answs[0] = question['opt' + str(question['answer'])]
 	answs[1] = question['opt1'] if question['answer'] != 1 else question['opt2']
-	answs[2] = question['opt2'] if question['answer'] != 2 else question['opt3']
+	answs[2] = question['opt3'] if question['answer'] != 3 else question['opt2']
 	
 	for j in range(0, 3):
 		etree.SubElement(xml_question.answers, 'answer')

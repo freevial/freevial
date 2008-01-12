@@ -4,7 +4,7 @@
     <description>Comandes del sistema, coneixement sobre diversos llenguages de programació</description>
     <destination>Interessos mínims en el funcionament d'ordinadors</destination>
     <timestamp_creation>1189202400</timestamp_creation>
-    <timestamp_modification>1200087376</timestamp_modification>
+    <timestamp_modification>1200139484</timestamp_modification>
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
       <author>Josep Sanchez, &lt;email&gt;</author>
@@ -25,7 +25,7 @@
       <answers>
         <answer correct="True">man woman</answer>
         <answer>man man</answer>
-        <answer>man man</answer>
+        <answer>Totes dues</answer>
       </answers>
     </question>
     <question>
@@ -34,8 +34,8 @@
       <comments>El nom «Tc» és fictici. Tots els altres existeixen realment, http://freshmeat.net/articles/view/928/</comments>
       <answers>
         <answer correct="True">Gtk, Tc, Gambas, Qt4, FLTK</answer>
-        <answer>Gtk, Qt3, FOX</answer>
         <answer>Tk, Gtk+, wxWindows, Qt</answer>
+        <answer>Gtk, Qt3, FOX</answer>
       </answers>
     </question>
     <question>
@@ -45,7 +45,7 @@
       <answers>
         <answer correct="True">raw_input()</answer>
         <answer>get_text()</answer>
-        <answer>get_text()</answer>
+        <answer>cooked_input()</answer>
       </answers>
     </question>
     <question>
@@ -74,8 +74,8 @@
       <comments>Evidenment. Per fer un directori farem mkdir. Això no és dos!</comments>
       <answers>
         <answer correct="True">Per res</answer>
-        <answer>Per crear un directori</answer>
         <answer>Per moure un arxiu</answer>
+        <answer>Per crear un directori</answer>
       </answers>
     </question>
     <question>
@@ -84,8 +84,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Que esborrem el primer</answer>
-        <answer>Que es sumen</answer>
         <answer>Que es copien</answer>
+        <answer>Que es sumen</answer>
       </answers>
     </question>
     <question>
@@ -94,8 +94,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">copiar arxius</answer>
-        <answer>copy paste: duplcar el contingut#del portapapers</answer>
         <answer>coupé: pujar la prioritat#d'un procés</answer>
+        <answer>copy paste: duplcar el contingut#del portapapers</answer>
       </answers>
     </question>
     <question>
@@ -114,8 +114,8 @@
       <comments>Tot i que al ser totalment obert és iŀlimitat en aquest sentit.</comments>
       <answers>
         <answer correct="True">10</answer>
-        <answer>3</answer>
         <answer>5</answer>
+        <answer>3</answer>
       </answers>
     </question>
     <question>
@@ -124,8 +124,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Per res en majúscules</answer>
-        <answer>Per canviar de directori</answer>
         <answer>Per copiar un directori</answer>
+        <answer>Per canviar de directori</answer>
       </answers>
     </question>
     <question>
@@ -135,7 +135,7 @@
       <answers>
         <answer correct="True">ls [st]*</answer>
         <answer>ls st?</answer>
-        <answer>ls st?</answer>
+        <answer>ls st[*]</answer>
       </answers>
     </question>
     <question>
@@ -154,8 +154,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">La ŀl es fà amb Alt Gr + L</answer>
-        <answer>La satisfacció d'usar#el nostre teclat</answer>
         <answer>La Ç en lloc de la Ñ</answer>
+        <answer>La satisfacció d'usar#el nostre teclat</answer>
       </answers>
     </question>
     <question>
@@ -164,8 +164,8 @@
       <comments>El Python és un llenguatge semi-interpretat.</comments>
       <answers>
         <answer correct="True">Python</answer>
-        <answer>Java</answer>
         <answer>C#</answer>
+        <answer>Java</answer>
       </answers>
     </question>
     <question>
@@ -175,7 +175,7 @@
       <answers>
         <answer correct="True">Per què C + 1 en C s'escriu C++</answer>
         <answer>Per que és un C millorat#(més i millor ++)</answer>
-        <answer>Per que és un C millorat#(més i millor ++)</answer>
+        <answer>Les dues creus son en memòria#dels desenvolupadors del C</answer>
       </answers>
     </question>
     <question>
@@ -184,8 +184,8 @@
       <comments>Ja que al ser una macro i no una funció al substituir paràmetres es realitza 2 cops el preincrement de y (++y)</comments>
       <answers>
         <answer correct="True">4</answer>
-        <answer>2</answer>
         <answer>3</answer>
+        <answer>2</answer>
       </answers>
     </question>
     <question>
@@ -204,7 +204,7 @@
       <comments>Hi ha una introducció a l'ús de la terminal bastant bona a la pàgina https://wiki.ubuntu.com/JosepSànchez/documentació/interpret_comandes :-)</comments>
       <answers>
         <answer correct="True">Aturar el procés en marxa</answer>
-        <answer>Compilar</answer>
+        <answer>Copiar</answer>
         <answer>Compilar</answer>
       </answers>
     </question>
@@ -214,8 +214,8 @@
       <comments>Es tracta d'unes sigles recursives. GNU No és Unix</comments>
       <answers>
         <answer correct="True">GNU</answer>
-        <answer>Gtk</answer>
         <answer>Gnome</answer>
+        <answer>Gtk</answer>
       </answers>
     </question>
     <question>
@@ -224,8 +224,8 @@
       <comments>Hi ha diversos acrònims recursius. I aquest n'és un, la P de PHP vol dir PHP.</comments>
       <answers>
         <answer correct="True">PHP: Hypertext Preprocessor</answer>
-        <answer>Python Hypertext Preprocessor</answer>
         <answer>Plug Hybrid Processor</answer>
+        <answer>Python Hypertext Preprocessor</answer>
       </answers>
     </question>
     <question>
@@ -234,7 +234,7 @@
       <comments>El llenguatge/màquina virtual Java va ser realitzat per Sun Microsystems.</comments>
       <answers>
         <answer correct="True">Sun Microsystems</answer>
-        <answer>Novell</answer>
+        <answer>Canonical</answer>
         <answer>Novell</answer>
       </answers>
     </question>
@@ -254,7 +254,7 @@
       <comments></comments>
       <answers>
         <answer correct="True">Una cadena que s'usa per descriure, enumerar#o filtrar un grup de cadenes, d'acord#amb unes normes de sintaxi</answer>
-        <answer>Un component algoritmic per#mimetizar el contingut referent#a la comanda grep</answer>
+        <answer>Les que no estan bé del tot</answer>
         <answer>Un component algoritmic per#mimetizar el contingut referent#a la comanda grep</answer>
       </answers>
     </question>

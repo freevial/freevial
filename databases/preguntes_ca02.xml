@@ -4,7 +4,7 @@
     <description>Preguntes del món de l'Ubuntu i la filosofia ubuntaire. </description>
     <destination>Persones interessades per l'Ubuntu i tot el que hi ha al voltant.</destination>
     <timestamp_creation>1189202400</timestamp_creation>
-    <timestamp_modification>1200087361</timestamp_modification>
+    <timestamp_modification>1200139483</timestamp_modification>
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
       <author>Josep Sanchez, &lt;email&gt;</author>
@@ -36,18 +36,18 @@
       <comments></comments>
       <answers>
         <answer correct="True">UbuCat</answer>
-        <answer>Ubotu</answer>
         <answer>CatBot</answer>
+        <answer>Ubotu</answer>
       </answers>
     </question>
     <question>
       <sentence>Quina tecnologia inclou per defecte la nova versió de l'Ubuntu (la Gutsy)?</sentence>
       <author>RainCT</author>
-      <comments>La Gutsy Gibbon no només inclourà, sinò que també portarà habilitada per defecte en tots aquelles màquines que ho soportin, el Compiz Fusion, el producte resultant de la unió de Compiz amb Beryl.</comments>
+      <comments>La Gutsy Gibbon no només inclourà, sinò que també portarà habilitada per defecte en tots aquelles màquines que ho soportin, el Compiz Fusion, el producte resultat de la unió de Compiz amb la seva branca Beryl.</comments>
       <answers>
         <answer correct="True">Compiz Fusion</answer>
-        <answer>Compiz</answer>
         <answer>Beryl</answer>
+        <answer>Compiz</answer>
       </answers>
     </question>
     <question>
@@ -56,8 +56,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Freenode</answer>
-        <answer>canonicalnode</answer>
         <answer>Quakenode</answer>
+        <answer>canonicalnode</answer>
       </answers>
     </question>
     <question>
@@ -66,7 +66,7 @@
       <comments>Els Masters Of The Universe (MOTU) són els empaquetadors d'Ubuntu dels repositoris Universe i Multiverse.</comments>
       <answers>
         <answer correct="True">Master Of The Universe</answer>
-        <answer>Multitask operated time unit</answer>
+        <answer>És un mitja de transport</answer>
         <answer>Multitask operated time unit</answer>
       </answers>
     </question>
@@ -76,8 +76,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">El 15 de maig del 07</answer>
-        <answer>No és oficial</answer>
         <answer>El 16 desembre del 06</answer>
+        <answer>No és oficial</answer>
       </answers>
     </question>
     <question>
@@ -96,7 +96,7 @@
       <comments>La propera versió Long Term Support serà la Hardy Heron. Grumpy Groundhog és el nom que reben sempre els últims 'builds' del CVS.</comments>
       <answers>
         <answer correct="True">Hardy Heron</answer>
-        <answer>Grumpy Groundhog</answer>
+        <answer>Gutsy Gibbon</answer>
         <answer>Grumpy Groundhog</answer>
       </answers>
     </question>
@@ -127,7 +127,7 @@
       <answers>
         <answer correct="True">Illa de man</answer>
         <answer>Zimbawe</answer>
-        <answer>Zimbawe</answer>
+        <answer>Sud africa</answer>
       </answers>
     </question>
     <question>
@@ -157,7 +157,7 @@
       <answers>
         <answer correct="True">Descarregar actualitzacions</answer>
         <answer>Traduir programes</answer>
-        <answer>Traduir programes</answer>
+        <answer>Reportar bugs</answer>
       </answers>
     </question>
     <question>
@@ -167,7 +167,7 @@
       <answers>
         <answer correct="True">ginstaller</answer>
         <answer>synaptic</answer>
-        <answer>synaptic</answer>
+        <answer>adept</answer>
       </answers>
     </question>
     <question>
@@ -186,8 +186,8 @@
       <comments>Self-Appointed Benevolent Dictator For Life</comments>
       <answers>
         <answer correct="True">sabdfl</answer>
-        <answer>sticsis</answer>
         <answer>rtfm</answer>
+        <answer>sticsis</answer>
       </answers>
     </question>
     <question>
@@ -196,8 +196,8 @@
       <comments>http://en.wikipedia.org/wiki/Gobuntu</comments>
       <answers>
         <answer correct="True">Una versió d'Ubuntu amb#només programari lliure</answer>
-        <answer>La distribució, basada en#Ubuntu, dels aficionats al GO</answer>
         <answer>Una versió d'Ubuntu amb#només Gnome</answer>
+        <answer>La distribució, basada en#Ubuntu, dels aficionats al GO</answer>
       </answers>
     </question>
     <question>
@@ -206,8 +206,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">El monopoli de microsoft</answer>
-        <answer>Problemes amb les gràfiques</answer>
         <answer>Es penja</answer>
+        <answer>Problemes amb les gràfiques</answer>
       </answers>
     </question>
     <question>
@@ -216,7 +216,7 @@
       <comments>Els formats mp3 i dvd (mpeg) son formats restrictius, un protegit per patents i l'altre en alguns països no es pot ni mostrar les fonts ja que implica el rebentar la protecció dels dvds. Malgrat tot no hi ha cap problema per usar qualsevol d'ells un cop instaŀlat el sistema</comments>
       <answers>
         <answer correct="True">ogg</answer>
-        <answer>dvd</answer>
+        <answer>mp3</answer>
         <answer>dvd</answer>
       </answers>
     </question>
@@ -226,8 +226,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Debian</answer>
-        <answer>Suse</answer>
         <answer>Fedora</answer>
+        <answer>Suse</answer>
       </answers>
     </question>
     <question>
@@ -236,7 +236,7 @@
       <comments></comments>
       <answers>
         <answer correct="True">Descarregar actualitzacions</answer>
-        <answer>Reportar bugs</answer>
+        <answer>Traduir programes</answer>
         <answer>Reportar bugs</answer>
       </answers>
     </question>
@@ -246,8 +246,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Groc, vermell i taronja</answer>
-        <answer>Groc, blau i taronja</answer>
         <answer>Tons de taronja</answer>
+        <answer>Groc, blau i taronja</answer>
       </answers>
     </question>
     <question>
@@ -266,8 +266,8 @@
       <comments>LinKat és la distribució GNU/Linux del Departament d'Educació de la Generalitat de Catalunya. Està basada en la distribució Suse i el funcionament del seu programari es basa amb paquets rpm</comments>
       <answers>
         <answer correct="True">Linkat</answer>
-        <answer>Ubuntu Studio</answer>
         <answer>Guadalinex</answer>
+        <answer>Ubuntu Studio</answer>
       </answers>
     </question>
     <question>
@@ -276,7 +276,7 @@
       <comments></comments>
       <answers>
         <answer correct="True">Hardy Heron</answer>
-        <answer>Hungry Hippo</answer>
+        <answer>Hangy Haseforg</answer>
         <answer>Hungry Hippo</answer>
       </answers>
     </question>
@@ -286,8 +286,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Tons de blau</answer>
-        <answer>Blau, gris i blanc</answer>
         <answer>Blau, verd i blanc</answer>
+        <answer>Blau, gris i blanc</answer>
       </answers>
     </question>
     <question>
@@ -296,8 +296,8 @@
       <comments>sata no és un sistema d'arxius</comments>
       <answers>
         <answer correct="True">sata</answer>
-        <answer>ext3</answer>
         <answer>ntfs</answer>
+        <answer>ext3</answer>
       </answers>
     </question>
     <question>
@@ -307,7 +307,7 @@
       <answers>
         <answer correct="True">Ginstaller</answer>
         <answer>Adept</answer>
-        <answer>Adept</answer>
+        <answer>Synaptic</answer>
       </answers>
     </question>
     <question>
@@ -326,8 +326,8 @@
       <comments></comments>
       <answers>
         <answer correct="True">Veure DVDs zona 2</answer>
-        <answer>Iniciar ordinadors en xarxa#sense instaŀlar, ni posar CDs</answer>
         <answer>Gestionar horaris d'una escola</answer>
+        <answer>Iniciar ordinadors en xarxa#sense instaŀlar, ni posar CDs</answer>
       </answers>
     </question>
   </questions>
