@@ -56,31 +56,31 @@ class SelCat:
 	def __init__( self, joc ):
 		
 		self.joc = joc
-		self.skin = Skin()
+		self.skin = Skin( 'selcat' )
 		
-		self.mascara_de_fons =  self.skin.LoadImage('selcat', 'fons_score')
-		self.fons = self.skin.LoadImage('selcat', 'score_fons')
+		self.mascara_de_fons =  self.skin.LoadImage('fons_score')
+		self.fons = self.skin.LoadImage('score_fons')
 
-		self.sel_quadres = self.skin.LoadImage('selcat', 'sel_quadres')
-		self.sel_reflexos = self.skin.LoadImage('selcat', 'sel_reflexos')
+		self.sel_quadres = self.skin.LoadImage('sel_quadres')
+		self.sel_reflexos = self.skin.LoadImage('sel_reflexos')
 
-		self.sel_fletxap = self.skin.LoadImage('selcat', 'sel_fletxap')
-		self.sel_fletxab = self.skin.LoadImage('selcat', 'sel_fletxab')
+		self.sel_fletxap = self.skin.LoadImage('sel_fletxap')
+		self.sel_fletxab = self.skin.LoadImage('sel_fletxab')
 
-		self.sel_quadre = self.skin.LoadImage('selcat', 'sel_quadre')
-		self.sel_quadreok = self.skin.LoadImage('selcat', 'sel_quadreok')
+		self.sel_quadre = self.skin.LoadImage('sel_quadre')
+		self.sel_quadreok = self.skin.LoadImage('sel_quadreok')
 
-		self.so_sub = self.skin.LoadSound('selcat', 'so_sub', 'so_sub_vol' )
-		self.so_sub2 = self.skin.LoadSound('selcat', 'so_sub2', 'so_sub_vol' )
+		self.so_sub = self.skin.LoadSound('so_sub', 'so_sub_vol' )
+		self.so_sub2 = self.skin.LoadSound('so_sub2', 'so_sub_vol' )
 		
-		self.selcat_color_text_red = self.skin.configGetInt( 'selcat', 'color_text_red')
-		self.selcat_color_text_green = self.skin.configGetInt( 'selcat', 'color_text_green')
-		self.selcat_color_text_blue = self.skin.configGetInt( 'selcat', 'color_text_blue')
+		self.selcat_color_text_red = self.skin.configGetInt( 'color_text_red')
+		self.selcat_color_text_green = self.skin.configGetInt( 'color_text_green')
+		self.selcat_color_text_blue = self.skin.configGetInt( 'color_text_blue')
 		self.selcat_color_text = (self.selcat_color_text_red, self.selcat_color_text_green, self.selcat_color_text_blue)
 		
-		self.selcat_color_text_red_nosel = self.skin.configGetInt( 'selcat', 'color_text_red_nosel')
-		self.selcat_color_text_green_nosel = self.skin.configGetInt( 'selcat', 'color_text_green_nosel')
-		self.selcat_color_text_blue_nosel = self.skin.configGetInt( 'selcat', 'color_text_blue_nosel')
+		self.selcat_color_text_red_nosel = self.skin.configGetInt( 'color_text_red_nosel')
+		self.selcat_color_text_green_nosel = self.skin.configGetInt( 'color_text_green_nosel')
+		self.selcat_color_text_blue_nosel = self.skin.configGetInt( 'color_text_blue_nosel')
 		self.selcat_color_text_nosel = (self.selcat_color_text_red_nosel, self.selcat_color_text_green_nosel, self.selcat_color_text_blue_nosel)
 
 		self.help_overlay = createHelpScreen( 'score' )
