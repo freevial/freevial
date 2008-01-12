@@ -53,6 +53,7 @@ class Preguntador:
 		
 		self.mida_font = self.skin.configGetInt('mida_font')
 		self.altlinies = self.mida_font + 5
+		
 		self.postextx= self.skin.configGetInt('postextx')
 		self.postexty = self.skin.configGetInt('postexty')
 		self.mascara_de_fons = self.skin.configGet('mascara_de_fons')
@@ -287,10 +288,13 @@ class Preguntador:
 
 		# remaining seconds until end of answer time
 		self.segons = 61
-
+		
 		if (self.game.teams[self.game.current_team].figureta & bitCategoria( selcat )) == 0:
-			self.skin.preguntadorCarregaFiguretes( self.game, selcat )
-
+			self.mostra_punt_de_categoria = True
+			self.figureta_no = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta).zfill(2) + '.png')
+			self.figureta_si = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
+			self.match_point = True if (self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat ) == 63) else False
+		
 		mostra_comentaris = False
 		sfc_comentaris = None
 
@@ -391,7 +395,6 @@ class Preguntador:
 						self.so_ok.play()
 					else:
 						self.so_nook.play()
-					
 					notes = self.current_question['comment'].split('#') if self.current_question['comment'] != "" else "."
 					sfc_comentaris = createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:

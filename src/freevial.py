@@ -137,6 +137,8 @@ class Freevial:
 						
 						if fig_abans != 63 and Global.game.teams[ Global.game.current_team].figureta == 63:
 							Global.game.teams[ Global.game.current_team].punts += 2
+					else:
+						Global.game.teams[ Global.game.current_team ].errors += 1
 						
 					Global.game.current_team = seguentEquipActiu( Global.game.teams, Global.game.current_team )
 			else:
