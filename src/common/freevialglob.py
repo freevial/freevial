@@ -257,7 +257,7 @@ def teamsGuanyador( teams, mode, extra ):
 	# Mode 2 - Ser el darrer equip en fer X cagades
 	# Mode 3 - Omplir la figureta de 6 peces
 
-	guanyador = 0
+	guanyador = -1
 
 	if mode == 0:
 		puntsmax = 0
@@ -285,8 +285,8 @@ def teamsGuanyador( teams, mode, extra ):
 	if mode == 2:
 		nocagats = []
 		for num in range(0,6):
-			if teams[num].punts <  extra:
-				nocagats += num
+			if teams[num].errors <  extra:
+				nocagats.append( num )
 		if len(nocagats) == 1:
 			guanyador = nogacats[0]
 
@@ -295,6 +295,8 @@ def teamsGuanyador( teams, mode, extra ):
 			if teams[num].figureta == 63:
 				guanyador = num
 
+
+	print "guanya:", guanyador
 	return guanyador
 
 

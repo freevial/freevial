@@ -181,7 +181,7 @@ class Score:
 			if mode == 2:
 				if frate.segons() < 4.1 and int(frate.segons()) > surten:
 					surten = int( frate.segons() )
-					self.scoreSoOk()
+					self.so_ok.play(1)
 				if frate.segons() > 4.1 and not mostrada_victoria:
 					visca = Visca( self.joc )
 					resultat = visca.juguem( self.joc, self.joc.teams[self.skin.teamsGuanyador( self.joc.teams )].nom )
@@ -387,6 +387,7 @@ class Score:
 			
 			self.joc.screen.blit( self.mascara_de_fons, (0, 0) )
 			# pintem les puntuacions
+
 			for num in range(0, self.skin_maxim_equips):
 				ycaixa = self.score_caixes[num][1]
 				xcaixa = self.score_caixes[num][0]
@@ -409,7 +410,7 @@ class Score:
 					ampletext = self.joc.teams[num].sfc_nom.get_width() if self.joc.teams[num].sfc_nom else 0
 					if escriu and num == element_seleccionat:
 						if (int(time.time() * 4) % 2) == 0: 
-							self.joc.screen.blit( self.sfc_cursor, (xcaixa + 25 + ampletext, ycaixa + 125 )) 
+							self.joc.screen.blit( self.sfc_cursor, (xcaixa + self.score_teams_offsetx + ampletext, ycaixa + self.score_teams_offsety )) 
 							
 					color = (128,0,0) if (maxPunts(self.joc.teams) > self.joc.teams[num].punts ) else (0,128,0)
 					pinta = self.skin.render_text( str(self.joc.teams[num].punts).zfill(2), color, 150, 1)
