@@ -146,51 +146,7 @@ class Skin:
 		
 		#--------------------------------------------------------
 		
-		self.skin_preguntador_color_de_fons_red = self.configGetInt('preguntador','color_de_fons_red')
-		self.skin_preguntador_color_de_fons_green = self.configGetInt('preguntador','color_de_fons_green')
-		self.skin_preguntador_color_de_fons_blue = self.configGetInt('preguntador','color_de_fons_blue')
-		self.skin_preguntador_color_de_text_red = self.configGetInt('preguntador','color_de_text_red')
-		self.skin_preguntador_color_de_text_green = self.configGetInt('preguntador','color_de_text_green')
-		self.skin_preguntador_color_de_text_blue = self.configGetInt('preguntador','color_de_text_blue')
-		self.skin_preguntador_color_de_fons = (self.skin_preguntador_color_de_fons_red, self.skin_preguntador_color_de_fons_green, self.skin_preguntador_color_de_fons_blue)
-		self.skin_preguntador_color_de_text = (self.skin_preguntador_color_de_text_red, self.skin_preguntador_color_de_text_green, self.skin_preguntador_color_de_text_blue)
-		
-		self.skin_preguntador_mida_font = self.configGetInt('preguntador','mida_font')
-		self.skin_preguntador_altlinies = self.skin_preguntador_mida_font + 5
-		self.skin_preguntador_postextx= self.configGetInt('preguntador','postextx')
-		self.skin_preguntador_postexty = self.configGetInt('preguntador','postexty')
-		self.skin_preguntador_mascara_de_fons = self.configGet('preguntador','mascara_de_fons')
-		self.skin_preguntador_retalla_sel = self.configGet('preguntador','retalla_sel')
-		
-		self.skin_preguntador_solucio_ok = self.configGet('preguntador','solucio_ok')
-		self.skin_preguntador_solucio_nook = self.configGet('preguntador','solucio_nook')
-		
-		self.skin_preguntador_lletraA = self.configGet('preguntador','lletraA')
-		self.skin_preguntador_lletraB = self.configGet('preguntador','lletraB')
-		self.skin_preguntador_lletraC = self.configGet('preguntador','lletraC')
-		self.skin_preguntador_lletraAoff = self.configGet('preguntador','lletraAoff')
-		self.skin_preguntador_lletraBoff = self.configGet('preguntador','lletraBoff')
-		self.skin_preguntador_lletraCoff = self.configGet('preguntador','lletraCoff')
-		
-		self.skin_preguntador_itr1 = self.configGet('preguntador','itr1')
-		self.skin_preguntador_itr2 = self.configGet('preguntador','itr2')
-		
-		self.skin_preguntador_so_ticking2 = self.configGet( 'preguntador', 'so_ticking2')
-		self.skin_preguntador_so_ticking2_vol = self.configGet( 'preguntador', 'so_ticking2_vol')
-		
-		self.skin_preguntador_so_drum2 = self.configGet( 'preguntador', 'so_drum2')
-		self.skin_preguntador_so_drum2_vol = self.configGet( 'preguntador', 'so_drum2_vol')
-		
-		self.skin_preguntador_so_sub = self.configGet( 'preguntador', 'so_sub')
-		self.skin_preguntador_so_sub_vol = self.configGet( 'preguntador', 'so_sub_vol')
-		
-		self.skin_preguntador_so_ok = self.configGet( 'preguntador', 'so_ok')
-		self.skin_preguntador_so_ok_vol = self.configGet( 'preguntador', 'so_ok_vol')
-		
-		self.skin_preguntador_so_nook = self.configGet( 'preguntador', 'so_nook')
-		self.skin_preguntador_so_nook_vol = self.configGet( 'preguntador', 'so_nook_vol')
-		
-		self.skin_preguntador_mostranpregunta = self.configGet( 'preguntador', 'mostranpregunta')
+
 		
 	#	self.skin_preguntador_mostra_punt_de_categoria = self.configGet( 'preguntador', 'mostra_punt_de_categoria')
 	#	self.skin_preguntador_match_point = self.configGet( 'preguntador', 'match_point')
@@ -213,60 +169,6 @@ class Skin:
 
 
 
-
-	
-
-	def preguntadorCarrega( self, joc ):
-		
-		self.preguntadorYpos = 190
-		
-		self.color_de_fons = self.skin_preguntador_color_de_fons
-		self.color_de_text = self.skin_preguntador_color_de_text
-		
-		self.mida_font = self.skin_preguntador_mida_font
-		self.altlinies = self.skin_preguntador_altlinies
-		self.postextx = self.skin_preguntador_postextx
-		self.postexty = self.skin_preguntador_postexty
-		
-		self.mascara_de_fons = self.skinLoadImage( self.skin_preguntador_mascara_de_fons, 'mascara_de_fons.png' )
-		self.retalla_sel = self.skinLoadImage( self.skin_preguntador_retalla_sel, 'retalla_sel.png' )
-		
-		self.solucio_ok = self.skinLoadImage( self.skin_preguntador_solucio_ok, 'ok.png' )
-		self.solucio_nook = self.skinLoadImage( self.skin_preguntador_solucio_nook, 'nook.png' )
-		
-		self.fons = range(0, 6)
-		for num in range(0, 6):
-			self.fons[num] = loadImage( nomImatgeCategoria( num ) )
-			sfcmask = loadImage( 'filtre_c' + str(num+1) + '.png' )
-			self.fons[num].blit( sfcmask, (0,0))
-		
-		self.mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
-		
-		self.lletres = [
-								[ self.skinLoadImage(self.skin_preguntador_lletraA, 'lletraA.png'), self.skinLoadImage(self.skin_preguntador_lletraAoff, 'lletraA_off.png') ], 
-								[ self.skinLoadImage(self.skin_preguntador_lletraB, 'lletraB.png'), self.skinLoadImage(self.skin_preguntador_lletraBoff, 'lletraB_off.png') ], 				
-								[ self.skinLoadImage(self.skin_preguntador_lletraC, 'lletraC.png'), self.skinLoadImage(self.skin_preguntador_lletraCoff, 'lletraC_off.png') ],
-							]
-		
-		self.info = [ self.skinLoadImage(self.skin_preguntador_itr1, 'itr1.png'), self.skinLoadImage(self.skin_preguntador_itr2, 'itr2.png') ]	
-		
-		
-		self.so_ticking2 = self.skinLoadSound(self.skin_score_so_sub, self.skin_score_so_sub_vol,'ticking2.ogg', 1)
-		self.so_drum2 = self.skinLoadSound(self.skin_score_so_sub, self.skin_score_so_sub_vol,'drum2.ogg', 1)
-		self.so_sub = self.skinLoadSound(self.skin_score_so_sub, self.skin_score_so_sub_vol,'sub.ogg', 0.1)
-		self.so_ok = self.skinLoadSound(self.skin_score_so_sub, self.skin_score_so_sub_vol,'cheer.ogg', 1)
-		self.so_nook = self.skinLoadSound(self.skin_score_so_sub, self.skin_score_so_sub_vol,'crboo.ogg', 1)
-		
-		self.nom_equip_sfc = render_text( joc.teams[joc.current_team].nom, (64,64,64), 30, 1 )	
-		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
-		self.nom_equip_sfc.set_alpha( 64 )
-
-		self.compos = 768
-
-
-	def so_drum2_play ( self ):
-		self.so_drum2.play()
-		
 	def so_ok_play ( self ):
 		self.so_ok.play()
 		
@@ -276,68 +178,8 @@ class Skin:
 	def so_sub_play ( self ):
 		self.so_sub.play()
 		
-	def so_drum2_stop ( self ):
-		self.so_drum2.stop()
 
 
-	###########################################
-	#
-	# Funció per pintar el text i les preguntes sobre una nova superficie
-	# usant el color del text i el sobrejat
-	def preguntadorPintatext( self, textapintar, maxample = 0 ):
-
-		nalt = 0
-
-		cadenes = textapintar.split('#')
-		sfc_pregunta = range(0, len(cadenes) )
-		sfc_shad = range(0, len(cadenes) )
-
-		nlinia = 0
-
-		for cadena in cadenes:
-			sfc_pregunta[nlinia] = render_text( cadena if cadena != "" else " ", self.color_de_text, self.skin_preguntador_mida_font, 1, '', maxample - 2)
-			sfc_shad[nlinia] = render_text( cadena if cadena != "" else " ", self.color_de_fons, self.skin_preguntador_mida_font, 1, '', maxample - 2)
-			nalt += sfc_pregunta[nlinia].get_height() + 2				     
-			nlinia += 1
-		
-		sfc = pygame.Surface( ( 1024 if maxample == 0 else maxample, nalt ), pygame.SRCALPHA, 32 )
-
-		nalt = 0
-		nlinia = 0
-		for cadena in cadenes:
-			sfc.blit( sfc_shad[nlinia], (0 + 2, nalt + 2))
-			sfc.blit( sfc_pregunta[nlinia], (0, nalt ))
-			nalt += sfc_pregunta[nlinia].get_height() + 2
-			nlinia += 1
-			
-		return sfc
-			
-
-	###########################################
-	#
-	# Inicialitzador de nova pregunta
-	#
-	def preguntadorInicialitza_pregunta( self, current_question, num_asked_questions ):
-
-		self.sfc_pregunta  = self.preguntadorPintatext( current_question['text'], 1024 - 175 )
-
-		self.sfc_resposta = range(0, 3)
-		for num in xrange(0, 3):
-			self.sfc_resposta[ num ] = self.preguntadorPintatext( current_question[ 'opt' + str(num + 1) ], 1024 - 260 )
-
-		self.sfc_npregunta = render_text( str(num_asked_questions), (255,255,255), 100 )
-		self.sfc_npregunta.set_alpha( 64 )
-
-		self.sfc_apregunta = render_text( str(current_question['author']), (255,255,255), 16 )
-		self.sfc_apregunta.set_alpha( 64 )	
-
-		self.temps_inici_pregunta = time.time()
-		self.segons = 61
-		self.so_drum2_play()
-		self.so_drum2_stop()
-
-		self.show_answers = 0
-		
 		
 	def preguntadorCarregaFiguretes( self, joc, selcat ):
 		self.mostra_punt_de_categoria = True
@@ -350,113 +192,113 @@ class Skin:
 
 			
 	def preguntadorPinta( self, joc, categoria, selected, mostra_comentaris ):		
-		# Animem el fons
-		self.ypos += 2
-		if self.ypos >= Global.screen_y: self.ypos %= Global.screen_y
-			
-		# Pintem el fons animat
-		joc.screen.blit( self.fons[categoria - 1], (0,0), (0, (768 - self.ypos), Global.screen_x, min(200, self.ypos)))
-		if self.ypos < 200:
-			joc.screen.blit( self.fons[categoria - 1], (0, min( 200, self.ypos)), (0, 0, Global.screen_x, 200 - min( 200, self.ypos)))
-		
-		# i el sombrejem per fer l'efecte de desapariió
-		# també pintem el logotip del peu a l'hora que esborrem el fons de self.joc.screen
-		joc.screen.blit( self.mascara_de_fons, (0, 0) )
-		
-		# preparem el sobrejat de l'opció seleccionada
-		ympos = self.ypos + 300
-		ympos %= 768
-		self.mascara.blit( self.fons[ categoria - 1], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
-		
-		if ympos < 200: 
-			self.mascara.blit( self.fons[ categoria - 1], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
-		
-		# i el mesclem amb la mascara per donar-li forma
-		self.mascara.blit( self.retalla_sel, (0,0))
-			
-		# pintem l'ombrejat on correspongui	
-		if selected == 1: joc.screen.blit( self.mascara, ( self.postextx, 260))
-		if selected == 2: joc.screen.blit( self.mascara, ( self.postextx, 260+150))
-		if selected == 3: joc.screen.blit( self.mascara, ( self.postextx, 260+300))
-		
-		# mostrem l'autor i el nombre de pregunta
-		if self.skin_preguntador_mostranpregunta != 'False' :
-			joc.screen.blit( self.sfc_npregunta, (1024 - ( self.sfc_npregunta.get_width() + 25), 0) )
-			joc.screen.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94) )
-			
-		# mostrem la pregunta
-		joc.screen.blit( self.sfc_pregunta, (self.postextx, self.postexty) )	
-			
-		# i les solucions			
-		linia_act = 270
-			
-		for num in range(0, 3):
-			joc.screen.blit( self.lletres[num][(selected != num + 1)], ( self.postextx, linia_act + (150 * num)) )
-			joc.screen.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
-			
-		# comprovem l'estat del temps
-		segons_act = 60 - int( (time.time() - self.temps_inici_pregunta) )
-		if segons_act < 0: 
-			segons_act = 0
-			self.segons = 0
-			
-		# si no estem en l'estat de mostrar les soŀlucions mostrem el temps restant
-		if self.show_answers == 0:
-			if self.segons != segons_act:
-				# el segon actual ha canviat
-				self.segons = segons_act 
-				self.pinta_segons = render_text( str( self.segons ).zfill(2), (255,255,255), 600)
-				# s'acaba el temps indiquem'ho amb so
-				if self.segons < 20:
-					self.so_ticking2.set_volume( (20 - float( self.segons )) / 20.0  ) 
-					self.so_ticking2.play()
-			
-				# pintem els segons que queden, posant-los cada cop menys transparents
-			self.pinta_segons.set_alpha( (60 - segons_act) )
-			joc.screen.blit( self.pinta_segons, ( 300 , 150) )
-			
-		# Pintem les solucions
-		linia_act = 270
-		posn = 700
-		posnook = 700 + cos(time.time()) * 25
-		posok = 700 + cos(time.time() * 2) * 50
-		
-		if self.show_answers > 0:
+			# Animem el fons
+			self.ypos += 2
+			if self.ypos >= Global.screen_y: self.ypos %= Global.screen_y
 				
-			for num in range (0, 3):
-				if self.current_question['answer'] == (num + 1):
-					if selected != (num + 1):
-						joc.screen.blit( self.solucio_nook, (posnook, linia_act + (150 * num)) )
-					else:
-						joc.screen.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
+			# Pintem el fons animat
+			joc.screen.blit( self.fons[categoria - 1], (0,0), (0, (768 - self.ypos), Global.screen_x, min(200, self.ypos)))
+			if self.ypos < 200:
+				joc.screen.blit( self.fons[categoria - 1], (0, min( 200, self.ypos)), (0, 0, Global.screen_x, 200 - min( 200, self.ypos)))
+			
+			# i el sombrejem per fer l'efecte de desapariió
+			# també pintem el logotip del peu a l'hora que esborrem el fons de self.joc.screen
+			joc.screen.blit( self.mascara_de_fons, (0, 0) )
+			
+			# preparem el sobrejat de l'opció seleccionada
+			ympos = self.ypos + 300
+			ympos %= 768
+			self.mascara.blit( self.fons[ categoria - 1], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
+			
+			if ympos < 200: 
+				self.mascara.blit( self.fons[ categoria - 1], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
+			
+			# i el mesclem amb la mascara per donar-li forma
+			self.mascara.blit( self.retalla_sel, (0,0))
+				
+			# pintem l'ombrejat on correspongui	
+			if selected == 1: joc.screen.blit( self.mascara, ( self.postextx, 260))
+			if selected == 2: joc.screen.blit( self.mascara, ( self.postextx, 260+150))
+			if selected == 3: joc.screen.blit( self.mascara, ( self.postextx, 260+300))
+			
+			# mostrem l'autor i el nombre de pregunta
+			if self.skin_preguntador_mostranpregunta != 'False' :
+				joc.screen.blit( self.sfc_npregunta, (1024 - ( self.sfc_npregunta.get_width() + 25), 0) )
+				joc.screen.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94) )
+				
+			# mostrem la pregunta
+			joc.screen.blit( self.sfc_pregunta, (self.postextx, self.postexty) )	
+				
+			# i les solucions			
+			linia_act = 270
+				
+			for num in range(0, 3):
+				joc.screen.blit( self.lletres[num][(selected != num + 1)], ( self.postextx, linia_act + (150 * num)) )
+				joc.screen.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
+				
+			# comprovem l'estat del temps
+			segons_act = 60 - int( (time.time() - self.temps_inici_pregunta) )
+			if segons_act < 0: 
+				segons_act = 0
+				self.segons = 0
+				
+			# si no estem en l'estat de mostrar les soŀlucions mostrem el temps restant
+			if self.show_answers == 0:
+				if self.segons != segons_act:
+					# el segon actual ha canviat
+					self.segons = segons_act 
+					self.pinta_segons = render_text( str( self.segons ).zfill(2), (255,255,255), 600)
+					# s'acaba el temps indiquem'ho amb so
+					if self.segons < 20:
+						self.so_ticking2.set_volume( (20 - float( self.segons )) / 20.0  ) 
+						self.so_ticking2.play()
+				
+					# pintem els segons que queden, posant-los cada cop menys transparents
+				self.pinta_segons.set_alpha( (60 - segons_act) )
+				joc.screen.blit( self.pinta_segons, ( 300 , 150) )
+				
+			# Pintem les solucions
+			linia_act = 270
+			posn = 700
+			posnook = 700 + cos(time.time()) * 25
+			posok = 700 + cos(time.time() * 2) * 50
+			
+			if self.show_answers > 0:
 					
-				else:
-					if selected == (num + 1):
-						joc.screen.blit( self.solucio_nook, (posnook, linia_act + (150 * num)) )
+				for num in range (0, 3):
+					if self.current_question['answer'] == (num + 1):
+						if selected != (num + 1):
+							joc.screen.blit( self.solucio_nook, (posnook, linia_act + (150 * num)) )
+						else:
+							joc.screen.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
+						
+					else:
+						if selected == (num + 1):
+							joc.screen.blit( self.solucio_nook, (posnook, linia_act + (150 * num)) )
+					
+				if len( self.current_question['comment'] ) > 5:
+					joc.screen.blit( self.info[0] if (int(time.time() * 3) % 3) == 0 else self.info[1], (self.postextx, 150) )
 				
-			if len( self.current_question['comment'] ) > 5:
-				joc.screen.blit( self.info[0] if (int(time.time() * 3) % 3) == 0 else self.info[1], (self.postextx, 150) )
+			if self.mostra_punt_de_categoria:
+				if self.match_point:
+					t = time.time()
+					for compta in range( 0, 16 ) :
+						joc.screen.blit( self.figureta_no if (int(time.time() * 2) % 2) == 0 else self.figureta_si, (500 + cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
+				else:
+					joc.screen.blit( self.figureta_no if (int(time.time() * 2) % 2) == 0 else self.figureta_si, (880, 130) )
+
 			
-		if self.mostra_punt_de_categoria:
-			if self.match_point:
-				t = time.time()
-				for compta in range( 0, 16 ) :
-					joc.screen.blit( self.figureta_no if (int(time.time() * 2) % 2) == 0 else self.figureta_si, (500 + cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
-			else:
-				joc.screen.blit( self.figureta_no if (int(time.time() * 2) % 2) == 0 else self.figureta_si, (880, 130) )
-
-		
-		joc.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
+			joc.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
 
 
 
-		if mostra_comentaris:
-			if self.compos > 0: self.compos -= 100 
-			joc.screen.blit( sfc_comentaris, (0,self.compos))
-		else:
-			if self.compos < 768: 
-				self.compos += 100
+			if mostra_comentaris:
+				if self.compos > 0: self.compos -= 100 
 				joc.screen.blit( sfc_comentaris, (0,self.compos))
-		
-		
+			else:
+				if self.compos < 768: 
+					self.compos += 100
+					joc.screen.blit( sfc_comentaris, (0,self.compos))
+			
+			
 
