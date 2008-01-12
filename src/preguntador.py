@@ -120,7 +120,8 @@ class Preguntador:
 		
 		self.fons = range(0, 6)
 		for num in range(0, 6):
-			self.fons[num] = loadImage( nomImatgeCategoria( num ) )
+			#self.fons[num] = loadImage( nomImatgeCategoria( num ) )
+			self.fons[num] = loadImage(get_databases( num ).image)
 			sfcmask = loadImage( 'filtre_c' + str(num+1) + '.png' )
 			self.fons[num].blit( sfcmask, (0,0))
 		
