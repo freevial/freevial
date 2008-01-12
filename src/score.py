@@ -169,7 +169,7 @@ class Score:
 			element_seleccionat = self.skin.teamsGuanyador( self.joc.teams )
 			self.so_ok.play()
 		else:
-			self.skin.LoadSound( "score", 'background_sound', 'background_sound_vol', 1 ).play( -1 )
+			self.skin.LoadSound( "score", 'background_sound', 'background_sound_vol' ).play( -1 )
 		
 		surten = 0
 		mostrada_victoria = False
@@ -344,7 +344,7 @@ class Score:
 						visca = Visca( self.joc )
 						resultat = visca.juguem( self.joc, self.joc.teams[element_seleccionat].nom )
 						mostrada_victoria = True
-						self.skin.LoadSound( self.score_so_de_fons, self.score_so_de_fons_vol, 'score.ogg', 0.6, music = 1).play( -1 )
+						self.skin.LoadSound( 'score' , 'background_sound' , 'background_sound_vol' ).play( -1 )
 					
 					if eventhandle.keyUp('l'): 
 						Global.LOCKED_MODE = (not Global.LOCKED_MODE)
