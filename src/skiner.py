@@ -84,7 +84,6 @@ class Skin:
 
 	def configGetEval( self, field, domain = None ):	
 		toeval = self.configGet( field, domain )
-		print "Eval: ", field, domain, toeval
 		return eval( toeval ) 
 
 	def configGetRGB( self, field, domain = None ):	

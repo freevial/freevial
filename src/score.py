@@ -264,11 +264,11 @@ class Score:
 							self.so_sub.play()
 						
 						if eventhandle.keyUp('DOWN'): 
-							element_seleccionat = (element_seleccionat + 2) % 6
+							element_seleccionat = (element_seleccionat + 2) % self.skin.configGetInt( "max_teams", "game" )
 							self.so_sub.play()
 						
 						if eventhandle.keyUp('UP'): 
-							element_seleccionat = (element_seleccionat - 2) % 6
+							element_seleccionat = (element_seleccionat - 2) % self.skin.configGetInt( "max_teams", "game" )
 							self.so_sub.play()
 						
 						if eventhandle.keyUp('a'):

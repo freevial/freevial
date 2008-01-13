@@ -17,7 +17,7 @@ default_font=FreeSerif.ttf
 # Mode 3 - Omplir la figureta de 6 peces
 game_mode=2
 game_limit=7
-game_question_color=cacadevaca
+game_question_color=(0,0,255)
 		
 [score]
 background=kde_fons_flor.png
