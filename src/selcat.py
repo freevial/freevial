@@ -72,16 +72,10 @@ class SelCat:
 
 		self.so_sub = self.skin.LoadSound('so_sub', 'so_sub_vol' )
 		self.so_sub2 = self.skin.LoadSound('so_sub2', 'so_sub_vol' )
+
+		self.selcat_color_text = self.skin.configGetRGB( 'color_text' )
 		
-		self.selcat_color_text_red = self.skin.configGetInt( 'color_text_red')
-		self.selcat_color_text_green = self.skin.configGetInt( 'color_text_green')
-		self.selcat_color_text_blue = self.skin.configGetInt( 'color_text_blue')
-		self.selcat_color_text = (self.selcat_color_text_red, self.selcat_color_text_green, self.selcat_color_text_blue)
-		
-		self.selcat_color_text_red_nosel = self.skin.configGetInt( 'color_text_red_nosel')
-		self.selcat_color_text_green_nosel = self.skin.configGetInt( 'color_text_green_nosel')
-		self.selcat_color_text_blue_nosel = self.skin.configGetInt( 'color_text_blue_nosel')
-		self.selcat_color_text_nosel = (self.selcat_color_text_red_nosel, self.selcat_color_text_green_nosel, self.selcat_color_text_blue_nosel)
+		self.selcat_color_text_nosel = self.skin.configGetRGB( 'color_text_nosel' )
 
 		self.help_overlay = createHelpScreen( 'score' )
 

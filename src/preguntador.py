@@ -42,14 +42,8 @@ class Preguntador:
 		self.game = game
 		self.skin = Skin('preguntador')
 		
-		self.color_de_fons_red = self.skin.configGetInt('color_de_fons_red')
-		self.color_de_fons_green = self.skin.configGetInt('color_de_fons_green')
-		self.color_de_fons_blue = self.skin.configGetInt('color_de_fons_blue')
-		self.color_de_text_red = self.skin.configGetInt('color_de_text_red')
-		self.color_de_text_green = self.skin.configGetInt('color_de_text_green')
-		self.color_de_text_blue = self.skin.configGetInt('color_de_text_blue')
-		self.color_de_fons = (self.color_de_fons_red, self.color_de_fons_green, self.color_de_fons_blue)
-		self.color_de_text = (self.color_de_text_red, self.color_de_text_green, self.color_de_text_blue)
+		self.color_de_fons = self.skin.configGetRGB( 'color_de_fons' )
+		self.color_de_text = self.skin.configGetRGB( 'color_de_text' )
 		
 		self.mida_font = self.skin.configGetInt('mida_font')
 		self.altlinies = self.mida_font + 5
