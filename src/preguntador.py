@@ -211,12 +211,12 @@ class Preguntador:
 	# Inicialitzador de nova pregunta
 	#
 	def initialize_question( self ):
-		
-		self.sfc_pregunta  = self.preguntadorPintatext( self.current_question['text'], 1024 - 175 )
+
+		self.sfc_pregunta  = self.preguntadorPintatext( self.current_question['text'], self.skin.configGetInt("question_width") )
 
 		self.sfc_resposta = range(0, 3)
 		for num in xrange(0, 3):
-			self.sfc_resposta[ num ] = self.preguntadorPintatext( self.current_question[ 'opt' + str(num + 1) ], 1024 - 260 )
+			self.sfc_resposta[ num ] = self.preguntadorPintatext( self.current_question[ 'opt' + str(num + 1) ], self.skin.configGetInt("answer_width") )
 
 		self.sfc_npregunta = self.skin.render_text( str(self.num_asked_questions), (255,255,255), 100 )
 		self.sfc_npregunta.set_alpha( 64 )
@@ -474,6 +474,7 @@ class Preguntador:
 			linia_act = 270
 			posn = 700
 			posnook = 700 + cos(time.time()) * 25
+			posnook2 = 700 - cos(time.time()) * 25
 			posok = 700 + cos(time.time() * 2) * 50
 			
 			if self.show_answers > 0:
@@ -481,7 +482,7 @@ class Preguntador:
 				for num in range (0, 3):
 					if self.current_question['answer'] == (num + 1):
 						if self.selected != (num + 1):	
-							self.game.screen.blit( self.solucio_ok, (posnook, linia_act + (150 * num)) )
+							self.game.screen.blit( self.solucio_ok, (posnook2, linia_act + (150 * num)) )
 						else:
 							self.game.screen.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
 						
