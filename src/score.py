@@ -101,15 +101,9 @@ class Score:
 		self.score_desplaca_el_fons = self.skin.configGet( 'move_background') # True o False = no hi ha scroll vertical
 		self.score_ones_al_fons = self.skin.configGet( 'background_waves') # True o False = quiet
 		
-		self.score_caixes = (
-			[self.skin.configGetInt( 'boxes_0_X' ), self.skin.configGetInt( 'boxes_0_Y' )],
-			[self.skin.configGetInt( 'boxes_1_X' ), self.skin.configGetInt( 'boxes_1_Y' )],
-			[self.skin.configGetInt( 'boxes_2_X' ), self.skin.configGetInt( 'boxes_2_Y' )],
-			[self.skin.configGetInt( 'boxes_3_X' ), self.skin.configGetInt( 'boxes_3_Y' )],
-			[self.skin.configGetInt( 'boxes_4_X' ), self.skin.configGetInt( 'boxes_4_Y' )],
-			[self.skin.configGetInt( 'boxes_5_X' ), self.skin.configGetInt( 'boxes_5_Y' )],
-			)
 		
+		self.score_caixes = self.skin.configGetEval( "boxes_coord" )
+ 		
 		#------------------------------------------
 		
 		self.ypos = 0
@@ -255,7 +249,7 @@ class Score:
 					if eventhandle.keyUp('q', 'ESCAPE'):
 						if not mostra_ajuda and not mostra_credits:
 							if not Global.LOCKED_MODE:
-								if fesPregunta( self.joc.screen , valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0:
+								if fesPregunta( self.joc.screen , valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO )), color = self.skin.configGetRGB( "game_question_color", "game" ) ) == 0:
 									if not Global.MUSIC_MUTE:
 										pygame.mixer.music.fadeout( 500 )
 										pygame.time.wait( 500 )
@@ -326,7 +320,7 @@ class Score:
 								if self.joc.teams[element_seleccionat].actiu: escriu ^= 1
 								else: nou_grup = 1
 						else:
-							if fesPregunta( self.joc.screen , valorText( HOS_NEW_GAME ), (valorText( HOS_YES ), valorText( HOS_NO ))) == 0:
+							if fesPregunta( self.joc.screen , valorText( HOS_NEW_GAME ), (valorText( HOS_YES ), valorText( HOS_NO )), color = self.skin.configGetRGB( "game_question_color", "game" )) == 0:
 								mode = 0
 								mostra_estad = 0 
 				

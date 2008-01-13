@@ -88,6 +88,8 @@ class Preguntador:
 		self.so_nook_vol = self.skin.configGet( 'so_nook_vol')
 		
 		self.mostranpregunta = self.skin.configGet( 'mostranpregunta')
+
+		self.use_mask = self.skin.configGetBool( 'use_mask')
 		
 		self.preguntadorYpos = 190
 		self.ypos = 0
@@ -419,17 +421,20 @@ class Preguntador:
 			# també pintem el logotip del peu a l'hora que esborrem el fons de self.game.screen
 			self.game.screen.blit( self.mascara_de_fons, (0, 0) )
 			
-			# preparem el sobrejat de l'opció seleccionada
-			ympos = self.ypos + 300
-			ympos %= 768
-			self.mascara.blit( self.fons[ self.categoria - 1], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
+			if self.use_mask:
+				# preparem el sobrejat de l'opció seleccionada
+				ympos = self.ypos + 300
+				ympos %= 768
+				self.mascara.blit( self.fons[ self.categoria - 1], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
 			
-			if ympos < 200: 
-				self.mascara.blit( self.fons[ self.categoria - 1], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
+				if ympos < 200: 
+					self.mascara.blit( self.fons[ self.categoria - 1], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
 			
-			# i el mesclem amb la mascara per donar-li forma
-			self.mascara.blit( self.retalla_sel, (0,0))
-				
+				# i el mesclem amb la mascara per donar-li forma
+				self.mascara.blit( self.retalla_sel, (0,0))
+			else:
+				self.mascara = self.retalla_sel
+					
 			# pintem l'ombrejat on correspongui	
 			if self.selected == 1: self.game.screen.blit( self.mascara, ( self.postextx, 260))
 			if self.selected == 2: self.game.screen.blit( self.mascara, ( self.postextx, 260+150))

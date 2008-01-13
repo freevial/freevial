@@ -32,7 +32,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.59008835"
      inkscape:cx="574.30445"
-     inkscape:cy="450.42172"
+     inkscape:cy="454.65837"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
@@ -44,6 +44,13 @@
      inkscape:guide-bbox="true" />
   <defs
      id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       id="perspective38"
+       inkscape:vp_x="-50 : 600 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="700 : 600 : 1"
+       inkscape:persp3d-origin="300 : 400 : 1" />
     <linearGradient
        id="linearGradient2400">
       <stop
@@ -235,11 +242,6 @@
          id="tspan2978"
          x="-675.46979"
          y="1000.2239">freevial - Edició festa KDE4</tspan></text>
-    <path
-       style="opacity:0.79464285000000001;fill:url(#linearGradient2408);fill-opacity:1;stroke:#ffffff;stroke-width:1.97711980000000009;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1"
-       d="M -8.1373662,-4.3017684 L 950.9095,-4.3017684 L 950.66958,151.92432 C 950.66958,164.75423 940.22291,175.08299 927.24655,175.08299 L -8.1373662,175.08299 L -8.1373662,-4.3017684 z"
-       id="rect2388"
-       sodipodi:nodetypes="cccccc" />
   </g>
   <g
      inkscape:label="items"

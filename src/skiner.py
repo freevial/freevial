@@ -81,6 +81,15 @@ class Skin:
 	
 	def configGetBool( self, field, domain = None ):
 		return True if self.configGet( field, domain ) == "True" else False
+
+	def configGetEval( self, field, domain = None ):	
+		toeval = self.configGet( field, domain )
+		print "Eval: ", field, domain, toeval
+		return eval( toeval ) 
+
+	def configGetRGB( self, field, domain = None ):	
+		return self.configGetEval( field, domain ) 
+
 	
 	def LoadImage( self, field, domain = None ):
 		

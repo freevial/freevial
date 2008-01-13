@@ -1,46 +1,43 @@
 [skin]
-name=Default Skin
+
+name=KDE4 Release skin
 creator=Carles Oriol
 version=1.0
 date=01/01/2008
+
 folder=
 
 
 [game]
-max_teams=6
-default_font=
-
+max_teams=4
+default_font=FreeSerif.ttf
 # Mode 0 - Figureta de 6 peces completa i una diferència de més de 2 punts respecte a l'equip anterior. Guanyador a punts
 # Mode 1 - Aconseguir un nombre determinat de punts
 # Mode 2 - Ser el darrer equip en fer X cagades
 # Mode 3 - Omplir la figureta de 6 peces
-game_mode=0
-game_limit=0
-game_question_color=(255,0,0)
-
+game_mode=2
+game_limit=7
+game_question_color=cacadevaca
+		
 [score]
-background=score_fons.png
-background_mask=fons_score.png
+background=kde_fons_flor.png
+background_mask=kde_score_front.png
 
-element=element_score.png
-sel_element=seleccio_score.png
+element=item.png
+sel_element=item_sel.png
 element_sobre=False
-# True o False = no hi ha scroll vertical
-sel_element_offsetx=-58
-sel_element_offsety=-36
+
+sel_element_offsetx=-61
+sel_element_offsety=-61
 teams_offsetx=25
-teams_offsety=125
-
-color_text_red=0
-color_text_green=0
-color_text_blue=0
-mida_text=30
-
-figureta_visible=True
-resultat_visible=True
+teams_offsety=45
+		
+figureta_visible=False
+resultat_visible=False
 # 0 - del 0 al 63 combinacions 1 - del 0 al 5 figures individuals
-figureta_mode=0
+figureta_mode=0 
 figureta_mask=points/freevial_tot
+		
 figureta_offsetx=15
 figureta_offsety=0
 		
@@ -56,13 +53,14 @@ figureta_individual_pos_4_X=40
 figureta_individual_pos_4_Y=0
 figureta_individual_pos_5_X=50
 figureta_individual_pos_5_Y=0
+
 		
 figureta_show_hide=0
 # 0 - Es mostren les parts aconseguides, 1 - S'amaguen les parts aconseguides		
-sub_sound=sub.ogg
-sub_sound_vol=0.1
-sub_sound2=sub.ogg
-sub_sound2_vol=0.4
+sub_sound=question.ogg
+sub_sound_vol=1
+sub_sound2=message.ogg
+sub_sound2_vol=1
 		
 ok=cheer.ogg
 ok_vol=1
@@ -71,26 +69,24 @@ locked=llum.png
 locked_pos_X=0
 locked_pos_Y=0
 		
-background_sound=score.ogg
-background_sound_vol=0.6
+background_sound=commercial.ogg
+background_sound_vol=0.4
 
-move_background=True
+move_background=False
 # True o False = no hi ha scroll vertical
 background_waves=True
 # True o False = quiet
+#alt element 162
 
-boxes_coord=((75,135), (515, 135), (75,335), (515, 335), (75,535), (515,535))
-boxes_0_X=75
-boxes_0_Y=135
+boxes_0_X=77
+boxes_0_Y=176
+boxes_1_X=520
+boxes_1_Y=230
+boxes_2_X=77
+boxes_2_Y=394
+boxes_3_X=520
+boxes_3_Y=452
 
-boxes_1_X=515
-boxes_1_Y=135
-
-boxes_2_X=75
-boxes_2_Y=335
-
-boxes_3_X=515
-boxes_3_Y=335
 boxes_4_X=75
 boxes_4_Y=535
 boxes_5_X=515
@@ -98,27 +94,24 @@ boxes_5_Y=535
 
 		
 [wheel]
+	
 wheel_background=ruleta_fons.png
-wheel_front=ruleta_front.png
+wheel_front=kde_roda.png
 wheel_paper=ruleta_paper.png
-
-figureta_mask=points/freevial_tot
 
 sound_wheel_dot=dot.ogg
 sound_wheel_dot_vol=1
 sound_wheel_evil=evil.ogg
 sound_wheel_evil_vol=1
-sound_wheel_sub=sub.ogg
-sound_wheel_sub_vol=0.3
+sound_wheel_sub=question.ogg
+sound_wheel_sub_vol=1
+wheel_tipografia=FreeSerif.ttf
+wheel_tipografia_mida=35	
 
-wheel_tipografia=Ubuntu-Title.ttf
-wheel_tipografia_mida=60
-paper_text_width=350
-
-
-paper_offsetX=178
-paper_text_offsetX=120
-
+paper_offsetX=312
+paper_text_offsetX=180
+paper_text_width=300	
+	
 [preguntador]
 
 color_de_fons_red=0
@@ -132,18 +125,18 @@ color_de_text_blue=255
 mida_font=40
 postextx=80
 postexty=40
-mascara_de_fons=mascara_de_fons.png
-retalla_sel=retalla_sel.png
-solucio_ok=ok.png
-solucio_nook=nook.png
+mascara_de_fons=kde_pregunta.png
+retalla_sel=sel.png
+solucio_ok=redogreen.png
+solucio_nook=cancel3.png
 
-lletraA=lletraA.png
-lletraB=lletraB.png
-lletraC=lletraC.png
+lletraA=oxygenball_A.png
+lletraB=oxygenball_B.png
+lletraC=oxygenball_C.png
 
-lletraAoff=lletraA_off.png
-lletraBoff=lletraB_off.png
-lletraCoff=lletraC_off.png
+lletraAoff=oxygenball_A_gris.png
+lletraBoff=oxygenball_B_gris.png
+lletraCoff=oxygenball_C_gris.png
 
 itr1=itr1.png
 itr2=itr2.png
@@ -167,34 +160,11 @@ so_fons=preguntador.ogg
 so_fons_vol=0.4
 
 mostranpregunta=True
+#mostra_punt_de_categoria=True
+#match_point=True
 
-use_mask=True
+use_mask=False
 
 
-[selcat]
 
-fons_score=fons_score.png
-score_fons=score_fons.png
-
-sel_quadres=sel_quadres.png
-sel_reflexos=sel_reflexos.png
-
-sel_fletxap=sel_fletxap.png
-sel_fletxab=sel_fletxab.png
-
-sel_quadre=sel_quadre.png
-sel_quadreok=sel_quadreok.png
-
-so_sub=sub.ogg
-so_sub_vol=0.1
-so_sub2=sub2.ogg
-so_sub2_vol=0.4
-
-color_text_red=255
-color_text_green=255
-color_text_blue=255
-
-color_text_red_nosel=128
-color_text_green_nosel=128
-color_text_blue_nosel=128
-
+		

@@ -31,7 +31,16 @@ from freevialglob import *
 from events import EventHandle
 
 class Question:
+
+	def __init__(self):
 	
+		self.color = (255, 0, 0)
+	
+	def setSelColor ( self, color ):
+
+		self.color = color
+
+
 	def ask( self, screen, pregunta, respostes, predeterminat = 0, cancel = -1 ):
 
 		frate = frameRate( 40 )
@@ -107,7 +116,7 @@ class Question:
 
 				if seleccio == compta:
 					for salt in range(0, 25):
-						screen.fill( (salt * 10,0,0), (posx - 25 + salt, 450, sfc_respostes[compta].get_width() + 25*2-salt*2, sfc_respostes[compta].get_height()  ))
+						screen.fill( (self.color[0] * salt / 25, self.color[1]* salt / 25, self.color[2]* salt / 25), (posx - 25 + salt, 450, sfc_respostes[compta].get_width() + 25*2-salt*2, sfc_respostes[compta].get_height()  ))
 
 				screen.blit( sfc_respostes[compta], (posx, 450) )
 				posx += sfc_respostes[compta].get_width() + espai_entre_respostes
@@ -117,8 +126,10 @@ class Question:
 			pygame.display.flip()
 
 
-def fesPregunta( screen, pregunta, respostes, predeterminat = 0, cancel = -1 ):
+def fesPregunta( screen, pregunta, respostes, predeterminat = 0, cancel = -1, color = (255,0,0) ):
 
 	question = Question()
+
+	question.setSelColor( color )
 
 	return question.ask( screen, pregunta, respostes, predeterminat = 0, cancel = -1 )
