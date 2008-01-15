@@ -199,8 +199,7 @@ class Preguntador:
 	def atzar( self, categoria ):
 		
 		self.categoria = categoria #- 1
-		self.categoriapregunta = categoria -1
-		self.current_question = get_databases(self.categoriapregunta).question()
+		self.current_question = get_databases(self.categoria).question()
 		self.num_asked_questions += 1
 		
 		self.selected = 0
@@ -400,7 +399,7 @@ class Preguntador:
 					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.current_question['comment'] ) <= 5:
 						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(2500)
-						return self.categoria if ( self.current_question['answer'] == self.selected) else 0
+						return self.categoria if ( self.current_question['answer'] == self.selected) else -1
 					else:
 						compos = 768
 						mostra_comentaris = True;
@@ -410,9 +409,9 @@ class Preguntador:
 			if self.ypos >= Global.screen_y: self.ypos %= Global.screen_y
 				
 			# Pintem el fons animat
-			self.game.screen.blit( self.fons[self.categoria - 1], (0,0), (0, (768 - self.ypos), Global.screen_x, min(200, self.ypos)))
+			self.game.screen.blit( self.fons[self.categoria], (0,0), (0, (768 - self.ypos), Global.screen_x, min(200, self.ypos)))
 			if self.ypos < 200:
-				self.game.screen.blit( self.fons[self.categoria - 1], (0, min( 200, self.ypos)), (0, 0, Global.screen_x, 200 - min( 200, self.ypos)))
+				self.game.screen.blit( self.fons[self.categoria], (0, min( 200, self.ypos)), (0, 0, Global.screen_x, 200 - min( 200, self.ypos)))
 			
 			# i el sombrejem per fer l'efecte de desapariió
 			# també pintem el logotip del peu a l'hora que esborrem el fons de self.game.screen
@@ -422,10 +421,10 @@ class Preguntador:
 				# preparem el sobrejat de l'opció seleccionada
 				ympos = self.ypos + 300
 				ympos %= 768
-				self.mascara.blit( self.fons[ self.categoria - 1], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
+				self.mascara.blit( self.fons[ self.categoria], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
 			
 				if ympos < 200: 
-					self.mascara.blit( self.fons[ self.categoria - 1], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
+					self.mascara.blit( self.fons[ self.categoria], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
 			
 				# i el mesclem amb la mascara per donar-li forma
 				self.mascara.blit( self.retalla_sel, (0,0))

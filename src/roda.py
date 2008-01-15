@@ -147,7 +147,7 @@ class Roda:
 					if not mostra_ajuda and not mostra_credits:
 						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(500)
-						return 0
+						return -1
 					else:
 						mostra_ajuda = mostra_credits = 0
 				
@@ -197,9 +197,9 @@ class Roda:
 						if pos <= -1200: pos += 1200
 				
 				else:
-					resultat = 1 + int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
+					resultat = int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
 					self.so_dot.stop()
-					self.so_cat[ resultat - 1].play()
+					self.so_cat[ resultat].play()
 					if not  self.joc.teams[self.joc.current_team].teCategoria( resultat ):
 						self.so_evil.play()
 					rodant = 0

@@ -120,7 +120,7 @@ class Freevial:
 				
 				resultat = roda.juguem( )
 				
-				if resultat != 0:
+				if resultat != -1:
 						
 					Global.game.teams[ Global.game.current_team ].preguntes_tot[ resultat - 1 ] += 1		
 					
@@ -128,7 +128,7 @@ class Freevial:
 					
 					resultat = fespregunta.juguem( resultat )	
 					
-					if resultat > 0:
+					if resultat > -1:
 						Global.game.teams[ Global.game.current_team ].preguntes_ok[ resultat - 1 ] += 1
 						Global.game.teams[ Global.game.current_team ].punts += 1
 						
