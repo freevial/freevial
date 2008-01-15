@@ -199,8 +199,9 @@ class Preguntador:
 	# si la categoria és 0 no té en compte el valor
 	def atzar( self, categoria ):
 		
-		self.categoria = categoria - 1
-		self.current_question = get_databases(self.categoria).question()
+		self.categoria = categoria #- 1
+		self.categoriapregunta = categoria -1
+		self.current_question = get_databases(self.categoriapregunta).question()
 		self.num_asked_questions += 1
 		
 		self.selected = 0
