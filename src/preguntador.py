@@ -68,7 +68,7 @@ class Preguntador:
 		
 		self.so_ticking2 = self.skin.configGet( 'so_ticking2')
 		self.so_ticking2_vol = self.skin.configGet( 'so_ticking2_vol')
-		self.mostra_punt_de_categoria = self.skin.configGetBool( 'mostra_punt_de_categoria')
+		self.skin_mostra_punt_de_categoria = self.skin.configGetBool( 'mostra_punt_de_categoria')
 		self.so_drum2 = self.skin.configGet( 'so_drum2')
 		self.so_drum2_vol = self.skin.configGet( 'so_drum2_vol')
 		
@@ -280,6 +280,7 @@ class Preguntador:
 		if not Global.SOUND_MUTE: pygame.time.wait( 2500 )
 		self.skin.LoadSound( 'so_fons', 'so_fons_vol', 1).play(1)
 
+		mostra_punt_de_categoria = False
 		mostra_ajuda = mostra_credits = 0
 
 		self.game.screen.fill( (0,0,0,0) )
@@ -287,11 +288,11 @@ class Preguntador:
 		# remaining seconds until end of answer time
 		self.segons = 61
 		
-		if (self.game.teams[self.game.current_team].figureta & bitCategoria( selcat )) == 0:
-			self.mostra_punt_de_categoria = True
-			self.figureta_no = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta).zfill(2) + '.png')
-			self.figureta_si = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
-			self.match_point = True if (self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat ) == 63) else False
+		if (self.game.teams[self.game.current_team].figureta & bitCategoria( selcat )) == 0 and self.skin_mostra_punt_de_categoria == True:
+			mostra_punt_de_categoria = True
+			figureta_no = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta).zfill(2) + '.png')
+			figureta_si = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
+			match_point = True if (self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat ) == 63) else False
 		
 		mostra_comentaris = False
 		sfc_comentaris = None
@@ -495,13 +496,13 @@ class Preguntador:
 				if len( self.current_question['comment'] ) > 5:
 					self.game.screen.blit( self.info[0] if (int(time.time() * 3) % 3) == 0 else self.info[1], (self.postextx, 150) )
 				
-			if self.mostra_punt_de_categoria:
-				if self.match_point:
+			if mostra_punt_de_categoria:
+				if match_point:
 					t = time.time()
 					for compta in range( 0, 16 ) :
-						self.game.screen.blit( self.figureta_no if (int(time.time() * 2) % 2) == 0 else self.figureta_si, (500 + cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
+						self.game.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (500 + cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
 				else:
-					self.game.screen.blit( self.figureta_no if (int(time.time() * 2) % 2) == 0 else self.figureta_si, (880, 130) )
+					self.game.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (880, 130) )
 
 			self.game.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
 
