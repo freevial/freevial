@@ -129,7 +129,6 @@ class Preguntador:
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
 		self.nom_equip_sfc.set_alpha( 64 )
 
-		self.compos = 768
 		
 #		self.color_de_fons = (0, 0, 0)
 #		self.color_de_text = (255, 255, 255)
@@ -239,7 +238,7 @@ class Preguntador:
 	def preguntadorPintatext( self, textapintar, maxample = 0 ):
 
 		nalt = 0
-
+		
 		cadenes = textapintar.split('#')
 		sfc_pregunta = range(0, len(cadenes) )
 		sfc_shad = range(0, len(cadenes) )
@@ -269,6 +268,9 @@ class Preguntador:
 	# Bucle principal del programa
 	#
 	def juguem( self , selcat):
+		
+		
+		compos = 768
 		
 		self.help_on_screen.sec_timeout = 10
 
@@ -505,12 +507,12 @@ class Preguntador:
 			self.game.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
 
 			if mostra_comentaris and sfc_comentaris is not None:
-				if self.compos > 0: self.compos -= 100
-				self.game.screen.blit( sfc_comentaris, (0, self.compos))
+				if compos > 0: compos -= 100
+				self.game.screen.blit( sfc_comentaris, (0, compos))
 			elif sfc_comentaris is not None:
-				if self.compos < 768: 
-					self.compos += 100
-					self.game.screen.blit( sfc_comentaris, (0, self.compos))
+				if compos < 768: 
+					compos += 100
+					self.game.screen.blit( sfc_comentaris, (0, compos))
  			
  			self.help_on_screen.draw( self.game.screen, (350, 740), HOS_PREGUNTADOR_END if self.show_answers else HOS_PREGUNTADOR_RUN )
 			
