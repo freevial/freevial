@@ -39,12 +39,12 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin dels protocol de missatgeria instantània següents s'estima què és el més utilitzat a nivell mundial?</sentence>
+      <sentence>Segons la wikipedia, quin dels protocol de missatgeria instantània següents es creu què és el més utilitzat a nivell mundial?</sentence>
       <author>RainCT</author>
-      <comments>Segons les dades recollides a la Wikipedia, s'estima que Jabber té entre 40 i 90 milions d'usuaris, en canvi MSN només en té 27 milions i el QQ, utilitzat principalment pels xinesos, 20 milions.</comments>
+      <comments>Segons les dades recollides a la Wikipedia, s'estima que Jabber té entre 40 i 90 milions d'usuaris, MSN només en té 27 milions d'actius (i 155 milions en total) i el QQ, utilitzat principalment pels xinesos, 221 milions d'usuaris actius. http://en.wikipedia.org/wiki/Usage_share_of_instant_messaging_clients</comments>
       <answers>
-        <answer correct="True">Jabber</answer>
-        <answer>QQ</answer>
+      	<answer correct="True">QQ</answer>
+        <answer>Jabber</answer>
         <answer>MSN</answer>
       </answers>
     </question>
