@@ -57,10 +57,7 @@ class Score:
 		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
 		self.skin_maxim_equips = self.skin.configGetInt( 'max_teams', domain = 'game' )
 		
-		self.score_color_text_red = self.skin.configGetInt( 'color_text_red')
-		self.score_color_text_green = self.skin.configGetInt( 'color_text_green')
-		self.score_color_text_blue = self.skin.configGetInt( 'color_text_blue')
-		self.score_color_text = (self.score_color_text_red, self.score_color_text_green, self.score_color_text_blue)
+		self.score_color_text = self.skin.configGetRGB( 'color_text' )
 		self.score_mida_text = self.skin.configGetInt( 'mida_text')
 		
 		self.score_fons = self.skin.configGet( 'background')
@@ -80,7 +77,7 @@ class Score:
 		self.score_figureta_offsetx = self.skin.configGetInt( 'figureta_offsetx')
 		self.score_figureta_offsety = self.skin.configGetInt( 'figureta_offsety')
 		
-		self.score_figureta_individual_pos = [[self.skin.configGetInt( 'figureta_individual_pos_0_X'),self.skin.configGetInt( 'figureta_individual_pos_0_Y')], [self.skin.configGetInt( 'figureta_individual_pos_1_X'),self.skin.configGetInt( 'figureta_individual_pos_1_Y')], [self.skin.configGetInt( 'figureta_individual_pos_2_X'),self.skin.configGetInt( 'figureta_individual_pos_2_Y')], [self.skin.configGetInt( 'figureta_individual_pos_3_X'),self.skin.configGetInt( 'figureta_individual_pos_3_Y')], [self.skin.configGetInt( 'figureta_individual_pos_4_X'),self.skin.configGetInt( 'figureta_individual_pos_4_Y')], [self.skin.configGetInt( 'figureta_individual_pos_5_X'),self.skin.configGetInt( 'figureta_individual_pos_5_Y')] ]
+		self.score_figureta_individual_pos = self.skin.configGetEval( 'figureta_individual_pos' )
 		
 		self.score_figureta_show_hide = self.skin.configGet( 'figureta_show_hide') # 0 - Es mostren les parts aconseguides, 1 - S'amaguen les parts aconseguides
 		

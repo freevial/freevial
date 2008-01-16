@@ -78,7 +78,7 @@ class Roda:
 		for num in range(0, 6):
 			self.so_cat[num] = loadSound(get_databases(num).sound, volume = 1.0)
 			
-		for num in range(0, self.maxim_equips):
+		for num in range(0, 6):
 			sfc = self.skin.render_text( get_databases(num).name, (0,0,0), self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
 			self.paper.blit( sfc, (self.paper_text_offsetX+2, 2+(num * 200) + 100 - sfc.get_height() / 2 ))
 			sfc = self.skin.render_text( get_databases(num).name, colorsCategories()[num], self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
@@ -96,9 +96,10 @@ class Roda:
 		self.so_evil.stop()
 		self.so_dot.play(100)
 		
-		velocitat = 75
+		velocitat = self.skin.configGetInt( 'wheel_speed' )
 		deceleracio = 0
-		
+
+			
 		pos = pos_fons = atura = frenant = time_fi = mostra_ajuda = mostra_credits = 0
 		rodant = 1
 		resultat = -1
@@ -147,7 +148,7 @@ class Roda:
 					if not mostra_ajuda and not mostra_credits:
 						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(500)
-						return 0
+						return -1
 					else:
 						mostra_ajuda = mostra_credits = 0
 				
@@ -168,7 +169,7 @@ class Roda:
 			if atura == 1:
 				atura = 0
 				pas = 3
-				deceleracio = 20
+				deceleracio = self.skin.configGetInt( 'wheel_deccel' )
 				time_fi = time.time()
 				
 				if not frenant:
@@ -197,9 +198,9 @@ class Roda:
 						if pos <= -1200: pos += 1200
 				
 				else:
-					resultat = 1 + int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
+					resultat = int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
 					self.so_dot.stop()
-					self.so_cat[ resultat - 1].play()
+					self.so_cat[ resultat].play()
 					if not  self.joc.teams[self.joc.current_team].teCategoria( resultat ):
 						self.so_evil.play()
 					rodant = 0

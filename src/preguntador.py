@@ -42,14 +42,8 @@ class Preguntador:
 		self.game = game
 		self.skin = Skin('preguntador')
 		
-		self.color_de_fons_red = self.skin.configGetInt('color_de_fons_red')
-		self.color_de_fons_green = self.skin.configGetInt('color_de_fons_green')
-		self.color_de_fons_blue = self.skin.configGetInt('color_de_fons_blue')
-		self.color_de_text_red = self.skin.configGetInt('color_de_text_red')
-		self.color_de_text_green = self.skin.configGetInt('color_de_text_green')
-		self.color_de_text_blue = self.skin.configGetInt('color_de_text_blue')
-		self.color_de_fons = (self.color_de_fons_red, self.color_de_fons_green, self.color_de_fons_blue)
-		self.color_de_text = (self.color_de_text_red, self.color_de_text_green, self.color_de_text_blue)
+		self.color_de_fons = self.skin.configGetRGB( 'color_de_fons' )
+		self.color_de_text = self.skin.configGetRGB( 'color_de_text' )
 		
 		self.mida_font = self.skin.configGetInt('mida_font')
 		self.altlinies = self.mida_font + 5
@@ -74,7 +68,7 @@ class Preguntador:
 		
 		self.so_ticking2 = self.skin.configGet( 'so_ticking2')
 		self.so_ticking2_vol = self.skin.configGet( 'so_ticking2_vol')
-		self.mostra_punt_de_categoria = self.skin.configGetBool( 'mostra_punt_de_categoria')
+		self.skin_mostra_punt_de_categoria = self.skin.configGetBool( 'mostra_punt_de_categoria')
 		self.so_drum2 = self.skin.configGet( 'so_drum2')
 		self.so_drum2_vol = self.skin.configGet( 'so_drum2_vol')
 		
@@ -135,7 +129,6 @@ class Preguntador:
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
 		self.nom_equip_sfc.set_alpha( 64 )
 
-		self.compos = 768
 		
 #		self.color_de_fons = (0, 0, 0)
 #		self.color_de_text = (255, 255, 255)
@@ -205,7 +198,7 @@ class Preguntador:
 	# si la categoria és 0 no té en compte el valor
 	def atzar( self, categoria ):
 		
-		self.categoria = categoria - 1
+		self.categoria = categoria #- 1
 		self.current_question = get_databases(self.categoria).question()
 		self.num_asked_questions += 1
 		
@@ -217,12 +210,12 @@ class Preguntador:
 	# Inicialitzador de nova pregunta
 	#
 	def initialize_question( self ):
-		
-		self.sfc_pregunta  = self.preguntadorPintatext( self.current_question['text'], 1024 - 175 )
+
+		self.sfc_pregunta  = self.preguntadorPintatext( self.current_question['text'], self.skin.configGetInt("question_width") )
 
 		self.sfc_resposta = range(0, 3)
 		for num in xrange(0, 3):
-			self.sfc_resposta[ num ] = self.preguntadorPintatext( self.current_question[ 'opt' + str(num + 1) ], 1024 - 260 )
+			self.sfc_resposta[ num ] = self.preguntadorPintatext( self.current_question[ 'opt' + str(num + 1) ], self.skin.configGetInt("answer_width") )
 
 		self.sfc_npregunta = self.skin.render_text( str(self.num_asked_questions), (255,255,255), 100 )
 		self.sfc_npregunta.set_alpha( 64 )
@@ -244,7 +237,7 @@ class Preguntador:
 	def preguntadorPintatext( self, textapintar, maxample = 0 ):
 
 		nalt = 0
-
+		
 		cadenes = textapintar.split('#')
 		sfc_pregunta = range(0, len(cadenes) )
 		sfc_shad = range(0, len(cadenes) )
@@ -275,6 +268,9 @@ class Preguntador:
 	#
 	def juguem( self , selcat):
 		
+		
+		compos = 768
+		
 		self.help_on_screen.sec_timeout = 10
 
 		self.frate = frameRate( Global.fps_limit )
@@ -284,6 +280,7 @@ class Preguntador:
 		if not Global.SOUND_MUTE: pygame.time.wait( 2500 )
 		self.skin.LoadSound( 'so_fons', 'so_fons_vol', 1).play(1)
 
+		mostra_punt_de_categoria = False
 		mostra_ajuda = mostra_credits = 0
 
 		self.game.screen.fill( (0,0,0,0) )
@@ -291,11 +288,11 @@ class Preguntador:
 		# remaining seconds until end of answer time
 		self.segons = 61
 		
-		if (self.game.teams[self.game.current_team].figureta & bitCategoria( selcat )) == 0:
-			self.mostra_punt_de_categoria = True
-			self.figureta_no = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta).zfill(2) + '.png')
-			self.figureta_si = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
-			self.match_point = True if (self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat ) == 63) else False
+		if (self.game.teams[self.game.current_team].figureta & bitCategoria( selcat )) == 0 and self.skin_mostra_punt_de_categoria == True:
+			mostra_punt_de_categoria = True
+			figureta_no = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta).zfill(2) + '.png')
+			figureta_si = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
+			match_point = True if (self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat ) == 63) else False
 		
 		mostra_comentaris = False
 		sfc_comentaris = None
@@ -403,7 +400,7 @@ class Preguntador:
 					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.current_question['comment'] ) <= 5:
 						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(2500)
-						return self.categoria if ( self.current_question['answer'] == self.selected) else 0
+						return self.categoria if ( self.current_question['answer'] == self.selected) else -1
 					else:
 						compos = 768
 						mostra_comentaris = True;
@@ -413,9 +410,9 @@ class Preguntador:
 			if self.ypos >= Global.screen_y: self.ypos %= Global.screen_y
 				
 			# Pintem el fons animat
-			self.game.screen.blit( self.fons[self.categoria - 1], (0,0), (0, (768 - self.ypos), Global.screen_x, min(200, self.ypos)))
+			self.game.screen.blit( self.fons[self.categoria], (0,0), (0, (768 - self.ypos), Global.screen_x, min(200, self.ypos)))
 			if self.ypos < 200:
-				self.game.screen.blit( self.fons[self.categoria - 1], (0, min( 200, self.ypos)), (0, 0, Global.screen_x, 200 - min( 200, self.ypos)))
+				self.game.screen.blit( self.fons[self.categoria], (0, min( 200, self.ypos)), (0, 0, Global.screen_x, 200 - min( 200, self.ypos)))
 			
 			# i el sombrejem per fer l'efecte de desapariió
 			# també pintem el logotip del peu a l'hora que esborrem el fons de self.game.screen
@@ -425,10 +422,10 @@ class Preguntador:
 				# preparem el sobrejat de l'opció seleccionada
 				ympos = self.ypos + 300
 				ympos %= 768
-				self.mascara.blit( self.fons[ self.categoria - 1], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
+				self.mascara.blit( self.fons[ self.categoria], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
 			
 				if ympos < 200: 
-					self.mascara.blit( self.fons[ self.categoria - 1], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
+					self.mascara.blit( self.fons[ self.categoria], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
 			
 				# i el mesclem amb la mascara per donar-li forma
 				self.mascara.blit( self.retalla_sel, (0,0))
@@ -480,6 +477,7 @@ class Preguntador:
 			linia_act = 270
 			posn = 700
 			posnook = 700 + cos(time.time()) * 25
+			posnook2 = 700 - cos(time.time()) * 25
 			posok = 700 + cos(time.time() * 2) * 50
 			
 			if self.show_answers > 0:
@@ -487,7 +485,7 @@ class Preguntador:
 				for num in range (0, 3):
 					if self.current_question['answer'] == (num + 1):
 						if self.selected != (num + 1):	
-							self.game.screen.blit( self.solucio_ok, (posnook, linia_act + (150 * num)) )
+							self.game.screen.blit( self.solucio_ok, (posnook2, linia_act + (150 * num)) )
 						else:
 							self.game.screen.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
 						
@@ -498,23 +496,23 @@ class Preguntador:
 				if len( self.current_question['comment'] ) > 5:
 					self.game.screen.blit( self.info[0] if (int(time.time() * 3) % 3) == 0 else self.info[1], (self.postextx, 150) )
 				
-			if self.mostra_punt_de_categoria:
-				if self.match_point:
+			if mostra_punt_de_categoria:
+				if match_point:
 					t = time.time()
 					for compta in range( 0, 16 ) :
-						self.game.screen.blit( self.figureta_no if (int(time.time() * 2) % 2) == 0 else self.figureta_si, (500 + cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
+						self.game.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (500 + cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
 				else:
-					self.game.screen.blit( self.figureta_no if (int(time.time() * 2) % 2) == 0 else self.figureta_si, (880, 130) )
+					self.game.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (880, 130) )
 
 			self.game.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
 
 			if mostra_comentaris and sfc_comentaris is not None:
-				if self.compos > 0: self.compos -= 100
-				self.game.screen.blit( sfc_comentaris, (0, self.compos))
+				if compos > 0: compos -= 100
+				self.game.screen.blit( sfc_comentaris, (0, compos))
 			elif sfc_comentaris is not None:
-				if self.compos < 768: 
-					self.compos += 100
-					self.game.screen.blit( sfc_comentaris, (0, self.compos))
+				if compos < 768: 
+					compos += 100
+					self.game.screen.blit( sfc_comentaris, (0, compos))
  			
  			self.help_on_screen.draw( self.game.screen, (350, 740), HOS_PREGUNTADOR_END if self.show_answers else HOS_PREGUNTADOR_RUN )
 			
