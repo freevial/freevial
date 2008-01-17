@@ -176,4 +176,4 @@ class Skin:
 
 	def teamsGuanyador( self, teams ):
 	
-		return teamsGuanyador( teams, self.configGetInt("game", "game_mode") , self.configGetInt("game", "game_limit"))
+		return teamsGuanyador( teams, self.configGetInt("game_mode", "game") , self.configGetInt("game_limit", "game"))

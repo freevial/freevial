@@ -61,7 +61,11 @@ class Roda:
 		self.roda_so_sub_vol = self.skin.configGet( 'sound_wheel_sub_vol')
 		self.tipografia = self.skin.configGet( 'wheel_tipografia')
 		
-		self.figureta = self.skin.LoadImageRange( 'figureta_mask', 64, 2)
+		self.score_figureta_visible = self.skin.configGetBool( 'figureta_visible') 
+		
+		if( self.score_figureta_visible ):
+			self.figureta = self.skin.LoadImageRange( 'figureta_mask', 64, 2)
+			
 		self.fons = self.skin.LoadImage( 'wheel_background' )
 		self.front = self.skin.LoadImage( 'wheel_front' )
 		self.paper = self.skin.LoadImage( 'wheel_paper')
@@ -225,7 +229,9 @@ class Roda:
 			self.joc.screen.blit( self.front, (0,0) )	
 			
 			self.joc.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
-			self.joc.screen.blit( self.figureta[self.joc.teams[self.joc.current_team].figureta], (70, 630) )
+			
+			if( self.score_figureta_visible ):
+				self.joc.screen.blit( self.figureta[self.joc.teams[self.joc.current_team].figureta], (70, 630) )
 						
 			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))

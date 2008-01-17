@@ -46,6 +46,7 @@ class Equip:
 	errors = 0
 	figureta = 0
 	actiu = False
+	eliminat = False
 
 	sfc_nom = None
 
@@ -288,6 +289,7 @@ def teamsGuanyador( teams, mode, extra ):
 		guanyador = equipmax
 			
 	if mode == 1:
+		
 		for num in range(0,6):
 			if teams[num].punts >=  extra:
 				guanyador = num
