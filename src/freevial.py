@@ -220,7 +220,7 @@ if '--no-music' in sys.argv:
 	Global.MUSIC_MUTE = True
 
 if '--skin' in sys.argv:
-	setSkinName(sys.argv[sys.argv.index( '--skin' ) + 1])
+	setSkinName(os.path.expanduser(sys.argv[sys.argv.index( '--skin' ) + 1]))
 
 # For technical reasons, the "--database" option is parsed somewhere
 # at the top of this file.

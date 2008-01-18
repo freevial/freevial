@@ -13,3 +13,6 @@ pgscroller.py
 common/.hidden
 releases
 .bzr.backup
+skins/kde4/skin.ini~
+src/skiner.py.~1~
+src/common/globals.py.~1~

@@ -38,7 +38,7 @@ Global.skin_folder = Global.basefolder
 def setSkinName( nom ):
 	
 	Global.skin_folder = nom
-	Global.skin_file = os.path.join( nom, u'skin.ini' )
+	Global.skin_file = os.path.join( nom, 'skin.ini' )
 	
 	print _('Loading skin "%s"...') % unicode(Global.skin_folder, 'utf-8')
 
@@ -87,8 +87,7 @@ class Skin:
 		return eval( toeval ) 
 
 	def configGetRGB( self, field, domain = None ):	
-		return self.configGetEval( field, domain ) 
-
+		return self.configGetEval( field, domain )
 	
 	def LoadImage( self, field, domain = None ):
 		
@@ -114,17 +113,17 @@ class Skin:
 	
 	def LoadSound( self, name, vol, music = 0, domain = None ):
 		
-		name2 = self.configGet( name, domain )
+		name1 = self.configGet( name, domain )
 		vol1 = self.configGetFloat( vol, domain )
 		
-		fullname = os.path.join( unicode(Global.skin_folder, 'utf-8'), name2)		
+		fullname = os.path.join( Global.skin_folder, name1)		
 		
 		retval = None
 		
 		if os.path.exists( fullname ):
-			retval = loadSound (fullname, volume = vol1, music = music)
+			retval = loadSound( fullname, volume = vol1, music = music )
 		else:	
-			retval = loadSound ( name2, volume = vol1, music = music )
+			retval = loadSound( name1, volume = vol1, music = music )
 		
 		return retval
 	
