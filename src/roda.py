@@ -112,7 +112,7 @@ class Roda:
 		
 		self.joc.screen.blit( self.fons, (0,0) )
 
-		self.nom_equip_sfc = self.skin.render_text( self.joc.teams[self.joc.current_team].nom, (255,255,255), 30, 1 )
+		self.nom_equip_sfc = self.skin.render_text( self.joc.teams[self.joc.current_team].nom, self.skin.configGetRGB( "team_name_color" ), 30, 1 )
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
 #		velocitat = 75
 #		deceleracio = 0

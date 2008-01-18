@@ -128,9 +128,9 @@ class Preguntador:
 		self.so_ok = self.skin.LoadSound( 'so_ok', 'so_ok_vol')
 		self.so_nook = self.skin.LoadSound( 'so_nook', 'so_nook_vol')
 		
-		self.nom_equip_sfc = self.skin.render_text( game.teams[game.current_team].nom, (64,64,64), 30, 1 )	
-		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
-		self.nom_equip_sfc.set_alpha( 64 )
+#		self.nom_equip_sfc = self.skin.render_text( game.teams[game.current_team].nom, (64,64,64), 30, 1 )	
+#		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
+#		self.nom_equip_sfc.set_alpha( 64 )
 
 		
 #		self.color_de_fons = (0, 0, 0)
@@ -268,6 +268,9 @@ class Preguntador:
 	#
 	def juguem( self , selcat):
 		
+		self.nom_equip_sfc = self.skin.render_text( self.game.teams[self.game.current_team].nom, self.skin.configGetRGB( "team_name_color" ), 30, 1 )	
+		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
+		self.nom_equip_sfc.set_alpha( 64 )
 		
 		compos = 768
 		
