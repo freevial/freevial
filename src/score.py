@@ -100,6 +100,13 @@ class Score:
 		
 		
 		self.score_caixes = self.skin.configGetEval( "boxes_coord" )
+		
+		self.show_corrects = self.skin.configGetBool( "show_corrects" )
+		if self.show_corrects:
+			self.corrects_coord = self.skin.configGetEval( "corrects_coord" )
+			self.total_corrects = self.skin.configGetInt( "total_corrects" )
+		
+		self.final_stats = self.skin.configGetBool( "final_stats" )
  		
 		#------------------------------------------
 		
@@ -118,6 +125,10 @@ class Score:
 		self.so_sub2 = self.skin.LoadSound( 'sub_sound2', 'sub_sound2_vol' )
 		self.so_ok = self.skin.LoadSound( 'ok', 'ok_vol' )
 		self.sfc_llum = self.skin.LoadImage( 'locked' )
+		
+		if( self.show_corrects ):
+			self.correct_done_image = self.skin.LoadImage( 'correct_done_image' ) if self.skin.configGet( "correct_done_image" ) != "" else None
+			self.correct_notdone_image = self.skin.LoadImage( 'correct_notdone_image' ) if self.skin.configGet( "correct_notdone_image" ) != "" else None
 		
 		self.sfc_cursor = self.skin.render_text( "_", (self.score_color_text), self.score_mida_text, 1)
 		
@@ -186,7 +197,7 @@ class Score:
 					visca = Visca( self.joc )
 					resultat = visca.juguem( self.joc, self.joc.teams[self.skin.teamsGuanyador( self.joc.teams )].nom )
 					mostrada_victoria = True
-					self.skin.LoadSound( "score", 'background_sound', 'background_sound_vol' ).play( -1 )
+					self.skin.LoadSound( 'background_sound', 'background_sound_vol' ).play( -1 )
 			
 			# Event iterator
 			for event in pygame.event.get():
@@ -417,11 +428,20 @@ class Score:
 					if self.score_resultat_visible == 'True':
 						self.joc.screen.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 
-					if mostra_estad:
+					if mostra_estad and self.final_stats:
 						for cat in range(0,6):
 							self.joc.screen.blit( self.barra_pos( self.joc.teams[num].preguntes_tot[cat], self.joc.teams[num].preguntes_ok[cat],  colorsCategories()[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )
 				
-				
+					
+					if self.show_corrects:
+						for compta in range(0, self.total_corrects):
+							if self.joc.teams[num].punts > compta:
+								if self.correct_done_image != None:
+									self.joc.screen.blit( self.correct_done_image, (xcaixa + self.corrects_coord[compta][0], ycaixa + self.corrects_coord[compta][1] ))
+							else:
+								if self.correct_notdone_image != None:
+									self.joc.screen.blit( self.correct_notdone_image, (xcaixa + self.corrects_coord[compta][0], ycaixa + self.corrects_coord[compta][1] ))
+						
 				if element_seleccionat == num and self.score_element_sobre == "True":
 					for compta in range( 0, self.seleccio_score.get_height() ):
 						desp = 0 if not escriu else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
