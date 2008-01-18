@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE freevial_database SYSTEM './databases/freevial.dtd'>
+
+<database version="1.0" id="(category identifier)" language="(2 characters language code)">
+	<information>
+		<name>(category name)</name>
+		<description>(category description)</description>
+		<destination>(information about the ideal users)</destination>
+		<timestamp_creation>(creation date timestamp)</timestamp_creation>
+		<timestamp_modification>(last modification date timestamp)</timestamp_modification>
+		<authors>
+			<author>(author 1), (his email)</author>
+			<author>(author 2), (her email)</author>
+			(...)
+		</authors>
+	</information>
+	
+	<appearance>
+		<image>(background image)</image>
+		<sound>(sound for the wheel)</sound>
+	</appearance>
+	
+	<questions>
+		<question>
+			<sentence>(question)</sentence>
+			<author>(author)</author>
+			<comments>(comments)</comments>
+			<answers>
+				<answer correct="True">(first question - this is the correct one, but it could be in another position)</answer>
+				<answer>(second question)</answer>
+				<answer>(third question)</answer>
+			</answers>
+			<media type="(image/audio/video)">(file name - not implemented yet)</media>
+		</question>
+		(...)
+	</questions>
+</database>

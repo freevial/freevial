@@ -24,7 +24,7 @@
 #
 
 import sys
-import os.path
+import os
 import pygame
 import gettext
 from math import *
@@ -33,7 +33,11 @@ from common.globals import GlobalVar, Global
 
 # This is provisionally here for technical reasons...
 if '--database' in sys.argv:
-	Global.database = os.path.expanduser(sys.argv[sys.argv.index( '--database' ) + 1])
+	path = os.path.abspath(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--database' ) + 1])
+	if not os.path.isdir( path ):
+		print _('Could not find database "%s"...') % unicode(path, 'utf-8')
+		sys.exit( 1 )
+	Global.database = path
 
 from common.freevialglob import *
 from score import Score
@@ -220,7 +224,11 @@ if '--no-music' in sys.argv:
 	Global.MUSIC_MUTE = True
 
 if '--skin' in sys.argv:
-	setSkinName(os.path.expanduser(sys.argv[sys.argv.index( '--skin' ) + 1]))
+	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--skin' ) + 1]))
+	if not os.path.isdir( path ):
+		print _('Could not find skin "%s"...') % unicode(path, 'utf-8')
+		sys.exit( 1 )
+	setSkinName( path )
 
 # For technical reasons, the "--database" option is parsed somewhere
 # at the top of this file.
@@ -231,4 +239,4 @@ try:
 
 except KeyboardInterrupt:
 	print _('Manual exit.')
-	sys.exit()
+	sys.exit( 0 )

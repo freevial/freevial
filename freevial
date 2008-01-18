@@ -24,7 +24,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import os, sys
+import sys
+import os
 
 directory = os.path.dirname(os.path.abspath(__file__))
 
@@ -39,6 +40,9 @@ if not isdir(directory):
 		if not isdir(directory):
 			print >> sys.stderr, "Couldn't determine the path to any existing Freevial installation."
 			sys.exit(1)
+
+# Pass Freevial the path from where it's really called
+sys.argv.extend( ('--real', os.getcwd()) )
 
 os.chdir(directory)
 sys.path.insert(0, directory)

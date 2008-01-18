@@ -35,10 +35,10 @@ from common.globals import Global
 Global.skin_file = default_file = os.path.join(Global.basefolder, 'skin.ini')
 Global.skin_folder = Global.basefolder
 
-def setSkinName( nom ):
+def setSkinName( path ):
 	
-	Global.skin_folder = nom
-	Global.skin_file = os.path.join( nom, 'skin.ini' )
+	Global.skin_folder = path
+	Global.skin_file = os.path.join( path, 'skin.ini' )
 	
 	print _('Loading skin "%s"...') % unicode(Global.skin_folder, 'utf-8')
 
