@@ -48,6 +48,9 @@ class Preguntador:
 		self.mida_font = self.skin.configGetInt('mida_font')
 		self.altlinies = self.mida_font + 5
 		
+		self.mida_text = self.skin.configGetInt('mida_text')
+		self.mida_text_autor = self.skin.configGetInt('mida_text_autor')
+		
 		self.postextx= self.skin.configGetInt('postextx')
 		self.postexty = self.skin.configGetInt('postexty')
 		self.mascara_de_fons = self.skin.configGet('mascara_de_fons')
@@ -81,7 +84,7 @@ class Preguntador:
 		self.so_nook = self.skin.configGet( 'so_nook')
 		self.so_nook_vol = self.skin.configGet( 'so_nook_vol')
 		
-		self.mostranpregunta = self.skin.configGet( 'mostranpregunta')
+		self.mostraautor = self.skin.configGetBool( 'mostraautor')
 
 		self.use_mask = self.skin.configGetBool( 'use_mask')
 		
@@ -217,10 +220,7 @@ class Preguntador:
 		for num in xrange(0, 3):
 			self.sfc_resposta[ num ] = self.preguntadorPintatext( self.current_question[ 'opt' + str(num + 1) ], self.skin.configGetInt("answer_width") )
 
-		self.sfc_npregunta = self.skin.render_text( str(self.num_asked_questions), (255,255,255), 100 )
-		self.sfc_npregunta.set_alpha( 64 )
-
-		self.sfc_apregunta = self.skin.render_text( str(self.current_question['author']), (255,255,255), 16 )
+		self.sfc_apregunta = self.skin.render_text( str(self.current_question['author']), (self.color_de_text), (self.mida_text_autor) )
 		self.sfc_apregunta.set_alpha( 64 )	
 
 		self.temps_inici_pregunta = time.time()
@@ -370,7 +370,7 @@ class Preguntador:
 						self.so_sub.play()
 				
 				if eventhandle.keyUp('z'):	
-					self.mostranpregunta ^= 1
+					self.mostraautor ^= 1
 				
 				for num in range(1, 7):
 					if eventhandle.keyUp(str(num), 'KP' + str(num)):
@@ -438,8 +438,7 @@ class Preguntador:
 			if self.selected == 3: self.game.screen.blit( self.mascara, ( self.postextx, 260+300))
 			
 			# mostrem l'autor i el nombre de pregunta
-			if self.mostranpregunta != 'False' :
-				self.game.screen.blit( self.sfc_npregunta, (1024 - ( self.sfc_npregunta.get_width() + 25), 0) )
+			if self.mostraautor:
 				self.game.screen.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94) )
 				
 			# mostrem la pregunta

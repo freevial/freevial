@@ -55,7 +55,7 @@ class Score:
 		self.help_overlay = createHelpScreen( 'score' )
 
 		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
-		self.skin_maxim_equips = self.skin.configGetInt( 'max_teams', domain = 'game' )
+		self.maxim_equips = self.skin.configGetInt( 'max_teams', domain = 'game' )
 		
 		self.score_color_text = self.skin.configGetRGB( 'color_text' )
 		self.score_mida_text = self.skin.configGetInt( 'mida_text')
@@ -311,7 +311,7 @@ class Score:
 					if self.joc.teams[element_seleccionat].actiu:
 						for num in range(1, 7):
 							if eventhandle.keyUp(str(num), 'KP' + str(num)):
-								self.joc.teams[element_seleccionat].canviaCategoria( num )
+								self.joc.teams[element_seleccionat].canviaCategoria( num-1 )
 					
 					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 
@@ -355,7 +355,7 @@ class Score:
 						visca = Visca( self.joc )
 						resultat = visca.juguem( self.joc, self.joc.teams[element_seleccionat].nom )
 						mostrada_victoria = True
-						self.skin.LoadSound( 'score' , 'background_sound' , 'background_sound_vol' ).play( -1 )
+						self.skin.LoadSound( 'background_sound' , 'background_sound_vol' ).play( -1 )
 					
 					if eventhandle.keyUp('l'): 
 						Global.LOCKED_MODE = (not Global.LOCKED_MODE)
@@ -399,7 +399,7 @@ class Score:
 			self.joc.screen.blit( self.mascara_de_fons, (0, 0) )
 			# pintem les puntuacions
 
-			for num in range(0, self.skin_maxim_equips):
+			for num in range(0, self.maxim_equips):
 				ycaixa = self.score_caixes[num][1]
 				xcaixa = self.score_caixes[num][0]
 

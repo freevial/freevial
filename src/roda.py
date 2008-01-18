@@ -74,6 +74,8 @@ class Roda:
 		self.so_sub = self.skin.LoadSound( 'sound_wheel_sub', 'sound_wheel_sub_vol')
 		self.so_cat = range(0, 6)
 
+		self.so_de_pas = self.skin.configGetInt( 'so_de_pas' )
+
 		self.tipografia_mida = self.skin.configGetInt( 'wheel_tipografia_mida')
 		self.paper_text_width = self.skin.configGetInt( 'paper_text_width' )
 		self.paper_text_offsetX = self.skin.configGetInt( 'paper_text_offsetX' )
@@ -205,8 +207,11 @@ class Roda:
 					resultat = int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
 					self.so_dot.stop()
 					self.so_cat[ resultat].play()
-					if not  self.joc.teams[self.joc.current_team].teCategoria( resultat ):
+					if self.so_de_pas == 1:
 						self.so_evil.play()
+					if self.so_de_pas == 2:
+						if not  self.joc.teams[self.joc.current_team].teCategoria( resultat ) :
+							self.so_evil.play()
 					rodant = 0
 				
 			if rodant == 1:
