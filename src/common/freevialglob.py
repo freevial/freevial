@@ -115,7 +115,7 @@ def loadSound( name, volume = 1.0, music = False ):
 		
 		return NoneSound()
 	
-	fullname = os.path.join(Global.folders['sounds'], str(name))
+	fullname = os.path.join(Global.folders['sounds'], name)
 	
 	try:
 		if not music:
