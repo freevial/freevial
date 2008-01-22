@@ -188,6 +188,7 @@ class Visca:
 					sys.exit()
 							
 				if eventhandle.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
+					pygame.mixer.music.fadeout( 1500 )
 					return
 				
 				if eventhandle.keyDown('PRINT'):

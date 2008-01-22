@@ -297,7 +297,7 @@ class Score:
 							self.so_sub.play() 
 						
 						if eventhandle.keyUp('r') and teamsActius( self.joc.teams ) > 0:
-							atzar = 30 + int( randint(0, 30) )
+							atzar = randint(15, 50)
 							mode = 1
 					
 					if eventhandle.keyUp('z'): 
@@ -313,7 +313,7 @@ class Score:
 							if eventhandle.keyUp(str(num), 'KP' + str(num)):
 								self.joc.teams[element_seleccionat].canviaCategoria( num-1 )
 					
-					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
+					if eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 
 						if mode == 1:
 							if not Global.MUSIC_MUTE:
@@ -322,7 +322,7 @@ class Score:
 
 						elif mode == 0:
 							if self.joc.teams[element_seleccionat].actiu and eventhandle.keyUp('SPACE') :
-								atzar = 30 + int( random.randint(0, 30) )
+								atzar = int( randint(25, 60) )
 								mode = 1
 							else:
 								if self.joc.teams[element_seleccionat].actiu: escriu ^= 1

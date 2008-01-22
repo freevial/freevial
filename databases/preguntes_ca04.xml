@@ -114,8 +114,8 @@
       <author>Carles</author>
       <comments>IBM = I - 1 = H, B - 1 = A, M - 1 = L</comments>
       <answers>
-        <answer correct="True">Home and leisure</answer>
-        <answer>International Busines Machines</answer>
+        <answer correct="True">International Busines Machines</answer>
+        <answer>Home and leisure</answer>
         <answer>Hardware Adapter Layer</answer>
       </answers>
     </question>
