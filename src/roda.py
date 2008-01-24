@@ -166,7 +166,7 @@ class Roda:
 					mostra_credits ^= 1
 					mostra_ajuda = 0
 				
-				if eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER') and rodant == 1:
+				if  (eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER') and rodant == 1:
 					if resultat == -1: 	
 						atura = 1
 					else:

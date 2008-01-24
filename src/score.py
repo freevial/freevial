@@ -230,7 +230,7 @@ class Score:
 				if escriu and not mostra_ajuda and not mostra_credits:
 
 
-					if eventhandle.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
+					if eif eventhandle.isClick('primary') or venthandle.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
 						escriu = 0
 						if self.joc.teams[element_seleccionat].nom == '' and eventhandle.isKey('ESCAPE'):
 							self.joc.teams[element_seleccionat].actiu = 0

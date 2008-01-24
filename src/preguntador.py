@@ -379,7 +379,7 @@ class Preguntador:
 					if eventhandle.keyUp(str(num), 'KP' + str(num)):
 						self.atzar( num )
 				
-				if eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
+				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 					if self.selected != 0:
 						acaba = 1
 				

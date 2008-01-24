@@ -96,7 +96,7 @@ class Question:
 					seleccio -= 1
 					seleccio %= len(respostes)
 				
-				if eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
+				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 					return seleccio
 				
 			if duracio_fadeout:

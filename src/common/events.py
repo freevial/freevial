@@ -91,20 +91,20 @@ class EventHandle:
 		return True if self.event.type == pygame.KEYDOWN else False
 	
 	
-	#def isClick( self, request = 0 ):
-	#	
-	#	if type(request) is not int:
-	#		request = mouseButtons[ request ]
-	#	
-	#	return True if self.event.type == pygame.MOUSEBUTTONDOWN and (self.event.button == request or request == 0) else False
+	def isClick( self, request = 0 ):
+		
+		if type(request) is not int:
+			request = mouseButtons[ request ]
+		
+		return True if self.event.type == pygame.MOUSEBUTTONDOWN and (self.event.button == request or request == 0) else False
 	
 	
-	#def isRelease( self, request = 0 ):
-	#	
-	#	if type(request) is not int:
-	#		request = mouseButtons[ request ]
-	#	
-	#	return True if self.event.type == pygame.MOUSEBUTTONUP and (self.event.button == request or request == 0) else False
+	def isRelease( self, request = 0 ):
+		
+		if type(request) is not int:
+			request = mouseButtons[ request ]
+		
+		return True if self.event.type == pygame.MOUSEBUTTONUP and (self.event.button == request or request == 0) else False
 	
 	
 	def keyUp( self, *keynames ):
