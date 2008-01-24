@@ -364,13 +364,13 @@ class Preguntador:
 						self.selected = 3
 						self.so_sub.play()
 					
-					if eventhandle.keyUp('DOWN', 'TAB'): 
+					if eventhandle.keyUp('DOWN', 'TAB') or eventhandle.isClick ( 5 ): 
 						self.selected += 1
 						if self.selected == 4:
 							self.selected = 1
 						self.so_sub.play()
 					
-					if eventhandle.keyUp(event, 'UP'): 
+					if eventhandle.keyUp(event, 'UP') or eventhandle.isClick ( 4 ): 
 						self.selected -= 1
 						if self.selected <= 0:
 							self.selected = 3	
