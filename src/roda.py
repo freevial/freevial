@@ -30,6 +30,7 @@ import pygame
 
 from common.freevialglob import *
 from common.events import EventHandle
+from common.events import waitForMouseRelease
 from questions import get_databases
 from skiner import Skin
 
@@ -105,6 +106,7 @@ class Roda:
 		velocitat = self.skin.configGetInt( 'wheel_speed' )
 		deceleracio = 0
 
+		waitForMouseRelease( )
 			
 		pos = pos_fons = atura = frenant = time_fi = mostra_ajuda = mostra_credits = 0
 		rodant = 1
@@ -166,7 +168,7 @@ class Roda:
 					mostra_credits ^= 1
 					mostra_ajuda = 0
 				
-				if  (eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER') and rodant == 1:
+				if  eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER') and rodant == 1:
 					if resultat == -1: 	
 						atura = 1
 					else:

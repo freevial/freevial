@@ -33,6 +33,7 @@ from pygame.locals import *
 from common.globals import Global
 from common.freevialglob import *
 from common.events import EventHandle
+from common.events import waitForMouseRelease
 from common.dialog_question import fesPregunta
 from endscreen import Visca
 from selcat import *
@@ -161,9 +162,10 @@ class Score:
 
 		frate = frameRate( Global.fps_limit )
 		
+		waitForMouseRelease( )
+		
 		self.joc.screen.fill( (0,0,0,0) )
 		
-	
 		ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = mostra_estad = 0
 		element_seleccionat = self.joc.current_team
 		nou_grup = 1 if ( teamsActius( self.joc.teams ) == 0 ) else 0
@@ -230,7 +232,7 @@ class Score:
 				if escriu and not mostra_ajuda and not mostra_credits:
 
 
-					if eif eventhandle.isClick('primary') or venthandle.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
+					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
 						escriu = 0
 						if self.joc.teams[element_seleccionat].nom == '' and eventhandle.isKey('ESCAPE'):
 							self.joc.teams[element_seleccionat].actiu = 0
@@ -313,7 +315,7 @@ class Score:
 							if eventhandle.keyUp(str(num), 'KP' + str(num)):
 								self.joc.teams[element_seleccionat].canviaCategoria( num-1 )
 					
-					if eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
+					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 
 						if mode == 1:
 							if not Global.MUSIC_MUTE:

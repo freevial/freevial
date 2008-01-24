@@ -31,6 +31,7 @@ from math import *
 
 from common.freevialglob import *
 from common.events import EventHandle
+from common.events import waitForMouseRelease
 from questions import get_databases
 from skiner import Skin
 
@@ -281,6 +282,9 @@ class Preguntador:
 		self.atzar( selcat )
 
 		if not Global.SOUND_MUTE: pygame.time.wait( 2500 )
+		
+		waitForMouseRelease( )
+		
 		self.skin.LoadSound( 'so_fons', 'so_fons_vol', 1).play(1)
 
 		mostra_punt_de_categoria = False

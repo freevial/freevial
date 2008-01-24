@@ -105,7 +105,7 @@ class EventHandle:
 			request = mouseButtons[ request ]
 		
 		return True if self.event.type == pygame.MOUSEBUTTONUP and (self.event.button == request or request == 0) else False
-	
+		
 	
 	def keyUp( self, *keynames ):
 		
@@ -143,7 +143,14 @@ class EventHandle:
 			return ''
 		
 		return printKey(self.event.key)
+		
+		
+def waitForMouseRelease( ):
 
+	while pygame.mouse.get_pressed()[0] + pygame.mouse.get_pressed()[1] + pygame.mouse.get_pressed()[2] != 0:
+		pygame.event.wait() 
+	
+	
 
 aobert = atancat = adieresi = acirc = False
 accents = [u"aeiou", u"àèìòù", u"áéíóú", u"äëïöü", u"âêîôû" ]
