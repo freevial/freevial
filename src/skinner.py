@@ -111,21 +111,14 @@ class Skin:
 		
 		return torna
 	
-	def LoadSound( self, name, vol, music = 0, domain = None ):
+	def LoadSound( self, name, volume, music = 0, domain = None ):
 		
-		name1 = self.configGet( name, domain )
-		vol1 = self.configGetFloat( vol, domain )
+		name = self.configGet( name, domain )
+		volume = self.configGetFloat( volume, domain )
 		
-		fullname = os.path.join( Global.skin_folder, name1)		
+		fullname = os.path.join( Global.skin_folder, name )
 		
-		retval = None
-		
-		if os.path.exists( fullname ):
-			retval = loadSound( fullname, volume = vol1, music = music )
-		else:	
-			retval = loadSound( name1, volume = vol1, music = music )
-		
-		return retval
+		return loadSound( fullname if os.path.exists( fullname ) else name, volume = volume, music = music )
 	
 	def inicia_vell( self ):
 		
@@ -138,14 +131,6 @@ class Skin:
 		self.skin_maxim_equips = self.configGetInt( 'game', 'max_teams' )
 		
 		Global.skin_folder = Global.skin_folder
-
-		#--------------------------------------------------------
-
-	#	self.skin_preguntador_mostra_punt_de_categoria = self.configGet( 'preguntador', 'mostra_punt_de_categoria')
-	#	self.skin_preguntador_match_point = self.configGet( 'preguntador', 'match_point')
-
-	#	self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
-	#	self.help_on_screen.sec_timeout = 10
 
 	def preguntadorCarregaFiguretes( self, joc, selcat ):
 		self.mostra_punt_de_categoria = True

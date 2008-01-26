@@ -28,7 +28,8 @@ import os
 import pygame
 import gettext
 from math import *
-from skiner import setSkinName
+
+from skinner import setSkinName
 from common.globals import GlobalVar, Global
 
 # This is provisionally here for technical reasons...

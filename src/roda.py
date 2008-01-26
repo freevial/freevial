@@ -32,7 +32,7 @@ from common.freevialglob import *
 from common.events import EventHandle
 from common.events import waitForMouseRelease
 from questions import get_databases
-from skiner import Skin
+from skinner import Skin
 
 
 ##################################################

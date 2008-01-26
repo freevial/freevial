@@ -37,7 +37,7 @@ from common.events import waitForMouseRelease
 from common.dialog_question import fesPregunta
 from endscreen import Visca
 from selcat import *
-from skiner import Skin
+from skinner import Skin
 
 ##################################################
 #
@@ -180,7 +180,7 @@ class Score:
 			element_seleccionat = self.skin.teamsGuanyador( self.joc.teams )
 			self.so_ok.play()
 		else:
-			self.skin.LoadSound( 'background_sound', 'background_sound_vol', 1 ).play( -1 )
+			self.skin.LoadSound( 'background_sound', 'background_sound_vol', music = 1 ).play( -1 )
 		
 		surten = 0
 		mostrada_victoria = False
@@ -199,7 +199,7 @@ class Score:
 					visca = Visca( self.joc )
 					resultat = visca.juguem( self.joc, self.joc.teams[self.skin.teamsGuanyador( self.joc.teams )].nom )
 					mostrada_victoria = True
-					self.skin.LoadSound( 'background_sound', 'background_sound_vol' ).play( -1 )
+					self.skin.LoadSound( 'background_sound', 'background_sound_vol', music = 1 ).play( -1 )
 			
 			# Event iterator
 			for event in pygame.event.get():
@@ -342,7 +342,7 @@ class Score:
 						visca = Visca( self.joc )
 						resultat = visca.juguem( self.joc, self.joc.teams[element_seleccionat].nom )
 						mostrada_victoria = True
-						self.skin.LoadSound( 'background_sound' , 'background_sound_vol' ).play( -1 )
+						self.skin.LoadSound( 'background_sound' , 'background_sound_vol', music = 1 ).play( -1 )
 					
 					if eventhandle.keyUp('l'): 
 						Global.LOCKED_MODE = (not Global.LOCKED_MODE)

@@ -32,7 +32,7 @@ from math import *
 from common.freevialglob import *
 from common.events import EventHandle, waitForMouseRelease
 from questions import get_databases
-from skiner import Skin
+from skinner import Skin
 
 
 class Preguntador:

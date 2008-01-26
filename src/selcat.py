@@ -33,7 +33,7 @@ from pygame.locals import *
 from common.freevialglob import *
 from common.events import EventHandle
 from questions import shuffle_databases, get_databases
-from skiner import Skin
+from skinner import Skin
 
 ##################################################
 #
