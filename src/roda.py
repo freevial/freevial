@@ -64,7 +64,7 @@ class Roda:
 		
 		self.score_figureta_visible = self.skin.configGetBool( 'figureta_visible') 
 		
-		if( self.score_figureta_visible ):
+		if self.score_figureta_visible:
 			self.figureta = self.skin.LoadImageRange( 'figureta_mask', 64, 2)
 			
 		self.fons = self.skin.LoadImage( 'wheel_background' )
@@ -139,18 +139,6 @@ class Roda:
 				eventhandle = EventHandle(event)
 				
 				#self.help_on_screen.activitat(event)
-				
-				if event.type == pygame.JOYBUTTONDOWN:
-					translateJoystickEvent(event)
-				
-				if eventhandle.isQuit():
-					sys.exit()
-				
-				if eventhandle.keyDown('PRINT'):
-					screenshot(self.joc.screen)
-				
-				if eventhandle.keyUp('f', 'F11'):
-					pygame.display.toggle_fullscreen()
 				
 				if eventhandle.keyUp('ESCAPE', 'q') and not Global.LOCKED_MODE:
 					if not mostra_ajuda and not mostra_credits:

@@ -448,8 +448,6 @@ def valorText( ntext ):
 	return textos[ ntext ]
 
 
-
-
 def colorsCategories():
 
 	return i_colors_cat
@@ -548,28 +546,3 @@ class frameRate():
 				# display the frame rate on the middle of the screen's bottom
 				#surface.blit( self.textSurface, ( (( Global.screen_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )
 				surface.blit( self.textSurface, (250, 740 ) )
-
-Jstick = None
-
-# Alies per comandament tipus PS2
-j_alias = { 0: K_RETURN, 1: K_ESCAPE, 2: K_RETURN, 3: K_s,
-			4: K_F2, 5: K_a, 6: K_F1, 7: K_F3,	
-			8: K_SPACE, 9: K_ESCAPE,
-			12: K_UP, 13: K_RIGHT, 14: K_DOWN, 15: K_LEFT }
-
-def init_joystick():
-
-	pygame.joystick.init ()
-
-	if pygame.joystick.get_count():
-		Jstick = pygame.joystick.Joystick( 0 )
-		Jstick.init()
-
-def translateJoystickEvent( event ):
-
-	print event.button
-
-	alies = j_alias.get( event.button )
-	if alies:
-		event = pygame.event.Event( pygame.KEYUP, {'key': alies, 'unicode': u's', 'mod': 0})
-		pygame.event.post( event )

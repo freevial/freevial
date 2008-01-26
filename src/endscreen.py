@@ -181,22 +181,10 @@ class Visca:
 				
 				eventhandle = EventHandle(event)
 				
-				if event.type == pygame.JOYBUTTONDOWN:
-					translateJoystickEvent(event)
-				
-				if eventhandle.isQuit():
-					sys.exit()
-							
 				if eventhandle.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
 					pygame.mixer.music.fadeout( 1500 )
 					return
-				
-				if eventhandle.keyDown('PRINT'):
-					screenshot(Global.game.screen)
-				
-				if eventhandle.keyUp('f', 'F11'):
-					pygame.display.toggle_fullscreen()
-
+			
 			if segons >= 68: return
 
 			ypos += 1

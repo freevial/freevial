@@ -208,18 +208,6 @@ class Score:
 				
 				self.help_on_screen.activitat(event)
 				
-				if event.type == pygame.JOYBUTTONDOWN:
-					translateJoystickEvent(event)
-				
-				if eventhandle.isQuit():
-					sys.exit()
-				
-				if eventhandle.keyDown('PRINT'):
-					screenshot(self.joc.screen)
-				
-				if eventhandle.keyUp('F11') or (not escriu and eventhandle.keyUp('f')):
-					pygame.display.toggle_fullscreen()
-				
 				if eventhandle.keyUp('F1') or (not escriu and eventhandle.keyUp('h')):
 					mostra_ajuda ^= 1
 					mostra_credits = 0
@@ -228,10 +216,8 @@ class Score:
 					mostra_credits ^= 1
 					mostra_ajuda = 0
 				
-				
 				if escriu and not mostra_ajuda and not mostra_credits:
-
-
+				
 					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
 						escriu = 0
 						if self.joc.teams[element_seleccionat].nom == '' and eventhandle.isKey('ESCAPE'):
@@ -248,12 +234,11 @@ class Score:
 						if newname != None:
 							sfc = self.skin.render_text( newname, (self.score_color_text), self.score_mida_text, 1)
 							
-							
 							if sfc.get_width() < 340:
 								# Name isn't too long, accept the new character
 								self.joc.teams[element_seleccionat].nom = newname
 								self.joc.teams[element_seleccionat].sfc_nom = sfc
-					
+				
 				else:
 					
 					if eventhandle.keyUp('q', 'ESCAPE'):

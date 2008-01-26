@@ -23,8 +23,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import sys
 import re
 import pygame
+
+from freevialglob import screenshot
 
 
 mouseButtons = {
@@ -38,10 +41,38 @@ class EventHandle:
 	global mouseButtons
 	
 	
-	def __init__( self, event ):
+	def __init__( self, event, do_base_actions = True ):
+		
+		if event.type == pygame.JOYBUTTONDOWN:
+			event = self._convert_joystick_event()
 		
 		self.event = event
+		
+		if do_base_actions:
+			self.base_actions()
 	
+	def _convert_joystick_event( self ):
+		
+		# Aliases for PS2 remotes
+		joystick_aliases = {
+			0: K_RETURN,
+			1: K_ESCAPE,
+			2: K_RETURN,
+			3: K_s,
+			4: K_F2,
+			5: K_a,
+			6: K_F1,
+			7: K_F3,	
+			8: K_SPACE,
+			9: K_ESCAPE,
+			12: K_UP,
+			13: K_RIGHT,
+			14: K_DOWN,
+			15: K_LEFT,
+		}
+	
+		if joystick_aliases.get( event.button ):
+			return pygame.event.Event( pygame.KEYUP, { 'key': joystick_aliases[ event.button ], 'unicode': u's', 'mod': 0 } )
 	
 	def _getKey( self, key ):
 		
@@ -58,6 +89,11 @@ class EventHandle:
 	def _isKeyEvent( self ):
 		
 		return True if hasattr(self.event, 'key') else False
+	
+	
+	def _isStateEvent( self ):
+		
+		return True if hasattr(self.event, 'state') else False
 	
 	
 	def _hasKey( self, keynames ):
@@ -129,7 +165,23 @@ class EventHandle:
 		return self.isKey(keynames)
 	
 	
-	def isQuit( self, quitKeys = 'ESCAPE' ):
+	def isWindowMinimize( self ):
+		
+		if self._isStateEvent() and self.event.state == 6 and self.event.gain == 0:
+			return True
+		
+		return False
+	
+	
+	def isWindowRestore( self ):
+		
+		if self._isStateEvent() and self.event.state == 4 and self.event.gain == 1:
+			return True
+		
+		return False
+	
+	
+	def isQuit( self ):
 		
 		if self.event.type == pygame.QUIT:
 			return True
@@ -143,14 +195,42 @@ class EventHandle:
 			return ''
 		
 		return printKey(self.event.key)
+	
+	
+	def base_actions( self ):
 		
+		if self.isQuit():
+			sys.exit()
 		
+		elif self.keyDown('PRINT'):
+			screenshot(pygame.display.get_surface())
+			return True
+		
+		elif self.keyUp('F11'):
+			pygame.display.toggle_fullscreen()
+			return True
+		
+		elif self.isWindowMinimize():
+			pauseGameUntilRestore()
+		
+		else:
+			return False
+
+
 def waitForMouseRelease( ):
 
 	while pygame.mouse.get_pressed()[0] + pygame.mouse.get_pressed()[1] + pygame.mouse.get_pressed()[2] != 0:
 		pygame.event.wait() 
+
+def pauseGameUntilRestore( ):
 	
-	
+	while True:
+		for event in pygame.event.get():
+			if EventHandle(event).isWindowRestore():
+				return False
+		# Wait sleeping for 10 milliseconds.
+		# This has no visible effect bug will drastically reduce CPU usage.
+		pygame.time.wait(10)
 
 aobert = atancat = adieresi = acirc = False
 accents = [u"aeiou", u"àèìòù", u"áéíóú", u"äëïöü", u"âêîôû" ]

@@ -30,8 +30,7 @@ import pygame
 from math import *
 
 from common.freevialglob import *
-from common.events import EventHandle
-from common.events import waitForMouseRelease
+from common.events import EventHandle, waitForMouseRelease
 from questions import get_databases
 from skiner import Skin
 
@@ -316,18 +315,6 @@ class Preguntador:
 				eventhandle = EventHandle(event)
 				
 				self.help_on_screen.activitat(event)
-				
-				if event.type == pygame.JOYBUTTONDOWN:
-					translateJoystickEvent(event)
-				
-				if eventhandle.isQuit():
-					sys.exit()
-				
-				if eventhandle.keyDown('PRINT'):
-					screenshot(self.game.screen)
-				
-				if eventhandle.keyUp('f', 'F11'):
-					pygame.display.toggle_fullscreen()
 				
 				if eventhandle.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
 					if not mostra_ajuda and not mostra_credits:

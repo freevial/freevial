@@ -163,18 +163,6 @@ class SelCat:
 
 				eventhandle = EventHandle(event)
 				
-				if event.type == pygame.JOYBUTTONDOWN:
-					translateJoystickEvent(event)
-				
-				if eventhandle.isQuit():
-					sys.exit()
-				
-				if eventhandle.keyDown('PRINT'):
-					screenshot(self.joc.screen)
-				
-				if eventhandle.keyUp('f', 'F11'):
-					pygame.display.toggle_fullscreen()
-				
 				if eventhandle.keyUp('q', 'ESCAPE', 'KP_ENTER', 'F3', 'F5'):
 					if estat == 0: self.refa_cats();
 					return

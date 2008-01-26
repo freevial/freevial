@@ -47,7 +47,7 @@ from roda import Roda
 gettext.install('freevial', '/usr/share/locale', unicode=1)
 
 # Version information
-VERSION = '1.0'
+VERSION = 'UNRELEASED'
 SERIES = 'gresca'
 
 
@@ -98,7 +98,11 @@ class Freevial:
 		Global.game.sfc_credits = createHelpScreen( 'credits', alternate_text = True )
 		
 		initTextos()
-		init_joystick()
+		
+		# Initialize joystick, if there's one
+		pygame.joystick.init()
+		if pygame.joystick.get_count():
+			pygame.joystick.Joystick( 0 ).init()
 	
 	###########################################
 	#
