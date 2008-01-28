@@ -38,12 +38,19 @@ echo "Copying files..."
 mkdir -p $TMPDIR/freevial-$VERSION
 
 # Copy files
-cp COPYING README freevial $TMPDIR/freevial-$VERSION
-cp -r data/ src/ $TMPDIR/freevial-$VERSION
+cp COPYING README ChangeLog freevial devscripts/distrib/* $TMPDIR/freevial-$VERSION
+cp -r data/ src/ databases/ $TMPDIR/freevial-$VERSION
+
+# Copy skins
+mkdir -p $TMPDIR/freevial-$VERSION/skins/kde4
+cp skins/kde4/* $TMPDIR/freevial-$VERSION/skins/kde4 2> /dev/null
 
 # Remove unneeded stuff
 cd $TMPDIR/freevial-$VERSION/src
 rm -f *.pyc ./*/*.pyc *.~1~ ./*/*.~1~ .hidden ./*/.hidden
+
+# Hardcode version
+sed -i "s/VERSION = 'UNRELEASED'/VERSION = '$VERSION'/g" $TMPDIR/freevial-$VERSION/src/freevial.py
 
 # Generate tarball
 echo "Generating tarball..."
