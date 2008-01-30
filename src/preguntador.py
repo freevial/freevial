@@ -128,18 +128,6 @@ class Preguntador:
 		self.so_ok = self.skin.LoadSound( 'so_ok', 'so_ok_vol')
 		self.so_nook = self.skin.LoadSound( 'so_nook', 'so_nook_vol')
 		
-#		self.nom_equip_sfc = self.skin.render_text( game.teams[game.current_team].nom, (64,64,64), 30, 1 )	
-#		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
-#		self.nom_equip_sfc.set_alpha( 64 )
-
-		
-#		self.color_de_fons = (0, 0, 0)
-#		self.color_de_text = (255, 255, 255)
-		
-#		self.mida_font = 40
-#		self.altlinies = self.mida_font + 5
-#		self.postextx= 80
-#		self.postexty = 40
 		
 		self.categoria = None
 		self.current_question = None
@@ -147,40 +135,6 @@ class Preguntador:
 		self.show_answers = 0
 		self.selected = 0
 		
-		# Load images
-#		self.fons = range(0, 6)
-#		for num in range(0, 6):
-#			self.fons[num] = loadImage( get_databases(num).image )
-#			sfcmask = loadImage( 'filtre_c' + str(num+1) + '.png' )
-#			self.fons[num].blit( sfcmask, (0,0))
-		
-#		self.mascara_de_fons = loadImage('mascara_de_fons.png')
-#		self.retalla_sel = loadImage('retalla_sel.png')
-		
-#		self.solucio_ok = loadImage('ok.png')
-
-#		self.solucio_nook = loadImage('nook.png')
-		
-#		self.mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
-		
-#		self.lletres = [
-#								[ loadImage('lletraA.png'), loadImage('lletraA_off.png') ], 
-#								[ loadImage('lletraB.png'), loadImage('lletraB_off.png') ], 				
-#								[ loadImage('lletraC.png'), loadImage('lletraC_off.png') ],
-#							]
-		
-#		self.info = [ loadImage('itr1.png'), loadImage('itr2.png') ]	
-		
-
-		# carreguem els arxius de so
-#		self.so_ticking2 = loadSound('ticking2.ogg')
-#		self.so_drum2 = loadSound('drum2.ogg')
-#		self.so_sub = loadSound('sub.ogg', volume = 0.1)
-#		self.so_ok = loadSound('cheer.ogg')
-#		self.so_nook = loadSound('crboo.ogg')
-		
-		# mostra nombre de pregunta i autor?
-#		self.mostranpregunta = 1
 		
 		self.help_overlay = createHelpScreen( 'preguntador' )
 		
@@ -267,6 +221,8 @@ class Preguntador:
 	# Bucle principal del programa
 	#
 	def juguem( self , selcat):
+
+		max_time = self.skin.configGetInt( "max_time" )
 		
 		self.nom_equip_sfc = self.skin.render_text( self.game.teams[self.game.current_team].nom, self.skin.configGetRGB( "team_name_color" ), 30, 1 )	
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
@@ -292,7 +248,7 @@ class Preguntador:
 		self.game.screen.fill( (0,0,0,0) )
 
 		# remaining seconds until end of answer time
-		self.segons = 61
+		self.segons = max_time + 1
 		
 		if (self.game.teams[self.game.current_team].figureta & bitCategoria( selcat )) == 0 and self.skin_mostra_punt_de_categoria == True:
 			mostra_punt_de_categoria = True
@@ -371,7 +327,7 @@ class Preguntador:
 						self.atzar( num )
 				
 				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
-					if self.selected != 0:
+					if self.selected != 0 or self.segons <= 0:
 						acaba = 1
 				
 				if eventhandle.keyUp('F3') and self.show_answers == 3 and len(self.current_question['comment']) > 5:	
@@ -446,7 +402,7 @@ class Preguntador:
 				self.game.screen.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
 				
 			# comprovem l'estat del temps
-			segons_act = 60 - int( (time.time() - self.temps_inici_pregunta) )
+			segons_act = max_time - int( (time.time() - self.temps_inici_pregunta) )
 			if segons_act < 0: 
 				segons_act = 0
 				self.segons = 0
@@ -463,7 +419,7 @@ class Preguntador:
 						self.so_ticking2.play()
 				
 					# pintem els segons que queden, posant-los cada cop menys transparents
-				self.pinta_segons.set_alpha( (60 - segons_act) )
+				self.pinta_segons.set_alpha( (max_time - segons_act) * 100 / max_time)
 				self.game.screen.blit( self.pinta_segons, ( 300 , 150) )
 			
 			# Pintem les solucions
