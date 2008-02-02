@@ -8,7 +8,7 @@
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
       <author>Josep Sanchez, &lt;email&gt;</author>
-      <author>Lluïsa Nuñez, &lt;email&gt;</author>
+      <author>Lluïsa Núñez, &lt;email&gt;</author>
       <author>Carles Oriol, &lt;email&gt;</author>
       <author>Siegfried Gevatter, &lt;email&gt;</author>
       <author>Julià Mestieri, &lt;email&gt;</author>
@@ -25,9 +25,9 @@
       <author>RainCT</author>
       <comments></comments>
       <answers>
-        <answer correct="True">que no farà cap pacte amb Microsoft a causa dels patents de programari</answer>
-        <answer>que cada any inverteix 50 milions en l'Ubuntu</answer>
-        <answer>que el Windows Vista és el pitjor sistema operatiu del món</answer>
+        <answer correct="True">Que no farà cap pacte amb Microsoft a causa de les patents de programari</answer>
+        <answer>Que cada any inverteix 50 milions en l'Ubuntu</answer>
+        <answer>Que el Windows Vista és el pitjor sistema operatiu del món</answer>
       </answers>
     </question>
     <question>
@@ -43,7 +43,7 @@
     <question>
       <sentence>Quina tecnologia inclou per defecte la nova versió de l'Ubuntu (la Gutsy)?</sentence>
       <author>RainCT</author>
-      <comments>La Gutsy Gibbon no només inclourà, sinò que també portarà habilitada per defecte en tots aquelles màquines que ho soportin, el Compiz Fusion, el producte resultat de la unió de Compiz amb la seva branca Beryl.</comments>
+      <comments>La Gutsy Gibbon no només inclourà, sinó que també portarà habilitada per defecte en totes aquelles màquines que ho suportin el Compiz Fusion, el producte resultant de la unió de Compiz amb la seva branca Beryl.</comments>
       <answers>
         <answer correct="True">Compiz Fusion</answer>
         <answer>Beryl</answer>
@@ -51,27 +51,27 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin és el servidor del canal de chat de#IRC de la comunitat catalana d'Ubuntu</sentence>
+      <sentence>Quin és el servidor del canal de xat de#IRC de la comunitat catalana d'Ubuntu?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
         <answer correct="True">Freenode</answer>
         <answer>Quakenode</answer>
-        <answer>canonicalnode</answer>
+        <answer>Canonicalnode</answer>
       </answers>
     </question>
     <question>
-      <sentence>Que vol dir MOTU?</sentence>
+      <sentence>Què vol dir MOTU?</sentence>
       <author>quiron</author>
       <comments>Els Masters Of The Universe (MOTU) són els empaquetadors d'Ubuntu dels repositoris Universe i Multiverse.</comments>
       <answers>
         <answer correct="True">Master Of The Universe</answer>
-        <answer>És un mitja de transport</answer>
+        <answer>És un mitjà de transport</answer>
         <answer>Multitask operated time unit</answer>
       </answers>
     </question>
     <question>
-      <sentence>Quan es va oficialitzar el LoCo Team català</sentence>
+      <sentence>Quan es va oficialitzar el LoCo Team català?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -81,13 +81,13 @@
       </answers>
     </question>
     <question>
-      <sentence>Que cal fer abans de poder penjar coses al REVU?</sentence>
+      <sentence>Què cal fer abans de poder penjar coses al REVU?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
         <answer correct="True">Posar la clau GPG al launchpad</answer>
         <answer>Mirar que no hi hagi un paquet per a la mateixa tasca</answer>
-        <answer>Assegurar-se que la llicència és competible amb la GPL</answer>
+        <answer>Assegurar-se que la llicència és compatible amb la GPL</answer>
       </answers>
     </question>
     <question>
@@ -111,7 +111,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina és la nova ordre per que substitueix "aptitude upgrade" des de Gutsy?</sentence>
+      <sentence>Quina és la nova ordre que substitueix "aptitude upgrade" des de Gutsy?</sentence>
       <author>papapep</author>
       <comments></comments>
       <answers>
@@ -121,19 +121,19 @@
       </answers>
     </question>
     <question>
-      <sentence>Canonical és una empresa amb seu social a:</sentence>
+      <sentence>Canonical és una empresa amb seu social a...</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Illa de man</answer>
-        <answer>Zimbawe</answer>
-        <answer>Sud africa</answer>
+        <answer correct="True">Illa de Man</answer>
+        <answer>Zimbabwe</answer>
+        <answer>Sud-àfrica</answer>
       </answers>
     </question>
     <question>
       <sentence>Quins mesos de l'any s'alliberen les#versions noves de l'Ubuntu?</sentence>
       <author>Carles</author>
-      <comments>El nombre de la versió correspon amb l'any i el mes. (7.10=2007 octubre)</comments>
+      <comments>El número de la versió correspon amb l'any i el mes (7.10=2007 octubre).</comments>
       <answers>
         <answer correct="True">Abril i octubre</answer>
         <answer>Febrer i novembre</answer>
@@ -143,11 +143,11 @@
     <question>
       <sentence>Quin d'aquests formats es pot llegir#amb la instal·lació predeterminada#de l'Ubuntu?</sentence>
       <author>carles</author>
-      <comments>Els formats mp3 i dvd (mpeg) son formats restrictius, un protegit per patents i l'altre en alguns països no es pot ni mostrar les fonts ja que implica el rebentar la protecció dels dvds. Malgrat tot no hi ha cap problema per usar qualsevol d'ells un cop instaŀlat el sistema</comments>
+      <comments>Els formats mp3 i dvd (mpeg) són formats restrictius. L'mp3 està protegit per patents; en alguns països, no es poden ni mostrar les fonts del dvd, ja que implicaria rebentar la protecció dels dvds. Malgrat tot, no hi ha cap problema per a fer-los servir un cop instaŀlat el sistema.</comments>
       <answers>
-        <answer correct="True">ogg</answer>
-        <answer>mp3</answer>
-        <answer>dvd</answer>
+        <answer correct="True">Ogg</answer>
+        <answer>Mp3</answer>
+        <answer>Dvd</answer>
       </answers>
     </question>
     <question>
@@ -165,9 +165,9 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">ginstaller</answer>
-        <answer>synaptic</answer>
-        <answer>adept</answer>
+        <answer correct="True">Ginstaller</answer>
+        <answer>Synaptic</answer>
+        <answer>Adept</answer>
       </answers>
     </question>
     <question>
@@ -183,15 +183,15 @@
     <question>
       <sentence>Quin és el nick a l'IRC#d'en Mark Shuttleworth?</sentence>
       <author>papapep</author>
-      <comments>Self-Appointed Benevolent Dictator For Life</comments>
+      <comments>Self-Appointed Benevolent Dictator For Life.</comments>
       <answers>
-        <answer correct="True">sabdfl</answer>
-        <answer>rtfm</answer>
-        <answer>sticsis</answer>
+        <answer correct="True">Sabdfl</answer>
+        <answer>Rtfm</answer>
+        <answer>Sticsis</answer>
       </answers>
     </question>
     <question>
-      <sentence>GoBUNTU és:</sentence>
+      <sentence>GoBUNTU és...</sentence>
       <author>lluisanunez</author>
       <comments>http://en.wikipedia.org/wiki/Gobuntu</comments>
       <answers>
@@ -200,26 +200,8 @@
         <answer>La distribució, basada en#Ubuntu, dels aficionats al GO</answer>
       </answers>
     </question>
-    <question>
-      <sentence>Quin és el bug número 1 del Launchpad?</sentence>
-      <author>Nil</author>
-      <comments></comments>
-      <answers>
-        <answer correct="True">El monopoli de microsoft</answer>
-        <answer>Es penja</answer>
-        <answer>Problemes amb les gràfiques</answer>
-      </answers>
-    </question>
-    <question>
-      <sentence>Quin d'aquests formats es pot llegir#amb la instaŀlació predeterminada#d'Ubuntu</sentence>
-      <author>carles</author>
-      <comments>Els formats mp3 i dvd (mpeg) son formats restrictius, un protegit per patents i l'altre en alguns països no es pot ni mostrar les fonts ja que implica el rebentar la protecció dels dvds. Malgrat tot no hi ha cap problema per usar qualsevol d'ells un cop instaŀlat el sistema</comments>
-      <answers>
-        <answer correct="True">ogg</answer>
-        <answer>mp3</answer>
-        <answer>dvd</answer>
-      </answers>
-    </question>
+
+
     <question>
       <sentence>En quina d'aquestes distribucions#està basat l'Ubuntu?</sentence>
       <author>carles</author>
@@ -230,16 +212,8 @@
         <answer>Suse</answer>
       </answers>
     </question>
-    <question>
-      <sentence>Quina d'aquestes funcions#no té el launchpad</sentence>
-      <author>carles</author>
-      <comments></comments>
-      <answers>
-        <answer correct="True">Descarregar actualitzacions</answer>
-        <answer>Traduir programes</answer>
-        <answer>Reportar bugs</answer>
-      </answers>
-    </question>
+
+  
     <question>
       <sentence>Quins son els colors del logotip de l'Ubuntu?</sentence>
       <author>Nil</author>
@@ -250,20 +224,11 @@
         <answer>Groc, blau i taronja</answer>
       </answers>
     </question>
-    <question>
-      <sentence>Quins mesos de l'any surt cada#versió nova d'Ubuntu?</sentence>
-      <author>Carles</author>
-      <comments>El nombre de la versió correspon#a l'any i el mes.##(7.10=2007 octubre)</comments>
-      <answers>
-        <answer correct="True">Abril i octubre</answer>
-        <answer>Febrer i novembre</answer>
-        <answer>Març i setembre</answer>
-      </answers>
-    </question>
+    
     <question>
       <sentence>Quin d'aquests Linux NO és#una variant d'Ubuntu?</sentence>
       <author>carles</author>
-      <comments>LinKat és la distribució GNU/Linux del Departament d'Educació de la Generalitat de Catalunya. Està basada en la distribució Suse i el funcionament del seu programari es basa amb paquets rpm</comments>
+      <comments>LinKat és la distribució GNU/Linux del Departament d'Educació de la Generalitat de Catalunya. Es basa en la distribució Suse i el funcionament del seu programari es basa en paquets rpm.</comments>
       <answers>
         <answer correct="True">Linkat</answer>
         <answer>Guadalinex</answer>
@@ -271,7 +236,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es dirà la versió 8.04 LTS d'Ubuntu</sentence>
+      <sentence>Com es dirà la versió 8.04 LTS d'Ubuntu?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -291,17 +256,17 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests sistema d'arxius no es#pot llegir ni s'hi pot escriure en Ubuntu</sentence>
+      <sentence>En quin d'aquests sistemes d'arxius no es#pot ni llegir ni escriure en Ubuntu?</sentence>
       <author>carles</author>
-      <comments>sata no és un sistema d'arxius</comments>
+      <comments>Sata no és un sistema d'arxius.</comments>
       <answers>
-        <answer correct="True">sata</answer>
-        <answer>ntfs</answer>
-        <answer>ext3</answer>
+        <answer correct="True">Sata</answer>
+        <answer>Ntfs</answer>
+        <answer>Ext3</answer>
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests paquets no#serveix per instaŀlar programes</sentence>
+      <sentence>Quin d'aquests paquets no#serveix per a instaŀlar programes?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -311,9 +276,9 @@
       </answers>
     </question>
     <question>
-      <sentence>L'Ubuntu és reconegut com un sistema operatiu del tipus</sentence>
+      <sentence>L'Ubuntu és un sistema operatiu del tipus...</sentence>
       <author>carles</author>
-      <comments>EL sistema operatiu és GNU amb Linux. Linux sols és el nucli d'aquest i es un component tant important com qualsevol altre.##En quant a la primera opció, encara que s'hi assembli molt GNU/Linux no és un sistema UNIX aprovat.</comments>
+      <comments>EL sistema operatiu és GNU amb Linux. Linux només n'és el nucli i n'és un component tan important com qualsevol altre.##Pel que fa a la primera opció, encara que s'hi assembli molt, GNU/Linux no és un sistema UNIX aprovat.</comments>
       <answers>
         <answer correct="True">GNU amb Linux</answer>
         <answer>Linux</answer>
@@ -327,7 +292,7 @@
       <answers>
         <answer correct="True">Veure DVDs zona 2</answer>
         <answer>Gestionar horaris d'una escola</answer>
-        <answer>Iniciar ordinadors en xarxa#sense instaŀlar, ni posar CDs</answer>
+        <answer>Iniciar ordinadors en xarxa#sense instaŀlar ni posar CDs</answer>
       </answers>
     </question>
   </questions>
