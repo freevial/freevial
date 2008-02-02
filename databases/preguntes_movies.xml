@@ -1,0 +1,165 @@
+<database version="1.0" id="Peŀlícules" language="ca">
+  <information>
+
+    <name>Peŀlícules</name>
+    <description>Preguntes de peŀlícules d'arreu</description>
+    <destination>Endevina Gorina. Ho superes Figueres?</destination>
+    <timestamp_creation>1201967391</timestamp_creation>
+    <timestamp_modification>1201967391</timestamp_modification>
+    <authors>
+      <author>Carles Oriol</author>
+    </authors>
+
+  </information>
+
+  <appearance>
+    <image>categoria_movies.png</image>
+    <sound>mov.ogg</sound>
+  </appearance>
+
+  <questions>
+
+    <question>
+      <sentence>De quin material és fet el falcó maltes?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Del material que son fets els sommis</answer>
+        <answer>D'or i pedres precioses</answer>
+        <answer>De marbre lluent per la lluna</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>De quin país son en Bud Spencer i en Therence Hill?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Italians</answer>
+        <answer>Jueus</answer>
+        <answer>Americans</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quin d'aquests actors no surt a Pulp Fiction?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Harrison Ford</answer>
+        <answer>Bruce Willis</answer>
+        <answer>John Travolta</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quina és la Ciutat Cremada?</sentence>
+      <author>Carles</author>
+      <comments>Evidentment Barcelona a la peŀlícula d'Antoni Ribas basada en la Catalunya del començament del segle 20.</comments>
+      <answers>
+        <answer correct="True">Barcelona</answer>
+        <answer>Nova York</answer>
+        <answer>Berlin</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quans negrets tenia al començar l'Aghata Christie?</sentence>
+      <author>Carles</author>
+      <comments>10 ... tot i que ara li han fet canviar el títol a la novela per racista...</comments>
+      <answers>
+        <answer correct="True">10</answer>
+        <answer>5</answer>
+        <answer>3</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quan en Kevin Spacey apareix a la terra diu que vé del planeta?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">k-pax</answer>
+        <answer>kryptó</answer>
+        <answer>el planeta dels ewoks</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Qui és el pare de l'Indiana Johnes?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">James Bond</answer>
+        <answer>Superman</answer>
+        <answer>Rick Blaine</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Si de tots els bars de tots els pobles del mon ella entra en el meu, on estem?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Casablanca</answer>
+        <answer>Lisboa</answer>
+        <answer>Café Europa</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Els fills de l'Anakin es diuen?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Luke i Leia</answer>
+        <answer>Epi i Blas</answer>
+        <answer>Black i Berry</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>A ningú no es perfecte els protagonistes han d'escapar de la mafia per fer-ho...</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Es disfressen de dones</answer>
+        <answer>S'escapen a Russia</answer>
+        <answer>S'amaguen a Africa</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Tens un email és un remake de...</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El bazar de les sorpreses (shop around the corner)</answer>
+        <answer>Ningú no és perfecte (some like it hot)</answer>
+        <answer>Memories d'Africa (out of Africa)</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quina d'aquestes combinacions és diferent. (Éstil gbrainy)</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Harrison Ford - El temple maleit</answer>
+        <answer>Dustin Hoffman - Totsie</answer>
+        <answer>Robin Williams - Senyora Douptfire</answer>
+      </answers>
+    </question>
+
+
+  </questions>
+
+
+</database>
