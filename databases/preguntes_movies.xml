@@ -382,6 +382,73 @@
     </question>
 
 
+    <question>
+      <sentence>Per on patrulla el detectiu Axel Foley</sentence>
+      <author>Carles</author>
+      <comments>Eddie Murphy en el seu paper de detectiu Axel Foley#Combat el crim al barri de Beverly Hills##És el superdetectiu a Hollywood##... recordeu la musiqueta?</comments>
+      <answers>
+        <answer correct="True">Beverly Hills</answer>
+        <answer>Miami Cayos</answer>
+        <answer>Queens a Nova York</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Qui tenia un apartament?</sentence>
+      <author>Carles</author>
+      <comments>Jack Lemmon a la peŀlícula l'apartament#Ara ... ben bé no sabem si era d'ell#o de tots els que se n'aprofitaven.</comments>
+      <answers>
+        <answer correct="True">Jack Lemmon</answer>
+        <answer>Bruce Willis</answer>
+        <answer>George Lucas</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quina d'aquestes peŀlícules no és un musical?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Annie Hall</answer>
+        <answer>La bella i la bèstia</answer>
+        <answer>My fair lady</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>En quina peŀlícula en Tim Burton fa una escabetxina de caps?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Sleepy Hollow</answer>
+        <answer>Eduard mans tisores</answer>
+        <answer>Malson abans de nadal</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>En quina peŀlícula en Tim Burton fa una escabetxina de caps?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Sleepy Hollow</answer>
+        <answer>Eduard mans-estisores</answer>
+        <answer>Malson abans de nadal</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin d'aquests actors no ha fet de James Bond?</sentence>
+      <author>Carles</author>
+      <comments>En Cary Elwes fa fantàsticament de Westley a la princesa promesa#i de dolent a algun capítol d'expedient X.</comments>
+      <answers>
+        <answer correct="True">Cary Elwes</answer>
+        <answer>George Lazenby</answer>
+        <answer>Timothy Dalton</answer>
+      </answers>
+    </question>
+
 
   </questions>
 
