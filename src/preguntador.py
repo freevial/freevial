@@ -324,7 +324,7 @@ class Preguntador:
 				
 				for num in range(1, 7):
 					if eventhandle.keyUp(str(num), 'KP' + str(num)):
-						self.atzar( num )
+						self.atzar( num-1 )
 				
 				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 					if self.selected != 0 or self.segons <= 0:
