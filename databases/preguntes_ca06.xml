@@ -1,14 +1,14 @@
 <database version="1.0" id="Programari i maquinari" language="ca">
   <information>
     <name>Programari i maquinari</name>
-    <description>Preguntes sobre els programes i els aparells que podem usar en el mon gnu/linux</description>
-    <destination>Coneixements mínims entorn GNU</destination>
+    <description>Preguntes sobre els programes i els aparells que podem usar en el món gnu/linux</description>
+    <destination>Coneixements mínims de l'entorn GNU</destination>
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139484</timestamp_modification>
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
-      <author>Josep Sanchez, &lt;email&gt;</author>
-      <author>Lluïsa Nuñez, &lt;email&gt;</author>
+      <author>Josep Sànchez, &lt;email&gt;</author>
+      <author>Lluïsa Núñez, &lt;email&gt;</author>
       <author>Carles Oriol, &lt;email&gt;</author>
       <author>Siegfried Gevatter, &lt;email&gt;</author>
       <author>Cortsenc, &lt;email&gt;</author>
@@ -43,20 +43,20 @@
     <question>
       <sentence>On no podem connectar un disc dur amb l'Ubuntu?</sentence>
       <author>Carles</author>
-      <comments>El ext3 és un format lògic de disc, no un tipus de connector.</comments>
+      <comments>L'ext3 és un format lògic de disc, no un tipus de connector.</comments>
       <answers>
         <answer correct="True">Al cable ext3</answer>
-        <answer>El cable IDE ATA</answer>
+        <answer>Al cable IDE ATA</answer>
         <answer>Al cable SATA</answer>
       </answers>
     </question>
     <question>
-      <sentence>Que et respon l'aptitude quan li#preguntes per les vaques? (aptitude moo)</sentence>
+      <sentence>Què et respon l'aptitude quan li#preguntes per les vaques? (aptitude moo)</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
         <answer correct="True">Et diu que no té ous de pasqua</answer>
-        <answer>Et mostre l'ajuda del programa</answer>
+        <answer>Et mostra l'ajuda del programa</answer>
         <answer>Et diu que no li agraden les vaques</answer>
       </answers>
     </question>
@@ -81,7 +81,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Dins de l'estructura de directoris POSIX, quin directori#esta previst per les configuracions?</sentence>
+      <sentence>Dins de l'estructura de directoris POSIX, quin directori#està previst per a les configuracions?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -91,7 +91,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests no es un driver per targetes ati?</sentence>
+      <sentence>Quin d'aquests no és un driver per a targetes ati?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -101,7 +101,7 @@
       </answers>
     </question>
     <question>
-      <sentence>A quin programador Microsoft va comprar el DOS</sentence>
+      <sentence>A quin programador va comprar-li el DOS Microsoft?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -111,7 +111,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diu el programa de gestio de configuracions de KDE</sentence>
+      <sentence>Com es diu el programa de gestió de configuracions de KDE?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -121,7 +121,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin programa ha substituit al telnet</sentence>
+      <sentence>Quin programa ha substituït el telnet</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -131,7 +131,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Que vol dir BSOD</sentence>
+      <sentence>Què vol dir BSOD?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -141,19 +141,19 @@
       </answers>
     </question>
     <question>
-      <sentence>Per que serveix el programa vrms</sentence>
+      <sentence>Per a què serveix el programa vrms?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Per verificar els paquets privatius que estan instalats</answer>
-        <answer>Per mirar les llicències que tens en el PC</answer>
-        <answer>Per comprovar que les configuracions són respectuoses amb la GPL</answer>
+        <answer correct="True">Per a verificar els paquets privatius que estan instal·lats</answer>
+        <answer>Per a mirar les llicències que tens al PC</answer>
+        <answer>Per a comprovar que les configuracions són respectuoses amb la GPL</answer>
       </answers>
     </question>
     <question>
       <sentence>Què vol dir DRM?</sentence>
       <author>quiron</author>
-      <comments>La FSF parla de restriccions per comptes de drets, com diuen algunes empreses</comments>
+      <comments>La FSF parla de restriccions en comptes de drets, com diuen algunes empreses.</comments>
       <answers>
         <answer correct="True">Digital Restrictions Management</answer>
         <answer>Digital Radio Messages</answer>
@@ -167,11 +167,11 @@
       <answers>
         <answer correct="True">No</answer>
         <answer>Només Novell</answer>
-        <answer>Evidenment, és programari lliure</answer>
+        <answer>Evidentment, és programari lliure</answer>
       </answers>
     </question>
     <question>
-      <sentence>Quin dels següents és un programa fet específicament per poder jugar a jocs del Windows sota Linux?</sentence>
+      <sentence>Quin dels següents és un programa fet específicament per a poder jugar a jocs del Windows sota Linux?</sentence>
       <author>RainCT</author>
       <comments>Wine és per a tot tipus de programes, i Gamix és una especificació per a una consola de jocs lliure.</comments>
       <answers>
@@ -191,7 +191,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diuen els dos formats de dvd d'alta capacitat que pretenen governar-ne el mercat?</sentence>
+      <sentence>Com es diuen els dos formats de DVD d'alta capacitat que pretenen governar-ne el mercat?</sentence>
       <author>papapep</author>
       <comments></comments>
       <answers>
@@ -201,17 +201,17 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina d'aquestes Wikipedies te més articles que la Viquipèdia catalana?</sentence>
+      <sentence>Quina d'aquestes Wikipedies té més articles que la Viquipèdia catalana?</sentence>
       <author>Cortsenc</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Turca</answer>
+        <answer correct="True">Finlandesa</answer>
         <answer>Danesa</answer>
         <answer>Romanesa</answer>
       </answers>
     </question>
     <question>
-      <sentence>Estas mirant el darrera de la torre i tens el cable MiniJack dels altaveus a la mà. L'has de colocar a un dels forats que li van be, però... n'hi ha tres!! De quin color és l'orifici per on has de posar el cable dels altaveus?</sentence>
+      <sentence>Estàs mirant el darrera de la torre i tens el cable MiniJack dels altaveus a la mà. L'has de col·locar a un dels forats que li van bé, però... n'hi ha tres!! De quin color és l'orifici per on has de posar el cable dels altaveus?</sentence>
       <author>Cortsenc</author>
       <comments></comments>
       <answers>
@@ -221,9 +221,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diu el popular programa de Karaoke per a GNU/Linux inspirat amb un conegut joc de la PlayStation?</sentence>
+      <sentence>Com es diu el popular programa de Karaoke per a GNU/Linux inspirat en un conegut joc de la PlayStation?</sentence>
       <author>Cortsenc</author>
-      <comments>UltraStar a seques, esta programat amb Delphi i només esta disponible per a Windows, i UltraStar-NG és una reescriptura del programa amb C pensada per a fer-se servir amb GNU/Linux.</comments>
+      <comments>UltraStar a seques, està programat amb Delphi i només està disponible per a Windows, i UltraStar-NG és una reescriptura del programa amb C pensada per a fer-se servir amb GNU/Linux.</comments>
       <answers>
         <answer correct="True">UltraStar-NG</answer>
         <answer>SingStar</answer>
@@ -231,7 +231,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests programes no es un reproductor de video?</sentence>
+      <sentence>Quin d'aquests programes no és un reproductor de vídeo?</sentence>
       <author>Nil</author>
       <comments></comments>
       <answers>
@@ -261,9 +261,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quan l'equip de traductors del#KDE ens parlen de la mida#de la caixa. Es refereixen a:</sentence>
+      <sentence>Quan els traductors del#KDE ens parlen de la mida#de la caixa es refereixen a...</sentence>
       <author>carles</author>
-      <comments>Això que ens pot sonar estrany no és un error de traducció. Ve de la mida de les caselles (caixes) que s'usaven en les impremtes. On les majúscules eren més grans.</comments>
+      <comments>Això que ens pot semblar estrany no és un error de traducció. Ve de la mida de les caselles (caixes) que s'usaven en les impremptes, on les majúscules eren més grans.</comments>
       <answers>
         <answer correct="True">Majúscules / minúscules</answer>
         <answer>Tipus de monitor</answer>
@@ -273,7 +273,7 @@
     <question>
       <sentence>Què volen dir les sigles KDE?</sentence>
       <author>carles</author>
-      <comments>La 3a també és correcta, però no es el nostre cas</comments>
+      <comments>La 3a també és correcta, però no és el nostre cas.</comments>
       <answers>
         <answer correct="True">K Desktop Enviroment</answer>
         <answer>Kentucky Department of Education</answer>
@@ -281,9 +281,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin animal d'aquests és germà#però no amic de la guineu de foc</sentence>
+      <sentence>Quin animal d'aquests és germà,#però no amic, de la guineu de foc?</sentence>
       <author>carles</author>
-      <comments>L'any 2006 l'equip de debian va fer una separació de la versió oficial del firefox per que l'equip de treball de mozilla no incorporava les seves actualitzacions a temps. Al fer-ho van haver de canviar el logotip d'aquest per un altre ja que estava protegit per drets d'autor.</comments>
+      <comments>L'any 2006 l'equip de Debian va fer una separació de la versió oficial del firefox, perquè l'equip de treball de mozilla no incorporava les seves actualitzacions a temps. En fer-ho van haver de canviar el logotip per un altre, ja que estava protegit per drets d'autor.</comments>
       <answers>
         <answer correct="True">La llúdriga de gel</answer>
         <answer>L'escarabat de neu</answer>
@@ -303,7 +303,7 @@
     <question>
       <sentence>Quina de les següents aplicacions#NO es troba als repositoris d'Ubuntu?</sentence>
       <author>lluisanunez</author>
-      <comments>Kalcul és una aplicació de KDE, Karacul és inventat </comments>
+      <comments>Kalcul és una aplicació de KDE, Karacul és inventat. </comments>
       <answers>
         <answer correct="True">Karacul</answer>
         <answer>Moc</answer>
@@ -321,19 +321,19 @@
       </answers>
     </question>
     <question>
-      <sentence>El mythtv no permet</sentence>
+      <sentence>El mythtv no permet...</sentence>
       <author>carles</author>
-      <comments>És un sistema media center collonut però no serveix per fer PDFs</comments>
+      <comments>És un sistema media center collonut, però no serveix per a fer PDFs.</comments>
       <answers>
         <answer correct="True">Fer PDFs</answer>
-        <answer>Fer video trucades</answer>
+        <answer>Fer videotrucades</answer>
         <answer>Veure i enregistrar la tele</answer>
       </answers>
     </question>
     <question>
-      <sentence>El millor editor lliure d'imatges matricials és:</sentence>
+      <sentence>El millor editor lliure d'imatges matricials és...</sentence>
       <author>Nil</author>
-      <comments>El gimp és un programa de# tractament d'imatges#el gaim de missatgeria instantània# (ara rebatejat com a pidgin)#i el gcc el compilador de# llenguatge c i c++. </comments>
+      <comments>El gimp és un programa de# tractament d'imatges,#el gaim de missatgeria instantània# (ara rebatejat com a pidgin)#i el gcc el compilador de# llenguatge c i c++. </comments>
       <answers>
         <answer correct="True">gimp</answer>
         <answer>gaim</answer>
@@ -341,9 +341,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests programes#no és un programa de diseny#vectorial</sentence>
+      <sentence>Quin d'aquests programes#no és un programa de disseny#vectorial?</sentence>
       <author>carles</author>
-      <comments>es un programa d'autoedició</comments>
+      <comments>És un programa d'autoedició.</comments>
       <answers>
         <answer correct="True">scribus</answer>
         <answer>xaralx</answer>
@@ -351,12 +351,12 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests programes no és#per manipular so.</sentence>
+      <sentence>Quin d'aquests programes no és#per manipular so?</sentence>
       <author>carles</author>
-      <comments>El Ardour és un gran programa multipista per treballar en temps real.#L'audacity és un gran programa per tractar so.#I el Blender és un programa boníssim de disseny gràfic en 3D.</comments>
+      <comments>L'Ardour és un gran programa multipista per treballar en temps real.#L'Audacity és un gran programa per tractar so.#I el Blender és un programa boníssim de disseny gràfic en 3D.</comments>
       <answers>
         <answer correct="True">Blender</answer>
-        <answer>Adour</answer>
+        <answer>Ardour</answer>
         <answer>Audacity</answer>
       </answers>
     </question>
@@ -367,11 +367,11 @@
       <answers>
         <answer correct="True">Sortirien i tornarien a entrar</answer>
         <answer>Reiniciarien el servei del motor</answer>
-        <answer>Desmuntant el cotxe</answer>
+        <answer>Desmuntarien el cotxe</answer>
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests programes#que permeten accés remot#no està als repositoris d'Ubuntu.</sentence>
+      <sentence>Quin d'aquests programes#que permeten accés remot#no és als repositoris d'Ubuntu?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -391,7 +391,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests no és un#entorn Linux per dispositius mòbils?</sentence>
+      <sentence>Quin d'aquests no és un#entorn Linux per a dispositius mòbils?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -401,9 +401,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests no és un gestor de#finestres modern per l'Ubuntu?</sentence>
+      <sentence>Quin d'aquests no és un gestor de#finestres modern per a l'Ubuntu?</sentence>
       <author>carles</author>
-      <comments>Evidentment l'aereo és pel Hasefrog Diòptries</comments>
+      <comments>Evidentment l'Aero és per a l'Hasefrog Diòptries</comments>
       <answers>
         <answer correct="True">Aero</answer>
         <answer>Compiz Fusion</answer>

@@ -1,12 +1,12 @@
 <database version="1.0" id="Internet" language="ca">
   <information>
     <name>Internet</name>
-    <description>Coses sobre la xarxa els seus webs i protocols</description>
-    <destination>Coneixements mínims Internet</destination>
+    <description>Coses sobre la xarxa, els seus webs i protocols</description>
+    <destination>Coneixements mínims d'internet</destination>
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139483</timestamp_modification>
     <authors>
-      <author>Lluïsa Nuñez, &lt;email&gt;</author>
+      <author>Lluïsa Núñez, &lt;email&gt;</author>
       <author>Carles Oriol, &lt;email&gt;</author>
       <author>Julià Mestieri, &lt;email&gt;</author>
       <author>Cortsenc, &lt;email&gt;</author>
@@ -19,7 +19,7 @@
   </appearance>
   <questions>
     <question>
-      <sentence>Que signifiquen les sigles IRC?</sentence>
+      <sentence>Què signifiquen les sigles IRC?</sentence>
       <author>RainCT</author>
       <comments></comments>
       <answers>
@@ -29,9 +29,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina és l'entitat encarregada de dissenyar estàndards i#recomanacions per al desenvolpament de pàgines web més coneguda?</sentence>
+      <sentence>Quina és l'entitat encarregada de dissenyar estàndards i#recomanacions per al desenvolupament de pàgines web més coneguda?</sentence>
       <author>RainCT</author>
-      <comments>Una de les entitats principals en aquest camp, la qual ha dissenyat l'HTML i XHTML, entre d'altres, és el W3C (World Wide Web Consortium). L'OASIS és qui treballa en l'OpenDocument, i Microsoft és l'empresa que s'encarrega de trencar tots els estàndards que pot.</comments>
+      <comments>Una de les entitats principals en aquest camp, i que ha dissenyat l'HTML i XHTML, entre d'altres, és el W3C (World Wide Web Consortium). L'OASIS és qui treballa en l'OpenDocument i Microsoft és l'empresa que s'encarrega de trencar tots els estàndards que pot.</comments>
       <answers>
         <answer correct="True">W3C</answer>
         <answer>OASIS</answer>
@@ -39,9 +39,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Segons la wikipedia, quin dels protocol de missatgeria instantània següents es creu què és el més utilitzat a nivell mundial?</sentence>
+      <sentence>Segons la wikipedia, quin dels protocols de missatgeria instantània següents es creu que és el més utilitzat a nivell mundial?</sentence>
       <author>RainCT</author>
-      <comments>Segons les dades recollides a la Wikipedia, s'estima que Jabber té entre 40 i 90 milions d'usuaris, MSN només en té 27 milions d'actius (i 155 milions en total) i el QQ, utilitzat principalment pels xinesos, 221 milions d'usuaris actius. http://en.wikipedia.org/wiki/Usage_share_of_instant_messaging_clients</comments>
+      <comments>Segons les dades recollides a la wikipedia, s'estima que Jabber té entre 40 i 90 milions d'usuaris, MSN només en té 27 milions d'actius (i 155 milions en total) i el QQ, utilitzat principalment pels xinesos, 221 milions d'usuaris actius (http://en.wikipedia.org/wiki/Usage_share_of_instant_messaging_clients).</comments>
       <answers>
       	<answer correct="True">QQ</answer>
         <answer>Jabber</answer>
@@ -49,7 +49,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Que volen dir les sigles WWW</sentence>
+      <sentence>Què volen dir les sigles WWW?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -59,12 +59,12 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es representa Internet en els diagrames de xarxes</sentence>
+      <sentence>Com es representa internet en els diagrames de xarxes?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Com un món</answer>
-        <answer>Com un nuvol</answer>
+        <answer correct="True">Com un núvol</answer>
+        <answer>Com un món</answer>
         <answer>Com una 
 I</answer>
       </answers>
@@ -74,15 +74,15 @@ I</answer>
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Si</answer>
-        <answer>Depen</answer>
+        <answer correct="True">Sí</answer>
+        <answer>Depèn</answer>
         <answer>No</answer>
       </answers>
     </question>
     <question>
-      <sentence>El fòrum de l'equip Català d'ubuntaires#el podem trobar a:</sentence>
+      <sentence>El fòrum de l'equip Català d'ubuntaires#el podem trobar a...</sentence>
       <author>Carles</author>
-      <comments>Concretament a http://ubuntuforums.org/forumdisplay.php?f=206. També podem anar-hi desde el portal www.ubuntu.cat</comments>
+      <comments>Concretament a http://ubuntuforums.org/forumdisplay.php?f=206. També podem anar-hi des del portal www.ubuntu.cat.</comments>
       <answers>
         <answer correct="True">ubuntuforums.org</answer>
         <answer>forum.ubuntu.pl</answer>
@@ -92,7 +92,7 @@ I</answer>
     <question>
       <sentence>Quin any es va fundar Google?</sentence>
       <author>carles</author>
-      <comments>Oi que sembla que fes més temps?</comments>
+      <comments>Oi que sembla que en faci més temps?</comments>
       <answers>
         <answer correct="True">1998</answer>
         <answer>1995</answer>
@@ -105,8 +105,8 @@ I</answer>
       <comments>I doncs, que us pensàveu?</comments>
       <answers>
         <answer correct="True">Clar</answer>
-        <answer>Sols si cerquem wikipedia</answer>
-        <answer>No.</answer>
+        <answer>Només si cerquem wikipedia</answer>
+        <answer>No</answer>
       </answers>
     </question>
     <question>
@@ -114,9 +114,9 @@ I</answer>
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">creative comons</answer>
+        <answer correct="True">Creative comons</answer>
         <answer>CertifiCations</answer>
-        <answer>computer case</answer>
+        <answer>Computer case</answer>
       </answers>
     </question>
     <question>
@@ -124,9 +124,9 @@ I</answer>
       <author>carles</author>
       <comments>he he... ha estat superior a mi... ho havia de fer...</comments>
       <answers>
-        <answer correct="True">kumbaworld</answer>
-        <answer>cantar i xerinola</answer>
-        <answer>yahoo lyrics</answer>
+        <answer correct="True">Kumbaworld</answer>
+        <answer>Cantar i xerinola</answer>
+        <answer>Yahoo lyrics</answer>
       </answers>
     </question>
     <question>
@@ -134,9 +134,9 @@ I</answer>
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">abandonwares</answer>
-        <answer>oldwares</answer>
-        <answer>softdeads</answer>
+        <answer correct="True">Abandonwares</answer>
+        <answer>Oldwares</answer>
+        <answer>Softdeads</answer>
       </answers>
     </question>
     <question>
@@ -150,7 +150,7 @@ I</answer>
       </answers>
     </question>
     <question>
-      <sentence>Quina d'aquestes xarxes#no existia abans d'Internet?</sentence>
+      <sentence>Quina d'aquestes xarxes#no existia abans d'internet?</sentence>
       <author>carles</author>
       <comments>Compuserve va ser la primera xarxa pública mundial d'accés públic. Fidonet (anterior a compuserve) era una xarxa d'enllaços entre les anteriors BBS.</comments>
       <answers>
@@ -159,16 +159,7 @@ I</answer>
         <answer>compuserve</answer>
       </answers>
     </question>
-    <question>
-      <sentence>El fòrum de l'equip d'Ubuntu en català#el podem trobar a:</sentence>
-      <author>Carles</author>
-      <comments>Concretament a http://ubuntuforums.org/forumdisplay.php?f=206. També podem anar-hi des del portal www.ubuntu.cat</comments>
-      <answers>
-        <answer correct="True">ubuntuforums.org</answer>
-        <answer>ubuntu-fr.org</answer>
-        <answer>forum.ubuntu.pl</answer>
-      </answers>
-    </question>
+    
     <question>
       <sentence>Quin any es va fundar google?</sentence>
       <author>carles</author>
@@ -179,78 +170,41 @@ I</answer>
         <answer>2000</answer>
       </answers>
     </question>
-    <question>
-      <sentence>Existeix una entrada explicant#la viquipèdia a la viquièdia?</sentence>
-      <author>carles</author>
-      <comments>I doncs que us pensàveu?</comments>
-      <answers>
-        <answer correct="True">Clar</answer>
-        <answer>Sols si cerquem wikipedia</answer>
-        <answer>No.</answer>
-      </answers>
-    </question>
+    
     <question>
       <sentence>Quin d'aquests no és un “hoax”?</sentence>
       <author>carles</author>
-      <comments>.... si... lamentable. Si el sistema de control de copies DRM detecta que tens algun mitjà que permet realitzar copies de peŀlicules o videos aquest baixarà la qualitat per que no ho puguis fer correctament. A l'hora totes aquestes comprovacions fan que l'ordinador funcioni molt més lent.</comments>
+      <comments>.... sí... lamentable. Si el sistema de control de còpies DRM detecta que tens algun mitjà que permet realitzar còpies de peŀlícules o vídeos, en baixarà la qualitat perquè no ho puguis fer correctament. A més, totes aquestes comprovacions fan que l'ordinador funcioni molt més lentament.</comments>
       <answers>
-        <answer correct="True">El microsoft vista fa que l'ordinador#vagi malament si detecta un dispositiu#que permet copiar películes</answer>
-        <answer>Un nombre fa que la facturació#del telèfon d'un altre te la cobrin a tu</answer>
-        <answer>La llet es repasteuritza segons#el nombre inferior del tetrabrick</answer>
+        <answer correct="True">El microsoft vista fa que l'ordinador#vagi malament si detecta un dispositiu#que permet copiar pel·lícules</answer>
+        <answer>Un número fa que la facturació#del telèfon d'algú altre te la cobrin a tu</answer>
+        <answer>La llet es repasteuritza segons#el número inferior del tetrabrick</answer>
       </answers>
     </question>
+    
     <question>
-      <sentence>Com es coneixen popularment#a la xarxa els jocs que han deixat#de comercialitzar-se.</sentence>
+      <sentence>Quina d'aquestes llengües té més#presència que el català a internet?</sentence>
       <author>carles</author>
-      <comments></comments>
+      <comments>Actualment el català és la 21ena llengua a la xarxa. Per davant del grec, hebreu, romanès, vietnamita, hongarès, islandès, eslovac i eslovè.</comments>
       <answers>
-        <answer correct="True">abandonwares</answer>
-        <answer>softdeads</answer>
-        <answer>oldwares</answer>
-      </answers>
-    </question>
-    <question>
-      <sentence>Quin ha estat considerat per omnium#cultural el#'Més gran cançoner català del mon '</sentence>
-      <author>carles</author>
-      <comments>he he... ha estat superior a mi... ha havia de fer...</comments>
-      <answers>
-        <answer correct="True">kumbaworld</answer>
-        <answer>cantar i xerinola</answer>
-        <answer>yahoo lyrics</answer>
-      </answers>
-    </question>
-    <question>
-      <sentence>Quina d'aquestes llengües té més#presencia que el català a Internet?</sentence>
-      <author>carles</author>
-      <comments>Actualment el català és la 21ena llengua a la xarxa. Per damunt del grec, hebreu, rumanès, vietnamita, hungarès, Islandès, eslovac i l'eslovè.</comments>
-      <answers>
-        <answer correct="True">Tailandes</answer>
+        <answer correct="True">Tailandès</answer>
         <answer>Hebreu</answer>
         <answer>Grec</answer>
       </answers>
     </question>
+    
     <question>
-      <sentence>Què vol dir CC?</sentence>
-      <author>carles</author>
-      <comments></comments>
-      <answers>
-        <answer correct="True">creative comons</answer>
-        <answer>computer case</answer>
-        <answer>CertifiCations</answer>
-      </answers>
-    </question>
-    <question>
-      <sentence>L'eyeOS és un “sistema operariu” web#desenvolupat a:</sentence>
+      <sentence>L'eyeOS és un “sistema operatiu” web#desenvolupat a...</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
         <answer correct="True">Catalunya</answer>
-        <answer>Helsinki</answer>
-        <answer>La Isle of Man</answer>
+        <answer>Hèlsinki</answer>
+        <answer>L'illa de Man</answer>
       </answers>
     </question>
     <question>
-      <sentence>La tecnologia que fa possible l'alimentació#automàtica de notícies web es diu:</sentence>
+      <sentence>La tecnologia que fa possible l'alimentació#automàtica de notícies web es diu...</sentence>
       <author>lluisanunez</author>
       <comments></comments>
       <answers>

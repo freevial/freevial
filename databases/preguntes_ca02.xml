@@ -7,7 +7,7 @@
     <timestamp_modification>1200139483</timestamp_modification>
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
-      <author>Josep Sanchez, &lt;email&gt;</author>
+      <author>Josep Sànchez, &lt;email&gt;</author>
       <author>Lluïsa Núñez, &lt;email&gt;</author>
       <author>Carles Oriol, &lt;email&gt;</author>
       <author>Siegfried Gevatter, &lt;email&gt;</author>
@@ -143,11 +143,11 @@
     <question>
       <sentence>Quin d'aquests formats es pot llegir#amb la instal·lació predeterminada#de l'Ubuntu?</sentence>
       <author>carles</author>
-      <comments>Els formats mp3 i dvd (mpeg) són formats restrictius. L'mp3 està protegit per patents; en alguns països, no es poden ni mostrar les fonts del dvd, ja que implicaria rebentar la protecció dels dvds. Malgrat tot, no hi ha cap problema per a fer-los servir un cop instaŀlat el sistema.</comments>
+      <comments>Els formats mp3 i DVD (mpeg) són formats restrictius. L'mp3 està protegit per patents; en alguns països, no es poden ni mostrar les fonts del DVD, ja que implicaria rebentar la protecció dels DVDs. Malgrat tot, no hi ha cap problema per a fer-los servir un cop instaŀlat el sistema.</comments>
       <answers>
         <answer correct="True">Ogg</answer>
         <answer>Mp3</answer>
-        <answer>Dvd</answer>
+        <answer>DVD</answer>
       </answers>
     </question>
     <question>
@@ -160,16 +160,7 @@
         <answer>Reportar bugs</answer>
       </answers>
     </question>
-    <question>
-      <sentence>Quin d'aquests paquets no#serveix per a  instal·lar programes?</sentence>
-      <author>carles</author>
-      <comments></comments>
-      <answers>
-        <answer correct="True">Ginstaller</answer>
-        <answer>Synaptic</answer>
-        <answer>Adept</answer>
-      </answers>
-    </question>
+    
     <question>
       <sentence>Quina va ser la primera LTS d'Ubuntu?</sentence>
       <author>cortsenc</author>
@@ -185,9 +176,9 @@
       <author>papapep</author>
       <comments>Self-Appointed Benevolent Dictator For Life.</comments>
       <answers>
-        <answer correct="True">Sabdfl</answer>
-        <answer>Rtfm</answer>
-        <answer>Sticsis</answer>
+        <answer correct="True">sabdfl</answer>
+        <answer>rtfm</answer>
+        <answer>sticsis</answer>
       </answers>
     </question>
     <question>
@@ -203,7 +194,7 @@
 
 
     <question>
-      <sentence>En quina d'aquestes distribucions#està basat l'Ubuntu?</sentence>
+      <sentence>En quina d'aquestes distribucions#es basa l'Ubuntu?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -215,7 +206,7 @@
 
   
     <question>
-      <sentence>Quins son els colors del logotip de l'Ubuntu?</sentence>
+      <sentence>Quins són els colors del logotip de l'Ubuntu?</sentence>
       <author>Nil</author>
       <comments></comments>
       <answers>
@@ -260,9 +251,9 @@
       <author>carles</author>
       <comments>Sata no és un sistema d'arxius.</comments>
       <answers>
-        <answer correct="True">Sata</answer>
-        <answer>Ntfs</answer>
-        <answer>Ext3</answer>
+        <answer correct="True">sata</answer>
+        <answer>ntfs</answer>
+        <answer>ext3</answer>
       </answers>
     </question>
     <question>

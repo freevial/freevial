@@ -1,14 +1,14 @@
 <database version="1.0" id="Jocs, llibres i pe&#x140;l&#xED;cules" language="ca">
   <information>
     <name>Jocs, llibres i peŀlícules</name>
-    <description>Video jocs, peŀlicules i llibres de ciència ficció o de culte</description>
+    <description>Videojocs, peŀlícules i llibres de ciència-ficció o de culte</description>
     <destination>Diversos</destination>
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139484</timestamp_modification>
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
-      <author>Josep Sanchez, &lt;email&gt;</author>
-      <author>Lluïsa Nuñez, &lt;email&gt;</author>
+      <author>Josep Sànchez, &lt;email&gt;</author>
+      <author>Lluïsa Núñez, &lt;email&gt;</author>
       <author>Carles Oriol, &lt;email&gt;</author>
       <author>Julià Mestieri, &lt;email&gt;</author>
       <author>Jordi Monteagudo, &lt;email&gt;</author>
@@ -20,11 +20,11 @@
   </appearance>
   <questions>
     <question>
-      <sentence>A la noveŀla Dune, de Frank Herbert, les computadores:</sentence>
+      <sentence>A la noveŀla "Dune", de Frank Herbert, les computadores...</sentence>
       <author>JordiMonteagudo</author>
       <comments></comments>
       <answers>
-        <answer correct="True"> "Han estat prohibides i substituïdes per una elit inteŀlectual"</answer>
+        <answer correct="True">Han estat prohibides i substituïdes per una elit inteŀlectual</answer>
         <answer>Controlen la societat</answer>
         <answer>Han estat inserides en els cossos d'una elit dominant, els anomenats ciborgs</answer>
       </answers>
@@ -32,10 +32,10 @@
     <question>
       <sentence>Quina d'aquestes normes no s'aplica a un gremlin?</sentence>
       <author>Carles</author>
-      <comments>No el mulli,#mantingui'l lluny dels llums brillants,#i el més important, no li doni# mai menjar després de mitja nit.##Gremlins (1984)</comments>
+      <comments>No el mulli,#mantingui'l lluny de les llums brillants,#i el més important, no li doni# mai menjar després de mitjanit.##Gremlins (1984)</comments>
       <answers>
         <answer correct="True">No poden cantar</answer>
-        <answer>No poden menjar després de mitja nit</answer>
+        <answer>No poden menjar després de mitjanit</answer>
         <answer>No es poden mullar</answer>
       </answers>
     </question>
@@ -50,7 +50,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina pelicula representa els inicis de Microsoft i Apple</sentence>
+      <sentence>Quina pel·lícula representa els inicis de Microsoft i Apple?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -60,7 +60,7 @@
       </answers>
     </question>
     <question>
-      <sentence>En quina pel·lícula un ordinador deia:#”Quin joc més estrany, la única#manera de guanyar és no jugar”.</sentence>
+      <sentence>En quina pel·lícula un ordinador deia:#”Quin joc més estrany, l'única#manera de guanyar és no jugar”.</sentence>
       <author>Carles</author>
       <comments>Quan l'ordinador descrobria la insensatesa de la guerra.</comments>
       <answers>
@@ -70,7 +70,7 @@
       </answers>
     </question>
     <question>
-      <sentence>El wesnoth és un joc del tipus</sentence>
+      <sentence>El wesnoth és un joc del tipus...</sentence>
       <author>Nil</author>
       <comments></comments>
       <answers>
@@ -90,19 +90,19 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina eina usa la Trinity a Matrix Reloaded#per petar l'ordinador?</sentence>
+      <sentence>Quina eina usa la Trinity a "Matrix Reloaded"#per fer petar l'ordinador?</sentence>
       <author>Carles</author>
-      <comments>En la película Matrix Reloaded podem veure a Trinity petant un ordinador i a la pantalla es veu com realitza un escaneig de seguretat amb l'eina nmap!!! Un com fet això és mostra una vulnerabilitat real (exploit SSHv1 CRC32) un error de buffer, que amb una eina fingida sshnuke aprofita.</comments>
+      <comments>A la pel·lícula "Matrix Reloaded" podem veure la Trinity fent petar un ordinador i a la pantalla es veu com realitza un escaneig de seguretat amb l'eina nmap!!! Un cop fet això es mostra una vulnerabilitat real (exploit SSHv1 CRC32), un error de buffer, que aprofita amb una eina fingida sshnuke.</comments>
       <answers>
         <answer correct="True">nmap</answer>
-        <answer>el càssic dir c:\ de totes les pelis</answer>
+        <answer>El càssic dir c:\ de totes les pel·lis</answer>
         <answer>aircrack</answer>
       </answers>
     </question>
     <question>
-      <sentence>El clon per a Linux dels famosos#Lemmings es diu:</sentence>
+      <sentence>El clon per a Linux dels famosos#Lemmings es diu...</sentence>
       <author>lluisanunez</author>
-      <comments>Supertux és un clon de Super Mario, Tux Racer és un joc d'animació 3D </comments>
+      <comments>Supertux és un clon de Super Mario, Tux Racer és un joc d'animació 3D. </comments>
       <answers>
         <answer correct="True">Pingus</answer>
         <answer>Tux Race</answer>
@@ -110,27 +110,27 @@
       </answers>
     </question>
     <question>
-      <sentence>De què és acrònim HAL a la pel·lícula 2001#(tot i que ho negui Arthur C Clarck) </sentence>
+      <sentence>De què és acrònim HAL a la pel·lícula 2001#(tot i que ho negui Arthur C. Clarck)? </sentence>
       <author>Carles</author>
       <comments>IBM = I - 1 = H, B - 1 = A, M - 1 = L</comments>
       <answers>
-        <answer correct="True">International Busines Machines</answer>
+        <answer correct="True">International Business Machines</answer>
         <answer>Home and leisure</answer>
         <answer>Hardware Adapter Layer</answer>
       </answers>
     </question>
     <question>
-      <sentence>Quina versió del wine està especialitzada#per a fer rutllar jocs?</sentence>
+      <sentence>Quina versió del wine està especialitzada#en fer rutllar jocs?</sentence>
       <author>Carles</author>
-      <comments>El xmame és un emulador de màquines de videjocs i no una versió del wine</comments>
+      <comments>L'xmame és un emulador de màquines de videjocs i no una versió del wine.</comments>
       <answers>
-        <answer correct="True">Cedega</answer>
+        <answer correct="True">cedega</answer>
         <answer>CrossOver</answer>
         <answer>xmame</answer>
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests ordinadors NO#duia el processador Zilog Z80-A</sentence>
+      <sentence>Quin d'aquests ordinadors NO#duia el processador Zilog Z80-A?</sentence>
       <author>Carles</author>
       <comments>Duia un MOS 6510</comments>
       <answers>
@@ -140,7 +140,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quan es va fer la pelicula Tron,#què volia dir aquesta ordre?</sentence>
+      <sentence>Quan es va fer la pel·lícula "Tron",#què volia dir aquesta ordre?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -150,7 +150,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests mmorpgs te versió per Linux?</sentence>
+      <sentence>Quin d'aquests mmorpgs té versió per a Linux?</sentence>
       <author>Nil</author>
       <comments></comments>
       <answers>
@@ -170,7 +170,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Si volguéssim jugar al super puzzle fighter amb l'Ubuntu</sentence>
+      <sentence>Si volguéssim jugar al super puzzle fighter amb l'Ubuntu, amb quin programa ho faríem?</sentence>
       <author>Nil</author>
       <comments>27</comments>
       <answers>
@@ -180,7 +180,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Si volguéssim jugar al king quest#amb l'Ubuntu amb quin no podriem?</sentence>
+      <sentence>Si volguéssim jugar al King quest#amb l'Ubuntu, amb quin no podríem?</sentence>
       <author>Nil</author>
       <comments>26</comments>
       <answers>
@@ -190,7 +190,7 @@
       </answers>
     </question>
     <question>
-      <sentence>En Purple del dia del tentacle es# torna dolent perquè es transforma# i aconsegueix..</sentence>
+      <sentence>En Purple del "Dia del tentacle" es# torna dolent perquè es transforma# i aconsegueix..</sentence>
       <author>Nil</author>
       <comments>25</comments>
       <answers>
@@ -206,11 +206,11 @@
       <answers>
         <answer correct="True">Imaginació</answer>
         <answer>Fusta</answer>
-        <answer>Plastic</answer>
+        <answer>Plàstic</answer>
       </answers>
     </question>
     <question>
-      <sentence>Muad-dib que vol dir?</sentence>
+      <sentence>Què vol dir "Muad-dib" ?</sentence>
       <author>Nil</author>
       <comments>23</comments>
       <answers>
@@ -239,56 +239,7 @@
         <answer>Akira Toriyama</answer>
       </answers>
     </question>
-    <question>
-      <sentence>En quina peli un ordinador deia:#Quin joc més extrany, la unica#manera de guanyar és no jugar.</sentence>
-      <author>Carles</author>
-      <comments>20</comments>
-      <answers>
-        <answer correct="True">Jocs de guerra</answer>
-        <answer>Tron</answer>
-        <answer>Matrix</answer>
-      </answers>
-    </question>
-    <question>
-      <sentence>El clon per linux dels famosos#Lemmings es diu:</sentence>
-      <author>lluisanunez</author>
-      <comments>19</comments>
-      <answers>
-        <answer correct="True">Pingus</answer>
-        <answer>SuperTux</answer>
-        <answer>Tux Race</answer>
-      </answers>
-    </question>
-    <question>
-      <sentence>El wesnoth és un joc de tipus</sentence>
-      <author>Nil</author>
-      <comments>18</comments>
-      <answers>
-        <answer correct="True">Estratègia per torns</answer>
-        <answer>Aventura gràfica</answer>
-        <answer>Arcade Shooter</answer>
-      </answers>
-    </question>
-    <question>
-      <sentence>De què és acrònim HAL a la película 2001#(tot i que ho negui Arthur C Clarck) </sentence>
-      <author>Carles</author>
-      <comments>17</comments>
-      <answers>
-        <answer correct="True">Home and leisure</answer>
-        <answer>Hardware Adapter Layer</answer>
-        <answer>International Busines Machines</answer>
-      </answers>
-    </question>
-    <question>
-      <sentence>Quan es va fer la pelicula Tron#Què volia dir aquest comanda?</sentence>
-      <author>Carles</author>
-      <comments>16</comments>
-      <answers>
-        <answer correct="True">TRace ON. Per debugar</answer>
-        <answer>Transient on-line</answer>
-        <answer>TeRminal ON</answer>
-      </answers>
-    </question>
+   
     <question>
       <sentence>Quin personatge de videojoc considerava#que els noms no eren importants?</sentence>
       <author>Carles</author>
@@ -300,17 +251,17 @@
       </answers>
     </question>
     <question>
-      <sentence>Per què serveix la comanda#klatu barada nikto</sentence>
+      <sentence>Per a què serveix la comanda#"klatu barada nikto"?</sentence>
       <author>Carles</author>
       <comments>14</comments>
       <answers>
-        <answer correct="True">Per evitar la destrucció de la terra</answer>
-        <answer>Per instaŀlar el fedora</answer>
-        <answer>Per reorganitzar l'espai al disc dur</answer>
+        <answer correct="True">Per a evitar la destrucció de la terra</answer>
+        <answer>Per a instaŀlar el fedora</answer>
+        <answer>Per areorganitzar l'espai al disc dur</answer>
       </answers>
     </question>
     <question>
-      <sentence>Quin model eren els replicants?</sentence>
+      <sentence>De quin model eren els replicants?</sentence>
       <author>Carles</author>
       <comments>13</comments>
       <answers>
@@ -320,7 +271,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Que vol dir MMORPG</sentence>
+      <sentence>Què vol dir MMORPG</sentence>
       <author>Nil</author>
       <comments></comments>
       <answers>
@@ -339,32 +290,13 @@
         <answer>Massive users dungeon</answer>
       </answers>
     </question>
-    <question>
-      <sentence>Quina versió del wine esta especialitzada#per fer rutllar jocs?</sentence>
+    
+       <question>
+      <sentence>Com avisa Maurice Moss els bombers#quan es crema el seu despatx?</sentence>
       <author>Carles</author>
-      <comments>10</comments>
+      <comments></comments>
       <answers>
-        <answer correct="True">Cedega</answer>
-        <answer>xmame</answer>
-        <answer>CrossOver</answer>
-      </answers>
-    </question>
-    <question>
-      <sentence>Quina eina usa la Trinity a Matrix Reloaded#per petar l'ordinador.</sentence>
-      <author>Carles</author>
-      <comments>9</comments>
-      <answers>
-        <answer correct="True">nmap</answer>
-        <answer>aircrack</answer>
-        <answer>el càssic dir c:\ de totes les pelis</answer>
-      </answers>
-    </question>
-    <question>
-      <sentence>Com avisa Maurice Moss als bombers#quan es crema el seu despatx?</sentence>
-      <author>Carles</author>
-      <comments>8</comments>
-      <answers>
-        <answer correct="True">correu electrònic</answer>
+        <answer correct="True">Correu electrònic</answer>
         <answer>IRC</answer>
         <answer>Missatgeria instantània</answer>
       </answers>
@@ -372,7 +304,7 @@
     <question>
       <sentence>Quants anells toquen als Reis Elfs?</sentence>
       <author>Carles</author>
-      <comments>7</comments>
+      <comments></comments>
       <answers>
         <answer correct="True">3</answer>
         <answer>6</answer>
@@ -380,9 +312,9 @@
       </answers>
     </question>
     <question>
-      <sentence>El cartell de proves del freevial està#copiat de la publicitat d'un video joc#de 8 bits.#Com es deia la empresa que va fer-lo?</sentence>
+      <sentence>El cartell de proves del freevial està#copiat de la publicitat d'un videojoc#de 8 bits.#Com es deia  l'empresa que va fer-lo?</sentence>
       <author>Carles</author>
-      <comments>6</comments>
+      <comments></comments>
       <answers>
         <answer correct="True">Melbourne house</answer>
         <answer>Ultimate</answer>
@@ -390,7 +322,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests ordinadors NO#duia el procesador Zilog Z80-A</sentence>
+      <sentence>Quin d'aquests ordinadors NO#duia el processador Zilog Z80-A</sentence>
       <author>Carles</author>
       <comments>5</comments>
       <answers>
@@ -402,7 +334,7 @@
     <question>
       <sentence>Quants jocs de cartes de solitari hi ha#als repositoris d'Ubuntu?</sentence>
       <author>Carles</author>
-      <comments>4</comments>
+      <comments></comments>
       <answers>
         <answer correct="True">Més de 10</answer>
         <answer>1</answer>
@@ -410,7 +342,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests mmorpgs te versio per linux?</sentence>
+      <sentence>Quin d'aquests mmorpgs té versió per a Linux?</sentence>
       <author>Nil</author>
       <comments></comments>
       <answers>
@@ -422,7 +354,7 @@
     <question>
       <sentence>Quin any es va fer el joc Pong?</sentence>
       <author>Carles</author>
-      <comments>2</comments>
+      <comments></comments>
       <answers>
         <answer correct="True">1972</answer>
         <answer>1978</answer>
