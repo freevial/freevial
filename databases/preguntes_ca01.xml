@@ -1,15 +1,15 @@
 <database version="1.0" id="Personatges i actes" language="ca">
   <information>
     <name>Personatges i actes</name>
-    <description>Gent i fets al voltant del mon del programari lliure. També informació sobre llicències.</description>
-    <destination>Coneixement dels esdeveniments i personatges més importants al món de GNU, el programari lliure i l'informàtica en general.</destination>
+    <description>Gent i fets al voltant del món del programari lliure. També informació sobre llicències.</description>
+    <destination>Coneixement dels esdeveniments i personatges més importants al món de GNU, el programari lliure i la informàtica en general.</destination>
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139483</timestamp_modification>
     <authors>
       <author>Rafael Carreras, &lt;email&gt;</author>
       <author>Nil Oriol, &lt;email&gt;</author>
       <author>Josep Sanchez, &lt;email&gt;</author>
-      <author>Lluïsa Nuñez, &lt;email&gt;</author>
+      <author>Lluïsa Núñez, &lt;email&gt;</author>
       <author>Carles Oriol, &lt;email&gt;</author>
       <author>Cortsenc, &lt;email&gt;</author>
       <author>Julià Mestieri, &lt;email&gt;</author>
@@ -282,7 +282,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui prepara els CD catalanitzats#d'Ubuntu i Kubuntu hores després del#llençament oficial?</sentence>
+      <sentence>Qui prepara els CD catalanitzats#d'Ubuntu i Kubuntu hores després del#llançament oficial?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -352,7 +352,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina és la distro de l'XTEC#basada en OpenSuse?</sentence>
+      <sentence>Quina és la distribució de l'XTEC#basada en OpenSuse?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -484,7 +484,7 @@
     <question>
       <sentence>Què és un sabdfl?</sentence>
       <author>rcarreras</author>
-      <comments>sabdfl és el nick d'en Mark Shuttleworth, fundador d'Ubuntu, i vol dir «Self-Appointed Benevolent Dictator for Life»</comments>
+      <comments>Sabdfl és el nick d'en Mark Shuttleworth, fundador d'Ubuntu, i vol dir «Self-Appointed Benevolent Dictator for Life».</comments>
       <answers>
         <answer correct="True">Un dictador</answer>
         <answer>Un tècnic</answer>
@@ -496,9 +496,9 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Qui li agrada la ciència ficció, els ordinadors, les maquinetes</answer>
-        <answer>Qui li agrada la tele</answer>
-        <answer>Qui li agrada molt algun tema poc habitual</answer>
+        <answer correct="True">Algú a qui li agrada la ciència ficció, els ordinadors, les maquinetes</answer>
+        <answer>Algú a qui li agrada la tele</answer>
+        <answer>Algú a qui li agrada molt algun tema poc habitual</answer>
       </answers>
     </question>
     <question>
@@ -514,21 +514,21 @@
     <question>
       <sentence>Què és un pirata?</sentence>
       <author>rcarreras</author>
-      <comments>Aquell que copia programes propietaris o es baixa música/vídeos amb drets d'autor és un «pirata informàtic».</comments>
+      <comments>Aquell que copia programes propietaris o es baixa música/vídeos amb drets d'autor per vendre'ls és un «pirata informàtic».</comments>
       <answers>
         <answer correct="True">Algú que assalta vaixells</answer>
-        <answer>Algú que es baixa música i pelis</answer>
+        <answer>Algú que es baixa música i pel·lis</answer>
         <answer>Algú que copia programes</answer>
       </answers>
     </question>
     <question>
-      <sentence>A qui anomenem hacker?</sentence>
+      <sentence>Què és un hacker?</sentence>
       <author>Carles</author>
-      <comments>Un hacker és un expert ... Pot ser-ho en art (japó) o en el nucli del Linux, o en el funcionament d'un programa. Cal no confondre-ho, com fan els mitjans de comunicació, amb els crackers (pirates informàtics).</comments>
+      <comments>Un hacker és un expert... Pot ser-ho en art (Japó) o en el nucli del Linux, o en el funcionament d'un programa. Cal no confondre els hackers, com fan els mitjans de comunicació, amb els crackers (els que rebenten sistemes de protecció).</comments>
       <answers>
-        <answer correct="True">A un expert</answer>
-        <answer>A algú que programa</answer>
-        <answer>A algú que trenca sistemes de seguretat</answer>
+        <answer correct="True">Un expert</answer>
+        <answer>Algú que programa</answer>
+        <answer>Algú que trenca sistemes de seguretat</answer>
       </answers>
     </question>
     <question>
@@ -538,7 +538,7 @@
       <answers>
         <answer correct="True">Algú que trenca codis o sistemes</answer>
         <answer>Algú que menja galetes</answer>
-        <answer>Algú que programa</answer>
+        <answer>Algú que inverteix en borsa</answer>
       </answers>
     </question>
     <question>
@@ -578,7 +578,7 @@
       <answers>
         <answer correct="True">Perl Mongers</answer>
         <answer>Perl Frikis</answer>
-        <answer>Perl Rangers</answer>
+        <answer>Tothom sap que els programadors en Perl es reuneixen els dimecres</answer>
       </answers>
     </question>
     <question>
@@ -592,7 +592,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin és l'estil de musica preferit del coordinador#de la comunitat d'Ubuntu?</sentence>
+      <sentence>Quin és l'estil de música preferit del coordinador#de la comunitat d'Ubuntu?</sentence>
       <author>quiron</author>
       <comments>En Jono Bacon, empleat de Canonical com a coordinador de la comunitat d'Ubuntu, és un gran amic del Metal. Fins i tot té el seu propi grup!</comments>
       <answers>
@@ -612,18 +612,18 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin programa fa servir en Jordi Mas#per a traduir programari?</sentence>
+      <sentence>Quin programa fa servir en Jordi Mas#per traduir programari?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">vi</answer>
+        <answer correct="True">Vi</answer>
         <answer>Poedit</answer>
-        <answer>emacs</answer>
+        <answer>Emacs</answer>
       </answers>
     </question>
     <question>
       <sentence>Quin escriptori recomana fer#servir en Linus Torvalds?</sentence>
-      <author>quiron</author>
+      <author>Quiron</author>
       <comments></comments>
       <answers>
         <answer correct="True">KDE</answer>
@@ -632,19 +632,19 @@
       </answers>
     </question>
     <question>
-      <sentence>Segons en RMS la seva aureola és</sentence>
+      <sentence>Segons en RMS la seva aurèola és...</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Una aureola</answer>
+        <answer correct="True">Una aurèola</answer>
         <answer>Un disquet</answer>
         <answer>Un disc dur</answer>
       </answers>
     </question>
     <question>
-      <sentence>Qui és l'únic home que ha contat fins#a l'infinit amb tots els decimals?</sentence>
+      <sentence>Qui és l'únic home que ha comptat fins#a l'infinit amb tots els decimals?</sentence>
       <author>quiron</author>
-      <comments></comments>
+      <comments>I dos cops</comments>
       <answers>
         <answer correct="True">Chuck Norris</answer>
         <answer>Kevin Mitnick</answer>
@@ -676,19 +676,19 @@
       <author>RainCT</author>
       <comments>Ian, el fundador de Debian, i Deborah.</comments>
       <answers>
-        <answer correct="True">El nom d'un paio i la seva nòvia</answer>
+        <answer correct="True">El nom d'un paio i la seva xicota</answer>
         <answer>Un poble</answer>
         <answer>Un petit mamífer</answer>
       </answers>
     </question>
     <question>
-      <sentence>A què es refereix el terme «babau» en cercles linuxers?</sentence>
+      <sentence>Què vol dir «babau» en cercles linuxers?</sentence>
       <author>RainCT</author>
-      <comments>Veure el document que en Vicent Cubells ha escrit al respecte.</comments>
+      <comments>Vegeu el document que en Vicent Cubells ha escrit sobre el tema.</comments>
       <answers>
-        <answer correct="True">A aquell que ajuda desinteressadament a fer funcionar un PC amb Windows a algú altre.</answer>
-        <answer>A aquell que no sap utilitzar amb fluidesa una terminal.</answer>
-        <answer>A aquell que és estúpid.</answer>
+        <answer correct="True">Algú que ajuda desinteressadament algú altre a fer funcionar un PC amb Windows</answer>
+        <answer>Algú que no sap utilitzar amb fluïdesa una terminal</answer>
+        <answer>Algú que és estúpid</answer>
       </answers>
     </question>
     <question>
@@ -698,7 +698,7 @@
       <answers>
         <answer correct="True">New York City</answer>
         <answer>Washington</answer>
-        <answer>Helsinki</answer>
+        <answer>Hèlsinki</answer>
       </answers>
     </question>
     <question>
@@ -712,13 +712,13 @@
       </answers>
     </question>
     <question>
-      <sentence>Al 1943, es creia que al món només hi havia mercat#per a</sentence>
+      <sentence>L'any 1943 es creia que al món només hi havia mercat#per a...</sentence>
       <author>Nil</author>
-      <comments>Thomas Watson de IBM va dir literalment que al món hi havia mercat per a com a molt 5 ordinadors.</comments>
+      <comments>Thomas Watson d'IBM va dir literalment que al món hi havia mercat per a 5 ordinadors com a molt.</comments>
       <answers>
-        <answer correct="True">5 ordinadors.</answer>
-        <answer>500 ordinadors.</answer>
-        <answer>50000 ordinadors.</answer>
+        <answer correct="True">5 ordinadors</answer>
+        <answer>500 ordinadors</answer>
+        <answer>50000 ordinadors</answer>
       </answers>
     </question>
     <question>
@@ -738,13 +738,13 @@
       <answers>
         <answer correct="True">Manuel de Icaza</answer>
         <answer>Mark Shuttlework</answer>
-        <answer>George Moustaki</answer>
+        <answer>Georges Moustaki</answer>
       </answers>
     </question>
     <question>
-      <sentence>Quan en Mark Shuttleworth va fer# la seva fortuna venent#una empresa de certificats digitals va anar de viatge a:</sentence>
+      <sentence>Quan en Mark Shuttleworth va fer# la seva fortuna venent#una empresa de certificats digitals va anar de viatge a...</sentence>
       <author>Carles</author>
-      <comments>Mark Shuttleworth va ser el 2on turista espacial#de la història de la humanitat.##Després d'aconseguir la seva fortuna#va fer un viatge a l'estació espacial#internacional amb un grup de científics#per tal de realitzar investigacions amb#celules mare.</comments>
+      <comments>Mark Shuttleworth va ser el 2on turista espacial#de la història de la humanitat.##Després d'aconseguir fer fortuna#va fer un viatge a l'estació espacial#internacional amb un grup de científics#per tal de realitzar investigacions amb#cèl·lules mare.</comments>
       <answers>
         <answer correct="True">L'espai</answer>
         <answer>L'Everest</answer>
@@ -762,9 +762,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui va dir#«Don't think free as in free beer;#think free as in free speech.»?</sentence>
+      <sentence>Qui va dir#«Don't think free as in free beer;#think free as in free speech»?</sentence>
       <author>Carles</author>
-      <comments>Richard Stallman per referir-se que#el programari hauria de ser lliure referint-se#a llibertat.##(És un error de polisemia en anglès#al ser lliure i gratuit la mateixa#paraula: free)</comments>
+      <comments>Richard Stallman, que amb aquesta frase remarcava la diferència entre els dos significats de la paraula "free" en anglès: gratuït i lliure. El programari hauria de ser lliure en el sentit de llibertat, no de no costar diners.##</comments>
       <answers>
         <answer correct="True">Richard Stallman</answer>
         <answer>Linus Torvalds</answer>
@@ -792,37 +792,37 @@
       </answers>
     </question>
     <question>
-      <sentence>On es va fer l'Akademy de l'any 2007?</sentence>
+      <sentence>On es va fer l'aKademy de l'any 2007?</sentence>
       <author>Carles</author>
       <comments>L'Akademy és la trobada anual de desenvolupadors de KDE. L'any 2007 es va fer a Glasgow, a Escòcia.</comments>
       <answers>
         <answer correct="True">Glasgow</answer>
         <answer>Vilanova i la Geltrú</answer>
-        <answer>Dublin</answer>
+        <answer>Dublín</answer>
       </answers>
     </question>
     <question>
-      <sentence>On es va fer l'Akademy de l'any 2006?</sentence>
+      <sentence>On es va fer l'aKademy de l'any 2006?</sentence>
       <author>Carles</author>
-      <comments>L'Akademy és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer al Trinity College Dublín, a Irlanda.</comments>
+      <comments>L'aKademy és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer al Trinity College Dublín, a Irlanda.</comments>
       <answers>
         <answer correct="True">Vilanova i la Geltrú</answer>
-        <answer>Dublin</answer>
+        <answer>Dublín</answer>
         <answer>Chicago</answer>
       </answers>
     </question>
     <question>
-      <sentence>De que es disfressa en Richard Stallman a les seves conferencies?</sentence>
+      <sentence>De què es disfressa en Richard Stallman a les seves conferències?</sentence>
       <author>Nil</author>
       <comments></comments>
       <answers>
         <answer correct="True">Sant Ignucius</answer>
-        <answer>Pokemon</answer>
+        <answer>Pokémon</answer>
         <answer>De nyu (gnu en anglès)</answer>
       </answers>
     </question>
     <question>
-      <sentence>Hans Reiser, creador del sistema#d'arxius ReiserFS, va ser acusat#l'any 2006 de:</sentence>
+      <sentence>Hans Reiser, creador del sistema#d'arxius ReiserFS, va ser acusat#l'any 2006 de...</sentence>
       <author>lluisanunez</author>
       <comments>http://en.wikipedia.org/wiki/Hans_Reiser</comments>
       <answers>
@@ -832,7 +832,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Què es va patentar el 2006</sentence>
+      <sentence>Què es va patentar el 2006?</sentence>
       <author>Carles</author>
       <comments>United States Patent 20060071122. Brutal!</comments>
       <answers>
@@ -842,19 +842,19 @@
       </answers>
     </question>
     <question>
-      <sentence>Que va patentar Microsoft#el 24 de setembre del 1996</sentence>
+      <sentence>Què va patentar Microsoft#el 24 de setembre del 1996?</sentence>
       <author>Carles</author>
       <comments>Patent number: 5559943</comments>
       <answers>
         <answer correct="True">El doble clic</answer>
-        <answer>El CD parcialment regravable</answer>
+        <answer>El CD parcialment reenregistrable</answer>
         <answer>La bola del ratolí</answer>
       </answers>
     </question>
     <question>
       <sentence>Com es diu l'associació d'usuaris de GNU/Linux#més important de Catalunya?</sentence>
       <author>Carles</author>
-      <comments>I el seu Secretari Rafael Carreras és un dels fundadors del LoCo Català d'ubuntaires</comments>
+      <comments>I el seu Secretari Rafael Carreras és un dels fundadors del LoCo Català d'Ubuntaires.</comments>
       <answers>
         <answer correct="True">Caliu</answer>
         <answer>Carlux</answer>
@@ -864,7 +864,7 @@
     <question>
       <sentence>Qui són Dennis Ritchie i Keneth Thompson?</sentence>
       <author>Carles</author>
-      <comments>De l'any 1969 al 1971 Dennis Ritchie i Keneth Thompson ven desenvolupar el sistema unix. Per fer-ho van haver de millorar el lleguatge B creat per Ritchie convertint-lo en C </comments>
+      <comments>De l'any 1969 al 1971 Dennis Ritchie i Keneth Thompson van desenvolupar el sistema Unix. Per fer-ho van haver de millorar el lleguatge B creat per Ritchie convertint-lo en C. </comments>
       <answers>
         <answer correct="True">Els desenvolupadors del C i de l'Unix</answer>
         <answer>Els creadors del projecte GNU</answer>
@@ -872,7 +872,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Què es va celebrar el passat abril al#centre cultural de Les Corts??</sentence>
+      <sentence>Què es va celebrar el passat abril al#centre cultural de Les Corts?</sentence>
       <author>papapep</author>
       <comments></comments>
       <answers>
@@ -884,7 +884,7 @@
     <question>
       <sentence>Qui ha estat l'abanderat de la traducció#del programari al català?</sentence>
       <author>Carles</author>
-      <comments>Per cert... el clic dels nois de redmon ja s'a convertit en clico.</comments>
+      <comments>Per cert... el clic dels nois de redmon ja s'ha convertit en clico.</comments>
       <answers>
         <answer correct="True">Softcatalà</answer>
         <answer>La Generalitat</answer>
