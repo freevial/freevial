@@ -236,6 +236,153 @@
       </answers>
     </question>
 
+    <question>
+      <sentence>Quin problema pateixen els protagonites de Cantant sota la pluja...</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El canvi el cinema mut al sonor</answer>
+        <answer>El canvi del cinema en blanc i negre al color</answer>
+        <answer>El mal temps que afecta al rodatge de les peŀlícules</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>En Peter Sellers fa les mil i una cercant...</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">La pantera rosa</answer>
+        <answer>El perquè de tot plegat</answer>
+        <answer>El profesor Moriarty</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>En Rowan Atkinson persegeuix el crim fent de </sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Johnny English</answer>
+        <answer>Hercules Poirot</answer>
+        <answer>James Bond</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin era el més gran d'aquests germans Marx? </sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Chico</answer>
+        <answer>Groutxo</answer>
+        <answer>Harpo</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Els cowboys dolents volien pelar al migdia a el senyor X que es trobava sol davant del perill. </sentence>
+      <author>Carles</author>
+      <comments>A la peli high noon. "Solo ante el peligro"</comments>
+      <answers>
+        <answer correct="True">Gary Cooper</answer>
+        <answer>Johnny Weissmuller</answer>
+        <answer>John Wayne</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin d'aquests "Zorros" és el primer. </sentence>
+      <author>Carles</author>
+      <comments>The Mark of Zorro (1920) - Douglas Fairbans#The Mark of Zorro (1940) - Tyrone Power# The Mask of Zorro (1998) - Antonio Banderas</comments>
+      <answers>
+        <answer correct="True">Douglas Fairbanks</answer>
+        <answer>Antonio Banderas</answer>
+        <answer>Tyrone Power</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>La bella ens ho diu ben clar... La bellesa cal cercar-la </sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">A l'interior</answer>
+        <answer>A les paraules</answer>
+        <answer>Amb totes les nostres forçes</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>La bella ens ho diu ben clar... La bellesa cal cercar-la </sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">A l'interior</answer>
+        <answer>A les paraules</answer>
+        <answer>Amb totes les nostres forçes</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quina d'aquestes pelis no és d'Alfred Hitchcock </sentence>
+      <author>Carles</author>
+      <comments>Charade 1963 - Stanley Donen	</comments>
+      <answers>
+        <answer correct="True">Xarada</answer>
+        <answer>Extranys en un tren</answer>
+        <answer>Amb la mort als talons</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin d'aquests actors no protagonitza el Cop (the sting - 1973). </sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Cary Grant</answer>
+        <answer>Paul Newman</answer>
+        <answer>Robert Redford</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Una d'aquestes pelis no és de Woody Allen </sentence>
+      <author>Carles</author>
+      <comments>Manhattan Transfer no és ni una peli. he he. :-)</comments>
+      <answers>
+        <answer correct="True">Manhattan Transfer</answer>
+        <answer>La maledicció de l'escorpí de Jade</answer>
+        <answer>Misterios assassinat a Manhatan</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>En Johnny Deep fa un pirata increible... però el seu pare a la ficció a la realitat</sentence>
+      <author>Carles</author>
+      <comments>i és en Keith Richards  el guitarra dels Rolling Stones...##Espero que hagueu contestat bé que si us enganxa el Tarda... fiu...</comments>
+      <answers>
+        <answer correct="True">Té una banda de Rock and roll</answer>
+        <answer>Té una pizzeria</answer>
+        <answer>Té un ull de vidre</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>En les seves peripecies el pirata Roberts, protagonista de la princesa promesa coneix algú que persegueix</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Un home amb sis dits en una ma</answer>
+        <answer>El crim arreu del mon</answer>
+        <answer>Una estrella</answer>
+      </answers>
+    </question>
+
+
+
   </questions>
 
 
