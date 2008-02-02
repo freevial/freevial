@@ -1,0 +1,389 @@
+<database version="1.0" id="Peŀlícules" language="ca">
+  <information>
+
+    <name>Peŀlícules</name>
+    <description>Preguntes de peŀlícules d'arreu</description>
+    <destination>Endevina Gorina. Ho superes Figueres?</destination>
+    <timestamp_creation>1201967391</timestamp_creation>
+    <timestamp_modification>1201967391</timestamp_modification>
+    <authors>
+      <author>Carles Oriol</author>
+    </authors>
+
+  </information>
+
+  <appearance>
+    <image>categoria_movies.png</image>
+    <sound>mov.ogg</sound>
+  </appearance>
+
+  <questions>
+
+    <question>
+      <sentence>De quin material és fet el falcó maltes?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Del material que son fets els sommis</answer>
+        <answer>D'or i pedres precioses</answer>
+        <answer>De marbre lluent per la lluna</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>De quin país son en Bud Spencer i en Therence Hill?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Italians</answer>
+        <answer>Jueus</answer>
+        <answer>Americans</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quin d'aquests actors no surt a Pulp Fiction?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Harrison Ford</answer>
+        <answer>Bruce Willis</answer>
+        <answer>John Travolta</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quina és la Ciutat Cremada?</sentence>
+      <author>Carles</author>
+      <comments>Evidentment Barcelona a la peŀlícula d'Antoni Ribas basada en la Catalunya del començament del segle 20.</comments>
+      <answers>
+        <answer correct="True">Barcelona</answer>
+        <answer>Nova York</answer>
+        <answer>Berlin</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quans negrets tenia al començar l'Aghata Christie?</sentence>
+      <author>Carles</author>
+      <comments>10 ... tot i que ara li han fet canviar el títol a la novela per racista...</comments>
+      <answers>
+        <answer correct="True">10</answer>
+        <answer>5</answer>
+        <answer>3</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quan en Kevin Spacey apareix a la terra diu que vé del planeta?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">k-pax</answer>
+        <answer>kryptó</answer>
+        <answer>el planeta dels ewoks</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Qui és el pare de l'Indiana Johnes?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">James Bond</answer>
+        <answer>Superman</answer>
+        <answer>Rick Blaine</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Si de tots els bars de tots els pobles del mon ella entra en el meu, on estem?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Casablanca</answer>
+        <answer>Lisboa</answer>
+        <answer>Café Europa</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Els fills de l'Anakin es diuen?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Luke i Leia</answer>
+        <answer>Epi i Blas</answer>
+        <answer>Black i Berry</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>A ningú no es perfecte els protagonistes han d'escapar de la mafia per fer-ho...</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Es disfressen de dones</answer>
+        <answer>S'escapen a Russia</answer>
+        <answer>S'amaguen a Africa</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Tens un email és un remake de...</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El bazar de les sorpreses (shop around the corner)</answer>
+        <answer>Ningú no és perfecte (some like it hot)</answer>
+        <answer>Memories d'Africa (out of Africa)</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quina d'aquestes combinacions és "diferent". (Éstil gbrainy)</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Harrison Ford - El temple maleit</answer>
+        <answer>Dustin Hoffman - Totsie</answer>
+        <answer>Robin Williams - Senyora Douptfire</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>A la peli "Temps de valents" de Damian Szifron la parella protagonista son:</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Un poli i un psiquiatre</answer>
+        <answer>Un gat i una rata</answer>
+        <answer>Un soldat i un pacifista</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quants esglaons ens indiquen el contraespionatge que ens ofereix en Hitckcock?</sentence>
+      <author>Carles</author>
+      <comments>A la peli 39 esglaons. (The 39 steps) </comments>
+      <answers>
+        <answer correct="True">39</answer>
+        <answer>12</answer>
+        <answer>28</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quan aconseguim un bon idiota per sopar. Aquest a què es dedica?</sentence>
+      <author>Carles</author>
+      <comments>Si no ho sabieu... mireu la genial peŀlícula francesa: El sopar dels idiotes.</comments>
+      <answers>
+        <answer correct="True">Fa construccions amb escuradents</answer>
+        <answer>Pinta teulades de color rosa</answer>
+        <answer>Ens parla de que no existeix l'evolució</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Jean Renó i Gerard Depardiev coincideien en una comedia francesa brutal. Quina?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Calla't!</answer>
+        <answer>El sopar dels idiotes</answer>
+        <answer>Tres solters i un biberó</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quina d'aquestes parelles no va fer una versió del fil de la noticia?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Bud Spencer i Therence Hill</answer>
+        <answer>Cary Grant i Rosalind Russell</answer>
+        <answer>Jack Lennon i Walter Mathaw</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin robot pren conciencia quan té un curtcircuit?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El nombre 5</answer>
+        <answer>HAL</answer>
+        <answer>Roy el replicant</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>La peŀlícula l'enfonsament ens parla de...</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El declivi d'Adolf Hitler</answer>
+        <answer>Els darrers dies del govern del PP</answer>
+        <answer>Els terratremols al japó</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin problema pateixen els protagonites de Cantant sota la pluja...</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El canvi el cinema mut al sonor</answer>
+        <answer>El canvi del cinema en blanc i negre al color</answer>
+        <answer>El mal temps que afecta al rodatge de les peŀlícules</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>En Peter Sellers fa les mil i una cercant...</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">La pantera rosa</answer>
+        <answer>El perquè de tot plegat</answer>
+        <answer>El profesor Moriarty</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>En Rowan Atkinson persegeuix el crim fent de </sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Johnny English</answer>
+        <answer>Hercules Poirot</answer>
+        <answer>James Bond</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin era el més gran d'aquests germans Marx? </sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Chico</answer>
+        <answer>Groutxo</answer>
+        <answer>Harpo</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Els cowboys dolents volien pelar al migdia a el senyor X que es trobava sol davant del perill. </sentence>
+      <author>Carles</author>
+      <comments>A la peli high noon. "Solo ante el peligro"</comments>
+      <answers>
+        <answer correct="True">Gary Cooper</answer>
+        <answer>Johnny Weissmuller</answer>
+        <answer>John Wayne</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin d'aquests "Zorros" és el primer. </sentence>
+      <author>Carles</author>
+      <comments>The Mark of Zorro (1920) - Douglas Fairbans#The Mark of Zorro (1940) - Tyrone Power# The Mask of Zorro (1998) - Antonio Banderas</comments>
+      <answers>
+        <answer correct="True">Douglas Fairbanks</answer>
+        <answer>Antonio Banderas</answer>
+        <answer>Tyrone Power</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>La bella ens ho diu ben clar... La bellesa cal cercar-la </sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">A l'interior</answer>
+        <answer>A les paraules</answer>
+        <answer>Amb totes les nostres forçes</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>La bella ens ho diu ben clar... La bellesa cal cercar-la </sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">A l'interior</answer>
+        <answer>A les paraules</answer>
+        <answer>Amb totes les nostres forçes</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quina d'aquestes pelis no és d'Alfred Hitchcock </sentence>
+      <author>Carles</author>
+      <comments>Charade 1963 - Stanley Donen	</comments>
+      <answers>
+        <answer correct="True">Xarada</answer>
+        <answer>Extranys en un tren</answer>
+        <answer>Amb la mort als talons</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin d'aquests actors no protagonitza el Cop (the sting - 1973). </sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Cary Grant</answer>
+        <answer>Paul Newman</answer>
+        <answer>Robert Redford</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Una d'aquestes pelis no és de Woody Allen </sentence>
+      <author>Carles</author>
+      <comments>Manhattan Transfer no és ni una peli. he he. :-)</comments>
+      <answers>
+        <answer correct="True">Manhattan Transfer</answer>
+        <answer>La maledicció de l'escorpí de Jade</answer>
+        <answer>Misterios assassinat a Manhatan</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>En Johnny Deep fa un pirata increible... però el seu pare a la ficció a la realitat</sentence>
+      <author>Carles</author>
+      <comments>i és en Keith Richards  el guitarra dels Rolling Stones...##Espero que hagueu contestat bé que si us enganxa el Tarda... fiu...</comments>
+      <answers>
+        <answer correct="True">Té una banda de Rock and roll</answer>
+        <answer>Té una pizzeria</answer>
+        <answer>Té un ull de vidre</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>En les seves peripecies el pirata Roberts, protagonista de la princesa promesa coneix algú que persegueix</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Un home amb sis dits en una ma</answer>
+        <answer>El crim arreu del mon</answer>
+        <answer>Una estrella</answer>
+      </answers>
+    </question>
+
+
+
+  </questions>
+
+
+</database>

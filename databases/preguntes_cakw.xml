@@ -453,5 +453,142 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
         <answer>En Siset</answer>
       </answers>
     </question>
+
+    <question>
+      <sentence>A Barcelona han entrat 100 persones forasteres</sentence>
+      <author>carles</author>
+      <comments>Catalunya Comptat Gran##Ja entraren a Barcelona#cent persones forasteres#amb el nom de segadors#perqué n'era temps de sega.#</comments>
+      <answers>
+        <answer correct="True">Segadors</answer>
+	        <answer>Somatent</answer>
+        <answer>Trabucaires</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>No va poder resistir la tentació de fer un valset dolç al seu fill.</sentence>
+      <author>carles</author>
+      <comments>VALSET (gavaldà)##"Nin rondinaire, petit dictador,#sempre trencant-me la son#ratolinet rinxolet i rumbós#em fas somriure amb el cor.##Em vaig prometre no fer-te cançons#per no semblar carrincló,#però no comptava amb la teva cara#de nen consentit embafat de petons.#</comments>
+      <answers>
+        <answer correct="True">LLuís Gavaldà</answer>
+	        <answer>Gerard Quintana</answer>
+        <answer>Carles Sabater</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Companys, si sabeu on dorm la lluna blanca#digueu-li que la vull#però no puc anar a estimar-la.#Que encara hi ha combat.#</sentence>
+      <author>carles</author>
+      <comments>LLuís Llach#Abril 74###Companys, si sabeu on dorm la lluna blanca#digueu-li que la vull#però no puc anar a estimar-la.#Que encara hi ha combat.#...##I si un trist atzar m'atura i caic a terra#porteu tots els meus cants#i un ram de flors vermelles#a qui tant he estimat.#</comments>
+      <answers>
+        <answer correct="True">Abril</answer>
+	    <answer>Agost</answer>
+        <answer>Desembre</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>On va el rossinyol?</sentence>
+      <author>carles</author>
+      <comments>El rossinyol##Populars i popularitzades dels Països Catalans##Rossinyol, que vas a França, rossinyol,#encomana'm a la mare, rossinyol,#d'un bell boscatge rossinyol#d'un vol. #</comments>
+      <answers>
+        <answer correct="True">A França</answer>
+	    <answer>Enlloc, fa voltes</answer>
+        <answer>Terra endins</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Qui diu "adeu clavell morenet... adeu estrella del dia?</sentence>
+      <author>carles</author>
+      <comments>Ho podrien dir tots ja que son tots condemnats a mort.#Però aquestes son les paraules de la cançó del lladre.##La canço del lladre##Populars i popularitzades dels Països Catalans##Quan jo n'era petitet#festejaba i presumia,#espeardenya blanca al peu#i mocador a la falsia.#Adeu, clavell morenet!#Adeu, estrella del dia!#</comments>
+      <answers>
+        <answer correct="True">El lladre</answer>
+	    <answer>Els presos de la presó de lleida</answer>
+        <answer>En Joan Serra</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>D'on baixa la Marieta de l'ull viu?</sentence>
+      <author>carles</author>
+      <comments>Baixant de la Font del Gat#una noia, una noia;#baixant de la Font del Gat#una noia i un soldat.#Pregunteu-li com se diu,#Marieta Marieta;#pregunteu-li com si diu;#Marieta del ull viu.#</comments>
+      <answers>
+        <answer correct="True">De la font del gat</answer>
+	    <answer>De Lleida</answer>
+        <answer>De Gràcia</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Qui és la nina dels meus amors que fa estada a la platja?</sentence>
+      <author>carles</author>
+      <comments>La Gavina##Oh gavina voladora#que voltejes sobre el mar#i al pas del vent mar enfora#vas volant fins arribar#a la platja solellada#platja de dolços records#on dia i nit hi fa estada#la nina dels meus amors.#</comments>
+      <answers>
+        <answer correct="True">La gavina</answer>
+	    <answer>La Maria</answer>
+        <answer>La terra</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Què cerquen els vaixells d'Stienkarrasi?</sentence>
+      <author>carles</author>
+      <comments>Els vaixells d’Stienkarrassi##Per les aigües de les illes,#per les ones de la mar#els vaixells d’Stienkarrassi#van cercant la llibertat##Volga nostre, Volga nostre#que et el riu nostre estimat#no coneixes la gran pena#que sofreixen els cossacs.##Tot guanyant la llunyania,
+per damunt l’ona flotant#els vaixells d’Stienkarrassi#van cercant la llibertat.#</comments>
+      <answers>
+        <answer correct="True">La llibertat</answer>
+	    <answer>L'horitzó</answer>
+        <answer>Bona pesca</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quina perversió coneixem del Senyor Ramon?</sentence>
+      <author>carles</author>
+      <comments>El senyor Ramon#empaita les criades#el senyor Ramon#emapita a tot el mon.##Les pobres criades quan se'n van al llit#tururut, tururut...#Qui gemega ja ha rebut.###Una lletra forta no?#</comments>
+      <answers>
+        <answer correct="True">Empaita les criades</answer>
+	    <answer>Usa windows</answer>
+        <answer>Bona pesca</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Què demana la nina al seu pare dels presos de la presó de Lleida?</sentence>
+      <author>carles</author>
+      <comments>La presó de Lleida##Populars i popularitzades dels Països Catalans##A la ciutat de Lleida#n'hi ha una presó;#de presos, mai n'hi manquen,#petita, bonica,#prou n'hi porta el baró.#lireta, liró.###...###Aniré al meu pare,#recaptaré el perdó.#Qui és que l'ha dictada,
+petita, bonica,#tan bonica cançó?#lireta, liró.#</comments>
+      <answers>
+        <answer correct="True">L'indult al seu pare</answer>
+	    <answer>Que els cremin</answer>
+        <answer>Que cantin un valset dolç</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Puff era...</sentence>
+      <author>carles</author>
+      <comments>Puff, el drac màgic##Peter Paul and Mary##Puff era un drac màgic que vivia al fons del mar#però sol s'avorria molt i sortia a jugar.##Hi havia un nen petit que se l'estimava ,molt#es trobaven a la platja tot jugant de sol a sol#Tots dos van preparar un viatge molt llarg#volien anar a veure molt atravessant el mar.#</comments>
+      <answers>
+        <answer correct="True">un drac màgic</answer>
+	    <answer>cansat</answer>
+        <answer>un tomaquet que parlava</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Si em dons la ma quan et vetllaré el son...</sentence>
+      <author>carles</author>
+      <comments>Quan el sol es pon##Ll/M: Yarrou#Adap: J. Soler/ Xesco Boix#.3#Digue'm, per què plores, fill meu?#Jo sé que veus en els ulls de la gent#un cel de dubtes, ennegrit de pors,#però tu saps que jo estic vora teu,#vora teu.##Si em dons la mà, #jo et vetllaré el son, #blau i vermell, #
+quan el sol es pon.#</comments>
+      <answers>
+        <answer correct="True">quan el sol es pon</answer>
+	    <answer>quan es fa fosc</answer>
+        <answer>quan estiguis amb mi</answer>
+      </answers>
+    </question>
+
   </questions>
 </database>
