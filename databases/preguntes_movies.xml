@@ -148,7 +148,7 @@
 
 
     <question>
-      <sentence>Quina d'aquestes combinacions és diferent. (Éstil gbrainy)</sentence>
+      <sentence>Quina d'aquestes combinacions és "diferent". (Éstil gbrainy)</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -158,6 +158,83 @@
       </answers>
     </question>
 
+    <question>
+      <sentence>A la peli "Temps de valents" de Damian Szifron la parella protagonista son:</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Un poli i un psiquiatre</answer>
+        <answer>Un gat i una rata</answer>
+        <answer>Un soldat i un pacifista</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quants esglaons ens indiquen el contraespionatge que ens ofereix en Hitckcock?</sentence>
+      <author>Carles</author>
+      <comments>A la peli 39 esglaons. (The 39 steps) </comments>
+      <answers>
+        <answer correct="True">39</answer>
+        <answer>12</answer>
+        <answer>28</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quan aconseguim un bon idiota per sopar. Aquest a què es dedica?</sentence>
+      <author>Carles</author>
+      <comments>Si no ho sabieu... mireu la genial peŀlícula francesa: El sopar dels idiotes.</comments>
+      <answers>
+        <answer correct="True">Fa construccions amb escuradents</answer>
+        <answer>Pinta teulades de color rosa</answer>
+        <answer>Ens parla de que no existeix l'evolució</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Jean Renó i Gerard Depardiev coincideien en una comedia francesa brutal. Quina?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Calla't!</answer>
+        <answer>El sopar dels idiotes</answer>
+        <answer>Tres solters i un biberó</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quina d'aquestes parelles no va fer una versió del fil de la noticia?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Bud Spencer i Therence Hill</answer>
+        <answer>Cary Grant i Rosalind Russell</answer>
+        <answer>Jack Lennon i Walter Mathaw</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin robot pren conciencia quan té un curtcircuit?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El nombre 5</answer>
+        <answer>HAL</answer>
+        <answer>Roy el replicant</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>La peŀlícula l'enfonsament ens parla de...</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El declivi d'Adolf Hitler</answer>
+        <answer>Els darrers dies del govern del PP</answer>
+        <answer>Els terratremols al japó</answer>
+      </answers>
+    </question>
 
   </questions>
 
