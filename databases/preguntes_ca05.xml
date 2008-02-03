@@ -164,7 +164,7 @@
       <comments>El Python és un llenguatge semi-interpretat.</comments>
       <answers>
         <answer correct="True">Python</answer>
-        <answer>C#</answer>
+        <answer>C Sharp</answer>
         <answer>Java</answer>
       </answers>
     </question>
