@@ -3,7 +3,7 @@
 
     <name>Peŀlícules</name>
     <description>Preguntes de peŀlícules d'arreu</description>
-    <destination>Endevina Gorina. Ho superes Figueres?</destination>
+    <destination>Endevina, Gorina. Ho superes, Figueres?</destination>
     <timestamp_creation>1201967391</timestamp_creation>
     <timestamp_modification>1201967391</timestamp_modification>
     <authors>
@@ -20,11 +20,11 @@
   <questions>
 
     <question>
-      <sentence>De quin material és fet el falcó maltes?</sentence>
+      <sentence>De quin material és fet el falcó maltès?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Del material que son fets els sommis</answer>
+        <answer correct="True">Del material de què són fets els somnis</answer>
         <answer>D'or i pedres precioses</answer>
         <answer>De marbre lluent per la lluna</answer>
       </answers>
@@ -37,14 +37,14 @@
       <comments></comments>
       <answers>
         <answer correct="True">Italians</answer>
-        <answer>Jueus</answer>
+        <answer>Israelians</answer>
         <answer>Americans</answer>
       </answers>
     </question>
 
 
     <question>
-      <sentence>Quin d'aquests actors no surt a Pulp Fiction?</sentence>
+      <sentence>Quin d'aquests actors no surt a "Pulp Fiction"?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -55,20 +55,20 @@
     </question>
 
     <question>
-      <sentence>Quina és la Ciutat Cremada?</sentence>
+      <sentence>Quina és la "Ciutat Cremada"?</sentence>
       <author>Carles</author>
-      <comments>Evidentment Barcelona a la peŀlícula d'Antoni Ribas basada en la Catalunya del començament del segle 20.</comments>
+      <comments>Evidentment, Barcelona, a la peŀlícula d'Antoni Ribas basada en la Catalunya del començament del segle XX.</comments>
       <answers>
         <answer correct="True">Barcelona</answer>
         <answer>Nova York</answer>
-        <answer>Berlin</answer>
+        <answer>Berlín</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Quans negrets tenia al començar l'Aghata Christie?</sentence>
+      <sentence>Quants negrets tenia al començament l'Aghata Christie?</sentence>
       <author>Carles</author>
-      <comments>10 ... tot i que ara li han fet canviar el títol a la novela per racista...</comments>
+      <comments>10 ... tot i que ara han canviat el títol de la novel·la per racista... (ara es diu "...I no en va quedar cap").</comments>
       <answers>
         <answer correct="True">10</answer>
         <answer>5</answer>
@@ -78,21 +78,21 @@
 
 
     <question>
-      <sentence>Quan en Kevin Spacey apareix a la terra diu que vé del planeta?</sentence>
+      <sentence>Quan en Kevin Spacey apareix a la Terra, diu que ve del planeta...</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">k-pax</answer>
-        <answer>kryptó</answer>
-        <answer>el planeta dels ewoks</answer>
+        <answer correct="True">K-pax</answer>
+        <answer>Kryptó</answer>
+        <answer>Alderaan</answer>
       </answers>
     </question>
 
 
     <question>
-      <sentence>Qui és el pare de l'Indiana Johnes?</sentence>
+      <sentence>Qui és el pare de l'Indiana Jones?</sentence>
       <author>Carles</author>
-      <comments></comments>
+      <comments>L'actor que fa de Henry Jones és Sean Connery. El millor James Bond de tots.</comments>
       <answers>
         <answer correct="True">James Bond</answer>
         <answer>Superman</answer>
@@ -101,69 +101,69 @@
     </question>
 
     <question>
-      <sentence>Si de tots els bars de tots els pobles del mon ella entra en el meu, on estem?</sentence>
+      <sentence>Si de tots els bars de tots els pobles del món ella entra en el meu, on som?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
         <answer correct="True">Casablanca</answer>
         <answer>Lisboa</answer>
-        <answer>Café Europa</answer>
+        <answer>Bar Quimet</answer>
       </answers>
     </question>
 
 
     <question>
-      <sentence>Els fills de l'Anakin es diuen?</sentence>
+      <sentence>Els fills de l'Anakin es diuen...</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
         <answer correct="True">Luke i Leia</answer>
-        <answer>Epi i Blas</answer>
+        <answer>Epi i Blai</answer>
         <answer>Black i Berry</answer>
       </answers>
     </question>
 
 
     <question>
-      <sentence>A ningú no es perfecte els protagonistes han d'escapar de la mafia per fer-ho...</sentence>
+      <sentence>A "Ningú no és perfecte" els protagonistes han d'escapar-se de la màfia; per fer-ho...</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
         <answer correct="True">Es disfressen de dones</answer>
-        <answer>S'escapen a Russia</answer>
+        <answer>S'escapen a Rússia</answer>
         <answer>S'amaguen a Africa</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Tens un email és un remake de...</sentence>
+      <sentence>"Tens un email" és un remake de...</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">El bazar de les sorpreses (shop around the corner)</answer>
-        <answer>Ningú no és perfecte (some like it hot)</answer>
-        <answer>Memories d'Africa (out of Africa)</answer>
+        <answer correct="True">"El basar de les sorpreses" ("Shop around the corner")</answer>
+        <answer>"Ningú no és perfecte" ("Some like it hot")</answer>
+        <answer>"Memòries d'Àfrica" ("Out of Africa")</answer>
       </answers>
     </question>
 
 
     <question>
-      <sentence>Quina d'aquestes combinacions és "diferent". (Éstil gbrainy)</sentence>
+      <sentence>Quina d'aquestes combinacions és "diferent" (Estil gbrainy)?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Harrison Ford - El temple maleit</answer>
-        <answer>Dustin Hoffman - Totsie</answer>
-        <answer>Robin Williams - Senyora Douptfire</answer>
+        <answer correct="True">Harrison Ford - "El temple maleït"</answer>
+        <answer>Dustin Hoffman - "Tootsie"</answer>
+        <answer>Robin Williams - "Senyora Douptfire"</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>A la peli "Temps de valents" de Damian Szifron la parella protagonista son:</sentence>
+      <sentence>A la pel·li "Temps de valents", de Damian Szifron, la parella protagonista és...</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Un poli i un psiquiatre</answer>
+        <answer correct="True">Un policia i un psiquiatre</answer>
         <answer>Un gat i una rata</answer>
         <answer>Un soldat i un pacifista</answer>
       </answers>
@@ -173,7 +173,7 @@
     <question>
       <sentence>Quants esglaons ens indiquen el contraespionatge que ens ofereix en Hitckcock?</sentence>
       <author>Carles</author>
-      <comments>A la peli 39 esglaons. (The 39 steps) </comments>
+      <comments>A la pel·li, 39 esglaons ("The 39 steps"). </comments>
       <answers>
         <answer correct="True">39</answer>
         <answer>12</answer>
@@ -182,68 +182,68 @@
     </question>
 
     <question>
-      <sentence>Quan aconseguim un bon idiota per sopar. Aquest a què es dedica?</sentence>
+      <sentence>Hem trobat un bon idiota per convidar-lo a sopar. A què es dedica, l'idiota?</sentence>
       <author>Carles</author>
-      <comments>Si no ho sabieu... mireu la genial peŀlícula francesa: El sopar dels idiotes.</comments>
+      <comments>Si no ho sabíeu... mireu la genial peŀlícula francesa "El sopar dels idiotes".</comments>
       <answers>
         <answer correct="True">Fa construccions amb escuradents</answer>
         <answer>Pinta teulades de color rosa</answer>
-        <answer>Ens parla de que no existeix l'evolució</answer>
+        <answer>Ens explica que no existeix l'evolució</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Jean Renó i Gerard Depardiev coincideien en una comedia francesa brutal. Quina?</sentence>
+      <sentence>Jean Reno i Gérard Depardieu coincideixen en una comèdia francesa brutal. Quina?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Calla't!</answer>
-        <answer>El sopar dels idiotes</answer>
-        <answer>Tres solters i un biberó</answer>
+        <answer correct="True">"Que callis!"</answer>
+        <answer>"El sopar dels idiotes"</answer>
+        <answer>"Tres solters i un biberó"</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Quina d'aquestes parelles no va fer una versió del fil de la noticia?</sentence>
+      <sentence>Quina d'aquestes parelles NO va fer una versió d'"El fil de la notícia"?</sentence>
       <author>Carles</author>
-      <comments></comments>
+      <comments>Jack Lemmon i Walter Mathau - "The Front Page" (1974) # Cary Grant i Rosalind Russell - "His Girl Friday" (1940)</comments>
       <answers>
         <answer correct="True">Bud Spencer i Therence Hill</answer>
         <answer>Cary Grant i Rosalind Russell</answer>
-        <answer>Jack Lennon i Walter Mathaw</answer>
+        <answer>Jack Lemmon i Walter Mathau</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Quin robot pren conciencia quan té un curtcircuit?</sentence>
+      <sentence>Quin robot pren consciència quan té un curtcircuit?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">El nombre 5</answer>
+        <answer correct="True">El Número 5</answer>
         <answer>HAL</answer>
         <answer>Roy el replicant</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>La peŀlícula l'enfonsament ens parla de...</sentence>
+      <sentence>La peŀlícula "L'esfondrament" ens parla de...</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
         <answer correct="True">El declivi d'Adolf Hitler</answer>
         <answer>Els darrers dies del govern del PP</answer>
-        <answer>Els terratremols al japó</answer>
+        <answer>Els terratrèmols al Japó</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Quin problema pateixen els protagonites de Cantant sota la pluja...</sentence>
+      <sentence>Quin problema pateixen els protagonites de "Cantant sota la pluja"...</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">El canvi el cinema mut al sonor</answer>
+        <answer correct="True">El canvi del cinema mut al sonor</answer>
         <answer>El canvi del cinema en blanc i negre al color</answer>
-        <answer>El mal temps que afecta al rodatge de les peŀlícules</answer>
+        <answer>El mal temps que afecta el rodatge de les peŀlícules</answer>
       </answers>
     </question>
 
@@ -252,49 +252,49 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">La pantera rosa</answer>
-        <answer>El perquè de tot plegat</answer>
-        <answer>El profesor Moriarty</answer>
+        <answer correct="True">"La pantera rosa"</answer>
+        <answer>"El perquè de tot plegat"</answer>
+        <answer>El professor Moriarty</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>En Rowan Atkinson persegeuix el crim fent de </sentence>
+      <sentence>En Rowan Atkinson persegueix el crim fent de... </sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
         <answer correct="True">Johnny English</answer>
-        <answer>Hercules Poirot</answer>
-        <answer>James Bond</answer>
+        <answer>Hèrcules Poirot</answer>
+        <answer>L'inspector Clouseau</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Quin era el més gran d'aquests germans Marx? </sentence>
+      <sentence>Quin era el més gran dels germans Marx? </sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
         <answer correct="True">Chico</answer>
-        <answer>Groutxo</answer>
+        <answer>Groucho</answer>
         <answer>Harpo</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Els cowboys dolents volien pelar al migdia a el senyor X que es trobava sol davant del perill. </sentence>
+      <sentence>Al punt del migdia, els cowboys dolents volien pelar el senyor X, que es trobava sol davant del perill. </sentence>
       <author>Carles</author>
-      <comments>A la peli high noon. "Solo ante el peligro"</comments>
+      <comments>A la pel·li "High noon" ("Solo ante el peligro").</comments>
       <answers>
         <answer correct="True">Gary Cooper</answer>
-        <answer>Johnny Weissmuller</answer>
+        <answer>Johnny Weissmüller</answer>
         <answer>John Wayne</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Quin d'aquests "Zorros" és el primer. </sentence>
+      <sentence>Quin d'aquests "Zorros" és el primer? </sentence>
       <author>Carles</author>
-      <comments>The Mark of Zorro (1920) - Douglas Fairbans#The Mark of Zorro (1940) - Tyrone Power# The Mask of Zorro (1998) - Antonio Banderas</comments>
+      <comments>"The Mark of Zorro" (1920) - Douglas Fairbanks#"The Mark of Zorro" (1940) - Tyrone Power# "The Mask of Zorro" (1998) - Antonio Banderas</comments>
       <answers>
         <answer correct="True">Douglas Fairbanks</answer>
         <answer>Antonio Banderas</answer>
@@ -303,7 +303,7 @@
     </question>
 
     <question>
-      <sentence>La bella ens ho diu ben clar... La bellesa cal cercar-la </sentence>
+      <sentence>La Bella ens ho diu ben clar: la bellesa cal cercar-la... </sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -313,31 +313,21 @@
       </answers>
     </question>
 
-    <question>
-      <sentence>La bella ens ho diu ben clar... La bellesa cal cercar-la </sentence>
-      <author>Carles</author>
-      <comments></comments>
-      <answers>
-        <answer correct="True">A l'interior</answer>
-        <answer>A les paraules</answer>
-        <answer>Amb totes les nostres forçes</answer>
-      </answers>
-    </question>
-
+   
 
     <question>
-      <sentence>Quina d'aquestes pelis no és d'Alfred Hitchcock </sentence>
+      <sentence>Quina d'aquestes pel·lis no és d'Alfred Hitchcock? </sentence>
       <author>Carles</author>
-      <comments>Charade 1963 - Stanley Donen	</comments>
+      <comments>"Charade" 1963 - Stanley Donen	</comments>
       <answers>
-        <answer correct="True">Xarada</answer>
-        <answer>Extranys en un tren</answer>
-        <answer>Amb la mort als talons</answer>
+        <answer correct="True">"Xarada"</answer>
+        <answer>"Estranys en un tren"</answer>
+        <answer>"Amb la mort als talons"</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Quin d'aquests actors no protagonitza el Cop (the sting - 1973). </sentence>
+      <sentence>Quin d'aquests actors no protagonitza "El cop" ("The sting" - 1973). </sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -349,20 +339,20 @@
 
 
     <question>
-      <sentence>Una d'aquestes pelis no és de Woody Allen </sentence>
+      <sentence>Una d'aquestes pel·lis no és de Woody Allen: </sentence>
       <author>Carles</author>
-      <comments>Manhattan Transfer no és ni una peli. he he. :-)</comments>
+      <comments>"Manhattan Transfer" no és ni una pel·li, he, he :-)</comments>
       <answers>
-        <answer correct="True">Manhattan Transfer</answer>
-        <answer>La maledicció de l'escorpí de Jade</answer>
-        <answer>Misterios assassinat a Manhatan</answer>
+        <answer correct="True">"Manhattan Transfer"</answer>
+        <answer>"La maledicció de l'escorpí de Jade"</answer>
+        <answer>"Misteriós assassinat a Manhattan"</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>En Johnny Deep fa un pirata increible... però el seu pare a la ficció a la realitat</sentence>
+      <sentence>En Johnny Deep és increïblement genial fent de pirata, però el seu pare a la ficció en realitat...</sentence>
       <author>Carles</author>
-      <comments>i és en Keith Richards  el guitarra dels Rolling Stones...##Espero que hagueu contestat bé que si us enganxa el Tarda... fiu...</comments>
+      <comments>i és en Keith Ritchards, el guitarra dels Rolling Stones...##Espero que hagueu contestat bé, que si us enganxa en Tardà... fiu...</comments>
       <answers>
         <answer correct="True">Té una banda de Rock and roll</answer>
         <answer>Té una pizzeria</answer>
@@ -371,21 +361,21 @@
     </question>
 
     <question>
-      <sentence>En les seves peripecies el pirata Roberts, protagonista de la princesa promesa coneix algú que persegueix</sentence>
+      <sentence>En les seves peripècies, el pirata Roberts, protagonista de "La princesa promesa", coneix algú que persegueix...</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Un home amb sis dits en una ma</answer>
-        <answer>El crim arreu del mon</answer>
+        <answer correct="True">Un home amb sis dits en una mà</answer>
+        <answer>El crim arreu del món</answer>
         <answer>Una estrella</answer>
       </answers>
     </question>
 
 
     <question>
-      <sentence>Per on patrulla el detectiu Axel Foley</sentence>
+      <sentence>Per on patrulla el detectiu Axel Foley?</sentence>
       <author>Carles</author>
-      <comments>Eddie Murphy en el seu paper de detectiu Axel Foley#Combat el crim al barri de Beverly Hills##És el superdetectiu a Hollywood##... recordeu la musiqueta?</comments>
+      <comments>Eddie Murphy, en el seu paper de detectiu Axel Foley,#combat el crim al barri de Beverly Hills.##És el "Superdetectiu a Hollywood"##... recordeu la musiqueta?</comments>
       <answers>
         <answer correct="True">Beverly Hills</answer>
         <answer>Miami Cayos</answer>
@@ -397,7 +387,7 @@
     <question>
       <sentence>Qui tenia un apartament?</sentence>
       <author>Carles</author>
-      <comments>Jack Lemmon a la peŀlícula l'apartament#Ara ... ben bé no sabem si era d'ell#o de tots els que se n'aprofitaven.</comments>
+      <comments>Jack Lemmon a la peŀlícula "L'apartament"#Ara que... ben bé no sabem si era d'ell#o de tots els que se n'aprofitaven.</comments>
       <answers>
         <answer correct="True">Jack Lemmon</answer>
         <answer>Bruce Willis</answer>
@@ -410,9 +400,9 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Annie Hall</answer>
-        <answer>La bella i la bèstia</answer>
-        <answer>My fair lady</answer>
+        <answer correct="True">"Annie Hall"</answer>
+        <answer>"La bella i la bèstia"</answer>
+        <answer>"My fair lady"</answer>
       </answers>
     </question>
 
@@ -421,31 +411,133 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Sleepy Hollow</answer>
-        <answer>Eduard mans tisores</answer>
-        <answer>Malson abans de nadal</answer>
-      </answers>
-    </question>
-
-    <question>
-      <sentence>En quina peŀlícula en Tim Burton fa una escabetxina de caps?</sentence>
-      <author>Carles</author>
-      <comments></comments>
-      <answers>
-        <answer correct="True">Sleepy Hollow</answer>
-        <answer>Eduard mans-estisores</answer>
-        <answer>Malson abans de nadal</answer>
+        <answer correct="True">"Sleepy Hollow"</answer>
+        <answer>"Eduard Mans-tisores"</answer>
+        <answer>"Malson abans de Nadal"</answer>
       </answers>
     </question>
 
     <question>
       <sentence>Quin d'aquests actors no ha fet de James Bond?</sentence>
       <author>Carles</author>
-      <comments>En Cary Elwes fa fantàsticament de Westley a la princesa promesa#i de dolent a algun capítol d'expedient X.</comments>
+      <comments>En Cary Elwes broda el seu paper de Westley a "La princesa promesa"#i fa de dolent en algun capítol d'"Expedient X".</comments>
       <answers>
         <answer correct="True">Cary Elwes</answer>
         <answer>George Lazenby</answer>
         <answer>Timothy Dalton</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin director de cinema entra en un banc i en surt armat amb una escopeta?</sentence>
+      <author>Carles</author>
+      <comments>El sempre crític Michael Moore en el seu documental "Bowling for Columbine".#No us el podeu perdre.</comments>
+      <answers>
+        <answer correct="True">Michael Moore</answer>
+        <answer>Stanley Kubrick</answer>
+        <answer>Francis Ford Coppola</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin d'aquests no és fill d'en Vito Corleone?</sentence>
+      <author>Carles</author>
+      <comments>Els fills es deien:##Santino 'Sonny' Corleone#Frederico 'Fredo' Corleone#Michael Corleone#i la filla: Constanzia 'Connie' Corleone-Rizzi.</comments>
+      <answers>
+        <answer correct="True">Tessio</answer>
+        <answer>Michael</answer>
+        <answer>Fredo</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Segons Forrest Gump, qui és ximple?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El que fa ximpleries</answer>
+        <answer>El que no confia en els altres</answer>
+        <answer>El que usa windows</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>A "El club dels poetes morts" en Robin Williams ensenya als seus alumnes la frase....</sentence>
+      <author>Carles</author>
+      <comments>Carpe diem: Viu el dia, aprofita el moment.</comments>
+      <answers>
+        <answer correct="True">Carpe diem</answer>
+        <answer>Quid pro quo</answer>
+        <answer>Status quo</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin és títol original de la sèrie de peŀlícules "La jungla de cristall"?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">"Die Hard"</answer>
+        <answer>"Crystal jungle"</answer>
+        <answer>"Letal jungle"</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>De tots els components de la banda de "Reservoir Dogs", qui en queda viu en acabar la pel·li?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Cap</answer>
+        <answer>Mr. Orange</answer>
+        <answer>Mr. Orange i Mr. Pink</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>En quina pel·li canten per veure el costat brillant de la vida?</sentence>
+      <author>Carles</author>
+      <comments>You always look in the bright side of life... </comments>
+      <answers>
+        <answer correct="True">"La vida de Brian"</answer>
+        <answer>Tots diuen "I love you"</answer>
+        <answer>"La Sireneta"</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>En quina pel·li els dolents usen una còpia pirata de la pròpia peŀlícula per saber on han anat els bons?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">"Spaceballs"</answer>
+        <answer>"Galaxy quest"</answer>
+        <answer>"Retorn al futur II"</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Qui va dirigir la comèdia "Un, dos,tres?"</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Billy Wilder</answer>
+        <answer>Frank Capra</answer>
+        <answer>Ernst Lubitsch</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin tipus de peŀlícula era el preferit de Frank Capra?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">La comèdia</answer>
+        <answer>El western</answer>
+        <answer>El drama</answer>
       </answers>
     </question>
 

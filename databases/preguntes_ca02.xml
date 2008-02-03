@@ -269,7 +269,7 @@
     <question>
       <sentence>L'Ubuntu és un sistema operatiu del tipus...</sentence>
       <author>carles</author>
-      <comments>EL sistema operatiu és GNU amb Linux. Linux només n'és el nucli i n'és un component tan important com qualsevol altre.##Pel que fa a la primera opció, encara que s'hi assembli molt, GNU/Linux no és un sistema UNIX aprovat.</comments>
+      <comments>EL sistema operatiu és GNU amb Linux. Linux només n'és el nucli i n'és un component tan important com qualsevol altre.##Pel que fa a la primera opció, encara que s'hi assembli molt, GNU/Linux no és un sistema Unix aprovat.</comments>
       <answers>
         <answer correct="True">GNU amb Linux</answer>
         <answer>Linux</answer>

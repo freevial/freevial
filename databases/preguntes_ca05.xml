@@ -159,7 +159,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests llenguatges no funciona#sobre una màquina virtual</sentence>
+      <sentence>Quin d'aquests llenguatges no funciona#sobre una màquina virtual?</sentence>
       <author>Carles</author>
       <comments>El Python és un llenguatge semi-interpretat.</comments>
       <answers>
@@ -171,7 +171,7 @@
     <question>
       <sentence>Per què el C++ s'anomena així?</sentence>
       <author>carles</author>
-      <comments>Abans hi havia el B, després va venir el C (B+1) i C + 1 en C s'escriu C++</comments>
+      <comments>Abans hi havia el B, després va venir el C (B+1) i C + 1 en C s'escriu C++.</comments>
       <answers>
         <answer correct="True">Perquè C + 1 en C s'escriu C++</answer>
         <answer>Perquè és un C millorat#(més i millor ++)</answer>
@@ -181,7 +181,7 @@
     <question>
       <sentence>Una mica de C#Si: define MAX(A,B) ( ((A) &gt; B) ? (A) : (B) )#i assignem x = 1; y = 2; #el resultat de MAX( ++x, ++y ) és?</sentence>
       <author>Carles</author>
-      <comments>Ja que, com que és una macro i no una funció, en substituir paràmetres es realitza 2 cops el preincrement de y (++y)</comments>
+      <comments>Ja que, com que és una macro i no una funció, en substituir paràmetres es realitza 2 cops el preincrement de y (++y).</comments>
       <answers>
         <answer correct="True">4</answer>
         <answer>3</answer>

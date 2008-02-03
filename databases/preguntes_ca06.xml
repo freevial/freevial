@@ -1,7 +1,7 @@
 <database version="1.0" id="Programari i maquinari" language="ca">
   <information>
     <name>Programari i maquinari</name>
-    <description>Preguntes sobre els programes i els aparells que podem usar en el món gnu/linux</description>
+    <description>Preguntes sobre els programes i els aparells que podem usar en el món GNU/Linux</description>
     <destination>Coneixements mínims de l'entorn GNU</destination>
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139484</timestamp_modification>
@@ -121,7 +121,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin programa ha substituït el telnet</sentence>
+      <sentence>Quin programa ha substituït el telnet?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -351,7 +351,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests programes no és#per manipular so?</sentence>
+      <sentence>Quin d'aquests programes no és#per a manipular so?</sentence>
       <author>carles</author>
       <comments>L'Ardour és un gran programa multipista per treballar en temps real.#L'Audacity és un gran programa per tractar so.#I el Blender és un programa boníssim de disseny gràfic en 3D.</comments>
       <answers>

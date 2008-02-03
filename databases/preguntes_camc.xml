@@ -20,7 +20,7 @@
       <author>NiliMarc</author>
       <comments></comments>
       <answers>
-        <answer correct="True">El bigoti</answer>
+        <answer correct="True">Els bigotis</answer>
         <answer>Són exactament iguals</answer>
         <answer>L'un és esquerrà i l'altre és dretà</answer>
       </answers>
@@ -38,7 +38,7 @@
     <question>
       <sentence>Quants dits tenen els personatges#dels Simpsons?</sentence>
       <author>NiliMarc</author>
-      <comments>SIMPSONS#</comments>
+      <comments>Simpsons#</comments>
       <answers>
         <answer correct="True">4</answer>
         <answer>5</answer>
@@ -48,7 +48,7 @@
     <question>
       <sentence>Quin és l'únic lloc del món on#hi ha un Mazinger gegant?</sentence>
       <author>NiliMarc</author>
-      <comments>Mazinger Z#A Tarragona s'hi anava a construir una urbanització (Mas de plata) que, com a reclam turístic, tenia un Mazinger gegant, però la urbanització no es va acabar i hi va quedar el mazinger abandonat.</comments>
+      <comments>Mazinger Z#A Tarragona s'hi anava a construir una urbanització (Mas de plata) que, com a reclam turístic, tenia un Mazinger gegant, però la urbanització no es va acabar i hi va quedar el Mazinger abandonat.</comments>
       <answers>
         <answer correct="True">Tarragona</answer>
         <answer>El Japó</answer>
@@ -91,7 +91,7 @@
       <comments>Heidi#La seva tieta aconsegueix feina i l'envia a viure amb el seu avi, que ni tan sols coneixia</comments>
       <answers>
         <answer correct="True">Amb l'avi</answer>
-        <answer>Amb els seus pares</answer>
+        <answer>Amb els pares</answer>
         <answer>Sola</answer>
       </answers>
     </question>
@@ -108,7 +108,7 @@
     <question>
       <sentence>Què menja en Popeye#per tornar-se fort?</sentence>
       <author>NiliMarc</author>
-      <comments>Popeye#Quan en Popeye necessita ser fort menja espinacs. Cal tenir en compte que durant molt de temps es va creure que els espinacs contenien molt més ferro del que en realitat tenen, perquè havien col·locat malament la coma dels decimals.</comments>
+      <comments>Popeye#Quan en Popeye necessita ser fort menja espinacs. Cal tenir en compte que durant molt de temps es va creure que els espinacs contenien molt més ferro del que en realitat tenen, perquè en una classificació havien col·locat malament la coma dels decimals.</comments>
       <answers>
         <answer correct="True">Espinacs</answer>
         <answer>Alls</answer>
@@ -148,7 +148,7 @@
     <question>
       <sentence>Els mangues es llegeixen...</sentence>
       <author>NiliMarc</author>
-      <comments>Es manté la direcció original de les vinyetes</comments>
+      <comments>Es manté la direcció original de les vinyetes.</comments>
       <answers>
         <answer correct="True">De dreta a esquerra i de dalt a baix</answer>
         <answer>D'esquerra a dreta i de baix a dalt</answer>
@@ -168,7 +168,7 @@
     <question>
       <sentence>Què fa en López a l'oficina?</sentence>
       <author>NiliMarc</author>
-      <comments>Superlópez#La personalitat secreta d'en Superlópez és una feina molt dura</comments>
+      <comments>Superlópez#La personalitat secreta d'en Superlópez és una feina molt dura.</comments>
       <answers>
         <answer correct="True">Fa ocellets de paper</answer>
         <answer>Juga amb el boli</answer>
@@ -196,9 +196,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin es el somni d'en Naruto?</sentence>
+      <sentence>Quin és el somni d'en Naruto?</sentence>
       <author>NiliMarc</author>
-      <comments>NARUTO#Quan Naruto neix li segellen un monstre a dins, tot el poble li té por i per això el deixen de banda, per això en Naruto vol ser el Hokaje, el títol més important dels ninges</comments>
+      <comments>Naruto#Quan Naruto neix li segellen un monstre a dins, tot el poble li té por i per això el deixen de banda, per això en Naruto vol ser el Hokaje, el títol més important dels ninges.</comments>
       <answers>
         <answer correct="True">Convertir-se en Hokaje</answer>
         <answer>Ser el millor ninja</answer>
@@ -218,7 +218,7 @@
     <question>
       <sentence>Com anomenen en#Vash l'Estampida?</sentence>
       <author>NiliMarc</author>
-      <comments>Trigun#Després de la catastròfica arribada al planeta, i havent perdut durant el viatge la seva estimada, Vash decideix que no permetrà que el seu germà Knives faci mal a ningú més. Però, com que ell és un alienígena molt poderós, destrueix sense voler una ciutat. Per això el seu cap passa a valdre 60.000.000.000$$ i rep un nou nom: "Tifó Humanoide".</comments>
+      <comments>Trigun#Després de la catastròfica arribada al planeta, i havent perdut durant el viatge la seva estimada, en Vash decideix que no permetrà que el seu germà Knives faci mal a ningú més. Però, com que ell és un alienígena molt poderós, destrueix sense voler una ciutat. Per això el seu cap passa a valdre 60.000.000.000$$ i rep un nou nom: "Tifó Humanoide".</comments>
       <answers>
         <answer correct="True">Tifó humanoide</answer>
         <answer>L'home dels 60.000.000$$</answer>
@@ -228,7 +228,7 @@
     <question>
       <sentence>Quin problema té en Ranma#amb l'aigua?</sentence>
       <author>NiliMarc</author>
-      <comments>Ranma#En Ranma entrenava Jusenkyo per arribar a ser el millor lluitador d'arts marcials del món, allà ell i el seu pare queden maleïts perquè cauen a l'aigua i quan es mullen es transformen en noia (en Ranma) i panda (el seu pare)</comments>
+      <comments>Ranma#En Ranma entrenava Jusenkyo per arribar a ser el millor lluitador d'arts marcials del món, allà ell i el seu pare queden maleïts perquè cauen a l'aigua i quan es mullen es transformen en noia (en Ranma) i panda (el seu pare).</comments>
       <answers>
         <answer correct="True">Es transforma en noia</answer>
         <answer>Es converteix en mico gegant</answer>
@@ -238,7 +238,7 @@
     <question>
       <sentence>On va néixer en Marco?</sentence>
       <author>NiliMarc</author>
-      <comments>Marco#En un poble italià al peu de les muntanyes hi viu el nostre amic Marco</comments>
+      <comments>Marco#En un poble italià, al peu de les muntanyes, hi viu el nostre amic Marco</comments>
       <answers>
         <answer correct="True">En un poble italià</answer>
         <answer>En un poble rus</answer>
@@ -248,7 +248,7 @@
     <question>
       <sentence>De quin material està fet#el Mazinger Z?</sentence>
       <author>NiliMarc</author>
-      <comments>Mazinger Z# El centre d'investigacions fotoatòmiques va descobrir aquest material per poder crear el robot Mazinger Z</comments>
+      <comments>Mazinger Z# El centre d'investigacions fotoatòmiques va descobrir aquest material per poder crear el robot Mazinger Z.</comments>
       <answers>
         <answer correct="True">Japànium (aliatge Z)</answer>
         <answer>Mazingànium (aliatge final)</answer>
@@ -292,7 +292,7 @@
       <answers>
         <answer correct="True">El doctor Bacteri l'enganya</answer>
         <answer>Es disfressa de vell i no es pot treure#la calba falsa</answer>
-        <answer>Un indi els hi arrenca</answer>
+        <answer>Un indi l'hi arrenca</answer>
       </answers>
     </question>
     <question>
@@ -318,7 +318,7 @@
     <question>
       <sentence>A quin planeta va néixer#en Cor Petit?</sentence>
       <author>NiliMarc</author>
-      <comments>Bola de Drac# El Cor Petit/déu, prové de Namek.</comments>
+      <comments>Bola de Drac# El Cor Petit/déu prové de Namek.</comments>
       <answers>
         <answer correct="True">Namek</answer>
         <answer>La terra</answer>
@@ -348,7 +348,7 @@
     <question>
       <sentence>La mà dimoni del Sawamura#es converteix en...</sentence>
       <author>NiliMarc</author>
-      <comments>Midori No Hibi#Sawamura ha passat 17 anys i 2 mesos sense xicota, amb un rècord històric al seu institut de 20 carabasses; quan ja ho dóna tot per perdut sent una veu femenina molt a prop del seu cap... Surt de la seva mà.</comments>
+      <comments>Midori No Hibi#Sawamura ha passat 17 anys i 2 mesos sense xicota, amb un rècord històric al seu institut de 20 carabasses; quan ja ho dóna tot per perdut, sent una veu femenina molt a prop del seu cap... Surt de la seva mà.</comments>
       <answers>
         <answer correct="True">Una noia</answer>
         <answer>Una destral</answer>

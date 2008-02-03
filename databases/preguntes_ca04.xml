@@ -32,7 +32,7 @@
     <question>
       <sentence>Quina d'aquestes normes no s'aplica a un gremlin?</sentence>
       <author>Carles</author>
-      <comments>No el mulli,#mantingui'l lluny de les llums brillants,#i el més important, no li doni# mai menjar després de mitjanit.##Gremlins (1984)</comments>
+      <comments>No el mulli,#mantingui'l lluny de les llums brillants,#i el més important, no li doni# mai menjar després de mitjanit.##"Gremlins" (1984)</comments>
       <answers>
         <answer correct="True">No poden cantar</answer>
         <answer>No poden menjar després de mitjanit</answer>
@@ -42,7 +42,7 @@
     <question>
       <sentence>Qui porta la nova generació per a anar on no ha arribat mai ningú?</sentence>
       <author>quiron</author>
-      <comments>46</comments>
+      <comments></comments>
       <answers>
         <answer correct="True">Jean-Luc Picard</answer>
         <answer>James T. Kirk</answer>
@@ -54,9 +54,9 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Pirates of SillyconValley</answer>
-        <answer>Begins of Computers</answer>
-        <answer>War Games</answer>
+        <answer correct="True">"Pirates of SillyconValley"</answer>
+        <answer>"Begins of Computers"</answer>
+        <answer>"War Games"</answer>
       </answers>
     </question>
     <question>
@@ -64,13 +64,13 @@
       <author>Carles</author>
       <comments>Quan l'ordinador descrobria la insensatesa de la guerra.</comments>
       <answers>
-        <answer correct="True">Jocs de guerra</answer>
-        <answer>Tron</answer>
-        <answer>Matrix</answer>
+        <answer correct="True">"Jocs de guerra"</answer>
+        <answer>"Tron"</answer>
+        <answer>"Matrix"</answer>
       </answers>
     </question>
     <question>
-      <sentence>El wesnoth és un joc del tipus...</sentence>
+      <sentence>El "Wesnoth" és un joc del tipus...</sentence>
       <author>Nil</author>
       <comments></comments>
       <answers>
@@ -80,7 +80,7 @@
       </answers>
     </question>
     <question>
-      <sentence>En un capítol de la sèrie 'Porca misèria'#es veu un entorn gràfic de Linux, quin?</sentence>
+      <sentence>En un capítol de la sèrie "Porca misèria"#es veu un entorn gràfic de Linux, quin?</sentence>
       <author>papapep</author>
       <comments></comments>
       <answers>
@@ -90,9 +90,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina eina usa la Trinity a "Matrix Reloaded"#per fer petar l'ordinador?</sentence>
+      <sentence>Quina eina usa la Trinity a "Matrix Reloaded"#per petar l'ordinador?</sentence>
       <author>Carles</author>
-      <comments>A la pel·lícula "Matrix Reloaded" podem veure la Trinity fent petar un ordinador i a la pantalla es veu com realitza un escaneig de seguretat amb l'eina nmap!!! Un cop fet això es mostra una vulnerabilitat real (exploit SSHv1 CRC32), un error de buffer, que aprofita amb una eina fingida sshnuke.</comments>
+      <comments>A la pel·lícula "Matrix Reloaded" podem veure la Trinity petant un ordinador i a la pantalla es veu com realitza un escaneig de seguretat amb l'eina nmap!!! Un cop fet això es mostra una vulnerabilitat real (exploit SSHv1 CRC32), un error de buffer, que aprofita amb una eina fingida sshnuke.</comments>
       <answers>
         <answer correct="True">nmap</answer>
         <answer>El càssic dir c:\ de totes les pel·lis</answer>
@@ -110,7 +110,7 @@
       </answers>
     </question>
     <question>
-      <sentence>De què és acrònim HAL a la pel·lícula 2001#(tot i que ho negui Arthur C. Clarck)? </sentence>
+      <sentence>De què és acrònim HAL a la pel·lícula "2001"#(tot i que ho negui Arthur C. Clarck)? </sentence>
       <author>Carles</author>
       <comments>IBM = I - 1 = H, B - 1 = A, M - 1 = L</comments>
       <answers>
@@ -170,7 +170,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Si volguéssim jugar al super puzzle fighter amb l'Ubuntu, amb quin programa ho faríem?</sentence>
+      <sentence>Si volguéssim jugar al "Super puzzle fighter" amb l'Ubuntu, amb quin programa ho faríem?</sentence>
       <author>Nil</author>
       <comments>27</comments>
       <answers>
@@ -180,7 +180,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Si volguéssim jugar al King quest#amb l'Ubuntu, amb quin no podríem?</sentence>
+      <sentence>Si volguéssim jugar al "King's quest"#amb l'Ubuntu, amb quin no podríem?</sentence>
       <author>Nil</author>
       <comments>26</comments>
       <answers>
@@ -220,7 +220,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Al llibre SnowCrash els americans#només són els millors...</sentence>
+      <sentence>Al llibre "SnowCrash" els americans#només són els millors...</sentence>
       <author>Nil</author>
       <comments>22</comments>
       <answers>
@@ -257,7 +257,7 @@
       <answers>
         <answer correct="True">Per a evitar la destrucció de la terra</answer>
         <answer>Per a instaŀlar el fedora</answer>
-        <answer>Per areorganitzar l'espai al disc dur</answer>
+        <answer>Per a reorganitzar l'espai al disc dur</answer>
       </answers>
     </question>
     <question>
@@ -302,7 +302,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quants anells toquen als Reis Elfs?</sentence>
+      <sentence>Quants anells toquen als reis elfs?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -312,7 +312,7 @@
       </answers>
     </question>
     <question>
-      <sentence>El cartell de proves del freevial està#copiat de la publicitat d'un videojoc#de 8 bits.#Com es deia  l'empresa que va fer-lo?</sentence>
+      <sentence>El cartell de proves del Freevial està#copiat de la publicitat d'un videojoc#de 8 bits.#Com es deia  l'empresa que va fer-lo?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
