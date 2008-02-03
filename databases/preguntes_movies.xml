@@ -24,7 +24,7 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Del material que son fets els sommis</answer>
+        <answer correct="True">Del material que son fets els somiïs</answer>
         <answer>D'or i pedres precioses</answer>
         <answer>De marbre lluent per la lluna</answer>
       </answers>
@@ -61,14 +61,14 @@
       <answers>
         <answer correct="True">Barcelona</answer>
         <answer>Nova York</answer>
-        <answer>Berlin</answer>
+        <answer>Berlín</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Quans negrets tenia al començar l'Aghata Christie?</sentence>
+      <sentence>Quants negrets tenia al començar l'Aghata Christie?</sentence>
       <author>Carles</author>
-      <comments>10 ... tot i que ara li han fet canviar el títol a la novela per racista...</comments>
+      <comments>10 ... tot i que ara li han fet canviar el títol a la novel·la per racista...</comments>
       <answers>
         <answer correct="True">10</answer>
         <answer>5</answer>
@@ -78,21 +78,21 @@
 
 
     <question>
-      <sentence>Quan en Kevin Spacey apareix a la terra diu que vé del planeta?</sentence>
+      <sentence>Quan en Kevin Spacey apareix a la terra diu que ve del planeta?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">k-pax</answer>
-        <answer>kryptó</answer>
-        <answer>el planeta dels ewoks</answer>
+        <answer correct="True">K-pax</answer>
+        <answer>Kryptó</answer>
+        <answer>Alderaan</answer>
       </answers>
     </question>
 
 
     <question>
-      <sentence>Qui és el pare de l'Indiana Johnes?</sentence>
+      <sentence>Qui és el pare de l'Indiana Jones?</sentence>
       <author>Carles</author>
-      <comments></comments>
+      <comments>L'actor de fa de Henry Jones és Sean Conery. El millor James Bond de tots.</comments>
       <answers>
         <answer correct="True">James Bond</answer>
         <answer>Superman</answer>
@@ -107,7 +107,7 @@
       <answers>
         <answer correct="True">Casablanca</answer>
         <answer>Lisboa</answer>
-        <answer>Café Europa</answer>
+        <answer>Cafè Europa</answer>
       </answers>
     </question>
 
@@ -125,12 +125,12 @@
 
 
     <question>
-      <sentence>A ningú no es perfecte els protagonistes han d'escapar de la mafia per fer-ho...</sentence>
+      <sentence>A ningú no es perfecte els protagonistes han d'escapar de la màfia per fer-ho...</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
         <answer correct="True">Es disfressen de dones</answer>
-        <answer>S'escapen a Russia</answer>
+        <answer>S'escapen a Rússia</answer>
         <answer>S'amaguen a Africa</answer>
       </answers>
     </question>
@@ -140,15 +140,15 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">El bazar de les sorpreses (shop around the corner)</answer>
+        <answer correct="True">El basar de les sorpreses (shop around the corner)</answer>
         <answer>Ningú no és perfecte (some like it hot)</answer>
-        <answer>Memories d'Africa (out of Africa)</answer>
+        <answer>Memòries d'Africa (out of Africa)</answer>
       </answers>
     </question>
 
 
     <question>
-      <sentence>Quina d'aquestes combinacions és "diferent". (Éstil gbrainy)</sentence>
+      <sentence>Quina d'aquestes combinacions és "diferent". (Estil gbrainy)</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -163,7 +163,7 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Un poli i un psiquiatre</answer>
+        <answer correct="True">Un policia i un psiquiatre</answer>
         <answer>Un gat i una rata</answer>
         <answer>Un soldat i un pacifista</answer>
       </answers>
@@ -184,7 +184,7 @@
     <question>
       <sentence>Quan aconseguim un bon idiota per sopar. Aquest a què es dedica?</sentence>
       <author>Carles</author>
-      <comments>Si no ho sabieu... mireu la genial peŀlícula francesa: El sopar dels idiotes.</comments>
+      <comments>Si no ho sabíeu... mireu la genial peŀlícula francesa: El sopar dels idiotes.</comments>
       <answers>
         <answer correct="True">Fa construccions amb escuradents</answer>
         <answer>Pinta teulades de color rosa</answer>
@@ -193,7 +193,7 @@
     </question>
 
     <question>
-      <sentence>Jean Renó i Gerard Depardiev coincideien en una comedia francesa brutal. Quina?</sentence>
+      <sentence>Jean Renó i Gerard Depardiev coincideixen en una comèdia francesa brutal. Quina?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -204,13 +204,13 @@
     </question>
 
     <question>
-      <sentence>Quina d'aquestes parelles no va fer una versió del fil de la noticia?</sentence>
+      <sentence>Quina d'aquestes parelles NO va fer una versió del fil de la noticia?</sentence>
       <author>Carles</author>
-      <comments></comments>
+      <comments>Jack Lemmon i Walter Mathaw - The Front Page (1974) # Cary Grant i Rosalind Russell - His Girl Friday (1940)</comments>
       <answers>
         <answer correct="True">Bud Spencer i Therence Hill</answer>
         <answer>Cary Grant i Rosalind Russell</answer>
-        <answer>Jack Lennon i Walter Mathaw</answer>
+        <answer>Jack Lemmon i Walter Mathaw</answer>
       </answers>
     </question>
 
@@ -446,6 +446,119 @@
         <answer correct="True">Cary Elwes</answer>
         <answer>George Lazenby</answer>
         <answer>Timothy Dalton</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin director de cinema entra en un banc i surt armat amb una escopeta?</sentence>
+      <author>Carles</author>
+      <comments>El sempre crític Michael Moore en el seu documental "Bowling for Columbine".#No us el podeu perdre.</comments>
+      <answers>
+        <answer correct="True">Michael Moore</answer>
+        <answer>Stanley Kubrick</answer>
+        <answer>Francis Ford Coppola</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin d'aquests no és fill d'en Vito Corleone?</sentence>
+      <author>Carles</author>
+      <comments>Els fills es deien:##Santino 'Sonny' Corleone#Frederico 'Fredo' Corleone#Michael Corleone#i la filla: Constanzia 'Connie' Corleone-Rizzi</comments>
+      <answers>
+        <answer correct="True">Tessio</answer>
+        <answer>Michael</answer>
+        <answer>Fredo</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Segons Forrest Gump. Qui és tonto?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El que fa tonteries</answer>
+        <answer>El que no confia en els altres</answer>
+        <answer>El que usa windows</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Al club dels poetes morts en Robin Williams ensenya als seus alumnes la frase....</sentence>
+      <author>Carles</author>
+      <comments>Carpe diem: Viu el dia, aprofita el moment</comments>
+      <answers>
+        <answer correct="True">Carpe diem</answer>
+        <answer>Quid pro quo</answer>
+        <answer>Status quo</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin és títol original de la serie de peŀlícules "La jungla de cristall"?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Die Hard</answer>
+        <answer>Crystal jungle</answer>
+        <answer>Letal jungle</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>De tots els components de la banda de Reservoir Dogs qui queda viu al acabar la peli?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Cap</answer>
+        <answer>Mr Orange</answer>
+        <answer>Mr Orange i Mr Pink</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>En quina peli canten per veure el costat brillant de la vida?</sentence>
+      <author>Carles</author>
+      <comments>You always look in the bright side of life... </comments>
+      <answers>
+        <answer correct="True">La vida de Brian</answer>
+        <answer>Tots diuen "I love you"</answer>
+        <answer>La sireneta</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>En quina peli els dolents usen una copia pirata de la propia peŀlícula per saber on han anat els bons?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Spaceballs</answer>
+        <answer>Galaxy quest</answer>
+        <answer>Retorn al futur II</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Qui va dirigir la comèdia Un, dos,tres?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Billy Wilder</answer>
+        <answer>Frank Capra</answer>
+        <answer>Ernst Lubitsch</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin tipus de peŀlícula era el preferit de Frank Capra?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">La comèdia</answer>
+        <answer>El western</answer>
+        <answer>El drama</answer>
       </answers>
     </question>
 
