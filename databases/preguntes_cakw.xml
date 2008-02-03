@@ -524,7 +524,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>Qui és la nina dels meus amors que fa estada a la platja?</sentence>
       <author>carles</author>
-      <comments>La Gavina##Oh gavina voladora#que voleies sobre el mar#i al pas del vent mar enfora#vas volant fins arribar#a la platja solellada#platja de dolços records#on dia i nit hi fa estada#la nina dels meus amors.#</comments>
+      <comments>La Gavina##Oh gavina voladora#que voleies sobre el mar#i al pas del vent mar enfora#vas volant fins arribar#a la platja assolellada#platja de dolços records#on dia i nit hi fa estada#la nina dels meus amors.#</comments>
       <answers>
         <answer correct="True">La gavina</answer>
 	    <answer>La Maria</answer>
@@ -533,10 +533,10 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     </question>
 
     <question>
-      <sentence>Què cerquen els vaixells d'Stienkarrasi?</sentence>
+      <sentence>Què cerquen els vaixells de Stienkarrassi?</sentence>
       <author>carles</author>
-      <comments>Els vaixells d’Stienkarrassi##Per les aigües de les illes,#per les ones de la mar#els vaixells d’Stienkarrassi#van cercant la llibertat##Volga nostre, Volga nostre#que et el riu nostre estimat#no coneixes la gran pena#que sofreixen els cossacs.##Tot guanyant la llunyania,
-per damunt l’ona flotant#els vaixells d’Stienkarrassi#van cercant la llibertat.#</comments>
+      <comments>Els vaixells d’Stienkarrassi##Per les aigües de les illes,#per les ones de la mar#els vaixells de Stienkarrassi#van cercant la llibertat##Volga nostre, Volga nostre#que ets el riu nostre estimat#no coneixes la gran pena#que sofreixen els cosacs.##Tot guanyant la llunyania,
+per damunt l’ona flotant#els vaixells de Stienkarrassi#van cercant la llibertat.#</comments>
       <answers>
         <answer correct="True">La llibertat</answer>
 	    <answer>L'horitzó</answer>
@@ -545,23 +545,23 @@ per damunt l’ona flotant#els vaixells d’Stienkarrassi#van cercant la llibert
     </question>
 
     <question>
-      <sentence>Quina perversió coneixem del Senyor Ramon?</sentence>
+      <sentence>Quina perversió coneixem del senyor Ramon?</sentence>
       <author>carles</author>
-      <comments>El senyor Ramon#empaita les criades#el senyor Ramon#emapita a tot el mon.##Les pobres criades quan se'n van al llit#tururut, tururut...#Qui gemega ja ha rebut.###Una lletra forta no?#</comments>
+      <comments>El senyor Ramon#empaita les criades#el senyor Ramon#emapita tot el món.##Les pobres criades quan se'n van al llit#tururut, tururut...#Qui gemega ja ha rebut.###Una lletra forta, no?#</comments>
       <answers>
         <answer correct="True">Empaita les criades</answer>
 	    <answer>Usa windows</answer>
-        <answer>Bona pesca</answer>
+        <answer>Roba coses</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Què demana la nina al seu pare dels presos de la presó de Lleida?</sentence>
+      <sentence>Què demana la nina al seu pare dels presos de La presó de Lleida?</sentence>
       <author>carles</author>
       <comments>La presó de Lleida##Populars i popularitzades dels Països Catalans##A la ciutat de Lleida#n'hi ha una presó;#de presos, mai n'hi manquen,#petita, bonica,#prou n'hi porta el baró.#lireta, liró.###...###Aniré al meu pare,#recaptaré el perdó.#Qui és que l'ha dictada,
 petita, bonica,#tan bonica cançó?#lireta, liró.#</comments>
       <answers>
-        <answer correct="True">L'indult al seu pare</answer>
+        <answer correct="True">L'indult</answer>
 	    <answer>Que els cremin</answer>
         <answer>Que cantin un valset dolç</answer>
       </answers>
@@ -570,23 +570,23 @@ petita, bonica,#tan bonica cançó?#lireta, liró.#</comments>
     <question>
       <sentence>Puff era...</sentence>
       <author>carles</author>
-      <comments>Puff, el drac màgic##Peter Paul and Mary##Puff era un drac màgic que vivia al fons del mar#però sol s'avorria molt i sortia a jugar.##Hi havia un nen petit que se l'estimava ,molt#es trobaven a la platja tot jugant de sol a sol#Tots dos van preparar un viatge molt llarg#volien anar a veure molt atravessant el mar.#</comments>
+      <comments>Puff, el drac màgic##Peter Paul and Mary##Puff era un drac màgic que vivia al fons del mar#però sol s'avorria molt i sortia a jugar.##Hi havia un nen petit que se l'estimava molt#es trobaven a la platja tot jugant de sol a sol#Tots dos van preparar un viatge molt llarg#volien anar a veure món tot travessant el mar.#</comments>
       <answers>
-        <answer correct="True">un drac màgic</answer>
-	    <answer>cansat</answer>
-        <answer>un tomaquet que parlava</answer>
+        <answer correct="True">Un drac màgic</answer>
+	    <answer>Cansat</answer>
+        <answer>Un tomàquet que parlava</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Si em dons la ma quan et vetllaré el son...</sentence>
+      <sentence>Si em dónes la mà, quan et vetllaré el son?</sentence>
       <author>carles</author>
-      <comments>Quan el sol es pon##Ll/M: Yarrou#Adap: J. Soler/ Xesco Boix#.3#Digue'm, per què plores, fill meu?#Jo sé que veus en els ulls de la gent#un cel de dubtes, ennegrit de pors,#però tu saps que jo estic vora teu,#vora teu.##Si em dons la mà, #jo et vetllaré el son, #blau i vermell, #
+      <comments>Quan el sol es pon##Ll/M: Yarrou#Adap: J. Soler/ Xesco Boix#.3#Digue'm, per què plores, fill meu?#Jo sé què veus en els ulls de la gent#un cel de dubtes, ennegrit de pors,#però tu saps que jo estic vora teu,#vora teu.##Si em dóns la mà, #jo et vetllaré el son, #blau i vermell, #
 quan el sol es pon.#</comments>
       <answers>
-        <answer correct="True">quan el sol es pon</answer>
-	    <answer>quan es fa fosc</answer>
-        <answer>quan estiguis amb mi</answer>
+        <answer correct="True">Quan el sol es pon</answer>
+	    <answer>Quan es fa fosc</answer>
+        <answer>Quan estiguis amb mi</answer>
       </answers>
     </question>
 
