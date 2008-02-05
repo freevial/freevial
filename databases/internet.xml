@@ -1,4 +1,6 @@
-<database version="1.0" id="Internet" language="ca">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.0" id="networking" language="ca">
   <information>
     <name>Internet</name>
     <description>Coses sobre la xarxa, els seus webs i protocols</description>
@@ -65,8 +67,7 @@
       <answers>
         <answer correct="True">Com un núvol</answer>
         <answer>Com un món</answer>
-        <answer>Com una 
-I</answer>
+        <answer>Com una I</answer>
       </answers>
     </question>
     <question>

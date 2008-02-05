@@ -32,7 +32,6 @@ from math import *
 from common.freevialglob import *
 from common.events import EventHandle, waitForMouseRelease
 from questions import get_databases
-from skinner import Skin
 
 
 class Preguntador:
@@ -40,53 +39,54 @@ class Preguntador:
 	def __init__( self, game ):
 		
 		self.game = game
-		self.skin = Skin('preguntador')
 		
-		self.color_de_fons = self.skin.configGetRGB( 'color_de_fons' )
-		self.color_de_text = self.skin.configGetRGB( 'color_de_text' )
+		game.skin.set_domain( 'preguntador' )
 		
-		self.mida_font = self.skin.configGetInt('mida_font')
+		self.color_de_fons = game.skin.configGetRGB( 'color_de_fons' )
+		self.color_de_text = game.skin.configGetRGB( 'color_de_text' )
+		
+		self.mida_font = game.skin.configGetInt('mida_font')
 		self.altlinies = self.mida_font + 5
 		
-		self.mida_text = self.skin.configGetInt('mida_text')
-		self.mida_text_autor = self.skin.configGetInt('mida_text_autor')
+		self.mida_text = game.skin.configGetInt('mida_text')
+		self.mida_text_autor = game.skin.configGetInt('mida_text_autor')
 		
-		self.postextx= self.skin.configGetInt('postextx')
-		self.postexty = self.skin.configGetInt('postexty')
-		self.mascara_de_fons = self.skin.configGet('mascara_de_fons')
-		self.retalla_sel = self.skin.configGet('retalla_sel')
+		self.postextx= game.skin.configGetInt('postextx')
+		self.postexty = game.skin.configGetInt('postexty')
+		self.mascara_de_fons = game.skin.configGet('mascara_de_fons')
+		self.retalla_sel = game.skin.configGet('retalla_sel')
 		
-		self.solucio_ok = self.skin.configGet('solucio_ok')
-		self.solucio_nook = self.skin.configGet('solucio_nook')
+		self.solucio_ok = game.skin.configGet('solucio_ok')
+		self.solucio_nook = game.skin.configGet('solucio_nook')
 		
-		self.lletraA = self.skin.configGet('lletraA')
-		self.lletraB = self.skin.configGet('lletraB')
-		self.lletraC = self.skin.configGet('lletraC')
-		self.lletraAoff = self.skin.configGet('lletraAoff')
-		self.lletraBoff = self.skin.configGet('lletraBoff')
-		self.lletraCoff = self.skin.configGet('lletraCoff')
+		self.lletraA = game.skin.configGet('lletraA')
+		self.lletraB = game.skin.configGet('lletraB')
+		self.lletraC = game.skin.configGet('lletraC')
+		self.lletraAoff = game.skin.configGet('lletraAoff')
+		self.lletraBoff = game.skin.configGet('lletraBoff')
+		self.lletraCoff = game.skin.configGet('lletraCoff')
 		
-		self.itr1 = self.skin.configGet('itr1')
-		self.itr2 = self.skin.configGet('itr2')
+		self.itr1 = game.skin.configGet('itr1')
+		self.itr2 = game.skin.configGet('itr2')
 		
-		self.so_ticking2 = self.skin.configGet( 'so_ticking2')
-		self.so_ticking2_vol = self.skin.configGet( 'so_ticking2_vol')
-		self.skin_mostra_punt_de_categoria = self.skin.configGetBool( 'mostra_punt_de_categoria')
-		self.so_drum2 = self.skin.configGet( 'so_drum2')
-		self.so_drum2_vol = self.skin.configGet( 'so_drum2_vol')
+		self.so_ticking2 = game.skin.configGet( 'so_ticking2')
+		self.so_ticking2_vol = game.skin.configGet( 'so_ticking2_vol')
+		game.skin_mostra_punt_de_categoria = game.skin.configGetBool( 'mostra_punt_de_categoria')
+		self.so_drum2 = game.skin.configGet( 'so_drum2')
+		self.so_drum2_vol = game.skin.configGet( 'so_drum2_vol')
 		
-		self.so_sub = self.skin.configGet( 'so_sub')
-		self.so_sub_vol = self.skin.configGet( 'so_sub_vol')
+		self.so_sub = game.skin.configGet( 'so_sub')
+		self.so_sub_vol = game.skin.configGet( 'so_sub_vol')
 		
-		self.so_ok = self.skin.configGet( 'so_ok')
-		self.so_ok_vol = self.skin.configGet( 'so_ok_vol')
+		self.so_ok = game.skin.configGet( 'so_ok')
+		self.so_ok_vol = game.skin.configGet( 'so_ok_vol')
 		
-		self.so_nook = self.skin.configGet( 'so_nook')
-		self.so_nook_vol = self.skin.configGet( 'so_nook_vol')
+		self.so_nook = game.skin.configGet( 'so_nook')
+		self.so_nook_vol = game.skin.configGet( 'so_nook_vol')
 		
-		self.mostraautor = self.skin.configGetBool( 'mostraautor')
+		self.mostraautor = game.skin.configGetBool( 'mostraautor')
 
-		self.use_mask = self.skin.configGetBool( 'use_mask')
+		self.use_mask = game.skin.configGetBool( 'use_mask')
 		
 		self.preguntadorYpos = 190
 		self.ypos = 0
@@ -100,11 +100,11 @@ class Preguntador:
 		self.postextx = self.postextx
 		self.postexty = self.postexty
 		
-		self.mascara_de_fons = self.skin.LoadImage( 'mascara_de_fons' )
-		self.retalla_sel = self.skin.LoadImage( 'retalla_sel' )
+		self.mascara_de_fons = game.skin.LoadImage( 'mascara_de_fons' )
+		self.retalla_sel = game.skin.LoadImage( 'retalla_sel' )
 		
-		self.solucio_ok = self.skin.LoadImage( 'solucio_ok' )
-		self.solucio_nook = self.skin.LoadImage( 'solucio_nook' )
+		self.solucio_ok = game.skin.LoadImage( 'solucio_ok' )
+		self.solucio_nook = game.skin.LoadImage( 'solucio_nook' )
 		
 		self.fons = range(0, 6)
 		for num in range(0, 6):
@@ -115,18 +115,18 @@ class Preguntador:
 		self.mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
 		
 		self.lletres = [
-							[ self.skin.LoadImage( 'lletraA'), self.skin.LoadImage( 'lletraAoff') ], 
-							[ self.skin.LoadImage( 'lletraB'), self.skin.LoadImage( 'lletraBoff') ], 				
-							[ self.skin.LoadImage( 'lletraC'), self.skin.LoadImage( 'lletraCoff') ],
+							[ game.skin.LoadImage( 'lletraA'), game.skin.LoadImage( 'lletraAoff') ], 
+							[ game.skin.LoadImage( 'lletraB'), game.skin.LoadImage( 'lletraBoff') ], 				
+							[ game.skin.LoadImage( 'lletraC'), game.skin.LoadImage( 'lletraCoff') ],
 						]
 		
-		self.info = [ self.skin.LoadImage( 'itr1'), self.skin.LoadImage( 'itr2') ]	
+		self.info = [ game.skin.LoadImage( 'itr1'), game.skin.LoadImage( 'itr2') ]	
 		
-		self.so_ticking2 = self.skin.LoadSound( 'so_ticking2', 'so_ticking2_vol')
-		self.so_drum2 = self.skin.LoadSound( 'so_drum2', 'so_drum2_vol')
-		self.so_sub = self.skin.LoadSound( 'so_sub', 'so_sub_vol')
-		self.so_ok = self.skin.LoadSound( 'so_ok', 'so_ok_vol')
-		self.so_nook = self.skin.LoadSound( 'so_nook', 'so_nook_vol')
+		self.so_ticking2 = game.skin.LoadSound( 'so_ticking2', 'so_ticking2_vol')
+		self.so_drum2 = game.skin.LoadSound( 'so_drum2', 'so_drum2_vol')
+		self.so_sub = game.skin.LoadSound( 'so_sub', 'so_sub_vol')
+		self.so_ok = game.skin.LoadSound( 'so_ok', 'so_ok_vol')
+		self.so_nook = game.skin.LoadSound( 'so_nook', 'so_nook_vol')
 		
 		
 		self.categoria = None
@@ -168,13 +168,13 @@ class Preguntador:
 	#
 	def initialize_question( self ):
 
-		self.sfc_pregunta  = self.preguntadorPintatext( self.current_question['text'], self.skin.configGetInt("question_width") )
+		self.sfc_pregunta  = self.preguntadorPintatext( self.current_question['text'], self.game.skin.configGetInt("question_width") )
 
 		self.sfc_resposta = range(0, 3)
 		for num in xrange(0, 3):
-			self.sfc_resposta[ num ] = self.preguntadorPintatext( self.current_question[ 'opt' + str(num + 1) ], self.skin.configGetInt("answer_width") )
+			self.sfc_resposta[ num ] = self.preguntadorPintatext( self.current_question[ 'opt' + str(num + 1) ], self.game.skin.configGetInt("answer_width") )
 
-		self.sfc_apregunta = self.skin.render_text( str(self.current_question['author']), (self.color_de_text), (self.mida_text_autor) )
+		self.sfc_apregunta = self.game.skin.render_text( str(self.current_question['author']), (self.color_de_text), (self.mida_text_autor) )
 		self.sfc_apregunta.set_alpha( 64 )	
 
 		self.temps_inici_pregunta = time.time()
@@ -199,8 +199,8 @@ class Preguntador:
 		nlinia = 0
 
 		for cadena in cadenes:
-			sfc_pregunta[nlinia] = self.skin.render_text( cadena if cadena != "" else " ", self.color_de_text, self.mida_font, 1, '', maxample - 2)
-			sfc_shad[nlinia] = self.skin.render_text( cadena if cadena != "" else " ", self.color_de_fons, self.mida_font, 1, '', maxample - 2)
+			sfc_pregunta[nlinia] = self.game.skin.render_text( cadena if cadena != "" else " ", self.color_de_text, self.mida_font, 1, '', maxample - 2)
+			sfc_shad[nlinia] = self.game.skin.render_text( cadena if cadena != "" else " ", self.color_de_fons, self.mida_font, 1, '', maxample - 2)
 			nalt += sfc_pregunta[nlinia].get_height() + 2				     
 			nlinia += 1
 		
@@ -221,10 +221,12 @@ class Preguntador:
 	# Bucle principal del programa
 	#
 	def juguem( self , selcat):
-
-		max_time = self.skin.configGetInt( "max_time" )
 		
-		self.nom_equip_sfc = self.skin.render_text( self.game.teams[self.game.current_team].nom, self.skin.configGetRGB( "team_name_color" ), 30, 1 )	
+		self.game.skin.set_domain( 'preguntador' )
+		
+		max_time = self.game.skin.configGetInt( 'max_time' )
+		
+		self.nom_equip_sfc = self.game.skin.render_text( self.game.teams[self.game.current_team].nom, self.game.skin.configGetRGB( "team_name_color" ), 30, 1 )	
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
 		self.nom_equip_sfc.set_alpha( 64 )
 		
@@ -240,7 +242,7 @@ class Preguntador:
 		
 		waitForMouseRelease( )
 		
-		self.skin.LoadSound( 'so_fons', 'so_fons_vol', 1).play(1)
+		self.game.skin.LoadSound( 'so_fons', 'so_fons_vol', 1).play(1)
 
 		mostra_punt_de_categoria = False
 		mostra_ajuda = mostra_credits = 0
@@ -250,7 +252,7 @@ class Preguntador:
 		# remaining seconds until end of answer time
 		self.segons = max_time + 1
 		
-		if (self.game.teams[self.game.current_team].figureta & bitCategoria( selcat )) == 0 and self.skin_mostra_punt_de_categoria == True:
+		if (self.game.teams[self.game.current_team].figureta & bitCategoria( selcat )) == 0 and self.game.skin_mostra_punt_de_categoria == True:
 			mostra_punt_de_categoria = True
 			figureta_no = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta).zfill(2) + '.png')
 			figureta_si = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
@@ -412,7 +414,7 @@ class Preguntador:
 				if self.segons != segons_act:
 					# el segon actual ha canviat
 					self.segons = segons_act 
-					self.pinta_segons = self.skin.render_text( str( self.segons ).zfill(2), (255,255,255), 600)
+					self.pinta_segons = self.game.skin.render_text( str( self.segons ).zfill(2), (255,255,255), 600)
 					# s'acaba el temps indiquem'ho amb so
 					if self.segons < 20:
 						self.so_ticking2.set_volume( (20 - float( self.segons )) / 20.0  ) 

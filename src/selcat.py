@@ -33,12 +33,7 @@ from pygame.locals import *
 from common.freevialglob import *
 from common.events import EventHandle
 from questions import shuffle_databases, get_databases
-from skinner import Skin
 
-##################################################
-#
-# Empaquetat en una classe del selector de categories
-#
 
 def FindList( llista, element ):
 
@@ -50,32 +45,29 @@ def FindList( llista, element ):
 
 class SelCat:
 
-	###########################################
-	#
-
-	def __init__( self, joc ):
+	def __init__( self, game ):
 		
-		self.joc = joc
-		self.skin = Skin( 'selcat' )
+		self.game = game
+		game.skin.set_domain( 'selcat' )
 		
-		self.mascara_de_fons =  self.skin.LoadImage('fons_score')
-		self.fons = self.skin.LoadImage('score_fons')
+		self.mascara_de_fons =  game.skin.LoadImage('fons_score')
+		self.fons = game.skin.LoadImage('score_fons')
 
-		self.sel_quadres = self.skin.LoadImage('sel_quadres')
-		self.sel_reflexos = self.skin.LoadImage('sel_reflexos')
+		self.sel_quadres = game.skin.LoadImage('sel_quadres')
+		self.sel_reflexos = game.skin.LoadImage('sel_reflexos')
 
-		self.sel_fletxap = self.skin.LoadImage('sel_fletxap')
-		self.sel_fletxab = self.skin.LoadImage('sel_fletxab')
+		self.sel_fletxap = game.skin.LoadImage('sel_fletxap')
+		self.sel_fletxab = game.skin.LoadImage('sel_fletxab')
 
-		self.sel_quadre = self.skin.LoadImage('sel_quadre')
-		self.sel_quadreok = self.skin.LoadImage('sel_quadreok')
+		self.sel_quadre = game.skin.LoadImage('sel_quadre')
+		self.sel_quadreok = game.skin.LoadImage('sel_quadreok')
 
-		self.so_sub = self.skin.LoadSound('so_sub', 'so_sub_vol' )
-		self.so_sub2 = self.skin.LoadSound('so_sub2', 'so_sub_vol' )
+		self.so_sub = game.skin.LoadSound( 'so_sub', 'so_sub_vol' )
+		self.so_sub2 = game.skin.LoadSound( 'so_sub2', 'so_sub_vol' )
 
-		self.selcat_color_text = self.skin.configGetRGB( 'color_text' )
+		self.selcat_color_text = game.skin.configGetRGB( 'color_text' )
 		
-		self.selcat_color_text_nosel = self.skin.configGetRGB( 'color_text_nosel' )
+		self.selcat_color_text_nosel = game.skin.configGetRGB( 'color_text_nosel' )
 
 		self.help_overlay = createHelpScreen( 'score' )
 
@@ -97,7 +89,6 @@ class SelCat:
 	def reinicia_cats( self ):
 		self.categories_seleccionades = [0,1,2,3,4,5];
 	
-		# colorsCategories():
 		for compta in range(0, len(self.cp)):
 			color = self.selcat_color_text_nosel
 			if compta < 6:
@@ -130,17 +121,13 @@ class SelCat:
 		self.darrera_info = -1
 		self.reinicia_cats( )
 
-	###########################################
-	#
-	# Bucle principal del programa
-	#
 	def juguem( self, estat ):
-
 		# estat 0 = edició, 1/2 = veure categories
-
+		
+		self.game.skin.set_domain( 'selcat' )
 		frate = frameRate( Global.fps_limit )
 		
-		self.joc.screen.fill( (0,0,0,0) )
+		self.game.screen.fill( (0,0,0,0) )
 		
 		ypos = mou_fons = mostra_ajuda = mostra_credits = 0
 
@@ -205,10 +192,10 @@ class SelCat:
 			# Pintem el fons animat
 			mou_fons += 8
 			for num in range(0, 768):
-				self.joc.screen.blit( self.fons, (cos((float(mou_fons +num)) / 100.0) * 20, num), (0, (ypos + num) % 768, 1024, 1) )
+				self.game.screen.blit( self.fons, (cos((float(mou_fons +num)) / 100.0) * 20, num), (0, (ypos + num) % 768, 1024, 1) )
 
-			self.joc.screen.blit( self.mascara_de_fons, (0, 0) )
-			self.joc.screen.blit( self.sel_quadres, (0, 0) )
+			self.game.screen.blit( self.mascara_de_fons, (0, 0) )
+			self.game.screen.blit( self.sel_quadres, (0, 0) )
 
 
 			nelements = len(self.cp) if estat == 0 else 6
@@ -219,30 +206,30 @@ class SelCat:
 					break
 			
 				if compta == seleccio:
-					self.joc.screen.fill( (64,64,64), (100, posact, 300, self.sfc_preguntes[compta].get_height() +3 ) )
+					self.game.screen.fill( (64,64,64), (100, posact, 300, self.sfc_preguntes[compta].get_height() +3 ) )
 
 				if compta < 6 :
-					self.joc.screen.blit( self.sfc_nombres[compta], (120, posact-3) )
+					self.game.screen.blit( self.sfc_nombres[compta], (120, posact-3) )
 
 				darrer_element_a_la_vista = compta
-				self.joc.screen.blit( self.sfc_preguntes[compta], ( 160,posact ))	
+				self.game.screen.blit( self.sfc_preguntes[compta], ( 160,posact ))	
 
 				posact += self.sfc_preguntes[compta].get_height() + 20
 
-			if( primer_element_a_la_vista > 0 ): 
-				self.joc.screen.blit( self.sel_fletxap, ( 386,216 + 10 + cos(time.time() * 10) * 10))
+			if primer_element_a_la_vista > 0: 
+				self.game.screen.blit( self.sel_fletxap, ( 386,216 + 10 + cos(time.time() * 10) * 10))
 
-			if( darrer_element_a_la_vista < nelements - 1):
-				self.joc.screen.blit( self.sel_fletxab, ( 386, 651 - 10 - cos(time.time()*10) * 10 ))
+			if darrer_element_a_la_vista < nelements - 1:
+				self.game.screen.blit( self.sel_fletxab, ( 386, 651 - 10 - cos(time.time()*10) * 10 ))
 
-			if( darrer_element_a_la_vista < seleccio): 	primer_element_a_la_vista += 1
+			if darrer_element_a_la_vista < seleccio: 	primer_element_a_la_vista += 1
 
-			if( primer_element_a_la_vista > seleccio): 	primer_element_a_la_vista -= 1
+			if primer_element_a_la_vista > seleccio: 	primer_element_a_la_vista -= 1
 
 						
-			self.joc.screen.blit( self.sfc_preguntes[seleccio], ( 475, 220 ))	
+			self.game.screen.blit( self.sfc_preguntes[seleccio], ( 475, 220 ))	
 
-			if( seleccio != self.darrera_info): 	
+			if seleccio != self.darrera_info: 	
 				self.sfc_text_info0 = render_text( self.cp[seleccio].authors, self.selcat_color_text, 14, 1, '', 220 )
 				self.sfc_text_info1 = render_text( self.cp[seleccio].description, self.selcat_color_text, 16, 1, '', 350 )
 				self.sfc_text_info2 = render_text( self.cp[seleccio].players, self.selcat_color_text, 16, 1, '', 350 )
@@ -259,26 +246,24 @@ class SelCat:
 
 				self.darrera_info = seleccio
 			
-			self.joc.screen.blit( self.sfc_text_info0, ( 475, 305 ))	
-			self.joc.screen.blit( self.sfc_text_info1, ( 490, 380 ))	
-			self.joc.screen.blit( self.sfc_text_info2, ( 490, 495 ))	
-			self.joc.screen.blit( self.sfc_text_info3, ( 490, 606 ))	
-			self.joc.screen.blit( self.sfc_text_info4, ( 765, 606 ))	
-			self.joc.screen.blit( self.sfc_text_info5, ( 490, 635 ))	
-			self.joc.screen.blit( self.sfc_text_info6, ( 490, 655 ))	
+			self.game.screen.blit( self.sfc_text_info0, ( 475, 305 ))	
+			self.game.screen.blit( self.sfc_text_info1, ( 490, 380 ))	
+			self.game.screen.blit( self.sfc_text_info2, ( 490, 495 ))	
+			self.game.screen.blit( self.sfc_text_info3, ( 490, 606 ))	
+			self.game.screen.blit( self.sfc_text_info4, ( 765, 606 ))	
+			self.game.screen.blit( self.sfc_text_info5, ( 490, 635 ))	
+			self.game.screen.blit( self.sfc_text_info6, ( 490, 655 ))	
 	
-			self.joc.screen.blit( self.sfc_cat, ( 697, 221 ))	
+			self.game.screen.blit( self.sfc_cat, ( 697, 221 ))	
 			
-			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
-			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))
+			if mostra_ajuda: self.game.screen.blit( self.help_overlay, (0,0))
+			if mostra_credits: self.game.screen.blit( self.game.sfc_credits, (0,0))
 			
-#			self.help_on_screen.draw( self.joc.screen, (350, 740), HOS_SCORE_MODEW if escriu else estat)
-			
-			self.joc.screen.blit( self.sel_reflexos, (0, 0) )
+			self.game.screen.blit( self.sel_reflexos, (0, 0) )
 
-			frate.next( self.joc.screen )
+			frate.next( self.game.screen )
 			
-			# intercanviem els buffers de self.joc.screen
+			# intercanviem els buffers de self.game.screen
 			pygame.display.flip()
 
 		return 0

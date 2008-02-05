@@ -1,6 +1,7 @@
-<database version="1.0" id="Peŀlícules" language="ca">
-  <information>
+<?xml version="1.0" encoding="UTF-8"?>
 
+<database version="1.0" id="entertainment" language="ca">
+  <information>
     <name>Peŀlícules</name>
     <description>Preguntes de peŀlícules d'arreu</description>
     <destination>Endevina, Gorina. Ho superes, Figueres?</destination>
@@ -9,16 +10,12 @@
     <authors>
       <author>Carles Oriol</author>
     </authors>
-
   </information>
-
   <appearance>
     <image>categoria_movies.png</image>
     <sound>mov.ogg</sound>
   </appearance>
-
   <questions>
-
     <question>
       <sentence>De quin material és fet el falcó maltès?</sentence>
       <author>Carles</author>
@@ -29,8 +26,6 @@
         <answer>De marbre lluent per la lluna</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>De quin país son en Bud Spencer i en Therence Hill?</sentence>
       <author>Carles</author>
@@ -41,8 +36,6 @@
         <answer>Americans</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>Quin d'aquests actors no surt a "Pulp Fiction"?</sentence>
       <author>Carles</author>
@@ -53,7 +46,6 @@
         <answer>John Travolta</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quina és la "Ciutat Cremada"?</sentence>
       <author>Carles</author>
@@ -64,7 +56,6 @@
         <answer>Berlín</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quants negrets tenia al començament l'Aghata Christie?</sentence>
       <author>Carles</author>
@@ -75,8 +66,6 @@
         <answer>3</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>Quan en Kevin Spacey apareix a la Terra, diu que ve del planeta...</sentence>
       <author>Carles</author>
@@ -87,8 +76,6 @@
         <answer>Alderaan</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>Qui és el pare de l'Indiana Jones?</sentence>
       <author>Carles</author>
@@ -99,7 +86,6 @@
         <answer>Rick Blaine</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Si de tots els bars de tots els pobles del món ella entra en el meu, on som?</sentence>
       <author>Carles</author>
@@ -110,8 +96,6 @@
         <answer>Bar Quimet</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>Els fills de l'Anakin es diuen...</sentence>
       <author>Carles</author>
@@ -122,8 +106,6 @@
         <answer>Black i Berry</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>A "Ningú no és perfecte" els protagonistes han d'escapar-se de la màfia; per fer-ho...</sentence>
       <author>Carles</author>
@@ -134,7 +116,6 @@
         <answer>S'amaguen a Africa</answer>
       </answers>
     </question>
-
     <question>
       <sentence>"Tens un email" és un remake de...</sentence>
       <author>Carles</author>
@@ -145,8 +126,6 @@
         <answer>"Memòries d'Àfrica" ("Out of Africa")</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>Quina d'aquestes combinacions és "diferent" (Estil gbrainy)?</sentence>
       <author>Carles</author>
@@ -157,7 +136,6 @@
         <answer>Robin Williams - "Senyora Douptfire"</answer>
       </answers>
     </question>
-
     <question>
       <sentence>A la pel·li "Temps de valents", de Damian Szifron, la parella protagonista és...</sentence>
       <author>Carles</author>
@@ -168,8 +146,6 @@
         <answer>Un soldat i un pacifista</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>Quants esglaons ens indiquen el contraespionatge que ens ofereix en Hitckcock?</sentence>
       <author>Carles</author>
@@ -180,7 +156,6 @@
         <answer>28</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Hem trobat un bon idiota per convidar-lo a sopar. A què es dedica, l'idiota?</sentence>
       <author>Carles</author>
@@ -191,7 +166,6 @@
         <answer>Ens explica que no existeix l'evolució</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Jean Reno i Gérard Depardieu coincideixen en una comèdia francesa brutal. Quina?</sentence>
       <author>Carles</author>
@@ -202,7 +176,6 @@
         <answer>"Tres solters i un biberó"</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quina d'aquestes parelles NO va fer una versió d'"El fil de la notícia"?</sentence>
       <author>Carles</author>
@@ -213,7 +186,6 @@
         <answer>Jack Lemmon i Walter Mathau</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quin robot pren consciència quan té un curtcircuit?</sentence>
       <author>Carles</author>
@@ -224,7 +196,6 @@
         <answer>Roy el replicant</answer>
       </answers>
     </question>
-
     <question>
       <sentence>La peŀlícula "L'esfondrament" ens parla de...</sentence>
       <author>Carles</author>
@@ -235,7 +206,6 @@
         <answer>Els terratrèmols al Japó</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quin problema pateixen els protagonites de "Cantant sota la pluja"...</sentence>
       <author>Carles</author>
@@ -246,7 +216,6 @@
         <answer>El mal temps que afecta el rodatge de les peŀlícules</answer>
       </answers>
     </question>
-
     <question>
       <sentence>En Peter Sellers fa les mil i una cercant...</sentence>
       <author>Carles</author>
@@ -257,7 +226,6 @@
         <answer>El professor Moriarty</answer>
       </answers>
     </question>
-
     <question>
       <sentence>En Rowan Atkinson persegueix el crim fent de... </sentence>
       <author>Carles</author>
@@ -268,7 +236,6 @@
         <answer>L'inspector Clouseau</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quin era el més gran dels germans Marx? </sentence>
       <author>Carles</author>
@@ -279,7 +246,6 @@
         <answer>Harpo</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Al punt del migdia, els cowboys dolents volien pelar el senyor X, que es trobava sol davant del perill. </sentence>
       <author>Carles</author>
@@ -290,7 +256,6 @@
         <answer>John Wayne</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quin d'aquests "Zorros" és el primer? </sentence>
       <author>Carles</author>
@@ -301,7 +266,6 @@
         <answer>Tyrone Power</answer>
       </answers>
     </question>
-
     <question>
       <sentence>La Bella ens ho diu ben clar: la bellesa cal cercar-la... </sentence>
       <author>Carles</author>
@@ -312,9 +276,6 @@
         <answer>Amb totes les nostres forçes</answer>
       </answers>
     </question>
-
-   
-
     <question>
       <sentence>Quina d'aquestes pel·lis no és d'Alfred Hitchcock? </sentence>
       <author>Carles</author>
@@ -325,7 +286,6 @@
         <answer>"Amb la mort als talons"</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quin d'aquests actors no protagonitza "El cop" ("The sting" - 1973). </sentence>
       <author>Carles</author>
@@ -336,8 +296,6 @@
         <answer>Robert Redford</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>Una d'aquestes pel·lis no és de Woody Allen: </sentence>
       <author>Carles</author>
@@ -348,7 +306,6 @@
         <answer>"Misteriós assassinat a Manhattan"</answer>
       </answers>
     </question>
-
     <question>
       <sentence>En Johnny Deep és increïblement genial fent de pirata, però el seu pare a la ficció en realitat...</sentence>
       <author>Carles</author>
@@ -359,7 +316,6 @@
         <answer>Té un ull de vidre</answer>
       </answers>
     </question>
-
     <question>
       <sentence>En les seves peripècies, el pirata Roberts, protagonista de "La princesa promesa", coneix algú que persegueix...</sentence>
       <author>Carles</author>
@@ -370,8 +326,6 @@
         <answer>Una estrella</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>Per on patrulla el detectiu Axel Foley?</sentence>
       <author>Carles</author>
@@ -382,8 +336,6 @@
         <answer>Queens a Nova York</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>Qui tenia un apartament?</sentence>
       <author>Carles</author>
@@ -394,7 +346,6 @@
         <answer>George Lucas</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quina d'aquestes peŀlícules no és un musical?</sentence>
       <author>Carles</author>
@@ -405,7 +356,6 @@
         <answer>"My fair lady"</answer>
       </answers>
     </question>
-
     <question>
       <sentence>En quina peŀlícula en Tim Burton fa una escabetxina de caps?</sentence>
       <author>Carles</author>
@@ -416,7 +366,6 @@
         <answer>"Malson abans de Nadal"</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quin d'aquests actors no ha fet de James Bond?</sentence>
       <author>Carles</author>
@@ -427,7 +376,6 @@
         <answer>Timothy Dalton</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quin director de cinema entra en un banc i en surt armat amb una escopeta?</sentence>
       <author>Carles</author>
@@ -438,7 +386,6 @@
         <answer>Francis Ford Coppola</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quin d'aquests no és fill d'en Vito Corleone?</sentence>
       <author>Carles</author>
@@ -449,7 +396,6 @@
         <answer>Fredo</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Segons Forrest Gump, qui és ximple?</sentence>
       <author>Carles</author>
@@ -460,7 +406,6 @@
         <answer>El que usa windows</answer>
       </answers>
     </question>
-
     <question>
       <sentence>A "El club dels poetes morts" en Robin Williams ensenya als seus alumnes la frase....</sentence>
       <author>Carles</author>
@@ -471,7 +416,6 @@
         <answer>Status quo</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quin és títol original de la sèrie de peŀlícules "La jungla de cristall"?</sentence>
       <author>Carles</author>
@@ -482,7 +426,6 @@
         <answer>"Letal jungle"</answer>
       </answers>
     </question>
-
     <question>
       <sentence>De tots els components de la banda de "Reservoir Dogs", qui en queda viu en acabar la pel·li?</sentence>
       <author>Carles</author>
@@ -493,8 +436,6 @@
         <answer>Mr. Orange i Mr. Pink</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>En quina pel·li canten per veure el costat brillant de la vida?</sentence>
       <author>Carles</author>
@@ -505,8 +446,6 @@
         <answer>"La Sireneta"</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>En quina pel·li els dolents usen una còpia pirata de la pròpia peŀlícula per saber on han anat els bons?</sentence>
       <author>Carles</author>
@@ -517,8 +456,6 @@
         <answer>"Retorn al futur II"</answer>
       </answers>
     </question>
-
-
     <question>
       <sentence>Qui va dirigir la comèdia "Un, dos,tres?"</sentence>
       <author>Carles</author>
@@ -529,7 +466,6 @@
         <answer>Ernst Lubitsch</answer>
       </answers>
     </question>
-
     <question>
       <sentence>Quin tipus de peŀlícula era el preferit de Frank Capra?</sentence>
       <author>Carles</author>
@@ -540,9 +476,5 @@
         <answer>El drama</answer>
       </answers>
     </question>
-
-
   </questions>
-
-
 </database>

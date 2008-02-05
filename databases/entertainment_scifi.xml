@@ -1,4 +1,6 @@
-<database version="1.0" id="Jocs, llibres i pe&#x140;l&#xED;cules" language="ca">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.0" id="entertainment" language="ca">
   <information>
     <name>Jocs, llibres i peŀlícules</name>
     <description>Videojocs, peŀlícules i llibres de ciència-ficció o de culte</description>

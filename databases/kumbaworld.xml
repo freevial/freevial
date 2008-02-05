@@ -1,4 +1,6 @@
-<database version="1.0" id="Kumbaworld" language="ca">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.0" id="songs" language="ca">
   <information>
     <name>Kumbaworld</name>
     <description>Preguntes de cançons i músics</description>

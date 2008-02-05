@@ -1,4 +1,6 @@
-<database version="1.0" id="Programari i maquinari" language="ca">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.0" id="hardware" language="ca">
   <information>
     <name>Programari i maquinari</name>
     <description>Preguntes sobre els programes i els aparells que podem usar en el món GNU/Linux</description>

@@ -89,9 +89,9 @@ class Visca:
 
 		self.sfc_llum = loadImage( 'llum.png' )
 
-	def juguem( self, joc, nomguanya ):
-
-		Global.game = joc
+	def juguem( self, game, nomguanya ):
+		
+		Global.game = game
 		self.frate = frameRate( Global.fps_limit )
 		inici = time.time()
 
@@ -193,9 +193,7 @@ class Visca:
 			xpos %= Global.screen_x
 
 			mou_fons += 10
-	#		for num in range(0, 1024):
-	#			self.fons_2.blit( self.fons, (num, math.cos((float(mou_fons +num)) / 100.0) * 10), ((xpos + num) % 1024, 0, 1, 768) )
- 
+
 			if segons > 5.5:
 
 				Global.game.screen.blit( self.fons, (0,0))

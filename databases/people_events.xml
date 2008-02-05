@@ -1,4 +1,4 @@
-<database version="1.0" id="Personatges i actes" language="ca">
+<database version="1.0" id="people" language="ca">
   <information>
     <name>Personatges i actes</name>
     <description>Gent i fets al voltant del món del programari lliure. També informació sobre llicències.</description>

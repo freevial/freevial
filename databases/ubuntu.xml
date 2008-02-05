@@ -1,4 +1,6 @@
-<database version="1.0" id="Ubuntu" language="ca">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.0" id="ubuntu" language="ca">
   <information>
     <name>Ubuntu</name>
     <description>Preguntes del món de l'Ubuntu i la filosofia ubuntaire. </description>

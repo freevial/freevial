@@ -32,7 +32,6 @@ from common.freevialglob import *
 from common.events import EventHandle
 from common.events import waitForMouseRelease
 from questions import get_databases
-from skinner import Skin
 
 
 ##################################################
@@ -42,53 +41,53 @@ from skinner import Skin
 
 class Roda:
 	
-	def __init__( self, joc ):
+	def __init__( self, game ):
 		
-		self.joc = joc
-
-		self.skin = Skin('wheel')
+		self.game = game
 		
-		self.fons = self.skin.configGet( 'wheel_background')
-		self.front = self.skin.configGet( 'wheel_front')
-		self.paper = self.skin.configGet( 'wheel_paper')
+		game.skin.set_domain( 'wheel' )
 		
-		self.maxim_equips = self.skin.configGetInt( 'max_teams', 'game' )
+		self.fons = game.skin.configGet( 'wheel_background' )
+		self.front = game.skin.configGet( 'wheel_front' )
+		self.paper = game.skin.configGet( 'wheel_paper' )
 		
-		self.roda_so_dot = self.skin.configGet( 'sound_wheel_dot')
-		self.roda_so_dot_vol = self.skin.configGet( 'sound_wheel_dot_vol')
-		self.roda_so_evil = self.skin.configGet( 'sound_wheel_evil')
-		self.roda_so_evil_vol = self.skin.configGet( 'sound_wheel_evil_vol')
-		self.roda_so_sub = self.skin.configGet( 'sound_wheel_sub')
-		self.roda_so_sub_vol = self.skin.configGet( 'sound_wheel_sub_vol')
-		self.tipografia = self.skin.configGet( 'wheel_tipografia')
+		self.maxim_equips = game.skin.configGetInt( 'max_teams', 'game' )
 		
-		self.score_figureta_visible = self.skin.configGetBool( 'figureta_visible') 
+		self.roda_so_dot = game.skin.configGet( 'sound_wheel_dot')
+		self.roda_so_dot_vol = game.skin.configGet( 'sound_wheel_dot_vol')
+		self.roda_so_evil = game.skin.configGet( 'sound_wheel_evil')
+		self.roda_so_evil_vol = game.skin.configGet( 'sound_wheel_evil_vol')
+		self.roda_so_sub = game.skin.configGet( 'sound_wheel_sub')
+		self.roda_so_sub_vol = game.skin.configGet( 'sound_wheel_sub_vol')
+		self.tipografia = game.skin.configGet( 'wheel_tipografia')
+		
+		self.score_figureta_visible = game.skin.configGetBool( 'figureta_visible') 
 		
 		if self.score_figureta_visible:
-			self.figureta = self.skin.LoadImageRange( 'figureta_mask', 64, 2)
+			self.figureta = game.skin.LoadImageRange( 'figureta_mask', 64, 2)
 			
-		self.fons = self.skin.LoadImage( 'wheel_background' )
-		self.front = self.skin.LoadImage( 'wheel_front' )
-		self.paper = self.skin.LoadImage( 'wheel_paper')
-		self.so_dot = self.skin.LoadSound( 'sound_wheel_dot', 'sound_wheel_dot_vol')
-		self.so_evil = self.skin.LoadSound( 'sound_wheel_evil', 'sound_wheel_evil_vol')
-		self.so_sub = self.skin.LoadSound( 'sound_wheel_sub', 'sound_wheel_sub_vol')
+		self.fons = game.skin.LoadImage( 'wheel_background' )
+		self.front = game.skin.LoadImage( 'wheel_front' )
+		self.paper = game.skin.LoadImage( 'wheel_paper')
+		self.so_dot = game.skin.LoadSound( 'sound_wheel_dot', 'sound_wheel_dot_vol')
+		self.so_evil = game.skin.LoadSound( 'sound_wheel_evil', 'sound_wheel_evil_vol')
+		self.so_sub = game.skin.LoadSound( 'sound_wheel_sub', 'sound_wheel_sub_vol')
 		self.so_cat = range(0, 6)
 
-		self.so_de_pas = self.skin.configGetInt( 'so_de_pas' )
+		self.so_de_pas = game.skin.configGetInt( 'so_de_pas' )
 
-		self.tipografia_mida = self.skin.configGetInt( 'wheel_tipografia_mida')
-		self.paper_text_width = self.skin.configGetInt( 'paper_text_width' )
-		self.paper_text_offsetX = self.skin.configGetInt( 'paper_text_offsetX' )
-		self.paper_offsetX = self.skin.configGetInt( 'paper_offsetX' )
+		self.tipografia_mida = game.skin.configGetInt( 'wheel_tipografia_mida')
+		self.paper_text_width = game.skin.configGetInt( 'paper_text_width' )
+		self.paper_text_offsetX = game.skin.configGetInt( 'paper_text_offsetX' )
+		self.paper_offsetX = game.skin.configGetInt( 'paper_offsetX' )
 
 		for num in range(0, 6):
 			self.so_cat[num] = loadSound(get_databases(num).sound, volume = 1.0)
 			
 		for num in range(0, 6):
-			sfc = self.skin.render_text( get_databases(num).name, (0,0,0), self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
+			sfc = game.skin.render_text( get_databases(num).name, (0,0,0), self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
 			self.paper.blit( sfc, (self.paper_text_offsetX+2, 2+(num * 200) + 100 - sfc.get_height() / 2 ))
-			sfc = self.skin.render_text( get_databases(num).name, colorsCategories()[num], self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
+			sfc = game.skin.render_text( get_databases(num).name, colorsCategories()[num], self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
 			self.paper.blit( sfc, (self.paper_text_offsetX, (num * 200) + 100 - sfc.get_height() / 2 ))
 
 		self.help_overlay = createHelpScreen( 'roda' )		
@@ -98,12 +97,13 @@ class Roda:
 	
 	def juguem( self ):
 		
+		self.game.skin.set_domain( 'wheel' )
 		self.frate = frameRate( Global.fps_limit )
 				
 		self.so_evil.stop()
 		self.so_dot.play(100)
 		
-		velocitat = self.skin.configGetInt( 'wheel_speed' )
+		velocitat = self.game.skin.configGetInt( 'wheel_speed' )
 		deceleracio = 0
 
 		waitForMouseRelease( )
@@ -112,25 +112,10 @@ class Roda:
 		rodant = 1
 		resultat = -1
 		
-		self.joc.screen.blit( self.fons, (0,0) )
+		self.game.screen.blit( self.fons, (0,0) )
 
-		self.nom_equip_sfc = self.skin.render_text( self.joc.teams[self.joc.current_team].nom, self.skin.configGetRGB( "team_name_color" ), 30, 1 )
+		self.nom_equip_sfc = self.game.skin.render_text( self.game.teams[self.game.current_team].nom, self.game.skin.configGetRGB( "team_name_color" ), 30, 1 )
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
-#		velocitat = 75
-#		deceleracio = 0
-		
-#		pos = pos_fons = atura = frenant = time_fi = mostra_ajuda = mostra_credits = 0
-#		rodant = 1
-#		resultat = -1
-		
-#		self.joc.screen.blit( self.fons, (0,0) )
-
-#		nom_equip_sfc = render_text( self.joc.teams[self.joc.current_team].nom, (255,255,255), 30, 1 )
-#		nom_equip_sfc = pygame.transform.rotate ( nom_equip_sfc, 90 )
-		
-#		figureta =  loadImage('points/freevial_tot' + str(self.joc.teams[self.joc.current_team].figureta).zfill(2) + '.png')
-
-#		self.help_on_screen.activitat( )
 
 		while 1:
 
@@ -165,7 +150,7 @@ class Roda:
 			if atura == 1:
 				atura = 0
 				pas = 3
-				deceleracio = self.skin.configGetInt( 'wheel_deccel' )
+				deceleracio = self.game.skin.configGetInt( 'wheel_deccel' )
 				time_fi = time.time()
 				
 				if not frenant:
@@ -200,7 +185,7 @@ class Roda:
 					if self.so_de_pas == 1:
 						self.so_evil.play()
 					if self.so_de_pas == 2:
-						if not  self.joc.teams[self.joc.current_team].teCategoria( resultat ) :
+						if not  self.game.teams[self.game.current_team].teCategoria( resultat ) :
 							self.so_evil.play()
 					rodant = 0
 				
@@ -213,28 +198,28 @@ class Roda:
 				
 
 			#pintem el paper freevial
-			self.joc.screen.blit( self.fons, ( 0, pos_fons ) )
-			self.joc.screen.blit( self.fons, ( 0, - 768 + pos_fons ) )
+			self.game.screen.blit( self.fons, ( 0, pos_fons ) )
+			self.game.screen.blit( self.fons, ( 0, - 768 + pos_fons ) )
 			
 			#pintem el paper d'impressora
-			self.joc.screen.blit( self.paper, ( self.paper_offsetX, pos ) )
-			self.joc.screen.blit( self.paper, ( self.paper_offsetX, pos + 1200 ) )
+			self.game.screen.blit( self.paper, ( self.paper_offsetX, pos ) )
+			self.game.screen.blit( self.paper, ( self.paper_offsetX, pos + 1200 ) )
 			
 			#pintem els marges vermells i degradats
-			self.joc.screen.blit( self.front, (0,0) )	
+			self.game.screen.blit( self.front, (0,0) )	
 			
-			self.joc.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
+			self.game.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
 			
 			if( self.score_figureta_visible ):
-				self.joc.screen.blit( self.figureta[self.joc.teams[self.joc.current_team].figureta], (70, 630) )
+				self.game.screen.blit( self.figureta[self.game.teams[self.game.current_team].figureta], (70, 630) )
 						
-			if mostra_ajuda: self.joc.screen.blit( self.help_overlay, (0,0))
-			if mostra_credits: self.joc.screen.blit( self.joc.sfc_credits, (0,0))
+			if mostra_ajuda: self.game.screen.blit( self.help_overlay, (0,0))
+			if mostra_credits: self.game.screen.blit( self.game.sfc_credits, (0,0))
 
-			self.help_on_screen.draw( self.joc.screen, (350, 740) )
+			self.help_on_screen.draw( self.game.screen, (350, 740) )
 			
-			self.frate.next( self.joc.screen )
+			self.frate.next( self.game.screen )
 			
-			# Exchange self.joc.screen buffers
+			# Exchange self.game.screen buffers
 
 			pygame.display.flip()

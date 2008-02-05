@@ -1,4 +1,6 @@
-<database version="1.0" id="Terminal i llenguatges" language="ca">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.0" id="programming" language="ca">
   <information>
     <name>Terminal i llenguatges</name>
     <description>Comandes del sistema, coneixement sobre diversos llenguatges de programació</description>

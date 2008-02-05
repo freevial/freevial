@@ -208,17 +208,33 @@ def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 
 	return sfc
 
 def screenshot( surface, destination = os.path.join( os.path.expanduser('~'), 'Freevial/Screenshots/' ) ):
-	""" Save a screenshot of the indicated surface. """
+	""" Saves a screenshot of the indicated surface. """
 	
 	destination = os.path.normpath( destination )
 	
 	if not os.path.exists( destination ):
 		os.makedirs( destination )
 	
-	#PNG, JPEG saving new in pygame 1.8.
+	# PNG and JPEG saving is new in pygame 1.8.
 	destination = os.path.join( destination, str( time.time() ) + '.tga' )
 	
 	pygame.image.save( surface, destination )
+
+
+def count_not_empty( list, attr = None ):
+	""" Returns the amount of non-empty elements in a list. Optionally,
+	if the attr option is set, it will count the amount of elements in
+	the list that have an attribute named like that which is not empty."""
+	
+	count = 0
+	
+	for element in list:
+		if element:
+			print element, hasattr(element, attr)
+			if not attr or (hasattr(element, attr) and getattr(element, attr)):
+				count += 1
+	
+	return count
 
 
 def maxPunts( teams ):
@@ -276,7 +292,7 @@ def teamsGuanyador( teams, mode, extra ):
 
 		if teamsTancat( teams ):
 
-			for num in range(0,6):
+			for num in range(0, 6):
 				if teams[num].actiu:
 					if teams[num].punts == puntsmax:
 						# empat a punts

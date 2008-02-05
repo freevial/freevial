@@ -44,9 +44,7 @@ def setSkinName( path ):
 
 class Skin:
 	
-	def __init__( self, domain ):
-		
-		self.domain = domain
+	def __init__( self ):
 		
 		self.defconfig = SafeConfigParser()
 		self.defconfig.readfp(open(default_file, 'r'))				
@@ -59,6 +57,9 @@ class Skin:
 		fontname = self.search_font_name('' )
 		if fontname != '':
 			set_default_font( fontname )
+	
+	def set_domain( self, domain ):
+		self.domain = domain
 	
 	def configGet( self, field, domain = None ):
 		
@@ -119,18 +120,6 @@ class Skin:
 		fullname = os.path.join( Global.skin_folder, name )
 		
 		return loadSound( fullname if os.path.exists( fullname ) else name, volume = volume, music = music )
-	
-	def inicia_vell( self ):
-		
-		self.defconfig = ConfigParser.ConfigParser()
-		self.defconfig.readfp(open(default_file))				
-		
-		self.config = SafeConfigParser()
-		self.config.readfp(open(Global.skin_file))		
-				
-		self.skin_maxim_equips = self.configGetInt( 'game', 'max_teams' )
-		
-		Global.skin_folder = Global.skin_folder
 
 	def preguntadorCarregaFiguretes( self, joc, selcat ):
 		self.mostra_punt_de_categoria = True

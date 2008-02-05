@@ -29,7 +29,7 @@ import pygame
 import gettext
 from math import *
 
-from skinner import setSkinName
+from skinner import setSkinName, Skin
 from common.globals import GlobalVar, Global
 
 # This is provisionally here for technical reasons...
@@ -62,15 +62,11 @@ class Freevial:
 		Global.game.rounds = 0
 		
 		Global.game.teams = []
-		for num in range(0, 6): Global.game.teams.append( Equip() )
 		
 		Global.game.current_team = 0
 		Global.game.sfc_credits = ''
 	
 	
-	###########################################
-	# Iniciem partida
-	#
 	def inici( self ):
 		
 		# inicialize presentation surface
@@ -100,15 +96,16 @@ class Freevial:
 		
 		initTextos()
 		
-		# Initialize joystick, if there's one
+		# initialize joystick, if there's one
 		pygame.joystick.init()
 		if pygame.joystick.get_count():
 			pygame.joystick.Joystick( 0 ).init()
+		
+		# initialize skin system
+		Global.game.skin = Skin()
+		for num in range( 0, Global.game.skin.configGetInt( 'max_teams', domain='game' ) ): Global.game.teams.append( Equip() )
 	
-	###########################################
-	#
-	# Control principal del programa
-	#
+	
 	def juguem( self ):
 		
 		self.inici()

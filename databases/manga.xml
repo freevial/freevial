@@ -1,4 +1,6 @@
-<database version="1.0" id="Mangues i c&#xF2;mics" language="ca">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.0" id="manga" language="ca">
   <information>
     <name>Mangues i còmics</name>
     <description>Preguntes sobre còmics i mangues</description>
