@@ -103,7 +103,8 @@ class Freevial:
 		
 		# initialize skin system
 		Global.game.skin = Skin()
-		for num in range( 0, Global.game.skin.configGetInt( 'max_teams', domain='game' ) ): Global.game.teams.append( Equip() )
+		Global.game.max_teams = Global.game.skin.configGetInt( 'max_teams', domain='game' )
+		for num in range( 0, Global.game.max_teams ): Global.game.teams.append( Equip() )
 	
 	
 	def juguem( self ):

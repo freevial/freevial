@@ -49,7 +49,6 @@ class Score:
 		self.help_overlay = createHelpScreen( 'score' )
 		
 		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
-		self.maxim_equips = game.skin.configGetInt( 'max_teams', domain = 'game' )
 		
 		self.score_color_text = game.skin.configGetRGB( 'color_text' )
 		self.score_mida_text = game.skin.configGetInt( 'mida_text')
@@ -379,7 +378,7 @@ class Score:
 			self.game.screen.blit( self.mascara_de_fons, (0, 0) )
 			# pintem les puntuacions
 
-			for num in range(0, self.maxim_equips):
+			for num in range(0, Global.game.max_teams):
 				ycaixa = self.score_caixes[num][1]
 				xcaixa = self.score_caixes[num][0]
 

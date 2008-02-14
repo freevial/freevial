@@ -241,7 +241,7 @@ def maxPunts( teams ):
 
 	puntsmax = 0
 
-	for num in range(0,6):
+	for num in range( 0, Global.game.max_teams ):
 		if teams[num].actiu:
 			puntsmax = max( puntsmax, teams[num].punts )
 	
@@ -252,7 +252,7 @@ def puntsTotals( teams ):
 
 	punts = 0
 
-	for num in range(0,6):
+	for num in range( 0, Global.game.max_teams ):
 		punts += teams[num].punts
 	
 	return punts
@@ -262,7 +262,7 @@ def teamsActius( teams ):
 
 	actius = 0
 
-	for num in range(0,6):
+	for num in range( 0, Global.game.max_teams ):
 		if teams[num].actiu: actius += 1
 	
 	return actius
@@ -270,7 +270,7 @@ def teamsActius( teams ):
 
 def teamsTancat( teams ):
 
-	for num in range(0,6):
+	for num in range( 0, Global.game.max_teams ):
 		if teams[num].figureta == 63:
 			return True
 	
@@ -292,7 +292,7 @@ def teamsGuanyador( teams, mode, extra ):
 
 		if teamsTancat( teams ):
 
-			for num in range(0, 6):
+			for num in range( 0, Global.game.max_teams ):
 				if teams[num].actiu:
 					if teams[num].punts == puntsmax:
 						# empat a punts
@@ -306,20 +306,20 @@ def teamsGuanyador( teams, mode, extra ):
 			
 	if mode == 1:
 		
-		for num in range(0,6):
+		for num in range( 0, Global.game.max_teams ):
 			if teams[num].punts >=  extra:
 				guanyador = num
 
 	if mode == 2:
 		nocagats = []
-		for num in range(0,6):
+		for num in range( 0, Global.game.max_teams ):
 			if teams[num].errors <  extra:
 				nocagats.append( num )
 		if len(nocagats) == 1:
 			guanyador = nogacats[0]
 
 	if mode == 3:
-		for num in range(0,6):
+		for num in range( 0, Global.game.max_teams ):
 			if teams[num].figureta == 63:
 				guanyador = num
 
@@ -331,9 +331,9 @@ def seguentEquipActiu( teams, actual ):
 
 	actual += 1
 
-	for num in range(0,6):
-		if teams[(actual + num) % 6].actiu: 
-			return (actual + num) % 6
+	for num in range(0, Global.game.max_teams ):
+		if teams[ (actual + num) % Global.game.max_teams ].actiu: 
+			return (actual + num) % Global.game.max_teams
 	
 	return -1
 
@@ -342,9 +342,9 @@ def anteriorEquipActiu( teams, actual ):
 
 	actual -= 1
 
-	for num in range(0,6):
-		if teams[(actual - num ) % 6].actiu: 
-			return (actual - num ) % 6
+	for num in range( 0, Global.game.max_teams ):
+		if teams[ (actual - num ) % Global.game.max_teams ].actiu: 
+			return (actual - num ) % Global.game.max_teams
 	
 	return -1
 
