@@ -38,7 +38,7 @@ echo "Copying files..."
 mkdir -p $TMPDIR/freevial-$VERSION
 
 # Copy files
-cp COPYING README ChangeLog freevial devscripts/distrib/* $TMPDIR/freevial-$VERSION
+cp COPYING README NEWS freevial devscripts/distrib/* $TMPDIR/freevial-$VERSION
 cp -r data/ src/ databases/ $TMPDIR/freevial-$VERSION
 
 # Copy skins
