@@ -156,17 +156,19 @@ if '-h' in sys.argv or '--help' in sys.argv:
 	print
 	print _('Usage: freevial [OPTIONS]')
 	print
-	print _('-d, --debug\t\tDebug mode')
-	print _('-m, --mute\t\tDisable all sounds and music')
-	print _('-f, --fullscreen\tStart in fullscreen mode')
-	print _('-l, --locked\t\tStart game in locked mode')
-	print _('-h, --help\t\tDisplay this message')
-	print _('-v, --version\t\tPrint information about the current version')
+	print _('-d, --debug\t\tDebug mode.')
+	print _('-m, --mute\t\tDisable all sounds and music.')
+	print _('-f, --fullscreen\tStart in fullscreen mode.')
+	print _('-l, --locked\t\tStart game in locked mode.')
+	print _('-h, --help\t\tDisplay this message.')
+	print _('-v, --version\t\tPrint information about the current version.')
 	print _('--database <path>\tSet the absolute path to the database file / directory.')
-	print _('--no-sound\t\tDisable sound')
-	print _('--no-music\t\tDisable music')
-	print _('--fps\t\t\tPrint framerate on screen')
-	print _('--skin <path>\tSet the absolute path to the skin file / directory')
+	print _('--skin <path>\t\tSet the absolute path to the skin file / directory.')
+	print _('--no-sound\t\tDisable sound.')
+	print _('--no-music\t\tDisable music.')
+	print _('--fps\t\t\tPrint framerate on screen.')
+	print _('--info-db\t\tPrints information about the loaded database and exists.')
+	print _('--psyco\t\t\tUse psyco, if available (this will use more memory).')
 	print
 
  	exit( 0 )
@@ -181,7 +183,7 @@ if '-v' in sys.argv or '--version' in sys.argv:
 	
 	sys.exit( 0 )
 
-if '--info-db' in sys.argv or '--info-databases' in sys.argv:
+if '--info-db' in sys.argv or '--info-database' in sys.argv:
 	total_categories = 0
 	total_questions = 0
 	categories = []
@@ -237,6 +239,13 @@ if '--skin' in sys.argv:
 # at the top of this file.
 
 try:
+	if '--psyco' in sys.argv:
+		try:
+			import psyco
+			psyco.profile()
+		except ImportError:
+			print >> sys.stderr, _('Warning: Could not find psyco.')
+	
 	joc = Freevial()
 	joc.juguem()
 

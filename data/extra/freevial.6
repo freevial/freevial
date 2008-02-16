@@ -5,7 +5,7 @@ freevial \- trivia platform for community events
 
 .SH SYNOPSIS
 .B freevial
-[\fIOPTIONS\fR] [\-\-database <PATH>]
+[\fIOPTIONS\fR] [\-\-database <PATH>] [\-\-skin <PATH>]
 
 .SH DESCRIPTION
 This page briefly documents the \fBfreevial\fR command. Freevial is
@@ -14,9 +14,11 @@ projector).
 
 .SH USAGE
 You may need to specify the path to the questions database you want to
-use with the \-\-database argument. The database can be a folder or a
-compressed file, but please remember that you have to indicate the absolute
-path to it.
+use with the \-\-database argument. The database can be either folder
+or a compressed file.
+.PP
+Additionaly, you can choose a different look using the \-\-skin option
+to tell it where the appearance information it should use is located.
 
 .SH OPTIONS
 .TP
@@ -39,7 +41,7 @@ Prints the help and exists.
 \fB\-v\fR, \fB\-\-version\fR
 Prints information about the current version and release series, and exists.
 .TP
-\fB\-\-info\-db\fR, \fB\-\-info\-databases\fR
+\fB\-\-info\-db\fR, \fB\-\-info\-database\fR
 Prints information about the loaded database and exists. This can be combined
 with the \-\-database option.
 .TP
@@ -51,6 +53,10 @@ Disables the music. You can use \-\-mute to also disable sounds.
 .TP
 \fB\-\-fps\fR
 Displays the framerate on screen.
+.TP
+\fB\-\-psyco\fR
+Tries to use the psyco module in order to accelerate Freevial. This is
+not recommended, as it will need more memory.
 
 .SH REPORTING BUGS
 If you find any bug please report it on: https://bugs.launchpad.net/freevial/.
