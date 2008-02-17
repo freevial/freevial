@@ -49,8 +49,9 @@ class Roda:
 		
 		self.fons = game.skin.configGet( 'wheel_background' )
 		self.front = game.skin.configGet( 'wheel_front' )
-		self.paper = game.skin.configGet( 'wheel_paper' )
-		
+
+		self.categories = []
+		self.categoriesagafades = []
 		self.maxim_equips = game.skin.configGetInt( 'max_teams', 'game' )
 		
 		self.roda_so_dot = game.skin.configGet( 'sound_wheel_dot')
@@ -83,21 +84,31 @@ class Roda:
 
 		for num in range(0, 6):
 			self.so_cat[num] = loadSound(get_databases(num).sound, volume = 1.0)
-			
-		for num in range(0, 6):
-			sfc = game.skin.render_text( get_databases(num).name, (0,0,0), self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
-			self.paper.blit( sfc, (self.paper_text_offsetX+2, 2+(num * 200) + 100 - sfc.get_height() / 2 ))
-			sfc = game.skin.render_text( get_databases(num).name, colorsCategories()[num], self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
-			self.paper.blit( sfc, (self.paper_text_offsetX, (num * 200) + 100 - sfc.get_height() / 2 ))
-
+		self.canviacat()			
 		self.help_overlay = createHelpScreen( 'roda' )		
 		
 		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
 		self.help_on_screen.sec_timeout = 10
 	
+	def canviacat( self ):
+		self.categories = []
+		for num in range (0, 6):
+			self.categories += (get_databases(num).name)
+		self.paper = self.game.skin.LoadImage( 'wheel_paper' )
+		for num in range(0, 6):
+			sfc = self.game.skin.render_text( get_databases(num).name, (0,0,0), self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
+			self.paper.blit( sfc, (self.paper_text_offsetX+2, 2+(num * 200) + 100 - sfc.get_height() / 2 ))
+			sfc = self.game.skin.render_text( get_databases(num).name, colorsCategories()[num], self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
+			self.paper.blit( sfc, (self.paper_text_offsetX, (num * 200) + 100 - sfc.get_height() / 2 ))
+	
 	def juguem( self ):
 		
 		self.game.skin.set_domain( 'wheel' )
+		self.categoriesagafades = []
+		for num in range (0, 6):
+			self.categoriesagafades += (get_databases(num).name)
+		if self.categoriesagafades != self.categories:
+			self.canviacat()
 		self.frate = frameRate( Global.fps_limit )
 				
 		self.so_evil.stop()

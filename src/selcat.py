@@ -33,7 +33,7 @@ from pygame.locals import *
 from common.freevialglob import *
 from common.events import EventHandle
 from questions import shuffle_databases, get_databases
-
+from roda import Roda
 
 def FindList( llista, element ):
 
@@ -265,5 +265,6 @@ class SelCat:
 			
 			# intercanviem els buffers de self.game.screen
 			pygame.display.flip()
+
 
 		return 0
