@@ -7,6 +7,11 @@
     <destination>Coneixements mínims d'internet</destination>
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139483</timestamp_modification>
+
+	<license>gpl</license>
+	<url>http://www.freevial.org/bases/internet.xml</url>
+	<contact>info@freevial.org</contact>
+
     <authors>
       <author>Lluïsa Núñez, &lt;email&gt;</author>
       <author>Carles Oriol, &lt;email&gt;</author>

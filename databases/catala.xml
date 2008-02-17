@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.0" id="entertainment" language="ca">
+
+  <information>
+
+    <name>En català</name>
+    <description>Preguntes de coneixements de català</description>
+    <destination>Passatemps i dubtes sobre la nostra llengua?</destination>
+    <timestamp_creation>1201967391</timestamp_creation>
+    <timestamp_modification>1201967391</timestamp_modification>
+
+	<license>gpl</license>
+	<url>http://www.freevial.org/bases/catala.xml</url>
+	<contact>info@freevial.org</contact>
+
+    <authors>
+      <author>Núria Costa</author>
+      <author>Carles Oriol</author>
+    </authors>
+
+  </information>
+
+  <appearance>
+    <image>categoria_movies.png</image>
+    <sound>mov.ogg</sound>
+  </appearance>
+
+  <questions>
+    <question>
+      <sentence>Pregunta?</sentence>
+      <author>Carles</author>
+      <comments>Comentaris a mostrar un cop finalitzada la pregunta</comments>
+      <answers>
+        <answer correct="True">Resposta correcta</answer>
+        <answer>Resposta incorrecta 1</answer>
+        <answer>Resposta incorrecta 2</answer>
+      </answers>
+    </question>
+
+  </questions>
+
+</database>
+

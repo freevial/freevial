@@ -7,6 +7,11 @@
     <destination>Persones amb coneixements de còmics</destination>
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139485</timestamp_modification>
+
+	<license>gpl</license>
+	<url>http://www.freevial.org/bases/manga.xml</url>
+	<contact>info@freevial.org</contact>
+
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
       <author>Marc Oriol, &lt;email&gt;</author>

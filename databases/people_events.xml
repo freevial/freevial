@@ -5,6 +5,11 @@
     <destination>Coneixement dels esdeveniments i personatges més importants al món de GNU, el programari lliure i la informàtica en general.</destination>
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139483</timestamp_modification>
+
+	<license>gpl</license>
+	<url>http://www.freevial.org/bases/people_events.xml</url>
+	<contact>info@freevial.org</contact>
+
     <authors>
       <author>Rafael Carreras, &lt;email&gt;</author>
       <author>Nil Oriol, &lt;email&gt;</author>

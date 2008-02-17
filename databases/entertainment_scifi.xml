@@ -7,6 +7,11 @@
     <destination>Diversos</destination>
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139484</timestamp_modification>
+
+	<license>gpl</license>
+	<url>http://www.freevial.org/bases/entertainment_scifi.xml</url>
+	<contact>info@freevial.org</contact>
+
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
       <author>Josep Sànchez, &lt;email&gt;</author>

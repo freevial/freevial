@@ -7,6 +7,11 @@
     <destination>Endevina, Gorina. Ho superes, Figueres?</destination>
     <timestamp_creation>1201967391</timestamp_creation>
     <timestamp_modification>1201967391</timestamp_modification>
+
+	<license>gpl</license>
+	<url>http://www.freevial.org/bases/movies.xml</url>
+	<contact>info@freevial.org</contact>
+
     <authors>
       <author>Carles Oriol</author>
     </authors>
