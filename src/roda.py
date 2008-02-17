@@ -91,24 +91,27 @@ class Roda:
 		self.help_on_screen.sec_timeout = 10
 	
 	def canviacat( self ):
-		self.categories = []
+		
+		self.categoriesagafades = []
 		for num in range (0, 6):
-			self.categories += (get_databases(num).name)
-		self.paper = self.game.skin.LoadImage( 'wheel_paper' )
-		for num in range(0, 6):
-			sfc = self.game.skin.render_text( get_databases(num).name, (0,0,0), self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
-			self.paper.blit( sfc, (self.paper_text_offsetX+2, 2+(num * 200) + 100 - sfc.get_height() / 2 ))
-			sfc = self.game.skin.render_text( get_databases(num).name, colorsCategories()[num], self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
-			self.paper.blit( sfc, (self.paper_text_offsetX, (num * 200) + 100 - sfc.get_height() / 2 ))
+			self.categoriesagafades += (get_databases(num).name)
+			
+		if self.categoriesagafades != self.categories:
+			self.categories = self.categoriesagafades
+
+			self.paper = self.game.skin.LoadImage( 'wheel_paper' )
+			for num in range(0, 6):
+				sfc = self.game.skin.render_text( get_databases(num).name, (0,0,0), self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
+				self.paper.blit( sfc, (self.paper_text_offsetX+2, 2+(num * 200) + 100 - sfc.get_height() / 2 ))
+				sfc = self.game.skin.render_text( get_databases(num).name, colorsCategories()[num], self.tipografia_mida, 1, self.tipografia, self.paper_text_width );
+				self.paper.blit( sfc, (self.paper_text_offsetX, (num * 200) + 100 - sfc.get_height() / 2 ))
 	
 	def juguem( self ):
 		
 		self.game.skin.set_domain( 'wheel' )
-		self.categoriesagafades = []
-		for num in range (0, 6):
-			self.categoriesagafades += (get_databases(num).name)
-		if self.categoriesagafades != self.categories:
-			self.canviacat()
+
+		self.canviacat()
+
 		self.frate = frameRate( Global.fps_limit )
 				
 		self.so_evil.stop()
