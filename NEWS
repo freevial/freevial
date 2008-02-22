@@ -1,5 +1,5 @@
-Version UNRELEASED
---------------------
+Version 1.1 - Nightshift
+------------------------------
 
 This second release of Freevial includes a lot of important changes
 including new thrilling features (like skins), bug fixes and huge
@@ -12,11 +12,13 @@ Important Improvements:
  - Changed questions format from CVS to XML for more flexibility.
 
 Other Improvements:
- - Continued working on internationalization support.
+ - More progress on internationalization support.
  - Only allow to change the categories selection in team creation mode.
  - Improved the "--database" command line option, and added "--info-db".
  - Drastically reduced CPU usage when Freevial is minimized.
  - Made it possible to select an answer with the mouse wheel.
 
 Bug Fixes:
- - Fixed errors in many questions in the Catalan database.
+ - Fixed errors in many questions from the Catalan database.
+ - Fixed a graphics refresh problem when switching categories after
+   the game already started (LP: #174933).
