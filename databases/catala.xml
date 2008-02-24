@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<database version="1.0" id="entertainment" language="ca">
+<database version="1.0" id="catalan" language="ca">
 
   <information>
 
@@ -30,7 +30,7 @@
 
     <question>
       <sentence>El català és una llengua...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Romànica.</answer>
@@ -41,7 +41,19 @@
 
     <question>
       <sentence>Quina llengua s'assembla més al català?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">L'occità.</answer>
+        <answer>L'euskera.</answer>
+        <answer>La de gat.</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quina llengua s'assembla més al català?</sentence>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">L'occità.</answer>
@@ -52,7 +64,7 @@
 
     <question>
       <sentence>Quin és el primer text literari conservat en català?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Les “Homilies d'Organyà”.</answer>
@@ -61,11 +73,9 @@
       </answers>
     </question>
 
-
-  <questions>
     <question>
       <sentence>Quins són els dos grans dialectes del català?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Oriental i occidental.</answer>
@@ -74,9 +84,10 @@
       </answers>
     </question>
 
+
     <question>
       <sentence>D'on ve “català” segons Joan Coromines?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">De “lacetani” (tribu ibera) passà per metàtesi a “cetalani” i
@@ -89,9 +100,10 @@ d'Hispània hi vivien els “lacetani” o lacetans.</answer>
       </answers>
     </question>
 
+
     <question>
       <sentence>Quina paraula és incorrecta ortogràficament?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Atribuíen.</answer>
@@ -102,11 +114,11 @@ d'Hispània hi vivien els “lacetani” o lacetans.</answer>
 
     <question>
       <sentence>En la mètrica catalana...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Es compten totes les síl·labes fins a l'última tònica de cada vers.</answer>
-        <answer>Es compten totes les síl·labes de cada vers.</answer>
+        <answer correct="True">Es compten totes les síŀlabes fins a l'última tònica de cada vers.</answer>
+        <answer>Es compten totes les síŀlabes de cada vers.</answer>
         <answer>Els versos són lliures de tenir tòniques o àtones. </answer>
       </answers>
     </question>
@@ -114,7 +126,7 @@ d'Hispània hi vivien els “lacetani” o lacetans.</answer>
     <question>
       <sentence>Quin gran filòleg va establir la normativa del català modern en el seu
 “Diccionari de la llengua catalana”?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Pompeu Fabra.</answer>
@@ -126,7 +138,7 @@ d'Hispània hi vivien els “lacetani” o lacetans.</answer>
     <question>
       <sentence>Qui és l'autor del “Diccionari etimològic i complementari de la
 llengua catalana”?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Joan Coromines.</answer>
@@ -135,9 +147,11 @@ llengua catalana”?</sentence>
       </answers>
     </question>    
 
+
+
 	<question>
       <sentence>Qui és l'autor de “La llengua dels barcelonins”?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Antoni Maria Badia i Margarit.</answer>
@@ -148,7 +162,7 @@ llengua catalana”?</sentence>
 	
 	<question>
       <sentence>Qui va escriure “Els parlars catalans”?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Joan Veny.</answer>
@@ -158,19 +172,8 @@ llengua catalana”?</sentence>
     </question>
 
 	<question>
-      <sentence></sentence>
-      <author>Núria</author>
-      <comments></comments>
-      <answers>
-        <answer correct="True"></answer>
-        <answer></answer>
-        <answer></answer>
-      </answers>
-    </question>
-
-	<question>
       <sentence>Quins són els subdialectes del català oriental?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Rossellonès, central, balear i alguerès.</answer>
@@ -181,7 +184,7 @@ llengua catalana”?</sentence>
 
 	<question>
       <sentence>Quins són els subdialectes del català occidental?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Nord-occidental i valencià.</answer>
@@ -192,7 +195,7 @@ llengua catalana”?</sentence>
 
 	<question>
       <sentence>Quines característiques té el parlar salat?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Empra els articles es i sa, derivats d' “ipsu”i “ipsa”.</answer>
@@ -203,7 +206,7 @@ llengua catalana”?</sentence>
 
 	<question>
       <sentence>Què és el xipella?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Un parlar de transició entre l'oriental i l'occidental, que es parla des de l'Alt Urgell fins a la Conca de Barberà.</answer>
@@ -212,13 +215,14 @@ llengua catalana”?</sentence>
       </answers>
     </question>
 
+
 	<question>
       <sentence>Quines característiques fonètiques té el rossellonès?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">No té paraules esdrúixoles; la “o” tancada esdevé “u” i la “o”oberta, “o” mitjana; les “e” també són mitjanes.</answer>
-        <answer>Totes les paraules polisil·làbiques són agudes, com en francès.</answer>
+        <answer>Totes les paraules polisiŀlàbiques són agudes, com en francès.</answer>
         <answer>L'últim parlant de rossellonès va morir fa uns deu anys.</answer>
       </answers>
     </question>
@@ -226,7 +230,7 @@ llengua catalana”?</sentence>
 	<question>
       <sentence>En quina llengua escrivien les poesies els trobadors catalans dels
 segles XII i XIII?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">En occità.</answer>
@@ -237,7 +241,7 @@ segles XII i XIII?</sentence>
 
 	<question>
       <sentence>Qui era Guillem de Berguedà?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Un senyor feudal i trobador.</answer>
@@ -248,7 +252,7 @@ segles XII i XIII?</sentence>
 
 	<question>
       <sentence>Què és un “sirventès”?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Un poema (que sol aprofitar l'esquema d'estrofes i de música d'una cançó trobadoresca amorosa molt coneguda) que transmet un atac polític, una reprensió moral, una mostra d'odi...</answer>
@@ -257,9 +261,10 @@ segles XII i XIII?</sentence>
       </answers>
     </question>
 
+
 	<question>
       <sentence>Ramon Llull diu d'ell mateix que, abans de convertir-se, pecava perquè... </sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">L'obsessionava la luxúria.</answer>
@@ -270,7 +275,7 @@ segles XII i XIII?</sentence>
 
 	<question>
       <sentence>A quina edat es va convertir Ramon Llull?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Als trenta anys.</answer>
@@ -281,7 +286,7 @@ segles XII i XIII?</sentence>
 
 	<question>
       <sentence>De quina manera va aprendre l'àrab Ramon Llull?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Va comprar-se un esclau culte. Explicació:També li féu conèixer el pensament de filòsofs i científics àrabs; aprengué tant d'àrab, que fou capaç d'escriure-hi moltes de les seves obres. Val a dir que un copLlull s'hi va esbatussar perquè l'esclau renegà de Crist; després l'esclau se'n va voler venjar clavant-li un punyal al ventre.</answer>
@@ -291,19 +296,19 @@ segles XII i XIII?</sentence>
     </question>
 
 	<question>
-      <sentence></sentence>
-      <author>Núria</author>
+      <sentence>De quina manera va aprendre l'àrab Ramon Llull?</sentence>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True"></answer>
-        <answer></answer>
-        <answer></answer>
+        <answer correct="True">Va comprar-se un esclau culte. Explicació:També li féu conèixer el pensament de filòsofs i científics àrabs; aprengué tant d'àrab, que fou capaç d'escriure-hi moltes de les seves obres. Val a dir que un copLlull s'hi va esbatussar perquè l'esclau renegà de Crist; després l'esclau se'n va voler venjar clavant-li un punyal al ventre.</answer>
+        <answer>Va contractar un mestre.</answer>
+        <answer>Se'n va anar al Pròxim Orient.</answer>
       </answers>
     </question>
 
 	<question>
       <sentence>Qui és considerat el creador de la llengua catalana literària?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Ramon Llull.</answer>
@@ -315,7 +320,7 @@ segles XII i XIII?</sentence>
 	<question>
       <sentence>Com s'ho fa Ramon Llull per expressar pensaments que mai s'havien
 expressat en cap llengua vulgar?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Crea “paraules estranyes”. Explicació: Ramon Llull va escriure
@@ -327,7 +332,7 @@ moltíssims llibres (més de 200), d'enciclopèdics, de filosòfics, de tots els
 
 	<question>
       <sentence>Una d'aquestes formes de la primera persona del present d'indicatiu no correspon al dialecte esmentat:</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Jo cante – valencià.</answer>
@@ -339,7 +344,7 @@ moltíssims llibres (més de 200), d'enciclopèdics, de filosòfics, de tots els
 	<question>
       <sentence>Quin d'aquest adjectius demostratius valencians indica que (alguna
 cosa) és prop del qui escolta.</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Eixe.</answer>
@@ -349,7 +354,8 @@ cosa) és prop del qui escolta.</sentence>
     </question>
 
 	<question>
-      <sentence>Un gran poeta del segle XV fou el valencià...</author>
+      <sentence>Un gran poeta del segle XV fou el valencià...</sentence>
+  	  <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Ausiàs March.</answer>
@@ -358,9 +364,10 @@ cosa) és prop del qui escolta.</sentence>
       </answers>
     </question>
 
+
 	<question>
       <sentence>Qui és l'autor de “Tirant lo Blanc”?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Joanot Martorell.</answer>
@@ -371,7 +378,7 @@ cosa) és prop del qui escolta.</sentence>
 
 	<question>
       <sentence>De qui s'enamora Tirant lo Blanc?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">De Carmesina.</answer>
@@ -382,7 +389,7 @@ cosa) és prop del qui escolta.</sentence>
 
 	<question>
       <sentence>Març, marçot, mata la vella a la vora del foc...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">I la jove si pot</answer>
@@ -393,7 +400,7 @@ cosa) és prop del qui escolta.</sentence>
 
 	<question>
       <sentence>De mica en mica...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">S'omple la pica.</answer>
@@ -402,20 +409,10 @@ cosa) és prop del qui escolta.</sentence>
       </answers>
     </question>
 
-	<question>
-      <sentence></sentence>
-      <author>Núria</author>
-      <comments></comments>
-      <answers>
-        <answer correct="True"></answer>
-        <answer></answer>
-        <answer></answer>
-      </answers>
-    </question>
 
 	<question>
       <sentence>Cel rogent...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Pluja o vent.</answer>
@@ -426,7 +423,7 @@ cosa) és prop del qui escolta.</sentence>
 
 	<question>
       <sentence>Qui de jove no treballa...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">De vell dorm a la palla.</answer>
@@ -437,7 +434,7 @@ cosa) és prop del qui escolta.</sentence>
 
 	<question>
       <sentence>Pel juny...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">La falç al puny.</answer>
@@ -448,7 +445,7 @@ cosa) és prop del qui escolta.</sentence>
 
 	<question>
       <sentence>Pesa més...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Que un ase mort.</answer>
@@ -459,7 +456,7 @@ cosa) és prop del qui escolta.</sentence>
 
 	<question>
       <sentence>Qui menja sopes...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Se les pensa totes.</answer>
@@ -470,7 +467,7 @@ cosa) és prop del qui escolta.</sentence>
 
 	<question>
       <sentence>Si aixeques massa el porró...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Aniràs de cantó.</answer>
@@ -481,7 +478,7 @@ cosa) és prop del qui escolta.</sentence>
 
 	<question>
       <sentence>Qui canta...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Els mals espanta.</answer>
@@ -492,7 +489,7 @@ cosa) és prop del qui escolta.</sentence>
 
 	<question>
       <sentence>Què fan els infants?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">El que veuen fer als grans.</answer>
@@ -503,7 +500,7 @@ cosa) és prop del qui escolta.</sentence>
 
 	<question>
       <sentence>Quina és la correcta?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Vés amb compte!</answer>
@@ -513,9 +510,9 @@ cosa) és prop del qui escolta.</sentence>
     </question>
 
 	<question>
-      <sentence>De què tracten les novel·les “Els fugitius” i “Els vençuts”, de
+      <sentence>De què tracten les noveŀles “Els fugitius” i “Els vençuts”, de
 Xavier Benguerel?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">Són westerns.</answer>
@@ -525,8 +522,8 @@ Xavier Benguerel?</sentence>
     </question>
 	<question>
 
-      <sentence>Quina novel·la cabdal sobre la guerra va escriure Joan Sales?</sentence>
-      <author>Núria</author>
+      <sentence>Quina noveŀla cabdal sobre la guerra va escriure Joan Sales?</sentence>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">”Incerta glòria”.</answer>
@@ -536,9 +533,9 @@ Xavier Benguerel?</sentence>
     </question>
 
 	<question>
-      <sentence>A la novel·la “Vida privada”, Josep Maria de Sagarra retrata
+      <sentence>A la noveŀla “Vida privada”, Josep Maria de Sagarra retrata
 magistralment...</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">La vida privada de diferents personatges de la Barcelona dels anys vint i trenta.</answer>
@@ -550,7 +547,7 @@ magistralment...</sentence>
 
 	<question>
       <sentence>Quin poema no és de Salvador Espriu?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">”La vaca cega”.</answer>
@@ -561,7 +558,7 @@ magistralment...</sentence>
 
 	<question>
       <sentence>Quin poema no és de Joan Maragall?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">”La fageda d'en Jordà”.</answer>
@@ -572,7 +569,7 @@ magistralment...</sentence>
 
 	<question>
       <sentence>Quin poema no és de J.V. Foix?</sentence>
-      <author>Núria</author>
+      <author>Nuria</author>
       <comments></comments>
       <answers>
         <answer correct="True">”La pàtria”.</answer>
@@ -580,6 +577,11 @@ magistralment...</sentence>
         <answer>”És quan dormo que hi veig clar”.</answer>
       </answers>
     </question>
+
+
+
+
+
 
 
   </questions>

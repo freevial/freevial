@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<database version="1.0" id="entertainment" language="ca">
+<database version="1.0" id="movies" language="ca">
   <information>
     <name>Peŀlícules</name>
     <description>Preguntes de peŀlícules d'arreu</description>
