@@ -64,7 +64,7 @@ class Database:
 		    is the correct one. """
 		
 		if len(self._questions) == 0:
-			print _('All questions in category «%s» have been answered. Reshuffling...') %  self.name
+			print _(u'All questions in category «%s» have been answered. Reshuffling...') %  self.name
 			self._questions = deepcopy(self._old_questions)
 			self._old_questions = []
 			self.shuffled = False
