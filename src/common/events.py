@@ -47,9 +47,11 @@ class EventHandle:
 			event = self._convert_joystick_event()
 		
 		self.event = event
+		self.handled = False
 		
-		if do_base_actions:
-			self.base_actions()
+		if do_base_actions and self.base_actions():
+			self.handled = True
+	
 	
 	def _convert_joystick_event( self ):
 		
@@ -73,6 +75,7 @@ class EventHandle:
 	
 		if joystick_aliases.get( event.button ):
 			return pygame.event.Event( pygame.KEYUP, { 'key': joystick_aliases[ event.button ], 'unicode': u's', 'mod': 0 } )
+	
 	
 	def _getKey( self, key ):
 		
@@ -180,6 +183,17 @@ class EventHandle:
 		
 		return False
 	
+	def isWindowFocusLose( self ):
+		
+		if self._isStateEvent() and self.event.state == 1 and self.event.gain == 0:
+			return True
+		
+		return False
+	
+	def isWindowFocusGain( self ):
+		
+		if self._isStateEvent() and self.event.state == 1 and self.event.gain == 1:
+			return True
 	
 	def isQuit( self ):
 		
@@ -213,6 +227,12 @@ class EventHandle:
 		elif self.isWindowMinimize():
 			pauseGameUntilRestore()
 		
+		elif self.isWindowFocusLose() or self.isWindowFocusGain():
+			# Those aren't interesting, skip them.
+			# We could also do some CPU saving here, but this would produce
+			# bad synchronization between the music and the images.
+			return True
+		
 		else:
 			return False
 
@@ -222,15 +242,18 @@ def waitForMouseRelease( ):
 	while pygame.mouse.get_pressed()[0] + pygame.mouse.get_pressed()[1] + pygame.mouse.get_pressed()[2] != 0:
 		pygame.event.wait() 
 
+
 def pauseGameUntilRestore( ):
 	
 	while True:
 		for event in pygame.event.get():
 			if EventHandle(event).isWindowRestore():
 				return False
-		# Wait sleeping for 10 milliseconds.
-		# This has no visible effect bug will drastically reduce CPU usage.
+		
+		# Sleep for 10 milliseconds.
+		# This has no visible effect but will drastically reduce CPU usage.
 		pygame.time.wait(10)
+
 
 aobert = atancat = adieresi = acirc = False
 accents = [u"aeiou", u"àèìòù", u"áéíóú", u"äëïöü", u"âêîôû" ]

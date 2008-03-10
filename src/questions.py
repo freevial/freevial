@@ -110,8 +110,6 @@ parser.setElementClassLookup(objectify.ObjectifyElementClassLookup())
 def GetDatabase( num, xmlFile ):
 	""" Returns a Database instance loaded with the questions from a XML file. """
 	
-	print xmlFile
-
 	root = etree.parse(xmlFile, parser).getroot()
 	
 	if float(root.get('version')) != 1.0:
