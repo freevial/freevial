@@ -149,6 +149,7 @@ class SelCat:
 			for event in pygame.event.get():
 
 				eventhandle = EventHandle(event)
+				if eventhandle.handled: continue
 				
 				if eventhandle.keyUp('q', 'ESCAPE', 'KP_ENTER', 'F3', 'F5'):
 					if estat == 0: self.refa_cats();

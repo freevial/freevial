@@ -1,3 +1,19 @@
+Version 1.2 - Perfectionism
+------------------------------
+
+This is the third release of Freevial, which contains mainly only bugfixes
+and little improvements. Below we will highlight some of the most important
+changes, except the coding related ones as you probably aren't interested
+in them.
+
+Improvements:
+ - Further reduce CPU usage, saving some more cycles now.
+
+Bug Fixes:
+ - Fixed a crash which happened when there were no more questions left in
+   a category whose name contained special characters.
+
+
 Version 1.1 - Nightshift
 ------------------------------
 

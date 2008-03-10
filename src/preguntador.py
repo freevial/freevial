@@ -271,6 +271,7 @@ class Preguntador:
 			for event in pygame.event.get():
 				
 				eventhandle = EventHandle(event)
+				if eventhandle.handled: continue
 				
 				self.help_on_screen.activitat(event)
 				
