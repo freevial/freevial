@@ -163,7 +163,7 @@ class Score:
 		
 		self.game.screen.fill( (0,0,0,0) )
 		
-		ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = mostra_estad = 0
+		ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = show_stats = 0
 		element_seleccionat = self.game.current_team
 		nou_grup = 1 if ( teamsActius( self.game.teams ) == 0 ) else 0
 		
@@ -173,8 +173,8 @@ class Score:
 		if nou_grup: mode = 0
 		if self.game.skin.teamsGuanyador( self.game.teams ) != -1: 
 			mode = 2
-			mostra_estad = 1
-			element_seleccionat = game.skin.teamsGuanyador( self.game.teams )
+			show_stats = 1
+			element_seleccionat = self.game.skin.teamsGuanyador( self.game.teams )
 			self.so_ok.play()
 		else:
 			self.game.skin.LoadSound( 'background_sound', 'background_sound_vol', music = 1 ).play( -1 )
@@ -189,7 +189,6 @@ class Score:
 			if mode == 2:
 				if frate.segons() < 4.1 and int(frate.segons()) > surten:
 					surten = int( frate.segons() )
-
 					self.so_ok.play(1)
 
 				if frate.segons() > 4.1 and not mostrada_victoria:
@@ -313,7 +312,7 @@ class Score:
 						else:
 							if fesPregunta( self.game.screen , valorText( HOS_NEW_GAME ), (valorText( HOS_YES ), valorText( HOS_NO )), color = self.game.skin.configGetRGB( "game_question_color", "game" )) == 0:
 								mode = 0
-								mostra_estad = 0 
+								show_stats = 0 
 				
 								for equip in self.game.teams:
 									for num in range(0, 6): 
@@ -323,7 +322,7 @@ class Score:
 									equip.figureta = 0				
 					
 					if eventhandle.keyUp('s'): 
-						mostra_estad ^= 1
+						show_stats ^= 1
 					
 					if eventhandle.keyUp('m'):
 						replaceModes = {
@@ -408,7 +407,7 @@ class Score:
 					if self.score_resultat_visible == 'True':
 						self.game.screen.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 
-					if mostra_estad and self.final_stats:
+					if show_stats and self.final_stats:
 						for cat in range(0,6):
 							self.game.screen.blit( self.barra_pos( self.game.teams[num].preguntes_tot[cat], self.game.teams[num].preguntes_ok[cat],  colorsCategories()[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )
 				

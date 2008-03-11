@@ -264,8 +264,7 @@ class SelCat:
 
 			frate.next( self.game.screen )
 			
-			# intercanviem els buffers de self.game.screen
+			# Exchange self.game.screen buffers
 			pygame.display.flip()
-
 
 		return 0

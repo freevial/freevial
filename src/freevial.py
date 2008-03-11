@@ -230,9 +230,6 @@ if '--no-music' in sys.argv:
 
 if '--skin' in sys.argv:
 	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--skin' ) + 1]))
-	if not os.path.isdir( path ):
-		print _('Could not find skin "%s"...') % unicode(path, 'utf-8')
-		sys.exit( 1 )
 	setSkinName( path )
 
 # For technical reasons, the "--database" option is parsed somewhere

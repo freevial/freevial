@@ -1,17 +1,22 @@
 Version 1.2 - Perfectionism
 ------------------------------
 
-This is the third release of Freevial, which contains mainly only bugfixes
-and little improvements. Below we will highlight some of the most important
-changes, except the coding related ones as you probably aren't interested
-in them.
+This is the third release of Freevial, which mainly only features some
+important bugfixes and little improvements. Below we will highlight the
+most important changes.
 
 Improvements:
  - Further reduce CPU usage, saving some more cycles now.
+ - If only a name (and not a path) is passed as --skin, and there's no
+   directory with that name in the working directory, Freevial will now
+   try to find if a skin with that name is installed somewhere.
 
 Bug Fixes:
+ - Fixed an evil crash which toke place each time a team won a game.
  - Fixed a crash which happened when there were no more questions left in
    a category whose name contained special characters.
+ - Fixed a crash reproducible by pressing 'q' or escape on the end screen
+   when the music is disabled.
 
 
 Version 1.1 - Nightshift
@@ -33,8 +38,9 @@ Other Improvements:
  - Improved the "--database" command line option, and added "--info-db".
  - Drastically reduced CPU usage when Freevial is minimized.
  - Made it possible to select an answer with the mouse wheel.
+ - Add support for psyco (disabled by default).
 
 Bug Fixes:
  - Fixed errors in many questions from the Catalan database.
- - Fixed a graphics refresh problem when switching categories after
-   the game already started (LP: #174933).
+ - Fixed a graphics refresh problem which occured when switching
+   categories after the game already started (LP: #154510).

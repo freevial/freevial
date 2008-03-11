@@ -220,17 +220,18 @@ class EventHandle:
 			screenshot(pygame.display.get_surface())
 			return True
 		
+		elif self.isWindowFocusLose() or self.isWindowFocusGain():
+			# Those aren't interesting, skip them.
+			# We could also do some CPU saving here, but this would produce
+			# bad synchronization between the music and the images.
+			return True
+		
 		elif self.keyUp('F11'):
 			pygame.display.toggle_fullscreen()
 			return True
 		
 		elif self.isWindowMinimize():
 			pauseGameUntilRestore()
-		
-		elif self.isWindowFocusLose() or self.isWindowFocusGain():
-			# Those aren't interesting, skip them.
-			# We could also do some CPU saving here, but this would produce
-			# bad synchronization between the music and the images.
 			return True
 		
 		else:

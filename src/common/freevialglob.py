@@ -230,7 +230,6 @@ def count_not_empty( list, attr = None ):
 	
 	for element in list:
 		if element:
-			print element, hasattr(element, attr)
 			if not attr or (hasattr(element, attr) and getattr(element, attr)):
 				count += 1
 	
@@ -303,27 +302,26 @@ def teamsGuanyador( teams, mode, extra ):
 						puntsmax = teams[num].punts
 	
 		guanyador = equipmax
-			
-	if mode == 1:
+	
+	elif mode == 1:
 		
 		for num in range( 0, Global.game.max_teams ):
 			if teams[num].punts >=  extra:
 				guanyador = num
-
-	if mode == 2:
+	
+	elif mode == 2:
 		nocagats = []
 		for num in range( 0, Global.game.max_teams ):
 			if teams[num].errors <  extra:
 				nocagats.append( num )
 		if len(nocagats) == 1:
 			guanyador = nogacats[0]
-
-	if mode == 3:
+	
+	elif mode == 3:
 		for num in range( 0, Global.game.max_teams ):
 			if teams[num].figureta == 63:
 				guanyador = num
-
-
+	
 	return guanyador
 
 
@@ -467,6 +465,17 @@ def valorText( ntext ):
 def colorsCategories():
 
 	return i_colors_cat
+
+
+def firstExistingDirectory(name, *dirs):
+	""" Searches for a directory called by the given name inside all given
+	directories, and returns the full path to the first one which exists. """
+	
+	for directory in dirs:
+		if os.path.isdir( os.path.join(directory, name) ):
+			return os.path.join(directory, name)
+	
+	return False
 
 
 HOS_SCORE_MODE0 = 0

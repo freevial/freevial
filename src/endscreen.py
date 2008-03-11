@@ -183,7 +183,8 @@ class Visca:
 				if eventhandle.handled: continue
 				
 				if eventhandle.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
-					pygame.mixer.music.fadeout( 1500 )
+					if not Global.MUSIC_MUTE:
+						pygame.mixer.music.fadeout( 1500 )
 					return
 			
 			if segons >= 68: return

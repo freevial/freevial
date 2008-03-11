@@ -24,6 +24,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import sys
 import os.path
 import gettext
 from math import *
@@ -36,6 +37,27 @@ Global.skin_file = default_file = os.path.join(Global.basefolder, 'skin.ini')
 Global.skin_folder = Global.basefolder
 
 def setSkinName( path ):
+	
+	basename = sys.argv[sys.argv.index( '--skin' ) + 1]
+	
+	if not os.path.isdir( path ) and not '/' in basename:
+		
+		# If the directory doesn't exist, and it contains no slashes,
+		# guess that it's not a path but just the name of the wanted
+		# skin, and try to find it.
+		
+		calculated_path = firstExistingDirectory( basename,
+			# Search directories:
+			'/usr/share/games/freevial/skins/', 
+			os.path.join(os.path.expanduser('~/'), '.freevial/skins/'),
+			os.path.abspath('../skins/') )
+		
+		if calculated_path:
+			path = calculated_path
+	
+	if not os.path.isdir( path ):
+		print _('Could not find skin "%s"...') % unicode(path, 'utf-8')
+		sys.exit( 1 )
 	
 	Global.skin_folder = path
 	Global.skin_file = os.path.join( path, 'skin.ini' )
