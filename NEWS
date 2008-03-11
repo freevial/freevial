@@ -17,6 +17,7 @@ Bug Fixes:
    a category whose name contained special characters.
  - Fixed a crash reproducible by pressing 'q' or escape on the end screen
    when the music is disabled.
+ - Fix the installation script to really install all provided skins.
 
 
 Version 1.1 - Nightshift

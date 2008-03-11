@@ -43,6 +43,7 @@ cp -r data/help $PREFIX/$BASE/data/
 cp -r data/images $PREFIX/$BASE/data/
 cp -r data/sounds $PREFIX/$BASE/data/
 cp data/fonts/Ubuntu-Title.ttf $PREFIX/$BASE/data/fonts/
+cp -r skins $PREFIX/$BASE/
 
 cp data/extra/freevial.xpm $PREFIX/usr/share/pixmaps/
 cp data/images/freevial.png $PREFIX/usr/share/pixmaps/
