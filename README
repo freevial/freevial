@@ -27,6 +27,14 @@ a trivial-like game, looking like on a TV show, on community meetings. It is
 thought to be used with a projector and loudspeakers.
 
 
+DEPENDENCIES
+-------
+
+To run Freevial you need a Python 2.5 installation and the Python modules
+pygame and lxml. The game has been designed to run on GNU/Linux, so you
+may find problems if you use another system.
+
+
 INSTRUCTIONS
 -------
 
