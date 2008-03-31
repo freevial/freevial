@@ -112,7 +112,9 @@ def GetDatabase( num, xmlFile ):
 	
 	root = etree.parse(xmlFile, parser).getroot()
 	
-	if float(root.get('version')) != 1.0:
+	version = float(root.get('version'))
+
+	if version < 1.0:
 		print >> sys.stderr, _('Warning: «%»: Database\'s version is %s, which is not supported by the installed version of Freevial. It might not work as expected.') % (xmlFile, root.get('version'))
 	
 	database = Database(
@@ -125,6 +127,7 @@ def GetDatabase( num, xmlFile ):
 		(int(root.information.timestamp_creation.text), int(root.information.timestamp_modification.text)),
 		root.appearance.image.text,
 		root.appearance.sound.text,
+		version,
 	)
 	
 	for question in root.questions.getchildren():
@@ -155,7 +158,17 @@ def GetDatabase( num, xmlFile ):
 			comment = question.comments.text
 		else:
 			comment = u''
+
+		mediatype = ''
+		media = ''
 		
+		if version >= 1.1:
+			# Version over 1.1 adds media at questions
+
+			if hasattr(question, 'media'):
+				mediatype = question.media.get('type');
+				media = question.media.text;
+
 		database.addQuestion(
 			question = question.sentence.text,
 			answ1 = answers[0],
@@ -163,6 +176,8 @@ def GetDatabase( num, xmlFile ):
 			answ3 = answers[2],
 			author = question.author.text,
 			comment = comment,
+			mediatype = mediatype,
+			media = media,
 		)
 	
 	return database

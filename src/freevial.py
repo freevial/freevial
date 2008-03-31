@@ -32,6 +32,7 @@ from math import *
 from skinner import setSkinName, Skin
 from common.globals import GlobalVar, Global
 
+
 # This is provisionally here for technical reasons...
 if '--database' in sys.argv:
 	path = os.path.abspath(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--database' ) + 1])

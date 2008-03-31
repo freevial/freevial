@@ -28,7 +28,7 @@ import gettext
 
 class Database:
 	
-	def __init__( self, num, name, language, description, players, authors, time, image, sound ):
+	def __init__( self, num, name, language, description, players, authors, time, image, sound, version ):
 		
 		# General Database Data
 		self.num = num	# provisional, should be removed soon
@@ -40,6 +40,8 @@ class Database:
 		self.time = [ time[0], time[1] ]
 		self.image = image
 		self.sound = sound
+
+		self.version = version
 		
 		# Questions
 		self._questions = []
@@ -76,9 +78,9 @@ class Database:
 		
 		return self._old_questions[-1]
 	
-	def addQuestion( self, question, answ1, answ2, answ3, author, comment):
+	def addQuestion( self, question, answ1, answ2, answ3, author, comment, mediatype, media):
 		
-		self._questions.append( [question, answ1, answ2, answ3, 1, author, comment] )
+		self._questions.append( [question, answ1, answ2, answ3, 1, author, comment, mediatype, media] )
 	
 	def question( self ):
 		""" Returns the next question in a dictionary (with the answers
@@ -95,6 +97,9 @@ class Database:
 		question['answer'] = answer_order.index(1) + 1
 		question['author'] = data[5]
 		question['comment'] = data[6]
+		question['mediatype'] = data[7]
+		question['media'] = data[8]
+
 		
 		return question
 	
