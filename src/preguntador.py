@@ -33,6 +33,37 @@ from common.freevialglob import *
 from common.events import EventHandle, waitForMouseRelease
 from questions import get_databases
 
+class NotaVoladora:
+
+	def __init__( self ):
+		self.vel = random.randint( 7, 15 )
+
+		#img sense us ara. Despres farem transparencies
+		self.img = random.randint( 0, 8 )
+
+		self.x = random.randint( 0, 1024 )
+		self.posy = random.randint( 0, 768 )
+		self.y = self.posy
+
+		self.transparent = random.randint( 0, 100 )
+
+		self.midaona = random.randint( 10, 100 )
+		self.transpos = random.randint( 0, 20 )
+
+
+	def mou( self ):
+		self.x -= self.vel
+		if self.x < -100:
+			self.x += 1224
+			self.posy = random.randint( 0, 768 )
+
+		self.y = self.posy + int(cos(time.time() + self.transpos) * float(self.midaona))
+		self.transparent += 127 + cos(time.time() + self.transpos ) * 127
+
+	def pinta( self, surface, imatge ):
+		self.mou()
+		surface.blit( imatge, (self.x, self.y) )
+		
 
 class Preguntador:
 
@@ -141,6 +172,8 @@ class Preguntador:
 		self.help_on_screen = helpOnScreen( HOS_PREGUNTADOR_RUN )
 		self.help_on_screen.sec_timeout = 10
 
+		self.nota = game.skin.LoadImage( 'media_music_image' )
+
 	###########################################
 	#
 	# Funció per veure el nombre de linies que té una frase a mostrar
@@ -222,6 +255,13 @@ class Preguntador:
 	#
 	def juguem( self , selcat):
 		
+		mostramusica = False
+		notesvoladores = []
+		for compta in range( 0, 20):
+			nota = NotaVoladora()
+			notesvoladores.append( nota )
+
+
 		self.game.skin.set_domain( 'preguntador' )
 		
 		max_time = self.game.skin.configGetInt( 'max_time' )
@@ -324,6 +364,9 @@ class Preguntador:
 				
 				if eventhandle.keyUp('z'):	
 					self.mostraautor ^= 1
+
+				if eventhandle.keyUp('x'):	
+					mostramusica ^= 1
 				
 				for num in range(1, 7):
 					if eventhandle.keyUp(str(num), 'KP' + str(num)):
@@ -466,6 +509,11 @@ class Preguntador:
 					compos += 100
 					self.game.screen.blit( sfc_comentaris, (0, compos))
  			
+			if mostramusica:
+				for nota in notesvoladores:
+					nota.pinta(  self.game.screen, self.nota )
+
+	
  			self.help_on_screen.draw( self.game.screen, (350, 740), HOS_PREGUNTADOR_END if self.show_answers else HOS_PREGUNTADOR_RUN )
 			
 			if mostra_ajuda: self.game.screen.blit( self.help_overlay, (0,0))
