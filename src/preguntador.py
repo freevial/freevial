@@ -50,6 +50,7 @@ class NotaVoladora:
 		self.midaona = random.randint( 10, 100 )
 		self.transpos = random.randint( 0, 20 )
 
+		self.col = random.randint( 0, 6)
 
 	def mou( self ):
 		self.x -= self.vel
@@ -60,9 +61,9 @@ class NotaVoladora:
 		self.y = self.posy + int(cos(time.time() + self.transpos) * float(self.midaona))
 		self.transparent += 127 + cos(time.time() + self.transpos ) * 127
 
-	def pinta( self, surface, imatge ):
+	def pinta( self, surface, preguntador ):
 		self.mou()
-		surface.blit( imatge, (self.x, self.y) )
+		surface.blit( preguntador.nota[ self.col], (self.x, self.y) )
 		
 
 class Preguntador:
@@ -173,6 +174,14 @@ class Preguntador:
 		self.help_on_screen.sec_timeout = 10
 
 		self.nota = game.skin.LoadImage( 'media_music_image' )
+		self.notesimatges = []
+		self.notesimatges.append( self.nota )
+		
+		for num in range(0, 6):
+			notacol = game.skin.LoadImage( 'media_music_image' )
+			sfcmask = loadImage( 'filtre_c' + str(num+1) + '.png' )
+			notacol.blit( sfcmask, (0,0))	
+			self.notesimatges.append( notacol )
 
 	###########################################
 	#
@@ -509,9 +518,9 @@ class Preguntador:
 					compos += 100
 					self.game.screen.blit( sfc_comentaris, (0, compos))
  			
-			if mostramusica:
+			if self.current_question["mediatype"] == "audio":
 				for nota in notesvoladores:
-					nota.pinta(  self.game.screen, self.nota )
+					nota.pinta(  self.game.screen, self )
 
 	
  			self.help_on_screen.draw( self.game.screen, (350, 740), HOS_PREGUNTADOR_END if self.show_answers else HOS_PREGUNTADOR_RUN )
