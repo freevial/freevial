@@ -63,7 +63,7 @@ class NotaVoladora:
 
 	def pinta( self, surface, preguntador ):
 		self.mou()
-		surface.blit( preguntador.nota[ self.col], (self.x, self.y) )
+		surface.blit( preguntador.nota, (self.x, self.y) )
 		
 
 class Preguntador:
@@ -226,6 +226,10 @@ class Preguntador:
 
 		self.show_answers = 0
 
+		if self.current_question["mediatype"] == "audio":
+			self.audio = loadSound( self.current_question["media"], music = 1 )
+			self.audio.play( 1 )
+
 	###########################################
 	#
 	# Funció per pintar el text i les preguntes sobre una nova superficie
@@ -264,6 +268,8 @@ class Preguntador:
 	#
 	def juguem( self , selcat):
 		
+		self.audioinit = 0
+
 		mostramusica = False
 		notesvoladores = []
 		for compta in range( 0, 20):
@@ -291,7 +297,14 @@ class Preguntador:
 		
 		waitForMouseRelease( )
 		
-		self.game.skin.LoadSound( 'so_fons', 'so_fons_vol', 1).play(1)
+
+		if self.current_question["mediatype"] == "audio":
+			self.audioinit = time.time() + 2000
+		else:
+			self.game.skin.LoadSound( 'so_fons', 'so_fons_vol', 1).play(1)
+
+
+					
 
 		mostra_punt_de_categoria = False
 		mostra_ajuda = mostra_credits = 0
@@ -375,7 +388,9 @@ class Preguntador:
 					self.mostraautor ^= 1
 
 				if eventhandle.keyUp('x'):	
-					mostramusica ^= 1
+					if self.current_question["mediatype"] == "audio":
+						self.audio.play( 1 )
+
 				
 				for num in range(1, 7):
 					if eventhandle.keyUp(str(num), 'KP' + str(num)):
