@@ -43,8 +43,6 @@ gettext.install('freevial', '/usr/share/locale', unicode=1)
 VERSION = 'UNRELEASED'
 SERIES = 'gresca'
 
-print 'Initializing Freevial...'
-
 class Freevial:
 	
 	def __init__( self ):
@@ -169,7 +167,7 @@ if '-h' in sys.argv or '--help' in sys.argv:
 if '-v' in sys.argv or '--version' in sys.argv:
 	print
 	print _('Freevial, a trivia platform for use on community events')
-	print 'You are running version %s, which is part of the «%s» series.' % ( VERSION, SERIES )
+	print _('You are running version %s, which is part of the «%s» series.' % ( VERSION, SERIES ))
 	print
 	print 'https://launchpad.net/freevial/%s' % SERIES
 	print
@@ -194,14 +192,14 @@ if '--info-db' in sys.argv or '--info-database' in sys.argv:
 		categories.append((database.name, len(database)))
 	
 	print
-	print 'Freevial - About the loaded database...\n'
+	print _('Freevial - About the loaded database...\n')
 	
-	print 'Location:', os.path.abspath(Global.database)
-	print 'Amount of categories:', total_categories
-	print 'Amount of questions:', total_questions, '\n'
+	print _('Location:'), os.path.abspath(Global.database)
+	print _('Amount of categories:'), total_categories
+	print _('Amount of questions:'), total_questions, '\n'
 	
 	for category in categories:
-		print u'%s: %s questions' % (category[0], category[1])
+		print _(u'%s: %s questions' % (category[0], category[1]))
 	print
 	
 	sys.exit( 0 )
@@ -232,9 +230,9 @@ if '--skin' in sys.argv:
 	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--skin' ) + 1]))
 	setSkinName( path )
 
-print 'Loading database...', Global.database
+print _('Loading database "%s"...' % Global.database)
 if len(get_databases()) < 6:
-	print 'Error: the database hasn\'t enough categories; at least six are required.'
+	print _('Error: the database hasn\'t enough categories; at least six are required.')
 	sys.exit( 1 )
 
 try:
