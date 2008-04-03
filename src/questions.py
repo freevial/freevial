@@ -182,23 +182,29 @@ def GetDatabase( num, xmlFile ):
 	
 	return database
 
-
-alldatabases = []
-database_files = LoadDatabase(Global.database).get()
-
-for num in range(0, len(database_files) ):
-	try:
-		cat = GetDatabase( num + 1, os.path.join(Global.database, database_files[num]) )
-		alldatabases.append( cat )
-	except ValueError:
-		print 'Error with «%s».' % database_files[num]
+Global.alldatabases = None
 
 def shuffle_databases():
-	random.shuffle(alldatabases)
+	
+	random.shuffle(Global.alldatabases)
 
 def get_databases( database = None ):
 	
+	global alldatabases
+	
+	if not Global.alldatabases:
+		
+		Global.alldatabases = []
+		database_files = LoadDatabase(Global.database).get()
+		
+		for num in range(0, len(database_files) ):
+			try:
+				cat = GetDatabase( num + 1, os.path.join(Global.database, database_files[num]) )
+				Global.alldatabases.append( cat )
+			except ValueError:
+				print 'Error with «%s».' % database_files[num]
+	
 	if database is not None:
-		return alldatabases[database]
+		return Global.alldatabases[database]
 	else:
-		return alldatabases
+		return Global.alldatabases

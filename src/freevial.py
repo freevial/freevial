@@ -30,18 +30,9 @@ import gettext
 from math import *
 
 from common.globals import GlobalVar, Global
-
-# This is provisionally here for technical reasons...
-if '--database' in sys.argv:
-	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--database' ) + 1]))
-	if not os.path.isdir( path ):
-		print _('Could not find database "%s"...') % unicode(path, 'utf-8')
-		sys.exit( 1 )
-	print path
-	Global.database = path
-
-from skinner import setSkinName, Skin
 from common.freevialglob import *
+from questions import get_databases
+from skinner import setSkinName, Skin
 from score import Score
 from preguntador import Preguntador
 from roda import Roda
@@ -52,6 +43,7 @@ gettext.install('freevial', '/usr/share/locale', unicode=1)
 VERSION = 'UNRELEASED'
 SERIES = 'gresca'
 
+print 'Initializing Freevial...'
 
 class Freevial:
 	
@@ -184,6 +176,13 @@ if '-v' in sys.argv or '--version' in sys.argv:
 	
 	sys.exit( 0 )
 
+if '--database' in sys.argv:
+	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--database' ) + 1]))
+	if not os.path.isdir( path ):
+		print _('Could not find database "%s"...') % unicode(path, 'utf-8')
+		sys.exit( 1 )
+	Global.database = path
+
 if '--info-db' in sys.argv or '--info-database' in sys.argv:
 	total_categories = 0
 	total_questions = 0
@@ -233,8 +232,10 @@ if '--skin' in sys.argv:
 	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--skin' ) + 1]))
 	setSkinName( path )
 
-# For technical reasons, the "--database" option is parsed somewhere
-# at the top of this file.
+print 'Loading database...', Global.database
+if len(get_databases()) < 6:
+	print 'Error: the database hasn\'t enough categories; at least six are required.'
+	sys.exit( 1 )
 
 try:
 	if '--psyco' in sys.argv:
