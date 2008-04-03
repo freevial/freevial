@@ -29,9 +29,7 @@ import pygame
 import gettext
 from math import *
 
-from skinner import setSkinName, Skin
 from common.globals import GlobalVar, Global
-
 
 # This is provisionally here for technical reasons...
 if '--database' in sys.argv:
@@ -39,8 +37,10 @@ if '--database' in sys.argv:
 	if not os.path.isdir( path ):
 		print _('Could not find database "%s"...') % unicode(path, 'utf-8')
 		sys.exit( 1 )
+	print path
 	Global.database = path
 
+from skinner import setSkinName, Skin
 from common.freevialglob import *
 from score import Score
 from preguntador import Preguntador
