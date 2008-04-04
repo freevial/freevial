@@ -535,7 +535,7 @@ class Preguntador:
  			
 			textmostra = ''
 			if self.current_question["mediatype"] == "audio":
-				textmostra += " X - Replay media"
+				textmostra += _(" X - Replay media")
 				for nota in notesvoladores:
 					nota.pinta(  self.game.screen, self )
 
