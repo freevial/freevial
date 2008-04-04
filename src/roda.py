@@ -89,7 +89,9 @@ class Roda:
 		
 		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )
 		self.help_on_screen.sec_timeout = 10
-	
+
+		self.rewheelonrepeat = game.skin.configGetBool( 'rewheelonrepeat' );
+
 	def canviacat( self ):
 		
 		self.categoriesagafades = []
@@ -195,14 +197,26 @@ class Roda:
 				
 				else:
 					resultat = int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
-					self.so_dot.stop()
-					self.so_cat[ resultat].play()
-					if self.so_de_pas == 1:
-						self.so_evil.play()
-					if self.so_de_pas == 2:
-						if not  self.game.teams[self.game.current_team].teCategoria( resultat ) :
+
+					if self.rewheelonrepeat and self.game.teams[self.game.current_team].teCategoria( resultat ) :
+						velocitat = random.randint( 0, 1200) 
+						atura = 0
+						pas = 3
+						deceleracio = self.game.skin.configGetInt( 'wheel_deccel' )
+						time_fi = time.time()
+						frenant = 1
+						self.so_sub.play()
+
+					else:
+
+						self.so_dot.stop()
+						self.so_cat[ resultat].play()
+						if self.so_de_pas == 1:
 							self.so_evil.play()
-					rodant = 0
+						if self.so_de_pas == 2:
+							if not  self.game.teams[self.game.current_team].teCategoria( resultat ) :
+								self.so_evil.play()
+						rodant = 0
 				
 			if rodant == 1:
 				pos_fons += velocitat * 2
