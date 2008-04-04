@@ -157,6 +157,7 @@ if '-h' in sys.argv or '--help' in sys.argv:
 	print _('--skin <path>\t\tSet the absolute path to the skin file / directory.')
 	print _('--no-sound\t\tDisable sound.')
 	print _('--no-music\t\tDisable music.')
+	print _('--no-media\t\tDisable media questions.')
 	print _('--fps\t\t\tPrint framerate on screen.')
 	print _('--info-db\t\tPrints information about the loaded database and exists.')
 	print _('--psyco\t\t\tUse psyco, if available (this will use more memory).')
@@ -225,6 +226,9 @@ if '--no-sound' in sys.argv:
 
 if '--no-music' in sys.argv:
 	Global.MUSIC_MUTE = True
+
+if '--no-media' in sys.argv:
+	Global.DISABLE_MEDIA = True
 
 if '--skin' in sys.argv:
 	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--skin' ) + 1]))

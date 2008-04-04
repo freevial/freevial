@@ -51,6 +51,8 @@ Global.DISPLAY_FPS = False
 Global.LOCKED_MODE = False
 Global.FS_MODE = False	# Fullscreen Mode
 
+Global.DISABLE_MEDIA = False
+
 Global.screen_x = 1024
 Global.screen_y = 768
 Global.fps_limit = 40

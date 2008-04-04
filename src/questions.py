@@ -169,15 +169,17 @@ def GetDatabase( num, xmlFile ):
 				mediatype = question.media.get('type');
 				media = question.media.text;
 
-		database.addQuestion(
-			question = question.sentence.text,
-			answ1 = answers[0],
-			answ2 = answers[1],
-			answ3 = answers[2],
-			author = question.author.text,
-			comment = comment,
-			mediatype = mediatype,
-			media = media,
+		if not (Global.DISABLE_MEDIA and mediatype <> ''):
+
+			database.addQuestion(
+				question = question.sentence.text,
+				answ1 = answers[0],
+				answ2 = answers[1],
+				answ3 = answers[2],
+				author = question.author.text,
+				comment = comment,
+				mediatype = mediatype,
+				media = media,
 		)
 	
 	return database
@@ -200,7 +202,8 @@ def get_databases( database = None ):
 		for num in range(0, len(database_files) ):
 			try:
 				cat = GetDatabase( num + 1, os.path.join(Global.database, database_files[num]) )
-				Global.alldatabases.append( cat )
+				if len(cat) != 0:
+					Global.alldatabases.append( cat )
 			except ValueError:
 				print 'Error with «%s».' % database_files[num]
 	
