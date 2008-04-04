@@ -507,10 +507,10 @@ class helpOnScreen():
 		self.sec_darrera_activitat = time.time()	
 	
 	
-	def creaTextdeTextos(self, itext ):
+	def creaTextdeTextos(self, itext, extra = '' ):
 		
 		global textos
-		self.creaText( textos[itext] )
+		self.creaText( textos[itext] + extra )
 	
 	
 	def creaText( self, ptext ):
@@ -520,11 +520,11 @@ class helpOnScreen():
 			self.sfc_text = render_text( self.text, (128,128,128), 15, 1 )
 	
 	
-	def draw( self, surface, pos, itext = None ):
+	def draw( self, surface, pos, itext = None, extra = '' ):
 		
 		if time.time() >= self.sec_darrera_activitat + self.sec_timeout :
 			
-			if itext: self.creaTextdeTextos ( itext )
+			if itext: self.creaTextdeTextos ( itext, extra )
 			surface.blit( self.sfc_text, pos )
 	
 	

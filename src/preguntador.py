@@ -533,12 +533,14 @@ class Preguntador:
 					compos += 100
 					self.game.screen.blit( sfc_comentaris, (0, compos))
  			
+			textmostra = ''
 			if self.current_question["mediatype"] == "audio":
+				textmostra += " X - Replay media"
 				for nota in notesvoladores:
 					nota.pinta(  self.game.screen, self )
 
-	
- 			self.help_on_screen.draw( self.game.screen, (350, 740), HOS_PREGUNTADOR_END if self.show_answers else HOS_PREGUNTADOR_RUN )
+			
+ 			self.help_on_screen.draw( self.game.screen, (350, 740), HOS_PREGUNTADOR_END if self.show_answers else HOS_PREGUNTADOR_RUN, extra = textmostra )
 			
 			if mostra_ajuda: self.game.screen.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.game.screen.blit( self.game.sfc_credits, (0,0))
