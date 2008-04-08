@@ -40,14 +40,18 @@ class LoadDatabase:
 		""" Load a question database (directory or compressed file). """
 		
 		try:
-			self.files = self._xml_in_path(self._get_real_path(directory))
+			dbpath = self._get_real_path(directory)
+			Global.databasefolders.append ( dbpath )
+			self.files = self._xml_in_path( dbpath )
 		
 		except IOError:
 			print _('Error: Couldn\'t find the current questions database.')
 			print _('You can provide the location to that one you want to use by passing the --database option.')
 			print _('For example: freevial --database ~/questions.tar.gz')
 			sys.exit(1)
-	
+		
+		print Global.databasefolders
+		
 	def get(self):
 		
 		return self.files

@@ -60,6 +60,8 @@ Global.fps_limit = 40
 Global.basefolder = '../data'
 Global.database = '../databases'
 
+Global.databasefolders = []
+
 Global.folders = {
 		'images': os.path.join(Global.basefolder, 'images'),
 		'sounds': os.path.join(Global.basefolder, 'sounds'),

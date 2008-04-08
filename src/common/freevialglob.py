@@ -82,9 +82,16 @@ def loadImage( name, colorkey = None, rotate = 0 ):
 	
 	fullname = os.path.join(Global.folders['images'], str(name))
 	
+	if not os.path.exists( fullname ):
+		#we try on database paths
+		for foldername in Global.databasefolders:
+			fulln = os.path.join(Global.folders['images'], str(name))
+			if os.path.exists( fulln ):
+				fullname = fulln				
+		
 	try:
 		image = pygame.image.load(fullname)
-	except pygame.error, message:
+	except pygame.error, message:		
 		print _('Failed loading image: %s' % fullname)
 		raise SystemExit, message
 	
@@ -116,6 +123,14 @@ def loadSound( name, volume = 1.0, music = False ):
 		return NoneSound()
 	
 	fullname = os.path.join(Global.folders['sounds'], name)
+	
+	if not os.path.exists( fullname ):
+		#we try on database paths
+		for foldername in Global.databasefolders:
+			fulln = os.path.join(Global.folders['images'], str(name))
+			if os.path.exists( fulln ):
+				fullname = fulln				
+	
 	
 	try:
 		if not music:
