@@ -85,7 +85,7 @@ def loadImage( name, colorkey = None, rotate = 0 ):
 	if not os.path.exists( fullname ):
 		#we try on database paths
 		for foldername in Global.databasefolders:
-			fulln = os.path.join(Global.folders['images'], str(name))
+			fulln = os.path.join(foldername, str(name))
 			if os.path.exists( fulln ):
 				fullname = fulln				
 		
@@ -127,7 +127,7 @@ def loadSound( name, volume = 1.0, music = False ):
 	if not os.path.exists( fullname ):
 		#we try on database paths
 		for foldername in Global.databasefolders:
-			fulln = os.path.join(Global.folders['images'], str(name))
+			fulln = os.path.join(foldername, str(name))
 			if os.path.exists( fulln ):
 				fullname = fulln				
 	
