@@ -40,8 +40,8 @@ from roda import Roda
 gettext.install('freevial', '/usr/share/locale', unicode=1)
 
 # Version information
-VERSION = 'UNRELEASED'
-SERIES = 'gresca'
+VERSION = 'AERONAUTA'
+SERIES = 'ASTUT'
 
 class Freevial:
 	

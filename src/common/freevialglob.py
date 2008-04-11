@@ -88,6 +88,7 @@ def loadImage( name, colorkey = None, rotate = 0 ):
 			fulln = os.path.join(foldername, str(name))
 			if os.path.exists( fulln ):
 				fullname = fulln				
+				break
 		
 	try:
 		image = pygame.image.load(fullname)
@@ -129,7 +130,8 @@ def loadSound( name, volume = 1.0, music = False ):
 		for foldername in Global.databasefolders:
 			fulln = os.path.join(foldername, str(name))
 			if os.path.exists( fulln ):
-				fullname = fulln				
+				fullname = fulln	
+				break			
 	
 	
 	try:
