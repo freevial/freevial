@@ -98,7 +98,7 @@
       </answers>
     </question>
     <question>
-      <sentence>La propera versió LTS d'Ubuntu s'anomenarà...</sentence>
+      <sentence>La versió LTS d'Ubuntu més recent s'anomena...</sentence>
       <author>RainCT</author>
       <comments>La propera versió Long Term Support serà la Hardy Heron. Grumpy Groundhog és el nom que reben sempre els últims 'builds' del CVS.</comments>
       <answers>
@@ -234,7 +234,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es dirà la versió 8.04 LTS d'Ubuntu?</sentence>
+      <sentence>Com es diu la versió 8.04 LTS d'Ubuntu?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -276,7 +276,7 @@
     <question>
       <sentence>L'Ubuntu és un sistema operatiu del tipus...</sentence>
       <author>carles</author>
-      <comments>EL sistema operatiu és GNU amb Linux. Linux només n'és el nucli i n'és un component tan important com qualsevol altre.##Pel que fa a la primera opció, encara que s'hi assembli molt, GNU/Linux no és un sistema Unix aprovat.</comments>
+      <comments>EL sistema operatiu és GNU amb Linux. Linux només n'és el nucli i n'és un component tan important com qualsevol altre.##Pel que fa a l'opció restant, encara que s'hi assembli molt, GNU/Linux no és un sistema Unix aprovat.</comments>
       <answers>
         <answer correct="True">GNU amb Linux</answer>
         <answer>Linux</answer>

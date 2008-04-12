@@ -119,7 +119,7 @@ def GetDatabase( num, xmlFile ):
 	version = float(root.get('version'))
 
 	if version < 1.0:
-		print >> sys.stderr, _('Warning: «%»: Database\'s version is %s, which is not supported by the installed version of Freevial. It might not work as expected.') % (xmlFile, root.get('version'))
+		print >> sys.stderr, _('Warning: «%s»: Database\'s version is %s, which is not supported by the installed version of Freevial. It might not work as expected.') % (xmlFile, root.get('version'))
 	
 	database = Database(
 		num,
