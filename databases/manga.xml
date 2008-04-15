@@ -6,7 +6,7 @@
     <description>Preguntes sobre còmics i mangues</description>
     <destination>Persones amb coneixements de còmics</destination>
     <timestamp_creation>1189202400</timestamp_creation>
-    <timestamp_modification>1200139485</timestamp_modification>
+    <timestamp_modification>1208278969</timestamp_modification>
 
 	<license>gpl</license>
 	<url>http://www.freevial.org/bases/manga.xml</url>
@@ -15,6 +15,7 @@
     <authors>
       <author>Nil Oriol, &lt;email&gt;</author>
       <author>Marc Oriol, &lt;email&gt;</author>
+      <author>Roger Pou, &lt;roger_pou_puig@hotmail.com&gt;</author>
     </authors>
   </information>
   <appearance>
@@ -370,6 +371,36 @@
         <answer correct="True">Ser el rei dels pirates</answer>
         <answer>Una quantitat inacabable de menjar</answer>
         <answer>Tenir la tripulació més gran del món</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Com és diu el 4t "espada" de la serie Bleach?</sentence>
+      <author>RogerPou</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Ulquiorra</answer>
+        <answer>Grimjow</answer>
+        <answer>Yammi</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui és el pare d'en Naruto?</sentence>
+      <author>RogerPou</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">4t hokage, Yondaime</answer>
+        <answer>Zetsu d'Akatsuki</answer>
+        <answer>Kakashi</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el nom de la segona i definitiva lliberació de la Zanpakou d'un shinigami?</sentence>
+      <author>RogerPou</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Bankai</answer>
+        <answer>Shipon</answer>
+        <answer>Bakuya</answer>
       </answers>
     </question>
   </questions>
