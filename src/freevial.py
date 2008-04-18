@@ -159,7 +159,7 @@ if '-h' in sys.argv or '--help' in sys.argv:
 	print _('--no-music\t\tDisable music.')
 	print _('--no-media\t\tDisable media questions.')
 	print _('--fps\t\t\tPrint framerate on screen.')
-	print _('--info-db\t\tPrints information about the loaded database and exists.')
+	print _('--info-db\t\tPrints information about the loaded database and exits.')
 	print _('--psyco\t\t\tUse psyco, if available (this will use more memory).')
 	print
 
@@ -168,7 +168,8 @@ if '-h' in sys.argv or '--help' in sys.argv:
 if '-v' in sys.argv or '--version' in sys.argv:
 	print
 	print _('Freevial, a trivia platform for use on community events')
-	print _(u'You are running version %s, which is part of the «%s» series.' % ( VERSION, SERIES ))
+	print _(u'You are running version %(version)s, which is part of the «%(series)s» series.' \
+		% {'version': VERSION, 'series': SERIES})
 	print
 	print 'https://launchpad.net/freevial/%s' % SERIES
 	print
@@ -176,7 +177,8 @@ if '-v' in sys.argv or '--version' in sys.argv:
 	sys.exit( 0 )
 
 if '--database' in sys.argv:
-	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--database' ) + 1]))
+	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1],
+		sys.argv[sys.argv.index( '--database' ) + 1]))
 	if not os.path.isdir( path ):
 		print _('Could not find database "%s"...') % unicode(path, 'utf-8')
 		sys.exit( 1 )
@@ -200,7 +202,8 @@ if '--info-db' in sys.argv or '--info-database' in sys.argv:
 	print _('Amount of questions:'), total_questions, '\n'
 	
 	for category in categories:
-		print _(u'%s: %s questions' % (category[0], category[1]))
+		print _(u'%(category)s: %(num)s questions' \
+			% {'category': category[0], 'num': category[1]})
 	print
 	
 	sys.exit( 0 )

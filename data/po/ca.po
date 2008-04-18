@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Freevial 1.3\n"
+"Report-Msgid-Bugs-To: freevial-dev@eurion.net\n"
+"POT-Creation-Date: 2008-04-18 22:00+0200\n"
+"PO-Revision-Date: 2008-04-18 22:03+0100\n"
+"Last-Translator: Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>\n"
+"Language-Team: The Freevial Team <freevial-dev@eurion.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: src/freevial.py:80
+#, python-format
+msgid "Sound initialization failed. %s"
+msgstr "Ha fallat la inicialització del sistema de so. %s"
+
+#: src/freevial.py:148
+msgid "Usage: freevial [OPTIONS]"
+msgstr "Sintaxi: freevial [OPCIONS]"
+
+#: src/freevial.py:150
+msgid "-d, --debug\t\tDebug mode."
+msgstr "-d, --debug\t\tMode de depuració."
+
+#: src/freevial.py:151
+msgid "-m, --mute\t\tDisable all sounds and music."
+msgstr "-m, --mute\t\tDesactiva tots els sons i la música."
+
+#: src/freevial.py:152
+msgid "-f, --fullscreen\tStart in fullscreen mode."
+msgstr "-f, --fullscreen\tInicia el joc en mode de pantalla completa."
+
+#: src/freevial.py:153
+msgid "-l, --locked\t\tStart game in locked mode."
+msgstr "-l, --locked\t\tInicia el joc en mode protegit."
+
+#: src/freevial.py:154
+msgid "-h, --help\t\tDisplay this message."
+msgstr "-h, --help\t\tMostra aquest text d'ajuda."
+
+#: src/freevial.py:155
+msgid "-v, --version\t\tPrint information about the current version."
+msgstr "-v, --version\t\tMostra informació sobre la versió actual."
+
+#: src/freevial.py:156
+msgid "--database <path>\tSet the absolute path to the database file / directory."
+msgstr "--database <path>\tEspecifica la ruta absoluta cap a la base de dades a utilitzar."
+
+#: src/freevial.py:157
+msgid "--skin <path>\t\tSet the absolute path to the skin file / directory."
+msgstr "--skin <path>\t\tEspecifica la ruta absoluta cap al directori de l'aparença a utilitzar."
+
+#: src/freevial.py:158
+msgid "--no-sound\t\tDisable sound."
+msgstr "--no-sound\t\tDesactiva els sons."
+
+#: src/freevial.py:159
+msgid "--no-music\t\tDisable music."
+msgstr "--no-music\t\tDesactiva la música."
+
+#: src/freevial.py:160
+msgid "--no-media\t\tDisable media questions."
+msgstr "--no-media\t\tDesactiva les preguntes multimèdia."
+
+#: src/freevial.py:161
+msgid "--fps\t\t\tPrint framerate on screen."
+msgstr "--fps\t\t\tMostra el nombre d'imatges per segon a la pantalla."
+
+#: src/freevial.py:162
+msgid "--info-db\t\tPrints information about the loaded database and exits."
+msgstr "--info-db\t\tMostra informació sobre la base de dades carregada i surt."
+
+#: src/freevial.py:163
+msgid "--psyco\t\t\tUse psyco, if available (this will use more memory)."
+msgstr "--psyco\t\t\tUtilitza psyco, si està disponible (això utilitzarà més memòria)."
+
+#: src/freevial.py:170
+msgid "Freevial, a trivia platform for use on community events"
+msgstr "Freevial, una plataforma de trivia per a actes comunitaris."
+
+#: src/freevial.py:171
+#, python-format
+msgid "You are running version %(version)s, which is part of the «%(series)s» series."
+msgstr "Esteu executant la versió %(version)s, que forma part de les series «%(series)s»."
+
+#: src/freevial.py:183
+#, python-format
+msgid "Could not find database \"%s\"..."
+msgstr "No s'ha pogut trobar la base de dades «%s»..."
+
+#: src/freevial.py:198
+msgid "Freevial - About the loaded database...\n"
+msgstr "Freevial - Quant a la base de dades carregada...\n"
+
+#: src/freevial.py:200
+msgid "Location:"
+msgstr "Ubicació:"
+
+#: src/freevial.py:201
+msgid "Amount of categories:"
+msgstr "Nombre de categories:"
+
+#: src/freevial.py:202
+msgid "Amount of questions:"
+msgstr "Nombre de preguntes:"
+
+#: src/freevial.py:205
+#, python-format
+msgid "%(category)s: %(num)s questions"
+msgstr "%(category)s: %(num)s preguntes"
+
+#: src/freevial.py:240
+#, python-format
+msgid "Loading database \"%s\"..."
+msgstr "S'està carregant la base de dades «%s»..."
+
+#: src/freevial.py:242
+msgid "Error: the database hasn't enough categories; at least six are required."
+msgstr "Error: la base de dades no té prou categories; com a mínim se'n necessiten sis."
+
+#: src/freevial.py:251
+msgid "Warning: Could not find psyco."
+msgstr "Avís: No s'ha pogut trobar el mòdul psyco."
+
+#: src/freevial.py:257
+msgid "Manual exit."
+msgstr "Finalitzant per petició de l'usuari..."
+
+#: src/preguntador.py:538
+msgid " X - Replay media"
+msgstr "X - Torna a reproduir la pista"
+
+#: src/questions.py:48
+msgid "Error: Couldn't find the current questions database."
+msgstr "Error: No s'ha pogut trobar la base de dades de preguntes."
+
+#: src/questions.py:49
+msgid "You can provide the location to that one you want to use by passing the --database option."
+msgstr "Podeu especificar la ubicació d'aquella que vulgueu utilitzar mitjançant la opció --database."
+
+#: src/questions.py:50
+msgid "For example:"
+msgstr "Per exemple:"
+
+#: src/questions.py:64
+msgid "Indicated directory of file doesn't exist or has wrong permissions."
+msgstr "El directori indicat no existeix o el seus permisos són incorrectes."
+
+#: src/questions.py:74
+msgid "Expected a directory or compressed file."
+msgstr "S'esperava un directori o un fitxer comprimit."
+
+#: src/questions.py:120
+#, python-format
+msgid "Warning: «%(file)s»: Database's version is %(version)s, which is not supported by the installed version of Freevial. It might not work as expected."
+msgstr "Avís: «%(file)s»: Aquesta és un fitxer de versió %(version)s, la qual no està suportada per la vostra instaŀlació de Freevial. Pot ser que hi hagi problemes."
+
+#: src/questions.py:140
+#, python-format
+msgid "Warning: «%s»: Found a question with an incorrect number of answers; ignoring it."
+msgstr "Avís: «%s»: S'ha trobat una pregunta amb un nombre incorrecte de respostes; ignorant-la."
+
+#: src/questions.py:151
+#, python-format
+msgid "Warning: «%s»: Found a question with two correct answers; ignoring it."
+msgstr "Avís: «%s»: S'ha trobat una pregunta amb dos respostes correctes; ignorant-la."
+
+#: src/questions.py:160
+#, python-format
+msgid "Warning: «%s»: Found a question without any correct answer; ignoring it."
+msgstr "Avís: «%s»: S'ha trobat una pregunta sense cap resposta correcta; ignorant-la."
+
+#: src/skinner.py:59
+#, python-format
+msgid "Could not find skin \"%s\"."
+msgstr "No s'ha pogut trobar l'aparença «%s»."
+
+#: src/skinner.py:65
+#, python-format
+msgid "Loading skin \"%s\"..."
+msgstr "No s'ha pogut trobar l'aparença «»..."
+
+#: src/common/database.py:69
+#, python-format
+msgid "All questions in category «%s» have been answered. Reshuffling..."
+msgstr "S'ha contestat a totes les preguntes de la categoria «%s». S'està barrejant-les de nou..."
+
+#: src/common/freevialglob.py:96
+#, python-format
+msgid "Failed loading image: %s"
+msgstr "S'ha produït un error al carregar la imatge «%s»."
+
+#: src/common/freevialglob.py:145
+#, python-format
+msgid "Failed loading sound: %s"
+msgstr "S'ha produït un error al carregar el so «%s»."
+

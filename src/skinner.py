@@ -56,7 +56,7 @@ def setSkinName( path ):
 			path = calculated_path
 	
 	if not os.path.isdir( path ):
-		print _('Could not find skin "%s"...') % unicode(path, 'utf-8')
+		print _('Could not find skin "%s".') % unicode(path, 'utf-8')
 		sys.exit( 1 )
 	
 	Global.skin_folder = path

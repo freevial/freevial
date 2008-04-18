@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Freevial Team
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: freevial-dev@eurion.net\n"
+"POT-Creation-Date: 2008-04-18 22:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/freevial.py:80
+#, python-format
+msgid "Sound initialization failed. %s"
+msgstr ""
+
+#: src/freevial.py:148
+msgid "Usage: freevial [OPTIONS]"
+msgstr ""
+
+#: src/freevial.py:150
+msgid "-d, --debug\t\tDebug mode."
+msgstr ""
+
+#: src/freevial.py:151
+msgid "-m, --mute\t\tDisable all sounds and music."
+msgstr ""
+
+#: src/freevial.py:152
+msgid "-f, --fullscreen\tStart in fullscreen mode."
+msgstr ""
+
+#: src/freevial.py:153
+msgid "-l, --locked\t\tStart game in locked mode."
+msgstr ""
+
+#: src/freevial.py:154
+msgid "-h, --help\t\tDisplay this message."
+msgstr ""
+
+#: src/freevial.py:155
+msgid "-v, --version\t\tPrint information about the current version."
+msgstr ""
+
+#: src/freevial.py:156
+msgid ""
+"--database <path>\tSet the absolute path to the database file / directory."
+msgstr ""
+
+#: src/freevial.py:157
+msgid "--skin <path>\t\tSet the absolute path to the skin file / directory."
+msgstr ""
+
+#: src/freevial.py:158
+msgid "--no-sound\t\tDisable sound."
+msgstr ""
+
+#: src/freevial.py:159
+msgid "--no-music\t\tDisable music."
+msgstr ""
+
+#: src/freevial.py:160
+msgid "--no-media\t\tDisable media questions."
+msgstr ""
+
+#: src/freevial.py:161
+msgid "--fps\t\t\tPrint framerate on screen."
+msgstr ""
+
+#: src/freevial.py:162
+msgid "--info-db\t\tPrints information about the loaded database and exits."
+msgstr ""
+
+#: src/freevial.py:163
+msgid "--psyco\t\t\tUse psyco, if available (this will use more memory)."
+msgstr ""
+
+#: src/freevial.py:170
+msgid "Freevial, a trivia platform for use on community events"
+msgstr ""
+
+#: src/freevial.py:171
+#, python-format
+msgid ""
+"You are running version %(version)s, which is part of the «%(series)s» series."
+msgstr ""
+
+#: src/freevial.py:183
+#, python-format
+msgid "Could not find database \"%s\"..."
+msgstr ""
+
+#: src/freevial.py:198
+msgid "Freevial - About the loaded database...\n"
+msgstr ""
+
+#: src/freevial.py:200
+msgid "Location:"
+msgstr ""
+
+#: src/freevial.py:201
+msgid "Amount of categories:"
+msgstr ""
+
+#: src/freevial.py:202
+msgid "Amount of questions:"
+msgstr ""
+
+#: src/freevial.py:205
+#, python-format
+msgid "%(category)s: %(num)s questions"
+msgstr ""
+
+#: src/freevial.py:240
+#, python-format
+msgid "Loading database \"%s\"..."
+msgstr ""
+
+#: src/freevial.py:242
+msgid ""
+"Error: the database hasn't enough categories; at least six are required."
+msgstr ""
+
+#: src/freevial.py:251
+msgid "Warning: Could not find psyco."
+msgstr ""
+
+#: src/freevial.py:257
+msgid "Manual exit."
+msgstr ""
+
+#: src/preguntador.py:538
+msgid " X - Replay media"
+msgstr ""
+
+#: src/questions.py:48
+msgid "Error: Couldn't find the current questions database."
+msgstr ""
+
+#: src/questions.py:49
+msgid ""
+"You can provide the location to that one you want to use by passing the --"
+"database option."
+msgstr ""
+
+#: src/questions.py:50
+msgid "For example:"
+msgstr ""
+
+#: src/questions.py:64
+msgid "Indicated directory of file doesn't exist or has wrong permissions."
+msgstr ""
+
+#: src/questions.py:74
+msgid "Expected a directory or compressed file."
+msgstr ""
+
+#: src/questions.py:120
+#, python-format
+msgid ""
+"Warning: «%(file)s»: Database's version is %(version)s, which is not "
+"supported by the installed version of Freevial. It might not work as "
+"expected."
+msgstr ""
+
+#: src/questions.py:140
+#, python-format
+msgid ""
+"Warning: «%s»: Found a question with an incorrect number of answers; ignoring "
+"it."
+msgstr ""
+
+#: src/questions.py:151
+#, python-format
+msgid "Warning: «%s»: Found a question with two correct answers; ignoring it."
+msgstr ""
+
+#: src/questions.py:160
+#, python-format
+msgid "Warning: «%s»: Found a question without any correct answer; ignoring it."
+msgstr ""
+
+#: src/skinner.py:59
+#, python-format
+msgid "Could not find skin \"%s\"."
+msgstr ""
+
+#: src/skinner.py:65
+#, python-format
+msgid "Loading skin \"%s\"..."
+msgstr ""
+
+#: src/common/database.py:69
+#, python-format
+msgid "All questions in category «%s» have been answered. Reshuffling..."
+msgstr ""
+
+#: src/common/freevialglob.py:96
+#, python-format
+msgid "Failed loading image: %s"
+msgstr ""
+
+#: src/common/freevialglob.py:145
+#, python-format
+msgid "Failed loading sound: %s"
+msgstr ""

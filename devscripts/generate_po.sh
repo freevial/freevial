@@ -22,11 +22,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-xgettext ./src/*.py ./src/*/*.py  \
-	--default-domain=freevial  \
-	--output-dir=./  \
-	--language=Python  \
-	--keyword=_  \
-	--indent  \
-	--copyright-holder="The Freevial Team"    \
-	--msgid-bugs-address="freevial-dev@eurion.net"  \
+xgettext ./src/*.py ./src/*/*.py \
+	--default-domain=freevial \
+	--output-dir=./data/po/ \
+	--output=freevial.pot \
+	--language=Python \
+	--keyword=_ \
+	--copyright-holder="The Freevial Team" \
+	--msgid-bugs-address="freevial-dev@eurion.net"

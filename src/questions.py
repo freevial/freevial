@@ -47,7 +47,7 @@ class LoadDatabase:
 		except IOError:
 			print _('Error: Couldn\'t find the current questions database.')
 			print _('You can provide the location to that one you want to use by passing the --database option.')
-			print _('For example: freevial --database ~/questions.tar.gz')
+			print _('For example:') + ' freevial --database ~/questions.tar.gz'
 			sys.exit(1)
 	
 	def get(self):
@@ -117,7 +117,9 @@ def GetDatabase( num, xmlFile ):
 	version = float(root.get('version'))
 
 	if version < 1.0:
-		print >> sys.stderr, _('Warning: «%s»: Database\'s version is %s, which is not supported by the installed version of Freevial. It might not work as expected.') % (xmlFile, root.get('version'))
+		print >> sys.stderr, _('Warning: «%(file)s»: Database\'s version is \
+%(version)s, which is not supported by the installed version of Freevial. It \
+might not work as expected.') % {'file': xmlFile, 'version': root.get('version')}
 	
 	database = Database(
 		num,
@@ -135,7 +137,8 @@ def GetDatabase( num, xmlFile ):
 	for question in root.questions.getchildren():
 		
 		if question.answers.countchildren() != 3:
-			print >> sys.stderr, _('Warning: «%»: Found question with an incorrect number of answers; ignoring it.') % xmlFile
+			print >> sys.stderr, _('Warning: «%s»: Found a question with an \
+incorrect number of answers; ignoring it.') % xmlFile
 			continue
 		
 		answers = []
@@ -145,7 +148,8 @@ def GetDatabase( num, xmlFile ):
 		for answer in question.answers.getchildren():
 			if answer.get('correct') is not None:
 				if has_correct_answer:
-					print >> sys.stderr, _('Warning: «%»: Found question with two correct answers; ignoring it.') % xmlFile
+					print >> sys.stderr, _('Warning: «%s»: Found a question \
+with two correct answers; ignoring it.') % xmlFile
 					continue
 				answers.insert(0, answer.text)
 				has_correct_answer = True
@@ -153,14 +157,15 @@ def GetDatabase( num, xmlFile ):
 				answers.append(answer.text)
 		
 		if not has_correct_answer:
-			print >> sys.stderr, _('Warning: «%»: Found question without any correct answer; ignoring it.') % xmlFile
+			print >> sys.stderr, _('Warning: «%s»: Found a question without any \
+correct answer; ignoring it.') % xmlFile
 			continue
 		
 		if hasattr(question, 'comments') and question.comments.text is not None:
 			comment = question.comments.text
 		else:
 			comment = u''
-
+		
 		mediatype = None
 		media = None
 		

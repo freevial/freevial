@@ -222,7 +222,6 @@ class SelCat:
 
 			if primer_element_a_la_vista > seleccio: 	primer_element_a_la_vista -= 1
 
-						
 			self.game.screen.blit( self.sfc_preguntes[seleccio], ( 475, 220 ))	
 
 			if seleccio != self.darrera_info: 	
