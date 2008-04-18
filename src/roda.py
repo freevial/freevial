@@ -54,36 +54,36 @@ class Roda:
 		self.categoriesagafades = []
 		self.maxim_equips = game.skin.configGetInt( 'max_teams', 'game' )
 		
-		self.roda_so_dot = game.skin.configGet( 'sound_wheel_dot')
-		self.roda_so_dot_vol = game.skin.configGet( 'sound_wheel_dot_vol')
-		self.roda_so_evil = game.skin.configGet( 'sound_wheel_evil')
-		self.roda_so_evil_vol = game.skin.configGet( 'sound_wheel_evil_vol')
-		self.roda_so_sub = game.skin.configGet( 'sound_wheel_sub')
-		self.roda_so_sub_vol = game.skin.configGet( 'sound_wheel_sub_vol')
-		self.tipografia = game.skin.configGet( 'wheel_tipografia')
+		self.roda_so_dot = game.skin.configGet( 'sound_wheel_dot' )
+		self.roda_so_dot_vol = game.skin.configGet( 'sound_wheel_dot_vol' )
+		self.roda_so_evil = game.skin.configGet( 'sound_wheel_evil' )
+		self.roda_so_evil_vol = game.skin.configGet( 'sound_wheel_evil_vol' )
+		self.roda_so_sub = game.skin.configGet( 'sound_wheel_sub' )
+		self.roda_so_sub_vol = game.skin.configGet( 'sound_wheel_sub_vol' )
+		self.tipografia = game.skin.configGet( 'wheel_tipografia' )
 		
 		self.score_figureta_visible = game.skin.configGetBool( 'figureta_visible') 
 		
 		if self.score_figureta_visible:
-			self.figureta = game.skin.LoadImageRange( 'figureta_mask', 64, 2)
+			self.figureta = game.skin.LoadImageRange( 'figureta_mask', 64, 2 )
 			
 		self.fons = game.skin.LoadImage( 'wheel_background' )
 		self.front = game.skin.LoadImage( 'wheel_front' )
 		self.paper = game.skin.LoadImage( 'wheel_paper')
-		self.so_dot = game.skin.LoadSound( 'sound_wheel_dot', 'sound_wheel_dot_vol')
-		self.so_evil = game.skin.LoadSound( 'sound_wheel_evil', 'sound_wheel_evil_vol')
-		self.so_sub = game.skin.LoadSound( 'sound_wheel_sub', 'sound_wheel_sub_vol')
+		self.so_dot = game.skin.LoadSound( 'sound_wheel_dot', 'sound_wheel_dot_vol' )
+		self.so_evil = game.skin.LoadSound( 'sound_wheel_evil', 'sound_wheel_evil_vol' )
+		self.so_sub = game.skin.LoadSound( 'sound_wheel_sub', 'sound_wheel_sub_vol' )
 		self.so_cat = range(0, 6)
 
 		self.so_de_pas = game.skin.configGetInt( 'so_de_pas' )
 
-		self.tipografia_mida = game.skin.configGetInt( 'wheel_tipografia_mida')
+		self.tipografia_mida = game.skin.configGetInt( 'wheel_tipografia_mida' )
 		self.paper_text_width = game.skin.configGetInt( 'paper_text_width' )
 		self.paper_text_offsetX = game.skin.configGetInt( 'paper_text_offsetX' )
 		self.paper_offsetX = game.skin.configGetInt( 'paper_offsetX' )
 
 		for num in range(0, 6):
-			self.so_cat[num] = loadSound(get_databases(num).sound, volume = 1.0)
+			self.so_cat[num] = loadSound( get_databases(num).sound, volume = 1.0 )
 		self.canviacat()			
 		self.help_overlay = createHelpScreen( 'roda' )		
 		
@@ -96,8 +96,8 @@ class Roda:
 		
 		self.categoriesagafades = []
 		for num in range (0, 6):
-			self.categoriesagafades += (get_databases(num).name)
-			
+			self.categoriesagafades += get_databases(num).name
+		
 		if self.categoriesagafades != self.categories:
 			self.categories = self.categoriesagafades
 
@@ -132,15 +132,13 @@ class Roda:
 
 		self.nom_equip_sfc = self.game.skin.render_text( self.game.teams[self.game.current_team].nom, self.game.skin.configGetRGB( "team_name_color" ), 30, 1 )
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
-
+		
 		while 1:
-
+			
 			for event in pygame.event.get():
-
+				
 				eventhandle = EventHandle(event)
 				if eventhandle.handled: continue
-				
-				#self.help_on_screen.activitat(event)
 				
 				if eventhandle.keyUp('ESCAPE', 'q') and not Global.LOCKED_MODE:
 					if not mostra_ajuda and not mostra_credits:
@@ -153,7 +151,7 @@ class Roda:
 				if eventhandle.keyUp('F1', 'h'):
 					mostra_ajuda ^= 1	
 					mostra_credits = 0			
-
+				
 				if eventhandle.keyUp('F2'):
 					mostra_credits ^= 1
 					mostra_ajuda = 0
@@ -173,10 +171,10 @@ class Roda:
 				if not frenant:
 					frenant = 1
 					self.so_sub.play()
-
+			
 			if time_fi != 0 and time.time() - time_fi > 2.5:
 				return resultat
-
+			
 			# decelerem
 			velocitat -= deceleracio
 			if velocitat < 0: velocitat = 0
@@ -189,26 +187,25 @@ class Roda:
 				if offset != 0: 
 					if offset > 100:
 						pos += deceleracio if ( offset < (200 - deceleracio) ) else 1
-					
+						
 					elif offset <= 100:
 						pos -= deceleracio if ( offset > deceleracio ) else 1
-					
+						
 						if pos <= -1200: pos += 1200
 				
 				else:
 					resultat = int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
-
-					if self.rewheelonrepeat and self.game.teams[self.game.current_team].teCategoria( resultat ) :
-						velocitat = random.randint( 0, 1200) 
+					
+					if self.rewheelonrepeat and self.game.teams[self.game.current_team].teCategoria( resultat ):
+						velocitat = random.randint( 0, 1200 ) 
 						atura = 0
 						pas = 3
 						deceleracio = self.game.skin.configGetInt( 'wheel_deccel' )
 						time_fi = time.time()
 						frenant = 1
 						self.so_sub.play()
-
+					
 					else:
-
 						self.so_dot.stop()
 						self.so_cat[ resultat].play()
 						if self.so_de_pas == 1:
@@ -217,15 +214,14 @@ class Roda:
 							if not  self.game.teams[self.game.current_team].teCategoria( resultat ) :
 								self.so_evil.play()
 						rodant = 0
-				
+			
 			if rodant == 1:
 				pos_fons += velocitat * 2
 				if pos_fons >= 768:	pos_fons -= 768
 				
 				pos -= velocitat
 				if pos <= -1200: pos += 1200
-				
-
+			
 			#pintem el paper freevial
 			self.game.screen.blit( self.fons, ( 0, pos_fons ) )
 			self.game.screen.blit( self.fons, ( 0, - 768 + pos_fons ) )
@@ -239,7 +235,7 @@ class Roda:
 			
 			self.game.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
 			
-			if( self.score_figureta_visible ):
+			if self.score_figureta_visible:
 				self.game.screen.blit( self.figureta[self.game.teams[self.game.current_team].figureta], (70, 630) )
 						
 			if mostra_ajuda: self.game.screen.blit( self.help_overlay, (0,0))
@@ -250,5 +246,4 @@ class Roda:
 			self.frate.next( self.game.screen )
 			
 			# Exchange self.game.screen buffers
-
 			pygame.display.flip()

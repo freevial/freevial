@@ -68,17 +68,3 @@ Global.folders = {
 		'fonts': os.path.join(Global.basefolder, 'fonts'),
 		'help': os.path.join(Global.basefolder, 'help'),
 	}
-
-
-def mute( sound = None, music = None ):
-	""" Mute sound or music. """
-	
-	global SOUND_MUTE, MUSIC_MUTE
-	
-	if sound: SOUND_MUTE = sound
-	if music: MUSIC_MUTE = music
-	
-	return {
-			'sound': SOUND_MUTE,
-			'music': MUSIC_MUTE,
-		}

@@ -163,12 +163,12 @@ if '-h' in sys.argv or '--help' in sys.argv:
 	print _('--psyco\t\t\tUse psyco, if available (this will use more memory).')
 	print
 
- 	exit( 0 )
+ 	sys.exit( 0 )
 
 if '-v' in sys.argv or '--version' in sys.argv:
 	print
 	print _('Freevial, a trivia platform for use on community events')
-	print _('You are running version %s, which is part of the «%s» series.' % ( VERSION, SERIES ))
+	print _(u'You are running version %s, which is part of the «%s» series.' % ( VERSION, SERIES ))
 	print
 	print 'https://launchpad.net/freevial/%s' % SERIES
 	print
@@ -227,7 +227,7 @@ if '--no-sound' in sys.argv:
 if '--no-music' in sys.argv:
 	Global.MUSIC_MUTE = True
 
-if '--no-media' in sys.argv:
+if '--no-media' in sys.argv or (Global.SOUND_MUTE and Global.MUSIC_MUTE):
 	Global.DISABLE_MEDIA = True
 
 if '--skin' in sys.argv:

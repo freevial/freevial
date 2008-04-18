@@ -1,3 +1,18 @@
+Version 1.3 - Aeronauta Astut
+------------------------------
+
+Yeah, this is the fourth Freevial release that sees the light. Amongst the
+different improvements, perhaps the most interesant is the introduction
+of database version 1.1, which provides new audio possibilities.
+
+Improvements:
+ - Added support for questions with sound.
+
+Bug Fixes:
+ - Fixed the --database option; it did not work previously.
+ - Fixed file permissions so that the installation script works for end users.
+
+
 Version 1.2 - Perfectionism
 ------------------------------
 
@@ -6,7 +21,7 @@ important bugfixes and little improvements. Below we will highlight the
 most important changes.
 
 Improvements:
- - Further reduce CPU usage, saving some more cycles now.
+ - Further reduced CPU usage, saving some more cycles now.
  - If only a name (and not a path) is passed as --skin, and there's no
    directory with that name in the working directory, Freevial will now
    try to find if a skin with that name is installed somewhere.
@@ -17,7 +32,7 @@ Bug Fixes:
    a category whose name contained special characters.
  - Fixed a crash reproducible by pressing 'q' or escape on the end screen
    when the music is disabled.
- - Fix the installation script to really install all provided skins.
+ - Fixed the installation script to really install all provided skins.
 
 
 Version 1.1 - Nightshift

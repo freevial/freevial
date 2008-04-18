@@ -6,8 +6,8 @@
 #
 # Copyright (C) 2007, 2008 The Freevial Team
 #
-# By Carles Oriol i Margarit <carles@kumbaworld.com>
 # By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>
+# By Carles Oriol i Margarit <carles@kumbaworld.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -163,18 +163,17 @@ def GetDatabase( num, xmlFile ):
 		else:
 			comment = u''
 
-		mediatype = ''
-		media = ''
+		mediatype = None
+		media = None
 		
 		if version >= 1.1:
-			# Version over 1.1 adds media at questions
-
+			# Version 1.1 introduces support for audio
+			
 			if hasattr(question, 'media'):
-				mediatype = question.media.get('type');
-				media = question.media.text;
-
-		if not (Global.DISABLE_MEDIA and mediatype <> ''):
-
+				mediatype = question.media.get('type')
+				media = question.media.text
+		
+		if not (Global.DISABLE_MEDIA and mediatype):
 			database.addQuestion(
 				question = question.sentence.text,
 				answ1 = answers[0],
