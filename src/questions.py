@@ -49,9 +49,7 @@ class LoadDatabase:
 			print _('You can provide the location to that one you want to use by passing the --database option.')
 			print _('For example: freevial --database ~/questions.tar.gz')
 			sys.exit(1)
-		
-		print Global.databasefolders
-		
+	
 	def get(self):
 		
 		return self.files

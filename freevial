@@ -42,10 +42,14 @@ if not isdir(directory):
 			sys.exit(1)
 
 # Pass Freevial the path from where it's really called
-sys.argv.extend( ('--real', os.getcwd()) )
+sys.argv.extend(('--real', os.getcwd()))
 
 os.chdir(directory)
 sys.path.insert(0, directory)
 
 # Start game
-import freevial
+try:
+	import freevial
+except KeyboardInterrupt:
+	print 'Manual exit.'
+	sys.exit(0)
