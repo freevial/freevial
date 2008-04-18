@@ -27,19 +27,22 @@
 import sys
 import os
 
-directory = os.path.dirname(os.path.abspath(__file__))
+cwd = os.path.dirname(os.path.abspath(__file__))
 
-def isdir(path, addpath = ''):
-	return os.path.exists(os.path.join(path, addpath, 'freevial.py'))
+def find_dir(*directories):
 
-if not isdir(directory):
-	if isdir(directory, 'src'):
-		directory = os.path.join(directory, 'src')
-	else:
-		directory = '/usr/share/games/freevial/src'
-		if not isdir(directory):
-			print >> sys.stderr, "Couldn't determine the path to any existing Freevial installation."
-			sys.exit(1)
+	for directory in directories:
+		if os.path.exists(os.path.join(directory, 'freevial.py')):
+			return directory
+	
+	return None
+
+directory = find_dir(os.path.join(cwd, 'src'), '/usr/share/games/freevial/src',
+	'/usr/share/freevial/src')
+
+if not directory:
+	print >> sys.stderr, "Couldn't determine the path to any existing Freevial installation."
+	sys.exit(1)
 
 # Pass Freevial the path from where it's really called
 sys.argv.extend(('--real', os.getcwd()))

@@ -23,24 +23,19 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-import sys
-import os.path
-import random
 import pygame
 from math import *
-from pygame.locals import *
 
 from common.freevialglob import *
 from common.events import EventHandle
 from questions import shuffle_databases, get_databases
-from roda import Roda
 
 def FindList( llista, element ):
-
+	
 	for compta in range( 0, len(llista) ):
 		if llista[compta] == element:
 			return compta
-
+	
 	return -1
 
 class SelCat:
@@ -81,36 +76,36 @@ class SelCat:
 		self.sfc_nombres = range(0,6)
 		for compta in range(0, 6):
 			self.sfc_nombres[compta] = render_text( str(compta+1), colorsCategories()[compta], 35, 1, '', 50 )
-
+	
 	def refa_cats( self ):
 		for cat in range(0, 6):
 			self.cp[cat].num = cat+1
 	
 	def reinicia_cats( self ):
 		self.categories_seleccionades = [0,1,2,3,4,5];
-	
+		
 		for compta in range(0, len(self.cp)):
 			color = self.selcat_color_text_nosel
 			if compta < 6:
 				color = colorsCategories()[compta]
 			self.sfc_preguntes[compta] = render_text( self.cp[compta].name, color, 27, 1, '', 220 )
-
+	
 	def CanviaElements( self, aposar, atreure):
-
+		
 		self.so_sub2.play() 
-
+		
 		if aposar == atreure:
 			return
-
+		
 		queda = self.cp[aposar]
 		self.cp[aposar] = self.cp[atreure]
 		self.cp[atreure] = queda
-
+		
 		self.darrera_info = -1
 		self.reinicia_cats( )
-
+	
 	def PosaPrimer( self, seleccio ):
-
+		
 		self.so_sub2.play() 
 		if seleccio == 0:
 			return
@@ -234,10 +229,10 @@ class SelCat:
 				self.sfc_text_info0 = render_text( self.cp[seleccio].authors, self.selcat_color_text, 14, 1, '', 220 )
 				self.sfc_text_info1 = render_text( self.cp[seleccio].description, self.selcat_color_text, 16, 1, '', 350 )
 				self.sfc_text_info2 = render_text( self.cp[seleccio].players, self.selcat_color_text, 16, 1, '', 350 )
-				self.sfc_text_info3 = render_text( u"N. Pregutes: " + str(len(self.cp[seleccio])), self.selcat_color_text, 16, 1, '', 350 )
-				self.sfc_text_info4 = render_text( u"Idioma: " + self.cp[compta].language, self.selcat_color_text, 16, 1, '', 100 )
-				self.sfc_text_info5 = render_text( u"Data creació: " + time.strftime('%d/%m/%Y', time.gmtime(self.cp[compta].time[0])), self.selcat_color_text, 16, 1, '', 350 )
-				self.sfc_text_info6 = render_text( u"Data darrera modificació: " + time.strftime('%d/%m/%Y', time.gmtime(self.cp[seleccio].time[1])), self.selcat_color_text, 16, 1, '', 350 )
+				self.sfc_text_info3 = render_text( u'Amount of questions:' + ' ' + str(len(self.cp[seleccio])), self.selcat_color_text, 16, 1, '', 350 )
+				self.sfc_text_info4 = render_text( u'Language:' + ' ' + self.cp[compta].language, self.selcat_color_text, 16, 1, '', 100 )
+				self.sfc_text_info5 = render_text( u'Creation date:' + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[compta].time[0])), self.selcat_color_text, 16, 1, '', 350 )
+				self.sfc_text_info6 = render_text( u'Last modification:' + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[seleccio].time[1])), self.selcat_color_text, 16, 1, '', 350 )
 
 				self.sfc_cat = loadImage( self.cp[seleccio].image )
 				if seleccio < 6:
