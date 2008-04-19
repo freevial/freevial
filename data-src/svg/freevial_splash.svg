@@ -13,9 +13,9 @@
    height="300"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.45+devel"
+   inkscape:version="0.46"
    version="1.0"
-   sodipodi:docname="freevial_spalsh.svg"
+   sodipodi:docname="freevial_splash.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    inkscape:export-filename="/home/carles/Desktop/freevial_spalsh.png"
    inkscape:export-xdpi="90"
@@ -139,7 +139,9 @@
        height="300"
        id="image3466"
        x="0"
-       y="-3.0860731e-14" />
+       y="-3.0860731e-14"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <text
        transform="matrix(0.9007998,0.520077,-0.4806981,0.8325934,0,0)"
        id="text2979"
@@ -232,18 +234,6 @@
        id="image3453"
        x="169.68904"
        y="-21.432909" />
-    <text
-       transform="scale(0.997633,1.0023726)"
-       id="text3520"
-       y="264.59073"
-       x="35.324074"
-       style="font-size:12.95301056px;font-style:normal;font-weight:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
-       xml:space="preserve"><tspan
-         style="font-family:FreeSans"
-         y="264.59073"
-         x="35.324074"
-         id="tspan3522"
-         sodipodi:role="line">default freevial ubuntu LoCo skin</tspan></text>
     <g
        transform="translate(279.55056,7.097645)"
        style="fill:#ffffff;display:inline"
