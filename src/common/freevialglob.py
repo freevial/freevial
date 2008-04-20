@@ -50,6 +50,9 @@ class Equip:
 
 	sfc_nom = None
 
+	teamgotxie_name = ''
+	teamgotxie_sfc = None
+
 	def __init__( self ):
 
 		self.preguntes_tot = []
