@@ -92,6 +92,10 @@ class Roda:
 
 		self.rewheelonrepeat = game.skin.configGetBool( 'rewheelonrepeat' );
 
+		self.use_teamgotxies = self.game.skin.configGetBool( 'use_teamgotxies' )
+		if self.use_teamgotxies:
+			self.teamgotxies_pos = self.game.skin.configGetEval( 'teamgotxies_pos' )
+
 	def canviacat( self ):
 		
 		self.categoriesagafades = []
@@ -222,6 +226,8 @@ class Roda:
 				pos -= velocitat
 				if pos <= -1200: pos += 1200
 			
+
+
 			#pintem el paper freevial
 			self.game.screen.blit( self.fons, ( 0, pos_fons ) )
 			self.game.screen.blit( self.fons, ( 0, - 768 + pos_fons ) )
@@ -234,6 +240,12 @@ class Roda:
 			self.game.screen.blit( self.front, (0,0) )	
 			
 			self.game.screen.blit( self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
+
+			if self.use_teamgotxies:
+				team = self.game.teams[self.game.current_team]
+
+				if team.teamgotxie_sfc != None:
+					self.game.screen.blit( team.teamgotxie_sfc, ( self.teamgotxies_pos[0] - team.teamgotxie_sfc.get_width() / 2, self.teamgotxies_pos[1] - team.teamgotxie_sfc.get_height() / 2 ) )
 			
 			if self.score_figureta_visible:
 				self.game.screen.blit( self.figureta[self.game.teams[self.game.current_team].figureta], (70, 630) )

@@ -84,6 +84,7 @@ class Preguntador:
 		self.mida_text_autor = game.skin.configGetInt('mida_text_autor')
 		
 		self.postextx= game.skin.configGetInt('postextx')
+		self.postextxpreg= game.skin.configGetInt('postextxpreg')
 		self.postexty = game.skin.configGetInt('postexty')
 		self.mascara_de_fons = game.skin.configGet('mascara_de_fons')
 		self.retalla_sel = game.skin.configGet('retalla_sel')
@@ -182,6 +183,10 @@ class Preguntador:
 			sfcmask = loadImage( 'filtre_c' + str(num+1) + '.png' )
 			notacol.blit( sfcmask, (0,0))	
 			self.notesimatges.append( notacol )
+
+		self.use_teamgotxies = self.game.skin.configGetBool( 'use_teamgotxies' )
+		if self.use_teamgotxies:
+			self.teamgotxies_pos = self.game.skin.configGetEval( 'teamgotxies_pos' )
 
 	###########################################
 	#
@@ -462,7 +467,7 @@ class Preguntador:
 				self.game.screen.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94) )
 				
 			# mostrem la pregunta
-			self.game.screen.blit( self.sfc_pregunta, (self.postextx, self.postexty) )	
+			self.game.screen.blit( self.sfc_pregunta, (self.postextxpreg, self.postexty) )	
 				
 			# i les solucions			
 			linia_act = 270
@@ -538,6 +543,12 @@ class Preguntador:
 				textmostra += _(" X - Replay media")
 				for nota in notesvoladores:
 					nota.pinta(  self.game.screen, self )
+
+			if self.use_teamgotxies:
+				team = self.game.teams[self.game.current_team]
+
+				if team.teamgotxie_sfc != None:
+					self.game.screen.blit( team.teamgotxie_sfc, ( self.teamgotxies_pos[0] - team.teamgotxie_sfc.get_width() / 2, self.teamgotxies_pos[1] - team.teamgotxie_sfc.get_height() / 2 ) )
 
 			
  			self.help_on_screen.draw( self.game.screen, (350, 740), HOS_PREGUNTADOR_END if self.show_answers else HOS_PREGUNTADOR_RUN, extra = textmostra )
