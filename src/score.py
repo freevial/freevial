@@ -124,6 +124,11 @@ class Score:
 		
 		self.sfc_cursor = game.skin.render_text( "_", (self.score_color_text), self.score_mida_text, 1)
 	
+		self.use_teamgotxies = self.game.skin.configGetBool( 'use_teamgotxies' )
+		if self.use_teamgotxies:
+			self.teamgotxies_pos = self.game.skin.configGetEval( 'teamgotxies_pos' )
+
+
 	def barra_pos( self, total, posicio, color, ample, alt ):
 
 		sfc = pygame.Surface( ( ample, alt), pygame.SRCALPHA, 32 )
@@ -154,9 +159,40 @@ class Score:
 		else:
 			print "\a"
 	
+	def comprovaTeamgotxies( self ):
+		
+		if self.use_teamgotxies:
+
+			for team in self.game.teams:
+				if team.teamgotxie_name == '':
+					team.teamgotxie_name = self.game.skin.configGet( 'default_teamgotxie' )
+
+				if team.teamgotxie_sfc == None:
+					team.teamgotxie_sfc = self.game.skin.directLoadImage( team.teamgotxie_name )
+					
+	def nextTeamgotxie( self, es ):
+
+		team = self.game.teams[es]
+
+		llista = os.listdir (Global.folders['teamgotxies'])
+		
+		for compta in range( 0, len(llista) ):
+			if llista[compta] == team.teamgotxie_name:
+				npos = (compta + 1) % len(llista)
+
+				team.teamgotxie_name = llista[npos]
+				team.teamgotxie_sfc = self.game.skin.directLoadImage( team.teamgotxie_name )
+
+				break;
+
+
+
 	def juguem( self ):
 		
 		self.game.skin.set_domain( 'score' )
+		
+		self.comprovaTeamgotxies();
+
 		frate = frameRate( Global.fps_limit )
 		
 		waitForMouseRelease( )
@@ -281,6 +317,9 @@ class Score:
 						if eventhandle.keyUp('r') and teamsActius( self.game.teams ) > 0:
 							atzar = randint(15, 50)
 							mode = 1
+
+						if eventhandle.keyUp('t'):
+							self.nextTeamgotxie( element_seleccionat )
 					
 					if eventhandle.keyUp('z'): 
 						if self.game.teams[element_seleccionat].actiu:
@@ -420,11 +459,20 @@ class Score:
 							else:
 								if self.correct_notdone_image != None:
 									self.game.screen.blit( self.correct_notdone_image, (xcaixa + self.corrects_coord[compta][0], ycaixa + self.corrects_coord[compta][1] ))
+
+					if self.use_teamgotxies:
+					
+						team = self.game.teams[num]
+						if team.teamgotxie_sfc != None:
+
+							self.game.screen.blit( team.teamgotxie_sfc, ( xcaixa + self.teamgotxies_pos[0] - team.teamgotxie_sfc.get_width() / 2, ycaixa + self.teamgotxies_pos[1] - team.teamgotxie_sfc.get_height() / 2 ) )
 						
 				if element_seleccionat == num and self.score_element_sobre == "True":
 					for compta in range( 0, self.seleccio_score.get_height() ):
 						desp = 0 if not escriu else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
 						self.game.screen.blit( self.seleccio_score, (xcaixa + self.score_element_sel_offsetx + desp, ycaixa + self.score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
+
+
 			
 			
 			if Global.LOCKED_MODE: 

@@ -64,6 +64,7 @@ Global.databasefolders = []
 
 Global.folders = {
 		'images': os.path.join(Global.basefolder, 'images'),
+		'teamgotxies': os.path.join(Global.basefolder, 'teamgotxies'),
 		'sounds': os.path.join(Global.basefolder, 'sounds'),
 		'fonts': os.path.join(Global.basefolder, 'fonts'),
 		'help': os.path.join(Global.basefolder, 'help'),

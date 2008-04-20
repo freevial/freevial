@@ -86,12 +86,17 @@ def loadImage( name, colorkey = None, rotate = 0 ):
 	fullname = os.path.join(Global.folders['images'], str(name))
 	
 	if not os.path.exists( fullname ):
-		# Also try in database paths
-		for foldername in Global.databasefolders:
-			fulln = os.path.join(foldername, str(name))
-			if os.path.exists( fulln ):
-				fullname = fulln				
-				break
+		
+		# Also try in teamgotxies path
+		fullname = os.path.join(Global.folders['teamgotxies'], str(name))
+
+		if not os.path.exists( fullname ):
+			# Also try in database paths
+			for foldername in Global.databasefolders:
+				fulln = os.path.join(foldername, str(name))
+				if os.path.exists( fulln ):
+					fullname = fulln				
+					break
 		
 	try:
 		image = pygame.image.load(fullname)

@@ -112,17 +112,22 @@ class Skin:
 	def configGetRGB( self, field, domain = None ):	
 		return self.configGetEval( field, domain )
 	
-	def LoadImage( self, field, domain = None ):
-		
-		name = self.configGet( field, domain )
+	def directLoadImage( self, name ):
+
 		fullname = os.path.join( Global.skin_folder, name )
-		
+
 		if os.path.exists( fullname ):
 			retval = loadImage( fullname )
 		else:
 			retval = loadImage( name )
 		
 		return retval
+
+	def LoadImage( self, field, domain = None ):
+		
+		#print field, domain, self.configGet( field, domain )
+		return self.directLoadImage( self.configGet( field, domain ) )
+
 	
 	def LoadImageRange( self, name, maxrange, digits, domain = None ):
 		
