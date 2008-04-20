@@ -854,6 +854,17 @@ magistralment...</sentence>
 	</question>
 
 
+	<question>
+		<sentence>Com es diu la progragonista de la guerra de les bruixes?</sentence>
+		<author>MarcOriol</author>
+		<comments>De la trilogia del clan de la lloba de Maite Carranza</comments>
+		<answers>
+			<answer correct="True">Anaïd Tsinoulis</answer>
+			<answer>Hermione Granger</answer>
+			<answer>Lídia Bartrolí</answer>
+		</answers>
+	</question>
+
   </questions>
 
 </database>
