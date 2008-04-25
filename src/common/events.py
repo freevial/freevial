@@ -44,7 +44,7 @@ class EventHandle:
 	def __init__( self, event, do_base_actions = True ):
 		
 		if event.type == pygame.JOYBUTTONDOWN:
-			event = self._convert_joystick_event()
+			event = self._convert_joystick_event(event)
 		
 		self.event = event
 		self.handled = False
@@ -53,7 +53,7 @@ class EventHandle:
 			self.handled = True
 	
 	
-	def _convert_joystick_event( self ):
+	def _convert_joystick_event( self, event ):
 		
 		# Aliases for PS2 remotes
 		joystick_aliases = {
@@ -64,7 +64,7 @@ class EventHandle:
 			4: pygame.K_F2,
 			5: pygame.K_a,
 			6: pygame.K_F1,
-			7: pygame.K_F3,	
+			7: pygame.K_F3,
 			8: pygame.K_SPACE,
 			9: pygame.K_ESCAPE,
 			12: pygame.K_UP,
@@ -73,8 +73,8 @@ class EventHandle:
 			15: pygame.K_LEFT,
 		}
 		
-		if joystick_aliases.get( pygame.event.button ):
-			return pygame.event.Event( pygame.KEYUP, { 'key': joystick_aliases[ event.button ], 'unicode': u's', 'mod': 0 } )
+		if joystick_aliases.get( event.button ):
+			return event.Event( pygame.KEYUP, { 'key': joystick_aliases[ event.button ], 'unicode': u's', 'mod': 0 } )
 	
 	
 	def _getKey( self, key ):
