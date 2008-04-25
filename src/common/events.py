@@ -57,22 +57,22 @@ class EventHandle:
 		
 		# Aliases for PS2 remotes
 		joystick_aliases = {
-			0: K_RETURN,
-			1: K_ESCAPE,
-			2: K_RETURN,
-			3: K_s,
-			4: K_F2,
-			5: K_a,
-			6: K_F1,
-			7: K_F3,	
-			8: K_SPACE,
-			9: K_ESCAPE,
-			12: K_UP,
-			13: K_RIGHT,
-			14: K_DOWN,
-			15: K_LEFT,
+			0: pygame.K_RETURN,
+			1: pygame.K_ESCAPE,
+			2: pygame.K_RETURN,
+			3: pygame.K_s,
+			4: pygame.K_F2,
+			5: pygame.K_a,
+			6: pygame.K_F1,
+			7: pygame.K_F3,	
+			8: pygame.K_SPACE,
+			9: pygame.K_ESCAPE,
+			12: pygame.K_UP,
+			13: pygame.K_RIGHT,
+			14: pygame.K_DOWN,
+			15: pygame.K_LEFT,
 		}
-	
+		
 		if joystick_aliases.get( event.button ):
 			return pygame.event.Event( pygame.KEYUP, { 'key': joystick_aliases[ event.button ], 'unicode': u's', 'mod': 0 } )
 	
