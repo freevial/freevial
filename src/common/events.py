@@ -74,7 +74,7 @@ class EventHandle:
 		}
 		
 		if joystick_aliases.get( event.button ):
-			return event.Event( pygame.KEYUP, { 'key': joystick_aliases[ event.button ], 'unicode': u's', 'mod': 0 } )
+			return pygame.event.Event( pygame.KEYUP, { 'key': joystick_aliases[ event.button ], 'unicode': u's', 'mod': 0 } )
 	
 	
 	def _getKey( self, key ):

@@ -73,8 +73,8 @@ class Question:
 
 				eventhandle = EventHandle(event)
 				
-				if event.type == pygame.JOYBUTTONDOWN:
-					translateJoystickEvent(event)
+			#	if event.type == pygame.JOYBUTTONDOWN:
+			#		translateJoystickEvent(event)
 				
 				if eventhandle.isQuit():
 					sys.exit()
