@@ -73,7 +73,7 @@ class EventHandle:
 			15: pygame.K_LEFT,
 		}
 		
-		if joystick_aliases.get( event.button ):
+		if joystick_aliases.get( pygame.event.button ):
 			return pygame.event.Event( pygame.KEYUP, { 'key': joystick_aliases[ event.button ], 'unicode': u's', 'mod': 0 } )
 	
 	
