@@ -214,16 +214,16 @@ def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 
 		if len(sfcs) > 1:
 			iample = 0
 			ialt = 0
-			for compta in range( 0, len(sfcs) ):
-				ialt += max(sfcs[compta].get_height(), mida)
-				iample = min(maxwidth, max( iample, sfcs[compta].get_width() ))
+			for num in range( 0, len(sfcs) ):
+				ialt += max(sfcs[num].get_height(), mida)
+				iample = min(maxwidth, max( iample, sfcs[num].get_width() ))
 
 			sfc = pygame.Surface( ( iample, ialt), pygame.SRCALPHA, 32 )
 
 			pos = 0
-			for compta in range( 0, len(sfcs) ):
-				sfc.blit( sfcs[compta], (0, pos) )
-				pos += max(sfcs[compta].get_height(), mida)
+			for num in range( 0, len(sfcs) ):
+				sfc.blit( sfcs[num], (0, pos) )
+				pos += max(sfcs[num].get_height(), mida)
 
 		else:
 			sfc = sfcs[0] if len(sfcs) == 1 else None

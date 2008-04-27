@@ -30,100 +30,74 @@ import pygame
 from freevialglob import *
 from events import EventHandle
 
+
 class Question:
-
-	def __init__(self):
 	
-		self.color = (255, 0, 0)
-	
-	def setSelColor ( self, color ):
-
-		self.color = color
-
-
-	def ask( self, screen, pregunta, respostes, predeterminat = 0, cancel = -1 ):
-
-		frate = frameRate( 40 )
-
-		seleccio = predeterminat
-
-		sfc_copiascreen = pygame.Surface( ( screen.get_width(), screen.get_height()), pygame.SRCALPHA, 32 )
-		sfc_screen2 = pygame.Surface( ( screen.get_width(), screen.get_height()), pygame.SRCALPHA, 32 )
-
-		sfc_copiascreen.blit( screen, (0,0) )
-
+	def ask( self, screen, question, answers, default = 0, cancel = -1, color = (255, 0, 0) ):
+		
+		frate = frameRate( Global.fps_limit )
+		
+		sfc_screen_bg = pygame.Surface( ( screen.get_width(), screen.get_height()), pygame.SRCALPHA, 32 )
+		sfc_screen_bg.blit( screen, (0,0) )
+		
+		sfc_screen2 = pygame.Surface( ( screen.get_width(), screen.get_height() ), pygame.SRCALPHA, 32 )
+		
+		selection = default
 		total_duracio_fadeout = duracio_fadeout = 10
-		intensitat_fadeout = 20
-
-		sfc_pregunta = render_text( pregunta, (255,255,255), 50, 1, '', 600 )
-		sfc_respostes = []
-
-		espai_entre_respostes = 32
-		respostes_ample = 0
-		for compta in range(0, len(respostes) ):
-			sfc = render_text( respostes[compta], (255,255,255), 50, 1, '', 500 )
-			respostes_ample += sfc.get_width()
-			if compta: respostes_ample += espai_entre_respostes
-
-			sfc_respostes.append( sfc )
-
-		while 1:
-
+		fadeout_intensity = 20
+		
+		sfc_question = render_text( question, (255,255,255), 50, 1, '', 600 )
+		sfc_answers = []
+		
+		space_between_answers = 32
+		answers_width = 0
+		
+		for num in range( 0, len(answers) ):
+			sfc = render_text( answers[num], (255,255,255), 50, 1, '', 500 )
+			answers_width += sfc.get_width()
+			if num: answers_width += space_between_answers
+			sfc_answers.append( sfc )
+		
+		while True:
+			
 			for event in pygame.event.get():
-
-				eventhandle = EventHandle(event)
 				
-				if eventhandle.isQuit():
-					sys.exit()
-
+				eventhandle = EventHandle(event)
 				if eventhandle.handled: continue
-
 				
 				if eventhandle.keyUp('ESCAPE', 'q'):
 					return cancel
 				
 				if eventhandle.keyUp('RIGHT'):	
-					seleccio += 1
-					seleccio %= len(respostes)
+					selection += 1
+					selection %= len(answers)
 				
 				if eventhandle.keyUp('LEFT'):	
-					seleccio -= 1
-					seleccio %= len(respostes)
+					selection -= 1
+					selection %= len(answers)
 				
 				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
-					return seleccio
-				
+					return selection
+			
 			if duracio_fadeout:
-				sfc_screen2.blit( sfc_copiascreen, (0,0) )
-				sfc_screen2.fill( (0,0,0, total_duracio_fadeout * intensitat_fadeout - duracio_fadeout * intensitat_fadeout) ) 
-	
+				sfc_screen2.blit( sfc_screen_bg, (0,0) )
+				sfc_screen2.fill( (0,0,0, total_duracio_fadeout * fadeout_intensity - duracio_fadeout * fadeout_intensity) ) 
 				duracio_fadeout -= 1
-				
-			screen.blit( sfc_copiascreen, (0,0) )
+			
+			screen.blit( sfc_screen_bg, (0,0) )
 			screen.blit( sfc_screen2, (0,0) )
-
-			screen.blit( sfc_pregunta, (screen.get_width() / 2 -sfc_pregunta.get_width() / 2, 300) )
-
-			posx = (screen.get_width() / 2 - respostes_ample / 2 )
-
-			for compta in range(0, len(respostes) ):
-
-				if seleccio == compta:
+			
+			screen.blit( sfc_question, (screen.get_width() / 2 -sfc_question.get_width() / 2, 300) )
+			
+			posx = (screen.get_width() / 2 - answers_width / 2 )
+			for num in range(0, len(answers) ):
+				
+				if selection == num:
 					for salt in range(0, 25):
-						screen.fill( (self.color[0] * salt / 25, self.color[1]* salt / 25, self.color[2]* salt / 25), (posx - 25 + salt, 450, sfc_respostes[compta].get_width() + 25*2-salt*2, sfc_respostes[compta].get_height()  ))
-
-				screen.blit( sfc_respostes[compta], (posx, 450) )
-				posx += sfc_respostes[compta].get_width() + espai_entre_respostes
-
+						screen.fill( (color[0] * salt / 25, color[1]* salt / 25, color[2]* salt / 25), (posx - 25 + salt, 450, sfc_answers[num].get_width() + 25*2-salt*2, sfc_answers[num].get_height()  ))
+				
+				screen.blit( sfc_answers[num], (posx, 450) )
+				posx += sfc_answers[num].get_width() + space_between_answers
+			
 			frate.next( screen )
-
 			pygame.display.flip()
-
-
-def fesPregunta( screen, pregunta, respostes, predeterminat = 0, cancel = -1, color = (255,0,0) ):
-
-	question = Question()
-
-	question.setSelColor( color )
-
-	return question.ask( screen, pregunta, respostes, predeterminat = 0, cancel = -1 )

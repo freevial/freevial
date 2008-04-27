@@ -277,7 +277,7 @@ class Preguntador:
 
 		mostramusica = False
 		notesvoladores = []
-		for compta in range( 0, 20):
+		for num in range( 0, 20):
 			nota = NotaVoladora()
 			notesvoladores.append( nota )
 
@@ -523,8 +523,8 @@ class Preguntador:
 			if mostra_punt_de_categoria:
 				if match_point:
 					t = time.time()
-					for compta in range( 0, 16 ) :
-						self.game.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (500 + cos(t+(float(compta)/15)) * 400, 110 + sin((t + (float(compta)/10)) * 2) * 25) )
+					for num in range( 0, 16 ) :
+						self.game.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (500 + cos(t+(float(num)/15)) * 400, 110 + sin((t + (float(num)/10)) * 2) * 25) )
 				else:
 					self.game.screen.blit( figureta_no if (int(time.time() * 2) % 2) == 0 else figureta_si, (880, 130) )
 

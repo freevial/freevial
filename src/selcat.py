@@ -32,9 +32,9 @@ from questions import shuffle_databases, get_databases
 
 def FindList( llista, element ):
 	
-	for compta in range( 0, len(llista) ):
-		if llista[compta] == element:
-			return compta
+	for num in range( 0, len(llista) ):
+		if llista[num] == element:
+			return num
 	
 	return -1
 
@@ -74,8 +74,8 @@ class SelCat:
 		self.reinicia_cats()
 
 		self.sfc_nombres = range(0,6)
-		for compta in range(0, 6):
-			self.sfc_nombres[compta] = render_text( str(compta+1), colorsCategories()[compta], 35, 1, '', 50 )
+		for num in range(0, 6):
+			self.sfc_nombres[num] = render_text( str(num+1), colorsCategories()[num], 35, 1, '', 50 )
 	
 	def refa_cats( self ):
 		for cat in range(0, 6):
@@ -84,11 +84,11 @@ class SelCat:
 	def reinicia_cats( self ):
 		self.categories_seleccionades = [0,1,2,3,4,5];
 		
-		for compta in range(0, len(self.cp)):
+		for num in range(0, len(self.cp)):
 			color = self.selcat_color_text_nosel
-			if compta < 6:
-				color = colorsCategories()[compta]
-			self.sfc_preguntes[compta] = render_text( self.cp[compta].name, color, 27, 1, '', 220 )
+			if num < 6:
+				color = colorsCategories()[num]
+			self.sfc_preguntes[num] = render_text( self.cp[num].name, color, 27, 1, '', 220 )
 	
 	def CanviaElements( self, aposar, atreure):
 		
@@ -197,20 +197,20 @@ class SelCat:
 			nelements = len(self.cp) if estat == 0 else 6
 
 			posact= 220
-			for compta in range(primer_element_a_la_vista, nelements):	
-				if posact + self.sfc_preguntes[compta].get_height() > (768 -80)	:
+			for num in range(primer_element_a_la_vista, nelements):	
+				if posact + self.sfc_preguntes[num].get_height() > (768 -80)	:
 					break
 			
-				if compta == seleccio:
-					self.game.screen.fill( (64,64,64), (100, posact, 300, self.sfc_preguntes[compta].get_height() +3 ) )
+				if num == seleccio:
+					self.game.screen.fill( (64,64,64), (100, posact, 300, self.sfc_preguntes[num].get_height() +3 ) )
 
-				if compta < 6 :
-					self.game.screen.blit( self.sfc_nombres[compta], (120, posact-3) )
+				if num < 6 :
+					self.game.screen.blit( self.sfc_nombres[num], (120, posact-3) )
 
-				darrer_element_a_la_vista = compta
-				self.game.screen.blit( self.sfc_preguntes[compta], ( 160,posact ))	
+				darrer_element_a_la_vista = num
+				self.game.screen.blit( self.sfc_preguntes[num], ( 160,posact ))	
 
-				posact += self.sfc_preguntes[compta].get_height() + 20
+				posact += self.sfc_preguntes[num].get_height() + 20
 
 			if primer_element_a_la_vista > 0: 
 				self.game.screen.blit( self.sel_fletxap, ( 386,216 + 10 + cos(time.time() * 10) * 10))
@@ -229,8 +229,8 @@ class SelCat:
 				self.sfc_text_info1 = render_text( self.cp[seleccio].description, self.selcat_color_text, 16, 1, '', 350 )
 				self.sfc_text_info2 = render_text( self.cp[seleccio].players, self.selcat_color_text, 16, 1, '', 350 )
 				self.sfc_text_info3 = render_text( u'Amount of questions:' + ' ' + str(len(self.cp[seleccio])), self.selcat_color_text, 16, 1, '', 350 )
-				self.sfc_text_info4 = render_text( u'Language:' + ' ' + self.cp[compta].language, self.selcat_color_text, 16, 1, '', 100 )
-				self.sfc_text_info5 = render_text( u'Creation date:' + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[compta].time[0])), self.selcat_color_text, 16, 1, '', 350 )
+				self.sfc_text_info4 = render_text( u'Language:' + ' ' + self.cp[num].language, self.selcat_color_text, 16, 1, '', 100 )
+				self.sfc_text_info5 = render_text( u'Creation date:' + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[num].time[0])), self.selcat_color_text, 16, 1, '', 350 )
 				self.sfc_text_info6 = render_text( u'Last modification:' + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[seleccio].time[1])), self.selcat_color_text, 16, 1, '', 350 )
 
 				self.sfc_cat = loadImage( self.cp[seleccio].image )
