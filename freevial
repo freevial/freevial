@@ -54,5 +54,5 @@ sys.path.insert(0, directory)
 try:
 	import freevial
 except KeyboardInterrupt:
-	print 'Manual exit.'
+	print 'User requested interrupt.'
 	sys.exit(0)

@@ -78,9 +78,9 @@ class Database:
 		
 		return self._old_questions[-1]
 	
-	def addQuestion( self, question, answ1, answ2, answ3, author, comment, mediatype, media):
+	def addQuestion( self, question, answ1, answ2, answ3, author, comment, mediatype, media, difficulty):
 		
-		self._questions.append( [question, answ1, answ2, answ3, 1, author, comment, mediatype, media] )
+		self._questions.append( [question, answ1, answ2, answ3, 1, author, comment, mediatype, media, difficulty] )
 	
 	def question( self ):
 		""" Returns the next question in a dictionary (with the answers
@@ -100,9 +100,4 @@ class Database:
 		question['mediatype'] = data[7]
 		question['media'] = data[8]
 
-		
 		return question
-	
-	def currentQuestionNumber( self ):
-		
-		return len(self._old_questions)

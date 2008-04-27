@@ -116,7 +116,7 @@ def GetDatabase( num, xmlFile ):
 	
 	version = float(root.get('version'))
 
-	if version < 1.0:
+	if version < 1.2:
 		print >> sys.stderr, _('Warning: «%(file)s»: Database\'s version is \
 %(version)s, which is not supported by the installed version of Freevial. It \
 might not work as expected.') % {'file': xmlFile, 'version': root.get('version')}
@@ -148,8 +148,8 @@ incorrect number of answers; ignoring it.') % xmlFile
 		for answer in question.answers.getchildren():
 			if answer.get('correct') is not None:
 				if has_correct_answer:
-					print >> sys.stderr, _('Warning: «%s»: Found a question \
-with two correct answers; ignoring it.') % xmlFile
+					print >> sys.stderr, _('Warning: «%s»: Found a question' + \
+						' with two correct answers; ignoring it.') % xmlFile
 					continue
 				answers.insert(0, answer.text)
 				has_correct_answer = True
@@ -157,8 +157,8 @@ with two correct answers; ignoring it.') % xmlFile
 				answers.append(answer.text)
 		
 		if not has_correct_answer:
-			print >> sys.stderr, _('Warning: «%s»: Found a question without any \
-correct answer; ignoring it.') % xmlFile
+			print >> sys.stderr, _('Warning: «%s»: Found a question without' + \
+				' any correct answer; ignoring it.') % xmlFile
 			continue
 		
 		if hasattr(question, 'comments') and question.comments.text is not None:
@@ -166,15 +166,25 @@ correct answer; ignoring it.') % xmlFile
 		else:
 			comment = u''
 		
+		difficulty = 'Medium'
 		mediatype = None
 		media = None
 		
 		if version >= 1.1:
 			# Version 1.1 introduces support for audio
-			
 			if hasattr(question, 'media'):
 				mediatype = question.media.get('type')
 				media = question.media.text
+		
+		if version >= 1.2:
+			# Version 1.2 introduces support for different difficulty levels
+			difficulty = question.get('difficulty')
+			if difficulty:
+				difficulty = difficulty.lower().capitalize()
+			if difficulty not in ('Easy', 'Medium', 'Hard'):
+				print _('Warning: «%s»: Found a question with the incorrect' + \
+					' difficulty level «%s».') % (xmlFile, difficulty)
+				difficulty = 'Medium'
 		
 		if not (Global.DISABLE_MEDIA and mediatype):
 			database.addQuestion(
@@ -186,6 +196,7 @@ correct answer; ignoring it.') % xmlFile
 				comment = comment,
 				mediatype = mediatype,
 				media = media,
+				difficulty = difficulty
 		)
 	
 	return database
@@ -208,10 +219,11 @@ def get_databases( database = None ):
 		for num in range(0, len(database_files) ):
 			try:
 				cat = GetDatabase( num + 1, os.path.join(Global.database, database_files[num]) )
-				if len(cat) != 0:
-					Global.alldatabases.append( cat )
 			except ValueError:
 				print 'Error with «%s».' % database_files[num]
+			else:
+				if len(cat) != 0:
+					Global.alldatabases.append( cat )
 	
 	if database is not None:
 		return Global.alldatabases[database]

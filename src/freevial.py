@@ -254,5 +254,5 @@ try:
 	joc.juguem()
 
 except KeyboardInterrupt:
-	print _('Manual exit.')
+	print _('User requested interrupt.')
 	sys.exit( 0 )
