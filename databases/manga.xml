@@ -403,5 +403,25 @@
         <answer>Bakuya</answer>
       </answers>
     </question>
+    <question>
+      <sentence>Com es diu la noia que li agrada a en Naruto?</sentence>
+      <author>JoanSanchez</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Sakura</answer>
+        <answer>Shakira</answer>
+        <answer>Hinata</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Que passa en el primer capítol de Gantz?</sentence>
+      <author>Gimcana</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Moren els protagonistes.</answer>
+        <answer>Presenten els personatges.</answer>
+        <answer>És un flashback.</answer>
+      </answers>
+    </question>
   </questions>
 </database>

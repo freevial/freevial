@@ -481,5 +481,15 @@
         <answer>El drama</answer>
       </answers>
     </question>
+    <question>
+      <sentence>De quin color són les pastilles que el Morfeo ofereix al Neo?</sentence>
+      <author>Granadet</author>
+      <comments>Una de blava i una de vermella.</comments>
+      <answers>
+        <answer correct="True">Del Barça.</answer>
+        <answer>Del Reial Madrid.</answer>
+        <answer>Del Espanyol.</answer>
+      </answers>
+    </question>
   </questions>
 </database>

@@ -417,5 +417,15 @@
         <answer>Beryl</answer>
       </answers>
     </question>
+    <question>
+      <sentence>Quin any va sortir el primer Macintosh?</sentence>
+      <author>MarcJ</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">1984</answer>
+        <answer>1982</answer>
+        <answer>1985</answer>
+      </answers>
+    </question>
   </questions>
 </database>

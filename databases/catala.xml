@@ -854,10 +854,12 @@ magistralment...</sentence>
 	</question>
 
 
+
+
 	<question>
-		<sentence>Com es diu la progragonista de la guerra de les bruixes?</sentence>
+		<sentence>Com es diu la progragonista del clan de la lloba?</sentence>
 		<author>MarcOriol</author>
-		<comments>De la trilogia del clan de la lloba de Maite Carranza</comments>
+		<comments>De la trilogia de la guerra de les bruixes de Maite Carranza</comments>
 		<answers>
 			<answer correct="True">Anaïd Tsinoulis</answer>
 			<answer>Hermione Granger</answer>
@@ -865,10 +867,17 @@ magistralment...</sentence>
 		</answers>
 	</question>
 
+	<question>
+		<sentence>Quin tipus de verbs són ser, estar i semblar?</sentence>
+		<author>Gimcana</author>
+		<comments></comments>
+		<answers>
+			<answer correct="True">Copulatius</answer>
+			<answer>Transitius</answer>
+			<answer>Preposicionals</answer>
+		</answers>
+	</question>
+
   </questions>
 
 </database>
-
-
-
-
