@@ -6,3 +6,4 @@ releases
 src/*.~1~
 src/common/*.~1~
 data/sounds/p*.ogg
+databases/kumbaworldmuz.xml

@@ -36,6 +36,24 @@ mouseButtons = {
 		'middle': 3,
 	}
 
+# Aliases for PS2 remotes
+joystick_aliases = {
+		0: pygame.K_RETURN,
+		1: pygame.K_ESCAPE,
+		2: pygame.K_RETURN,
+		3: pygame.K_s,
+		4: pygame.K_F2,
+		5: pygame.K_a,
+		6: pygame.K_F1,
+		7: pygame.K_F3,
+		8: pygame.K_SPACE,
+		9: pygame.K_ESCAPE,
+		12: pygame.K_UP,
+		13: pygame.K_RIGHT,
+		14: pygame.K_DOWN,
+		15: pygame.K_LEFT,
+	}
+
 class EventHandle:
 	
 	global mouseButtons
@@ -54,24 +72,6 @@ class EventHandle:
 	
 	
 	def _convert_joystick_event( self, event ):
-		
-		# Aliases for PS2 remotes
-		joystick_aliases = {
-			0: pygame.K_RETURN,
-			1: pygame.K_ESCAPE,
-			2: pygame.K_RETURN,
-			3: pygame.K_s,
-			4: pygame.K_F2,
-			5: pygame.K_a,
-			6: pygame.K_F1,
-			7: pygame.K_F3,
-			8: pygame.K_SPACE,
-			9: pygame.K_ESCAPE,
-			12: pygame.K_UP,
-			13: pygame.K_RIGHT,
-			14: pygame.K_DOWN,
-			15: pygame.K_LEFT,
-		}
 		
 		if joystick_aliases.get( event.button ):
 			return pygame.event.Event( pygame.KEYUP, { 'key': joystick_aliases[ event.button ], 'unicode': u's', 'mod': 0 } )

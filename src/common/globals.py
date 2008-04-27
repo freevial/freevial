@@ -55,7 +55,7 @@ Global.DISABLE_MEDIA = False
 
 Global.screen_x = 1024
 Global.screen_y = 768
-Global.fps_limit = 40
+Global.fps_limit = 30
 
 Global.basefolder = '../data'
 Global.database = '../databases'
