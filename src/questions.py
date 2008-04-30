@@ -116,8 +116,8 @@ def GetDatabase( num, xmlFile ):
 	
 	version = float(root.get('version'))
 
-	if version < 1.2:
-		print >> sys.stderr, _('Warning: «%(file)s»: Database\'s version is \
+	if float(version) > 1.2:
+		print >> sys.stderr, _(u'Warning: «%(file)s»: Database\'s version is \
 %(version)s, which is not supported by the installed version of Freevial. It \
 might not work as expected.') % {'file': xmlFile, 'version': root.get('version')}
 	
@@ -137,8 +137,8 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 	for question in root.questions.getchildren():
 		
 		if question.answers.countchildren() != 3:
-			print >> sys.stderr, _('Warning: «%s»: Found a question with an \
-incorrect number of answers; ignoring it.') % xmlFile
+			print >> sys.stderr, _(u'Warning: «%s»: Found a question with ' + \
+                'an incorrect number of answers; ignoring it.') % xmlFile
 			continue
 		
 		answers = []
@@ -148,7 +148,7 @@ incorrect number of answers; ignoring it.') % xmlFile
 		for answer in question.answers.getchildren():
 			if answer.get('correct') is not None:
 				if has_correct_answer:
-					print >> sys.stderr, _('Warning: «%s»: Found a question' + \
+					print >> sys.stderr, _(u'Warning: «%s»: Found a question' + \
 						' with two correct answers; ignoring it.') % xmlFile
 					continue
 				answers.insert(0, answer.text)
@@ -157,7 +157,7 @@ incorrect number of answers; ignoring it.') % xmlFile
 				answers.append(answer.text)
 		
 		if not has_correct_answer:
-			print >> sys.stderr, _('Warning: «%s»: Found a question without' + \
+			print >> sys.stderr, _(u'Warning: «%s»: Found a question without' + \
 				' any correct answer; ignoring it.') % xmlFile
 			continue
 		
@@ -182,7 +182,7 @@ incorrect number of answers; ignoring it.') % xmlFile
 			if difficulty:
 				difficulty = difficulty.lower().capitalize()
 			if difficulty not in ('Easy', 'Medium', 'Hard'):
-				print _('Warning: «%s»: Found a question with the incorrect' + \
+				print _(u'Warning: «%s»: Found a question with the incorrect' + \
 					' difficulty level «%s».') % (xmlFile, difficulty)
 				difficulty = 'Medium'
 		
@@ -220,7 +220,7 @@ def get_databases( database = None ):
 			try:
 				cat = GetDatabase( num + 1, os.path.join(Global.database, database_files[num]) )
 			except ValueError:
-				print 'Error with «%s».' % database_files[num]
+				print u'Error with «%s».' % database_files[num]
 			else:
 				if len(cat) != 0:
 					Global.alldatabases.append( cat )
