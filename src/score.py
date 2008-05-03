@@ -34,8 +34,9 @@ from common.globals import Global
 from common.freevialglob import *
 from common.events import EventHandle, waitForMouseRelease
 from common.dialog_question import Question
+from common.effects import BigLetter
 from endscreen import Visca
-from selcat import *
+from selcat import SelCat
 
 
 class Score:
@@ -46,8 +47,8 @@ class Score:
 		game.skin.set_domain( 'score' )		
 		
 		self.help_overlay = createHelpScreen( 'score' )
-		
 		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
+		self.effect_mode = BigLetter()
 		
 		self.score_color_text = game.skin.configGetRGB( 'color_text' )
 		self.score_mida_text = game.skin.configGetInt( 'mida_text')
@@ -90,7 +91,6 @@ class Score:
 		self.score_desplaca_el_fons = game.skin.configGet( 'move_background') # True o False = no hi ha scroll vertical
 		self.score_ones_al_fons = game.skin.configGet( 'background_waves') # True o False = quiet
 		
-		
 		self.score_caixes = game.skin.configGetEval( "boxes_coord" )
 		
 		self.show_corrects = game.skin.configGetBool( "show_corrects" )
@@ -99,12 +99,9 @@ class Score:
 			self.total_corrects = game.skin.configGetInt( "total_corrects" )
 		
 		self.final_stats = game.skin.configGetBool( "final_stats" )
- 		
-		#------------------------------------------
-		
+ 				
 		self.ypos = 0
 		self.mou_fons = 0
-		#-----------------------------------------------
 		
 		self.figureta = game.skin.LoadImageRange( 'figureta_mask', 64, 2)		
 	
@@ -127,7 +124,6 @@ class Score:
 		if self.use_teamgotxies:
 			self.teamgotxies_pos = self.game.skin.configGetEval( 'teamgotxies_pos' )
 
-
 	def barra_pos( self, total, posicio, color, ample, alt ):
 
 		sfc = pygame.Surface( ( ample, alt), pygame.SRCALPHA, 32 )
@@ -148,7 +144,7 @@ class Score:
 		
 		if count_not_empty(Global.game.teams, attr = 'name') == 1:
 			winner_team = 1
-		#######print Global.game.teams, count_not_empty(Global.game.teams, attr = 'name'), winner_team
+		
 		if winner_team > -1:
 			if startsound:
 				self.so_ok.play()
@@ -187,13 +183,11 @@ class Score:
 
 		frate = frameRate( Global.fps_limit )
 		
-		waitForMouseRelease( )
-		
-		self.game.screen.fill( (0,0,0,0) )
+		waitForMouseRelease()
 		
 		ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = show_stats = 0
 		element_seleccionat = self.game.current_team
-		nou_grup = 1 if ( teamsActius( self.game.teams ) == 0 ) else 0
+		nou_grup = 1 if teamsActius( self.game.teams ) == 0 else 0
 		
 		# Modes: 0 (choosing teams), 1 (playing),  2 (game ended)
 		mode = 1
@@ -362,6 +356,7 @@ class Score:
 								2: 1,
 							}
 						mode = replaceModes[ mode ]
+						self.effect_mode.switch_mode(mode)
 
 					if eventhandle.keyUp('e') and not Global.LOCKED_MODE :
 						self.show_end_screen( startsound = True )
@@ -467,6 +462,7 @@ class Score:
 			
 			self.help_on_screen.draw( self.game.screen, (350, 740), HOS_SCORE_MODEW if escriu else mode)
 			
+			self.effect_mode.frame()
 			frate.next( self.game.screen )
 			
 			# Exchange self.game.screen buffers

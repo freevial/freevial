@@ -182,7 +182,6 @@ def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 
 		else:
 			# NOT WORKING IN PYGAME
 			font1 = pygame.font.SysFont( nomfont, mida )
-		
 	
 	text_restant = cadena
 	sfc = None
@@ -208,28 +207,27 @@ def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 
 						escriure = escriure[0:tpos]		
 
 			sfcs.append( sfc )
-
 			text_restant = text_restant[ len( escriure )+1:]
-
+		
 		if len(sfcs) > 1:
 			iample = 0
 			ialt = 0
 			for num in range( 0, len(sfcs) ):
 				ialt += max(sfcs[num].get_height(), mida)
 				iample = min(maxwidth, max( iample, sfcs[num].get_width() ))
-
+			
 			sfc = pygame.Surface( ( iample, ialt), pygame.SRCALPHA, 32 )
-
+			
 			pos = 0
 			for num in range( 0, len(sfcs) ):
 				sfc.blit( sfcs[num], (0, pos) )
 				pos += max(sfcs[num].get_height(), mida)
-
+		
 		else:
 			sfc = sfcs[0] if len(sfcs) == 1 else None
 	else:
 		sfc = font1.render( cadena, antialias, color )
-
+	
 	return sfc
 
 def screenshot( surface, destination = os.path.join( os.path.expanduser('~'), 'Freevial/Screenshots/' ) ):

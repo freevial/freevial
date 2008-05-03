@@ -61,7 +61,7 @@ class Freevial:
 	def inici( self ):
 		
 		# inicialize presentation surface
-		Global.game.screen = pygame.display.set_mode( ( Global.screen_x, Global.screen_y), HWSURFACE, 32)
+		Global.game.screen = pygame.display.set_mode( ( Global.screen_x, Global.screen_y))
 		pygame.display.set_caption('Freevial')
 		pygame.display.set_icon( loadImage('freevial.png') )
 		
