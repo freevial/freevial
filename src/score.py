@@ -88,9 +88,9 @@ class Score:
 		self.score_so_de_fons = game.skin.configGet( 'background_sound')
 		self.score_so_de_fons_vol = game.skin.configGet( 'background_sound_vol')
 
-		self.score_desplaca_el_fons = game.skin.configGet( 'move_background') # True o False = no hi ha scroll vertical
-		self.score_ones_al_fons = game.skin.configGet( 'background_waves') # True o False = quiet
-		
+		self.score_desplaca_el_fons = game.skin.configGetBool( 'move_background') # True o False = no hi ha scroll vertical
+		self.score_ones_al_fons = game.skin.configGetBool( 'background_waves') # True o False = quiet
+
 		self.score_caixes = game.skin.configGetEval( "boxes_coord" )
 		
 		self.show_corrects = game.skin.configGetBool( "show_corrects" )
@@ -382,7 +382,7 @@ class Score:
 			else:
 				atzar = 0
 			
-			if self.score_desplaca_el_fons != "False":
+			if self.score_desplaca_el_fons:
 				# Animem el fons
 				self.ypos += 1
 				self.ypos %= Global.screen_y
@@ -395,8 +395,10 @@ class Score:
 			# Pintem el fons animat
 			for num in range(0, 768):
 				
+				print self.score_ones_al_fons
 				if self.score_ones_al_fons:
 					xpinta = cos((float(self.mou_fons +num)) / 100.0) * 20
+				
 				
 				self.game.screen.blit( self.fons, (xpinta, num), (0, (self.ypos + num) % 768, 1024, 1) )
 			
