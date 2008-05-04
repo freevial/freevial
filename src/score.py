@@ -133,6 +133,8 @@ class Score:
 			self.score_slide_time = game.skin.configGetInt( 'slide_time')
 			self.score_slide_folder = os.path.join( Global.skin_folder, game.skin.configGet( 'slide_folder') )
 			self.score_slide_images = os.listdir(self.score_slide_folder)
+			self.score_slide_activity_timeout = game.skin.configGetInt( 'slide_activity_timeout' )
+
 
 
 	def barra_pos( self, total, posicio, color, ample, alt ):
@@ -244,6 +246,10 @@ class Score:
 				if frate.segons() > 4.1 and not mostrada_victoria:
 					self.show_end_screen()
 					mostrada_victoria = True
+
+			if self.background_mode == "slide":
+				if time.time() >= self.help_on_screen.sec_darrera_activitat + self.score_slide_activity_timeout :
+					show_elements = False
 			
 			# Event iterator
 			for event in pygame.event.get():
@@ -252,6 +258,9 @@ class Score:
 				if eventhandle.handled: continue
 				
 				self.help_on_screen.activitat(event)
+
+				if event.type == pygame.KEYUP and not show_elements:
+					show_elements ^= 1
 				
 				if eventhandle.keyUp('F1') or (not escriu and eventhandle.keyUp('h')):
 					mostra_ajuda ^= 1

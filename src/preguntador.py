@@ -225,7 +225,7 @@ class Preguntador:
 		self.sfc_apregunta.set_alpha( 64 )	
 
 		self.temps_inici_pregunta = time.time()
-		self.segons = 61
+		self.segons = self.game.skin.configGetInt( 'max_time' ) + 1
 		self.so_drum2.play()
 		self.so_drum2.stop()
 
@@ -306,7 +306,7 @@ class Preguntador:
 		if self.current_question["mediatype"] == "audio":
 			self.audioinit = time.time() + 2000
 		else:
-			self.game.skin.LoadSound( 'so_fons', 'so_fons_vol', 1).play(1)
+			self.game.skin.LoadSound( 'so_fons', 'so_fons_vol', 1).play( -1 )
 
 
 					
@@ -402,14 +402,14 @@ class Preguntador:
 						self.atzar( num-1 )
 				
 				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
-					if self.selected != 0 or self.segons <= 0:
+					if self.selected != 0 or (self.segons <= 0 and max_time != 0):
 						acaba = 1
 				
 				if eventhandle.keyUp('F3') and self.show_answers == 3 and len(self.current_question['comment']) > 5:	
 					mostra_comentaris ^= 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
-			if acaba == 1 or self.segons <= 0:
+			if acaba == 1 or (self.segons <= 0 and max_time != 0):
 				if not Global.MUSIC_MUTE:
 					pygame.mixer.music.fadeout(2500)
 				self.help_on_screen.sec_timeout = 3
@@ -476,26 +476,27 @@ class Preguntador:
 				self.game.screen.blit( self.lletres[num][(self.selected != num + 1)], ( self.postextx, linia_act + (150 * num)) )
 				self.game.screen.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
 				
-			# comprovem l'estat del temps
-			segons_act = max_time - int( (time.time() - self.temps_inici_pregunta) )
-			if segons_act < 0: 
-				segons_act = 0
-				self.segons = 0
+			if max_time != 0:
+				# comprovem l'estat del temps
+				segons_act = max_time - int( (time.time() - self.temps_inici_pregunta) )
+				if segons_act < 0: 
+					segons_act = 0
+					self.segons = 0
 				
-			# si no estem en l'estat de mostrar les soŀlucions mostrem el temps restant
-			if self.show_answers == 0:
-				if self.segons != segons_act:
-					# el segon actual ha canviat
-					self.segons = segons_act 
-					self.pinta_segons = self.game.skin.render_text( str( self.segons ).zfill(2), (255,255,255), 600)
-					# s'acaba el temps indiquem'ho amb so
-					if self.segons < 20:
-						self.so_ticking2.set_volume( (20 - float( self.segons )) / 20.0  ) 
-						self.so_ticking2.play()
+				# si no estem en l'estat de mostrar les soŀlucions mostrem el temps restant
+				if self.show_answers == 0:
+					if self.segons != segons_act:
+						# el segon actual ha canviat
+						self.segons = segons_act 
+						self.pinta_segons = self.game.skin.render_text( str( self.segons ).zfill(2), (255,255,255), 600)
+						# s'acaba el temps indiquem'ho amb so
+						if self.segons < 20:
+							self.so_ticking2.set_volume( (20 - float( self.segons )) / 20.0  ) 
+							self.so_ticking2.play()
 				
-					# pintem els segons que queden, posant-los cada cop menys transparents
-				self.pinta_segons.set_alpha( (max_time - segons_act) * 100 / max_time)
-				self.game.screen.blit( self.pinta_segons, ( 300 , 150) )
+						# pintem els segons que queden, posant-los cada cop menys transparents
+					self.pinta_segons.set_alpha( (max_time - segons_act) * 100 / max_time)
+					self.game.screen.blit( self.pinta_segons, ( 300 , 150) )
 			
 			# Pintem les solucions
 			linia_act = 270
