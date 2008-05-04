@@ -134,7 +134,10 @@ class Score:
 			self.score_slide_folder = os.path.join( Global.skin_folder, game.skin.configGet( 'slide_folder') )
 			self.score_slide_images = os.listdir(self.score_slide_folder)
 			self.score_slide_activity_timeout = game.skin.configGetInt( 'slide_activity_timeout' )
+			self.score_slide_current_image = 0
 
+			for compta in range(0, 10):
+				random.shuffle( self.score_slide_images )
 
 
 	def barra_pos( self, total, posicio, color, ample, alt ):
@@ -154,9 +157,15 @@ class Score:
 
 
 	def slide_loadimage( self, frate ):
-		ima = self.score_slide_images[ randint( 0, len( self.score_slide_images)-1)]
+
+		ima = self.score_slide_images[ self.score_slide_current_image ]
 		self.fons = loadImage( os.path.join( self.score_slide_folder, ima  ))
 		self.score_slide_lasttime = frate.segons()
+
+		self.score_slide_current_image += 1
+		self.score_slide_current_image %= len( self.score_slide_images)
+
+
 	
 	def show_end_screen( self, startsound = False ):
 		
