@@ -49,6 +49,8 @@ class Score:
 		self.help_overlay = createHelpScreen( 'score' )
 		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
 		self.effect_mode = BigLetter()
+
+		self.background_mode = game.skin.configGet( 'background_mode')
 		
 		self.score_color_text = game.skin.configGetRGB( 'color_text' )
 		self.score_mida_text = game.skin.configGetInt( 'mida_text')
@@ -89,7 +91,10 @@ class Score:
 		self.score_so_de_fons_vol = game.skin.configGet( 'background_sound_vol')
 
 		self.score_desplaca_el_fons = game.skin.configGetBool( 'move_background') # True o False = no hi ha scroll vertical
+		self.score_background_y_offset = game.skin.configGetInt( 'background_y_offset') 
+
 		self.score_ones_al_fons = game.skin.configGetBool( 'background_waves') # True o False = quiet
+		self.score_prof_ones_al_fons = game.skin.configGetInt( 'background_waves_depth') # True o False = quiet
 
 		self.score_caixes = game.skin.configGetEval( "boxes_coord" )
 		
@@ -124,6 +129,12 @@ class Score:
 		if self.use_teamgotxies:
 			self.teamgotxies_pos = self.game.skin.configGetEval( 'teamgotxies_pos' )
 
+		if self.background_mode == "slide":
+			self.score_slide_time = game.skin.configGetInt( 'slide_time')
+			self.score_slide_folder = os.path.join( Global.skin_folder, game.skin.configGet( 'slide_folder') )
+			self.score_slide_images = os.listdir(self.score_slide_folder)
+
+
 	def barra_pos( self, total, posicio, color, ample, alt ):
 
 		sfc = pygame.Surface( ( ample, alt), pygame.SRCALPHA, 32 )
@@ -136,7 +147,14 @@ class Score:
 			pos_ample = ( posicio * ample_rect ) / total 
 			pygame.draw.rect(sfc, color, (4, 4, pos_ample, alt - 8))
 
+
 		return sfc
+
+
+	def slide_loadimage( self, frate ):
+		ima = self.score_slide_images[ randint( 0, len( self.score_slide_images)-1)]
+		self.fons = loadImage( os.path.join( self.score_slide_folder, ima  ))
+		self.score_slide_lasttime = frate.segons()
 	
 	def show_end_screen( self, startsound = False ):
 		
@@ -182,6 +200,10 @@ class Score:
 		self.comprovaTeamgotxies();
 
 		frate = frameRate( Global.fps_limit )
+
+		if self.background_mode == "slide":
+			self.slide_loadimage( frate )
+			
 		
 		waitForMouseRelease()
 		
@@ -205,9 +227,15 @@ class Score:
 		mostrada_victoria = False
 		
 		self.help_on_screen.activitat()
+
+		show_elements = True
 		
 		while 1:
-			
+
+			if self.background_mode == "slide":
+				if frate.segons() - self.score_slide_lasttime > self.score_slide_time:
+					self.slide_loadimage( frate )
+
 			if mode == 2:
 				if frate.segons() < 4.1 and int(frate.segons()) > surten:
 					surten = int( frate.segons() )
@@ -314,6 +342,9 @@ class Score:
 					if eventhandle.keyUp('x'): 
 						if self.game.teams[element_seleccionat].actiu and self.game.teams[element_seleccionat].punts > 0:
 							self.game.teams[element_seleccionat].punts -= 1
+
+					if eventhandle.keyUp('d'): 
+						show_elements ^= 1
 					
 					if self.game.teams[element_seleccionat].actiu:
 						for num in range(1, 7):
@@ -395,66 +426,65 @@ class Score:
 			# Pintem el fons animat
 			for num in range(0, 768):
 				
-				print self.score_ones_al_fons
 				if self.score_ones_al_fons:
-					xpinta = cos((float(self.mou_fons +num)) / 100.0) * 20
-				
-				
-				self.game.screen.blit( self.fons, (xpinta, num), (0, (self.ypos + num) % 768, 1024, 1) )
+					xpinta = cos((float(self.mou_fons +num)) / 100.0) * self.score_prof_ones_al_fons				
+				if self.score_background_y_offset + num < 768:
+					self.game.screen.blit( self.fons, (xpinta, self.score_background_y_offset+num), (0, (self.ypos + num) % 768, 1024, 1) )
 			
 			self.game.screen.blit( self.mascara_de_fons, (0, 0) )
 			
-			# pintem les puntuacions
-			for num in range(0, Global.game.max_teams):
-				ycaixa = self.score_caixes[num][1]
-				xcaixa = self.score_caixes[num][0]
+			if show_elements:
+				# pintem les puntuacions
+				for num in range(0, Global.game.max_teams):
+					ycaixa = self.score_caixes[num][1]
+					xcaixa = self.score_caixes[num][0]
 				
-				if element_seleccionat == num and self.score_element_sobre != "True":
-					for compta in range( 0, self.seleccio_score.get_height() ):
-						desp = 0 if not mode else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
-						self.game.screen.blit( self.seleccio_score, (xcaixa + self.score_element_sel_offsetx + desp, ycaixa + self.score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
+					if element_seleccionat == num and self.score_element_sobre != "True":
+						for compta in range( 0, self.seleccio_score.get_height() ):
+							desp = 0 if not mode else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
+							self.game.screen.blit( self.seleccio_score, (xcaixa + self.score_element_sel_offsetx + desp, ycaixa + self.score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
 				
-				if self.game.teams[num].actiu:
+					if self.game.teams[num].actiu:
 					
-					self.game.screen.blit( self.element_score, (xcaixa, ycaixa ) )
+						self.game.screen.blit( self.element_score, (xcaixa, ycaixa ) )
 					
-					if self.score_figureta_visible == 'True':
-						self.game.screen.blit( self.figureta[self.game.teams[num].figureta], (xcaixa + self.score_figureta_offsetx, ycaixa + self.score_figureta_offsety ) )
+						if self.score_figureta_visible == 'True':
+							self.game.screen.blit( self.figureta[self.game.teams[num].figureta], (xcaixa + self.score_figureta_offsetx, ycaixa + self.score_figureta_offsety ) )
 					
-					if self.game.teams[num].sfc_nom:
-						self.game.screen.blit( self.game.teams[num].sfc_nom, (xcaixa + self.score_teams_offsetx , ycaixa + self.score_teams_offsety ) )
-					ampletext = self.game.teams[num].sfc_nom.get_width() if self.game.teams[num].sfc_nom else 0
-					if escriu and num == element_seleccionat:
-						if (int(time.time() * 4) % 2) == 0: 
-							self.game.screen.blit( self.sfc_cursor, (xcaixa + self.score_teams_offsetx + ampletext, ycaixa + self.score_teams_offsety )) 
+						if self.game.teams[num].sfc_nom:
+							self.game.screen.blit( self.game.teams[num].sfc_nom, (xcaixa + self.score_teams_offsetx , ycaixa + self.score_teams_offsety ) )
+						ampletext = self.game.teams[num].sfc_nom.get_width() if self.game.teams[num].sfc_nom else 0
+						if escriu and num == element_seleccionat:
+							if (int(time.time() * 4) % 2) == 0: 
+								self.game.screen.blit( self.sfc_cursor, (xcaixa + self.score_teams_offsetx + ampletext, ycaixa + self.score_teams_offsety )) 
 					
-					color = (128,0,0) if (maxPunts(self.game.teams) > self.game.teams[num].punts ) else (0,128,0)
-					pinta = self.game.skin.render_text( str(self.game.teams[num].punts).zfill(2), color, 150, 1)
-					if self.score_resultat_visible == 'True':
-						self.game.screen.blit( pinta, (xcaixa + 200, ycaixa - 15) )
+						color = (128,0,0) if (maxPunts(self.game.teams) > self.game.teams[num].punts ) else (0,128,0)
+						pinta = self.game.skin.render_text( str(self.game.teams[num].punts).zfill(2), color, 150, 1)
+						if self.score_resultat_visible == 'True':
+							self.game.screen.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 					
-					if show_stats and self.final_stats:
-						for cat in range(0,6):
-							self.game.screen.blit( self.barra_pos( self.game.teams[num].preguntes_tot[cat], self.game.teams[num].preguntes_ok[cat],  colorsCategories()[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )
+						if show_stats and self.final_stats:
+							for cat in range(0,6):
+								self.game.screen.blit( self.barra_pos( self.game.teams[num].preguntes_tot[cat], self.game.teams[num].preguntes_ok[cat],  colorsCategories()[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )
 					
-					if self.show_corrects:
-						for compta in range(0, self.total_corrects):
-							if self.game.teams[num].punts > compta:
-								if self.correct_done_image != None:
-									self.game.screen.blit( self.correct_done_image, (xcaixa + self.corrects_coord[compta][0], ycaixa + self.corrects_coord[compta][1] ))
-							else:
-								if self.correct_notdone_image != None:
-									self.game.screen.blit( self.correct_notdone_image, (xcaixa + self.corrects_coord[compta][0], ycaixa + self.corrects_coord[compta][1] ))
+						if self.show_corrects:
+							for compta in range(0, self.total_corrects):
+								if self.game.teams[num].punts > compta:
+									if self.correct_done_image != None:
+										self.game.screen.blit( self.correct_done_image, (xcaixa + self.corrects_coord[compta][0], ycaixa + self.corrects_coord[compta][1] ))
+								else:
+									if self.correct_notdone_image != None:
+										self.game.screen.blit( self.correct_notdone_image, (xcaixa + self.corrects_coord[compta][0], ycaixa + self.corrects_coord[compta][1] ))
 					
-					if self.use_teamgotxies:
-						team = self.game.teams[num]
-						if team.teamgotxie_sfc != None:
-							self.game.screen.blit( team.teamgotxie_sfc, ( xcaixa + self.teamgotxies_pos[0] - team.teamgotxie_sfc.get_width() / 2, ycaixa + self.teamgotxies_pos[1] - team.teamgotxie_sfc.get_height() / 2 ) )
+						if self.use_teamgotxies:
+							team = self.game.teams[num]
+							if team.teamgotxie_sfc != None:
+								self.game.screen.blit( team.teamgotxie_sfc, ( xcaixa + self.teamgotxies_pos[0] - team.teamgotxie_sfc.get_width() / 2, ycaixa + self.teamgotxies_pos[1] - team.teamgotxie_sfc.get_height() / 2 ) )
 				
-				if element_seleccionat == num and self.score_element_sobre == "True":
-					for compta in range( 0, self.seleccio_score.get_height() ):
-						desp = 0 if not escriu else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
-						self.game.screen.blit( self.seleccio_score, (xcaixa + self.score_element_sel_offsetx + desp, ycaixa + self.score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
+					if element_seleccionat == num and self.score_element_sobre == "True":
+						for compta in range( 0, self.seleccio_score.get_height() ):
+							desp = 0 if not escriu else ( cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0 )
+							self.game.screen.blit( self.seleccio_score, (xcaixa + self.score_element_sel_offsetx + desp, ycaixa + self.score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
 			
 			if Global.LOCKED_MODE: 
 				self.game.screen.blit( self.sfc_llum, (0, 0) )
