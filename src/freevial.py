@@ -68,7 +68,7 @@ class Freevial:
 		if not Global.DEBUG_MODE:
 			pygame.mouse.set_visible( False )
 
-			if Global.FS_MODE:
+			if Global.FULLSCREEN_MODE:
 				pygame.display.toggle_fullscreen()
 		
 		# inicialize sound and text systems
@@ -159,6 +159,7 @@ if '-h' in sys.argv or '--help' in sys.argv:
 	print _('--no-music\t\tDisable music.')
 	print _('--no-media\t\tDisable media questions.')
 	print _('--fps\t\t\tPrint framerate on screen.')
+	print _('--dbus\t\t\tEnables dbus usage, to interface with external applications.')
 	print _('--info-db\t\tPrints information about the loaded database and exits.')
 	print _('--psyco\t\t\tUse psyco, if available (this will use more memory).')
 	print
@@ -215,7 +216,7 @@ if '-l' in sys.argv or '--locked' in sys.argv:
 	Global.LOCKED_MODE = True
 
 if '--fullscreen' in sys.argv or '-f' in sys.argv:
-	Global.FS_MODE = True
+	Global.FULLSCREEN_MODE = True
 
 if '--fps' in sys.argv:
 	Global.DISPLAY_FPS = True
@@ -232,6 +233,9 @@ if '--no-music' in sys.argv:
 
 if '--no-media' in sys.argv or (Global.SOUND_MUTE and Global.MUSIC_MUTE):
 	Global.DISABLE_MEDIA = True
+
+if '--dbus' in sys.argv:
+	Global.DBUS = True
 
 if '--skin' in sys.argv:
 	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--skin' ) + 1]))

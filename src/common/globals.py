@@ -49,9 +49,10 @@ Global.SOUND_MUTE = False
 Global.MUSIC_MUTE = False
 Global.DISPLAY_FPS = False
 Global.LOCKED_MODE = False
-Global.FS_MODE = False	# Fullscreen Mode
+Global.FULLSCREEN_MODE = False
 
 Global.DISABLE_MEDIA = False
+Global.DBUS = False
 
 Global.screen_x = 1024
 Global.screen_y = 768
