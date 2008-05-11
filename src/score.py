@@ -263,7 +263,10 @@ class Score:
 			# Event iterator
 			for event in pygame.event.get():
 				
+
+				
 				eventhandle = EventHandle(event)
+				 
 				if eventhandle.handled: continue
 				
 				self.help_on_screen.activitat(event)
@@ -280,13 +283,16 @@ class Score:
 					mostra_ajuda = 0
 				
 				if escriu and not mostra_ajuda and not mostra_credits:
+					
+					if event.type == 2:
+						print event.key
 				
 					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
 						escriu = 0
 						if self.game.teams[element_seleccionat].nom == '' and eventhandle.isKey('ESCAPE'):
 							self.game.teams[element_seleccionat].actiu = 0
 					
-					elif eventhandle.isDown():
+					elif eventhandle.isUp():
 						
 						if eventhandle.isKey('BACKSPACE'):
 							if len(self.game.teams[element_seleccionat].nom) > 0:

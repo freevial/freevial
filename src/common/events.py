@@ -91,12 +91,12 @@ class EventHandle:
 	
 	def _isKeyEvent( self ):
 		
-		return True if hasattr(self.event, 'key') else False
+		return hasattr(self.event, 'key') 
 	
 	
 	def _isStateEvent( self ):
 		
-		return True if hasattr(self.event, 'state') else False
+		return hasattr(self.event, 'state') 
 	
 	
 	def _hasKey( self, keynames ):
@@ -117,17 +117,17 @@ class EventHandle:
 	
 	def isKey( self, *keynames ):
 		
-		return True if self._hasKey(keynames) else False
+		return self._hasKey(keynames)
 	
 	
 	def isUp( self ):
 		
-		return True if self.event.type == pygame.KEYUP else False
+		return self.event.type == pygame.KEYUP 
 	
 	
 	def isDown( self ):
-		
-		return True if self.event.type == pygame.KEYDOWN else False
+
+		return self.event.type == pygame.KEYDOWN
 	
 	
 	def isClick( self, request = 0 ):
@@ -135,7 +135,7 @@ class EventHandle:
 		if type(request) is not int:
 			request = mouseButtons[ request ]
 		
-		return True if self.event.type == pygame.MOUSEBUTTONDOWN and (self.event.button == request or request == 0) else False
+		return self.event.type == pygame.MOUSEBUTTONDOWN and (self.event.button == request or request == 0) 
 	
 	
 	def isRelease( self, request = 0 ):
@@ -143,7 +143,7 @@ class EventHandle:
 		if type(request) is not int:
 			request = mouseButtons[ request ]
 		
-		return True if self.event.type == pygame.MOUSEBUTTONUP and (self.event.button == request or request == 0) else False
+		return self.event.type == pygame.MOUSEBUTTONUP and (self.event.button == request or request == 0) 
 		
 	
 	def keyUp( self, *keynames ):
@@ -170,46 +170,29 @@ class EventHandle:
 	
 	def isWindowMinimize( self ):
 		
-		if self._isStateEvent() and self.event.state == 6 and self.event.gain == 0:
-			return True
-		
-		return False
-	
+		return self._isStateEvent() and self.event.state == 6 and self.event.gain == 0
 	
 	def isWindowRestore( self ):
 		
-		if self._isStateEvent() and self.event.state == 4 and self.event.gain == 1:
-			return True
-		
-		return False
+		return self._isStateEvent() and self.event.state == 4 and self.event.gain == 1
 	
 	def isWindowFocusLose( self ):
 		
-		if self._isStateEvent() and self.event.state == 1 and self.event.gain == 0:
-			return True
-		
-		return False
+		return self._isStateEvent() and self.event.state == 1 and self.event.gain == 0
 	
 	def isWindowFocusGain( self ):
 		
-		if self._isStateEvent() and self.event.state == 1 and self.event.gain == 1:
-			return True
+		return self._isStateEvent() and self.event.state == 1 and self.event.gain == 1
 	
 	def isQuit( self ):
 		
-		if self.event.type == pygame.QUIT:
-			return True
-		
-		return False
+		return  self.event.type == pygame.QUIT
 	
 	
 	def str( self ):
 		
-		if not self._isKeyEvent():
-			return ''
+		return printKey(self.event.key) if not self._isKeyEvent() else ''
 		
-		return printKey(self.event.key)
-	
 	
 	def base_actions( self ):
 		
