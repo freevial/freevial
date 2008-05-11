@@ -253,8 +253,8 @@ def printKey( tecla ):
 		return ' '
 	
 	if keyname == 'world 71':
-		return u'ç'
-	
+		return u'Ç' if pygame.key.get_mods() & pygame.KMOD_SHIFT else u'ç'
+		
 	if keyname == 'tab':
 		return '    '
 	

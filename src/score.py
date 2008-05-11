@@ -38,6 +38,8 @@ from common.effects import BigLetter
 from endscreen import Visca
 from selcat import SelCat
 
+vocals_amb_accents = (u'aàáäâ', u'eèéëê', u'iìíïî', u'oòóöô', u'uùúüû',
+						u'AÀÁÄÂ', u'EÈÉËÈ', u'IÌÍÏÎ', u'OÒÓÖÔ', u'UÙÚÜÛ' )
 
 class Score:
 
@@ -203,6 +205,29 @@ class Score:
 				team.teamgotxie_name = llista[npos]
 				team.teamgotxie_sfc = self.game.skin.directLoadImage( team.teamgotxie_name )
 				break;
+
+
+
+	def accentsMOU( self, newname, desp ):
+	
+		if len(newname) < 1:
+			return None
+
+		actual = newname[len(newname) -1 ]	
+
+		for vocalstring in vocals_amb_accents:
+			pos = vocalstring.find( actual )
+			if pos != -1:
+				return newname[:-1] + vocalstring[(pos + desp) % len ( vocalstring )]
+
+		return None
+
+	def accentsUP( self, newname ):
+		return self.accentsMOU( newname, 1)
+
+	def accentsDOWN( self, newname ):
+		return self.accentsMOU( newname, -1)
+
 	
 	def juguem( self ):
 		
@@ -262,9 +287,7 @@ class Score:
 			
 			# Event iterator
 			for event in pygame.event.get():
-				
-
-				
+								
 				eventhandle = EventHandle(event)
 				 
 				if eventhandle.handled: continue
@@ -284,21 +307,25 @@ class Score:
 				
 				if escriu and not mostra_ajuda and not mostra_credits:
 					
-					if event.type == 2:
-						print event.key
-				
 					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
 						escriu = 0
 						if self.game.teams[element_seleccionat].nom == '' and eventhandle.isKey('ESCAPE'):
 							self.game.teams[element_seleccionat].actiu = 0
 					
 					elif eventhandle.isDown():
-						
+
+						newname = None
+											
 						if eventhandle.isKey('BACKSPACE'):
 							if len(self.game.teams[element_seleccionat].nom) > 0:
 								newname = self.game.teams[element_seleccionat].nom[:-1]
 						else:
-							newname = self.game.teams[element_seleccionat].nom + eventhandle.str()
+							if eventhandle.keyDown('UP'):
+								newname = self.accentsUP( self.game.teams[element_seleccionat].nom )
+							elif eventhandle.keyDown('DOWN'):
+								newname = self.accentsDOWN( self.game.teams[element_seleccionat].nom )
+							else:
+								newname = self.game.teams[element_seleccionat].nom + eventhandle.str()
 						
 						if newname != None:
 							sfc = self.game.skin.render_text( newname, (self.score_color_text), self.score_mida_text, 1)
