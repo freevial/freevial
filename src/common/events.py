@@ -191,7 +191,7 @@ class EventHandle:
 	
 	def str( self ):
 		
-		return printKey(self.event.key) if not self._isKeyEvent() else ''
+		return printKey(self.event.key) if self._isKeyEvent() else ''
 		
 	
 	def base_actions( self ):

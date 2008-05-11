@@ -292,7 +292,7 @@ class Score:
 						if self.game.teams[element_seleccionat].nom == '' and eventhandle.isKey('ESCAPE'):
 							self.game.teams[element_seleccionat].actiu = 0
 					
-					elif eventhandle.isUp():
+					elif eventhandle.isDown():
 						
 						if eventhandle.isKey('BACKSPACE'):
 							if len(self.game.teams[element_seleccionat].nom) > 0:
