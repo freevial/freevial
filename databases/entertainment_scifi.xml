@@ -358,6 +358,7 @@
         <answer>Hellbreath</answer>
       </answers>
     </question>
+
     <question>
       <sentence>Quin any es va fer el joc Pong?</sentence>
       <author>Carles</author>
@@ -368,5 +369,30 @@
         <answer>1982</answer>
       </answers>
     </question>
+
+    <question>
+      <sentence>Quin d'aquests personatges no és de la saga King Quest?</sentence>
+      <author>Carles</author>
+      <comments>És de la saga Space Quest també de Sierra Online</comments>
+      <answers>
+        <answer correct="True">Roger Wilko</answer>
+        <answer>Rey Graham de Daventry</answer>
+        <answer>Rosella</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin d'aquestes series jocs no va fer Roberta Williams?</sentence>
+      <author>Carles</author>
+      <comments>Roberta i Ken Williams van ser els fundadors de Sierra Online.#Ella era escriptora de contes i ell desenvolupador.##Junts van fer algunes de les millors aventures gràfiques.##La serie Gabriel Night també de Sierra online no va ser escrita per ella#com tampoc la serie d'aventures d'en Larry Laffer.</comments>
+      <answers>
+        <answer correct="True">Gabriel Night</answer>
+        <answer>Phantasmagoria</answer>
+        <answer>King Quest</answer>
+      </answers>
+    </question>
+
+
+
   </questions>
 </database>

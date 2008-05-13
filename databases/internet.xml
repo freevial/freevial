@@ -198,6 +198,7 @@
         <answer>L'illa de Man</answer>
       </answers>
     </question>
+
     <question>
       <sentence>La tecnologia que fa possible l'alimentació#automàtica de notícies web es diu...</sentence>
       <author>lluisanunez</author>
@@ -208,5 +209,75 @@
         <answer>SMS</answer>
       </answers>
     </question>
+
+    <question>
+      <sentence>Per que serveix wget http://* /home/usuari/internet</sentence>
+      <author>carles</author>
+      <comments>...evidentment no serveix per res</comments>
+      <answers>
+        <answer correct="True">Per res</answer>
+        <answer>Per fer una imatge d'internet al disc</answer>
+        <answer>Per res, per que internet no ens cap al disc</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quantes IPs existeixen en ip4</sentence>
+      <author>carles</author>
+      <comments>2^32 = 4.294.967.296##Semblaven un munt fa uns anys i#ara ja cal canviar el sistema per que s'acaben.</comments>
+      <answers>
+        <answer correct="True">2^32</answer>
+        <answer>2^16</answer>
+        <answer>2^8</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Que volen dir les sigles TCP</sentence>
+      <author>carles</author>
+      <comments>Despres de localitzar-se les màquines identifica#la forma com es comuniquen aquestes entre elles.</comments>
+      <answers>
+        <answer correct="True">Transport control protocol</answer>
+        <answer>Team collated passthrough</answer>
+        <answer>Tip coins proupine</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quan un web es diu que és un wiki vol dir...</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Que es pot modificar coŀlaborativament</answer>
+        <answer>Que és petit però eficient</answer>
+        <answer>wide killer</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Què és un hackergotxi?</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Una icona que mostra el nostre alter-ego en internet</answer>
+        <answer>Un web trencat per un intrus</answer>
+        <answer>Una mascota virtual que s'alimenta desenvolupant programari</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quin d'aquests formats usuals a la xarxa no és lliure?</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">swf</answer>
+        <answer>html</answer>
+        <answer>png</answer>
+      </answers>
+    </question>
+
+
+
   </questions>
 </database>

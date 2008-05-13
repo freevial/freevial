@@ -265,5 +265,30 @@
         <answer>Un component algorítmic per a#mimetizar el contingut referent#a la comanda grep</answer>
       </answers>
     </question>
+
+    <question>
+      <sentence>Quin d'aquests llenguatges no és interpretat?</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">C++</answer>
+        <answer>Python</answer>
+        <answer>Ruby</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quan parlem d'un llenguatge de baix nivell ens referim a...</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Un llenguatge que la traducció a operacions que realitza la màquina és propera</answer>
+        <answer>Un llenguatge vell i en desus</answer>
+        <answer>Un llenguatge brut i rastrer</answer>
+      </answers>
+    </question>
+
+
+
   </questions>
 </database>
