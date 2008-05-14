@@ -188,6 +188,11 @@ class Preguntador:
 		if self.use_teamgotxies:
 			self.teamgotxies_pos = self.game.skin.configGetEval( 'teamgotxies_pos' )
 
+
+
+		self.hide_mask_on_image_quiz = self.game.skin.configGetBool( 'hide_mask_on_image_quiz' )
+		self.media_image_dance = self.game.skin.configGetEval( 'media_image_dance' )
+
 	###########################################
 	#
 	# Funció per veure el nombre de linies que té una frase a mostrar
@@ -234,6 +239,9 @@ class Preguntador:
 		if self.current_question["mediatype"] == "audio":
 			self.audio = loadSound( self.current_question["media"], music = 1 )
 			self.audio.play( 1 )
+
+		if self.current_question["mediatype"] == "image":
+			self.media_image = loadImage( self.current_question["media"] )
 
 	###########################################
 	#
@@ -329,7 +337,9 @@ class Preguntador:
 		sfc_comentaris = None
 
 		self.help_on_screen.activitat( )
-	
+
+		hide_answers = 0	
+
 		while 1:
 			
 			acaba = 0
@@ -389,14 +399,17 @@ class Preguntador:
 							self.selected = 3	
 						self.so_sub.play()
 				
+					if eventhandle.keyUp('x'):	
+						if self.current_question["mediatype"] == "audio":
+							self.audio.play( 1 )
+						if self.current_question["mediatype"] == "image":
+							hide_answers += 1
+							hide_answers %= 4
+				
+
 				if eventhandle.keyUp('z'):	
 					self.mostraautor ^= 1
 
-				if eventhandle.keyUp('x'):	
-					if self.current_question["mediatype"] == "audio":
-						self.audio.play( 1 )
-
-				
 				for num in range(1, 7):
 					if eventhandle.keyUp(str(num), 'KP' + str(num)):
 						self.atzar( num-1 )
@@ -410,6 +423,9 @@ class Preguntador:
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
 			if acaba == 1 or (self.segons <= 0 and max_time != 0):
+
+				hide_answers = 0
+
 				if not Global.MUSIC_MUTE:
 					pygame.mixer.music.fadeout(2500)
 				self.help_on_screen.sec_timeout = 3
@@ -439,42 +455,58 @@ class Preguntador:
 			if self.ypos < 200:
 				self.game.screen.blit( self.fons[self.categoria], (0, min( 200, self.ypos)), (0, 0, Global.screen_x, 200 - min( 200, self.ypos)))
 			
+
+
 			# i el sombrejem per fer l'efecte de desapariió
 			# també pintem el logotip del peu a l'hora que esborrem el fons de self.game.screen
 			self.game.screen.blit( self.mascara_de_fons, (0, 0) )
+
 			
-			if self.use_mask:
-				# preparem el sobrejat de l'opció seleccionada
-				ympos = self.ypos + 300
-				ympos %= 768
-				self.mascara.blit( self.fons[ self.categoria], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
+			# si és pregunta d'imatge la mostrem
+			if hide_answers != 3:
+		
+				if self.current_question["mediatype"] == "image":
+					t = time.time()
+					xi = cos(t)* float(self.media_image_dance[0])
+					yi = sin(t*3)* float(self.media_image_dance[1])
+					self.game.screen.blit( self.media_image, (xi+512-(self.media_image.get_width()/2), yi+(768/2)-(self.media_image.get_height()/2) + 70) )
+
+			if hide_answers != 1:
+				if self.use_mask:
+					# preparem el sobrejat de l'opció seleccionada
+					ympos = self.ypos + 300
+					ympos %= 768
+					self.mascara.blit( self.fons[ self.categoria], (0,0), (0, (768 - ympos), Global.screen_x, min( 200, ympos )))
 			
-				if ympos < 200: 
-					self.mascara.blit( self.fons[ self.categoria], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
+					if ympos < 200: 
+						self.mascara.blit( self.fons[ self.categoria], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
 			
-				# i el mesclem amb la mascara per donar-li forma
-				self.mascara.blit( self.retalla_sel, (0,0))
-			else:
-				self.mascara = self.retalla_sel
-					
-			# pintem l'ombrejat on correspongui	
-			if self.selected == 1: self.game.screen.blit( self.mascara, ( self.postextx, 260))
-			if self.selected == 2: self.game.screen.blit( self.mascara, ( self.postextx, 260+150))
-			if self.selected == 3: self.game.screen.blit( self.mascara, ( self.postextx, 260+300))
+					# i el mesclem amb la mascara per donar-li forma
+					self.mascara.blit( self.retalla_sel, (0,0))
+				else:
+					self.mascara = self.retalla_sel
 			
+				if not (self.current_question["mediatype"] == "image" and self.hide_mask_on_image_quiz ):		
+				# pintem l'ombrejat on correspongui	
+					if self.selected > 0:
+						self.game.screen.blit( self.mascara, ( self.postextx, (260,260+150,260+300)[self.selected - 1]))
+			
+		
 			# mostrem l'autor i el nombre de pregunta
 			if self.mostraautor:
 				self.game.screen.blit( self.sfc_apregunta, (1024 - ( self.sfc_apregunta.get_width() + 25), 94) )
 				
 			# mostrem la pregunta
 			self.game.screen.blit( self.sfc_pregunta, (self.postextxpreg, self.postexty) )	
+			
+
+			if hide_answers != 1:
+				# i les solucions			
+				linia_act = 270
 				
-			# i les solucions			
-			linia_act = 270
-				
-			for num in range(0, 3):
-				self.game.screen.blit( self.lletres[num][(self.selected != num + 1)], ( self.postextx, linia_act + (150 * num)) )
-				self.game.screen.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
+				for num in range(0, 3):
+					self.game.screen.blit( self.lletres[num][(self.selected != num + 1)], ( self.postextx, linia_act + (150 * num)) )
+					self.game.screen.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
 				
 			if max_time != 0:
 				# comprovem l'estat del temps
@@ -497,27 +529,27 @@ class Preguntador:
 						# pintem els segons que queden, posant-los cada cop menys transparents
 					self.pinta_segons.set_alpha( (max_time - segons_act) * 100 / max_time)
 					self.game.screen.blit( self.pinta_segons, ( 300 , 150) )
-			
+
 			# Pintem les solucions
 			linia_act = 270
 			posn = 700
 			posnook = 700 + cos(time.time()) * 25
 			posnook2 = 700 - cos(time.time()) * 25
 			posok = 700 + cos(time.time() * 2) * 50
-			
+		
 			if self.show_answers > 0:
-					
+				
 				for num in range (0, 3):
 					if self.current_question['answer'] == (num + 1):
 						if self.selected != (num + 1):	
 							self.game.screen.blit( self.solucio_ok, (posnook2, linia_act + (150 * num)) )
 						else:
 							self.game.screen.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
-						
+					
 					else:
 						if self.selected == (num + 1):
 							self.game.screen.blit( self.solucio_nook, (posnook, linia_act + (150 * num)) )
-					
+				
 				if len( self.current_question['comment'] ) > 5:
 					self.game.screen.blit( self.info[0] if (int(time.time() * 3) % 3) == 0 else self.info[1], (self.postextx, 150) )
 				
@@ -544,6 +576,9 @@ class Preguntador:
 				textmostra += _(" X - Replay media")
 				for nota in notesvoladores:
 					nota.pinta(  self.game.screen, self )
+
+			if self.current_question["mediatype"] == "image":
+				textmostra += _(" X - Shows or hides answers/images")
 
 			if self.use_teamgotxies:
 				team = self.game.teams[self.game.current_team]

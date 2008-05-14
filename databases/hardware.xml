@@ -417,6 +417,7 @@
         <answer>Beryl</answer>
       </answers>
     </question>
+
     <question>
       <sentence>Quin any va sortir el primer Macintosh?</sentence>
       <author>MarcJ</author>
@@ -427,5 +428,18 @@
         <answer>1985</answer>
       </answers>
     </question>
+
+    <question>
+      <sentence>En ubuntu hardy com es diu el programa que substitueix el client de vnc?</sentence>
+      <author>CarlesOriol</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Vinagre</answer>
+        <answer>Oli</answer>
+        <answer>Amanida</answer>
+      </answers>
+    </question>
+
+
   </questions>
 </database>
