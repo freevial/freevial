@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.1" id="songs" language="ca">
+
+  <information>
+
+    <name>Imatginarium</name>
+    <description>Preguntes amb imatges</description>
+    <destination>Categoria de test per fer preguntes amb imatges</destination>
+    <timestamp_creation>1189202400</timestamp_creation>
+    <timestamp_modification>1200139485</timestamp_modification>
+
+	<license>gpl</license>
+	<url>http://www.freevial.org/bases/imatginarium.xml</url>
+	<contact>info@freevial.org</contact>
+
+    <authors>
+      <author>Carles Oriol, &lt;email&gt;</author>
+    </authors>
+
+  </information>
+
+  <appearance>
+    <image>categoria_kw.png</image>
+    <sound>ckw.ogg</sound>
+  </appearance>
+
+  <questions>
+
+    <question>
+      <sentence>A quina versió d'ubuntu pertany aquesta imatge?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i1.jpg</media>
+      <answers>
+        <answer correct="True">Hardy</answer>
+        <answer>Gutsy</answer>
+        <answer>Feisty</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Que identifiquem en aquesta imatge?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i2.jpg</media>
+      <answers>
+        <answer correct="True">Els fils d'un projecte de bazaar</answer>
+        <answer>El resultat de les apostes del Yatzee</answer>
+        <answer>Que a internet es fan moltes coses</answer>
+      </answers>
+    </question>
+
+
+  </questions>
+
+</database>
+
