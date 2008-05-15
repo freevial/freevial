@@ -242,6 +242,7 @@ class Preguntador:
 
 		if self.current_question["mediatype"] == "image":
 			self.media_image = loadImage( self.current_question["media"] )
+			self.media_image_dance = ( (512-50)-(self.media_image.get_width()/2), ((768-100)/2-50)-(self.media_image.get_height()/2))
 
 	###########################################
 	#
@@ -468,7 +469,7 @@ class Preguntador:
 				if self.current_question["mediatype"] == "image":
 					t = time.time()
 					xi = cos(t)* float(self.media_image_dance[0])
-					yi = sin(t*3)* float(self.media_image_dance[1])
+					yi = sin(t/2.5)* float(self.media_image_dance[1])
 					self.game.screen.blit( self.media_image, (xi+512-(self.media_image.get_width()/2), yi+(768/2)-(self.media_image.get_height()/2) + 70) )
 
 			if hide_answers != 1:

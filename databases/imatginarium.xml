@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<database version="1.1" id="songs" language="ca">
+<database version="1.1" id="imatginarium" language="ca">
 
   <information>
 
@@ -50,6 +50,19 @@
         <answer>Que a internet es fan moltes coses</answer>
       </answers>
     </question>
+
+    <question>
+      <sentence>Usar vi és pecat. Usar una versió lliure de vi és...?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i3.png</media>
+      <answers>
+        <answer correct="True">penitencia</answer>
+        <answer>pecat mortal</answer>
+        <answer>correcte</answer>
+      </answers>
+    </question>
+
 
 
   </questions>
