@@ -141,10 +141,11 @@ class Preguntador:
 		self.solucio_nook = game.skin.LoadImage( 'solucio_nook' )
 		
 		self.fons = range(0, 6)
+
 		for num in range(0, 6):
 			self.fons[num] = loadImage(get_databases( num ).image)
-			sfcmask = loadImage( 'filtre_c' + str(num+1) + '.png' )
-			self.fons[num].blit( sfcmask, (0,0))
+			self.fons[num] =  inkimage ( self.fons[num], (i_colors_cat[num][0],i_colors_cat[num][1],i_colors_cat[num][2],128) ) 
+
 		
 		self.mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
 		
@@ -179,19 +180,14 @@ class Preguntador:
 		self.notesimatges = []
 		self.notesimatges.append( self.nota )
 
-		self.notesimatges.append( inkimage ( self.nota, (0,0,255,128) ) )
-		self.notesimatges.append( inkimage ( self.nota, (255,128,0,128) ) )
-		self.notesimatges.append( inkimage ( self.nota, (0,255,0,128) ) )
-		self.notesimatges.append( inkimage ( self.nota, (255,0,0,128) ) )
-		self.notesimatges.append( inkimage ( self.nota, (255,0,255,128) ) )
-		self.notesimatges.append( inkimage ( self.nota, (255,255,0,128) ) )
+		for num in range(0, 6):
+
+			self.notesimatges.append( inkimage ( self.nota, (i_colors_cat[num][0],i_colors_cat[num][1],i_colors_cat[num][2],128)  ) )
 
 
 		self.use_teamgotxies = self.game.skin.configGetBool( 'use_teamgotxies' )
 		if self.use_teamgotxies:
 			self.teamgotxies_pos = self.game.skin.configGetEval( 'teamgotxies_pos' )
-
-
 
 		self.hide_mask_on_image_quiz = self.game.skin.configGetBool( 'hide_mask_on_image_quiz' )
 		self.media_image_dance = self.game.skin.configGetEval( 'media_image_dance' )
