@@ -63,7 +63,8 @@ class NotaVoladora:
 
 	def pinta( self, surface, preguntador ):
 		self.mou()
-		surface.blit( preguntador.nota, (self.x, self.y) )
+		#surface.blit( preguntador.nota, (self.x, self.y) )
+		surface.blit( preguntador.notesimatges[self.col], (self.x, self.y) )
 		
 
 class Preguntador:
@@ -177,12 +178,14 @@ class Preguntador:
 		self.nota = game.skin.LoadImage( 'media_music_image' )
 		self.notesimatges = []
 		self.notesimatges.append( self.nota )
-		
-		for num in range(0, 6):
-			notacol = game.skin.LoadImage( 'media_music_image' )
-			sfcmask = loadImage( 'filtre_c' + str(num+1) + '.png' )
-			notacol.blit( sfcmask, (0,0))	
-			self.notesimatges.append( notacol )
+
+		self.notesimatges.append( inkimage ( self.nota, (0,0,255,128) ) )
+		self.notesimatges.append( inkimage ( self.nota, (255,128,0,128) ) )
+		self.notesimatges.append( inkimage ( self.nota, (0,255,0,128) ) )
+		self.notesimatges.append( inkimage ( self.nota, (255,0,0,128) ) )
+		self.notesimatges.append( inkimage ( self.nota, (255,0,255,128) ) )
+		self.notesimatges.append( inkimage ( self.nota, (255,255,0,128) ) )
+
 
 		self.use_teamgotxies = self.game.skin.configGetBool( 'use_teamgotxies' )
 		if self.use_teamgotxies:

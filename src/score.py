@@ -194,17 +194,23 @@ class Score:
 				if team.teamgotxie_sfc == None:
 					team.teamgotxie_sfc = self.game.skin.directLoadImage( team.teamgotxie_name )
 	
-	def nextTeamgotxie( self, es ):
-		
+	def moveTeamgotxie( self, es, desp ):
 		team = self.game.teams[es]
 		llista = os.listdir(Global.folders['teamgotxies'])
 		
 		for num in range( 0, len(llista) ):
 			if llista[num] == team.teamgotxie_name:
-				npos = (num + 1) % len(llista)
+				npos = (num + desp) % len(llista)
 				team.teamgotxie_name = llista[npos]
 				team.teamgotxie_sfc = self.game.skin.directLoadImage( team.teamgotxie_name )
 				break;
+
+	def nextTeamgotxie( self, es ):
+		self.moveTeamgotxie( es, 1)
+
+	def prevTeamgotxie( self, es ):
+		self.moveTeamgotxie( es, -1)
+		
 
 
 
@@ -383,8 +389,13 @@ class Score:
 							atzar = randint(15, 50)
 							mode = 1
 
-						if eventhandle.keyUp('t'):
+						if eventhandle.keyUp('g') or eventhandle.isClick ( 5 ): 
 							self.nextTeamgotxie( element_seleccionat )
+
+						if eventhandle.keyUp('t') or  eventhandle.isClick ( 4 ): 
+							self.prevTeamgotxie( element_seleccionat )
+
+
 					
 					if eventhandle.keyUp('z'): 
 						if self.game.teams[element_seleccionat].actiu:

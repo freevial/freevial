@@ -594,3 +594,31 @@ class frameRate():
 				# display the frame rate on the middle of the screen's bottom
 				#surface.blit( self.textSurface, ( (( Global.screen_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )
 				surface.blit( self.textSurface, (250, 740 ) )
+
+			#surface.blit( self.textSurface, (250, 740 ) )
+
+def inkimage ( sourceimage, color ):
+
+	mida = (sourceimage.get_width(), sourceimage.get_height())
+
+	arraypunt = chr(color[0])+chr(color[1])+chr(color[2])+chr(color[3])
+	
+	impunt = pygame.image.fromstring( arraypunt, (1,1), "RGBA" )
+
+	impunt = pygame.transform.scale(impunt, mida )
+
+	desti = pygame.Surface( mida, pygame.SRCALPHA, 32 )
+	desti.blit( sourceimage, (0,0) )
+	desti.blit( impunt, (0,0) )
+
+	alfa = pygame.surfarray.array_alpha(sourceimage)
+
+	desti.lock()
+	for y in range(0, mida[1]):
+		for x in range(0, mida[0]):
+			p1 = desti.get_at( (x,y) )
+			desti.set_at( (x,y), (p1[0],p1[1],p1[2],alfa[x][y]) )
+	
+	desti.unlock()
+
+	return desti
