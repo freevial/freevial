@@ -22,7 +22,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from random import shuffle, sample
+from random import shuffle, sample, randint
 from copy import deepcopy
 import gettext
 
@@ -59,6 +59,7 @@ class Database:
 		""" Shuffles the question list. """
 		
 		shuffle(self._questions)
+
 		self._shuffled = True
 	
 	def _get_question( self ):
@@ -69,7 +70,7 @@ class Database:
 			print _(u'All questions in category «%s» have been answered. Reshuffling...') %  self.name
 			self._questions = deepcopy(self._old_questions)
 			self._old_questions = []
-			self.shuffled = False
+			self._shuffled = False
 		
 		if not self._shuffled:
 			self._shuffle()
