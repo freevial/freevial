@@ -186,12 +186,14 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 					' difficulty level «%s».') % (xmlFile, difficulty)
 				difficulty = 'Medium'
 		
+		# Check CR
+	
 		if not (Global.DISABLE_MEDIA and mediatype):
 			database.addQuestion(
-				question = question.sentence.text,
-				answ1 = answers[0],
-				answ2 = answers[1],
-				answ3 = answers[2],
+				question = question.sentence.text.replace(chr(10), '#'),
+				answ1 = answers[0].replace(chr(10), '#'),
+				answ2 = answers[1].replace(chr(10), '#'),
+				answ3 = answers[2].replace(chr(10), '#'),
 				author = question.author.text,
 				comment = comment,
 				mediatype = mediatype,
