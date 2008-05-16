@@ -611,14 +611,6 @@ def inkimage ( sourceimage, color ):
 	desti.blit( sourceimage, (0,0) )
 	desti.blit( impunt, (0,0) )
 
-	alfa = pygame.surfarray.array_alpha(sourceimage)
-
-	desti.lock()
-	for y in range(0, mida[1]):
-		for x in range(0, mida[0]):
-			p1 = desti.get_at( (x,y) )
-			desti.set_at( (x,y), (p1[0],p1[1],p1[2],alfa[x][y]) )
-	
-	desti.unlock()
+	pygame.surfarray.pixels_alpha(desti)[...] = pygame.surfarray.array_alpha(sourceimage)
 
 	return desti
