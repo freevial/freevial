@@ -486,7 +486,9 @@ class Preguntador:
 						self.mascara.blit( self.fons[ self.categoria], (0, min( 200, ympos)), (0, 0, Global.screen_x, 200 - min( 200, ympos)))
 			
 					# i el mesclem amb la mascara per donar-li forma
-					self.mascara.blit( self.retalla_sel, (0,0))
+					#self.mascara.blit( , (0,0))
+					maskimage ( self.mascara, self.retalla_sel )
+					
 				else:
 					self.mascara = self.retalla_sel
 			

@@ -597,6 +597,10 @@ class frameRate():
 
 			#surface.blit( self.textSurface, (250, 740 ) )
 
+def maskimage ( sourceimage, sourcemask ):
+
+	pygame.surfarray.pixels_alpha(sourceimage)[...] = pygame.surfarray.array_alpha(sourcemask)
+
 def inkimage ( sourceimage, color ):
 
 	mida = (sourceimage.get_width(), sourceimage.get_height())
@@ -614,3 +618,5 @@ def inkimage ( sourceimage, color ):
 	pygame.surfarray.pixels_alpha(desti)[...] = pygame.surfarray.array_alpha(sourceimage)
 
 	return desti
+
+
