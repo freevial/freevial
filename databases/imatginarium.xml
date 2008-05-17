@@ -268,6 +268,42 @@
       </answers>
     </question>
 
+    <question>
+      <sentence>He pensat un nombre. A veure si l'endevines.</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">|i20_1.png</media>
+      <answers>
+        <answer correct="True">0</answer>
+        <answer>2</answer>
+        <answer>5</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>He pensat un nombre. A veure si l'endevines.</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">|i20_2.png</media>
+      <answers>
+        <answer correct="True">5</answer>
+        <answer>2</answer>
+        <answer>0</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>He pensat un nombre. A veure si l'endevines.</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">|i20_3.png</media>
+      <answers>
+        <answer correct="True">2</answer>
+        <answer>5</answer>
+        <answer>0</answer>
+      </answers>
+    </question>
+
 
 
   </questions>
