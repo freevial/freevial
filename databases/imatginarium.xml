@@ -232,6 +232,20 @@
       </answers>
     </question>
 
+    <question>
+      <sentence>Una pregunta de prova?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">|http://www.google.cat/intl/en_com/images/logo_plain.png</media>
+      <answers>
+        <answer correct="True">Si</answer>
+        <answer>No</answer>
+        <answer>No</answer>
+      </answers>
+    </question>
+
+
+
   </questions>
 
 </database>

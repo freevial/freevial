@@ -29,6 +29,8 @@ import pygame
 import locale
 import time
 import gettext
+import urllib
+
 from pygame.locals import *
 
 from common.globals import Global
@@ -80,40 +82,84 @@ def bitCategoria ( categoria ):
 	return (0x4,0x8,0x20,0x10,0x2,0x1)[ categoria ]
 
 
-def loadImage( name, colorkey = None, rotate = 0 ):
-	""" Returns a Surface of the indicated image, which is expected to be in the images folder. """
+def loadImagehttp( filename ):
 	
-	fullname = os.path.join(Global.folders['images'], str(name))
-	
-	if not os.path.exists( fullname ):
-		
-		# Also try in teamgotxies path
-		fullname = os.path.join(Global.folders['teamgotxies'], str(name))
-
-		if not os.path.exists( fullname ):
-			# Also try in database paths
-			for foldername in Global.databasefolders:
-				fulln = os.path.join(foldername, str(name))
-				if os.path.exists( fulln ):
-					fullname = fulln				
-					break
+	imatge = None
 		
 	try:
-		image = pygame.image.load(fullname)
-	except pygame.error, message:		
-		print _('Failed loading image: %s' % fullname)
-		raise SystemExit, message
+		import tempfile
+		fileonly = filename[filename.rfind("/")+1:]
 	
-	if colorkey is not None:
-		if colorkey is -1:
-			colorkey = image.get_at((0,0))
-		image = image.convert()
-		image.set_colorkey(colorkey, pygame.RLEACCEL)
+		tempdir = tempfile.mkdtemp()
+		tempname = os.path.join( tempdir, fileonly)
+
+
+		opener = urllib.FancyURLopener({})
+
+	 	f = opener.open( filename )
+
+		llegit = f.read()
+		f.close()
+
+
+		file=open ( tempname, "wb" )
+		file.write ( llegit )
+		file.close()
+
+		imatge = pygame.image.load(tempname).convert_alpha()
+
+	except:
+
+		imatge = None
+
+	return imatge
+
+
+def loadImage( name, colorkey = None, rotate = 0 ):
+	""" Returns a Surface of the indicated image, which is expected to be in the images folder. """
+
+	image = None
+
+
+	if name[:7].upper() == u"HTTP://":
+	
+		image = loadImagehttp( name )
+
 	else:
-		image = image.convert_alpha()
 	
-	if rotate != 0:
-		image = rotateImage(image, rotate)
+		fullname = os.path.join(Global.folders['images'], str(name))
+	
+		if not os.path.exists( fullname ):
+		
+			# Also try in teamgotxies path
+			fullname = os.path.join(Global.folders['teamgotxies'], str(name))
+
+			if not os.path.exists( fullname ):
+				# Also try in database paths
+				for foldername in Global.databasefolders:
+					fulln = os.path.join(foldername, str(name))
+					if os.path.exists( fulln ):
+						fullname = fulln				
+						break
+		
+		try:
+			image = pygame.image.load(fullname)
+		except pygame.error, message:		
+			print _('Failed loading image: %s' % fullname)
+			raise SystemExit, message
+	
+	if image != None:
+
+		if colorkey is not None:
+			if colorkey is -1:
+				colorkey = image.get_at((0,0))
+			image = image.convert()
+			image.set_colorkey(colorkey, pygame.RLEACCEL)
+		else:
+			image = image.convert_alpha()
+	
+		if rotate != 0:
+			image = rotateImage(image, rotate)
 	
 	return image	# [ image, image.get_rect() ]
 

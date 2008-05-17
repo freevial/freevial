@@ -219,14 +219,21 @@ class Preguntador:
 	#
 
 	def loadmediaimage( self, imagename, pos):
+
+		self.media_image = None
+
 		im = imagename
 		p = im.find('|')
 
 		if p != -1:
 			im = im[:p] if pos == 0 else im[p+1:]
 
-		self.media_image = loadImage( im )
-		self.media_image_dance = ( (512-50)-(self.media_image.get_width()/2), ((768-100)/2-50)-(self.media_image.get_height()/2))
+		if im != "":
+			self.media_image = loadImage( im )
+
+		if self.media_image	!= None:
+
+			self.media_image_dance = ( (512-50)-(self.media_image.get_width()/2), ((768-100)/2-50)-(self.media_image.get_height()/2))
 
 	def initialize_question( self ):
 
@@ -477,11 +484,12 @@ class Preguntador:
 			# si és pregunta d'imatge la mostrem
 			if hide_answers != 3:
 		
-				if self.current_question["mediatype"] == "image":
-					t = time.time()
-					xi = cos(t)* float(self.media_image_dance[0])
-					yi = sin(t/2.5)* float(self.media_image_dance[1])
-					self.game.screen.blit( self.media_image, (xi+512-(self.media_image.get_width()/2), yi+(768/2)-(self.media_image.get_height()/2) + 70) )
+				if self.current_question["mediatype"] == "image" :
+					if self.media_image	!= None:
+						t = time.time()
+						xi = cos(t)* float(self.media_image_dance[0])
+						yi = sin(t/2.5)* float(self.media_image_dance[1])
+						self.game.screen.blit( self.media_image, (xi+512-(self.media_image.get_width()/2), yi+(768/2)-(self.media_image.get_height()/2) + 70) )
 
 			if hide_answers != 1:
 				if self.use_mask:
