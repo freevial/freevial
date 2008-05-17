@@ -104,7 +104,7 @@
       <answers>
         <answer correct="True">Es compten totes les síŀlabes fins a l'última tònica de cada vers.</answer>
         <answer>Es compten totes les síŀlabes de cada vers.</answer>
-        <answer>Els compten totes les síl·labes . </answer>
+        <answer>Els compten totes les síl·labes. </answer>
       </answers>
     </question>
 
@@ -145,17 +145,7 @@ llengua catalana"?</sentence>
       </answers>
     </question>    
 	
-	<question>
-      <sentence>Qui va escriure "Els parlars catalans"?</sentence>
-      <author>Nuria</author>
-      <comments></comments>
-      <answers>
-        <answer correct="True">Joan Veny.</answer>
-        <answer>Joan Solà.</answer>
-        <answer>Jesús Tuson.</answer>
-      </answers>
-    </question>
-
+	
 	<question>
       <sentence>Quins són els subdialectes del català oriental?</sentence>
       <author>Nuria</author>
@@ -181,7 +171,7 @@ llengua catalana"?</sentence>
 	<question>
       <sentence>Quines característiques té el parlar salat?</sentence>
       <author>Nuria</author>
-      <comments></comments>Aquesta articles deriven del llatí "ipsu" i "ipsa".
+      <comments></comments>Aquests articles deriven del llatí "ipsu" i "ipsa".
       <answers>
         <answer correct="True">Empra els articles es i sa.</answer>
         <answer>És picant.</answer>
@@ -258,17 +248,7 @@ segles XII i XIII?</sentence>
       </answers>
     </question>
 
-	<question>
-      <sentence>A quina edat es va convertir Ramon Llull?</sentence>
-      <author>Nuria</author>
-      <comments></comments>
-      <answers>
-        <answer correct="True">Als trenta anys.</answer>
-        <answer>Als cinquanta anys.</answer>
-        <answer>No es va convertir.</answer>
-      </answers>
-    </question>
-
+	
 	<question>
       <sentence>De quina manera va aprendre l'àrab Ramon Llull?</sentence>
       <author>Nuria</author>
@@ -308,15 +288,15 @@ expressat en cap llengua vulgar?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Jo cante – valencià.</answer>
-        <answer>Jo cant – central.</answer>
+        <answer correct="True">Jo cant - central.</answer>
+        <answer>Jo cante – valencià.</answer>
         <answer>Jo canti- rossellonès.</answer>
       </answers>
     </question>
 
 	<question>
       <sentence>Quin d'aquest adjectius demostratius valencians indica que (alguna
-cosa) és prop del qui escolta.</sentence>
+cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
@@ -467,7 +447,7 @@ cosa) és prop del qui escolta.</sentence>
       <answers>
         <answer correct="True">El que veuen fer als grans.</answer>
         <answer>El que fan els elefants.</answer>
-        <answer>Ho toquen tot amb les mans</answer>
+        <answer>Ho toquen tot amb les mans.</answer>
       </answers>
     </question>
 
@@ -565,17 +545,6 @@ magistralment...</sentence>
 
 
 
-	<question>
-		<sentence>Per què d'alguns ponts antics en diem "pont del diable"?</sentence>
-		<author>Nuria</author>
-		<comments></comments>
-		<answers>
-			<answer correct="True">Perquè, segons la creença popular, el diable va construir aquest pont. </answer>
-			<answer>Perquè, segons la creença popular, era lloc de reunió de bruixes i diables.</answer>
-			<answer>Perquè, segons la creença popular, el diable el va maleir fent que la gent s'hi estimbés.</answer>
-		</answers>
-	</question>
-
 <question>
 		<sentence>Quina és la "terra de Xauxa"?</sentence>
 		<author>Nuria</author>
@@ -624,9 +593,9 @@ magistralment...</sentence>
 	<question>
 		<sentence>Quin és el significat original de la paraula "treball"?</sentence>
 		<author>Nuria</author>
-		<comments></comments>
+		<comments> Explicació: del llatí "tri palium", instrument de tortura.</comments>
 		<answers>
-			<answer correct="True">Tortura. Explicació: del llatí "tri palium", instrument de tortura.</answer>
+			<answer correct="True">Tortura.</answer>
 			<answer>Ocupació.</answer>
 			<answer>Desmai.</answer>
 		</answers>
@@ -671,7 +640,7 @@ magistralment...</sentence>
 		<comments></comments>
 		<answers>
 			<answer correct="True">L'origen d'un fet.</answer>
-			<answer>La gallina.</answer>
+			<answer>El gall.</answer>
 			<answer>El primer ou, que va ser abans que cap gallina.</answer>
 		</answers>
 	</question>
@@ -857,7 +826,7 @@ magistralment...</sentence>
 
 
 	<question>
-		<sentence>Com es diu la progragonista del clan de la lloba?</sentence>
+		<sentence>Com es diu la progragonista d'"El clan de la lloba"?</sentence>
 		<author>MarcOriol</author>
 		<comments>De la trilogia de la guerra de les bruixes de Maite Carranza</comments>
 		<answers>

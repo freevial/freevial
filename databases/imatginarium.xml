@@ -4,7 +4,7 @@
 
   <information>
 
-    <name>Imatginarium</name>
+    <name>Imatginàrium</name>
     <description>Preguntes amb imatges</description>
     <destination>Categoria de test per fer preguntes amb imatges</destination>
     <timestamp_creation>1189202400</timestamp_creation>
@@ -40,7 +40,7 @@
     </question>
 
     <question>
-      <sentence>Que identifiquem en aquesta imatge?</sentence>
+      <sentence>Què identifiquem en aquesta imatge?</sentence>
       <author>Carles</author>
       <comments></comments>
 	<media type="image">i2.jpg</media>
@@ -57,38 +57,38 @@
       <comments></comments>
 	<media type="image">i3.png</media>
       <answers>
-        <answer correct="True">penitencia</answer>
+        <answer correct="True">penitència</answer>
         <answer>pecat mortal</answer>
         <answer>correcte</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Endevina la montanya?</sentence>
+      <sentence>Endevina la muntanya</sentence>
       <author>Carles</author>
       <comments></comments>
 	<media type="image">i4_1.png|i4_2.jpg</media>
       <answers>
-        <answer correct="True">El pedraforca</answer>
-        <answer>El montseny</answer>
+        <answer correct="True">El Pedraforca</answer>
+        <answer>El Montseny</answer>
         <answer>Montserrat</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Endevina la montanya?</sentence>
+      <sentence>Endevina la muntanya</sentence>
       <author>Carles</author>
       <comments></comments>
 	<media type="image">i5_1.png|i5_2.jpg</media>
       <answers>
         <answer correct="True">Montserrat</answer>
-        <answer>El montseny</answer>
-        <answer>El pedraforca</answer>
+        <answer>El Montseny</answer>
+        <answer>El Pedraforca</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Endevina la colla?</sentence>
+      <sentence>Endevina la colla</sentence>
       <author>Carles</author>
       <comments></comments>
 	<media type="image">i6_1.png|i6_2.jpg</media>
@@ -149,7 +149,7 @@
     </question>
 
     <question>
-      <sentence>Que hi diu al poster que hi ha al despatx d'en Mulder?</sentence>
+      <sentence>Què hi diu, al pòster que hi ha al despatx d'en Mulder?</sentence>
       <author>Carles</author>
       <comments></comments>
 	<media type="image">i11_1.jpg|i11_2.jpg</media>
@@ -173,7 +173,7 @@
     </question>
 
     <question>
-      <sentence>Quan juguem a la butifarra, a quina carta anomenem manilla?</sentence>
+      <sentence>Quan juguem a la botifarra, quina carta anomenem manilla?</sentence>
       <author>Carles</author>
       <comments></comments>
 	<media type="image">i13_1.png|i13_2.png</media>
@@ -185,7 +185,7 @@
     </question>
 
     <question>
-      <sentence>Jugant a la brisca quin és l'ordre de puntuació de les cartes?</sentence>
+      <sentence>Jugant a la brisca, quin és l'ordre de puntuació de les cartes?</sentence>
       <author>Carles</author>
       <comments>L'as - 11 punts#3 - 10 punts#12 - 4 punts#11 - 3 punts#10 - 2 punts#La resta no valen res</comments>
 	<media type="image">i13_1.png|i14_2.png</media>
@@ -209,19 +209,19 @@
     </question>
 
     <question>
-      <sentence>Quina és la carta més cara en el joc de magic?</sentence>
+      <sentence>Quina és la carta més cara en el joc de màgic?</sentence>
       <author>Carles</author>
       <comments></comments>
 	<media type="image">i13_1.png|i16_2.png</media>
       <answers>
         <answer correct="True">El lotus negre</answer>
-        <answer>L'angel serra</answer>
+        <answer>L'àngel serra</answer>
         <answer>La crida ancestral</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Al mes de maig del 2008 quants nombres de la revista cavall fort havien sortit?</sentence>
+      <sentence>Al mes de maig del 2008, quants números de la revista Cavall Fort havien sortit?</sentence>
       <author>Carles</author>
       <comments></comments>
 	<media type="image">i17_1.jpg|i17_2.jpg</media>
@@ -233,43 +233,43 @@
     </question>
 
     <question>
-      <sentence>Pedra, paper o tisora?#Sols pots guanyar</sentence>
+      <sentence>Pedra, paper o tisores? #Si empates, perds!</sentence>
       <author>CarlesIMarc</author>
       <comments></comments>
 	<media type="image">|i20_1.png</media>
       <answers>
         <answer correct="True">Paper</answer>
         <answer>Pedra</answer>
-        <answer>Tisora</answer>
+        <answer>Tisores</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Pedra, paper o tisora?#Sols pots guanyar</sentence>
+      <sentence>Pedra, paper o tisores? #Si empates, perds!</sentence>
       <author>CarlesIMarc</author>
       <comments></comments>
 	<media type="image">|i20_2.png</media>
       <answers>
-        <answer correct="True">Tisora</answer>
+        <answer correct="True">Tisores</answer>
         <answer>Pedra</answer>
         <answer>Paper</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Pedra, paper o tisora?#Sols pots guanyar</sentence>
+      <sentence>Pedra, paper o tisores?#Si empates, perds!</sentence>
       <author>CarlesIMarc</author>
       <comments></comments>
 	<media type="image">|i20_3.png</media>
       <answers>
         <answer correct="True">Pedra</answer>
-        <answer>Tisora</answer>
+        <answer>Tisores</answer>
         <answer>Paper</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>He pensat un nombre. A veure si l'endevines.</sentence>
+      <sentence>He pensat un número. A veure si l'endevines!</sentence>
       <author>CarlesIMarc</author>
       <comments></comments>
 	<media type="image">|i20_1.png</media>
@@ -281,7 +281,7 @@
     </question>
 
     <question>
-      <sentence>He pensat un nombre. A veure si l'endevines.</sentence>
+      <sentence>He pensat un número. A veure si l'endevines!</sentence>
       <author>CarlesIMarc</author>
       <comments></comments>
 	<media type="image">|i20_2.png</media>
@@ -293,7 +293,7 @@
     </question>
 
     <question>
-      <sentence>He pensat un nombre. A veure si l'endevines.</sentence>
+      <sentence>He pensat un número. A veure si l'endevines!</sentence>
       <author>CarlesIMarc</author>
       <comments></comments>
 	<media type="image">|i20_3.png</media>
@@ -305,7 +305,7 @@
     </question>
 
     <question>
-      <sentence>Quantes cares te aquest dau??</sentence>
+      <sentence>Quantes cares té aquest dau??</sentence>
       <author>Nil</author>
       <comments></comments>
 	<media type="image">i18_1.png|i18_2.png</media>
@@ -316,6 +316,30 @@
       </answers>
     </question>
 
+
+    <question>
+      <sentence>A qui pertany aquest perfil?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i31_1.png|i31_2.png</media>
+      <answers>
+        <answer correct="True">Pau Casals</answer>
+        <answer>Jordi Pujol</answer>
+        <answer>Francesc Macià</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Endevina la colla</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i32_1.png|i32_2.png</media>
+      <answers>
+        <answer correct="True">Els Pets</answer>
+        <answer>Els Beatles</answer>
+        <answer>Els Gossos</answer>
+      </answers>
+    </question>
 
 
   </questions>

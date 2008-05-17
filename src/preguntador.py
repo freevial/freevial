@@ -218,22 +218,42 @@ class Preguntador:
 	# Inicialitzador de nova pregunta
 	#
 
-	def loadmediaimage( self, imagename, pos):
+	def loadmediaimage( self, imagename):
 
-		self.media_image = None
+		# codi horrible per anar ràpid. cal canviar-lo
+
+		self.media_image = []
+		self.media_image.append( None )
+		self.media_image.append( None )
+		self.media_image_dance = []
+		self.media_image_dance.append( None )
+		self.media_image_dance.append( None )
 
 		im = imagename
 		p = im.find('|')
 
 		if p != -1:
-			im = im[:p] if pos == 0 else im[p+1:]
+			im = imagename[:p] 
 
 		if im != "":
-			self.media_image = loadImage( im )
+			self.media_image[0] = loadImage( im )
 
-		if self.media_image	!= None:
+		if self.media_image[0]	!= None:
 
-			self.media_image_dance = ( (512-50)-(self.media_image.get_width()/2), ((768-100)/2-50)-(self.media_image.get_height()/2))
+			self.media_image_dance[0] = ( (512-50)-(self.media_image[0].get_width()/2), ((768-100)/2-50)-(self.media_image[0].get_height()/2))
+
+		if p != -1:	
+			im = imagename[p+1:]
+
+		if im != "":
+			self.media_image[1] = loadImage( im )
+
+		if self.media_image[1]	!= None:
+
+			self.media_image_dance[1] = ( (512-50)-(self.media_image[1].get_width()/2), ((768-100)/2-50)-(self.media_image[1].get_height()/2))
+
+
+
 
 	def initialize_question( self ):
 
@@ -258,7 +278,7 @@ class Preguntador:
 			self.audio.play( 1 )
 
 		if self.current_question["mediatype"] == "image":
-			self.loadmediaimage( self.current_question["media"], 0 )
+			self.loadmediaimage( self.current_question["media"]  )
 
 	###########################################
 	#
@@ -442,8 +462,6 @@ class Preguntador:
 			if acaba == 1 or (self.segons <= 0 and max_time != 0):
 
 				hide_answers = 0
-				if self.current_question["mediatype"] == "image":
-					self.loadmediaimage( self.current_question["media"], 1 )
 
 				if not Global.MUSIC_MUTE:
 					pygame.mixer.music.fadeout(2500)
@@ -485,11 +503,12 @@ class Preguntador:
 			if hide_answers != 3:
 		
 				if self.current_question["mediatype"] == "image" :
-					if self.media_image	!= None:
+					mostraim = 0 if self.show_answers == 0 else 1	
+					if self.media_image[mostraim]	!= None:						
 						t = time.time()
-						xi = cos(t)* float(self.media_image_dance[0])
-						yi = sin(t/2.5)* float(self.media_image_dance[1])
-						self.game.screen.blit( self.media_image, (xi+512-(self.media_image.get_width()/2), yi+(768/2)-(self.media_image.get_height()/2) + 70) )
+						xi = cos(t)* float(self.media_image_dance[mostraim][0])
+						yi = sin(t/2.5)* float(self.media_image_dance[mostraim][1])
+						self.game.screen.blit( self.media_image[mostraim], (xi+512-(self.media_image[mostraim].get_width()/2), yi+(768/2)-(self.media_image[mostraim].get_height()/2) + 70) )
 
 			if hide_answers != 1:
 				if self.use_mask:

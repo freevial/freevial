@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<database version="1.0" id="songs" language="ca">
+<database version="1.1" id="songs" language="ca">
   <information>
     <name>Kumbaworld</name>
     <description>Preguntes de cançons i músics</description>
@@ -20,6 +20,7 @@
     <image>categoria_kw.png</image>
     <sound>ckw.ogg</sound>
   </appearance>
+
   <questions>
     <question>
       <sentence>Quin era el so que de què ens parlaven en Paul i l'Art?</sentence>
@@ -32,16 +33,19 @@ left its seeds while I was sleeping.#
 And the vision that was planted#
 In my brain still remains#
 With the Sounds of Silence.</comments>
+
       <answers>
         <answer correct="True">El del silenci</answer>
         <answer>El de la pluja</answer>
         <answer>El de les mentides</answer>
       </answers>
     </question>
+
     <question>
       <sentence>Què ens ha dit la gallineta?</sentence>
       <author>Carles</author>
       <comments>La gallina ha dit que no,#visca la revolució.</comments>
+
       <answers>
         <answer correct="True">No</answer>
         <answer>Sí</answer>
@@ -72,9 +76,12 @@ Sangtraït#
         <answer>Lliure</answer>
         <answer>Ric</answer>
       </answers>
+
+
     </question>
+
     <question>
-      <sentence>Ara que som junts què direm#que tu i jo sabem i sovint oblidem?</sentence>
+      <sentence>Ara que som junts què direm,#que tu i jo sabem i sovint oblidem?</sentence>
       <author>carles</author>
       <comments>"Diguem no"##
 Ara que som junts#diré el que tu i jo sabem#i que sovint oblidem:##
@@ -104,6 +111,7 @@ Música d'Amadeu Vives#</comments>
         <answer>La masovera</answer>
       </answers>
     </question>
+
     <question>
       <sentence>Quants vents ens calen#per obrir pas?</sentence>
       <author>carles</author>
@@ -119,6 +127,7 @@ Obrint pas</comments>
         <answer>Dos</answer>
       </answers>
     </question>
+
     <question>
       <sentence>Si parlem de les hores passades,#de l'alegria que fas reviure al meu cor#i de les cançons cantades, parlem de... </sentence>
       <author>carles</author>
@@ -127,12 +136,14 @@ Obrint pas</comments>
 Vella xiruca, quantes hores passades,#quanta alegria fa reviure el meu cor,#quantes cançons al teu bon pas foren cantades,#no en resta cap record##
 #
 Pujant les muntanyes blanques de neu,#fent ruta vers el cel blau,#m´has fet descobrir la joia del bon Déu#i assaborir la pau#</comments>
+
       <answers>
         <answer correct="True">La vella xiruca</answer>
         <answer>El foc de camp</answer>
         <answer>La lluna</answer>
       </answers>
     </question>
+
     <question>
       <sentence>Quin grup van formar: Titot, Carles Belda,#Marcel Casellas, David Rosell, Joan Reig#i Pep Toni Rubio?</sentence>
       <author>carles</author>
@@ -152,6 +163,7 @@ Pujant les muntanyes blanques de neu,#fent ruta vers el cel blau,#m´has fet des
         <answer>Brams</answer>
       </answers>
     </question>
+
     <question>
       <sentence>En quina cançó N'gai N'gai recomanava agafar#la guitarra?</sentence>
       <author>carles</author>
@@ -160,22 +172,27 @@ Pujant les muntanyes blanques de neu,#fent ruta vers el cel blau,#m´has fet des
 Ei Pol petit agafa la guitarra cada nit#surt al carrer i canta una cançó#Canta ben fort i digues la veritat sense cap por#Ei Pol petit també cantaré jo.##
 ##
 N'gai N'gai</comments>
+
       <answers>
         <answer correct="True">En Pol Petit</answer>
         <answer>En Joan Petit</answer>
         <answer>La gent del món</answer>
       </answers>
     </question>
+
     <question>
       <sentence>Per què Sau va deixar de tocar?</sentence>
       <author>carles</author>
       <comments>Sau es va dissoldre l'any 1999 per la mort sobtada del cantant Carles Sabater en acabar un concert.</comments>
+
+
       <answers>
         <answer correct="True">Per la mort de Carles Sabater</answer>
         <answer>Per mals rotllos entre els seus membres</answer>
         <answer>Perquè no guanyaven prou diners</answer>
       </answers>
     </question>
+
     <question>
       <sentence>Com saluden al començar#un concert els Pets?</sentence>
       <author>carles</author>
@@ -186,6 +203,7 @@ N'gai N'gai</comments>
         <answer>Desperta ferro</answer>
       </answers>
     </question>
+
     <question>
       <sentence>Com saludaven al començar#un concert els Sopa de Cabra?</sentence>
       <author>carles</author>
@@ -196,6 +214,7 @@ N'gai N'gai</comments>
         <answer>Apa, vinga, som-hi!</answer>
       </answers>
     </question>
+
     <question>
       <sentence>Ningú m'ho ha demanat, però...</sentence>
       <author>carles</author>
@@ -203,12 +222,14 @@ N'gai N'gai</comments>
 Bon dia,#ningú m'ho ha demanat però fa bon dia,#damunt els caps un sol ben insolent#il·lumina descarat#tot l´espectacle de la gent. ##
 #
 Els pets#</comments>
+
       <answers>
         <answer correct="True">Fa bon dia</answer>
         <answer>Jo ho vull dir</answer>
         <answer>Jo canto</answer>
       </answers>
     </question>
+
     <question>
       <sentence>Els Gossos ens parlen quan ens sentim...</sentence>
       <author>carles</author>
@@ -353,7 +374,7 @@ Joan Manuel Serrat </comments>
     <question>
       <sentence>El nom Lax'n'busto té el seu origen en...</sentence>
       <author>carles</author>
-      <comments>D'una entrevista:##Lax’n’Busto és el nom d’ un antic medicament laxant. Com és que el vau triar?##Doncs estàvem diccionari en mà buscant un nom promocional pel primer concert. En Pemi Fortuny estava jugant amb una capseta petita on la seva tieta hi guardava els botons, perquè assajàvem al soterrani de casa seva. I ens va fer gràcia posar aquest nom pensant que ja el canviaríem, però s'hi ha quedat tota la vida. </comments>
+      <comments>D'una entrevista:##Lax’n’Busto és el nom d’un antic medicament laxant. Com és que el vau triar?##Doncs estàvem diccionari en mà buscant un nom promocional pel primer concert. En Pemi Fortuny estava jugant amb una capseta petita on la seva tieta hi guardava els botons, perquè assajàvem al soterrani de casa seva. I ens va fer gràcia posar aquest nom pensant que ja el canviaríem, però s'hi ha quedat tota la vida. </comments>
       <answers>
         <answer correct="True">Un medicament per anar de ventre</answer>
         <answer>Un clàssic del Rock'n'roll</answer>
@@ -421,7 +442,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
       </answers>
     </question>
     <question>
-      <sentence>Què va passar-li a en Pere Gallerí</sentence>
+      <sentence>Què va passar-li a en Pere Gallerí?</sentence>
       <author>carles</author>
       <comments>Se´n puja dalt d´un arbre#per veure el Francolí;#les branques eren guerxes,#se´n va tombar,tombí.##que la mort,que la vi#marxant d´en Pere Gallerí#com vares tururú com vares tu morir##popular</comments>
       <answers>

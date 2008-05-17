@@ -47,7 +47,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui porta la nova generació per a anar on no ha arribat mai ningú?</sentence>
+      <sentence>Qui guia la nova generació per a anar on no ha arribat mai ningú?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -61,7 +61,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">"Pirates of SillyconValley"</answer>
+        <answer correct="True">"Pirates of Sillycon Valley"</answer>
         <answer>"Begins of Computers"</answer>
         <answer>"War Games"</answer>
       </answers>
@@ -319,7 +319,7 @@
       </answers>
     </question>
     <question>
-      <sentence>El cartell de proves del Freevial està#copiat de la publicitat d'un videojoc#de 8 bits.#Com es deia  l'empresa que va fer-lo?</sentence>
+      <sentence>El cartell de proves del Freevial està#copiat de la publicitat d'un videojoc#de 8 bits.#Com es deia l'empresa que va fer-lo?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -382,11 +382,11 @@
     </question>
 
     <question>
-      <sentence>Quin d'aquestes series jocs no va fer Roberta Williams?</sentence>
+      <sentence>Quina d'aquestes sèries de jocs no va fer Roberta Williams?</sentence>
       <author>Carles</author>
-      <comments>Roberta i Ken Williams van ser els fundadors de Sierra Online.#Ella era escriptora de contes i ell desenvolupador.##Junts van fer algunes de les millors aventures gràfiques.##La serie Gabriel Night també de Sierra online no va ser escrita per ella#com tampoc la serie d'aventures d'en Larry Laffer.</comments>
+      <comments>Roberta i Ken Williams van ser els fundadors de Sierra Online.#Ella era escriptora de contes i ell desenvolupador.##Junts van fer algunes de les millors aventures gràfiques.##La sèrie Gabriel Knight, també de Sierra, online no va ser escrita per ella,#com tampoc la sèrie d'aventures d'en Larry Laffer.</comments>
       <answers>
-        <answer correct="True">Gabriel Night</answer>
+        <answer correct="True">Gabriel Knight</answer>
         <answer>Phantasmagoria</answer>
         <answer>King Quest</answer>
       </answers>
