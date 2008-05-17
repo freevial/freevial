@@ -67,7 +67,7 @@
       <sentence>Endevina la montanya?</sentence>
       <author>Carles</author>
       <comments></comments>
-	<media type="image">i4.png</media>
+	<media type="image">i4_1.png|i4_2.jpg</media>
       <answers>
         <answer correct="True">El pedraforca</answer>
         <answer>El montseny</answer>
@@ -79,7 +79,7 @@
       <sentence>Endevina la montanya?</sentence>
       <author>Carles</author>
       <comments></comments>
-	<media type="image">i5.png</media>
+	<media type="image">i5_1.png|i5_2.jpg</media>
       <answers>
         <answer correct="True">Montserrat</answer>
         <answer>El montseny</answer>
@@ -96,6 +96,79 @@
         <answer correct="True">Els Beatles</answer>
         <answer>Els Pets</answer>
         <answer>Els Gossos</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Qui la fa?</sentence>
+      <author>Carles</author>
+      <comments>La mítica fender stratocaster</comments>
+	<media type="image">i7_1.png|i7_2.png</media>
+      <answers>
+        <answer correct="True">Fender</answer>
+        <answer>Ibanez</answer>
+        <answer>Gibson</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>A quina versió d'ubuntu pertany aquest CD?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i8.jpg</media>
+      <answers>
+        <answer correct="True">Dapper</answer>
+        <answer>Breezy</answer>
+        <answer>Edgy</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>A quina versió d'ubuntu pertany aquest CD?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i9.jpg</media>
+      <answers>
+        <answer correct="True">Warty</answer>
+        <answer>Hoary</answer>
+        <answer>Edgy</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>A quina versió d'ubuntu pertany aquest CD?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i10.jpg</media>
+      <answers>
+        <answer correct="True">Hardy</answer>
+        <answer>Gutsy</answer>
+        <answer>Feisty</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Que hi diu al poster que hi ha al despatx d'en Mulder?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i11_1.jpg|i11_2.jpg</media>
+      <answers>
+        <answer correct="True">Jo vull creure</answer>
+        <answer>La veritat és allà fora</answer>
+        <answer>Nena, fes-me el dia</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>A qui trobarem muntat en aquesta motocicleta?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i12_1.jpg|i12_2.jpg</media>
+      <answers>
+        <answer correct="True">Darth Vader</answer>
+        <answer>Batman</answer>
+        <answer>Wario</answer>
       </answers>
     </question>
 
