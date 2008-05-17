@@ -172,6 +172,42 @@
       </answers>
     </question>
 
+    <question>
+      <sentence>Quan juguem a la butifarra, a quina carta anomenem manilla?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i13_1.png|i13_2.png</media>
+      <answers>
+        <answer correct="True">9</answer>
+        <answer>As</answer>
+        <answer>7</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Jugant a la brisca quin és l'ordre de puntuació de les cartes?</sentence>
+      <author>Carles</author>
+      <comments>L'as - 11 punts#3 - 10 punts#12 - 4 punts#11 - 3 punts#10 - 2 punts#La resta no valen res</comments>
+	<media type="image">i13_1.png|i14_2.png</media>
+      <answers>
+        <answer correct="True">As, 3, 12, 11, 10</answer>
+        <answer>As, 9, 7, 3, 12, 11, 10, 8...</answer>
+        <answer>As, 2, 3, 4, 5...</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Quina és la carta més important del joc jugant a l'escombra?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i13_1.png|i15_2.png</media>
+      <answers>
+        <answer correct="True">7 d'oros</answer>
+        <answer>3 de copes</answer>
+        <answer>As de bastos</answer>
+      </answers>
+    </question>
+
   </questions>
 
 </database>
