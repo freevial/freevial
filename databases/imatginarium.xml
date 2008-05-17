@@ -244,6 +244,18 @@
       </answers>
     </question>
 
+    <question>
+      <sentence>Quantes cares te aquest dau??</sentence>
+      <author>Nil</author>
+      <comments></comments>
+	<media type="image">i18_1.png|i18_2.png</media>
+      <answers>
+        <answer correct="True">20</answer>
+        <answer>15</answer>
+        <answer>18</answer>
+      </answers>
+    </question>
+
 
 
   </questions>
