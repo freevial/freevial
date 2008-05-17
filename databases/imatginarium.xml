@@ -208,6 +208,30 @@
       </answers>
     </question>
 
+    <question>
+      <sentence>Quina és la carta més cara en el joc de magic?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i13_1.png|i16_2.png</media>
+      <answers>
+        <answer correct="True">El lotus negre</answer>
+        <answer>L'angel serra</answer>
+        <answer>La crida ancestral</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Al mes de maig del 2008 quants nombres de la revista cavall fort havien sortit?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i17_1.jpg|i17_2.jpg</media>
+      <answers>
+        <answer correct="True">1.099</answer>
+        <answer>3.545</answer>
+        <answer>8.342</answer>
+      </answers>
+    </question>
+
   </questions>
 
 </database>
