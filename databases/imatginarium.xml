@@ -63,7 +63,41 @@
       </answers>
     </question>
 
+    <question>
+      <sentence>Endevina la montanya?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i4.png</media>
+      <answers>
+        <answer correct="True">El pedraforca</answer>
+        <answer>El montseny</answer>
+        <answer>Montserrat</answer>
+      </answers>
+    </question>
 
+    <question>
+      <sentence>Endevina la montanya?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i5.png</media>
+      <answers>
+        <answer correct="True">Montserrat</answer>
+        <answer>El montseny</answer>
+        <answer>El pedraforca</answer>
+      </answers>
+    </question>
+
+    <question>
+      <sentence>Endevina la colla?</sentence>
+      <author>Carles</author>
+      <comments></comments>
+	<media type="image">i6_1.png|i6_2.jpg</media>
+      <answers>
+        <answer correct="True">Els Beatles</answer>
+        <answer>Els Pets</answer>
+        <answer>Els Gossos</answer>
+      </answers>
+    </question>
 
   </questions>
 

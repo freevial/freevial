@@ -217,6 +217,17 @@ class Preguntador:
 	#
 	# Inicialitzador de nova pregunta
 	#
+
+	def loadmediaimage( self, imagename, pos):
+		im = imagename
+		p = im.find('|')
+
+		if p != -1:
+			im = im[:p] if pos == 0 else im[p+1:]
+
+		self.media_image = loadImage( im )
+		self.media_image_dance = ( (512-50)-(self.media_image.get_width()/2), ((768-100)/2-50)-(self.media_image.get_height()/2))
+
 	def initialize_question( self ):
 
 		self.sfc_pregunta  = self.preguntadorPintatext( self.current_question['text'], self.game.skin.configGetInt("question_width") )
@@ -240,8 +251,7 @@ class Preguntador:
 			self.audio.play( 1 )
 
 		if self.current_question["mediatype"] == "image":
-			self.media_image = loadImage( self.current_question["media"] )
-			self.media_image_dance = ( (512-50)-(self.media_image.get_width()/2), ((768-100)/2-50)-(self.media_image.get_height()/2))
+			self.loadmediaimage( self.current_question["media"], 0 )
 
 	###########################################
 	#
@@ -425,6 +435,8 @@ class Preguntador:
 			if acaba == 1 or (self.segons <= 0 and max_time != 0):
 
 				hide_answers = 0
+				if self.current_question["mediatype"] == "image":
+					self.loadmediaimage( self.current_question["media"], 1 )
 
 				if not Global.MUSIC_MUTE:
 					pygame.mixer.music.fadeout(2500)
