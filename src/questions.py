@@ -25,8 +25,9 @@
 
 import os
 import sys
-from lxml import etree, objectify
 import gettext
+from lxml import etree, objectify
+from random import sample
 
 from common.freevialglob import *
 from common.uncompress import Uncompressor
@@ -136,9 +137,10 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 	
 	for question in root.questions.getchildren():
 		
-		if question.answers.countchildren() != 3:
-			print >> sys.stderr, _(u'Warning: «%s»: Found a question with ' + \
-                'an incorrect number of answers; ignoring it.') % xmlFile
+		if question.answers.countchildren() < 3:
+			# Support for more than 2 incorrect answers was added in 1.3
+			print >> sys.stderr, _(u'Warning: «%s»: Found a question with' + \
+                'less than 3 answers; ignoring it.') % xmlFile
 			continue
 		
 		answers = []
@@ -161,6 +163,10 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 				' any correct answer; ignoring it.') % xmlFile
 			continue
 		
+		if len(answers) > 3:
+			# Choose randomly two of the many incorrect answers provided
+			answers = [answers[0]] + sample(answers[1:], 2)
+		
 		if hasattr(question, 'comments') and question.comments.text is not None:
 			comment = question.comments.text
 		else:
@@ -182,7 +188,7 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 			if difficulty:
 				difficulty = difficulty.lower().capitalize()
 			if difficulty not in ('Easy', 'Medium', 'Hard'):
-				print _(u'Warning: «%s»: Found a question with the incorrect' + \
+				print _(u'Warning: «%s»: Found a question with incorrect' + \
 					' difficulty level «%s».') % (xmlFile, difficulty)
 				difficulty = 'Medium'
 		

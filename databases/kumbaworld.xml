@@ -8,12 +8,12 @@
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139485</timestamp_modification>
 
-	<license>gpl</license>
+	<license>GPLv3</license>
 	<url>http://www.freevial.org/bases/kumbaworld.xml</url>
 	<contact>info@freevial.org</contact>
 
     <authors>
-      <author>Carles Oriol, &lt;email&gt;</author>
+      <author>Carles Oriol</author>
     </authors>
   </information>
   <appearance>

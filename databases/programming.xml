@@ -8,16 +8,16 @@
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139484</timestamp_modification>
 
-	<license>gpl</license>
+	<license>GPLv3</license>
 	<url>http://www.freevial.org/bases/programming.xml</url>
 	<contact>info@freevial.org</contact>
 
     <authors>
-      <author>Nil Oriol, &lt;email&gt;</author>
-      <author>Josep Sànchez, &lt;email&gt;</author>
-      <author>Lluïsa Núñez, &lt;email&gt;</author>
-      <author>Carles Oriol, &lt;email&gt;</author>
-      <author>Siegfried Gevatter, &lt;email&gt;</author>
+      <author>Nil Oriol</author>
+      <author>Josep Sànchez</author>
+      <author>Lluïsa Núñez,</author>
+      <author>Carles Oriol</author>
+      <author>Siegfried Gevatter</author>
     </authors>
   </information>
   <appearance>
@@ -38,11 +38,12 @@
     <question>
       <sentence>A continuació hi ha tres enumeracions de «toolkits» per a la creació d'interfícies gràfiques. Quina és incorrecta?</sentence>
       <author>RainCT</author>
-      <comments>El nom «Tc» és fictici. Tots els altres existeixen realment (http://freshmeat.net/articles/view/928/).</comments>
+      <comments>El nom «Tc» és fictici. Tots els altres existeixen realment (http://freshmeat.net/articles/view/928/, http://www.free-soft.org/guitool/).</comments>
       <answers>
         <answer correct="True">Gtk, Tc, Gambas, Qt4, FLTK</answer>
         <answer>Tk, Gtk+, wxWindows, Qt</answer>
         <answer>Gtk, Qt3, FOX</answer>
+        <answer>Epeios, Fltk, FOX, Fresco, GINA</answer>
       </answers>
     </question>
     <question>

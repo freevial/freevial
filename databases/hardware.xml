@@ -8,18 +8,18 @@
     <timestamp_creation>1189202400</timestamp_creation>
     <timestamp_modification>1200139484</timestamp_modification>
 
-	<license>gpl</license>
+	<license>GPLv3</license>
 	<url>http://www.freevial.org/bases/hardware.xml</url>
 	<contact>info@freevial.org</contact>
 
     <authors>
-      <author>Nil Oriol, &lt;email&gt;</author>
-      <author>Josep Sànchez, &lt;email&gt;</author>
-      <author>Lluïsa Núñez, &lt;email&gt;</author>
-      <author>Carles Oriol, &lt;email&gt;</author>
-      <author>Siegfried Gevatter, &lt;email&gt;</author>
-      <author>Cortsenc, &lt;email&gt;</author>
-      <author>Julià Mestieri, &lt;email&gt;</author>
+      <author>Nil Oriol</author>
+      <author>Josep Sànchez</author>
+      <author>Lluïsa Núñez</author>
+      <author>Carles Oriol</author>
+      <author>Siegfried Gevatter</author>
+      <author>Cortsenc</author>
+      <author>Julià Mestieri</author>
     </authors>
   </information>
   <appearance>

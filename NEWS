@@ -7,6 +7,8 @@ of database version 1.1, which provides new audio possibilities.
 
 Improvements:
  - Added support for questions with sound.
+ - Added support for questions with more than two incorrect answers (Freevial
+   will randomly choose two of them when it loads the database).
 
 Bug Fixes:
  - Fixed the --database option; it did not work previously.
