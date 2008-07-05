@@ -66,12 +66,13 @@ class Freevial:
 		pygame.display.set_icon( loadImage('freevial.png') )
 		
 		if not Global.DEBUG_MODE:
+			
 			pygame.mouse.set_visible( False )
-
+			
 			if Global.FULLSCREEN_MODE:
 				pygame.display.toggle_fullscreen()
 		
-		# inicialize sound and text systems
+		# Initialize sound system
 		if not (Global.SOUND_MUTE and Global.MUSIC_MUTE):
 			try:
 				pygame.mixer.pre_init(44100, -16, 2, 2048)
@@ -235,7 +236,15 @@ if '--no-media' in sys.argv or (Global.SOUND_MUTE and Global.MUSIC_MUTE):
 	Global.DISABLE_MEDIA = True
 
 if '--dbus' in sys.argv:
-	Global.DBUS = True
+	try:
+		import dbus
+	except:
+		print _('Error: Couldn\'t find dbus-python.')
+		sys.exit( 1 )
+	else:
+		Global.DBUS = True
+		Global.session_bus = dbus.SessionBus()
+		import common.dbus
 
 if '--skin' in sys.argv:
 	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--skin' ) + 1]))
