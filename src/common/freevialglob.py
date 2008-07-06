@@ -116,40 +116,40 @@ def loadImagehttp( filename ):
 
 
 def loadImage( name, colorkey = None, rotate = 0 ):
-	""" Returns a Surface of the indicated image, which is expected to be in the images folder. """
-
+	""" Returns a Surface of the indicated image, which is expected to be in one
+	of the images directories. """
+	
 	image = None
-
-
-	if name[:7].upper() == u"HTTP://":
+	
+	if name[:7].lower() == u"http://":
 	
 		image = loadImagehttp( name )
-
+	
 	else:
-	
-		fullname = os.path.join(Global.folders['images'], str(name))
-	
-		if not os.path.exists( fullname ):
 		
+		fullname = os.path.join(Global.folders['images'], name)
+		
+		if not os.path.exists( fullname ):
+			
 			# Also try in teamgotxies path
-			fullname = os.path.join(Global.folders['teamgotxies'], str(name))
-
+			fullname = os.path.join(Global.folders['teamgotxies'], name)
+			
 			if not os.path.exists( fullname ):
 				# Also try in database paths
 				for foldername in Global.databasefolders:
-					fulln = os.path.join(foldername, str(name))
+					fulln = os.path.join(foldername, name)
 					if os.path.exists( fulln ):
-						fullname = fulln				
+						fullname = fulln
 						break
 		
 		try:
 			image = pygame.image.load(fullname)
-		except pygame.error, message:		
+		except pygame.error, message:
 			print _('Failed loading image: %s' % fullname)
 			raise SystemExit, message
 	
 	if image != None:
-
+		
 		if colorkey is not None:
 			if colorkey is -1:
 				colorkey = image.get_at((0,0))
@@ -157,11 +157,11 @@ def loadImage( name, colorkey = None, rotate = 0 ):
 			image.set_colorkey(colorkey, pygame.RLEACCEL)
 		else:
 			image = image.convert_alpha()
-	
+		
 		if rotate != 0:
 			image = rotateImage(image, rotate)
 	
-	return image	# [ image, image.get_rect() ]
+	return image
 
 
 def loadSound( name, volume = 1.0, music = False ):
@@ -226,7 +226,7 @@ def render_text( cadena, color, mida, antialias = 0, font_name = '', maxwidth = 
 			font_name = default_font
 		font_path = os.path.join(Global.folders['fonts'], font_name)
 		if os.path.isfile( font_path ):
-			font = pygame.font.Font( font_name, mida )
+			font = pygame.font.Font( font_path, mida )
 		else:
 			# NOT WORKING IN PYGAME
 			font = pygame.font.SysFont( font_name, mida )
@@ -272,7 +272,10 @@ def render_text( cadena, color, mida, antialias = 0, font_name = '', maxwidth = 
 				pos += max(sfcs[num].get_height(), mida)
 		
 		else:
-			sfc = sfcs[0] if len(sfcs) == 1 else None
+			if len(sfcs) == 1:
+				sfc = sfcs[0]
+			else:
+				sfc = None
 	else:
 		sfc = font.render( cadena, antialias, color )
 	
@@ -518,9 +521,12 @@ def readLocalizedHelpFile( help_section ):
 def createHelpScreen( help_section, alternate_text = False ):
 	""" Creates a help overlay surface based on a help file. """
 	
-	return createTextSurface( readLocalizedHelpFile( help_section ), (0, 255, 255) if alternate_text else (255, 255, 0) )
-
-i_colors_cat = ( (0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,255,0) )
+	if alternate_text:
+		text_color = (0, 255, 255)
+	else:
+		text_color = (255, 255, 0)
+	
+	return createTextSurface( readLocalizedHelpFile( help_section ), text_color )
 
 
 def initTextos():
@@ -532,6 +538,8 @@ def initTextos():
 def valorText( ntext ):
 	return textos[ ntext ]
 
+
+i_colors_cat = ( (0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,255,0) )
 
 def colorsCategories():
 
@@ -562,7 +570,7 @@ HOS_RODA_ATURA = 9
 HOS_NEW_GAME = 10
 
 
-class helpOnScreen():
+class helpOnScreen:
 	
 	text = ''
 	scf_text = None
@@ -605,7 +613,7 @@ class helpOnScreen():
 			self.sec_darrera_activitat = time.time()
 
 
-class frameRate():
+class frameRate:
 	""" Calculates the frame rate (FPS), limits it and, if choosen so, displays it on screen. """
 	
 	seconds = fps = fps_current = fps_limit = lastTicks = t_inici = 0
@@ -626,7 +634,11 @@ class frameRate():
 			self.fps = self.fps_current
 			self.fps_current = 0
 			if Global.DISPLAY_FPS:
-				self.textSurface = render_text( 'FPS: ' + str( self.fps if self.fps > 0 else 'N/a' ), (128, 128, 128), 15, 1 )
+				if self.fps > 0:
+					fps_text = str(self.fps)
+				else:
+					fps_text = 'N/a'
+				self.textSurface = render_text( 'FPS: ' + fps_text, (128, 128, 128), 15, 1 )
 		else:
 			self.fps_current += 1
 		

@@ -43,11 +43,17 @@ class Nau:
 		spin = 0
 
 		def __init__( self, angle = None ):
-
-			self.dir = angle if angle else random.randint( 0, 359 )
+			
+			if angle:
+				self.dir = angle
+			else:
+				self.dir = random.randint( 0, 359 )
 			self.vel = random.randint( 7, 15 )
 			self.img = random.randint( 0, 71 )
-			self.spin = random.randint( 1, 3) * -1 if random.randint(0,1) else 1 
+			if random.randint(0,1):
+				self.spin = random.randint( 1, 3) * -1
+			else:
+				self.spin = 1
 
 			self.x += math.cos( self.dir ) * 100
 			self.y += math.sin( self.dir ) * 100
@@ -217,7 +223,10 @@ class Visca:
 				Global.game.screen.fill( (0,0,0) )
 
 			for cua in cues:
-				dist = int((time.time() - cua.time) * 40) if cua.cau == 0 else 0
+				if cua.cau == 0:
+					dist = int((time.time() - cua.time) * 40)
+				else:
+					dist = 0
 				Global.game.screen.blit( self.sfc_llum, ( cua.pos[0] + random.randint(-dist,dist), cua.pos[1] + random.randint(-dist,dist)) )
 
 			for nau in self.naus:

@@ -24,7 +24,7 @@
 
 import os
 
-class Uncompressor():
+class Uncompressor:
 	""" Provides an interface to handle files compressed with both, tar and zip format, the same way.\n """
 	
 	def __init__(self, filename, mode='r'):

@@ -191,8 +191,11 @@ class EventHandle:
 	
 	def str( self ):
 		
-		return printKey(self.event.key) if self._isKeyEvent() else ''
-		
+		if self._isKeyEvent():
+			return printKey(self.event.key)
+		else:
+			return ''
+	
 	
 	def base_actions( self ):
 		
@@ -253,8 +256,11 @@ def printKey( tecla ):
 		return ' '
 	
 	if keyname == 'world 71':
-		return u'Ç' if pygame.key.get_mods() & pygame.KMOD_SHIFT else u'ç'
-		
+		if pygame.key.get_mods() & pygame.KMOD_SHIFT:
+			return u'Ç'
+		else:
+			return u'ç'
+	
 	if keyname == 'tab':
 		return '    '
 	

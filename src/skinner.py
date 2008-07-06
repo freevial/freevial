@@ -83,31 +83,44 @@ class Skin:
 	def set_domain( self, domain ):
 		self.domain = domain
 	
-	def configGet( self, field, domain = None ):
+	def configGet( self, field, domain = None, type = None ):
 		
-		try:
-			text = self.config.get( domain if domain else self.domain, field )
+		if not domain:
+			domain = self.domain
 		
-		except (NoOptionError, NoSectionError):
-			try:
-				text = self.defconfig.get( domain if domain else self.domain, field )
-			except (NoOptionError, NoSectionError):
-				text = 0
+		if self.config.has_section(domain) and self.config.has_option(domain, field):
+			conf = self.config
+		elif self.defconfig.has_section(domain) and self.defconfig.has_option(domain, field):
+			conf = self.defconfig
+		else:
+			conf = None
 		
-		return text
+		if conf:
+			if type == bool:
+				value = conf.getboolean(domain, field)
+			elif type == int:
+				value = conf.getint(domain, field)
+			elif type == float:
+				value = conf.getfloat(domain, field)
+			else:
+				value = conf.get(domain, field)
+		else:
+			value = 0
+		
+		return value
 	
 	def configGetInt( self, field, domain = None ):	
-		return int( self.configGet( field, domain ) ) 
+		return self.configGet( field, domain, type = int )
 	
 	def configGetFloat( self, field, domain = None ):	
-		return float( self.configGet( field, domain ) ) 
+		return self.configGet( field, domain, type = float )
 	
 	def configGetBool( self, field, domain = None ):
-		return True if self.configGet( field, domain ) == "True" else False
+		return self.configGet( field, domain, type = bool )
 
-	def configGetEval( self, field, domain = None ):	
+	def configGetEval( self, field, domain = None ):
 		toeval = self.configGet( field, domain )
-		return eval( toeval ) 
+		return eval( str(toeval) )
 
 	def configGetRGB( self, field, domain = None ):	
 		return self.configGetEval( field, domain )
@@ -125,7 +138,6 @@ class Skin:
 
 	def LoadImage( self, field, domain = None ):
 		
-		#print field, domain, self.configGet( field, domain )
 		return self.directLoadImage( self.configGet( field, domain ) )
 
 	
@@ -146,13 +158,19 @@ class Skin:
 		
 		fullname = os.path.join( Global.skin_folder, name )
 		
-		return loadSound( fullname if os.path.exists( fullname ) else name, volume = volume, music = music )
+		if os.path.isfile( fullname ):
+			name = fullname
+		
+		return loadSound( name, volume = volume, music = music )
 
 	def preguntadorCarregaFiguretes( self, joc, selcat ):
 		self.mostra_punt_de_categoria = True
 		self.figureta_no = loadImage('points/freevial_tot' + str( joc.teams[joc.current_team].figureta).zfill(2) + '.png')
 		self.figureta_si = loadImage('points/freevial_tot' + str( joc.teams[joc.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
-		self.match_point = True if (joc.teams[joc.current_team].figureta | bitCategoria ( selcat ) == 63) else False
+		if joc.teams[joc.current_team].figureta | bitCategoria ( selcat ) == 63:
+			self.match_point = True
+		else:
+			self.match_point = False
 
 	def search_font_name( self, nomfont ):
 

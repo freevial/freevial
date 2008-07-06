@@ -135,8 +135,11 @@ class SelCat:
 		self.help_on_screen.activitat()
 			
 		seleccio = 0
-
-		nelements = len(self.cp) if estat == 0 else 6
+		
+		if estat == 0:
+			nelements = len(self.cp)
+		else:
+			nelements = 6
 
 		while 1:
 				
@@ -192,9 +195,11 @@ class SelCat:
 
 			self.game.screen.blit( self.mascara_de_fons, (0, 0) )
 			self.game.screen.blit( self.sel_quadres, (0, 0) )
-
-
-			nelements = len(self.cp) if estat == 0 else 6
+			
+			if estat == 0:
+				nelements = len(self.cp)
+			else:
+				nelements = 6
 
 			posact= 220
 			for num in range(primer_element_a_la_vista, nelements):	
