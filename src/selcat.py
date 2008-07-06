@@ -193,10 +193,7 @@ class SelCat:
 			self.game.screen.blit( self.mascara_de_fons, (0, 0) )
 			self.game.screen.blit( self.sel_quadres, (0, 0) )
 			
-			if estat == 0:
-				nelements = len(self.cp)
-			else:
-				nelements = 6
+			nelements = if2(estat == 0, len(self.cp), 6)
 
 			posact= 220
 			for num in range(primer_element_a_la_vista, nelements):	

@@ -27,7 +27,7 @@ import sys
 import re
 import pygame
 
-from freevialglob import screenshot
+from freevialglob import screenshot, if2
 
 
 mouseButtons = {
@@ -191,10 +191,7 @@ class EventHandle:
 	
 	def str( self ):
 		
-		if self._isKeyEvent():
-			return printKey(self.event.key)
-		else:
-			return ''
+		return if2(self._isKeyEvent(), printKey(self.event.key), '')
 	
 	
 	def base_actions( self ):

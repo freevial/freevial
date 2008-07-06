@@ -304,7 +304,7 @@ class Preguntador:
 		
 		if not maxample:
 			maxample = 1024
-		sfc = pygame.Surface( ( maxample, nalt ), pygame.SRCALPHA, 32 )
+		sfc = pygame.Surface( ( if2(maxample, maxample, 1024), nalt ), pygame.SRCALPHA, 32 )
 
 		nalt = 0
 		nlinia = 0
@@ -372,10 +372,7 @@ class Preguntador:
 			mostra_punt_de_categoria = True
 			figureta_no = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta).zfill(2) + '.png')
 			figureta_si = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
-			if self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat ) == 63:
-				match_point = True
-			else:
-				match_point = False
+			match_point = self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat ) == 63
 		
 		mostra_comentaris = False
 		sfc_comentaris = None
@@ -479,10 +476,8 @@ class Preguntador:
 						self.so_ok.play()
 					else:
 						self.so_nook.play()
-					if self.current_question['comment']:
-						notes = self.current_question['comment'].split('#')
-					else:
-						notes = "."
+					notes = if2(self.current_question['comment'],
+						self.current_question['comment'].split('#'), ".")
 					sfc_comentaris = createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
 					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.current_question['comment'] ) <= 5:
@@ -515,11 +510,8 @@ class Preguntador:
 			# si és pregunta d'imatge la mostrem
 			if hide_answers != 3:
 		
-				if self.current_question["mediatype"] == "image" :
-					if self.show_answers == 0:
-						mostraim = 0
-					else:
-						mostraim = 1
+				if self.current_question['mediatype'] == 'image':
+					mostraim = if2(self.show_answers == 0, 0, 1)
 					if self.media_image[mostraim]	!= None:						
 						t = time.time()
 						xi = cos(t)* float(self.media_image_dance[mostraim][0])
@@ -608,18 +600,12 @@ class Preguntador:
 							self.game.screen.blit( self.solucio_nook, (posnook, linia_act + (150 * num)) )
 				
 				if len( self.current_question['comment'] ) > 5:
-					if (int(time.time() * 3) % 3) == 0:
-						info_blit = self.info[0]
-					else:
-						info_blit = self.info[1]
-					self.game.screen.blit( info_blit, (self.postextx, 150) )
+					self.game.screen.blit( if2((int(time.time() * 3) % 3) == 0,
+						self.info[0], self.info[1]), (self.postextx, 150) )
 				
 			if mostra_punt_de_categoria:
 				current_time = time.time()
-				if (int(current_time * 2) % 2) == 0:
-					figureta_blit = figureta_no
-				else:
-					figureta_blit = figureta_si
+				figureta_blit = if2((int(current_time * 2) % 2) == 0, figureta_no, figureta_si)
 				if match_point:
 					for num in range( 0, 16 ) :
 						self.game.screen.blit( figureta_blit, (
@@ -652,12 +638,10 @@ class Preguntador:
 
 				if team.teamgotxie_sfc != None:
 					self.game.screen.blit( team.teamgotxie_sfc, ( self.teamgotxies_pos[0] - team.teamgotxie_sfc.get_width() / 2, self.teamgotxies_pos[1] - team.teamgotxie_sfc.get_height() / 2 ) )
-
-			if self.show_answers:
-				hos_message = HOS_PREGUNTADOR_END 
-			else:
-				hos_message = HOS_PREGUNTADOR_RUN
- 			self.help_on_screen.draw( self.game.screen, (350, 740), hos_message, extra = textmostra )
+			
+ 			self.help_on_screen.draw( self.game.screen, (350, 740),
+ 				if2(self.show_answers, HOS_PREGUNTADOR_END, HOS_PREGUNTADOR_RUN),
+ 				extra = textmostra )
 			
 			if mostra_ajuda: self.game.screen.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.game.screen.blit( self.game.sfc_credits, (0,0))

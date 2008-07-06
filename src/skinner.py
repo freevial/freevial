@@ -167,10 +167,7 @@ class Skin:
 		self.mostra_punt_de_categoria = True
 		self.figureta_no = loadImage('points/freevial_tot' + str( joc.teams[joc.current_team].figureta).zfill(2) + '.png')
 		self.figureta_si = loadImage('points/freevial_tot' + str( joc.teams[joc.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
-		if joc.teams[joc.current_team].figureta | bitCategoria ( selcat ) == 63:
-			self.match_point = True
-		else:
-			self.match_point = False
+		self.match_point = joc.teams[joc.current_team].figureta | bitCategoria ( selcat ) == 63
 
 	def search_font_name( self, nomfont ):
 

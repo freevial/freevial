@@ -272,10 +272,7 @@ def render_text( cadena, color, mida, antialias = 0, font_name = '', maxwidth = 
 				pos += max(sfcs[num].get_height(), mida)
 		
 		else:
-			if len(sfcs) == 1:
-				sfc = sfcs[0]
-			else:
-				sfc = None
+			sfc = if2(len(sfcs) == 1, sfcs[0], None)
 	else:
 		sfc = font.render( cadena, antialias, color )
 	
@@ -521,12 +518,8 @@ def readLocalizedHelpFile( help_section ):
 def createHelpScreen( help_section, alternate_text = False ):
 	""" Creates a help overlay surface based on a help file. """
 	
-	if alternate_text:
-		text_color = (0, 255, 255)
-	else:
-		text_color = (255, 255, 0)
-	
-	return createTextSurface( readLocalizedHelpFile( help_section ), text_color )
+	return createTextSurface( readLocalizedHelpFile( help_section ),
+		if2(alternate_text, (0, 255, 255), (255, 255, 0)) )
 
 
 def initTextos():
@@ -634,11 +627,8 @@ class frameRate:
 			self.fps = self.fps_current
 			self.fps_current = 0
 			if Global.DISPLAY_FPS:
-				if self.fps > 0:
-					fps_text = str(self.fps)
-				else:
-					fps_text = 'N/a'
-				self.textSurface = render_text( 'FPS: ' + fps_text, (128, 128, 128), 15, 1 )
+				self.textSurface = render_text( 'FPS: ' + if2(self.fps > 0,
+					str(self.fps), 'N/a'), (128, 128, 128), 15, 1 )
 		else:
 			self.fps_current += 1
 		
@@ -703,7 +693,7 @@ def inkimage ( sourceimage, color ):
 def if2( boolean, val1, val2 ):
 	"""An 'a if b else c'-syntax replacement for Python 2.4."""
 
-	if boolean:
+	if bool(boolean):
 		return val1
 	else:
 		return val2

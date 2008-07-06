@@ -190,18 +190,12 @@ class Roda:
 				offset = int(rpos) % 200
 				if offset != 0: 
 					if offset > 100:
-						if offset < (200 - deceleracio):
-							pos += deceleracio
-						else:
-							pos += 1
-						
+						pos += if2(offset < (200 - deceleracio), deceleracio, 1)
 					elif offset <= 100:
-						if offset > deceleracio:
-							pos -= deceleracio
-						else:
-							pos = 1
+						pos -= if2(offset > deceleracio, deceleracio, 1)
 						
-						if pos <= -1200: pos += 1200
+						if pos <= -1200:
+							pos += 1200
 				
 				else:
 					resultat = int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )

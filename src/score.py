@@ -123,15 +123,15 @@ class Score:
 		
 		if self.show_corrects:
 			
-			if game.skin.configGet( 'correct_done_image' ):
-				self.correct_done_image = game.skin.LoadImage( 'correct_done_image' )
-			else:
-				self.correct_done_image = None
+			self.correct_done_image = if2(
+				game.skin.configGet('correct_done_image'),
+				game.skin.LoadImage('correct_done_image'),
+				None)
 			
-			if game.skin.configGet( "correct_notdone_image" ):
-				self.correct_notdone_image = game.skin.LoadImage( 'correct_notdone_image' )
-			else:
-				self.correct_notdone_image = None
+			self.correct_notdone_image = if2(
+				game.skin.configGet('correct_notdone_image'),
+				game.skin.LoadImage('correct_notdone_image'),
+				None)
 		
 		self.sfc_cursor = game.skin.render_text( "_", (self.score_color_text), self.score_mida_text, 1)
 	
@@ -258,11 +258,7 @@ class Score:
 		
 		ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = show_stats = 0
 		element_seleccionat = self.game.current_team
-		
-		if teamsActius( self.game.teams ) == 0:
-			nou_grup = 1
-		else:
-			nou_grup = 0
+		nou_grup = if2(teamsActius( self.game.teams ) == 0, 1, 0)
 		
 		# Modes: 0 (choosing teams), 1 (playing),  2 (game ended)
 		mode = 1
@@ -369,10 +365,7 @@ class Score:
 					if mode == 0:
 						
 						if eventhandle.keyUp('RIGHT', 'LEFT'):
-							if 0 == (element_seleccionat % 2):
-								element_seleccionat += 1
-							else:
-								element_seleccionat -= 1 
+							element_seleccionat += if2(0 == (element_seleccionat % 2), 1, -1)
 							self.so_sub.play()
 						
 						if eventhandle.keyUp('DOWN'): 
@@ -519,10 +512,7 @@ class Score:
 				
 					if element_seleccionat == num and self.score_element_sobre != "True":
 						for compta in xrange( 0, self.seleccio_score.get_height() ):
-							if mode:
-								desp = cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0
-							else:
-								desp = 0
+							desp = if2(mode, cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0, 0)
 							self.game.screen.blit( self.seleccio_score, (xcaixa + self.score_element_sel_offsetx + desp, ycaixa + self.score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
 				
 					if self.game.teams[num].actiu:
@@ -534,18 +524,15 @@ class Score:
 					
 						if self.game.teams[num].sfc_nom:
 							self.game.screen.blit( self.game.teams[num].sfc_nom, (xcaixa + self.score_teams_offsetx , ycaixa + self.score_teams_offsety ) )
-						if self.game.teams[num].sfc_nom:
 							ampletext = self.game.teams[num].sfc_nom.get_width()
 						else:
 							ampletext = 0
 						if escriu and num == element_seleccionat:
 							if (int(time.time() * 4) % 2) == 0: 
-								self.game.screen.blit( self.sfc_cursor, (xcaixa + self.score_teams_offsetx + ampletext, ycaixa + self.score_teams_offsety )) 
+								self.game.screen.blit( self.sfc_cursor, (xcaixa + self.score_teams_offsetx + ampletext, ycaixa + self.score_teams_offsety ))
 						
-						if maxPunts(self.game.teams) > self.game.teams[num].punts:
-							color = (128,0,0)
-						else:
-							color = (0,128,0)
+						color = if2(maxPunts(self.game.teams) > self.game.teams[num].punts,
+							(128,0,0), (0,128,0))
 						pinta = self.game.skin.render_text( str(self.game.teams[num].punts).zfill(2), color, 150, 1)
 						if self.score_resultat_visible == 'True':
 							self.game.screen.blit( pinta, (xcaixa + 200, ycaixa - 15) )
@@ -570,10 +557,7 @@ class Score:
 				
 					if element_seleccionat == num and self.score_element_sobre == "True":
 						for compta in xrange( 0, self.seleccio_score.get_height() ):
-							if escriu:
-								desp = cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0
-							else:
-								desp = 0
+							desp = (escriu, cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0, 0)
 							self.game.screen.blit( self.seleccio_score, (xcaixa + self.score_element_sel_offsetx + desp, ycaixa + self.score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
 			
 			if Global.LOCKED_MODE: 
@@ -582,11 +566,8 @@ class Score:
 			if mostra_ajuda: self.game.screen.blit( self.help_overlay, (0,0))
 			if mostra_credits: self.game.screen.blit( self.game.sfc_credits, (0,0))
 			
-			if escriu:
-				mode_draw = HOS_SCORE_MODEW
-			else:
-				mode_draw = mode
-			self.help_on_screen.draw( self.game.screen, (350, 740), mode_draw)
+			self.help_on_screen.draw( self.game.screen, (350, 740),
+				if2(escriu, HOS_SCORE_MODEW, mode) )
 			
 			self.effect_mode.frame()
 			frate.next( self.game.screen )
