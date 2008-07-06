@@ -2,10 +2,11 @@ Version 1.3 - Aeronauta Astut
 ------------------------------
 
 Yeah, this is the fourth Freevial release that sees the light. Amongst the
-different improvements, perhaps the most interesant is the introduction
-of database version 1.1, which provides new audio possibilities.
+different improvements, perhaps the most interesant one is the introduction
+of database version 1.1, which provides new audio capabilities.
 
 Improvements:
+ - Freevial does now work with Python version 2.4, in addition to 2.5.
  - Added support for questions with sound.
  - Added support for questions with more than two incorrect answers (Freevial
    will randomly choose two of them when it loads the database).
