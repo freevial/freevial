@@ -700,3 +700,10 @@ def inkimage ( sourceimage, color ):
 	return desti
 
 
+def if2( boolean, val1, val2 ):
+	"""An 'a if b else c'-syntax replacement for Python 2.4."""
+
+	if boolean:
+		return val1
+	else:
+		return val2

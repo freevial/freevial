@@ -136,10 +136,7 @@ class SelCat:
 			
 		seleccio = 0
 		
-		if estat == 0:
-			nelements = len(self.cp)
-		else:
-			nelements = 6
+		nelements = if2(estat == 0, len(self.cp), 6)
 
 		while 1:
 				
