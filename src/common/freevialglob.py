@@ -208,26 +208,28 @@ def loadSound( name, volume = 1.0, music = False ):
 default_font = '/usr/share/fonts/truetype/unfonts/UnBatangBold.ttf'
 
 
-def set_default_font( nomfont ):
+def set_default_font( font_name ):
 
-	if os.path.exists( nomfont ):
-		default_font = nomfont
+	if os.path.isfile( font_name ):
+		default_font = font_name
 		
 
-def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
+def render_text( cadena, color, mida, antialias = 0, font_name = '', maxwidth = 0 ):
 	""" Function for easier text rendering. """
 
 	global default_font
 
-	if os.path.exists( nomfont ):
-		font1 = pygame.font.Font( nomfont, mida )
+	if os.path.isfile( font_name ):
+		font = pygame.font.Font( font_name, mida )
 	else:
-		tnomfont = os.path.join(Global.folders['fonts'], default_font if nomfont == '' else nomfont)
-		if os.path.exists( tnomfont ):
-			font1 = pygame.font.Font( tnomfont, mida )
+		if not font_name:
+			font_name = default_font
+		font_path = os.path.join(Global.folders['fonts'], font_name)
+		if os.path.isfile( font_path ):
+			font = pygame.font.Font( font_name, mida )
 		else:
 			# NOT WORKING IN PYGAME
-			font1 = pygame.font.SysFont( nomfont, mida )
+			font = pygame.font.SysFont( font_name, mida )
 	
 	text_restant = cadena
 	sfc = None
@@ -242,7 +244,7 @@ def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 
 
 			while ample > maxwidth:
 
-				sfc = font1.render( escriure, antialias, color )
+				sfc = font.render( escriure, antialias, color )
 				ample = sfc.get_width()		
 			
 				if ample > maxwidth:
@@ -272,7 +274,7 @@ def render_text( cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 
 		else:
 			sfc = sfcs[0] if len(sfcs) == 1 else None
 	else:
-		sfc = font1.render( cadena, antialias, color )
+		sfc = font.render( cadena, antialias, color )
 	
 	return sfc
 
