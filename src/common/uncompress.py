@@ -33,7 +33,7 @@ class Uncompressor:
 	
 	
 	def _detect(self, filename):
-		""" Detect which module needs to be used for the given file, and returns an instace of it.\n """
+		""" Detect which type of compression the given filename indicates.\n """
 		
 		ext = os.path.splitext(filename)[1][1:]	# Get the extension
 		
@@ -47,7 +47,7 @@ class Uncompressor:
 			raise ValueError, 'Unsuported file format, expected .tar.gz, .tar.bz or .zip.'
 	
 	
-	def _unzipAll(directory):
+	def _unzip_all(directory):
 		""" Extract all members of the current zip file to the given directory. """
 		
 		for name in self.fileobj.namelist():
@@ -82,4 +82,4 @@ class Uncompressor:
 			return self.fileobj.extractall(directory)
 		
 		elif self.type == 'zip':
-			return self._unzipAll(directory)
+			return self._unzip_all(directory)
