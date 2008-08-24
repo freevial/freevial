@@ -26,6 +26,7 @@
 import os
 import sys
 import gettext
+import re
 from lxml import etree, objectify
 from random import sample
 
@@ -107,8 +108,15 @@ class LoadDatabase:
 
 
 # Create the XML parser
-parser = etree.XMLParser(remove_blank_text = True)
+
+xsdxml = etree.parse( os.path.join(Global.database, 'freevial-database.xsd') )
+xsd = etree.XMLSchema( xsdxml )
+parser = etree.XMLParser(remove_blank_text = True, remove_comments = True, schema = xsd )
 parser.setElementClassLookup(objectify.ObjectifyElementClassLookup())
+
+def filtraText( text ):
+    textnet = re.sub('\\s+',' ',text)
+    return textnet
 
 def GetDatabase( num, xmlFile ):
 	""" Returns a Database instance loaded with the questions from a XML file. """
@@ -124,11 +132,13 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 	
 	database = Database(
 		num,
-		root.information.name.text,
+		filtraText(root.information.name.text),
 		root.get('language'),
-		root.information.description.text,
-		root.information.destination.text,
-		', '.join(["%s" % author.text.split(',')[0] for author in root.information.authors.getchildren()]),
+
+		filtraText(root.information.description.text),
+		filtraText(root.information.destination.text),
+		', '.join(["%s" % filtraText(author.text).split(',')[0] for author in root.information.authors.getchildren()]),
+
 		(int(root.information.timestamp_creation.text), int(root.information.timestamp_modification.text)),
 		root.appearance.image.text,
 		root.appearance.sound.text,

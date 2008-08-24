@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database version="1.0" id="cc" language="català"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
+	<information>
+		<name>Creative Commons</name>
+		<description>
+			Sobre llicències Creative Commons i obres publicades amb
+			aquestes llicències
+		</description>
+		<destination>
+			Per a melòmans, lletraferits, col·lecionistes fotogràfics,
+			enciclopedistes moderns que no els caiguin bé els autors
+			prepotents i també per a advocats frustrats
+		</destination>
+		<timestamp_creation>1217882268</timestamp_creation>
+		<timestamp_modification>1219523946</timestamp_modification>
+		<license>dual, trieu entre gpl3 o cc-by-sa</license>
+		<!--Optional:-->
+		<url>http://www.freevial.org/bases/cc.xml</url>
+		<contact>xdrudis@tinet.cat</contact>
+		<authors>
+			<author>Xavi Drudis Ferran</author>
+			<author>Mario Carvajal, Foto Lessig CC-by http://www.flickr.com/photos/mariocarvajal/230462083/</author>
+            <author>Sebastien Paquet, Gràfica de preus a Magnatune http://www.flickr.com/photos/sebpaquet/2891115/</author>
+            <author>Joi Ito, Foto dels Buckman de Magnatune http://www.flickr.com/photos/joi/418668510/</author>
+            <author>MusicaLliure, la seva il·lustració de portada de http://www.musicallliure.net</author>
+            <author>Christopher Eden, Foto del mar de nit CC-by http://www.flickr.com/photos/23002103@N02/2766483050</author>
+            <author>Conxita, Foto del concert http://www.conxita.org</author>
+            <author>Jamendo, logo http://www.jamendo.com</author>
+            <author>AHARD, música http://www.jamendo.com/en/track/98486</author>
+		</authors>
+	</information>
+	<appearance>
+		<image>cc.jpg</image>
+		<sound>cc.ogg</sound>
+	</appearance>
+	<questions>
+		<!--Zero or more repetitions:-->
+		<question>
+			<sentence>
+				Si trobo una cançó publicada amb alguna llicència
+				Creative Commons sé que com a mínim puc fer-ne còpies
+				idèntiques i redistribuir-les si no és per a usos
+				comercials i reconec l'autoria i l'origen de l'obra.
+			</sentence>
+			<author>xdrudis</author>
+			<!--Optional:-->
+			<comments>
+				Totes les llicències ACTUALS de Creative Commons
+				permeten la redistribució no comercial de còpies
+				idèntiques reconeixent l'autoria, i sovint més coses.
+				Però antigament hi va haver llicències Creative Commons
+				que no ho permetien (com ara la llicència Sampling).
+				Creative Commons no recomana fer servir aquestes
+				llicències velles, però encara et pots trobar alguna
+				cançó que es publiqués en el seu dia amb una d'aquestes
+				llicències i no s'hagi rellicenciat, i llavors no pots
+				fer-ho (sense negociar-ho amb el titular dels drets
+				d'autor).
+			</comments>
+			<answers>
+				<answer correct="True">Quasi sempre</answer>
+				<answer>Sempre</answer>
+				<answer>Només en hores d'oficina</answer>
+			</answers>
+
+		</question>
+		<question>
+			<sentence>
+				Puc redistribuir obres publicades segons algun métode
+				dels que ofereix Creative Commons sense indicar-ne
+				l'autoria?
+			</sentence>
+			<author>xdrudis</author>
+			<!--Optional:-->
+			<comments>
+				Creative Commons també té una llicència de Domini Públic
+				(que no és estrictament una llicència) és una renúncia
+				completa a tots els drets sobre l'obra als que es pot
+				renunciar, i no obliga al reconeixement de l'autoria.
+				Els gràfics de openclipart.org, per exemple, usen
+				aquesta llicència, perquè s'acostumen a combinar en
+				obres derivades en les que podria ser engorrós donar
+				crèdit a tots els autors i autores. La majoria de les
+				llicències, però, sí que obliguen a l'atribució de
+				l'autoria. Tant si és obligatori com si no, atribuir a
+				cadascú allò que ha fet és de bona educació i facilita
+				el manteniment posterior de les obres
+			</comments>
+			<answers>
+				<answer correct="True">
+					Podria ser legal en algun cas, però això no es fa.
+				</answer>
+				<answer>
+					És obligatori ocultar l'autoria per garantir la
+					privacitat dels autors
+				</answer>
+				<answer>
+					No pots. Sempre cal identificar l'origen de l'obra i
+					els autors o autores.
+				</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>
+				L'avantatge principal de les llicències Creative Commons
+				és que faciliten la reutilització perquè
+				pots fer qualsevol combinació d'obres en CC
+				sempre que el resultat el publiquis en CC.
+			</sentence>
+			<author>xdrudis</author>
+			<!--Optional:-->
+			<comments>
+				Hi ha llicències Creative Commons que no permeten les
+				obres derivades, i per tant no es poden combinar amb cap
+				altra (ni tan sols amb les que porten la mateixa
+				llicència). N'hi ha que les permeten si es manté la
+				mateixa llicència i n'hi ha que només si no se'n fa ús
+				comercial. No sempre es poden combinar obres amb
+				llicències diferents perquè amb segons quines
+				combinacions l'obra derivada no podria complir amb totes
+				les llicències de les parts que la composen. Tot i que
+				fomentar la creativitat, la participació en la cultura i
+				la reutilització del patrimoni cultural són objectius de
+				Creative Commons, l'avantatge principal és segurament
+				que tothom les coneix i no s'ha d'entretenir a llegir
+				una llicència diferent per a cada obra, i que un equip
+				d'experts en garanteix una certa qualitat.
+			</comments>
+			<answers>
+				<answer correct="True">
+					I un bé blanc amb potes negres!
+				</answer>
+				<answer>
+					Aquest és un avantatge, però el principal és l'accès
+					gratuït a la cultura
+				</answer>
+				<answer>
+					És clar, perquè us penseu que les han fet, si no?
+				</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>
+				Quin va ser el millor disc català del 2006 segons la
+				revista Enderrock
+			</sentence>
+			<author>xdrudis</author>
+			<!--Optional:-->
+			<comments>
+				Conxita, que ha publicat tota la seva obra en CC
+				by-nc-sa. Us recomanem els seus concerts de pop trist de
+				la quotidianeïtat.
+			</comments>
+			<answers>
+				<answer correct="True">
+					Amb lletra petita, de Conxita.
+				</answer>
+				<answer>Pel broc gros, de la Trinca</answer>
+				<answer>Set voltes Rebel, de Cesk Freixas</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>
+				A quina d'aquestes webs trobem música amb llicències
+				Creative Commons ?
+			</sentence>
+			<author>xdrudis</author>
+			<!--Optional:-->
+			<comments>
+				Magnatune és una discogràfica no malvada, amb un model
+				comercial semblant al del shareware, i amb tot el
+				catàleg disponible en CC by-nc-sa.
+			</comments>
+			<answers>
+				<answer correct="True">Magnatune.com</answer>
+				<answer>flickr.com</answer>
+				<answer>www.sgae.es</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>
+				A quina d'aquestes webs trobem música amb llicències
+				Creative Commons ?
+			</sentence>
+			<author>xdrudis</author>
+			<!--Optional:-->
+			<comments>
+				Musicalliure és una iniciativa per a recollir la música
+				lliure catalana. Hi ha Conxita, Roig, Cesk Freixes,
+				Mugroman...
+			</comments>
+			<answers>
+				<answer correct="True">Musicalliure.net</answer>
+				<answer>www.tvc.cat</answer>
+				<answer>www.gencat.net</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>
+				A quina d'aquestes webs trobem música amb llicències
+				Creative Commons ?
+			</sentence>
+			<author>xdrudis</author>
+			<!--Optional:-->
+			<comments>
+				Jamendo és una web per a que els artistes publiquin la
+				seva música redistribuible. Hi ha més de 10000 discs.
+			</comments>
+			<answers>
+				<answer correct="True">Jamendo.com</answer>
+				<answer>www.sourceforge.net</answer>
+				<answer>www.flickr.com</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>
+				A quina d'aquestes webs podem publicar fotografies amb
+				llicències Creative Commons ?
+			</sentence>
+			<author>xdrudis</author>
+			<!--Optional:-->
+			<comments>
+				Flickr és una web per publicar fotos, i permet l'opció
+				d'especificar llicències Creative Commons per a
+				permetre'n la reutilització.
+			</comments>
+			<answers>
+				<answer>Jamendo.com</answer>
+				<answer>www.sourceforge.net</answer>
+				<answer correct="True">www.flickr.com</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>
+				Qui va escriure Free Culture ? (traduïda al català com a
+				"Cultura Lliure")
+			</sentence>
+			<author>xdrudis</author>
+			<!--Optional:-->
+			<comments>
+				Stallman ha escrit altres bones coses i McGreevy és un
+				comissari de mercat interior que ha intentat colar
+				varies vegades legislació perniciosa.
+			</comments>
+			<answers>
+				<answer correct="True">Lawrence Lessig</answer>
+				<answer>Richard Stallman</answer>
+				<answer>Charlie McGreevy</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>
+				Si vols música catalana redistribuïble a quina web pots
+				anar ?
+			</sentence>
+			<author>xdrudis</author>
+			<!--Optional:-->
+			<comments>
+				MusicaLliure.net és una iniciativa particular per
+				aplegar música redistribuïble en català, i
+				CulturaLliure.cat és una web de la Generalitat que conté
+				llibres, música i qualsevol altra obra redistribuïble
+				que la Generalitat vulgui difondre.
+			</comments>
+			<answers>
+				<answer correct="True">
+					Totes les respostes són correctes
+				</answer>
+				<answer>http://www.musicalliure.net</answer>
+				<answer>http//www.culturalliure.cat</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Què faig amb l'Ubuntu?</sentence>
+			<author>xdrudis</author>
+			<!--Optional:-->
+			<comments>
+				"M'ho muntu amb l'Ubuntu" és una cançó de les Princeses
+				Barbudes, subgrup de Conxita.
+			</comments>
+			<answers>
+				<answer correct="True">M'ho munto</answer>
+				<answer>M'ho desmunto</answer>
+				<answer>Ho remunto</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>
+				La tieta Asunción feia llops i caputxetes, ajuntava caps
+				i cossos i saludava a tothom. Però de qui era tia,
+				aquesta tia ?
+			</sentence>
+			<author>xdrudis</author>
+			<comments>
+				La tieta Asunción no era tia de ningú, # 
+				anava sempre de	negre # 
+				La tieta Asunción, la tieta de la Núria, #
+				vivia al carrer de la Santa Creu, #
+				on jugàvem a fronton, a la paret de l'església. #
+				Ella cosia titelles que li pagaven en negre. # 
+				[...] #
+				[ Conxita. Amb lletra Petita. La
+				tieta Asunción. (CC by-nc-sa) http://www.conxita.org ]
+			</comments>
+			<answers>
+				<answer correct="True">
+					La tieta de la Núria no era tia de ningú
+				</answer>
+				<answer>De la Conxita</answer>
+				<answer>
+					De mig poble segons les males llengües (son germà
+					era un calavera).
+				</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>
+				Si descobreixes que dèu ofega sense apretar ni
+				avisar, i quan el dèu del cel es treu el vel resulta que
+				no ets un fracàs sino tot un dèu, i un dèu mor
+				sense saber quin ha estat el seu, i tot això... d'on ve aquesta epifania ?
+			</sentence>
+			<author>xdrudis</author>
+			<comments>
+				Àcid Úric. Explicit Lyrics. Jo sóc Dèu i tu també. (CC
+				by-nc-sa)
+				http://musicalliure.net/mostra_extra.php?tipus=autor&amp;id=30
+			</comments>
+			<answers>
+				<answer correct="True">
+					Àcid úric, segur. Qui sap si un excès d'embotits
+					osonencs.
+				</answer>
+				<answer>
+					Una possessió demoníaca. Penedeix-te dels teus
+					pecats i busca't un bon exorcista.
+				</answer>
+				<answer>
+					Massa poc sexe, massa drogues i bon rock and roll.
+				</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Al principi hi hagué ...</sentence>
+			<author>xdrudis</author>
+			<comments>
+				Neal Stephenson. Al principi hi hagué la línia d'ordres.
+				CC by-nc-sa .
+				http://www.culturalliure.cat/llibre/ al-principi-hi-hague-la-linia-dordres/
+			</comments>
+			<answers>
+				<answer correct="True">... la línia d'ordres</answer>
+				<answer>... el Verb</answer>
+				<answer>... el Big Bang</answer>
+			</answers>
+
+		</question>
+
+		<question>
+			<sentence>
+				La majoria de llicències creative commons es denoten de
+				forma abreujada per "CC" i tres acrònims. Un d'ells és
+				"by". Què vol dir ?
+			</sentence>
+			<author>xdrudis</author>
+			<comments>
+				Els drets d'autor no caduquen mai perque cada cop que li
+				caduquen a algú prou poderós aconsegueix canviar la llei
+				per allargar el termini. I ja m'explicaràs de que
+				serveix una obra que només es pugui reproduir en suport
+				digital, al final haurà d'anar a parar al món analògic,
+				no ?
+			</comments>
+			<answers>
+				<answer correct="True">
+					By. Atribució obligatòria
+				</answer>
+				<answer>
+					Bygone. Ja han caducat els drets d'autor
+				</answer>
+				<answer>
+					Bytes. Només és permet la reproducció en suports
+					digitals.
+				</answer>
+			</answers>
+		</question>
+
+	
+		<question>
+			<sentence>
+				La majoria de llicències creative commons es denoten de
+				forma abreujada per "CC" i tres acrònims. Un d'ells és
+				"nc". Què vol dir ?
+			</sentence>
+			<author>xdrudis</author>
+			<comments>
+				Les obres sota llicències nc no les trobareu mai a
+				debian, però n'hi ha moltes.
+			</comments>
+			<answers>
+				<answer correct="True">
+					Non Commercial. L'explotació de l'obra queda
+					limitada a usos no comercials.
+				</answer>
+				<answer>
+					No Comment. Els autors i autores no respondran
+					preguntes sobre l'obra
+				</answer>
+				<answer>
+					NanoCash. Un DRM que transfereix alguns
+					cèntims del compte bancari de l'usuari
+					cada cop que es reprodueix.
+				</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>
+				La majoria de llicències creative commons es denoten de
+				forma abreujada per "CC" i tres acrònims. Un d'ells és
+				"nd". Què vol dir ?
+			</sentence>
+			<author>xdrudis</author>
+			<comments>
+				L'únic que es pot fer amb una obra sota llicència nd és
+				distribuir-la, pobra.
+			</comments>
+			<answers>
+				<answer correct="True">
+					No derivate works. Es prohibeix reutilitzar l'obra
+					per transformar-la en obres derivades
+				</answer>
+				<answer>
+					Never distribute. Es permet l'ús personal de l'obra
+					però no la distribució de còpies.
+				</answer>
+				<answer>
+					Null device. Es permet la transferència de l'obra
+					però només cap a /dev/null.
+				</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>
+				La majoria de llicències creative commons es denoten de
+				forma abreujada per "CC" i tres acrònims. Un d'ells és
+				"sa". Què vol dir ?
+			</sentence>
+			<author>xdrudis</author>
+			<comments>Les llicències sa són copyleft.</comments>
+			<answers>
+				<answer correct="True">
+					Share Alike. Les obres derivades han de mantenir la
+					mateixa llicència
+				</answer>
+				<answer>
+					Send Agreement. Abans d'utilitzar l'obra cal signar
+					la llicència i enviar-la als autors.
+				</answer>
+				<answer>
+					Source Attached. Les obres derivades han d'incloure
+					el codi font.
+				</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>
+				A qui hem d'agrair tenir les llicències Creative Commons
+				en català ?
+			</sentence>
+			<author>xdrudis</author>
+			<comments>
+				Gràcies, Ignasi i companyia!. (i gràcies als altres per
+				altres feines)
+			</comments>
+			<answers>
+				<answer correct="True">
+					A Ignasi Labastida i Juan, la Universitat de
+					Barcelona i els seus col·laboradors
+				</answer>
+				<answer>A Jordi Mallach i Softcatalà</answer>
+				<answer>
+					A Miquel Chicano i Colodrero i la Universitat
+					Autònoma de Barcelona
+				</answer>
+			</answers>
+		</question>
+
+
+	</questions>
+</database>

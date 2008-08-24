@@ -102,7 +102,7 @@
       <comments>A la pel·lícula "Matrix Reloaded" podem veure la Trinity petant un ordinador i a la pantalla es veu com realitza un escaneig de seguretat amb l'eina nmap!!! Un cop fet això es mostra una vulnerabilitat real (exploit SSHv1 CRC32), un error de buffer, que aprofita amb una eina fingida sshnuke.</comments>
       <answers>
         <answer correct="True">nmap</answer>
-        <answer>El càssic dir c:\ de totes les pel·lis</answer>
+        <answer>El clàssic dir c:\ de totes les pel·lis</answer>
         <answer>aircrack</answer>
       </answers>
     </question>

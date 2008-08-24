@@ -284,7 +284,7 @@
     <question>
       <sentence>Quina d'aquestes pel·lis no és d'Alfred Hitchcock? </sentence>
       <author>Carles</author>
-      <comments>"Charade" 1963 - Stanley Donen	</comments>
+      <comments>"Charade" 1963 - Stanley Donen/comments>
       <answers>
         <answer correct="True">"Xarada"</answer>
         <answer>"Estranys en un tren"</answer>

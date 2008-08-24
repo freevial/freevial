@@ -27,6 +27,7 @@
 import sys
 import time
 import pygame
+import re
 from math import *
 
 from common.freevialglob import *
@@ -192,6 +193,16 @@ class Preguntador:
 		self.hide_mask_on_image_quiz = self.game.skin.configGetBool( 'hide_mask_on_image_quiz' )
 		self.media_image_dance = self.game.skin.configGetEval( 'media_image_dance' )
 
+		
+	###########################################
+	#
+	# Formata textos multilinia, com ara preguntes, respostes i comentaris
+	# retorna un vector d'strings amb les línies a pintar
+	def formataCadenes( self,  textnode ):
+		textnet = re.sub( '\\s+', ' ', textnode.strip())
+		cadenes = textnet.split('#')
+		return cadenes
+
 	###########################################
 	#
 	# Funció per veure el nombre de linies que té una frase a mostrar
@@ -288,7 +299,9 @@ class Preguntador:
 
 		nalt = 0
 		
-		cadenes = textapintar.split('#')
+		#cadenes = textapintar.split('#')
+		cadenes = self.formataCadenes(textapintar)
+
 		sfc_pregunta = range(0, len(cadenes) )
 		sfc_shad = range(0, len(cadenes) )
 
@@ -476,8 +489,11 @@ class Preguntador:
 						self.so_ok.play()
 					else:
 						self.so_nook.play()
-					notes = if2(self.current_question['comment'],
-						self.current_question['comment'].split('#'), ".")
+					#notes = if2(self.current_question['comment'],
+					#	self.current_question['comment'].split('#'), ".")
+						notes = if2(self.current_question['comment'] != "", self.formataCadenes(self.current_question['comment']), ".");
+
+
 					sfc_comentaris = createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
 					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.current_question['comment'] ) <= 5:

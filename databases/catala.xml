@@ -77,7 +77,7 @@
     <question>
       <sentence>D'on ve "català" segons Joan Coromines?</sentence>
       <author>Nuria</author>
-      <comments></comments>Apareix per primer cop en textos italians medievals: els italians necessitaven un nom més concret que "la Marca" per designar-nos i sabien per formació clàssica que en aquella part d'Hispània hi vivien els "lacetani" (o lacetans). De "lacetani" passà per metàtesi a "cetalani" i "catalani".
+           <comments>Apareix per primer cop en textos italians medievals: els italians necessitaven un nom més concret que "la Marca" per designar-nos i sabien per formació clàssica que en aquella part d'Hispània hi vivien els "lacetani" (o lacetans). De "lacetani" passà per metàtesi a "cetalani" i "catalani".</comments>
       <answers>
         <answer correct="True">De "lacetani", tribu ibera.</answer>
         <answer>De "castellà", governador d'un castell.</answer>
@@ -171,7 +171,7 @@ llengua catalana"?</sentence>
 	<question>
       <sentence>Quines característiques té el parlar salat?</sentence>
       <author>Nuria</author>
-      <comments></comments>Aquests articles deriven del llatí "ipsu" i "ipsa".
+      <comments>Aquesta articles deriven del llatí "ipsu" i "ipsa".</comments>
       <answers>
         <answer correct="True">Empra els articles es i sa.</answer>
         <answer>És picant.</answer>
@@ -182,7 +182,7 @@ llengua catalana"?</sentence>
 	<question>
       <sentence>Què és el xipella?</sentence>
       <author>Nuria</author>
-      <comments></comments>Es parla des de l'Alt Urgell fins a la Conca de Barberà.
+    <comments>Es parla des de l'Alt Urgell fins a la Conca de Barberà.</comments>
       <answers>
         <answer correct="True">Un parlar de transició entre l'oriental i l'occidental.</answer>
         <answer>Un parlar desenfadat, trapella.</answer>
@@ -228,7 +228,7 @@ segles XII i XIII?</sentence>
 	<question>
       <sentence>Què és un "sirventès"?</sentence>
       <author>Nuria</author>
-      <comments></comments>El sirventès sol aprofitar l'esquema d'estrofes i de música d'una cançó trobadoresca amorosa, i molt coneguda, per transmetre un atac polític, una reprensió moral, una mostra d'odi...
+      <comments>El sirventès sol aprofitar l'esquema d'estrofes i de música d'una cançó trobadoresca amorosa, i molt coneguda, per transmetre un atac polític, una reprensió moral, una mostra d'odi...</comments>
       <answers>
         <answer correct="True">Un poema.</answer>
         <answer>Un joglar molt servil.</answer>
@@ -252,7 +252,7 @@ segles XII i XIII?</sentence>
 	<question>
       <sentence>De quina manera va aprendre l'àrab Ramon Llull?</sentence>
       <author>Nuria</author>
-      <comments></comments>Aquest esclau també li féu conèixer el pensament de filòsofs i científics àrabs.Llull aprengué tant d'àrab, que fou capaç d'escriure-hi moltes de les seves obres. Afegitó: Llull es va esbatussar amb aquest esclau perquè renegà de Crist, i l'esclau, un altre dia, se'n venjà clavant-li u punyal al ventre. 
+<comments>Aquest esclau també li féu conèixer el pensament de filòsofs i científics àrabs.Llull aprengué tant d'àrab, que fou capaç d'escriure-hi moltes de les seves obres. Afegitó: Llull es va esbatussar amb aquest esclau perquè renegà de Crist, i l'esclau, un altre dia, se'n venjà clavant-li u punyal al ventre. </comments> 
       <answers>
         <answer correct="True">Va comprar-se un esclau culte.</answer>
         <answer>Va contractar un mestre.</answer>
@@ -275,7 +275,7 @@ segles XII i XIII?</sentence>
       <sentence>Com s'ho fa Ramon Llull per expressar pensaments que mai s'havien
 expressat en cap llengua vulgar?</sentence>
       <author>Nuria</author>
-      <comments></comments>Ramon Llull va escriure moltíssims llibres (més de 200), d'enciclopèdics, de filosòfics, de tots els temes. Ell mateix era conscient del problema del lèxic inexistent i de la necessitat de crear "paraules estranyes". Té un esquema matemàtic de derivació per formar tecnicismes filosòfics.
+      <comments>Ramon Llull va escriure moltíssims llibres (més de 200), d'enciclopèdics, de filosòfics, de tots els temes. Ell mateix era conscient del problema del lèxic inexistent i de la necessitat de crear "paraules estranyes". Té un esquema matemàtic de derivació per formar tecnicismes filosòfics.</comments>
       <answers>
         <answer correct="True">Crea "paraules estranyes".</answer>
         <answer>Fa circumloquis.</answer>

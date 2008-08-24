@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation xml:lang="ca">
+			Fitxer de preguntes i respostes per a una categoria de
+			preguntes del joc freevial.
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="database" type="databaseType">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Element principal, a l'arrel del fitxer.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+
+	<xs:complexType name="databaseType">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Dades de la categoria.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="informationType" name="information" />
+			<xs:element type="appearanceType" name="appearance" />
+			<xs:element type="questionsType" name="questions" />
+		</xs:sequence>
+		<xs:attribute name="version" use="required" type="version">
+			<xs:annotation>
+				<xs:documentation xml:lang="ca">
+					Format d'aquest fitxer de categoria, en previsió de
+					futurs canvis. El programa actualment comprova que
+					la versió del fitxer de categories sigui 1.0.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute type="xs:string" name="id" use="optional">
+			<xs:annotation>
+				<xs:documentation xml:lang="ca">
+					Nom de la categoria. Sovint coincideix amb el nom
+					del fitxer sense directoris ni extensió. Totes les
+					catagories que he vist en porten. Però crec que no
+					es fa servir per a res.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+
+		<xs:attribute type="xs:string" name="language" use="required">
+			<xs:annotation>
+				<xs:documentation xml:lang="ca">
+					Nom del llenguatge natural en què s'han escrit les
+					preguntes i respostes (per arà sempre és "català").
+					El valor es mostra directament a la fitxa de la
+					categoria al selector de categories, i per tant és
+					el nom de la llengua, no el codi ISO (però llavors
+					què passarà quan es tradueixi el freevial a altres
+					llengües?). Proposo posar el nom de la llengua en la
+					pròpia llengua ("català", "English", "Deustch",
+					"occitan", "français"...) , donat que no veig cap
+					sistema muntat per internacionalitzar aquest text.
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:simpleType name="version">
+		<xs:restriction base="xs:float">
+			<xs:enumeration value="1.0" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="questionsType">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Llista de preguntes de la categoria amb les
+				corresponents respostes possibles.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="questionType" name="question"
+				maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="relativeFilePath">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Nom de fitxer, relatiu al directori que toca.
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:restriction base="xs:string"></xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="appearanceType">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Continguts multimèdia associats a la categoria.
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:sequence>
+			<xs:element name="image" type="relativeFilePath">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Nom del fitxer d'imatge (mida 1024x768 ?), camí relatiu al
+						directori data/images. Imatge que es posa de
+						fons a les preguntes de la categoria, rotant cap
+						baix, sota una transparència que tapa la part de
+						baix per escriure-hi la pregunta i les
+						respostes. També surt a la dreta del selector de
+						categories. Convé que sigui en blanc i negre (en
+						escala de grisos) perquè se li aplicarà un
+						filtre del color corresponent a la categoria,
+						segons l'ordre en què s'hagi triat al selector
+						de categories. Les imatges tipus col·lage
+						funcionen bé en veure-les per una finestra
+						estreta. Hauria d'acceptar com a mínim formats
+						png, jpg,bmp i gif, excepte en sistemes amb una
+						llibreria pygame rara.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="sound" type="relativeFilePath">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Nom del fitxer de so, camí relatiu al directori
+						data/sounds. Ha de tenir format ogg vorbis o wav
+						i una durada d'entre 2 i 5 segons
+						aproximadament. És el so que sona quan la roda
+						s'atura a la categoria, abans de fer cada
+						pregunta de la categoria.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="authorsType">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Llista d'autors i/o autores d'aquesta categoria de
+				preguntes i respostes. Surt al selector de categories i
+				als crèdits.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="string" name="author"
+				maxOccurs="unbounded" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Text lliure identificatiu d'un autor o autora. Només es mostra fins a la 
+						primera coma a la pantalla de selecció de categories.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="timestamp">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Data i hora expressada com a número de segons des del
+				cap d'any de 1969 (inici de 1970) a Greenwich. En un
+				sistema POSIX podeu obtenir el valor amb date +'%s' -d
+				'2008-08-01 20:00'.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int" />
+	</xs:simpleType>
+
+	<xs:complexType name="informationType">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Fitxa de la categoria de preguntes i respostes
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="name" type="string">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Nom curt de la categoria. Surt al selector de
+						categories, a la roda, etc.
+					</xs:documentation>
+				</xs:annotation>
+
+			</xs:element>
+			<xs:element name="description" type="string">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Descripció dels temes de les preguntes i
+						respostes. Surt al selector de categories.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="destination" type="string">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Caracterització de les persones a qui es
+						recomana jugar amb aquesta categoria de
+						preguntes. Per a qui s'han pensat les preguntes.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			
+			<xs:element name="timestamp_creation" type="timestamp">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Data i hora de la creació de la BD. En realitat
+						no es fa servir per a res. Data i hora
+						expressada com a número de segons des del cap
+						d'any de 1969 (inici de 1970) a Greenwich. En un
+						sistema POSIX podeu obtenir el valor amb date
+						+'%s' -d '2008-08-01 20:00'.
+
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="timestamp_modification"
+				type="timestamp">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Data i hora de la darrera modificació de la BD.
+						Tampoc és que tingui gaire fe que aquesta dada
+						es mantingui acualitzada manualment, la gent
+						tendeix a descuidar-se'n, però vaja... En
+						realitat no es fa servir per a res. Data i hora
+						expressada com a número de segons des del cap
+						d'any de 1969 (inici de 1970) a Greenwich. En un
+						sistema POSIX podeu obtenir el valor amb date
+						+'%s' -d '2008-08-01 20:00'.
+
+					</xs:documentation>
+				</xs:annotation>
+
+			</xs:element>
+			<xs:element type="xs:string" name="license">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Text lliure que descriu, identifica o referencia
+						les condicions que posen els autors i autores
+						per poder reproduir, copiar modificar, etc.
+						aquesta categoria.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="url" type="xs:anyURI" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						URL d'on es pot baixar aquest fitxer.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element type="xs:string" name="contact">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Informació de contacte dels autors i/o autores,
+						típicament una única adreça de correu
+						electrònic.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element type="authorsType" name="authors" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="answerType">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Text d'una de les respostes.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute type="xs:string" name="correct"
+					use="optional">
+					<xs:annotation>
+						<xs:documentation xml:lang="ca">
+							Si l'atribut està present vol dir que
+							aquesta és la resposta correcta. El valor de
+							l'atribut és indiferent (normalment hi posen
+							"true"). Cada pregunta ha de tenir una única
+							resposta correcta.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="questionType">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Dades de la pregunta i respostes.
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:sequence>
+			<xs:element type="string" name="sentence">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Text de la pregunta.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="string" name="author">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Text lliure identificatiu de l'autor o autora de
+						la pregunta. Surt quan s'escriu la pregunta en
+						pantalla. La gent acostuma a posar malnoms o
+						noms d'usuari.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element type="string" name="comments" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Text lliure informatiu del rerefons de la
+						pregunta o perquè la resposta correcta és la
+						correcta i les altres no. Es mostra després de
+						respondre la pregunta si l'usuari o usuària
+						apreta F3.
+					</xs:documentation>
+				</xs:annotation>
+
+			</xs:element>
+			<xs:element type="answersType" name="answers" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="answersType">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Llista de respostes a la pregunta. Actualment n'hi ha
+				d'haver 3 i una i només una ha d'anar marcada com a
+				correcta. Es mostraran a sota de la pregunta, en un
+				ordre aleatori, precedides de la lletra a,b o c.
+			</xs:documentation>
+		</xs:annotation>
+    	<xs:sequence>
+			<xs:element type="answerType" name="answer" maxOccurs="3"
+				minOccurs="3" />
+		</xs:sequence>
+     </xs:complexType>   
+
+	
+	<xs:simpleType name="string">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				El programa tracta cada seqüència de #, cr i lf com un
+				salt de línia (i es carrega les del principi i final de
+				cada element). Però la resta de caracters de control com
+				tabuladors o similars es veuen com una caixeta buida
+				lletja, per tant els prohibeixo.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<!-- <xs:pattern 
+						value="^[^\x00-\x09\x0b\x0c\x0e-\x1f]*$">
+			</xs:pattern>-->
+			<xs:pattern 
+						value="(\P{Cc}|\r|\n|\t)*">
+			</xs:pattern>
+
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
