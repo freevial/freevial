@@ -65,8 +65,27 @@
 	</xs:complexType>
 
 	<xs:simpleType name="version">
-		<xs:restriction base="xs:float">
+		<xs:restriction base="xs:token">
 			<xs:enumeration value="1.0" />
+			<xs:enumeration value="1.1" >
+                		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+			   Afegeix respostes ilimitades, i media per a imatges o so a cada pregunta.	
+			</xs:documentation>
+		</xs:annotation>
+                			
+			</xs:enumeration>
+			<!--	<xs:enumeration value="1,1" />  vols dir que no és un error a imatginarium.xml ??? 
+				No hauria de ser tot amb punts o tot amb comes i no 1.0, 1,1 ? -->
+			<xs:enumeration value="1.2" >
+                		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+			   Afegeix nivells de dificultat.	
+			</xs:documentation>
+		</xs:annotation>
+                			
+			</xs:enumeration>
+
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -105,21 +124,21 @@
 			<xs:element name="image" type="relativeFilePath">
 				<xs:annotation>
 					<xs:documentation xml:lang="ca">
-						Nom del fitxer d'imatge (mida 1024x768 ?), camí relatiu al
-						directori data/images. Imatge que es posa de
-						fons a les preguntes de la categoria, rotant cap
-						baix, sota una transparència que tapa la part de
-						baix per escriure-hi la pregunta i les
-						respostes. També surt a la dreta del selector de
-						categories. Convé que sigui en blanc i negre (en
-						escala de grisos) perquè se li aplicarà un
-						filtre del color corresponent a la categoria,
-						segons l'ordre en què s'hagi triat al selector
-						de categories. Les imatges tipus col·lage
-						funcionen bé en veure-les per una finestra
-						estreta. Hauria d'acceptar com a mínim formats
-						png, jpg,bmp i gif, excepte en sistemes amb una
-						llibreria pygame rara.
+						Nom del fitxer d'imatge (mida 1024x768 ?), camí
+						relatiu al directori data/images. Imatge que es
+						posa de fons a les preguntes de la categoria,
+						rotant cap baix, sota una transparència que tapa
+						la part de baix per escriure-hi la pregunta i
+						les respostes. També surt a la dreta del
+						selector de categories. Convé que sigui en blanc
+						i negre (en escala de grisos) perquè se li
+						aplicarà un filtre del color corresponent a la
+						categoria, segons l'ordre en què s'hagi triat al
+						selector de categories. Les imatges tipus
+						col·lage funcionen bé en veure-les per una
+						finestra estreta. Hauria d'acceptar com a mínim
+						formats png, jpg,bmp i gif, excepte en sistemes
+						amb una llibreria pygame rara.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -154,8 +173,9 @@
 				maxOccurs="unbounded" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation xml:lang="ca">
-						Text lliure identificatiu d'un autor o autora. Només es mostra fins a la 
-						primera coma a la pantalla de selecció de categories.
+						Text lliure identificatiu d'un autor o autora.
+						Només es mostra fins a la primera coma a la
+						pantalla de selecció de categories.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -198,7 +218,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			
+
 			<xs:element name="destination" type="string">
 				<xs:annotation>
 					<xs:documentation xml:lang="ca">
@@ -208,7 +228,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			
+
 			<xs:element name="timestamp_creation" type="timestamp">
 				<xs:annotation>
 					<xs:documentation xml:lang="ca">
@@ -334,10 +354,95 @@
 				</xs:annotation>
 
 			</xs:element>
+			<xs:element name="media" type="mediaType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="ca">
+						Fitxer de imatge pr mostrar al fer la pregunta o
+						só per reproduir al fer-la. Pot contenir dues
+						imatges, separades per | i la primera es
+						mostrarà al preguntar però la segona es mostrarà
+						al mostrar la resposta correcta. Imatges són
+						paths relatius a data/images i el fitxer de só
+						és un camí relatiu a data/sound. (nota: jo
+						posaria dos atributs, no això de la |, erò de
+						moment va així).
+					</xs:documentation>
+				</xs:annotation>
+
+
+			</xs:element>
 			<xs:element type="answersType" name="answers" />
 		</xs:sequence>
+		<xs:attribute name="difficulty" type="difficultyType" use="optional">
+		    <xs:annotation>
+			<xs:documentation xml:lang="ca">
+			   Indica si la pregunta és fàcil, mitjaneta o díficil.	Obligatori per a versions >= 1.2.
+			   A versions anteriors si no s'indica és mitjaneta.
+			</xs:documentation>
+		</xs:annotation>
+    
+		</xs:attribute>
+	</xs:complexType>
+	
+	
+	<xs:simpleType name="difficultyType">
+	    <xs:annotation>
+			<xs:documentation xml:lang="ca">
+			   Indica si la pregunta és fàcil, mitjaneta o díficil.	
+			</xs:documentation>
+		</xs:annotation>
+        <xs:restriction base="xs:token" >
+			<xs:enumeration value="Easy" />
+			<xs:enumeration value="Medium" />
+			<xs:enumeration value="Hard" />
+
+		</xs:restriction>
+	</xs:simpleType>
+
+	
+
+	<xs:complexType name="mediaType">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				Fitxer de imatge pr mostrar al fer la pregunta o só per
+				reproduir al fer-la. Pot contenir dues imatges,
+				separades per | i la primera es mostrarà al preguntar
+				però la segona es mostrarà al mostrar la resposta
+				correcta. Imatges són paths relatius a data/images i el
+				fitxer de só és un camí relatiu a data/sound. (nota: jo
+				posaria dos atributs, no això de la |, erò de moment va
+				així).
+			</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+
+			<xs:extension base="relativeFilePath">
+				<xs:attribute name="type" use="required"
+					type="typeOfMediaType">
+					<xs:annotation>
+						<xs:documentation xml:lang="ca">
+							indica si és una imatge (o dues) o bé un só.
+							Val image o audio
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+
+		</xs:simpleContent>
 	</xs:complexType>
 
+	<xs:simpleType name="typeOfMediaType">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				indica si és una imatge (o dues) o bé un só. Val image o
+				audio
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="audio" />
+			<xs:enumeration value="image" />
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="answersType">
 		<xs:annotation>
 			<xs:documentation xml:lang="ca">
@@ -347,13 +452,13 @@
 				ordre aleatori, precedides de la lletra a,b o c.
 			</xs:documentation>
 		</xs:annotation>
-    	<xs:sequence>
-			<xs:element type="answerType" name="answer" maxOccurs="3"
-				minOccurs="3" />
+		<xs:sequence>
+			<xs:element type="answerType" name="answer"
+				maxOccurs="unbounded" minOccurs="3" />
 		</xs:sequence>
-     </xs:complexType>   
+	</xs:complexType>
 
-	
+
 	<xs:simpleType name="string">
 		<xs:annotation>
 			<xs:documentation xml:lang="ca">
@@ -366,12 +471,10 @@
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<!-- <xs:pattern 
-						value="^[^\x00-\x09\x0b\x0c\x0e-\x1f]*$">
-			</xs:pattern>-->
-			<xs:pattern 
-						value="(\P{Cc}|\r|\n|\t)*">
-			</xs:pattern>
-
+				value="^[^\x00-\x09\x0b\x0c\x0e-\x1f]*$">
+				</xs:pattern>-->
+			<xs:pattern value="(\P{Cc}|\r|\n|\t)*"></xs:pattern>
+			<xs:whiteSpace value="collapse" />
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
