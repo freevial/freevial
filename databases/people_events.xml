@@ -489,7 +489,7 @@
     <question>
       <sentence>Què és un sabdfl?</sentence>
       <author>rcarreras</author>
-      <comments><comments>sabdfl és el malnom (nick) d'en Mark Shuttleworth, fundador d'Ubuntu, i vol dir «Self-Appointed Benevolent Dictator for Life».</comments></comments>
+      <comments>sabdfl és el malnom (nick) d'en Mark Shuttleworth, fundador d'Ubuntu, i vol dir «Self-Appointed Benevolent Dictator for Life».</comments>
       <answers>
         <answer correct="True">Un dictador</answer>
         <answer>Un tècnic</answer>
