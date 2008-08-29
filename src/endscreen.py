@@ -217,7 +217,8 @@ class Visca:
 				Global.game.screen.fill( (0,0,0) )
 
 			for cua in cues:
-				dist = (cua.cau == 0, int((time.time() - cua.time) * 40), 0)
+                                #m'ha petat aqui. suposo que faltava l'if2 pero no m'ho he mirat
+				dist = if2(cua.cau == 0, int((time.time() - cua.time) * 40), 0)
 				Global.game.screen.blit( self.sfc_llum, ( cua.pos[0] + random.randint(-dist,dist), cua.pos[1] + random.randint(-dist,dist)) )
 
 			for nau in self.naus:
