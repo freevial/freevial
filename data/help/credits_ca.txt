@@ -4,14 +4,14 @@ Freevial 0.1 (08/2007)
 Una projecte de:
 Carles Oriol i Siegfried Gevatter (RainCT) 
 
-Concepte: Carles Oriol i Nil Oriol
-Desenvolupadors: Carles Oriol i Siegfried Gevatter 
+Concepte:
+Carles Oriol i Nil Oriol
 
-Base de preguntes:
-Carles Oriol, Nil Oriol, Josep Sanchez, Lluïsa Nuñez
+Desenvolupadors:
+Carles Oriol, Siegfried Gevatter i Nil Oriol
 
 Música:
 Carles Oriol
 
-Credits de la bateria de preguntes carregada:
+Crèdits de la bateria de preguntes carregada:
 ##replace:question-authors

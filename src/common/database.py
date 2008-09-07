@@ -31,7 +31,6 @@ class Database:
 	def __init__( self, num, name, language, description, players, authors, time, image, sound, version ):
 		
 		# General Database Data
-		self.num = num	# provisional, should be removed soon
 		self.name = unicode(name)
 		self.language = unicode(language)
 		self.description = unicode(description)

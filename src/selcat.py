@@ -77,13 +77,7 @@ class SelCat:
 		for num in range(0, 6):
 			self.sfc_nombres[num] = render_text( str(num+1), colorsCategories()[num], 35, 1, '', 50 )
 	
-	def refa_cats( self ):
-		for cat in range(0, 6):
-			self.cp[cat].num = cat+1
-	
 	def reinicia_cats( self ):
-		self.categories_seleccionades = [0,1,2,3,4,5];
-		
 		for num in range(0, len(self.cp)):
 			color = self.selcat_color_text_nosel
 			if num < 6:

@@ -1,17 +1,17 @@
 Freevial 0.1 (08/2007)
 -------------------------------------
 
-A project by:
-Carles Oriol & Siegfried Gevatter (RainCT) 
+Project by:
+Carles Oriol and Siegfried Gevatter
 
-Game: Concept Carles Oriol & Nil Oriol
-Developers: Carles Oriol & Siegfried Gevatter 
+Idea:
+Carles Oriol and Nil Oriol
 
-Quiz database:
-Carles Oriol, Nil Oriol, Josep Sanchez, Lluïsa Nuñez
+Developers:
+Carles Oriol, Siegfried Gevatter and Nil Oriol
 
 Music:
 Carles Oriol
 
-Quiz on loaded database:
+Loaded quiz database:
 ##replace:question-authors
