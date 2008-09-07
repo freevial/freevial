@@ -111,9 +111,6 @@ class LoadDatabase:
 
 xsdxml = etree.parse( os.path.join(Global.database, 'freevial-database.xsd') )
 xsd = etree.XMLSchema( xsdxml )
-# requereix lxml 2.0+
-#parser = etree.XMLParser(remove_blank_text = True, remove_comments = True, schema = xsd )
-#per no requerir lxml2.0+ validarem explícitament cada fitxer
 parser = etree.XMLParser(remove_blank_text = True, remove_comments = True )
 parser.setElementClassLookup(objectify.ObjectifyElementClassLookup())
 
@@ -125,20 +122,18 @@ def GetDatabase( num, xmlFile ):
 	""" Returns a Database instance loaded with the questions from a XML file. """
 	
 	doc = etree.parse(xmlFile, parser)
-
-        root = doc.getroot()
+	root = doc.getroot()
 	
 	version = float(root.get('version'))
-
-        # xdrudis: mmmm... 1.10 < 1.2 però segons com s'interpreti la versió 1.10 és 
-        # posterior a la 1.2 , no seria millor comparar-ho com a strings ?  
-	if float(version) > 1.2:
+	
+	if str(version) > str(1.2):
 		print >> sys.stderr, _(u'Warning: «%(file)s»: Database\'s version is \
 %(version)s, which is not supported by the installed version of Freevial. It \
 might not work as expected.') % {'file': xmlFile, 'version': root.get('version')}
-        else:  # les versions conegudes les validem amb xsd, que dóna errors
-               # més descriptius. Les versions futures desconegudes no podem.
-                xsd.assertValid(doc)	
+	else:
+		# Validate the file
+		xsd.assertValid(doc)	
+	
 	database = Database(
 		num,
 		filtraText(root.information.name.text),
@@ -249,7 +244,7 @@ def get_databases( database = None ):
 			except ValueError:
 				print u'Error with «%s».' % database_files[num]
 			except etree.DocumentInvalid, e:
-				print u'Error with «%s»:%s' % ( database_files[num] , e ) 
+				print u'Error with «%s»: %s' % ( database_files[num] , e ) 
 			else:
 				if len(cat) != 0:
 					Global.alldatabases.append( cat )
