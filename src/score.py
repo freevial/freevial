@@ -33,7 +33,7 @@ from pygame.locals import *
 from common.globals import Global
 from common.freevialglob import *
 from common.events import EventHandle, waitForMouseRelease
-from common.dialog_question import Question
+from common.dialog_question import QuestionDialog
 from common.effects import BigLetter
 from endscreen import Visca
 from selcat import SelCat
@@ -354,7 +354,7 @@ class Score:
 					if eventhandle.keyUp('q', 'ESCAPE'):
 						if not mostra_ajuda and not mostra_credits:
 							if not Global.LOCKED_MODE:
-								if Question().ask( self.game.screen, valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO )), color = self.game.skin.configGetRGB( "game_question_color", "game" ) ) == 0:
+								if QuestionDialog().ask( self.game.screen, valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO )), color = self.game.skin.configGetRGB( "game_question_color", "game" ) ) == 0:
 									if not Global.MUSIC_MUTE:
 										pygame.mixer.music.fadeout( 500 )
 										pygame.time.wait( 500 )
@@ -437,7 +437,7 @@ class Score:
 								else:
 									nou_grup = 1
 						else:
-							if Question().ask( self.game.screen, valorText( HOS_NEW_GAME ), (valorText( HOS_YES ), valorText( HOS_NO )), color = self.game.skin.configGetRGB( 'game_question_color', 'game' )) == 0:
+							if QuestionDialog().ask( self.game.screen, valorText( HOS_NEW_GAME ), (valorText( HOS_YES ), valorText( HOS_NO )), color = self.game.skin.configGetRGB( 'game_question_color', 'game' )) == 0:
 								mode = 0
 								show_stats = 0 
 				

@@ -31,7 +31,7 @@ from freevialglob import *
 from events import EventHandle
 
 
-class Question:
+class QuestionDialog:
 	
 	def ask( self, screen, question, answers, default = 0, cancel = -1, color = (255, 0, 0) ):
 		
