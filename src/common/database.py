@@ -26,6 +26,34 @@ from random import shuffle, sample, randint
 from copy import deepcopy
 import gettext
 
+class Question:
+	
+	def __init__(self, question=None, author=None):
+		
+		# Public Variables
+		self.question = question
+		self.author = author
+		self.comment = u''
+		self.mediatype = None
+		self.media = None
+		self.difficulty = 'Medium'
+		
+		# Internal Variables
+		self._correct_answers = []
+		self._wrong_answers = []
+	
+	def add_answer(self, text, correct=False):
+		
+		if correct:
+			self._correct_answers.append(text)
+		else:
+			self._wrong_answers.append(text)
+	
+	def get_answers(self):
+		
+		return sample(self._correct_answers, 1) + \
+			sample(self._wrong_answers, 2)
+
 class Database:
 	
 	def __init__( self, num, name, language, description, players, authors, time, image, sound, version ):
@@ -78,26 +106,27 @@ class Database:
 		
 		return self._old_questions[-1]
 	
-	def addQuestion( self, question, answ1, answ2, answ3, author, comment, mediatype, media, difficulty):
+	def add_question( self, obj ):
 		
-		self._questions.append( [question, answ1, answ2, answ3, 1, author, comment, mediatype, media, difficulty] )
+		self._questions.append( obj )
 	
 	def question( self ):
 		""" Returns the next question in a dictionary (with the answers
 		    in a random position). """
 		
 		data = self._get_question()
-		answer_order = sample(xrange(1, 4), 3)
+		answers = data.get_answers()
+		answer_order = sample(xrange(0, 3), 3)
 		
 		question = {}
-		question['text'] = data[0]
-		question['opt1'] = data[answer_order[0]]
-		question['opt2'] = data[answer_order[1]]
-		question['opt3'] = data[answer_order[2]]
-		question['answer'] = answer_order.index(1) + 1
-		question['author'] = data[5]
-		question['comment'] = data[6]
-		question['mediatype'] = data[7]
-		question['media'] = data[8]
+		question['text'] = data.question
+		question['opt1'] = answers[answer_order[0]]
+		question['opt2'] = answers[answer_order[1]]
+		question['opt3'] = answers[answer_order[2]]
+		question['answer'] = answer_order.index(0)
+		question['author'] = data.author
+		question['comment'] = data.comment
+		question['mediatype'] = data.mediatype
+		question['media'] = data.media
 
 		return question

@@ -28,12 +28,11 @@ import sys
 import gettext
 import re
 from lxml import etree, objectify
-from random import sample
 
 from common.freevialglob import *
 from common.uncompress import Uncompressor
 from common.globals import GlobalVar, Global
-from common.database import Database
+from common.database import Database, Question
 
 
 class LoadDatabase:
@@ -106,9 +105,7 @@ class LoadDatabase:
 		for files in (files for dirpath, dirnames, files in os.walk(directory)):
 			return [ '%s' % os.path.abspath(os.path.join(directory, file)) for file in files ]
 
-
 # Create the XML parser
-
 xsdxml = etree.parse( os.path.join(Global.database, 'freevial-database.xsd') )
 xsd = etree.XMLSchema( xsdxml )
 parser = etree.XMLParser(remove_blank_text = True, remove_comments = True )
@@ -150,51 +147,40 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 	)
 	
 	for question in root.questions.getchildren():
-		
+				
 		if question.answers.countchildren() < 3:
 			# Support for more than 2 incorrect answers was added in 1.3
 			print >> sys.stderr, _(u'Warning: «%s»: Found a question with' + \
                 'less than 3 answers; ignoring it.') % xmlFile
 			continue
 		
-		answers = []
+		obj = Question(
+			question=question.sentence.text.replace(chr(10), '#'),
+			author = question.author.text,
+			)
 		has_correct_answer = False
 		
 		# Process answers
 		for answer in question.answers.getchildren():
 			if answer.get('correct') is not None:
-				if has_correct_answer:
-					print >> sys.stderr, _(u'Warning: «%s»: Found a question' + \
-						' with two correct answers; ignoring it.') % xmlFile
-					continue
-				answers.insert(0, answer.text)
+				obj.add_answer(answer.text.replace(chr(10), '#'), True)
 				has_correct_answer = True
 			else:
-				answers.append(answer.text)
+				obj.add_answer(answer.text.replace(chr(10), '#'), False)
 		
 		if not has_correct_answer:
 			print >> sys.stderr, _(u'Warning: «%s»: Found a question without' + \
 				' any correct answer; ignoring it.') % xmlFile
 			continue
 		
-		if len(answers) > 3:
-			# Choose randomly two of the many incorrect answers provided
-			answers = [answers[0]] + sample(answers[1:], 2)
-		
 		if hasattr(question, 'comments') and question.comments.text is not None:
-			comment = question.comments.text
-		else:
-			comment = u''
-		
-		difficulty = 'Medium'
-		mediatype = None
-		media = None
+			obj.comment = question.comments.text
 		
 		if version >= 1.1:
 			# Version 1.1 introduces support for audio
 			if hasattr(question, 'media'):
-				mediatype = question.media.get('type')
-				media = question.media.text
+				obj.mediatype = question.media.get('type')
+				obj.media = question.media.text
 		
 		if version >= 1.2:
 			# Version 1.2 introduces support for different difficulty levels
@@ -204,22 +190,11 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 			if difficulty not in ('Easy', 'Medium', 'Hard'):
 				print _(u'Warning: «%s»: Found a question with incorrect' + \
 					u' difficulty level «%s».') % (xmlFile, difficulty)
-				difficulty = 'Medium'
+			else:
+				obj.difficulty = difficulty
 		
-		# Check CR
-	
-		if not (Global.DISABLE_MEDIA and mediatype):
-			database.addQuestion(
-				question = question.sentence.text.replace(chr(10), '#'),
-				answ1 = answers[0].replace(chr(10), '#'),
-				answ2 = answers[1].replace(chr(10), '#'),
-				answ3 = answers[2].replace(chr(10), '#'),
-				author = question.author.text,
-				comment = comment,
-				mediatype = mediatype,
-				media = media,
-				difficulty = difficulty
-		)
+		if not (Global.DISABLE_MEDIA and obj.mediatype):
+			database.add_question(obj)
 	
 	return database
 

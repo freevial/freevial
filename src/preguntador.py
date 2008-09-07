@@ -256,9 +256,6 @@ class Preguntador:
 
 			self.media_image_dance[1] = ( (512-50)-(self.media_image[1].get_width()/2), ((768-100)/2-50)-(self.media_image[1].get_height()/2))
 
-
-
-
 	def initialize_question( self ):
 
 		self.sfc_pregunta  = self.preguntadorPintatext( self.current_question['text'], self.game.skin.configGetInt("question_width") )
@@ -483,9 +480,6 @@ class Preguntador:
 						self.so_nook.play()
 					notes = if2(self.current_question['comment'],
 						self.current_question['comment'].split('#'), ".")
-					#notes = if2(self.current_question['comment'] != "", self.formataCadenes(self.current_question['comment']), ".");
-
-
 					sfc_comentaris = createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
 					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.current_question['comment'] ) <= 5:
@@ -596,21 +590,20 @@ class Preguntador:
 		
 			if self.show_answers > 0:
 				
-				for num in range (0, 3):
-					if self.current_question['answer'] == (num + 1):
-						if self.selected != (num + 1):	
+				for num in xrange(0, 3):
+					if self.current_question['answer'] == num :
+						if (self.selected - 1) != num :	
 							self.game.screen.blit( self.solucio_ok, (posnook2, linia_act + (150 * num)) )
 						else:
 							self.game.screen.blit( self.solucio_ok, (posok, linia_act + (150 * num)) )
-					
 					else:
-						if self.selected == (num + 1):
+						if (self.selected - 1) == num:
 							self.game.screen.blit( self.solucio_nook, (posnook, linia_act + (150 * num)) )
 				
 				if len( self.current_question['comment'] ) > 5:
 					self.game.screen.blit( if2((int(time.time() * 3) % 3) == 0,
 						self.info[0], self.info[1]), (self.postextx, 150) )
-				
+			
 			if mostra_punt_de_categoria:
 				current_time = time.time()
 				figureta_blit = if2((int(current_time * 2) % 2) == 0, figureta_no, figureta_si)

@@ -8,8 +8,8 @@ of database version 1.1, which provides new audio capabilities.
 Improvements:
  - Freevial does now work with Python version 2.4, in addition to 2.5.
  - Added support for questions with sound.
- - Added support for questions with more than two incorrect answers (Freevial
-   will randomly choose two of them when it loads the database).
+ - Added support for questions with more than one correct and two incorrect
+   answers (three of them are randomly choosen at runtime).
 
 Bug Fixes:
  - Fixed the --database option; it did not work previously.
