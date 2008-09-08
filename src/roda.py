@@ -160,24 +160,23 @@ class Roda:
 					mostra_credits ^= 1
 					mostra_ajuda = 0
 				
-				if  eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER') and rodant == 1:
-					if resultat == -1: 	
-						atura = 1
-					else:
-						return resultat
+				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER') and rodant == 1:
+					atura = 1
+			
+			if time_fi != 0 and (time.time() - time_fi > 2.5 or (
+			Global.SOUND_MUTE and time.time() - time_fi > 1)):
+				# Note: The first time a question is shown the screen can take
+				# ... up to some seconds until it loads. That is not a bug here.
+				return resultat
 			
 			if atura == 1:
 				atura = 0
 				pas = 3
 				deceleracio = self.game.skin.configGetInt( 'wheel_deccel' )
-				time_fi = time.time()
 				
 				if not frenant:
 					frenant = 1
 					self.so_sub.play()
-			
-			if time_fi != 0 and time.time() - time_fi > 2.5:
-				return resultat
 			
 			# decelerem
 			velocitat -= deceleracio
@@ -193,10 +192,8 @@ class Roda:
 						pos += if2(offset < (200 - deceleracio), deceleracio, 1)
 					elif offset <= 100:
 						pos -= if2(offset > deceleracio, deceleracio, 1)
-						
 						if pos <= -1200:
 							pos += 1200
-				
 				else:
 					resultat = int( ( ( - ( pos - 1550 ) / 200 ) ) % 6 )
 					
@@ -205,17 +202,17 @@ class Roda:
 						atura = 0
 						pas = 3
 						deceleracio = self.game.skin.configGetInt( 'wheel_deccel' )
-						time_fi = time.time()
 						frenant = 1
 						self.so_sub.play()
 					
 					else:
+						time_fi = time.time()
 						self.so_dot.stop()
-						self.so_cat[ resultat].play()
+						self.so_cat[resultat].play()
 						if self.so_de_pas == 1:
 							self.so_evil.play()
 						if self.so_de_pas == 2:
-							if not  self.game.teams[self.game.current_team].teCategoria( resultat ) :
+							if not self.game.teams[self.game.current_team].teCategoria( resultat ):
 								self.so_evil.play()
 						rodant = 0
 			
@@ -225,8 +222,6 @@ class Roda:
 				
 				pos -= velocitat
 				if pos <= -1200: pos += 1200
-			
-
 
 			#pintem el paper freevial
 			self.game.screen.blit( self.fons, ( 0, pos_fons ) )

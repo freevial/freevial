@@ -10,10 +10,14 @@ Improvements:
  - Added support for questions with sound.
  - Added support for questions with more than one correct and two incorrect
    answers (three of them are randomly choosen at runtime).
+ - Decreased the time it takes for the wheel to switch to a question, when
+   the game is muted.
 
 Bug Fixes:
  - Fixed the --database option; it did not work previously.
  - Fixed file permissions so that the installation script works for end users.
+ - Fixed a bug in the wheel which could cause it to return to the team
+   selection screen instead of showing a question.
 
 
 Version 1.2 - Perfectionism
