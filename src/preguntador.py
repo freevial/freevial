@@ -474,7 +474,7 @@ class Preguntador:
 				self.help_on_screen.sec_timeout = 3
 				if self.show_answers == 0:
 					self.show_answers = 3
-					if self.current_question['answer'] == self.selected:
+					if self.current_question['answer'] == (self.selected - 1):
 						self.so_ok.play()
 					else:
 						self.so_nook.play()
