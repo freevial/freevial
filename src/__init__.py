@@ -2,7 +2,7 @@
  
 #
 # Freevial
-# Collection of commonly used classes and functions
+# A quiz game for community events
 #
 # Copyright (C) 2007, 2008 The Freevial Team
 #
