@@ -163,17 +163,17 @@ optParser = OptionParser(
 	)
 optParser.add_option(
 	'-d', '--debug',
-	action='store_false', dest = 'debug',
+	action='store_true', dest = 'debug',
 	help = _('debug mode'),
 	)
 optParser.add_option(
 	'-f', '--fullscreen',
-	action='store_false', dest = 'fullscreen',
+	action='store_true', dest = 'fullscreen',
 	help = _('start in fullscreen mode'),
 	)
 optParser.add_option(
 	'-l', '--locked',
-	action='store_false', dest = 'locked',
+	action='store_true', dest = 'locked',
 	help = _('start game in locked mode'),
 	)
 optParser.add_option(
@@ -193,60 +193,59 @@ optParser.add_option(
 	)
 optParser.add_option(
 	'--no-sound',
-	action='store_false', dest = 'no_sound',
+	action='store_true', dest = 'no_sound',
 	help = _('disable sound'),
 	)
 optParser.add_option(
 	'--no-music',
-	action='store_false', dest = 'no_music',
+	action='store_true', dest = 'no_music',
 	help = _('disable music'),
 	)
 optParser.add_option(
 	'-m', '--mute',
-	action='store_false', dest = 'mute',
+	action='store_true', dest = 'mute',
 	help = _('disable all sounds and music'),
 	)
 optParser.add_option(
 	'--no-media',
-	action='store_false', dest = 'no_media',
+	action='store_true', dest = 'no_media',
 	help = _('disable media questions'),
 	)
 optParser.add_option(
 	'--fps',
-	action='store_false', dest = 'fps',
+	action='store_true', dest = 'fps',
 	help = _('show the framerate on screen'),
 	)
 optParser.add_option(
 	'--dbus',
-	action='store_false', dest = 'dbus',
+	action='store_true', dest = 'dbus',
 	help = _('enable D-Bus support, to interface with external applications'),
 	)
 optParser.add_option(
-	'--info-db',
-	action='store_false', dest = 'info_db',
+	'--info-db', '--info-database',
+	action='store_true', dest = 'info_db',
 	help = _('print information about the loaded database and exit'),
 	)
 optParser.add_option(
 	'--preload',
-	action='store_false', dest = 'preload',
+	action='store_true', dest = 'preload',
 	help = _('load all images and sounds at startup'),
 	)
 optParser.add_option(
 	'--psyco',
-	action='store_false', dest = 'psyco',
+	action='store_true', dest = 'psyco',
 	help = _('use psyco, if available (this will use more memory)'),
 	)
 (options, args) = optParser.parse_args()
 
 if options.database:
-	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1],
-		sys.argv[sys.argv.index( '--database' ) + 1]))
+	path = os.path.abspath(os.path.join(options.real, options.database))
 	if not os.path.isdir( path ):
 		print _('Could not find database "%s"...') % unicode(path, 'utf-8')
 		sys.exit( 1 )
 	Global.database = path
 
-if '--info-db' in sys.argv or '--info-database' in sys.argv:
+if options.info_db:
 	total_categories = 0
 	total_questions = 0
 	categories = []
@@ -270,32 +269,32 @@ if '--info-db' in sys.argv or '--info-database' in sys.argv:
 	
 	sys.exit( 0 )
 
-if '-d' in sys.argv or '--debug' in sys.argv:
+if options.debug:
 	Global.DEBUG_MODE = True
 
-if '-l' in sys.argv or '--locked' in sys.argv:
+if options.locked:
 	Global.LOCKED_MODE = True
 
-if '--fullscreen' in sys.argv or '-f' in sys.argv:
+if options.fullscreen:
 	Global.FULLSCREEN_MODE = True
 
-if '--fps' in sys.argv:
+if options.fps:
 	Global.DISPLAY_FPS = True
 
-if '-m' in sys.argv or '--mute' in sys.argv:
+if options.mute:
 	Global.SOUND_MUTE = True
 	Global.MUSIC_MUTE = True
 
-if '--no-sound' in sys.argv:
+if options.no_sound:
 	Global.SOUND_MUTE = True
 
-if '--no-music' in sys.argv:
+if options.no_music:
 	Global.MUSIC_MUTE = True
 
-if '--no-media' in sys.argv or (Global.SOUND_MUTE and Global.MUSIC_MUTE):
+if options.no_media or (Global.SOUND_MUTE and Global.MUSIC_MUTE):
 	Global.DISABLE_MEDIA = True
 
-if '--dbus' in sys.argv:
+if options.dbus:
 	try:
 		import dbus
 	except:
@@ -306,20 +305,20 @@ if '--dbus' in sys.argv:
 		Global.session_bus = dbus.SessionBus()
 		import common.dbus
 
-if '--preload' in sys.argv:
+if options.preload:
 	Global.PRELOAD = True
 
-if '--skin' in sys.argv:
-	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--skin' ) + 1]))
+if options.skin in sys.argv:
+	path = os.path.abspath(os.path.join(options.real, options.skin))
 	setSkinName( path )
 
-print _('Loading database "%s"...' % Global.database)
+print _(u'Loading database "%s"...' % Global.database)
 if len(get_databases()) < 6:
 	print _('Error: the database hasn\'t enough categories; at least six are required.')
 	sys.exit( 1 )
 
 try:
-	if '--psyco' in sys.argv:
+	if options.psyco:
 		try:
 			import psyco
 			psyco.profile()

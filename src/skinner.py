@@ -61,7 +61,7 @@ def setSkinName( path ):
 	Global.skin_folder = path
 	Global.skin_file = os.path.join( path, 'skin.ini' )
 	
-	print _('Loading skin "%s"...') % unicode(Global.skin_folder, 'utf-8')
+	print _(u'Loading skin "%s"...' % unicode(Global.skin_folder, 'utf-8'))
 
 class Skin:
 	
