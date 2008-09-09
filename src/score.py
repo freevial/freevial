@@ -32,7 +32,7 @@ from pygame.locals import *
 
 from common.globals import Global
 from common.freevialglob import *
-from common.events import EventHandle, waitForMouseRelease
+from common.events import eventLoop, waitForMouseRelease
 from common.dialog_question import QuestionDialog
 from common.effects import BigLetter
 from endscreen import Visca
@@ -299,47 +299,43 @@ class Score:
 				if time.time() >= self.help_on_screen.sec_darrera_activitat + self.score_slide_activity_timeout :
 					show_elements = False
 			
-			# Event iterator
-			for event in pygame.event.get():
-								
-				eventhandle = EventHandle(event)
-				 
-				if eventhandle.handled: continue
+			# event iterator
+			for event in eventLoop():
 				
 				self.help_on_screen.activitat(event)
 
 				if event.type == pygame.KEYUP and not show_elements:
 					show_elements ^= 1
 				
-				if eventhandle.keyUp('F1') or (not escriu and eventhandle.keyUp('h')):
+				if event.keyUp('F1') or (not escriu and event.keyUp('h')):
 					mostra_ajuda ^= 1
 					mostra_credits = 0
 				
-				if eventhandle.keyDown('F2'):
+				if event.keyDown('F2'):
 					mostra_credits ^= 1
 					mostra_ajuda = 0
 				
 				if escriu and not mostra_ajuda and not mostra_credits:
 					
-					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
+					if event.isClick('primary') or event.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
 						escriu = 0
-						if self.game.teams[element_seleccionat].nom == '' and eventhandle.isKey('ESCAPE'):
+						if self.game.teams[element_seleccionat].nom == '' and event.isKey('ESCAPE'):
 							self.game.teams[element_seleccionat].actiu = 0
 					
-					elif eventhandle.isDown():
+					elif event.isDown():
 
 						newname = None
 											
-						if eventhandle.isKey('BACKSPACE'):
+						if event.isKey('BACKSPACE'):
 							if len(self.game.teams[element_seleccionat].nom) > 0:
 								newname = self.game.teams[element_seleccionat].nom[:-1]
 						else:
-							if eventhandle.keyDown('UP'):
+							if event.keyDown('UP'):
 								newname = self.accentsUP( self.game.teams[element_seleccionat].nom )
-							elif eventhandle.keyDown('DOWN'):
+							elif event.keyDown('DOWN'):
 								newname = self.accentsDOWN( self.game.teams[element_seleccionat].nom )
 							else:
-								newname = self.game.teams[element_seleccionat].nom + eventhandle.str()
+								newname = self.game.teams[element_seleccionat].nom + event.str()
 						
 						if newname != None:
 							sfc = self.game.skin.render_text( newname, (self.score_color_text), self.score_mida_text, 1)
@@ -351,7 +347,7 @@ class Score:
 				
 				else:
 					
-					if eventhandle.keyUp('q', 'ESCAPE'):
+					if event.keyUp('q', 'ESCAPE'):
 						if not mostra_ajuda and not mostra_credits:
 							if not Global.LOCKED_MODE:
 								if QuestionDialog().ask( self.game.screen, valorText( HOS_QUIT ), (valorText( HOS_YES ), valorText( HOS_NO )), color = self.game.skin.configGetRGB( "game_question_color", "game" ) ) == 0:
@@ -364,63 +360,63 @@ class Score:
 					
 					if mode == 0:
 						
-						if eventhandle.keyUp('RIGHT', 'LEFT'):
+						if event.keyUp('RIGHT', 'LEFT'):
 							element_seleccionat += if2(0 == (element_seleccionat % 2), 1, -1)
 							self.so_sub.play()
 						
-						if eventhandle.keyUp('DOWN'): 
+						if event.keyUp('DOWN'): 
 							element_seleccionat = (element_seleccionat + 2) % self.game.skin.configGetInt( "max_teams", "game" )
 							self.so_sub.play()
 						
-						if eventhandle.keyUp('UP'): 
+						if event.keyUp('UP'): 
 							element_seleccionat = (element_seleccionat - 2) % self.game.skin.configGetInt( "max_teams", "game" )
 							self.so_sub.play()
 						
-						if eventhandle.keyUp('a'):
+						if event.keyUp('a'):
 							nou_grup = 1
 						
-						if eventhandle.keyUp('n'):
+						if event.keyUp('n'):
 							if self.game.teams[element_seleccionat].actiu:
 								escriu ^= 1
 							else:
 								nou_grup = 1
 						
-						if eventhandle.keyUp('PAGEDOWN') and teamsActius( self.game.teams ) >= 1:
+						if event.keyUp('PAGEDOWN') and teamsActius( self.game.teams ) >= 1:
 							element_seleccionat = seguentEquipActiu( self.game.teams, element_seleccionat )
 							self.so_sub.play()
 						
-						if eventhandle.keyUp('PAGEUP') and teamsActius( self.game.teams ) >= 1:
+						if event.keyUp('PAGEUP') and teamsActius( self.game.teams ) >= 1:
 							element_seleccionat = anteriorEquipActiu( self.game.teams, element_seleccionat )
 							self.so_sub.play() 
 						
-						if eventhandle.keyUp('r') and teamsActius( self.game.teams ) > 0:
+						if event.keyUp('r') and teamsActius( self.game.teams ) > 0:
 							atzar = randint(15, 50)
 							mode = 1
 
-						if eventhandle.keyUp('g') or eventhandle.isClick ( 5 ): 
+						if event.keyUp('g') or event.isClick ( 5 ): 
 							self.nextTeamgotxie( element_seleccionat )
 
-						if eventhandle.keyUp('t') or  eventhandle.isClick ( 4 ): 
+						if event.keyUp('t') or  event.isClick ( 4 ): 
 							self.prevTeamgotxie( element_seleccionat )
 
 					
-					if eventhandle.keyUp('z'): 
+					if event.keyUp('z'): 
 						if self.game.teams[element_seleccionat].actiu:
 							self.game.teams[element_seleccionat].punts += 1
 					
-					if eventhandle.keyUp('x'): 
+					if event.keyUp('x'): 
 						if self.game.teams[element_seleccionat].actiu and self.game.teams[element_seleccionat].punts > 0:
 							self.game.teams[element_seleccionat].punts -= 1
 
-					if eventhandle.keyUp('d'): 
+					if event.keyUp('d'): 
 						show_elements ^= 1
 					
 					if self.game.teams[element_seleccionat].actiu:
 						for num in range(1, 7):
-							if eventhandle.keyUp(str(num), 'KP' + str(num)):
+							if event.keyUp(str(num), 'KP' + str(num)):
 								self.game.teams[element_seleccionat].canviaCategoria( num-1 )
 					
-					if eventhandle.isClick('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
+					if event.isClick('primary') or event.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 
 						if mode == 1:
 							if not Global.MUSIC_MUTE:
@@ -428,7 +424,7 @@ class Score:
 							return element_seleccionat
 
 						elif mode == 0:
-							if self.game.teams[element_seleccionat].actiu and eventhandle.keyUp('SPACE') :
+							if self.game.teams[element_seleccionat].actiu and event.keyUp('SPACE') :
 								atzar = int( randint(25, 60) )
 								mode = 1
 							else:
@@ -448,10 +444,10 @@ class Score:
 									equip.punts = 0
 									equip.figureta = 0				
 					
-					if eventhandle.keyUp('s'): 
+					if event.keyUp('s'): 
 						show_stats ^= 1
 					
-					if eventhandle.keyUp('m'):
+					if event.keyUp('m'):
 						replaceModes = {
 								0: 1,
 								1: 0,
@@ -460,14 +456,14 @@ class Score:
 						mode = replaceModes[ mode ]
 						self.effect_mode.switch_mode(mode)
 
-					if eventhandle.keyUp('e') and not Global.LOCKED_MODE :
+					if event.keyUp('e') and not Global.LOCKED_MODE :
 						self.show_end_screen( startsound = True )
 						mostrada_victoria = True
 					
-					if eventhandle.keyUp('l'): 
+					if event.keyUp('l'): 
 						Global.LOCKED_MODE = (not Global.LOCKED_MODE)
 
-					if eventhandle.keyUp('k', 'F3', 'F5') and mode == 0:
+					if event.keyUp('k', 'F3', 'F5') and mode == 0:
 						selcat = SelCat( self.game )
 						selcat.juguem( mode )
 

@@ -29,8 +29,7 @@ import time
 import pygame
 
 from common.freevialglob import *
-from common.events import EventHandle
-from common.events import waitForMouseRelease
+from common.events import eventLoop, waitForMouseRelease
 from questions import get_databases
 
 
@@ -139,12 +138,9 @@ class Roda:
 		
 		while 1:
 			
-			for event in pygame.event.get():
+			for event in eventLoop():
 				
-				eventhandle = EventHandle(event)
-				if eventhandle.handled: continue
-				
-				if eventhandle.keyUp('ESCAPE', 'q') and not Global.LOCKED_MODE:
+				if event.keyUp('ESCAPE', 'q') and not Global.LOCKED_MODE:
 					if not mostra_ajuda and not mostra_credits:
 						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(500)
@@ -152,15 +148,15 @@ class Roda:
 					else:
 						mostra_ajuda = mostra_credits = 0
 				
-				if eventhandle.keyUp('F1', 'h'):
+				if event.keyUp('F1', 'h'):
 					mostra_ajuda ^= 1	
 					mostra_credits = 0			
 				
-				if eventhandle.keyUp('F2'):
+				if event.keyUp('F2'):
 					mostra_credits ^= 1
 					mostra_ajuda = 0
 				
-				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER') and rodant == 1:
+				if event.isRelease('primary') or event.keyUp('RETURN', 'SPACE', 'KP_ENTER') and rodant == 1:
 					atura = 1
 			
 			if time_fi != 0 and (time.time() - time_fi > 2.5 or (

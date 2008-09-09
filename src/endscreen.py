@@ -31,7 +31,7 @@ import math
 
 from common.globals import Global
 from common.freevialglob import *
-from common.events import EventHandle
+from common.events import eventLoop
 
 
 class Nau:
@@ -177,12 +177,9 @@ class Visca:
 						nau.x += math.cos( nau.dir - dist) * nau.vel
 						nau.y += math.sin( nau.dir - dist) * nau.vel
 
-			for event in pygame.event.get():
+			for event in eventLoop():
 				
-				eventhandle = EventHandle(event)
-				if eventhandle.handled: continue
-				
-				if eventhandle.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
+				if event.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
 					if not Global.MUSIC_MUTE:
 						pygame.mixer.music.fadeout( 1500 )
 					return

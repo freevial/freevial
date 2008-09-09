@@ -55,9 +55,14 @@ joystick_aliases = {
 	}
 
 class EventHandle:
+	"""
+	
+	This class takes a pygame event and creates an object with convenient
+	methods to identify it.
+	
+	"""
 	
 	global mouseButtons
-	
 	
 	def __init__( self, event, do_base_actions = True ):
 		
@@ -65,6 +70,8 @@ class EventHandle:
 			event = self._convert_joystick_event(event)
 		
 		self.event = event
+		# The following line should be deprecated when eventLoop improves.
+		self.type = event.type
 		self.handled = False
 		
 		if do_base_actions and self.base_actions():
@@ -220,6 +227,22 @@ class EventHandle:
 		else:
 			return False
 
+
+def eventLoop():
+	"""
+	
+	Generator which runs through the event loop, takes care of global
+	events and yields the unhandled event objects.
+	
+	This function may be expanded in the future to add support for
+	external events (which could come from DBUS or other sources).
+	
+	"""
+	
+	for event in pygame.event.get():
+		eventhandle = EventHandle(event)
+		if eventhandle.handled: continue
+		yield eventhandle
 
 def waitForMouseRelease( ):
 

@@ -31,7 +31,7 @@ import re
 from math import *
 
 from common.freevialglob import *
-from common.events import EventHandle, waitForMouseRelease
+from common.events import eventLoop, waitForMouseRelease
 from questions import get_databases
 
 class NotaVoladora:
@@ -388,14 +388,11 @@ class Preguntador:
 			acaba = 0
 			
 			# Iterador d'events
-			for event in pygame.event.get():
-				
-				eventhandle = EventHandle(event)
-				if eventhandle.handled: continue
+			for event in eventLoop():
 				
 				self.help_on_screen.activitat(event)
 				
-				if eventhandle.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
+				if event.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
 					if not mostra_ajuda and not mostra_credits:
 						if not (Global.SOUND_MUTE or Global.MUSIC_MUTE):
 							pygame.mixer.fadeout(500)
@@ -406,43 +403,43 @@ class Preguntador:
 					else:
 						mostra_ajuda = mostra_credits = 0
 				
-				if eventhandle.keyUp('F1', 'h'):
+				if event.keyUp('F1', 'h'):
 					mostra_ajuda ^= 1
 					mostra_credits = 0
 
-				if eventhandle.keyUp('F2'):
+				if event.keyUp('F2'):
 					mostra_ajuda = 0
 					mostra_credits ^= 1
 				
 				if self.show_answers == 0:
-					if eventhandle.keyUp('a', 'i'):
-						if eventhandle.isKey('a'): acaba = 1	
+					if event.keyUp('a', 'i'):
+						if event.isKey('a'): acaba = 1	
 						self.selected = 1
 						self.so_sub.play()
 					
-					if eventhandle.keyUp('b', 'o'):	
-						if eventhandle.isKey('b'): acaba = 1
+					if event.keyUp('b', 'o'):	
+						if event.isKey('b'): acaba = 1
 						self.selected = 2
 						self.so_sub.play()
 					
-					if eventhandle.keyUp('c', 'p'):	
-						if eventhandle.isKey('c'): acaba = 1
+					if event.keyUp('c', 'p'):	
+						if event.isKey('c'): acaba = 1
 						self.selected = 3
 						self.so_sub.play()
 					
-					if eventhandle.keyUp('DOWN', 'TAB') or eventhandle.isClick ( 5 ): 
+					if event.keyUp('DOWN', 'TAB') or event.isClick ( 5 ): 
 						self.selected += 1
 						if self.selected == 4:
 							self.selected = 1
 						self.so_sub.play()
 					
-					if eventhandle.keyUp(event, 'UP') or eventhandle.isClick ( 4 ): 
+					if event.keyUp(event, 'UP') or event.isClick ( 4 ): 
 						self.selected -= 1
 						if self.selected <= 0:
 							self.selected = 3	
 						self.so_sub.play()
 				
-					if eventhandle.keyUp('x'):	
+					if event.keyUp('x'):	
 						if self.current_question["mediatype"] == "audio":
 							self.audio.play( 1 )
 						if self.current_question["mediatype"] == "image":
@@ -450,18 +447,18 @@ class Preguntador:
 							hide_answers %= 4
 				
 
-				if eventhandle.keyUp('z'):	
+				if event.keyUp('z'):	
 					self.mostraautor ^= 1
 
 				for num in range(1, 7):
-					if eventhandle.keyUp(str(num), 'KP' + str(num)):
+					if event.keyUp(str(num), 'KP' + str(num)):
 						self.atzar( num-1 )
 				
-				if eventhandle.isRelease('primary') or eventhandle.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
+				if event.isRelease('primary') or event.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 					if self.selected != 0 or (self.segons <= 0 and max_time != 0):
 						acaba = 1
 				
-				if eventhandle.keyUp('F3') and self.show_answers == 3 and len(self.current_question['comment']) > 5:	
+				if event.keyUp('F3') and self.show_answers == 3 and len(self.current_question['comment']) > 5:	
 					mostra_comentaris ^= 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem

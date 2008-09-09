@@ -27,7 +27,7 @@ import pygame
 from math import *
 
 from common.freevialglob import *
-from common.events import EventHandle
+from common.events import eventLoop
 from questions import shuffle_databases, get_databases
 
 def FindList( llista, element ):
@@ -135,46 +135,38 @@ class SelCat:
 		while 1:
 				
 			# Event iterator
-			for event in pygame.event.get():
-
-				eventhandle = EventHandle(event)
-				if eventhandle.handled: continue
+			for event in eventLoop():
 				
-				if eventhandle.keyUp('q', 'ESCAPE', 'KP_ENTER', 'F3', 'F5'):
-					if estat == 0: self.refa_cats();
+				if event.keyUp('q', 'ESCAPE', 'KP_ENTER', 'F3', 'F5') or \
+				event.keyUp('RETURN') and estat != 0:
 					return
 				
-				if eventhandle.keyUp('DOWN'):
+				if event.keyUp('DOWN'):
 					seleccio += 1
 					seleccio %=  nelements
 					self.so_sub.play() 
 				
-				if eventhandle.keyUp('UP'):
+				if event.keyUp('UP'):
 					seleccio -= 1
 					seleccio %=  nelements 
 					self.so_sub.play() 
 				
 				if estat == 0:
 
-					if eventhandle.keyUp('r'):
+					if event.keyUp('r'):
 						shuffle_databases()
 						self.reinicia_cats( )
 						self.so_sub2.play()
 						self.darrera_info = -1
 
 					for num in range(0, 6):
-						if eventhandle.keyUp(str(num + 1), 'KP' + str(num + 1)): 	
+						if event.keyUp(str(num + 1), 'KP' + str(num + 1)): 	
 							self.CanviaElements( seleccio, num )
 							seleccio = num
 
-					if eventhandle.keyUp('RETURN'):										
+					if event.keyUp('RETURN'):										
 						self.PosaPrimer( seleccio )
-
-				else:
-					if eventhandle.keyUp('RETURN'):			
-						if estat == 0: self.refa_cats();							
-						return
-		
+			
 			# Animem el fons
 			ypos += 1
 			ypos %= Global.screen_y

@@ -602,7 +602,7 @@ class helpOnScreen:
 	
 	def activitat( self, event = None ):
 		
-		if not event or event.type == pygame.KEYUP :
+		if not event or event.type == pygame.KEYUP:
 			self.sec_darrera_activitat = time.time()
 
 
