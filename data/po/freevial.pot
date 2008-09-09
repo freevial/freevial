@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: freevial-dev@eurion.net\n"
-"POT-Creation-Date: 2008-04-18 22:00+0200\n"
+"POT-Creation-Date: 2008-09-09 17:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,153 +16,167 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/freevial.py:80
+#: src/freevial.py:81
 #, python-format
 msgid "Sound initialization failed. %s"
 msgstr ""
 
-#: src/freevial.py:148
-msgid "Usage: freevial [OPTIONS]"
-msgstr ""
-
-#: src/freevial.py:150
-msgid "-d, --debug\t\tDebug mode."
-msgstr ""
-
 #: src/freevial.py:151
-msgid "-m, --mute\t\tDisable all sounds and music."
-msgstr ""
-
-#: src/freevial.py:152
-msgid "-f, --fullscreen\tStart in fullscreen mode."
-msgstr ""
-
-#: src/freevial.py:153
-msgid "-l, --locked\t\tStart game in locked mode."
-msgstr ""
-
-#: src/freevial.py:154
-msgid "-h, --help\t\tDisplay this message."
-msgstr ""
-
-#: src/freevial.py:155
-msgid "-v, --version\t\tPrint information about the current version."
-msgstr ""
-
-#: src/freevial.py:156
+#, python-format
 msgid ""
-"--database <path>\tSet the absolute path to the database file / directory."
-msgstr ""
-
-#: src/freevial.py:157
-msgid "--skin <path>\t\tSet the absolute path to the skin file / directory."
-msgstr ""
-
-#: src/freevial.py:158
-msgid "--no-sound\t\tDisable sound."
-msgstr ""
-
-#: src/freevial.py:159
-msgid "--no-music\t\tDisable music."
-msgstr ""
-
-#: src/freevial.py:160
-msgid "--no-media\t\tDisable media questions."
+"\n"
+"Freevial, a trivia platform for use on community events.\n"
+"\n"
+"You are running version %(version)s, which is part of the «%(series)s» "
+"series.\n"
+"\n"
+"https://launchpad.net/freevial/%(series)s\n"
+"\n"
 msgstr ""
 
 #: src/freevial.py:161
-msgid "--fps\t\t\tPrint framerate on screen."
+msgid "Usage: %prog [options]"
 msgstr ""
 
-#: src/freevial.py:162
-msgid "--info-db\t\tPrints information about the loaded database and exits."
+#: src/freevial.py:167
+msgid "debug mode"
 msgstr ""
 
-#: src/freevial.py:163
-msgid "--psyco\t\t\tUse psyco, if available (this will use more memory)."
+#: src/freevial.py:172
+msgid "start in fullscreen mode"
 msgstr ""
 
-#: src/freevial.py:170
-msgid "Freevial, a trivia platform for use on community events"
+#: src/freevial.py:177
+msgid "start game in locked mode"
 msgstr ""
 
-#: src/freevial.py:171
-#, python-format
-msgid ""
-"You are running version %(version)s, which is part of the «%(series)s» series."
+#: src/freevial.py:182
+msgid "absolute path to the database file / directory"
 msgstr ""
 
-#: src/freevial.py:183
+#: src/freevial.py:187
+msgid "(do not use this)"
+msgstr ""
+
+#: src/freevial.py:192
+msgid "absolute path to the skin directory"
+msgstr ""
+
+#: src/freevial.py:197
+msgid "disable sound"
+msgstr ""
+
+#: src/freevial.py:202
+msgid "disable music"
+msgstr ""
+
+#: src/freevial.py:207
+msgid "disable all sounds and music"
+msgstr ""
+
+#: src/freevial.py:212
+msgid "disable media questions"
+msgstr ""
+
+#: src/freevial.py:217
+msgid "show the framerate on screen"
+msgstr ""
+
+#: src/freevial.py:222
+msgid "enable D-Bus support, to interface with external applications"
+msgstr ""
+
+#: src/freevial.py:227
+msgid "print information about the loaded database and exit"
+msgstr ""
+
+#: src/freevial.py:232
+msgid "load all images and sounds at startup"
+msgstr ""
+
+#: src/freevial.py:237
+msgid "use psyco, if available (this will use more memory)"
+msgstr ""
+
+#: src/freevial.py:245
 #, python-format
 msgid "Could not find database \"%s\"..."
 msgstr ""
 
-#: src/freevial.py:198
+#: src/freevial.py:260
 msgid "Freevial - About the loaded database...\n"
 msgstr ""
 
-#: src/freevial.py:200
+#: src/freevial.py:262
 msgid "Location:"
 msgstr ""
 
-#: src/freevial.py:201
+#: src/freevial.py:263
 msgid "Amount of categories:"
 msgstr ""
 
-#: src/freevial.py:202
+#: src/freevial.py:264
 msgid "Amount of questions:"
 msgstr ""
 
-#: src/freevial.py:205
+#: src/freevial.py:267
 #, python-format
 msgid "%(category)s: %(num)s questions"
 msgstr ""
 
-#: src/freevial.py:240
+#: src/freevial.py:302
+msgid "Error: Couldn't find dbus-python."
+msgstr ""
+
+#: src/freevial.py:316
 #, python-format
 msgid "Loading database \"%s\"..."
 msgstr ""
 
-#: src/freevial.py:242
+#: src/freevial.py:318
 msgid ""
 "Error: the database hasn't enough categories; at least six are required."
 msgstr ""
 
-#: src/freevial.py:251
+#: src/freevial.py:327
 msgid "Warning: Could not find psyco."
 msgstr ""
 
-#: src/freevial.py:257
-msgid "Manual exit."
+#: src/freevial.py:333
+msgid "User requested interrupt."
 msgstr ""
 
-#: src/preguntador.py:538
+#: src/preguntador.py:627
 msgid " X - Replay media"
 msgstr ""
 
-#: src/questions.py:48
-msgid "Error: Couldn't find the current questions database."
+#: src/preguntador.py:632
+msgid " X - Shows or hides answers/images"
 msgstr ""
 
 #: src/questions.py:49
+msgid "Error: Couldn't find the current questions database."
+msgstr ""
+
+#: src/questions.py:50
 msgid ""
 "You can provide the location to that one you want to use by passing the --"
 "database option."
 msgstr ""
 
-#: src/questions.py:50
+#: src/questions.py:51
 msgid "For example:"
 msgstr ""
 
-#: src/questions.py:64
+#: src/questions.py:65
 msgid "Indicated directory of file doesn't exist or has wrong permissions."
 msgstr ""
 
-#: src/questions.py:74
+#: src/questions.py:75
 msgid "Expected a directory or compressed file."
 msgstr ""
 
-#: src/questions.py:120
+#: src/questions.py:127
 #, python-format
 msgid ""
 "Warning: «%(file)s»: Database's version is %(version)s, which is not "
@@ -170,44 +184,42 @@ msgid ""
 "expected."
 msgstr ""
 
-#: src/questions.py:140
+#: src/questions.py:153
 #, python-format
-msgid ""
-"Warning: «%s»: Found a question with an incorrect number of answers; ignoring "
-"it."
+msgid "Warning: «%s»: Found a question with less than 3 answers; ignoring it."
 msgstr ""
 
-#: src/questions.py:151
-#, python-format
-msgid "Warning: «%s»: Found a question with two correct answers; ignoring it."
-msgstr ""
-
-#: src/questions.py:160
+#: src/questions.py:172
 #, python-format
 msgid "Warning: «%s»: Found a question without any correct answer; ignoring it."
 msgstr ""
 
-#: src/skinner.py:59
+#: src/questions.py:191
+#, python-format
+msgid "Warning: «%s»: Found a question with incorrect"
+msgstr ""
+
+#: src/skinner.py:58
 #, python-format
 msgid "Could not find skin \"%s\"."
 msgstr ""
 
-#: src/skinner.py:65
+#: src/skinner.py:64
 #, python-format
 msgid "Loading skin \"%s\"..."
 msgstr ""
 
-#: src/common/database.py:69
+#: src/common/database.py:97
 #, python-format
 msgid "All questions in category «%s» have been answered. Reshuffling..."
 msgstr ""
 
-#: src/common/freevialglob.py:96
+#: src/common/freevialglob.py:148
 #, python-format
 msgid "Failed loading image: %s"
 msgstr ""
 
-#: src/common/freevialglob.py:145
+#: src/common/freevialglob.py:199
 #, python-format
 msgid "Failed loading sound: %s"
 msgstr ""

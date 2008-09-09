@@ -150,7 +150,7 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 				
 		if question.answers.countchildren() < 3:
 			# Support for more than 2 incorrect answers was added in 1.3
-			print >> sys.stderr, _(u'Warning: «%s»: Found a question with' + \
+			print >> sys.stderr, _(u'Warning: «%s»: Found a question with '
                 'less than 3 answers; ignoring it.') % xmlFile
 			continue
 		
@@ -169,8 +169,8 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 				obj.add_answer(answer.text.replace(chr(10), '#'), False)
 		
 		if not has_correct_answer:
-			print >> sys.stderr, _(u'Warning: «%s»: Found a question without' + \
-				' any correct answer; ignoring it.') % xmlFile
+			print >> sys.stderr, _(u'Warning: «%s»: Found a question without '
+				'any correct answer; ignoring it.') % xmlFile
 			continue
 		
 		if hasattr(question, 'comments') and question.comments.text is not None:

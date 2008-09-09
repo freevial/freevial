@@ -27,7 +27,7 @@ import sys
 import os
 import pygame
 import gettext
-from math import *
+from optparse import OptionParser
 
 from common.globals import GlobalVar, Global
 from common.freevialglob import *
@@ -148,43 +148,97 @@ class Freevial:
 			else:
 				sys.exit()
 
+version_string = _(u"""
+Freevial, a trivia platform for use on community events.
 
-if '-h' in sys.argv or '--help' in sys.argv:
-	print
-	print _('Usage: freevial [OPTIONS]')
-	print
-	print _('-d, --debug\t\tDebug mode.')
-	print _('-m, --mute\t\tDisable all sounds and music.')
-	print _('-f, --fullscreen\tStart in fullscreen mode.')
-	print _('-l, --locked\t\tStart game in locked mode.')
-	print _('-h, --help\t\tDisplay this message.')
-	print _('-v, --version\t\tPrint information about the current version.')
-	print _('--database <path>\tSet the absolute path to the database file / directory.')
-	print _('--skin <path>\t\tSet the absolute path to the skin file / directory.')
-	print _('--no-sound\t\tDisable sound.')
-	print _('--no-music\t\tDisable music.')
-	print _('--no-media\t\tDisable media questions.')
-	print _('--fps\t\t\tPrint framerate on screen.')
-	print _('--dbus\t\t\tEnables dbus usage, to interface with external applications.')
-	print _('--info-db\t\tPrints information about the loaded database and exits.')
-	print _('--preload\t\t Load all images and sounds at startup.')
-	print _('--psyco\t\t\tUse psyco, if available (this will use more memory).')
-	print
+You are running version %(version)s, which is part of the «%(series)s» series.
 
- 	sys.exit( 0 )
+https://launchpad.net/freevial/%(series)s
 
-if '-v' in sys.argv or '--version' in sys.argv:
-	print
-	print _('Freevial, a trivia platform for use on community events')
-	print _(u'You are running version %(version)s, which is part of the «%(series)s» series.' \
-		% {'version': VERSION, 'series': SERIES})
-	print
-	print 'https://launchpad.net/freevial/%s' % SERIES
-	print
-	
-	sys.exit( 0 )
+"""  % {'version': VERSION, 'series': SERIES})
 
-if '--database' in sys.argv:
+optParser = OptionParser(
+	usage = _('Usage: %prog [options]'),
+	version = version_string,
+	)
+optParser.add_option(
+	'-d', '--debug',
+	action='store_false', dest = 'debug',
+	help = _('debug mode'),
+	)
+optParser.add_option(
+	'-f', '--fullscreen',
+	action='store_false', dest = 'fullscreen',
+	help = _('start in fullscreen mode'),
+	)
+optParser.add_option(
+	'-l', '--locked',
+	action='store_false', dest = 'locked',
+	help = _('start game in locked mode'),
+	)
+optParser.add_option(
+	'--database',
+	dest = 'database',
+	help = _('absolute path to the database file / directory'),
+	)
+optParser.add_option(
+	'--real',
+	dest = 'real',
+	help = _('(do not use this)')
+	)
+optParser.add_option(
+	'--skin',
+	dest = 'skin',
+	help = _('absolute path to the skin directory'),
+	)
+optParser.add_option(
+	'--no-sound',
+	action='store_false', dest = 'no_sound',
+	help = _('disable sound'),
+	)
+optParser.add_option(
+	'--no-music',
+	action='store_false', dest = 'no_music',
+	help = _('disable music'),
+	)
+optParser.add_option(
+	'-m', '--mute',
+	action='store_false', dest = 'mute',
+	help = _('disable all sounds and music'),
+	)
+optParser.add_option(
+	'--no-media',
+	action='store_false', dest = 'no_media',
+	help = _('disable media questions'),
+	)
+optParser.add_option(
+	'--fps',
+	action='store_false', dest = 'fps',
+	help = _('show the framerate on screen'),
+	)
+optParser.add_option(
+	'--dbus',
+	action='store_false', dest = 'dbus',
+	help = _('enable D-Bus support, to interface with external applications'),
+	)
+optParser.add_option(
+	'--info-db',
+	action='store_false', dest = 'info_db',
+	help = _('print information about the loaded database and exit'),
+	)
+optParser.add_option(
+	'--preload',
+	action='store_false', dest = 'preload',
+	help = _('load all images and sounds at startup'),
+	)
+optParser.add_option(
+	'--psyco',
+	action='store_false', dest = 'psyco',
+	help = _('use psyco, if available (this will use more memory)'),
+	)
+(options, args) = optParser.parse_args()
+
+if options.database:
 	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1],
 		sys.argv[sys.argv.index( '--database' ) + 1]))
 	if not os.path.isdir( path ):

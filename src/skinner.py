@@ -27,7 +27,6 @@
 import sys
 import os.path
 import gettext
-from math import *
 from ConfigParser import SafeConfigParser, NoOptionError, NoSectionError
 
 from common.freevialglob import *
