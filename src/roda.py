@@ -83,7 +83,7 @@ class Roda:
 
 		for num in range(0, 6):
 			self.so_cat[num] = loadSound( get_databases(num).sound, volume = 1.0 )
-		self.canviacat()			
+		self.canviacat()		
 		self.help_overlay = createHelpScreen( 'roda' )		
 		
 		self.help_on_screen = helpOnScreen( HOS_RODA_ATURA  )

@@ -50,8 +50,8 @@ Global.MUSIC_MUTE = False
 Global.DISPLAY_FPS = False
 Global.LOCKED_MODE = False
 Global.FULLSCREEN_MODE = False
-
 Global.DISABLE_MEDIA = False
+Global.PRELOAD = False
 Global.DBUS = False
 
 Global.screen_x = 1024

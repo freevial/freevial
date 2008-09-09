@@ -12,6 +12,7 @@ Improvements:
    answers (three of them are randomly choosen at runtime).
  - Decreased the time it takes for the wheel to switch to a question, when
    the game is muted.
+ - Add an option (--preload) to load everything at startup.
 
 Bug Fixes:
  - Fixed the --database option; it did not work previously.

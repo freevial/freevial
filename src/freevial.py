@@ -103,42 +103,47 @@ class Freevial:
 		
 		self.inici()
 		
-		score = roda = fespregunta = None
-
+		score = wheel = question = None
+		
+		if Global.PRELOAD:
+			score = Score( Global.game )
+			wheel = Roda( Global.game )
+			question = Preguntador( Global.game )
+		
 		while 1:
 			
-			if not score: score = Score( Global.game )
-			
+			if not score:
+				score = Score( Global.game )
 			Global.game.current_team = score.juguem()
 			
 			if Global.game.current_team != -1:
 				
 				Global.game.rounds += 1		
 				
-				if not roda: roda = Roda( Global.game )
-				
-				resultat = roda.juguem( )
+				if not wheel:
+					wheel = Roda( Global.game )
+				resultat = wheel.juguem( )
 				
 				if resultat != -1:
 						
 					Global.game.teams[ Global.game.current_team ].preguntes_tot[ resultat - 1 ] += 1		
 					
-					if not fespregunta:	fespregunta = Preguntador( Global.game )
-					
-					resultat = fespregunta.juguem( resultat )	
+					if not question:
+						question = Preguntador( Global.game )
+					resultat = question.juguem( resultat )	
 					
 					if resultat > -1:
 						Global.game.teams[ Global.game.current_team ].preguntes_ok[ resultat - 1 ] += 1
 						Global.game.teams[ Global.game.current_team ].punts += 1
 						
-						fig_abans = Global.game.teams[ Global.game.current_team].figureta
-						Global.game.teams[ Global.game.current_team].activaCategoria( resultat ) 
+						fig_abans = Global.game.teams[ Global.game.current_team ].figureta
+						Global.game.teams[ Global.game.current_team ].activaCategoria( resultat ) 
 						
-						if fig_abans != 63 and Global.game.teams[ Global.game.current_team].figureta == 63:
-							Global.game.teams[ Global.game.current_team].punts += 2
+						if fig_abans != 63 and Global.game.teams[ Global.game.current_team ].figureta == 63:
+							Global.game.teams[ Global.game.current_team ].punts += 2
 					else:
 						Global.game.teams[ Global.game.current_team ].errors += 1
-						
+					
 					Global.game.current_team = seguentEquipActiu( Global.game.teams, Global.game.current_team )
 			else:
 				sys.exit()
@@ -162,6 +167,7 @@ if '-h' in sys.argv or '--help' in sys.argv:
 	print _('--fps\t\t\tPrint framerate on screen.')
 	print _('--dbus\t\t\tEnables dbus usage, to interface with external applications.')
 	print _('--info-db\t\tPrints information about the loaded database and exits.')
+	print _('--preload\t\t Load all images and sounds at startup.')
 	print _('--psyco\t\t\tUse psyco, if available (this will use more memory).')
 	print
 
@@ -245,6 +251,9 @@ if '--dbus' in sys.argv:
 		Global.DBUS = True
 		Global.session_bus = dbus.SessionBus()
 		import common.dbus
+
+if '--preload' in sys.argv:
+	Global.PRELOAD = True
 
 if '--skin' in sys.argv:
 	path = os.path.abspath(os.path.join(sys.argv[sys.argv.index( '--real' ) + 1], sys.argv[sys.argv.index( '--skin' ) + 1]))
