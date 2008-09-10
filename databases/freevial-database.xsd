@@ -63,7 +63,7 @@
             </xs:annotation>
         </xs:attribute>
 
-        <xs:attribute type="xs:string" name="language" use="required">
+        <xs:attribute type="languagecode" name="language" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
                     Two character code of the language in which the
@@ -78,21 +78,35 @@
         </xs:attribute>
     </xs:complexType>
 
+    <xs:simpleType name="languagecode">
+        <xs:restriction base="xs:string">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    ISO 639-1 Language Code.
+                </xs:documentation>
+                <xs:documentation xml:lang="ca">
+                    Codi d'idioma segons l'ISO 639-1.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:length value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+
     <xs:simpleType name="version">
         <xs:restriction base="xs:token">
             <xs:enumeration value="1.0" />
             <xs:enumeration value="1.1" >
-            	<xs:annotation>
-            		<xs:documentation xml:lang="en">
-               			Adds the possibility to list an unlimited amount of
-               			answers, the "media" element (for images or sound)
-               			and difficulty levels.
-               		</xs:documentation>
-            		<xs:documentation xml:lang="ca">
-               			Afegeix respostes ilimitades, l'etiqueta "media" (per a
-               			imatges o so, de moment) i nivells de dificultat.
-               		</xs:documentation>
-        		</xs:annotation>
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Adds the possibility to list an unlimited amount of
+                        answers, the "media" element (for images or sound)
+                        and difficulty levels.
+                    </xs:documentation>
+                    <xs:documentation xml:lang="ca">
+                        Afegeix respostes ilimitades, l'etiqueta "media" (per a
+                        imatges o so, de moment) i nivells de dificultat.
+                    </xs:documentation>
+                </xs:annotation>
             </xs:enumeration>
         </xs:restriction>
     </xs:simpleType>
