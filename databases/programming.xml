@@ -33,7 +33,7 @@
       <author>RainCT</author>
       <comments>L'entrada «man» al manual és per a documentar la comanda del mateix nom, evidentment.</comments>
       <answers>
-        <answer correct="True">man woman</answer>
+        <answer correct="true">man woman</answer>
         <answer>man man</answer>
         <answer>Totes dues</answer>
       </answers>
@@ -43,7 +43,7 @@
       <author>RainCT</author>
       <comments>El nom «Tc» és fictici. Tots els altres existeixen realment (http://freshmeat.net/articles/view/928/, http://www.free-soft.org/guitool/).</comments>
       <answers>
-        <answer correct="True">Gtk, Tc, Gambas, Qt4, FLTK</answer>
+        <answer correct="true">Gtk, Tc, Gambas, Qt4, FLTK</answer>
         <answer>Tk, Gtk+, wxWindows, Qt</answer>
         <answer>Gtk, Qt3, FOX</answer>
         <answer>Epeios, Fltk, FOX, Fresco, GINA</answer>
@@ -54,7 +54,7 @@
       <author>RainCT</author>
       <comments></comments>
       <answers>
-        <answer correct="True">raw_input()</answer>
+        <answer correct="true">raw_input()</answer>
         <answer>get_text()</answer>
         <answer>cooked_input()</answer>
       </answers>
@@ -64,7 +64,7 @@
       <author>RainCT</author>
       <comments>El Tcl és un llenguatge de «scripting» i Gambas és el nom d'una plataforma de desenvolupament lliure semblant al Visual Basic. Cogombres simplement és el plural del nom d'una verdura.</comments>
       <answers>
-        <answer correct="True">Cogombres</answer>
+        <answer correct="true">Cogombres</answer>
         <answer>Tcl</answer>
         <answer>Gambas</answer>
       </answers>
@@ -74,7 +74,7 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">sudo rm -d -f -r /</answer>
+        <answer correct="true">sudo rm -d -f -r /</answer>
         <answer>sudo cp /dev/hdb1 &gt; aixo.iso</answer>
         <answer>echo destroy computer contents</answer>
       </answers>
@@ -84,7 +84,7 @@
       <author>carles</author>
       <comments>Evidentment. Per a fer un directori farem mkdir. Això no és dos!</comments>
       <answers>
-        <answer correct="True">Per a res</answer>
+        <answer correct="true">Per a res</answer>
         <answer>Per a moure un arxiu</answer>
         <answer>Per a crear un directori</answer>
       </answers>
@@ -94,7 +94,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Que esborrem el primer</answer>
+        <answer correct="true">Que esborrem el primer</answer>
         <answer>Que es copien</answer>
         <answer>Que se sumen</answer>
       </answers>
@@ -104,7 +104,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Copiar arxius</answer>
+        <answer correct="true">Copiar arxius</answer>
         <answer>coupé: pujar la prioritat#d'un procés</answer>
         <answer>copy paste: duplicar el contingut#del portapapers</answer>
       </answers>
@@ -114,7 +114,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">type</answer>
+        <answer correct="true">type</answer>
         <answer>less</answer>
         <answer>cat</answer>
       </answers>
@@ -124,7 +124,7 @@
       <author>carles</author>
       <comments>Tot i que, com que és totalment obert, és iŀlimitat en aquest sentit.</comments>
       <answers>
-        <answer correct="True">10</answer>
+        <answer correct="true">10</answer>
         <answer>5</answer>
         <answer>3</answer>
       </answers>
@@ -134,7 +134,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Per a res en majúscules</answer>
+        <answer correct="true">Per a res en majúscules</answer>
         <answer>Per a copiar un directori</answer>
         <answer>Per a canviar de directori</answer>
       </answers>
@@ -144,7 +144,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">ls [st]*</answer>
+        <answer correct="true">ls [st]*</answer>
         <answer>ls st?</answer>
         <answer>ls st[*]</answer>
       </answers>
@@ -154,7 +154,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Sí, és clar</answer>
+        <answer correct="true">Sí, és clar</answer>
         <answer>A l'última, no</answer>
         <answer>Tu aŀlucines</answer>
       </answers>
@@ -164,7 +164,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">La ŀl es fa amb Alt Gr + L</answer>
+        <answer correct="true">La ŀl es fa amb Alt Gr + L</answer>
         <answer>La Ç enlloc de la Ñ</answer>
         <answer>La satisfacció d'usar#el nostre teclat</answer>
       </answers>
@@ -174,7 +174,7 @@
       <author>Carles</author>
       <comments>El Python és un llenguatge semi-interpretat.</comments>
       <answers>
-        <answer correct="True">Python</answer>
+        <answer correct="true">Python</answer>
         <answer>C Sharp</answer>
         <answer>Java</answer>
       </answers>
@@ -184,7 +184,7 @@
       <author>carles</author>
       <comments>Abans hi havia el B, després va venir el C (B+1) i C + 1 en C s'escriu C++.</comments>
       <answers>
-        <answer correct="True">Perquè C + 1 en C s'escriu C++</answer>
+        <answer correct="true">Perquè C + 1 en C s'escriu C++</answer>
         <answer>Perquè és un C millorat#(més i millor ++)</answer>
         <answer>Les dues creus son en memòria#dels desenvolupadors del C</answer>
       </answers>
@@ -194,7 +194,7 @@
       <author>Carles</author>
       <comments>Ja que, com que és una macro i no una funció, en substituir paràmetres es realitza 2 cops el preincrement de y (++y).</comments>
       <answers>
-        <answer correct="True">4</answer>
+        <answer correct="true">4</answer>
         <answer>3</answer>
         <answer>2</answer>
       </answers>
@@ -204,7 +204,7 @@
       <author>carles</author>
       <comments>Les llibreries GTK, en les quals es va basar després el GNOME, van ser creades per a desenvolupar el programa GIMP.</comments>
       <answers>
-        <answer correct="True">Gimp ToolKit</answer>
+        <answer correct="true">Gimp ToolKit</answer>
         <answer>Graphics Team Kit</answer>
         <answer>Gnome Toolkit</answer>
       </answers>
@@ -214,7 +214,7 @@
       <author>lluisanunez</author>
       <comments>Hi ha una introducció a l'ús del terminal bastant bona a la pàgina https://wiki.ubuntu.com/JosepSànchez/documentació/interpret_comandes :-).</comments>
       <answers>
-        <answer correct="True">Aturar el procés en marxa</answer>
+        <answer correct="true">Aturar el procés en marxa</answer>
         <answer>Copiar</answer>
         <answer>Compilar</answer>
       </answers>
@@ -224,7 +224,7 @@
       <author>carles</author>
       <comments>Es tracta d'unes sigles recursives. GNU No és Unix</comments>
       <answers>
-        <answer correct="True">GNU</answer>
+        <answer correct="true">GNU</answer>
         <answer>Gnome</answer>
         <answer>Gtk</answer>
       </answers>
@@ -234,7 +234,7 @@
       <author>carles</author>
       <comments>Hi ha diversos acrònims recursius. I aquest n'és un, la P de PHP vol dir PHP.</comments>
       <answers>
-        <answer correct="True">PHP: Hypertext Preprocessor</answer>
+        <answer correct="true">PHP: Hypertext Preprocessor</answer>
         <answer>Plug Hybrid Processor</answer>
         <answer>Python Hypertext Preprocessor</answer>
       </answers>
@@ -244,7 +244,7 @@
       <author>carles</author>
       <comments>El llenguatge-màquina virtual Java va ser realitzat per Sun Microsystems.</comments>
       <answers>
-        <answer correct="True">Sun Microsystems</answer>
+        <answer correct="true">Sun Microsystems</answer>
         <answer>Canonical</answer>
         <answer>Novell</answer>
       </answers>
@@ -254,7 +254,7 @@
       <author>carles</author>
       <comments>Structured Query Language</comments>
       <answers>
-        <answer correct="True">SQL</answer>
+        <answer correct="true">SQL</answer>
         <answer>LEC</answer>
         <answer>COL</answer>
       </answers>
@@ -264,7 +264,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Una cadena que s'usa per a descriure, enumerar#o filtrar un grup de cadenes, d'acord#amb unes normes de sintaxi</answer>
+        <answer correct="true">Una cadena que s'usa per a descriure, enumerar#o filtrar un grup de cadenes, d'acord#amb unes normes de sintaxi</answer>
         <answer>Les que no estan bé del tot</answer>
         <answer>Un component algorítmic per a#mimetizar el contingut referent#a la comanda grep</answer>
       </answers>
@@ -275,7 +275,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">C++</answer>
+        <answer correct="true">C++</answer>
         <answer>Python</answer>
         <answer>Ruby</answer>
       </answers>
@@ -286,7 +286,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Un llenguatge que la traducció a operacions que realitza la màquina és propera</answer>
+        <answer correct="true">Un llenguatge que la traducció a operacions que realitza la màquina és propera</answer>
         <answer>Un llenguatge vell i en desus</answer>
         <answer>Un llenguatge brut i rastrer</answer>
       </answers>

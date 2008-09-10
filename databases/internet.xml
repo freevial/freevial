@@ -32,7 +32,7 @@
       <author>RainCT</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Internet Relay Chat</answer>
+        <answer correct="true">Internet Relay Chat</answer>
         <answer>Instant Recognition Cable</answer>
         <answer>Immediate Release Communications</answer>
       </answers>
@@ -42,7 +42,7 @@
       <author>RainCT</author>
       <comments>Una de les entitats principals en aquest camp, i que ha dissenyat l'HTML i XHTML, entre d'altres, és el W3C (World Wide Web Consortium). L'OASIS és qui treballa en l'OpenDocument i Microsoft és l'empresa que s'encarrega de trencar tots els estàndards que pot.</comments>
       <answers>
-        <answer correct="True">W3C</answer>
+        <answer correct="true">W3C</answer>
         <answer>OASIS</answer>
         <answer>Microsoft</answer>
       </answers>
@@ -52,7 +52,7 @@
       <author>RainCT</author>
       <comments>Segons les dades recollides a la wikipedia, s'estima que Jabber té entre 40 i 90 milions d'usuaris, MSN només en té 27 milions d'actius (i 155 milions en total) i el QQ, utilitzat principalment pels xinesos, 221 milions d'usuaris actius (http://en.wikipedia.org/wiki/Usage_share_of_instant_messaging_clients).</comments>
       <answers>
-      	<answer correct="True">QQ</answer>
+      	<answer correct="true">QQ</answer>
         <answer>Jabber</answer>
         <answer>MSN</answer>
       </answers>
@@ -62,7 +62,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">World Wide Web</answer>
+        <answer correct="true">World Wide Web</answer>
         <answer>World Web Windows</answer>
         <answer>World With Windows</answer>
       </answers>
@@ -72,7 +72,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Com un núvol</answer>
+        <answer correct="true">Com un núvol</answer>
         <answer>Com un món</answer>
         <answer>Com una I</answer>
       </answers>
@@ -82,7 +82,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Sí</answer>
+        <answer correct="true">Sí</answer>
         <answer>Depèn</answer>
         <answer>No</answer>
       </answers>
@@ -92,7 +92,7 @@
       <author>Carles</author>
       <comments>Concretament a http://ubuntuforums.org/forumdisplay.php?f=206. També podem anar-hi des del portal www.ubuntu.cat.</comments>
       <answers>
-        <answer correct="True">ubuntuforums.org</answer>
+        <answer correct="true">ubuntuforums.org</answer>
         <answer>forum.ubuntu.pl</answer>
         <answer>ubuntu-fr.org</answer>
       </answers>
@@ -102,7 +102,7 @@
       <author>carles</author>
       <comments>Oi que sembla que en faci més temps?</comments>
       <answers>
-        <answer correct="True">1998</answer>
+        <answer correct="true">1998</answer>
         <answer>1995</answer>
         <answer>2000</answer>
       </answers>
@@ -112,7 +112,7 @@
       <author>carles</author>
       <comments>I doncs, que us pensàveu?</comments>
       <answers>
-        <answer correct="True">Clar</answer>
+        <answer correct="true">Clar</answer>
         <answer>Només si cerquem wikipedia</answer>
         <answer>No</answer>
       </answers>
@@ -122,7 +122,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Creative Commons</answer>
+        <answer correct="true">Creative Commons</answer>
         <answer>CertifiCations</answer>
         <answer>Computer Case</answer>
       </answers>
@@ -132,7 +132,7 @@
       <author>carles</author>
       <comments>he he... ha estat superior a mi... ho havia de fer...</comments>
       <answers>
-        <answer correct="True">Kumbaworld</answer>
+        <answer correct="true">Kumbaworld</answer>
         <answer>Cantar i xerinola</answer>
         <answer>Yahoo lyrics</answer>
       </answers>
@@ -142,7 +142,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Abandonwares</answer>
+        <answer correct="true">Abandonwares</answer>
         <answer>Oldwares</answer>
         <answer>Softdeads</answer>
       </answers>
@@ -152,7 +152,7 @@
       <author>Cortsenc</author>
       <comments></comments>
       <answers>
-        <answer correct="True">CCRTV</answer>
+        <answer correct="true">CCRTV</answer>
         <answer>Planeta d'Ubuntu.cat</answer>
         <answer>Vilaweb</answer>
       </answers>
@@ -162,7 +162,7 @@
       <author>carles</author>
       <comments>Compuserve va ser la primera xarxa pública mundial d'accés públic. Fidonet (anterior a compuserve) era una xarxa d'enllaços entre les anteriors BBS.</comments>
       <answers>
-        <answer correct="True">comnet</answer>
+        <answer correct="true">comnet</answer>
         <answer>fidonet</answer>
         <answer>compuserve</answer>
       </answers>
@@ -173,7 +173,7 @@
       <author>carles</author>
       <comments>.... sí... lamentable. Si el sistema de control de còpies DRM detecta que tens algun mitjà que permet realitzar còpies de peŀlícules o vídeos, en baixarà la qualitat perquè no ho puguis fer correctament. A més, totes aquestes comprovacions fan que l'ordinador funcioni molt més lentament.</comments>
       <answers>
-        <answer correct="True">El Microsoft Vista fa que l'ordinador#vagi malament si detecta un dispositiu#que permet copiar pel·lícules</answer>
+        <answer correct="true">El Microsoft Vista fa que l'ordinador#vagi malament si detecta un dispositiu#que permet copiar pel·lícules</answer>
         <answer>Un número fa que la facturació#del telèfon d'algú altre te la cobrin a tu</answer>
         <answer>La llet es repasteuritza segons#el número inferior del tetrabrick</answer>
       </answers>
@@ -184,7 +184,7 @@
       <author>carles</author>
       <comments>Actualment el català és la 21ena llengua a la xarxa. Per davant del grec, hebreu, romanès, vietnamita, hongarès, islandès, eslovac i eslovè.</comments>
       <answers>
-        <answer correct="True">Tailandès</answer>
+        <answer correct="true">Tailandès</answer>
         <answer>Hebreu</answer>
         <answer>Grec</answer>
       </answers>
@@ -195,7 +195,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Catalunya</answer>
+        <answer correct="true">Catalunya</answer>
         <answer>Hèlsinki</answer>
         <answer>L'illa de Man</answer>
       </answers>
@@ -206,7 +206,7 @@
       <author>lluisanunez</author>
       <comments></comments>
       <answers>
-        <answer correct="True">RSS</answer>
+        <answer correct="true">RSS</answer>
         <answer>CSS</answer>
         <answer>SMS</answer>
       </answers>
@@ -217,7 +217,7 @@
       <author>carles</author>
       <comments>...evidentment no serveix per res</comments>
       <answers>
-        <answer correct="True">Per res</answer>
+        <answer correct="true">Per res</answer>
         <answer>Per fer una imatge d'internet al disc</answer>
         <answer>Per res, per que internet no ens cap al disc</answer>
       </answers>
@@ -228,7 +228,7 @@
       <author>carles</author>
       <comments>2^32 = 4.294.967.296##Semblaven un munt fa uns anys i#ara ja cal canviar el sistema per que s'acaben.</comments>
       <answers>
-        <answer correct="True">2^32</answer>
+        <answer correct="true">2^32</answer>
         <answer>2^16</answer>
         <answer>2^8</answer>
       </answers>
@@ -239,7 +239,7 @@
       <author>carles</author>
       <comments>Despres de localitzar-se les màquines identifica#la forma com es comuniquen aquestes entre elles.</comments>
       <answers>
-        <answer correct="True">Transport control protocol</answer>
+        <answer correct="true">Transport control protocol</answer>
         <answer>Team collated passthrough</answer>
         <answer>Tip coins proupine</answer>
       </answers>
@@ -250,7 +250,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Que es pot modificar coŀlaborativament</answer>
+        <answer correct="true">Que es pot modificar coŀlaborativament</answer>
         <answer>Que és petit però eficient</answer>
         <answer>wide killer</answer>
       </answers>
@@ -262,7 +262,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Una icona que mostra el nostre alter-ego en internet</answer>
+        <answer correct="true">Una icona que mostra el nostre alter-ego en internet</answer>
         <answer>Un web trencat per un intrus</answer>
         <answer>Una mascota virtual que s'alimenta desenvolupant programari</answer>
       </answers>
@@ -273,7 +273,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">swf</answer>
+        <answer correct="true">swf</answer>
         <answer>html</answer>
         <answer>png</answer>
       </answers>

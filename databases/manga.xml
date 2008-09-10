@@ -30,7 +30,7 @@
       <author>NiliMarc</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Els bigotis</answer>
+        <answer correct="true">Els bigotis</answer>
         <answer>Són exactament iguals</answer>
         <answer>L'un és esquerrà i l'altre és dretà</answer>
       </answers>
@@ -40,7 +40,7 @@
       <author>NiliMarc</author>
       <comments>Astèrix el gal#</comments>
       <answers>
-        <answer correct="True">Tutatis</answer>
+        <answer correct="true">Tutatis</answer>
         <answer>Balenus</answer>
         <answer>Senglarus</answer>
       </answers>
@@ -50,7 +50,7 @@
       <author>NiliMarc</author>
       <comments>Simpsons#</comments>
       <answers>
-        <answer correct="True">4</answer>
+        <answer correct="true">4</answer>
         <answer>5</answer>
         <answer>3</answer>
       </answers>
@@ -60,7 +60,7 @@
       <author>NiliMarc</author>
       <comments>Mazinger Z#A Tarragona s'hi anava a construir una urbanització (Mas de plata) que, com a reclam turístic, tenia un Mazinger gegant, però la urbanització no es va acabar i hi va quedar el Mazinger abandonat.</comments>
       <answers>
-        <answer correct="True">Tarragona</answer>
+        <answer correct="true">Tarragona</answer>
         <answer>El Japó</answer>
         <answer>Corea</answer>
       </answers>
@@ -70,7 +70,7 @@
       <author>NiliMarc</author>
       <comments>L'Increïble Hulk#</comments>
       <answers>
-        <answer correct="True">Bruce Banner</answer>
+        <answer correct="true">Bruce Banner</answer>
         <answer>Bruce Wayne</answer>
         <answer>Bruce Lee</answer>
       </answers>
@@ -80,7 +80,7 @@
       <author>NiliMarc</author>
       <comments>El viatge de Chihiro#La Yubaba és la bruixa dolenta del viatge de Chihiro, que dóna sobrenoms als seus treballadors perquè si obliden el seu nom ja no són ningú i els pot controlar. Per això en Haku li diu a la Chihiro que mai oblidi el seu nom.</comments>
       <answers>
-        <answer correct="True">El nom</answer>
+        <answer correct="true">El nom</answer>
         <answer>La voluntat</answer>
         <answer>La imaginació</answer>
       </answers>
@@ -90,7 +90,7 @@
       <author>NiliMarc</author>
       <comments>Superman#En Superman neix a Kriptó, essent el fill de Jor-El, un eminent científic i líder polític. En Superman fou batejat amb el nom de Kal-el</comments>
       <answers>
-        <answer correct="True">Kal-el</answer>
+        <answer correct="true">Kal-el</answer>
         <answer>Jor-el</answer>
         <answer>Sar-el</answer>
       </answers>
@@ -100,7 +100,7 @@
       <author>NiliMarc</author>
       <comments>Heidi#La seva tieta aconsegueix feina i l'envia a viure amb el seu avi, que ni tan sols coneixia</comments>
       <answers>
-        <answer correct="True">Amb l'avi</answer>
+        <answer correct="true">Amb l'avi</answer>
         <answer>Amb els pares</answer>
         <answer>Sola</answer>
       </answers>
@@ -110,7 +110,7 @@
       <author>NiliMarc</author>
       <comments>Superlópez#</comments>
       <answers>
-        <answer correct="True">El Masnou</answer>
+        <answer correct="true">El Masnou</answer>
         <answer>L'Hospitalet</answer>
         <answer>Barcelona</answer>
       </answers>
@@ -120,7 +120,7 @@
       <author>NiliMarc</author>
       <comments>Popeye#Quan en Popeye necessita ser fort menja espinacs. Cal tenir en compte que durant molt de temps es va creure que els espinacs contenien molt més ferro del que en realitat tenen, perquè en una classificació havien col·locat malament la coma dels decimals.</comments>
       <answers>
-        <answer correct="True">Espinacs</answer>
+        <answer correct="true">Espinacs</answer>
         <answer>Alls</answer>
         <answer>Cebes</answer>
       </answers>
@@ -130,7 +130,7 @@
       <author>NiliMarc</author>
       <comments>Batman#L'únic poder que realment té és ser fill de papà.</comments>
       <answers>
-        <answer correct="True">Cap</answer>
+        <answer correct="true">Cap</answer>
         <answer>Pot volar com els ratpenats</answer>
         <answer>Sent ultrasons</answer>
       </answers>
@@ -140,7 +140,7 @@
       <author>NiliMarc</author>
       <comments>Superman#Superman neix a Kriptó, essent el fill de Jor-El, un eminent científic i líder polític. Superman fou batejat amb el nom de Kal-el</comments>
       <answers>
-        <answer correct="True">Criptó</answer>
+        <answer correct="true">Criptó</answer>
         <answer>Terra</answer>
         <answer>K-pax</answer>
       </answers>
@@ -150,7 +150,7 @@
       <author>NiliMarc</author>
       <comments>Spiderman#</comments>
       <answers>
-        <answer correct="True">El mossegui una aranya</answer>
+        <answer correct="true">El mossegui una aranya</answer>
         <answer>Entri en contacte amb un meteorit</answer>
         <answer>Una radiació estranya l'afecti</answer>
       </answers>
@@ -160,7 +160,7 @@
       <author>NiliMarc</author>
       <comments>Es manté la direcció original de les vinyetes.</comments>
       <answers>
-        <answer correct="True">De dreta a esquerra i de dalt a baix</answer>
+        <answer correct="true">De dreta a esquerra i de dalt a baix</answer>
         <answer>D'esquerra a dreta i de baix a dalt</answer>
         <answer>D'esquerra a dreta i de dalt a baix</answer>
       </answers>
@@ -170,7 +170,7 @@
       <author>NiliMarc</author>
       <comments>Dr.Slump#</comments>
       <answers>
-        <answer correct="True">És un robot</answer>
+        <answer correct="true">És un robot</answer>
         <answer>És una superheroïna</answer>
         <answer>Ve d'un altre planeta</answer>
       </answers>
@@ -180,7 +180,7 @@
       <author>NiliMarc</author>
       <comments>Superlópez#La personalitat secreta d'en Superlópez és una feina molt dura.</comments>
       <answers>
-        <answer correct="True">Fa ocellets de paper</answer>
+        <answer correct="true">Fa ocellets de paper</answer>
         <answer>Juga amb el boli</answer>
         <answer>Treballa</answer>
       </answers>
@@ -190,7 +190,7 @@
       <author>NiliMarc</author>
       <comments>Evangelion#</comments>
       <answers>
-        <answer correct="True">Àngels</answer>
+        <answer correct="true">Àngels</answer>
         <answer>Dimonis</answer>
         <answer>Robots</answer>
       </answers>
@@ -200,7 +200,7 @@
       <author>NiliMarc</author>
       <comments>Bleach#Itxigo Kurosaki no és un noi de quinze anys normal i corrent... pot veure esperits i té un contacte innat amb el més enllà, del que traurà profit després de conèixer un shinigami (àngel de la mort) que li proporciona una espasa a joc amb les seves habilitats</comments>
       <answers>
-        <answer correct="True">Veu fantasmes</answer>
+        <answer correct="true">Veu fantasmes</answer>
         <answer>Lluita contra monstres</answer>
         <answer>Vol controlar el món</answer>
       </answers>
@@ -210,7 +210,7 @@
       <author>NiliMarc</author>
       <comments>Naruto#Quan Naruto neix li segellen un monstre a dins, tot el poble li té por i per això el deixen de banda, per això en Naruto vol ser el Hokaje, el títol més important dels ninges.</comments>
       <answers>
-        <answer correct="True">Convertir-se en Hokaje</answer>
+        <answer correct="true">Convertir-se en Hokaje</answer>
         <answer>Ser el millor ninja</answer>
         <answer>Venjar-se del seu germà gran</answer>
       </answers>
@@ -220,7 +220,7 @@
       <author>NiliMarc</author>
       <comments>Musculman#</comments>
       <answers>
-        <answer correct="True">Alls</answer>
+        <answer correct="true">Alls</answer>
         <answer>Cebes</answer>
         <answer>Espinacs</answer>
       </answers>
@@ -230,7 +230,7 @@
       <author>NiliMarc</author>
       <comments>Trigun#Després de la catastròfica arribada al planeta, i havent perdut durant el viatge la seva estimada, en Vash decideix que no permetrà que el seu germà Knives faci mal a ningú més. Però, com que ell és un alienígena molt poderós, destrueix sense voler una ciutat. Per això el seu cap passa a valdre 60.000.000.000$$ i rep un nou nom: "Tifó Humanoide".</comments>
       <answers>
-        <answer correct="True">Tifó humanoide</answer>
+        <answer correct="true">Tifó humanoide</answer>
         <answer>L'home dels 60.000.000$$</answer>
         <answer>L'home que va foradar la lluna</answer>
       </answers>
@@ -240,7 +240,7 @@
       <author>NiliMarc</author>
       <comments>Ranma#En Ranma entrenava Jusenkyo per arribar a ser el millor lluitador d'arts marcials del món, allà ell i el seu pare queden maleïts perquè cauen a l'aigua i quan es mullen es transformen en noia (en Ranma) i panda (el seu pare).</comments>
       <answers>
-        <answer correct="True">Es transforma en noia</answer>
+        <answer correct="true">Es transforma en noia</answer>
         <answer>Es converteix en mico gegant</answer>
         <answer>Es transforma en panda</answer>
       </answers>
@@ -250,7 +250,7 @@
       <author>NiliMarc</author>
       <comments>Marco#En un poble italià, al peu de les muntanyes, hi viu el nostre amic Marco</comments>
       <answers>
-        <answer correct="True">En un poble italià</answer>
+        <answer correct="true">En un poble italià</answer>
         <answer>En un poble rus</answer>
         <answer>En un poble romanès</answer>
       </answers>
@@ -260,7 +260,7 @@
       <author>NiliMarc</author>
       <comments>Mazinger Z# El centre d'investigacions fotoatòmiques va descobrir aquest material per poder crear el robot Mazinger Z.</comments>
       <answers>
-        <answer correct="True">Japànium (aliatge Z)</answer>
+        <answer correct="true">Japànium (aliatge Z)</answer>
         <answer>Mazingànium (aliatge final)</answer>
         <answer>Titànium (reforçat)</answer>
       </answers>
@@ -270,7 +270,7 @@
       <author>NiliMarc</author>
       <comments>Cinturó Negre#La Ginger acaba quasi sempre els seus combats amb una tècnica anomenada "ippon seoi nage", que és una de les tècniques requerides per al cinturó groc. </comments>
       <answers>
-        <answer correct="True">Ippon seoi nage</answer>
+        <answer correct="true">Ippon seoi nage</answer>
         <answer>L'atac d'en Kaito</answer>
         <answer>Reigan</answer>
       </answers>
@@ -280,7 +280,7 @@
       <author>NiliMarc</author>
       <comments>Bola de Drac#Follet tortuga és en la versió original Kame Sen'nin i el típic "kame hame ha" voldria dir "gran onada de corrent tortuga".</comments>
       <answers>
-        <answer correct="True">Tortuga</answer>
+        <answer correct="true">Tortuga</answer>
         <answer>Energia</answer>
         <answer>Bola</answer>
       </answers>
@@ -290,7 +290,7 @@
       <author>NiliMarc</author>
       <comments>Fruits Basket#Yuki és la rata de la famílila Soma, mentre que Kyo és el Gat de la llegenda del zodíac xinès (però el gat va ser enganyat per la rata perquè no anés a la festa, i per això el gat odia tant la rata).</comments>
       <answers>
-        <answer correct="True">Es persegueixen com un gat i una rata</answer>
+        <answer correct="true">Es persegueixen com un gat i una rata</answer>
         <answer>S'odien</answer>
         <answer>Són bons amics</answer>
       </answers>
@@ -300,7 +300,7 @@
       <author>NiliMarc</author>
       <comments>Mortadel·lo i Filemó#A La història de Mortadel·lo i Filemó s'explica que quan en Mortadel·lo era un grenyes que tothom coneixia, el doctor Bacteri, que era barber, li va posar una cosa perquè no s'hagués de preocupar pels cabells mai més...</comments>
       <answers>
-        <answer correct="True">El doctor Bacteri l'enganya</answer>
+        <answer correct="true">El doctor Bacteri l'enganya</answer>
         <answer>Es disfressa de vell i no es pot treure#la calba falsa</answer>
         <answer>Un indi l'hi arrenca</answer>
       </answers>
@@ -310,7 +310,7 @@
       <author>NiliMarc</author>
       <comments>Fruits Basket#Es transformen quan es cansen massa o els toca una persona del sexe oposat que no sigui integrant de la família, per això són una família molt tancada.</comments>
       <answers>
-        <answer correct="True">Els 12 animals del zodíac xinès</answer>
+        <answer correct="true">Els 12 animals del zodíac xinès</answer>
         <answer>Els 12 apòstols</answer>
         <answer>Una dotzena d'ous</answer>
       </answers>
@@ -320,7 +320,7 @@
       <author>NiliMarc</author>
       <comments>Sergi Grapes# Encara que estigui sempre fent invents, bestieses o dormint, el seu veritable ofici és el de repartidor de cartes.</comments>
       <answers>
-        <answer correct="True">"Mindundi" d'oficina</answer>
+        <answer correct="true">"Mindundi" d'oficina</answer>
         <answer>Jugador de futbol</answer>
         <answer>Cambrer</answer>
       </answers>
@@ -330,7 +330,7 @@
       <author>NiliMarc</author>
       <comments>Bola de Drac# El Cor Petit/déu prové de Namek.</comments>
       <answers>
-        <answer correct="True">Namek</answer>
+        <answer correct="true">Namek</answer>
         <answer>La terra</answer>
         <answer>Vegeta</answer>
       </answers>
@@ -340,7 +340,7 @@
       <author>NiliMarc</author>
       <comments>Bola de Drac Z#En Vegeta, el príncep dels superguerrers, sempre anomena en Goku Kakarot, ja que era el seu nom original al planeta Vegeta, que és on va néixer (el planeta Vegeta va ser destruït per en Frezeer).</comments>
       <answers>
-        <answer correct="True">En Goku</answer>
+        <answer correct="true">En Goku</answer>
         <answer>En Ràdix</answer>
         <answer>En Vegeta</answer>
       </answers>
@@ -350,7 +350,7 @@
       <author>NiliMarc</author>
       <comments>One Piece#Les fruites del diable donen els poders a tots els grans capitans pirates de la red line.</comments>
       <answers>
-        <answer correct="True">No pots nedar</answer>
+        <answer correct="true">No pots nedar</answer>
         <answer>Quan et toca la llum de la lluna#et converteixes</answer>
         <answer>No et pot tocar la llum del sol</answer>
       </answers>
@@ -360,7 +360,7 @@
       <author>NiliMarc</author>
       <comments>Midori No Hibi#Sawamura ha passat 17 anys i 2 mesos sense xicota, amb un rècord històric al seu institut de 20 carabasses; quan ja ho dóna tot per perdut, sent una veu femenina molt a prop del seu cap... Surt de la seva mà.</comments>
       <answers>
-        <answer correct="True">Una noia</answer>
+        <answer correct="true">Una noia</answer>
         <answer>Una destral</answer>
         <answer>Un ganxo</answer>
       </answers>
@@ -370,7 +370,7 @@
       <author>NiliMarc</author>
       <comments>One Piece#Monkey D.Luffy és un noi de poble costaner, el seu somni de tota la vida ha estat ser pirata, ja que veia com els pirates amarraven la barca allí i s'ho passaven molt bé. Però després de conèixer un noi molt covard a una illa deserta controlada per una bruixa pirata, vol, a més, ser-ne el rei.</comments>
       <answers>
-        <answer correct="True">Ser el rei dels pirates</answer>
+        <answer correct="true">Ser el rei dels pirates</answer>
         <answer>Una quantitat inacabable de menjar</answer>
         <answer>Tenir la tripulació més gran del món</answer>
       </answers>
@@ -380,7 +380,7 @@
       <author>RogerPou</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Ulquiorra</answer>
+        <answer correct="true">Ulquiorra</answer>
         <answer>Grimjow</answer>
         <answer>Yammi</answer>
       </answers>
@@ -390,7 +390,7 @@
       <author>RogerPou</author>
       <comments></comments>
       <answers>
-        <answer correct="True">4t hokage, Yondaime</answer>
+        <answer correct="true">4t hokage, Yondaime</answer>
         <answer>Zetsu d'Akatsuki</answer>
         <answer>Kakashi</answer>
       </answers>
@@ -400,7 +400,7 @@
       <author>RogerPou</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Bankai</answer>
+        <answer correct="true">Bankai</answer>
         <answer>Shipon</answer>
         <answer>Bakuya</answer>
       </answers>
@@ -410,7 +410,7 @@
       <author>JoanSanchez</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Sakura</answer>
+        <answer correct="true">Sakura</answer>
         <answer>Shakira</answer>
         <answer>Hinata</answer>
       </answers>
@@ -420,7 +420,7 @@
       <author>Gimcana</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Moren els protagonistes.</answer>
+        <answer correct="true">Moren els protagonistes.</answer>
         <answer>Presenten els personatges.</answer>
         <answer>És un flashback.</answer>
       </answers>

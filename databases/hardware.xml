@@ -34,7 +34,7 @@
       <author>RainCT</author>
       <comments></comments>
       <answers>
-        <answer correct="True">ha de fer una sola cosa ben feta</answer>
+        <answer correct="true">ha de fer una sola cosa ben feta</answer>
         <answer>ha de poder fer com més coses millor</answer>
         <answer>no existeix, el terme emprat és «aplicació»</answer>
       </answers>
@@ -44,7 +44,7 @@
       <author>RainCT</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Rythmbox</answer>
+        <answer correct="true">Rythmbox</answer>
         <answer>Windows Media Player</answer>
         <answer>Winamp</answer>
       </answers>
@@ -54,7 +54,7 @@
       <author>Carles</author>
       <comments>L'ext3 és un format lògic de disc, no un tipus de connector.</comments>
       <answers>
-        <answer correct="True">Al cable ext3</answer>
+        <answer correct="true">Al cable ext3</answer>
         <answer>Al cable IDE ATA</answer>
         <answer>Al cable SATA</answer>
       </answers>
@@ -64,7 +64,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Et diu que no té ous de pasqua</answer>
+        <answer correct="true">Et diu que no té ous de pasqua</answer>
         <answer>Et mostra l'ajuda del programa</answer>
         <answer>Et diu que no li agraden les vaques</answer>
       </answers>
@@ -74,7 +74,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">WordStar</answer>
+        <answer correct="true">WordStar</answer>
         <answer>PageMaker</answer>
         <answer>WordPerfect</answer>
       </answers>
@@ -84,7 +84,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">GNU Network Object Model Environment</answer>
+        <answer correct="true">GNU Network Object Model Environment</answer>
         <answer>No volen dir res</answer>
         <answer>GNU Notice Oriented Maked Enviroment</answer>
       </answers>
@@ -94,7 +94,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">/etc</answer>
+        <answer correct="true">/etc</answer>
         <answer>/etc/conf</answer>
         <answer>/conf</answer>
       </answers>
@@ -104,7 +104,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">i810</answer>
+        <answer correct="true">i810</answer>
         <answer>ati</answer>
         <answer>radeon</answer>
       </answers>
@@ -114,7 +114,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Gray Killday</answer>
+        <answer correct="true">Gray Killday</answer>
         <answer>Paul Allen</answer>
         <answer>Richard Stallman</answer>
       </answers>
@@ -124,7 +124,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">kcontrol</answer>
+        <answer correct="true">kcontrol</answer>
         <answer>kmanageconf</answer>
         <answer>kconfig</answer>
       </answers>
@@ -134,7 +134,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">ssh</answer>
+        <answer correct="true">ssh</answer>
         <answer>ping</answer>
         <answer>telnet2</answer>
       </answers>
@@ -144,7 +144,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Blue Screen Of Death</answer>
+        <answer correct="true">Blue Screen Of Death</answer>
         <answer>Bad System of Directorys</answer>
         <answer>Bad Screen Or Data</answer>
       </answers>
@@ -154,7 +154,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Per a verificar els paquets privatius que estan instal·lats</answer>
+        <answer correct="true">Per a verificar els paquets privatius que estan instal·lats</answer>
         <answer>Per a mirar les llicències que tens al PC</answer>
         <answer>Per a comprovar que les configuracions són respectuoses amb la GPL</answer>
       </answers>
@@ -164,7 +164,7 @@
       <author>quiron</author>
       <comments>La FSF parla de restriccions en comptes de drets, com diuen algunes empreses.</comments>
       <answers>
-        <answer correct="True">Digital Restrictions Management</answer>
+        <answer correct="true">Digital Restrictions Management</answer>
         <answer>Digital Radio Messages</answer>
         <answer>Debian Ring Media</answer>
       </answers>
@@ -174,7 +174,7 @@
       <author>quiron</author>
       <comments>Només la pot distribuir qui tingui un acord amb les empreses propietàries del programari privatiu que porta.</comments>
       <answers>
-        <answer correct="True">No</answer>
+        <answer correct="true">No</answer>
         <answer>Només Novell</answer>
         <answer>Evidentment, és programari lliure</answer>
       </answers>
@@ -184,7 +184,7 @@
       <author>RainCT</author>
       <comments>Wine és per a tot tipus de programes, i Gamix és una especificació per a una consola de jocs lliure.</comments>
       <answers>
-        <answer correct="True">Cedega</answer>
+        <answer correct="true">Cedega</answer>
         <answer>Gamix</answer>
         <answer>Wine</answer>
       </answers>
@@ -194,7 +194,7 @@
       <author>papapep</author>
       <comments></comments>
       <answers>
-        <answer correct="True">torrent</answer>
+        <answer correct="true">torrent</answer>
         <answer>edonkey</answer>
         <answer>riera</answer>
       </answers>
@@ -204,7 +204,7 @@
       <author>papapep</author>
       <comments></comments>
       <answers>
-        <answer correct="True">hd-dvd i blue-ray</answer>
+        <answer correct="true">hd-dvd i blue-ray</answer>
         <answer>dvd-ram i nas</answer>
         <answer>vhs i hd-dvd</answer>
       </answers>
@@ -214,7 +214,7 @@
       <author>Cortsenc</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Finlandesa</answer>
+        <answer correct="true">Finlandesa</answer>
         <answer>Danesa</answer>
         <answer>Romanesa</answer>
       </answers>
@@ -224,7 +224,7 @@
       <author>Cortsenc</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Verd</answer>
+        <answer correct="true">Verd</answer>
         <answer>Rosa</answer>
         <answer>Blau</answer>
       </answers>
@@ -234,7 +234,7 @@
       <author>Cortsenc</author>
       <comments>UltraStar a seques, està programat amb Delphi i només està disponible per a Windows, i UltraStar-NG és una reescriptura del programa amb C pensada per a fer-se servir amb GNU/Linux.</comments>
       <answers>
-        <answer correct="True">UltraStar-NG</answer>
+        <answer correct="true">UltraStar-NG</answer>
         <answer>SingStar</answer>
         <answer>UltraStar</answer>
       </answers>
@@ -244,7 +244,7 @@
       <author>Nil</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Pone</answer>
+        <answer correct="true">Pone</answer>
         <answer>Xine</answer>
         <answer>Totem</answer>
       </answers>
@@ -254,7 +254,7 @@
       <author>carles</author>
       <comments> </comments>
       <answers>
-        <answer correct="True">Enlightement</answer>
+        <answer correct="true">Enlightement</answer>
         <answer>Enlightenement</answer>
         <answer>Enlighement</answer>
       </answers>
@@ -264,7 +264,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Un drac</answer>
+        <answer correct="true">Un drac</answer>
         <answer>Un pingüí</answer>
         <answer>Una salamandra</answer>
       </answers>
@@ -274,7 +274,7 @@
       <author>carles</author>
       <comments>Això que ens pot semblar estrany no és un error de traducció. Ve de la mida de les caselles (caixes) que s'usaven en les impremptes, on les majúscules eren més grans.</comments>
       <answers>
-        <answer correct="True">Majúscules / minúscules</answer>
+        <answer correct="true">Majúscules / minúscules</answer>
         <answer>Tipus de monitor</answer>
         <answer>Marges de les finestres</answer>
       </answers>
@@ -284,7 +284,7 @@
       <author>carles</author>
       <comments>La 3a també és correcta, però no és el nostre cas.</comments>
       <answers>
-        <answer correct="True">K Desktop Enviroment</answer>
+        <answer correct="true">K Desktop Enviroment</answer>
         <answer>Kentucky Department of Education</answer>
         <answer>KDE Data Extruded</answer>
       </answers>
@@ -294,7 +294,7 @@
       <author>carles</author>
       <comments>L'any 2006 l'equip de Debian va fer una separació de la versió oficial del firefox, perquè l'equip de treball de mozilla no incorporava les seves actualitzacions a temps. En fer-ho van haver de canviar el logotip per un altre, ja que estava protegit per drets d'autor.</comments>
       <answers>
-        <answer correct="True">La llúdriga de gel</answer>
+        <answer correct="true">La llúdriga de gel</answer>
         <answer>L'escarabat de neu</answer>
         <answer>La gavina de foc</answer>
       </answers>
@@ -304,7 +304,7 @@
       <author>Nil</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Pidgin</answer>
+        <answer correct="true">Pidgin</answer>
         <answer>Amsn</answer>
         <answer>Gaim (no ha canviat)</answer>
       </answers>
@@ -314,7 +314,7 @@
       <author>lluisanunez</author>
       <comments>Kalcul és una aplicació de KDE, Karacul és inventat. </comments>
       <answers>
-        <answer correct="True">Karacul</answer>
+        <answer correct="true">Karacul</answer>
         <answer>Moc</answer>
         <answer>Caca</answer>
       </answers>
@@ -324,7 +324,7 @@
       <author>carles</author>
       <comments>Deixeu al Konqui conquerir el vostre escriptori.</comments>
       <answers>
-        <answer correct="True">Konqui</answer>
+        <answer correct="true">Konqui</answer>
         <answer>Mongui</answer>
         <answer>Tronki</answer>
       </answers>
@@ -334,7 +334,7 @@
       <author>carles</author>
       <comments>És un sistema media center collonut, però no serveix per a fer PDFs.</comments>
       <answers>
-        <answer correct="True">Fer PDFs</answer>
+        <answer correct="true">Fer PDFs</answer>
         <answer>Fer videotrucades</answer>
         <answer>Veure i enregistrar la tele</answer>
       </answers>
@@ -344,7 +344,7 @@
       <author>Nil</author>
       <comments>El gimp és un programa de# tractament d'imatges,#el gaim de missatgeria instantània# (ara rebatejat com a pidgin)#i el gcc el compilador de# llenguatge c i c++. </comments>
       <answers>
-        <answer correct="True">gimp</answer>
+        <answer correct="true">gimp</answer>
         <answer>gaim</answer>
         <answer>gcc</answer>
       </answers>
@@ -354,7 +354,7 @@
       <author>carles</author>
       <comments>És un programa d'autoedició.</comments>
       <answers>
-        <answer correct="True">scribus</answer>
+        <answer correct="true">scribus</answer>
         <answer>xaralx</answer>
         <answer>inkscape</answer>
       </answers>
@@ -364,7 +364,7 @@
       <author>carles</author>
       <comments>L'Ardour és un gran programa multipista per treballar en temps real.#L'Audacity és un gran programa per tractar so.#I el Blender és un programa boníssim de disseny gràfic en 3D.</comments>
       <answers>
-        <answer correct="True">Blender</answer>
+        <answer correct="true">Blender</answer>
         <answer>Ardour</answer>
         <answer>Audacity</answer>
       </answers>
@@ -374,7 +374,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Sortirien i tornarien a entrar</answer>
+        <answer correct="true">Sortirien i tornarien a entrar</answer>
         <answer>Reiniciarien el servei del motor</answer>
         <answer>Desmuntarien el cotxe</answer>
       </answers>
@@ -384,7 +384,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">nx</answer>
+        <answer correct="true">nx</answer>
         <answer>Les mateixes X</answer>
         <answer>vnc</answer>
       </answers>
@@ -394,7 +394,7 @@
       <author>carles</author>
       <comments>Tot i que ja el trobem predeterminat a les darreres versions de KDE.</comments>
       <answers>
-        <answer correct="True">Dolphin</answer>
+        <answer correct="true">Dolphin</answer>
         <answer>nautilus</answer>
         <answer>konqueror</answer>
       </answers>
@@ -404,7 +404,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Yunki</answer>
+        <answer correct="true">Yunki</answer>
         <answer>Opie</answer>
         <answer>Sato</answer>
       </answers>
@@ -414,7 +414,7 @@
       <author>carles</author>
       <comments>Evidentment l'Aero és per a l'Hasefrog Diòptries</comments>
       <answers>
-        <answer correct="True">Aero</answer>
+        <answer correct="true">Aero</answer>
         <answer>Compiz Fusion</answer>
         <answer>Beryl</answer>
       </answers>
@@ -425,7 +425,7 @@
       <author>MarcJ</author>
       <comments></comments>
       <answers>
-        <answer correct="True">1984</answer>
+        <answer correct="true">1984</answer>
         <answer>1982</answer>
         <answer>1985</answer>
       </answers>
@@ -436,7 +436,7 @@
       <author>CarlesOriol</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Vinagre</answer>
+        <answer correct="true">Vinagre</answer>
         <answer>Oli</answer>
         <answer>Amanida</answer>
       </answers>

@@ -35,7 +35,7 @@
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Romànica.</answer>
+        <answer correct="true">Romànica.</answer>
         <answer>Germànica.</answer>
         <answer>Romàntica.</answer>
       </answers>
@@ -46,7 +46,7 @@
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">L'occità.</answer>
+        <answer correct="true">L'occità.</answer>
         <answer>L'euskera.</answer>
         <answer>La de gat.</answer>
       </answers>
@@ -58,7 +58,7 @@
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Les "Homilies d'Organyà".</answer>
+        <answer correct="true">Les "Homilies d'Organyà".</answer>
         <answer>"Tirant lo Blanc".</answer>
         <answer>"Curial e Güelfa".</answer>
       </answers>
@@ -69,7 +69,7 @@
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Oriental i occidental.</answer>
+        <answer correct="true">Oriental i occidental.</answer>
         <answer>Septentrional i meridional.</answer>
         <answer>Espanyol i catanyol.</answer>
       </answers>
@@ -81,7 +81,7 @@
       <author>Nuria</author>
            <comments>Apareix per primer cop en textos italians medievals: els italians necessitaven un nom més concret que "la Marca" per designar-nos i sabien per formació clàssica que en aquella part d'Hispània hi vivien els "lacetani" (o lacetans). De "lacetani" passà per metàtesi a "cetalani" i "catalani".</comments>
       <answers>
-        <answer correct="True">De "lacetani", tribu ibera.</answer>
+        <answer correct="true">De "lacetani", tribu ibera.</answer>
         <answer>De "castellà", governador d'un castell.</answer>
         <answer>De "gat a l'ast", menja preferida dels nostres avantpassats medievals.</answer>
       </answers>
@@ -93,7 +93,7 @@
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Atribuíen.</answer>
+        <answer correct="true">Atribuíen.</answer>
         <answer>Atribuïa.</answer>
         <answer>Atribuíeu.</answer>
       </answers>
@@ -104,7 +104,7 @@
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Es compten totes les síŀlabes fins a l'última tònica de cada vers.</answer>
+        <answer correct="true">Es compten totes les síŀlabes fins a l'última tònica de cada vers.</answer>
         <answer>Es compten totes les síŀlabes de cada vers.</answer>
         <answer>Els compten totes les síl·labes. </answer>
       </answers>
@@ -116,7 +116,7 @@
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Pompeu Fabra.</answer>
+        <answer correct="true">Pompeu Fabra.</answer>
         <answer>Antoni Maria Badia i Margarit.</answer>
         <answer>Carles Oriol i Margarit.</answer>
       </answers>
@@ -128,7 +128,7 @@ llengua catalana"?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Joan Coromines.</answer>
+        <answer correct="true">Joan Coromines.</answer>
         <answer>Pere Coromines.</answer>
         <answer>Joan Veny.</answer>
       </answers>
@@ -141,7 +141,7 @@ llengua catalana"?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Antoni Maria Badia i Margarit.</answer>
+        <answer correct="true">Antoni Maria Badia i Margarit.</answer>
         <answer>Joan Margarit.</answer>
         <answer>Carles Oriol i Margarit.</answer>
       </answers>
@@ -153,7 +153,7 @@ llengua catalana"?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Rossellonès, central, balear i alguerès.</answer>
+        <answer correct="true">Rossellonès, central, balear i alguerès.</answer>
         <answer>Mandarí, wu i cantonès.</answer>
         <answer>Caló, salat i xava.</answer>
       </answers>
@@ -164,7 +164,7 @@ llengua catalana"?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Nord-occidental i valencià.</answer>
+        <answer correct="true">Nord-occidental i valencià.</answer>
         <answer>Ribagorçà i balear.</answer>
         <answer>Nord, sud, est i oest.</answer>
       </answers>
@@ -175,7 +175,7 @@ llengua catalana"?</sentence>
       <author>Nuria</author>
       <comments>Aquesta articles deriven del llatí "ipsu" i "ipsa".</comments>
       <answers>
-        <answer correct="True">Empra els articles es i sa.</answer>
+        <answer correct="true">Empra els articles es i sa.</answer>
         <answer>És picant.</answer>
         <answer>No es pronuncien les esses inicials.</answer>
       </answers>
@@ -186,7 +186,7 @@ llengua catalana"?</sentence>
       <author>Nuria</author>
     <comments>Es parla des de l'Alt Urgell fins a la Conca de Barberà.</comments>
       <answers>
-        <answer correct="True">Un parlar de transició entre l'oriental i l'occidental.</answer>
+        <answer correct="true">Un parlar de transició entre l'oriental i l'occidental.</answer>
         <answer>Un parlar desenfadat, trapella.</answer>
         <answer>Argot de delinqüents.</answer>
       </answers>
@@ -198,7 +198,7 @@ llengua catalana"?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">No té paraules esdrúixoles;la "o" tancada esdevé "u" i la "o"oberta, "o" mitjana; les "e" també són mitjanes.</answer>
+        <answer correct="true">No té paraules esdrúixoles;la "o" tancada esdevé "u" i la "o"oberta, "o" mitjana; les "e" també són mitjanes.</answer>
         <answer>Totes les paraules polisiŀlàbiques són agudes, com en francès.</answer>
         <answer>L'últim parlant de rossellonès va morir fa uns deu anys.</answer>
       </answers>
@@ -210,7 +210,7 @@ segles XII i XIII?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">En occità.</answer>
+        <answer correct="true">En occità.</answer>
         <answer>En català.</answer>
         <answer>En francès.</answer>
       </answers>
@@ -221,7 +221,7 @@ segles XII i XIII?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Un senyor feudal i trobador.</answer>
+        <answer correct="true">Un senyor feudal i trobador.</answer>
         <answer>Un lladre de camins.</answer>
         <answer>Un almogàver poeta.</answer>
       </answers>
@@ -232,7 +232,7 @@ segles XII i XIII?</sentence>
       <author>Nuria</author>
       <comments>El sirventès sol aprofitar l'esquema d'estrofes i de música d'una cançó trobadoresca amorosa, i molt coneguda, per transmetre un atac polític, una reprensió moral, una mostra d'odi...</comments>
       <answers>
-        <answer correct="True">Un poema.</answer>
+        <answer correct="true">Un poema.</answer>
         <answer>Un joglar molt servil.</answer>
         <answer>Una comèdia d'embolics.</answer>
       </answers>
@@ -244,7 +244,7 @@ segles XII i XIII?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">L'obsessionava la luxúria.</answer>
+        <answer correct="true">L'obsessionava la luxúria.</answer>
         <answer>Li agradaven molt les riqueses.</answer>
         <answer>Sempre mentia</answer>
       </answers>
@@ -256,7 +256,7 @@ segles XII i XIII?</sentence>
       <author>Nuria</author>
 <comments>Aquest esclau també li féu conèixer el pensament de filòsofs i científics àrabs.Llull aprengué tant d'àrab, que fou capaç d'escriure-hi moltes de les seves obres. Afegitó: Llull es va esbatussar amb aquest esclau perquè renegà de Crist, i l'esclau, un altre dia, se'n venjà clavant-li u punyal al ventre. </comments> 
       <answers>
-        <answer correct="True">Va comprar-se un esclau culte.</answer>
+        <answer correct="true">Va comprar-se un esclau culte.</answer>
         <answer>Va contractar un mestre.</answer>
         <answer>Se'n va anar al Pròxim Orient.</answer>
       </answers>
@@ -267,7 +267,7 @@ segles XII i XIII?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Ramon Llull.</answer>
+        <answer correct="true">Ramon Llull.</answer>
         <answer>Salvador Espriu.</answer>
         <answer>Déu</answer>
       </answers>
@@ -279,7 +279,7 @@ expressat en cap llengua vulgar?</sentence>
       <author>Nuria</author>
       <comments>Ramon Llull va escriure moltíssims llibres (més de 200), d'enciclopèdics, de filosòfics, de tots els temes. Ell mateix era conscient del problema del lèxic inexistent i de la necessitat de crear "paraules estranyes". Té un esquema matemàtic de derivació per formar tecnicismes filosòfics.</comments>
       <answers>
-        <answer correct="True">Crea "paraules estranyes".</answer>
+        <answer correct="true">Crea "paraules estranyes".</answer>
         <answer>Fa circumloquis.</answer>
         <answer>Fa llatinismes.</answer>
       </answers>
@@ -290,7 +290,7 @@ expressat en cap llengua vulgar?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Jo cant - central.</answer>
+        <answer correct="true">Jo cant - central.</answer>
         <answer>Jo cante – valencià.</answer>
         <answer>Jo canti- rossellonès.</answer>
       </answers>
@@ -302,7 +302,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Eixe.</answer>
+        <answer correct="true">Eixe.</answer>
         <answer>Este.</answer>
         <answer>Aquell.</answer>
       </answers>
@@ -313,7 +313,7 @@ cosa) és prop del qui escolta?</sentence>
   	  <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Ausiàs March.</answer>
+        <answer correct="true">Ausiàs March.</answer>
         <answer>Ferran Torrent.</answer>
         <answer>Joan Fuster.</answer>
       </answers>
@@ -325,7 +325,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Joanot Martorell.</answer>
+        <answer correct="true">Joanot Martorell.</answer>
         <answer>Joan Roís de Corella.</answer>
         <answer>Jaume Roig.</answer>
       </answers>
@@ -336,7 +336,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">De Carmesina.</answer>
+        <answer correct="true">De Carmesina.</answer>
         <answer>De Constança.</answer>
         <answer>De Plaerdemavida.</answer>
       </answers>
@@ -347,7 +347,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">I la jove si pot</answer>
+        <answer correct="true">I la jove si pot</answer>
         <answer>Ventant-li un bon cop.</answer>
         <answer>I el vell a la vora d'un soc.</answer>
       </answers>
@@ -358,7 +358,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">S'omple la pica.</answer>
+        <answer correct="true">S'omple la pica.</answer>
         <answer>Un es tona mico.</answer>
         <answer>Es moquen els macos.</answer>
       </answers>
@@ -370,7 +370,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Pluja o vent.</answer>
+        <answer correct="true">Pluja o vent.</answer>
         <answer>Bon got d'aiguardent.</answer>
         <answer>Què dirà la gent?</answer>
       </answers>
@@ -381,7 +381,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">De vell dorm a la palla.</answer>
+        <answer correct="true">De vell dorm a la palla.</answer>
         <answer>De vell la balla.</answer>
         <answer>De vell mai no calla.</answer>
       </answers>
@@ -392,7 +392,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">La falç al puny.</answer>
+        <answer correct="true">La falç al puny.</answer>
         <answer>Bon cop de puny.</answer>
         <answer>Tothom s'esmuny.</answer>
       </answers>
@@ -403,7 +403,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Que un ase mort.</answer>
+        <answer correct="true">Que un ase mort.</answer>
         <answer>Que un ase viu.</answer>
         <answer>Que un ase més mort que viu.</answer>
       </answers>
@@ -414,7 +414,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Se les pensa totes.</answer>
+        <answer correct="true">Se les pensa totes.</answer>
         <answer>Parla sopes.</answer>
         <answer>A la nit va de copes.</answer>
       </answers>
@@ -425,7 +425,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Aniràs de cantó.</answer>
+        <answer correct="true">Aniràs de cantó.</answer>
         <answer>Et caurà el vi al caparró.</answer>
         <answer>Dormiràs com un liró.</answer>
       </answers>
@@ -436,7 +436,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Els mals espanta.</answer>
+        <answer correct="true">Els mals espanta.</answer>
         <answer>Els veïns espanta.</answer>
         <answer>Les serps encanta.</answer>
       </answers>
@@ -447,7 +447,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">El que veuen fer als grans.</answer>
+        <answer correct="true">El que veuen fer als grans.</answer>
         <answer>El que fan els elefants.</answer>
         <answer>Ho toquen tot amb les mans.</answer>
       </answers>
@@ -458,7 +458,7 @@ cosa) és prop del qui escolta?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Vés amb compte!</answer>
+        <answer correct="true">Vés amb compte!</answer>
         <answer>Vés amb conte!</answer>
         <answer>Vés amb comte!</answer>
       </answers>
@@ -470,7 +470,7 @@ Xavier Benguerel?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Són westerns.</answer>
+        <answer correct="true">Són westerns.</answer>
         <answer>De l'exili.</answer>
         <answer>Dels xoriços.</answer>
       </answers>
@@ -481,7 +481,7 @@ Xavier Benguerel?</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">"Incerta glòria".</answer>
+        <answer correct="true">"Incerta glòria".</answer>
         <answer>"La meva amiga Glòria".</answer>
         <answer>"Dies gloriosos".</answer>
       </answers>
@@ -493,7 +493,7 @@ magistralment...</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">La vida privada de diferents personatges de la Barcelona dels anys vint i trenta.</answer>
+        <answer correct="true">La vida privada de diferents personatges de la Barcelona dels anys vint i trenta.</answer>
         <answer>La vida privada de la gent d'El Port de la Selva.</answer>
         <answer>La seva pròpia vida privada.</answer>
       </answers>
@@ -505,7 +505,7 @@ magistralment...</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">"La vaca cega".</answer>
+        <answer correct="true">"La vaca cega".</answer>
         <answer>"Inici de càntic en el temple".</answer>
         <answer>"Cançó del matí encalmat".</answer>
       </answers>
@@ -516,7 +516,7 @@ magistralment...</sentence>
       <author>Nuria</author>
       <comments></comments>
       <answers>
-        <answer correct="True">"La fageda d'en Jordà".</answer>
+        <answer correct="true">"La fageda d'en Jordà".</answer>
         <answer>"Cant espiritual".</answer>
         <answer>L'expresident no és poeta.</answer>
       </answers>
@@ -527,7 +527,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">"La pàtria".</answer>
+			<answer correct="true">"La pàtria".</answer>
 			<answer>"Sol, i de Dol"</answer>
 			<answer>"És quan dormo que hi veig clar".</answer>
 		</answers>
@@ -539,7 +539,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Sensació de buidor produïda a l'estómac per la gana. </answer>
+			<answer correct="true">Sensació de buidor produïda a l'estómac per la gana. </answer>
 			<answer>Sensació de buidor produïda al cor per la mort d'algú.</answer>
 			<answer>Dificultat de respirar i taquicàrdia.</answer>
 		</answers>
@@ -552,7 +552,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">El país imaginari de la felicitat. </answer>
+			<answer correct="true">El país imaginari de la felicitat. </answer>
 			<answer>El país de la feina feta de qualsevol manera.</answer>
 			<answer>El país del seny i la rauxa, sinònim de Catalunya.</answer>
 		</answers>
@@ -563,7 +563,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Fer esforços inútils. </answer>
+			<answer correct="true">Fer esforços inútils. </answer>
 			<answer>Obrir-se pas nedant amb l'estil braça.</answer>
 			<answer>Intentar avançar nedant, però ser retornat sempre al mateix punt per la força de l'aigua.</answer>
 		</answers>
@@ -575,7 +575,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Un disbauxat. </answer>
+			<answer correct="true">Un disbauxat. </answer>
 			<answer>Un tronat.</answer>
 			<answer>Un arreplegat (tipus Adrià Puntí).</answer>
 		</answers>
@@ -586,7 +586,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Un excursionista kumbaià.</answer>
+			<answer correct="true">Un excursionista kumbaià.</answer>
 			<answer>Un sabater que fa xiruques.</answer>
 			<answer>Un ubuntaire amb xiruques.</answer>
 		</answers>
@@ -597,7 +597,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments> Explicació: del llatí "tri palium", instrument de tortura.</comments>
 		<answers>
-			<answer correct="True">Tortura.</answer>
+			<answer correct="true">Tortura.</answer>
 			<answer>Ocupació.</answer>
 			<answer>Desmai.</answer>
 		</answers>
@@ -608,7 +608,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments>Els membres de la secta xiïta nizaria eren embriagats amb haixix abans de ser enviats a matar enemics.</comments>
 		<answers>
-			<answer correct="True">De l'evolució del mot provinent de l'àrab "haixix".</answer>
+			<answer correct="true">De l'evolució del mot provinent de l'àrab "haixix".</answer>
 			<answer>Del crit "ara sí!" (...que et mataré!).</answer>
 			<answer>De l'evolució del llatí ars occidens, l'art d'occir.</answer>
 		</answers>
@@ -619,7 +619,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Sa Uindoua.</answer>
+			<answer correct="true">Sa Uindoua.</answer>
 			<answer>Sa finestra.</answer>
 			<answer>Ets finestró.</answer>
 		</answers>
@@ -630,7 +630,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Un pobre.</answer>
+			<answer correct="true">Un pobre.</answer>
 			<answer>Un ganivet.</answer>
 			<answer>Un flautista.</answer>
 		</answers>
@@ -641,7 +641,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">L'origen d'un fet.</answer>
+			<answer correct="true">L'origen d'un fet.</answer>
 			<answer>El gall.</answer>
 			<answer>El primer ou, que va ser abans que cap gallina.</answer>
 		</answers>
@@ -652,7 +652,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Ja lis portaré jo.</answer>
+			<answer correct="true">Ja lis portaré jo.</answer>
 			<answer>Ja els hi portaré jo.</answer>
 			<answer>Ja els el portaré jo.</answer>
 		</answers>
@@ -663,7 +663,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Què lis sembla?</answer>
+			<answer correct="true">Què lis sembla?</answer>
 			<answer>Què els sembla?</answer>
 			<answer>Què els hi sembla?</answer>
 		</answers>
@@ -675,7 +675,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Del caló.</answer>
+			<answer correct="true">Del caló.</answer>
 			<answer>De l'àrab.</answer>
 			<answer>De l'amazic.</answer>
 		</answers>
@@ -686,7 +686,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">D'Ausiàs March.</answer>
+			<answer correct="true">D'Ausiàs March.</answer>
 			<answer>De Joanot Martorell.</answer>
 			<answer>De Bernat Metge.</answer>
 		</answers>
@@ -697,7 +697,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Va escriure "Lau o les aventures d'un aprenent de pilot".</answer>
+			<answer correct="true">Va escriure "Lau o les aventures d'un aprenent de pilot".</answer>
 			<answer>Va escriure la versió més representada dels Pastorets. </answer>
 			<answer>Va publicar el setmanari "Patufet" i va escriure "Les extraordinàries aventures d'en Massagran".</answer>
 		</answers>
@@ -708,7 +708,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">"Lentament sense dir re"...</answer>
+			<answer correct="true">"Lentament sense dir re"...</answer>
 			<answer>"Si la lluna feia el ple"...</answer>
 			<answer>"Amb una gran pena"...</answer>
 		</answers>
@@ -719,7 +719,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">La crueltat.</answer>
+			<answer correct="true">La crueltat.</answer>
 			<answer>La guerra.</answer>
 			<answer>L'amor romàntic.</answer>
 		</answers>
@@ -730,7 +730,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">D'un home amb una erecció permanent.</answer>
+			<answer correct="true">D'un home amb una erecció permanent.</answer>
 			<answer>D'un home que no pot mantenir una erecció.</answer>
 			<answer>D'un home que té un membre molt magne.</answer>
 		</answers>
@@ -741,7 +741,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Pelacanyes.</answer>
+			<answer correct="true">Pelacanyes.</answer>
 			<answer>Gamarús.</answer>
 			<answer>Capsigrany.</answer>
 		</answers>
@@ -752,7 +752,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Jacint Verdaguer.</answer>
+			<answer correct="true">Jacint Verdaguer.</answer>
 			<answer>Joan Maragall.</answer>
 			<answer>Josep Maria de Sagarra.</answer>
 		</answers>
@@ -763,7 +763,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Jacint Verdaguer.</answer>
+			<answer correct="true">Jacint Verdaguer.</answer>
 			<answer>Joan Maragall.</answer>
 			<answer>Joan Alcover.</answer>
 		</answers>
@@ -774,7 +774,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Joan Maragall.</answer>
+			<answer correct="true">Joan Maragall.</answer>
 			<answer>Jacint Verdaguer.</answer>
 			<answer>Joan Alcover.</answer>
 		</answers>
@@ -785,7 +785,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Àngel Guimerà.</answer>
+			<answer correct="true">Àngel Guimerà.</answer>
 			<answer>Joan Maragall.</answer>
 			<answer>Jacint Verdaguer.</answer>
 		</answers>
@@ -796,7 +796,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Joan Alcover.</answer>
+			<answer correct="true">Joan Alcover.</answer>
 			<answer>Àngel Guimerà.</answer>
 			<answer>Joan Maragall.</answer>
 		</answers>
@@ -807,7 +807,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Jordi des Racó. </answer>
+			<answer correct="true">Jordi des Racó. </answer>
 			<answer>Víctor Català.</answer>
 			<answer>Francesc de Borja Moll.</answer>
 		</answers>
@@ -818,7 +818,7 @@ magistralment...</sentence>
 		<author>Nuria</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Un diccionari del tresor lèxic de la llengua catalana en deu volums. </answer>
+			<answer correct="true">Un diccionari del tresor lèxic de la llengua catalana en deu volums. </answer>
 			<answer>Un diccionari del català propi de les Illes Balears en deu volums.</answer>
 			<answer>Un diccionari del català propi del País Valencià en deu volums.</answer>
 		</answers>
@@ -832,7 +832,7 @@ magistralment...</sentence>
 		<author>MarcOriol</author>
 		<comments>De la trilogia de la guerra de les bruixes de Maite Carranza</comments>
 		<answers>
-			<answer correct="True">Anaïd Tsinoulis</answer>
+			<answer correct="true">Anaïd Tsinoulis</answer>
 			<answer>Hermione Granger</answer>
 			<answer>Lídia Bartrolí</answer>
 		</answers>
@@ -843,7 +843,7 @@ magistralment...</sentence>
 		<author>Gimcana</author>
 		<comments></comments>
 		<answers>
-			<answer correct="True">Copulatius</answer>
+			<answer correct="true">Copulatius</answer>
 			<answer>Transitius</answer>
 			<answer>Preposicionals</answer>
 		</answers>

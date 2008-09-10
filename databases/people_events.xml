@@ -35,7 +35,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Mataró</answer>
+        <answer correct="true">Mataró</answer>
         <answer>París</answer>
         <answer>Barcelona</answer>
       </answers>
@@ -45,7 +45,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Stallman</answer>
+        <answer correct="true">Stallman</answer>
         <answer>John de Lacie</answer>
         <answer>David Pini</answer>
       </answers>
@@ -55,7 +55,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">No n'hi ha</answer>
+        <answer correct="true">No n'hi ha</answer>
         <answer>A Gijón</answer>
         <answer>A Londres</answer>
       </answers>
@@ -65,7 +65,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Ser elegit</answer>
+        <answer correct="true">Ser elegit</answer>
         <answer>Estar LoCo</answer>
         <answer>Fundar el LoCo</answer>
       </answers>
@@ -75,7 +75,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Ser en Mark Shuttlewoth</answer>
+        <answer correct="true">Ser en Mark Shuttlewoth</answer>
         <answer>Ser elegit</answer>
         <answer>Demostrar una feina feta</answer>
       </answers>
@@ -85,7 +85,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Ser elegit</answer>
+        <answer correct="true">Ser elegit</answer>
         <answer>Demostrar una feina feta</answer>
         <answer>Apuntar-se a les llistes de correu</answer>
       </answers>
@@ -95,7 +95,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Demostrar una feina feta</answer>
+        <answer correct="true">Demostrar una feina feta</answer>
         <answer>Apuntar-se a les llistes de correu</answer>
         <answer>Ser elegit</answer>
       </answers>
@@ -105,7 +105,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Demostrar una feina feta</answer>
+        <answer correct="true">Demostrar una feina feta</answer>
         <answer>Ser elegit</answer>
         <answer>Ser un friki</answer>
       </answers>
@@ -115,7 +115,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Miquel Chicano</answer>
+        <answer correct="true">Miquel Chicano</answer>
         <answer>Albert Astals</answer>
         <answer>Lluís Sanz</answer>
       </answers>
@@ -125,7 +125,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Jesús Corrius</answer>
+        <answer correct="true">Jesús Corrius</answer>
         <answer>Jordi Mallach</answer>
         <answer>Carles Mata</answer>
       </answers>
@@ -135,7 +135,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Àlex Muntada</answer>
+        <answer correct="true">Àlex Muntada</answer>
         <answer>Miquel Chicano</answer>
         <answer>Carles Mata</answer>
       </answers>
@@ -145,7 +145,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Les Corts</answer>
+        <answer correct="true">Les Corts</answer>
         <answer>Gràcia</answer>
         <answer>L'Hospitalet</answer>
       </answers>
@@ -155,7 +155,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">The Shamrock</answer>
+        <answer correct="true">The Shamrock</answer>
         <answer>The O'Brien</answer>
         <answer>The Baggins</answer>
       </answers>
@@ -165,7 +165,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Estació de Sants</answer>
+        <answer correct="true">Estació de Sants</answer>
         <answer>Centre Bocanord</answer>
         <answer>Centre Excursionista de Sants</answer>
       </answers>
@@ -175,7 +175,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Centre Bocanord</answer>
+        <answer correct="true">Centre Bocanord</answer>
         <answer>Esplai Espurna</answer>
         <answer>Centre Gran de Gràcia</answer>
       </answers>
@@ -185,7 +185,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Taiji Quan</answer>
+        <answer correct="true">Taiji Quan</answer>
         <answer>Bàsquet</answer>
         <answer>Excursionisme</answer>
       </answers>
@@ -195,7 +195,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Orestes Mas</answer>
+        <answer correct="true">Orestes Mas</answer>
         <answer>Albert Astals</answer>
         <answer>Robert Millan</answer>
       </answers>
@@ -205,7 +205,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Badopi</answer>
+        <answer correct="true">Badopi</answer>
         <answer>BCNGNU</answer>
         <answer>BarnaLinux</answer>
       </answers>
@@ -215,7 +215,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">GPL Tarragona</answer>
+        <answer correct="true">GPL Tarragona</answer>
         <answer>GNU Tarragona</answer>
         <answer>Tarragona Linux</answer>
       </answers>
@@ -225,7 +225,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Gilug</answer>
+        <answer correct="true">Gilug</answer>
         <answer>Gilinux</answer>
         <answer>Girolinux</answer>
       </answers>
@@ -235,7 +235,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Sergi Tur</answer>
+        <answer correct="true">Sergi Tur</answer>
         <answer>David Pini</answer>
         <answer>Carles Mata</answer>
       </answers>
@@ -245,7 +245,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Sergi Talens</answer>
+        <answer correct="true">Sergi Talens</answer>
         <answer>Carlos Bunyol</answer>
         <answer>Joan Puig</answer>
       </answers>
@@ -255,7 +255,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Georg Greeve</answer>
+        <answer correct="true">Georg Greeve</answer>
         <answer>George Lucas</answer>
         <answer>George Flint</answer>
       </answers>
@@ -265,7 +265,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Klaus Knopper</answer>
+        <answer correct="true">Klaus Knopper</answer>
         <answer>Klimt Knew</answer>
         <answer>John Knoop</answer>
       </answers>
@@ -275,7 +275,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Lluís Gras</answer>
+        <answer correct="true">Lluís Gras</answer>
         <answer>Lluís Sanz</answer>
         <answer>Toni Mirabete</answer>
       </answers>
@@ -285,7 +285,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Adonay Sanz</answer>
+        <answer correct="true">Adonay Sanz</answer>
         <answer>Sebastià Pla</answer>
         <answer>Arnau Julià</answer>
       </answers>
@@ -295,7 +295,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Walter i Orestes</answer>
+        <answer correct="true">Walter i Orestes</answer>
         <answer>Jordi i Joan</answer>
         <answer>Marta i Guillem</answer>
       </answers>
@@ -305,7 +305,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Toni Mirabete</answer>
+        <answer correct="true">Toni Mirabete</answer>
         <answer>Jordi Mas</answer>
         <answer>Miquel Chicano</answer>
       </answers>
@@ -315,7 +315,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Guarà</answer>
+        <answer correct="true">Guarà</answer>
         <answer>Xai</answer>
         <answer>Senglar</answer>
       </answers>
@@ -325,7 +325,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Jordi Mas</answer>
+        <answer correct="true">Jordi Mas</answer>
         <answer>Miquel Chicano</answer>
         <answer>Eduard Fabra</answer>
       </answers>
@@ -335,7 +335,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Jordi Mallach</answer>
+        <answer correct="true">Jordi Mallach</answer>
         <answer>Jordi Pla</answer>
         <answer>Jordi Blaya</answer>
       </answers>
@@ -345,7 +345,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Sebastià Pla</answer>
+        <answer correct="true">Sebastià Pla</answer>
         <answer>Rafael Carreras</answer>
         <answer>Jordi Mas</answer>
       </answers>
@@ -355,7 +355,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Albert Astals</answer>
+        <answer correct="true">Albert Astals</answer>
         <answer>Robert Millan</answer>
         <answer>Orestes Mas</answer>
       </answers>
@@ -365,7 +365,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">LinKat</answer>
+        <answer correct="true">LinKat</answer>
         <answer>OpenCat</answer>
         <answer>CatAstrofe</answer>
       </answers>
@@ -375,7 +375,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Àlex Muntada</answer>
+        <answer correct="true">Àlex Muntada</answer>
         <answer>Rafael Carreras</answer>
         <answer>Miquel Chicano</answer>
       </answers>
@@ -385,7 +385,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Miquel Chicano</answer>
+        <answer correct="true">Miquel Chicano</answer>
         <answer>Francesc Genové</answer>
         <answer>Nil Oriol</answer>
       </answers>
@@ -395,7 +395,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Julià i Arnau</answer>
+        <answer correct="true">Julià i Arnau</answer>
         <answer>Nil i Marta</answer>
         <answer>Oriol i Marc</answer>
       </answers>
@@ -405,7 +405,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Xavier Drudis</answer>
+        <answer correct="true">Xavier Drudis</answer>
         <answer>Júlia Casagrande</answer>
         <answer>Ramon Pagès</answer>
       </answers>
@@ -415,7 +415,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Eduard Fabra</answer>
+        <answer correct="true">Eduard Fabra</answer>
         <answer>Orestes Mas</answer>
         <answer>Francesc Genové</answer>
       </answers>
@@ -425,7 +425,7 @@
       <author>rcarreras</author>
       <comments>RMS: Richard M. Stallman</comments>
       <answers>
-        <answer correct="True">RMS</answer>
+        <answer correct="true">RMS</answer>
         <answer>FRT</answer>
         <answer>LTV</answer>
       </answers>
@@ -435,7 +435,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Cortsenc</answer>
+        <answer correct="true">Cortsenc</answer>
         <answer>RainCT</answer>
         <answer>Àlex Muntada</answer>
       </answers>
@@ -445,7 +445,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Ricardo Galli</answer>
+        <answer correct="true">Ricardo Galli</answer>
         <answer>Tomeu Penya</answer>
         <answer>Benjamí Villoslada</answer>
       </answers>
@@ -455,7 +455,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Theo de Raadt</answer>
+        <answer correct="true">Theo de Raadt</answer>
         <answer>Mathew Flow</answer>
         <answer>John de Lacie</answer>
       </answers>
@@ -465,7 +465,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Theo de Raadt</answer>
+        <answer correct="true">Theo de Raadt</answer>
         <answer>Theo de Yaan</answer>
         <answer>Teo a la granja</answer>
       </answers>
@@ -475,7 +475,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Quim Gil</answer>
+        <answer correct="true">Quim Gil</answer>
         <answer>Guillem Portes</answer>
         <answer>David Pini</answer>
       </answers>
@@ -485,7 +485,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Jordi Mas</answer>
+        <answer correct="true">Jordi Mas</answer>
         <answer>Orestes Mas</answer>
         <answer>Artur Mas</answer>
       </answers>
@@ -495,7 +495,7 @@
       <author>rcarreras</author>
       <comments>sabdfl és el malnom (nick) d'en Mark Shuttleworth, fundador d'Ubuntu, i vol dir «Self-Appointed Benevolent Dictator for Life».</comments>
       <answers>
-        <answer correct="True">Un dictador</answer>
+        <answer correct="true">Un dictador</answer>
         <answer>Un tècnic</answer>
         <answer>Un conferenciant</answer>
       </answers>
@@ -505,7 +505,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Algú a qui li agrada la ciència ficció, els ordinadors, les maquinetes</answer>
+        <answer correct="true">Algú a qui li agrada la ciència ficció, els ordinadors, les maquinetes</answer>
         <answer>Algú a qui li agrada la tele</answer>
         <answer>Algú a qui li agrada molt algun tema poc habitual</answer>
       </answers>
@@ -515,7 +515,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Algú a qui li agrada molt algun tema poc habitual</answer>
+        <answer correct="true">Algú a qui li agrada molt algun tema poc habitual</answer>
         <answer>Algú a qui li agrada la ciència ficció, els ordinadors, les maquinetes</answer>
         <answer>Algú a qui li agrada la tele</answer>
       </answers>
@@ -525,7 +525,7 @@
       <author>rcarreras</author>
       <comments>Aquell que copia programes propietaris o es baixa música/vídeos amb drets d'autor per vendre'ls és un «pirata informàtic».</comments>
       <answers>
-        <answer correct="True">Algú que assalta vaixells</answer>
+        <answer correct="true">Algú que assalta vaixells</answer>
         <answer>Algú que es baixa música i pel·lis</answer>
         <answer>Algú que copia programes</answer>
       </answers>
@@ -535,7 +535,7 @@
       <author>Carles</author>
       <comments>Un hacker és un expert... Pot ser-ne en art (Japó) o en el nucli del Linux, o en el funcionament d'un programa. Cal no confondre els hackers, com fan els mitjans de comunicació, amb els crackers (els que rebenten sistemes de protecció).</comments>
       <answers>
-        <answer correct="True">Un expert</answer>
+        <answer correct="true">Un expert</answer>
         <answer>Algú que programa</answer>
         <answer>Algú que trenca sistemes de seguretat</answer>
       </answers>
@@ -545,7 +545,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Algú que trenca codis o sistemes</answer>
+        <answer correct="true">Algú que trenca codis o sistemes</answer>
         <answer>Algú que menja galetes</answer>
         <answer>Algú que inverteix en borsa</answer>
       </answers>
@@ -555,7 +555,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">OOo Conference</answer>
+        <answer correct="true">OOo Conference</answer>
         <answer>World OpenOffice</answer>
         <answer>OOooOOooOO</answer>
       </answers>
@@ -565,7 +565,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Guadec</answer>
+        <answer correct="true">Guadec</answer>
         <answer>Mushroom</answer>
         <answer>Gnome Conference</answer>
       </answers>
@@ -575,7 +575,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">aKademy</answer>
+        <answer correct="true">aKademy</answer>
         <answer>KDE Conference</answer>
         <answer>KDEistm</answer>
       </answers>
@@ -585,7 +585,7 @@
       <author>rcarreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Perl Mongers</answer>
+        <answer correct="true">Perl Mongers</answer>
         <answer>Perl Frikis</answer>
         <answer>Tothom sap que els programadors en Perl es reuneixen els dimecres</answer>
       </answers>
@@ -595,7 +595,7 @@
       <author>rcarreras</author>
       <comments>És un programa que instal·la una Debian des d'un Windows.</comments>
       <answers>
-        <answer correct="True">Robert Millan</answer>
+        <answer correct="true">Robert Millan</answer>
         <answer>Bill Gates</answer>
         <answer>Carles Oriol</answer>
       </answers>
@@ -605,7 +605,7 @@
       <author>quiron</author>
       <comments>En Jono Bacon, empleat de Canonical com a coordinador de la comunitat d'Ubuntu, és un gran amic del metal. Fins i tot té el seu propi grup!</comments>
       <answers>
-        <answer correct="True">Metal</answer>
+        <answer correct="true">Metal</answer>
         <answer>Òpera</answer>
         <answer>Tecno</answer>
       </answers>
@@ -615,7 +615,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">2003</answer>
+        <answer correct="true">2003</answer>
         <answer>1999</answer>
         <answer>2007</answer>
       </answers>
@@ -625,7 +625,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">vi</answer>
+        <answer correct="true">vi</answer>
         <answer>poedit</answer>
         <answer>emacs</answer>
       </answers>
@@ -635,7 +635,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">KDE</answer>
+        <answer correct="true">KDE</answer>
         <answer>Gnome</answer>
         <answer>WindowMaker</answer>
       </answers>
@@ -645,7 +645,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Una aurèola</answer>
+        <answer correct="true">Una aurèola</answer>
         <answer>Un disquet</answer>
         <answer>Un disc dur</answer>
       </answers>
@@ -655,7 +655,7 @@
       <author>quiron</author>
       <comments>I dos cops</comments>
       <answers>
-        <answer correct="True">Chuck Norris</answer>
+        <answer correct="true">Chuck Norris</answer>
         <answer>Kevin Mitnick</answer>
         <answer>Bill Gates</answer>
       </answers>
@@ -665,7 +665,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">En Gnu</answer>
+        <answer correct="true">En Gnu</answer>
         <answer>Un pingüí</answer>
         <answer>Un camaleó</answer>
       </answers>
@@ -675,7 +675,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Slackware</answer>
+        <answer correct="true">Slackware</answer>
         <answer>Debian</answer>
         <answer>Oldux</answer>
       </answers>
@@ -685,7 +685,7 @@
       <author>RainCT</author>
       <comments>Ian, el fundador de Debian, i Deborah.</comments>
       <answers>
-        <answer correct="True">El nom d'un paio i la seva xicota</answer>
+        <answer correct="true">El nom d'un paio i la seva xicota</answer>
         <answer>Un poble</answer>
         <answer>Un petit mamífer</answer>
       </answers>
@@ -695,7 +695,7 @@
       <author>RainCT</author>
       <comments>Vegeu el document que en Vicent Cubells ha escrit sobre el tema.</comments>
       <answers>
-        <answer correct="True">Algú que ajuda desinteressadament algú altre a fer funcionar un PC amb Windows</answer>
+        <answer correct="true">Algú que ajuda desinteressadament algú altre a fer funcionar un PC amb Windows</answer>
         <answer>Algú que no sap utilitzar amb fluïdesa un terminal</answer>
         <answer>Algú que és estúpid</answer>
       </answers>
@@ -705,7 +705,7 @@
       <author>RainCT</author>
       <comments></comments>
       <answers>
-        <answer correct="True">New York City</answer>
+        <answer correct="true">New York City</answer>
         <answer>Washington</answer>
         <answer>Hèlsinki</answer>
       </answers>
@@ -715,7 +715,7 @@
       <author>Carles</author>
       <comments>I això que encara no cobraven ni de bon tros tot el que cobren ara...</comments>
       <answers>
-        <answer correct="True">318.772.000</answer>
+        <answer correct="true">318.772.000</answer>
         <answer>3.187.720</answer>
         <answer>31.877.200</answer>
       </answers>
@@ -725,7 +725,7 @@
       <author>Nil</author>
       <comments>Thomas Watson d'IBM va dir literalment que al món hi havia mercat per a 5 ordinadors com a molt.</comments>
       <answers>
-        <answer correct="True">5 ordinadors</answer>
+        <answer correct="true">5 ordinadors</answer>
         <answer>500 ordinadors</answer>
         <answer>50000 ordinadors</answer>
       </answers>
@@ -735,7 +735,7 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Vilanova i la Geltrú</answer>
+        <answer correct="true">Vilanova i la Geltrú</answer>
         <answer>Sao Paulo</answer>
         <answer>Chicago</answer>
       </answers>
@@ -745,7 +745,7 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Manuel de Icaza</answer>
+        <answer correct="true">Manuel de Icaza</answer>
         <answer>Mark Shuttlework</answer>
         <answer>Georges Moustaki</answer>
       </answers>
@@ -755,7 +755,7 @@
       <author>Carles</author>
       <comments>Mark Shuttleworth va ser el 2on turista espacial#de la història de la humanitat.##Després d'aconseguir fer fortuna#va fer un viatge a l'estació espacial#internacional amb un grup de científics#per tal de realitzar investigacions amb#cèl·lules mare.</comments>
       <answers>
-        <answer correct="True">L'espai</answer>
+        <answer correct="true">L'espai</answer>
         <answer>L'Everest</answer>
         <answer>Vilanova i la Geltrú</answer>
       </answers>
@@ -765,7 +765,7 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">10</answer>
+        <answer correct="true">10</answer>
         <answer>15</answer>
         <answer>20</answer>
       </answers>
@@ -775,7 +775,7 @@
       <author>Carles</author>
       <comments>Richard Stallman, que amb aquesta frase remarcava la diferència entre els dos significats de la paraula "free" en anglès: gratuït i lliure. El programari hauria de ser lliure en el sentit de llibertat, no de no costar diners.##</comments>
       <answers>
-        <answer correct="True">Richard Stallman</answer>
+        <answer correct="true">Richard Stallman</answer>
         <answer>Linus Torvalds</answer>
         <answer>Mark Shuttlework</answer>
       </answers>
@@ -785,7 +785,7 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Perquè quan van engegar el primer#ordinador dins d'una vàlvula#hi havia un insecte</answer>
+        <answer correct="true">Perquè quan van engegar el primer#ordinador dins d'una vàlvula#hi havia un insecte</answer>
         <answer>Perquè sona simpàtic</answer>
         <answer>En honor a John Bughs</answer>
       </answers>
@@ -795,7 +795,7 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Mataró TV</answer>
+        <answer correct="true">Mataró TV</answer>
         <answer>TV3</answer>
         <answer>Barcelona TV</answer>
       </answers>
@@ -805,7 +805,7 @@
       <author>Carles</author>
       <comments>L'Akademy és la trobada anual de desenvolupadors de KDE. L'any 2007 es va fer a Glasgow, a Escòcia.</comments>
       <answers>
-        <answer correct="True">Glasgow</answer>
+        <answer correct="true">Glasgow</answer>
         <answer>Vilanova i la Geltrú</answer>
         <answer>Dublín</answer>
       </answers>
@@ -815,7 +815,7 @@
       <author>Carles</author>
       <comments>L'aKademy és la trobada anual de desenvolupadors de KDE. L'any 2006 es va fer al Trinity College Dublín, a Irlanda.</comments>
       <answers>
-        <answer correct="True">Vilanova i la Geltrú</answer>
+        <answer correct="true">Vilanova i la Geltrú</answer>
         <answer>Dublín</answer>
         <answer>Chicago</answer>
       </answers>
@@ -825,7 +825,7 @@
       <author>Nil</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Sant Ignucius</answer>
+        <answer correct="true">Sant Ignucius</answer>
         <answer>Pokémon</answer>
         <answer>De nyu (gnu en anglès)</answer>
       </answers>
@@ -835,7 +835,7 @@
       <author>lluisanunez</author>
       <comments>http://en.wikipedia.org/wiki/Hans_Reiser</comments>
       <answers>
-        <answer correct="True">Matar la seva dona</answer>
+        <answer correct="true">Matar la seva dona</answer>
         <answer>Violar la llicència GPLv3</answer>
         <answer>Signar un acord amb Microsoft</answer>
       </answers>
@@ -845,7 +845,7 @@
       <author>Carles</author>
       <comments>United States Patent 20060071122. Brutal!</comments>
       <answers>
-        <answer correct="True">El teletransport</answer>
+        <answer correct="true">El teletransport</answer>
         <answer>La inserció de xips al cervell humà</answer>
         <answer>El windows segur</answer>
       </answers>
@@ -855,7 +855,7 @@
       <author>Carles</author>
       <comments>Patent number: 5559943</comments>
       <answers>
-        <answer correct="True">El doble clic</answer>
+        <answer correct="true">El doble clic</answer>
         <answer>El CD parcialment reenregistrable</answer>
         <answer>La bola del ratolí</answer>
       </answers>
@@ -865,7 +865,7 @@
       <author>Carles</author>
       <comments>I el seu Secretari Rafael Carreras és un dels fundadors del LoCo Català d'Ubuntaires.</comments>
       <answers>
-        <answer correct="True">Caliu</answer>
+        <answer correct="true">Caliu</answer>
         <answer>Carlux</answer>
         <answer>Cobrem</answer>
       </answers>
@@ -875,7 +875,7 @@
       <author>Carles</author>
       <comments>De l'any 1969 al 1971 Dennis Ritchie i Keneth Thompson van desenvolupar el sistema Unix. Per fer-ho van haver de millorar el lleguatge B creat per Ritchie convertint-lo en C. </comments>
       <answers>
-        <answer correct="True">Els desenvolupadors del C i de l'Unix</answer>
+        <answer correct="true">Els desenvolupadors del C i de l'Unix</answer>
         <answer>Els creadors del projecte GNU</answer>
         <answer>Els pares d'internet</answer>
       </answers>
@@ -885,7 +885,7 @@
       <author>papapep</author>
       <comments></comments>
       <answers>
-        <answer correct="True">La Festa Feisty del CatalanTeam</answer>
+        <answer correct="true">La Festa Feisty del CatalanTeam</answer>
         <answer>L'RMS hi va fer una conferència</answer>
         <answer>Una reunió tupperware</answer>
       </answers>
@@ -895,7 +895,7 @@
       <author>Carles</author>
       <comments>Per cert... el clic dels nois de redmon ja s'ha convertit en clico.</comments>
       <answers>
-        <answer correct="True">Softcatalà</answer>
+        <answer correct="true">Softcatalà</answer>
         <answer>La Generalitat</answer>
         <answer>Microsoft</answer>
       </answers>

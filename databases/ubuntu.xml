@@ -35,7 +35,7 @@
       <author>RainCT</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Que no farà cap pacte amb Microsoft a causa de les patents de programari</answer>
+        <answer correct="true">Que no farà cap pacte amb Microsoft a causa de les patents de programari</answer>
         <answer>Que cada any inverteix 50 milions en l'Ubuntu</answer>
         <answer>Que el Windows Vista és el pitjor sistema operatiu del món</answer>
       </answers>
@@ -45,7 +45,7 @@
       <author>RainCT</author>
       <comments></comments>
       <answers>
-        <answer correct="True">UbuCat</answer>
+        <answer correct="true">UbuCat</answer>
         <answer>CatBot</answer>
         <answer>Ubotu</answer>
       </answers>
@@ -55,7 +55,7 @@
       <author>RainCT</author>
       <comments>La Gutsy Gibbon no només inclourà, sinó que també portarà habilitada per defecte en totes aquelles màquines que ho suportin el Compiz Fusion, el producte resultant de la unió de Compiz amb la seva branca Beryl.</comments>
       <answers>
-        <answer correct="True">Compiz Fusion</answer>
+        <answer correct="true">Compiz Fusion</answer>
         <answer>Beryl</answer>
         <answer>Compiz</answer>
       </answers>
@@ -65,7 +65,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Freenode</answer>
+        <answer correct="true">Freenode</answer>
         <answer>Quakenode</answer>
         <answer>Canonicalnode</answer>
       </answers>
@@ -75,7 +75,7 @@
       <author>quiron</author>
       <comments>Els Masters Of The Universe (MOTU) són els empaquetadors d'Ubuntu dels repositoris Universe i Multiverse.</comments>
       <answers>
-        <answer correct="True">Master Of The Universe</answer>
+        <answer correct="true">Master Of The Universe</answer>
         <answer>És un mitjà de transport</answer>
         <answer>Multitask operated time unit</answer>
       </answers>
@@ -85,7 +85,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">El 15 de maig del 07</answer>
+        <answer correct="true">El 15 de maig del 07</answer>
         <answer>El 16 desembre del 06</answer>
         <answer>No és oficial</answer>
       </answers>
@@ -95,7 +95,7 @@
       <author>quiron</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Posar la clau GPG al launchpad</answer>
+        <answer correct="true">Posar la clau GPG al launchpad</answer>
         <answer>Mirar que no hi hagi un paquet per a la mateixa tasca</answer>
         <answer>Assegurar-se que la llicència és compatible amb la GPL</answer>
       </answers>
@@ -105,7 +105,7 @@
       <author>RainCT</author>
       <comments>La propera versió Long Term Support serà la Hardy Heron. Grumpy Groundhog és el nom que reben sempre els últims 'builds' del CVS.</comments>
       <answers>
-        <answer correct="True">Hardy Heron</answer>
+        <answer correct="true">Hardy Heron</answer>
         <answer>Gutsy Gibbon</answer>
         <answer>Grumpy Groundhog</answer>
       </answers>
@@ -115,7 +115,7 @@
       <author>RainCT</author>
       <comments>https://wiki.Ubuntu.com/GutsyReleaseSchedule</comments>
       <answers>
-        <answer correct="True">DebianImportFreeze</answer>
+        <answer correct="true">DebianImportFreeze</answer>
         <answer>KernelFreeze</answer>
         <answer>UpstreamVersionFreeze</answer>
       </answers>
@@ -125,7 +125,7 @@
       <author>papapep</author>
       <comments></comments>
       <answers>
-        <answer correct="True">aptitude safe-upgrade</answer>
+        <answer correct="true">aptitude safe-upgrade</answer>
         <answer>aptitude dist-upgrade</answer>
         <answer>aptitude all-upgrade</answer>
       </answers>
@@ -135,7 +135,7 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Illa de Man</answer>
+        <answer correct="true">Illa de Man</answer>
         <answer>Zimbabwe</answer>
         <answer>Sud-àfrica</answer>
       </answers>
@@ -145,7 +145,7 @@
       <author>Carles</author>
       <comments>El número de la versió correspon amb l'any i el mes (7.10=2007 octubre).</comments>
       <answers>
-        <answer correct="True">Abril i octubre</answer>
+        <answer correct="true">Abril i octubre</answer>
         <answer>Febrer i novembre</answer>
         <answer>Març i setembre</answer>
       </answers>
@@ -155,7 +155,7 @@
       <author>carles</author>
       <comments>Els formats mp3 i DVD (mpeg) són formats restrictius. L'mp3 està protegit per patents; en alguns països, no es poden ni mostrar les fonts del DVD, ja que implicaria rebentar la protecció dels DVDs. Malgrat tot, no hi ha cap problema per a fer-los servir un cop instaŀlat el sistema.</comments>
       <answers>
-        <answer correct="True">Ogg</answer>
+        <answer correct="true">Ogg</answer>
         <answer>Mp3</answer>
         <answer>DVD</answer>
       </answers>
@@ -165,7 +165,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Descarregar actualitzacions</answer>
+        <answer correct="true">Descarregar actualitzacions</answer>
         <answer>Traduir programes</answer>
         <answer>Reportar bugs</answer>
       </answers>
@@ -176,7 +176,7 @@
       <author>cortsenc</author>
       <comments>1</comments>
       <answers>
-        <answer correct="True">6.06</answer>
+        <answer correct="true">6.06</answer>
         <answer>5.10</answer>
         <answer>7.10</answer>
       </answers>
@@ -186,7 +186,7 @@
       <author>papapep</author>
       <comments>Self-Appointed Benevolent Dictator For Life.</comments>
       <answers>
-        <answer correct="True">sabdfl</answer>
+        <answer correct="true">sabdfl</answer>
         <answer>rtfm</answer>
         <answer>sticsis</answer>
       </answers>
@@ -196,7 +196,7 @@
       <author>lluisanunez</author>
       <comments>http://en.wikipedia.org/wiki/Gobuntu</comments>
       <answers>
-        <answer correct="True">Una versió d'Ubuntu amb#només programari lliure</answer>
+        <answer correct="true">Una versió d'Ubuntu amb#només programari lliure</answer>
         <answer>Una versió d'Ubuntu amb#només Gnome</answer>
         <answer>La distribució, basada en#Ubuntu, dels aficionats al GO</answer>
       </answers>
@@ -208,7 +208,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Debian</answer>
+        <answer correct="true">Debian</answer>
         <answer>Fedora</answer>
         <answer>Suse</answer>
       </answers>
@@ -220,7 +220,7 @@
       <author>Nil</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Groc, vermell i taronja</answer>
+        <answer correct="true">Groc, vermell i taronja</answer>
         <answer>Tons de taronja</answer>
         <answer>Groc, blau i taronja</answer>
       </answers>
@@ -231,7 +231,7 @@
       <author>carles</author>
       <comments>LinKat és la distribució GNU/Linux del Departament d'Educació de la Generalitat de Catalunya. Es basa en la distribució Suse i el funcionament del seu programari es basa en paquets rpm.</comments>
       <answers>
-        <answer correct="True">Linkat</answer>
+        <answer correct="true">Linkat</answer>
         <answer>Guadalinex</answer>
         <answer>Ubuntu Studio</answer>
       </answers>
@@ -241,7 +241,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Hardy Heron</answer>
+        <answer correct="true">Hardy Heron</answer>
         <answer>Hangy Haseforg</answer>
         <answer>Hungry Hippo</answer>
       </answers>
@@ -251,7 +251,7 @@
       <author>Nil</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Tons de blau</answer>
+        <answer correct="true">Tons de blau</answer>
         <answer>Blau, verd i blanc</answer>
         <answer>Blau, gris i blanc</answer>
       </answers>
@@ -261,7 +261,7 @@
       <author>carles</author>
       <comments>Sata no és un sistema d'arxius.</comments>
       <answers>
-        <answer correct="True">sata</answer>
+        <answer correct="true">sata</answer>
         <answer>ntfs</answer>
         <answer>ext3</answer>
       </answers>
@@ -271,7 +271,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Ginstaller</answer>
+        <answer correct="true">Ginstaller</answer>
         <answer>Adept</answer>
         <answer>Synaptic</answer>
       </answers>
@@ -281,7 +281,7 @@
       <author>carles</author>
       <comments>EL sistema operatiu és GNU amb Linux. Linux només n'és el nucli i n'és un component tan important com qualsevol altre.##Pel que fa a l'opció restant, encara que s'hi assembli molt, GNU/Linux no és un sistema Unix aprovat.</comments>
       <answers>
-        <answer correct="True">GNU amb Linux</answer>
+        <answer correct="true">GNU amb Linux</answer>
         <answer>Linux</answer>
         <answer>Unix</answer>
       </answers>
@@ -291,7 +291,7 @@
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Veure DVDs zona 2</answer>
+        <answer correct="true">Veure DVDs zona 2</answer>
         <answer>Gestionar horaris d'una escola</answer>
         <answer>Iniciar ordinadors en xarxa#sense instaŀlar ni posar CDs</answer>
       </answers>
