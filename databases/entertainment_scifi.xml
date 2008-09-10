@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<database version="1.0" id="entertainment" language="ca">
+<database version="1.1" id="entertainment" language="ca"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
   <information>
     <name>Jocs, llibres i peŀlícules</name>
     <description>Videojocs, peŀlícules i llibres de ciència-ficció o de culte</description>

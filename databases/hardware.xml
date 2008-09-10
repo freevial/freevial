@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<database version="1.0" id="hardware" language="ca">
+<database version="1.1" id="hardware" language="ca"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
   <information>
     <name>Programari i maquinari</name>
     <description>Preguntes sobre els programes i els aparells que podem usar en el món GNU/Linux</description>

@@ -1,4 +1,8 @@
-<database version="1.0" id="people" language="ca">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.0" id="people" language="ca"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
   <information>
     <name>Personatges i actes</name>
     <description>Gent i fets al voltant del món del programari lliure. També informació sobre llicències.</description>

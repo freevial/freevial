@@ -1,5 +1,8 @@
-<?xml version="1.0"?>
-<database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" id="cc" language="catal&#xE0;" xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.1" id="cc" language="ca"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
 	<information>
 		<name>Creative Commons</name>
 		<description>
@@ -22,7 +25,7 @@
 			<author>Mario Carvajal, Foto Lessig CC-by http://www.flickr.com/photos/mariocarvajal/230462083/</author>
             <author>Sebastien Paquet, Gràfica de preus a Magnatune http://www.flickr.com/photos/sebpaquet/2891115/</author>
             <author>Joi Ito, Foto dels Buckman de Magnatune http://www.flickr.com/photos/joi/418668510/</author>
-            <author>MusicaLliure, la seva il·lustració de portada de http://www.musicallliure.net</author>
+            <author>MusicaLliure, la seva il·lustració de portada de http://www.musicalliure.net</author>
             <author>Christopher Eden, Foto del mar de nit CC-by http://www.flickr.com/photos/23002103@N02/2766483050</author>
             <author>Conxita, Foto del concert http://www.conxita.org</author>
             <author>Jamendo, logo http://www.jamendo.com</author>

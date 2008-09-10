@@ -162,7 +162,7 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 		
 		# Process answers
 		for answer in question.answers.getchildren():
-			if answer.get('correct') is not None:
+			if answer.get('correct'):
 				obj.add_answer(answer.text.replace(chr(10), '#'), True)
 				has_correct_answer = True
 			else:
@@ -177,21 +177,19 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 			obj.comment = question.comments.text
 		
 		if version >= 1.1:
-			# Version 1.1 introduces support for audio
+			# Version 1.1 introduces support for media, more than three answers
+			# and different difficulty levels
 			if hasattr(question, 'media'):
 				obj.mediatype = question.media.get('type')
 				obj.media = question.media.text
-		
-		if version >= 1.2:
-			# Version 1.2 introduces support for different difficulty levels
 			difficulty = question.get('difficulty')
 			if difficulty:
 				difficulty = difficulty.lower().capitalize()
-			if difficulty not in ('Easy', 'Medium', 'Hard'):
-				print _(u'Warning: «%s»: Found a question with incorrect' + \
-					u' difficulty level «%s».') % (xmlFile, difficulty)
-			else:
-				obj.difficulty = difficulty
+				if difficulty not in ('Easy', 'Medium', 'Hard'):
+					print _(u'Warning: «%s»: Found a question with incorrect' +\
+						u' difficulty level «%s».') % (xmlFile, difficulty)
+				else:
+					obj.difficulty = difficulty
 		
 		if not (Global.DISABLE_MEDIA and obj.mediatype):
 			database.add_question(obj)

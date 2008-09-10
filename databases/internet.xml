@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<database version="1.0" id="networking" language="ca">
+<database version="1.1" id="networking" language="ca"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
   <information>
     <name>Internet</name>
     <description>Coses sobre la xarxa, els seus webs i protocols</description>

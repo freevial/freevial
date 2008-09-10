@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<database version="1.1" id="songs" language="ca">
+<database version="1.1" id="songs" language="ca"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
   <information>
     <name>Kumbaworld</name>
     <description>Preguntes de cançons i músics</description>
