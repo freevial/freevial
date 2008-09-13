@@ -470,7 +470,7 @@ class Preguntador:
 					if not Global.LOCKED_MODE or mostra_comentaris == True or len( ''.join(self.current_question['comment']) ) <= 5:
 						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(2500)
-						if self.current_question['answer'] == self.selected:
+						if self.current_question['answer'] == (self.selected - 1):
 							return self.categoria
 						else:
 							return -1
