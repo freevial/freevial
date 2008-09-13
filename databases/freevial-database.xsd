@@ -379,8 +379,8 @@
                 Text d'una de les respostes.
             </xs:documentation>
         </xs:annotation>
-        <xs:simpleContent>
-            <xs:extension base="xs:string">
+        <xs:complexContent>
+            <xs:extension base="string">
                 <xs:attribute type="xs:boolean" name="correct"
                     use="optional">
                     <xs:annotation>
@@ -395,7 +395,7 @@
                     </xs:annotation>
                 </xs:attribute>
             </xs:extension>
-        </xs:simpleContent>
+        </xs:complexContent>
     </xs:complexType>
 
     <xs:complexType name="questionType">
@@ -531,22 +531,35 @@
     </xs:complexType>
 
 
-    <xs:simpleType name="string">
-        <xs:annotation>
-            <xs:documentation xml:lang="ca">
-                El programa tracta cada seqüència de #, cr i lf com un
-                salt de línia (i es carrega les del principi i final de
-                cada element). Però la resta de caracters de control com
-                tabuladors o similars es veuen com una caixeta buida
-                lletja, per tant els prohibeixo.
-            </xs:documentation>
-        </xs:annotation>
+	<xs:complexType name="string" mixed="true">
+		<xs:annotation>
+			<xs:documentation xml:lang="ca">
+				El programa tracta cada seqüència de #, cr i lf com un
+				salt de línia (i es carrega les del principi i final de
+				cada element). Però la resta de caracters de control com
+				tabuladors o similars es veuen com una caixeta buida
+				lletja, per tant els prohibeixo.
+			</xs:documentation>
+		</xs:annotation>
+	
+			 <xs:sequence>
+             <xs:element name="br" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                </xs:complexType>
+             </xs:element>
+         </xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="text" >
+         
         <xs:restriction base="xs:string">
-            <!-- <xs:pattern 
-                value="^[^\x00-\x09\x0b\x0c\x0e-\x1f]*$">
-                </xs:pattern>-->
-            <xs:pattern value="(\P{Cc}|\r|\n|\t)*"></xs:pattern>
-            <xs:whiteSpace value="collapse" />
-        </xs:restriction>
-    </xs:simpleType>
+			<!-- <xs:pattern 
+				value="^[^\x00-\x09\x0b\x0c\x0e-\x1f]*$">
+				</xs:pattern>-->
+			<xs:pattern value="(\P{Cc}|\r|\n|\t)*"></xs:pattern>
+			<xs:whiteSpace value="collapse" />
+		</xs:restriction>   
+     </xs:simpleType>
+
+
 </xs:schema>
