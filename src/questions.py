@@ -39,7 +39,7 @@ class LoadDatabase:
 	
 	def __init__(self, directory):
 		""" Load a question database (directory or compressed file). """
-		
+
 		try:
 			dbpath = self._get_real_path(directory)
 			Global.databasefolders.append ( dbpath )
@@ -212,6 +212,8 @@ def get_databases( database = None ):
 		database_files = LoadDatabase(Global.database).get()
 		
 		for num in range(0, len(database_files) ):
+			print "CAT------------------------ ", database_files[num]
+
 			try:
 				cat = GetDatabase( num + 1, os.path.join(Global.database, database_files[num]) )
 			except ValueError:
