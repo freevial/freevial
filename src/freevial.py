@@ -186,13 +186,8 @@ optParser.add_option(
 optParser.add_option(
 	'--database',
 	dest = 'database',
-	help = _('absolute path to the database file / directory'),
-	)
-optParser.add_option(
-	'-a', '--append',
-	action='store_true', dest = 'append_database',
-	help = _('load both, the database indicated with "--database" and the '
-		'default one'),
+	help = _('path to the database file / directory you want to append to the '
+		'default database'),
 	)
 optParser.add_option(
 	'--real',
@@ -254,9 +249,9 @@ optParser.add_option(
 if options.database:
 	path = os.path.abspath(os.path.join(options.real, options.database))
 	if not os.path.isdir( path ):
-		print _('Could not find database "%s"...') % unicode(path, 'utf-8')
+		print _(u'Could not find database "%s"...' % path)
 		sys.exit( 1 )
-	Global.database = path
+	Global.databases.append(path)
 
 if options.info_db:
 	total_categories = 0
@@ -271,7 +266,7 @@ if options.info_db:
 	print
 	print _('Freevial - About the loaded database...\n')
 	
-	print _('Location:'), os.path.abspath(Global.database)
+	print _('Location:'), '; '.join(Global.databases)
 	print _('Amount of categories:'), total_categories
 	print _('Amount of questions:'), total_questions, '\n'
 	
@@ -326,9 +321,8 @@ if options.skin in sys.argv:
 	path = os.path.abspath(os.path.join(options.real, options.skin))
 	setSkinName( path )
 
-print _(u'Loading database "%s"...' % Global.database)
 if len(get_databases()) < 6:
-	print _('Error: the database hasn\'t enough categories; at least six are required.')
+	print _('Error: couldn\'t find enough categories; at least six are required.')
 	sys.exit( 1 )
 
 try:

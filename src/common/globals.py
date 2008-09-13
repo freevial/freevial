@@ -59,7 +59,7 @@ Global.screen_y = 768
 Global.fps_limit = 30
 
 Global.basefolder = '../data'
-Global.database = '../databases'
+Global.databases = [os.path.abspath('../databases')]
 
 Global.databasefolders = []
 Global.alldatabases = None

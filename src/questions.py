@@ -36,9 +36,9 @@ from common.database import Database, Question
 
 
 def collapse(text):
-	""" collapses all sequences of consecutive whitespace (including newlines,
-	tab, etc.) to a single space, so that no matter how the xml is formatted,
-	the text is rendered as a single line """
+	""" Collapses all sequences of consecutive whitespace (including newlines,
+	tab, etc.) to a single space, so that no matter how the XML is formatted,
+	the text is rendered as a single line. """
 	return re.sub('\s+',' ',text).strip()
 
 class LoadDatabase:
@@ -113,14 +113,13 @@ class LoadDatabase:
 			return [ '%s' % os.path.abspath(os.path.join(directory, file)) for file in files ]
 
 # Create the XML parser
-xsdxml = etree.parse( os.path.join(Global.database, 'freevial-database.xsd') )
+xsdxml = etree.parse( os.path.join(Global.databases[0], 'freevial-database.xsd') )
 xsd = etree.XMLSchema( xsdxml )
 parser = etree.XMLParser(remove_blank_text = True, remove_comments = True )
 parser.setElementClassLookup(objectify.ObjectifyElementClassLookup())
 
 def filtraText( text ):
-    textnet = re.sub('\\s+',' ',text)
-    return textnet
+    return re.sub('\\s+', ' ', text)
 
 def GetDatabase( xmlFile ):
 	""" Returns a Database instance loaded with the questions from a XML file. """
@@ -141,11 +140,9 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 	database = Database(
 		filtraText(root.information.name.text),
 		root.get('language'),
-
 		filtraText(root.information.description.text),
 		filtraText(root.information.destination.text),
 		', '.join(["%s" % filtraText(author.text).split(',')[0] for author in root.information.authors.getchildren()]),
-
 		(int(root.information.timestamp_creation.text), int(root.information.timestamp_modification.text)),
 		root.appearance.image.text,
 		root.appearance.sound.text,
@@ -206,33 +203,36 @@ def shuffle_databases():
 	
 	random.shuffle(Global.alldatabases)
 
-def get_databases( database = None ):
+def get_databases( database_num=None ):
 	
 	if not Global.alldatabases:
 		
 		Global.alldatabases = []
-		database_files = LoadDatabase(Global.database).get()
 		
-		for file in database_files:
-			try:
-				cat = GetDatabase(os.path.join(Global.database, file))
-			except ValueError:
-				print u'Error with «%s».' % file
-			except etree.DocumentInvalid, e:
-				_xml_error(file, e)
-			except etree.XMLSyntaxError, e:
-				_xml_error(file, e)
-			else:
-				if len(cat) != 0:
-					Global.alldatabases.append( cat )
+		for database in Global.databases:
+			print _(u'Loading database "%s"...' % database)
+			database_files = LoadDatabase(database).get()
+			
+			for file in database_files:
+				try:
+					cat = GetDatabase(os.path.join(database, file))
+				except ValueError:
+					print u'Error with «%s».' % file
+				except etree.DocumentInvalid, e:
+					_xml_error(file, e)
+				except etree.XMLSyntaxError, e:
+					_xml_error(file, e)
+				else:
+					if len(cat) != 0:
+						Global.alldatabases.append( cat )
 	
-	if database is not None:
-		return Global.alldatabases[database]
+	if database_num is not None:
+		return Global.alldatabases[database_num]
 	else:
 		return Global.alldatabases
 
 def _xml_error( file, message ):
 	print _(u'Error with «%s»: %s' % (file, message))
 	print _(u'You can get more information running the following command:')
-	print u'\txmllint -schema %s %s' % (os.path.abspath(os.path.join(
-		Global.database, 'freevial-database.xsd')), file)
+	print u'\txmllint -schema %s %s' % (os.path.join(Global.databases[0],
+		'freevial-database.xsd'), file)

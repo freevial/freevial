@@ -10,10 +10,12 @@ Improvements:
  - Added support for questions with sound.
  - Added support for questions with more than one correct and two incorrect
    answers (three of them are randomly choosen at runtime).
- - Decreased the time it takes for the wheel to switch to a question, when
+ - Decreased the time it takes for the wheel to switch to a question when
    the game is muted.
- - Add an option (--preload) to load everything at startup.
- - Validate all .xml files when they are loaded, using a XSD schema.
+ - Added an option (--preload) to load everything at startup.
+ - All .xml files are now validated when they are loaded, using a XSD schema.
+ - When a location is indicated with --database, the default categories are
+   still loaded in addition to the indicated ones.
 
 Bug Fixes:
  - Fixed the --database option; it did not work previously.
@@ -67,7 +69,7 @@ Other Improvements:
  - Improved the "--database" command line option, and added "--info-db".
  - Drastically reduced CPU usage when Freevial is minimized.
  - Made it possible to select an answer with the mouse wheel.
- - Add support for psyco (disabled by default).
+ - Added support for psyco (disabled by default).
 
 Bug Fixes:
  - Fixed errors in many questions from the Catalan database.
