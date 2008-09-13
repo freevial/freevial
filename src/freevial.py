@@ -264,6 +264,7 @@ if options.info_db:
 	print _('Amount of categories:'), total_categories
 	print _('Amount of questions:'), total_questions, '\n'
 	
+	categories.sort()
 	for category in categories:
 		print _(u'%(category)s: %(num)s questions' \
 			% {'category': category[0], 'num': category[1]})

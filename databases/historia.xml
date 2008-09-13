@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.1" id="historia" language="ca"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
+
+  <information>
+    <name>Història</name>
+    <description>Història general</description>
+    <destination>Públic catalanoparlant en general</destination>
+    <timestamp_creation>1221317814</timestamp_creation>
+    <timestamp_modification>1221324599</timestamp_modification>
+
+	<license>GPLv3</license>
+	<url>http://www.freevial.org/bases/historia.xml</url>
+	<contact>info@freevial.org</contact>
+
+    <authors>
+      <author>Nil Oriol</author>
+      <author>Núria Carreras</author>
+      <author>Rafael Carreras</author>
+      <author>Alex Muntada</author>
+    </authors>
+  </information>
+
+  <appearance>
+    <image>categoria_cat.png</image>
+    <sound>mov.ogg</sound>
+  </appearance>
+
+  <questions>
+    <question>
+      <sentence>En quin any es fa llençar la bomba atòmica a Hiroshima?</sentence>
+      <author>NúriaCarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">1945</answer>
+        <answer>1935</answer>
+        <answer>1955</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Durant quants es diu que va governar Gilgamesh?</sentence>
+      <author>NilOriol</author>
+      <comments>Segons el llistat dels reis sumeris, Gilgamesh podria correspondre a un rei històric que va governar cap el 2700 a.C.</comments>
+      <answers>
+        <answer correct="true">126</answer>
+        <answer>35</answer>
+        <answer>16</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quin és l'ordre cronològic de les edats de l'home?</sentence>
+      <author>CarlesOriol</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Pedra, bronze i ferro</answer>
+        <answer>Coure, estany i pedra</answer>
+        <answer>Pedra, coure i ferro</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quin és l'ordre alfabètic de les edats de l'home?</sentence>
+      <author>AlexMuntada</author>
+      <comments>Les edats de l'home són pedra, bronze i ferro, i les havíeu de posar en ordre alfabètic, que no és igual que l'ordre cronològic ;)</comments>
+      <answers>
+        <answer correct="true">Bronze, ferro i pedra</answer>
+        <answer>Coure, estany i pedra</answer>
+        <answer>Pedra, bronze i ferro</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quina és la segona edat de pedra?</sentence>
+      <author>NúriaCarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Mesolític</answer>
+        <answer>Paleoític</answer>
+        <answer>Neolític</answer>
+        <answer>Museolític</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quin era l'«homo» amb major capacitat cranial?</sentence>
+      <author>NilOriol</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Homo neanderthalensis</answer>
+        <answer>Homo sapiens</answer>
+        <answer>Homo rudolfensis</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>En quin segle es va produir la batalla de Las Navas de Tolosa?</sentence>
+      <author>RafaelCarreras</author>
+      <comments>Es va produir el 1212 entre cristians i almoades, a Las Navas de Tolosa (província de Jaén).</comments>
+      <answers>
+        <answer correct="true">XIII</answer>
+        <answer>XIV</answer>
+        <answer>XV</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quina arma dispara més lluny?</sentence>
+      <author>NilOriol</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">L'arc</answer>
+        <answer>Ballesta</answer>
+        <answer>Amdues per igual</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Qui va crear el Regne de Mallorca?</sentence>
+      <author>RafaelCarreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Jaume I el Conqueridor</answer>
+        <answer>Pere el Gran </answer>
+        <answer>Guifré el Pilós</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quin dels invents de Leonardo da Vinci va ser més famós en el seu temps?</sentence>
+      <author>NilOriol</author>
+      <comments>En el seu temps, cap d'aquests invents va passar de l'estadi de disseny ni van ser utilitzats.</comments>
+      <answers>
+        <answer correct="true">Cap dels dos</answer>
+        <answer>Carro blindat</answer>
+        <answer>Ornithopter (màquina-ocell)</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>De qui és la cèlebre frase «eppur si muove»?</sentence>
+      <author>NilOriol</author>
+      <comments>La traducció d'aquesta frase de l'italià és «i tot i així es mou», refermant-se en què la Terra no era el centre de l'univers quan el van acusar d'heretge per dir que girava al voltant del sol.</comments>
+      <answers>
+        <answer correct="true">Galieu Galilei</answer>
+        <answer>Nicolau Copèrnic</answer>
+        <answer>Leonardo da Vinci</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Com va defensar Arquímedes la seva ciutat de l'atac dels romans?</sentence>
+      <author>NilOriol</author>
+      <comments>Gairebé tot sol, va idear un sistema de miralls i lents per incendiar les veles dels vaixells enemics amb la llum solar.</comments>
+      <answers>
+        <answer correct="true">Amb miralls</answer>
+        <answer>Amb una gran desplegament de tropes</answer>
+        <answer>Amb mines explosives</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Qui és conegut per l'expressió «Eureka!»?</sentence>
+      <author>NilOriol</author>
+      <comments>Qualsevol cos summergit en un fluid rep una força vertical ascencional igual al pes del fluid que desallotja; aquest és el principi d'Arquímedes i eureka és l'expressió que va dir quan el va descobrir en ficar-se a la banyera i veure com l'aigua sobreeixia.</comments>
+      <answers>
+        <answer correct="true">Arquímedes</answer>
+        <answer>Aristòtil</answer>
+        <answer>Aristòfanes</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quin general rus va derrotar a Napoleó i a Hitler?</sentence>
+      <author>NilOriol</author>
+      <comments>Ni les tropes de Napoleó ni les de Hitler van sucumbir al rigor de l'hivern rus.</comments>
+      <answers>
+        <answer correct="true">El general Hivern</answer>
+        <answer>El general Trotxev</answer>
+        <answer>Ivà el Terrible</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quant de temps va durar la Inquisició Espanyola?</sentence>
+      <author>NúriaCarreras</author>
+      <comments>Fundada el 1478 pels Reis Catòlics i suprimida el 1820 pel rei Ferran VII, dins el període conegut com el Trienni Liberal, en el qual es va reimplantar la Constitució espanyola de 1812.</comments>
+      <answers>
+        <answer correct="true">1478 - 1820</answer>
+        <answer>1321 - 1672</answer>
+        <answer>1519 - 1729</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>La llei del Talió és...</sentence>
+      <author>NilOriol</author>
+      <comments>La frase més coneguda de la llei del Talió és «ull per ull i dent per dent».</comments>
+      <answers>
+        <answer correct="true">una llei de venjança limitada.</answer>
+        <answer>una llei de venjança lliure.</answer>
+        <answer>la pena de mort.</answer>
+      </answers>
+    </question>
+
+
+  </questions>
+</database>
