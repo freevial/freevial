@@ -123,6 +123,8 @@ class Freevial:
 				if not wheel:
 					wheel = Roda( Global.game )
 				resultat = wheel.juguem( )
+
+				print "Resultat ",resultat
 				
 				if resultat != -1:
 						
