@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.1" id="geografia" language="ca"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
+	<information>
+		<name>Geografia dels Països Catalans</name>
+		<description>
+			Preguntes sobre comarques, orografia, rius, etc. dels Països Catalans
+		</description>
+		<destination>
+			Per a estudiants de primària i secundària, i públic en general que
+			vulgui comprovar el grau de coneixement del país.
+		</destination>
+		<timestamp_creation>1221285600</timestamp_creation>
+		<timestamp_modification>1221285600</timestamp_modification>
+		<license>GPLv3</license>
+		<!--Optional:-->
+		<url>http://www.freevial.org/bases/geografia.xml</url>
+		<contact>orestes@tsc.upc.edu</contact>
+		<authors>
+			<author>Orestes Mas Casals</author>
+		</authors>
+	</information>
+	<appearance>
+		<!-- FIXME: Provisional-->
+		<image>categoria_cat.png</image>
+		<sound>mov.ogg</sound>
+	</appearance>
+	<questions>
+		<!--Zero or more repetitions:-->
+		<question>
+			<sentence>La capital de l'Alt Camp és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Valls</answer>
+				<answer>Barcelona</answer>
+				<answer>Lleida</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de l'Alt Empordà és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Figueres</answer>
+				<answer>Mataró</answer>
+				<answer>Olot</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de l'Alt Penedès és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Vilafranca del Penedès</answer>
+				<answer>Igualada</answer>
+				<answer>Móra d'Ebre</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de l'Alt Urgell és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">La Seu d'Urgell</answer>
+				<answer>Montblanc</answer>
+				<answer>Mataró</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de l'Alta Ribagorça és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">El Pont de Suert</answer>
+				<answer>Vielha</answer>
+				<answer>Gandesa</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de l'Anoia és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Igualada</answer>
+				<answer>Balaguer</answer>
+				<answer>Sant Feliu de Llobregat</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Bages és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Manresa</answer>
+				<answer>Móra d'Ebre</answer>
+				<answer>Sort</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Baix Camp és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Reus</answer>
+				<answer>Berga</answer>
+				<answer>Tremp</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Baix Ebre és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Tortosa</answer>
+				<answer>Sant Feliu de Llobregat</answer>
+				<answer>Girona</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Baix Empordà és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">La Bisbal d'Empordà</answer>
+				<answer>Granollers</answer>
+				<answer>Vilafranca del Penedès</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Baix Llobregat és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Sant Feliu de Llobregat</answer>
+				<answer>Girona</answer>
+				<answer>Igualada</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Baix Penedès és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">El Vendrell</answer>
+				<answer>Vilafranca del Penedès</answer>
+				<answer>Falset</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de la Baixa Cerdanya és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Puigcerdà</answer>
+				<answer>Cervera</answer>
+				<answer>Granollers</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Barcelonès és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Barcelona</answer>
+				<answer>Tarragona</answer>
+				<answer>El Vendrell</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Berguedà és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Berga</answer>
+				<answer>Banyoles</answer>
+				<answer>Valls</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de la Conca de Barberà és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Montblanc</answer>
+				<answer>La Seu d'Urgell</answer>
+				<answer>Tarragona</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Garraf és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Vilanova i la Geltrú</answer>
+				<answer>Tortosa</answer>
+				<answer>Montblanc</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de les Garrigues és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Les Borges Blanques</answer>
+				<answer>Solsona</answer>
+				<answer>Mollerussa</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de la Garrotxa és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Olot</answer>
+				<answer>Puigcerdà</answer>
+				<answer>Reus</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Gironès és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Girona</answer>
+				<answer>Tremp</answer>
+				<answer>Sabadell</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Maresme és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Mataró</answer>
+				<answer>Figueres</answer>
+				<answer>Tàrrega</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Montsià és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Amposta</answer>
+				<answer>Les Borges Blanques</answer>
+				<answer>Puigcerdà</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de la Noguera és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Balaguer</answer>
+				<answer>La Bisbal d'Empordà</answer>
+				<answer>La Seu d'Urgell</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital d'Osona és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Vic</answer>
+				<answer>Manresa</answer>
+				<answer>Balaguer</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Pallars Jussà és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Tremp</answer>
+				<answer>Vic</answer>
+				<answer>Berga</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Pallars Sobirà és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Sort</answer>
+				<answer>Gandesa</answer>
+				<answer>Vilanova i la Geltrú</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Pla de l'Estany és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Banyoles</answer>
+				<answer>Sort</answer>
+				<answer>Barcelona</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Pla d'Urgell és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Mollerussa</answer>
+				<answer>Vilanova i la Geltrú</answer>
+				<answer>Amposta</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Priorat és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Falset</answer>
+				<answer>Valls</answer>
+				<answer>Manresa</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de la Ribera d'Ebre és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Móra d'Ebre</answer>
+				<answer>Terrassa</answer>
+				<answer>Les Borges Blanques</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Ripollès és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Ripoll</answer>
+				<answer>Amposta</answer>
+				<answer>Santa Coloma de Farners</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de la Segarra és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Cervera</answer>
+				<answer>El Vendrell</answer>
+				<answer>Solsona</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Segrià és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Lleida</answer>
+				<answer>Falset</answer>
+				<answer>Banyoles</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de la Selva és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Santa Coloma de Farners</answer>
+				<answer>Tàrrega</answer>
+				<answer>Ripoll</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Solsonès és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Solsona</answer>
+				<answer>Lleida</answer>
+				<answer>Tortosa</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Tarragonès és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Tarragona</answer>
+				<answer>Reus</answer>
+				<answer>El Pont de Suert</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de la Terra Alta és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Gandesa</answer>
+				<answer>Ripoll</answer>
+				<answer>Figueres</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de l'Urgell és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Tàrrega</answer>
+				<answer>Olot</answer>
+				<answer>Vielha</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital de la Vall d'Aran és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Vielha</answer>
+				<answer>Mollerussa</answer>
+				<answer>La Bisbal d'Empordà</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Vallès Occidental és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer>Sabadell</answer>
+				<answer>Terrassa</answer>
+				<answer correct="true">Ambdues</answer>
+			</answers>
+		</question>
+		<question>
+			<sentence>La capital del Vallès Oriental és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Granollers</answer>
+				<answer>Santa Coloma de Farners</answer>
+				<answer>Cervera</answer>
+			</answers>
+		</question>
+	</questions>
+</database>
