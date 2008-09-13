@@ -35,11 +35,17 @@ from common.globals import GlobalVar, Global
 from common.database import Database, Question
 
 
+def collapse(text):
+	""" collapses all sequences of consecutive whitespace (including newlines,
+	tab, etc.) to a single space, so that no matter how the xml is formatted,
+	the text is rendered as a single line """
+	return re.sub('\s+',' ',text).strip()
+
 class LoadDatabase:
 	
 	def __init__(self, directory):
 		""" Load a question database (directory or compressed file). """
-
+		
 		try:
 			dbpath = self._get_real_path(directory)
 			Global.databasefolders.append ( dbpath )
@@ -155,7 +161,7 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 			continue
 		
 		obj = Question(
-			question=question.sentence.text.replace(chr(10), '#'),
+			question = [collapse(x) for x in question.sentence.xpath('child::text()')],
 			author = question.author.text,
 			)
 		has_correct_answer = False
@@ -163,10 +169,10 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 		# Process answers
 		for answer in question.answers.getchildren():
 			if answer.get('correct'):
-				obj.add_answer(answer.text.replace(chr(10), '#'), True)
+				obj.add_answer([collapse(x) for x in answer.xpath('child::text()')], True)
 				has_correct_answer = True
 			else:
-				obj.add_answer(answer.text.replace(chr(10), '#'), False)
+				obj.add_answer([collapse(x) for x in answer.xpath('child::text()')], False)
 		
 		if not has_correct_answer:
 			print >> sys.stderr, _(u'Warning: «%s»: Found a question without '
@@ -174,7 +180,7 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 			continue
 		
 		if hasattr(question, 'comments') and question.comments.text is not None:
-			obj.comment = question.comments.text
+			obj.comment = [collapse(x) for x in question.comments.xpath('child::text()')]
 		
 		if version >= 1.1:
 			# Version 1.1 introduces support for media, more than three answers
@@ -219,6 +225,8 @@ def get_databases( database = None ):
 			except ValueError:
 				print u'Error with «%s».' % database_files[num]
 			except etree.DocumentInvalid, e:
+				print u'Error with «%s»: %s' % ( database_files[num] , e ) 
+			except etree.XMLSyntaxError, e:
 				print u'Error with «%s»: %s' % ( database_files[num] , e ) 
 			else:
 				if len(cat) != 0:
