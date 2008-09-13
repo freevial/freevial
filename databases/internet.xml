@@ -279,7 +279,16 @@
       </answers>
     </question>
 
-
+    <question>
+      <sentence>El domini de primer nivell que utilitza l'ajuntament de girona (www.ajuntament.gi), què vol dir?</sentence>
+      <author>Arnau</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Gibraltar</answer>
+        <answer>Girona</answer>
+        <answer>Ginebra</answer>
+      </answers>
+    </question>
 
   </questions>
 </database>

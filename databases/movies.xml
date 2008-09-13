@@ -493,5 +493,17 @@
         <answer>Del Espanyol.</answer>
       </answers>
     </question>
+    
+    <question>
+      <sentence>Quin d'aquests formats usuals a la xarxa no és lliure?</sentence>
+      <author>carles</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">swf</answer>
+        <answer>html</answer>
+        <answer>png</answer>
+      </answers>
+    </question>
+    
   </questions>
 </database>
