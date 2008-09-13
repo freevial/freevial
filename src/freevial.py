@@ -178,9 +178,21 @@ optParser.add_option(
 	help = _('start game in locked mode'),
 	)
 optParser.add_option(
+	'--lang',
+	dest = 'languages',
+	help = _('only load those questions written in the indicated language(s); '
+			'for example, "ca, en"'),
+	)
+optParser.add_option(
 	'--database',
 	dest = 'database',
 	help = _('absolute path to the database file / directory'),
+	)
+optParser.add_option(
+	'-a', '--append',
+	action='store_true', dest = 'append_database',
+	help = _('load both, the database indicated with "--database" and the '
+		'default one'),
 	)
 optParser.add_option(
 	'--real',

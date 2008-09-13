@@ -62,6 +62,7 @@ Global.basefolder = '../data'
 Global.database = '../databases'
 
 Global.databasefolders = []
+Global.alldatabases = None
 Global.session_bus = None
 
 Global.folders = {

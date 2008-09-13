@@ -48,14 +48,15 @@ class LoadDatabase:
 		
 		try:
 			dbpath = self._get_real_path(directory)
-			Global.databasefolders.append ( dbpath )
-			self.files = self._xml_in_path( dbpath )
 		
 		except IOError:
 			print _('Error: Couldn\'t find the current questions database.')
 			print _('You can provide the location to that one you want to use by passing the --database option.')
 			print _('For example:') + ' freevial --database ~/questions.tar.gz'
 			sys.exit(1)
+		
+		Global.databasefolders.append ( dbpath )
+		self.files = self._xml_in_path( dbpath )
 	
 	def get(self):
 		
@@ -121,7 +122,7 @@ def filtraText( text ):
     textnet = re.sub('\\s+',' ',text)
     return textnet
 
-def GetDatabase( num, xmlFile ):
+def GetDatabase( xmlFile ):
 	""" Returns a Database instance loaded with the questions from a XML file. """
 	
 	doc = etree.parse(xmlFile, parser)
@@ -138,7 +139,6 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 		xsd.assertValid(doc)	
 	
 	database = Database(
-		num,
 		filtraText(root.information.name.text),
 		root.get('language'),
 
@@ -202,30 +202,26 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 	
 	return database
 
-Global.alldatabases = None
-
 def shuffle_databases():
 	
 	random.shuffle(Global.alldatabases)
 
 def get_databases( database = None ):
 	
-	global alldatabases
-	
 	if not Global.alldatabases:
 		
 		Global.alldatabases = []
 		database_files = LoadDatabase(Global.database).get()
 		
-		for num in range(0, len(database_files) ):
+		for file in database_files:
 			try:
-				cat = GetDatabase( num + 1, os.path.join(Global.database, database_files[num]) )
+				cat = GetDatabase(os.path.join(Global.database, file))
 			except ValueError:
-				print u'Error with «%s».' % database_files[num]
+				print u'Error with «%s».' % file
 			except etree.DocumentInvalid, e:
-				_xml_error(database_files[num], e)
+				_xml_error(file, e)
 			except etree.XMLSyntaxError, e:
-				_xml_error(database_files[num], e)
+				_xml_error(file, e)
 			else:
 				if len(cat) != 0:
 					Global.alldatabases.append( cat )

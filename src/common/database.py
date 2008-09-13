@@ -56,7 +56,7 @@ class Question:
 
 class Database:
 	
-	def __init__( self, num, name, language, description, players, authors, time, image, sound, version ):
+	def __init__( self, name, language, description, players, authors, time, image, sound, version ):
 		
 		# General Database Data
 		self.name = unicode(name)
