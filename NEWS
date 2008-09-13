@@ -13,6 +13,7 @@ Improvements:
  - Decreased the time it takes for the wheel to switch to a question, when
    the game is muted.
  - Add an option (--preload) to load everything at startup.
+ - Validate all .xml files when they are loaded, using a XSD schema.
 
 Bug Fixes:
  - Fixed the --database option; it did not work previously.

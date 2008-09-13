@@ -223,9 +223,9 @@ def get_databases( database = None ):
 			except ValueError:
 				print u'Error with «%s».' % database_files[num]
 			except etree.DocumentInvalid, e:
-				print u'Error with «%s»: %s' % ( database_files[num] , e ) 
+				_xml_error(database_files[num], e)
 			except etree.XMLSyntaxError, e:
-				print u'Error with «%s»: %s' % ( database_files[num] , e ) 
+				_xml_error(database_files[num], e)
 			else:
 				if len(cat) != 0:
 					Global.alldatabases.append( cat )
@@ -234,3 +234,9 @@ def get_databases( database = None ):
 		return Global.alldatabases[database]
 	else:
 		return Global.alldatabases
+
+def _xml_error( file, message ):
+	print _(u'Error with «%s»: %s' % (file, message))
+	print _(u'You can get more information running the following command:')
+	print u'\txmllint -schema %s %s' % (os.path.abspath(os.path.join(
+		Global.database, 'freevial-database.xsd')), file)

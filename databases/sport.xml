@@ -73,16 +73,7 @@
     </question>
     <question>
       <sentence>Quants metres fa una piscina olímpica?</sentence>
-      <author>Rafael Carreras</author>    <question>
-      <sentence></sentence>
       <author>Rafael Carreras</author>
-      <comments></comments>
-      <answers>
-        <answer correct="true"></answer>
-        <answer></answer>
-        <answer></answer>
-      </answers>
-    </question>
       <comments></comments>
       <answers>
         <answer correct="true">50</answer>
