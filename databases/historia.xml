@@ -9,7 +9,7 @@
     <description>Història general</description>
     <destination>Públic catalanoparlant en general</destination>
     <timestamp_creation>1221317814</timestamp_creation>
-    <timestamp_modification>1221317814</timestamp_modification>
+    <timestamp_modification>1221324599</timestamp_modification>
 
 	<license>GPLv3</license>
 	<url>http://www.freevial.org/bases/historia.xml</url>
@@ -170,6 +170,54 @@
         <answer correct="true">Amb miralls</answer>
         <answer>Amb una gran desplegament de tropes</answer>
         <answer>Amb mines explosives</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Qui és conegut per l'expressió «Eureka!»?</sentence>
+      <author>NilOriol</author>
+      <comments>Qualsevol cos summergit en un fluid rep una força vertical ascencional igual al pes del fluid que desallotja; aquest és el principi d'Arquímedes i eureka és l'expressió que va dir quan el va descobrir en ficar-se a la banyera i veure com l'aigua sobreeixia.</comments>
+      <answers>
+        <answer correct="true">Arquímedes</answer>
+        <answer>Aristòtil</answer>
+        <answer>Aristòfanes</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quin general rus va derrotar a Napoleó i a Hitler?</sentence>
+      <author>NilOriol</author>
+      <comments>Ni les tropes de Napoleó ni les de Hitler van sucumbir al rigor de l'hivern rus.</comments>
+      <answers>
+        <answer correct="true">El general Hivern</answer>
+        <answer>El general Trotxev</answer>
+        <answer>Ivà el Terrible</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>Quant de temps va durar la Inquisició Espanyola?</sentence>
+      <author>NúriaCarreras</author>
+      <comments>Fundada el 1478 pels Reis Catòlics i suprimida el 1820 pel rei Ferran VII, dins el període conegut com el Trienni Liberal, en el qual es va reimplantar la Constitució espanyola de 1812.</comments>
+      <answers>
+        <answer correct="true">1478 - 1820</answer>
+        <answer>1321 - 1672</answer>
+        <answer>1519 - 1729</answer>
+      </answers>
+    </question>
+
+
+    <question>
+      <sentence>La llei del Talió és...</sentence>
+      <author>NilOriol</author>
+      <comments>La frase més coneguda de la llei del Talió és «ull per ull i dent per dent».</comments>
+      <answers>
+        <answer correct="true">una llei de venjança limitada.</answer>
+        <answer>una llei de venjança lliure.</answer>
+        <answer>la pena de mort.</answer>
       </answers>
     </question>
 
