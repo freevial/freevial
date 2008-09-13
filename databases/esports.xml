@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.0" id="esports" language="ca">
+  <information>
+    <name>Esports</name>
+    <description>Preguntes desportives </description>
+    <destination>Persones en general</destination>
+    <timestamp_creation>1189202400</timestamp_creation>
+    <timestamp_modification>1200139483</timestamp_modification>
+
+	<license>GPLv3</license>
+	<url>http://www.freevial.org/bases/ciencies.xml</url>
+	<contact>info@freevial.org</contact>
+
+    <authors>
+      <author>Rafael Carreras</author>
+    </authors>
+  </information>
+  <appearance>
+    <image>categoria_esports.png</image>
+    <sound>c2.ogg</sound>
+  </appearance>
+  <questions>
+    <question>
+      <sentence>Futbol: què és una pilota intel·ligent?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Una que porta xips</answer>
+        <answer>Una centrada</answer>
+        <answer>Una bombolla</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina d'aquestes és una posició en bàsquet?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">4</answer>
+        <answer>Central</answer>
+        <answer>Defensa</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina d'aquestes juga els 6 nacions de Rugby?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Itàlia</answer>
+        <answer>Alemània</answer>
+        <answer>Romania</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui ha guanyat més mundials de Rugby?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Sudàfrica</answer>
+        <answer>Nova Zelanda</answer>
+        <answer>Anglaterra</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>De quin color és el cinturó de 8è dan de Judo?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Blanc i vermell</answer>
+        <answer>Negre</answer>
+        <answer>Blanc i negre</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quants metres fa una piscina olímpica?</sentence>
+      <author>Rafael Carreras</author>    <question>
+      <sentence></sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true"></answer>
+        <answer></answer>
+        <answer></answer>
+      </answers>
+    </question>
+      <comments></comments>
+      <answers>
+        <answer correct="true">50</answer>
+        <answer>25</answer>
+        <answer>35,2</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina és la distància en les maratons?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">42,195 km</answer>
+        <answer>45,192 km</answer>
+        <answer>40,132 km</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On van ser les olimpíades de 1996?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Atlanta</answer>
+        <answer>Los Angeles</answer>
+        <answer>Moscú</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On van ser les olimpíades de 1972?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Múnic</answer>
+        <answer>Moscú</answer>
+        <answer>Hèlsinki</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>On van ser les olimpíades de 1992?</sentence>
+      <author>Nil Oriol</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Barcelona</answer>
+        <answer>Londres</answer>
+        <answer>París</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el màxim golejador de la història del Espanyol?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Tamudo</answer>
+        <answer>Marañón</answer>
+        <answer>Pichi Alonso</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quan va guanyar la UEFA l'Espanyol?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Mai</answer>
+        <answer>1994</answer>
+        <answer>2007</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quan ha guanyat el Barça la copa d'Europa?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">1992 i 2006</answer>
+        <answer>1992, 2001 i 2005</answer>
+        <answer>1993 i 2007</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>D'on és el Tae Kwon Do</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Corea</answer>
+        <answer>Japó</answer>
+        <answer>Xina</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>D'on és el Karate?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Japó</answer>
+        <answer>Xina</answer>
+        <answer>Corea</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>De quin color és la pilota en Waterpolo?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Groc</answer>
+        <answer>Verd</answer>
+        <answer>Blanc</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>En quin esport hi ha "homerun"?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Beisbol</answer>
+        <answer>Futbol americà</answer>
+        <answer>Rugby</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui era en Joaquim Blume?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Un gimnasta</answer>
+        <answer>Un atleta</answer>
+        <answer>Un nedador</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>En quin esport olímpic hi ha les esportistes més joves?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Gimnàstica esportiva</answer>
+        <answer>Gimnàstica rítmica</answer>
+        <answer>Salts de trampolí</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin esport no és olímpic?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Rugby</answer>
+        <answer>Handbol</answer>
+        <answer>Biathló</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quins són els esports combinats a la biathló</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Esquí i Tir</answer>
+        <answer>Rem i Marxa</answer>
+        <answer>Natació i Cros</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>De què va morir en Bruce Lee</sentence>
+      <author>Nuria Carreras i Nil Oriol</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">No se sap</answer>
+        <answer>Enverinat</answer>
+        <answer>Atac epilèptic</answer>
+        <answer correct="true">Inflamació cerebral</answer>
+        <answer>Mal de cap</answer>
+        <answer>Aneurisme</answer>
+      </answers>
+    </question>
+   </questions>
+</database>

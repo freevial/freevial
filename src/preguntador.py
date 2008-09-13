@@ -193,16 +193,6 @@ class Preguntador:
 		self.hide_mask_on_image_quiz = self.game.skin.configGetBool( 'hide_mask_on_image_quiz' )
 		self.media_image_dance = self.game.skin.configGetEval( 'media_image_dance' )
 
-		
-
-
-	###########################################
-	#
-	# Funció per veure el nombre de linies que té una frase a mostrar
-	# basant-nos en que el separador és el caracter #
-	def numlinies( self, cadena ):
-		
-		return cadena.count('#')
 
 	###########################################
 	#
@@ -285,11 +275,9 @@ class Preguntador:
 	#
 	# Funció per pintar el text i les preguntes sobre una nova superficie
 	# usant el color del text i el sobrejat
-	def preguntadorPintatext( self, textapintar, maxample = 0 ):
+	def preguntadorPintatext( self, cadenes, maxample = 0 ):
 
 		nalt = 0
-		
-		cadenes = textapintar.split('#')
 		
 		sfc_pregunta = range(0, len(cadenes) )
 		sfc_shad = range(0, len(cadenes) )
@@ -458,7 +446,7 @@ class Preguntador:
 					if self.selected != 0 or (self.segons <= 0 and max_time != 0):
 						acaba = 1
 				
-				if event.keyUp('F3') and self.show_answers == 3 and len(self.current_question['comment']) > 5:	
+				if event.keyUp('F3') and self.show_answers == 3 and len(''.join(self.current_question['comment'])) > 5:	
 					mostra_comentaris ^= 1
 
 			# Si hem premut a return o s'ha acabat el temps finalitzem
@@ -476,10 +464,10 @@ class Preguntador:
 					else:
 						self.so_nook.play()
 					notes = if2(self.current_question['comment'],
-						self.current_question['comment'].split('#'), ".")
+						self.current_question['comment'], ".")
 					sfc_comentaris = createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
-					if not Global.LOCKED_MODE or mostra_comentaris == True or len( self.current_question['comment'] ) <= 5:
+					if not Global.LOCKED_MODE or mostra_comentaris == True or len( ''.join(self.current_question['comment']) ) <= 5:
 						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(2500)
 						if self.current_question['answer'] == (self.selected - 1):
@@ -597,7 +585,7 @@ class Preguntador:
 						if (self.selected - 1) == num:
 							self.game.screen.blit( self.solucio_nook, (posnook, linia_act + (150 * num)) )
 				
-				if len( self.current_question['comment'] ) > 5:
+				if len( ''.join(self.current_question['comment'] ) ) > 5:
 					self.game.screen.blit( if2((int(time.time() * 3) % 3) == 0,
 						self.info[0], self.info[1]), (self.postextx, 150) )
 			
