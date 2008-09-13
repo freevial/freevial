@@ -212,8 +212,6 @@ def get_databases( database = None ):
 		database_files = LoadDatabase(Global.database).get()
 		
 		for num in range(0, len(database_files) ):
-			print "CAT------------------------ ", database_files[num]
-
 			try:
 				cat = GetDatabase( num + 1, os.path.join(Global.database, database_files[num]) )
 			except ValueError:
