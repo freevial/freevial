@@ -325,7 +325,7 @@ class Preguntador:
 		
 		max_time = self.game.skin.configGetInt( 'max_time' )
 		
-		self.nom_equip_sfc = self.game.skin.render_text( self.game.teams[self.game.current_team].nom, self.game.skin.configGetRGB( "team_name_color" ), 30, 1 )	
+		self.nom_equip_sfc = self.game.skin.render_text( self.game.teams[self.game.current_team].name, self.game.skin.configGetRGB( "team_name_color" ), 30, 1 )	
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
 		self.nom_equip_sfc.set_alpha( 64 )
 		

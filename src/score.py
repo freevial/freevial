@@ -175,23 +175,23 @@ class Score:
 		self.score_slide_current_image += 1
 		self.score_slide_current_image %= len( self.score_slide_images)
 
-
 	
-	def show_end_screen( self, startsound = False ):
+	def show_end_screen( self, startsound=False, force=False ):
 		
-		winner_team = self.game.skin.teamsGuanyador( self.game.teams )
+		# TODO: Show a confirmation dialog if force is True and, if the
+		#       user proceeds, end the game so that it will ask to start
+		#       a new one after showing the end screen.
 		
-		if count_not_empty(Global.game.teams, attr = 'name') == 1:
-			winner_team = 1
+		winner_team = self.game.skin.winning_team( self.game.teams, force )
 		
 		if winner_team > -1:
 			if startsound:
 				self.so_ok.play()
 			visca = Visca( self.game )
-			resultat = visca.juguem( self.game, Global.game.teams[ winner_team ].nom )
+			resultat = visca.juguem( self.game, Global.game.teams[ winner_team ].name )
 			self.game.skin.LoadSound( 'background_sound', 'background_sound_vol', music = 1 ).play( -1 )
-		else:
-			print "\a"
+		elif force:
+			print "\a", # Just beep; don't print an empty line
 	
 	def comprovaTeamgotxies( self ):
 		if self.use_teamgotxies:
@@ -265,10 +265,12 @@ class Score:
 		
 		if nou_grup:
 			mode = 0
-		if self.game.skin.teamsGuanyador( self.game.teams ) != -1: 
+		
+		winning_team = self.game.skin.winning_team( self.game.teams )
+		if winning_team != -1: 
 			mode = 2
 			show_stats = 1
-			element_seleccionat = self.game.skin.teamsGuanyador( self.game.teams )
+			element_seleccionat = winning_team( self.game.teams )
 			self.so_ok.play()
 		else:
 			self.game.skin.LoadSound( 'background_sound', 'background_sound_vol', music = 1 ).play( -1 )
@@ -319,30 +321,30 @@ class Score:
 					
 					if event.isClick('primary') or event.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
 						escriu = 0
-						if self.game.teams[element_seleccionat].nom == '' and event.isKey('ESCAPE'):
-							self.game.teams[element_seleccionat].actiu = 0
+						if self.game.teams[element_seleccionat].name == '' and event.isKey('ESCAPE'):
+							self.game.teams[element_seleccionat].active = 0
 					
 					elif event.isDown():
 
 						newname = None
 											
 						if event.isKey('BACKSPACE'):
-							if len(self.game.teams[element_seleccionat].nom) > 0:
-								newname = self.game.teams[element_seleccionat].nom[:-1]
+							if len(self.game.teams[element_seleccionat].name) > 0:
+								newname = self.game.teams[element_seleccionat].name[:-1]
 						else:
 							if event.keyDown('UP'):
-								newname = self.accentsUP( self.game.teams[element_seleccionat].nom )
+								newname = self.accentsUP( self.game.teams[element_seleccionat].name )
 							elif event.keyDown('DOWN'):
-								newname = self.accentsDOWN( self.game.teams[element_seleccionat].nom )
+								newname = self.accentsDOWN( self.game.teams[element_seleccionat].name )
 							else:
-								newname = self.game.teams[element_seleccionat].nom + event.str()
+								newname = self.game.teams[element_seleccionat].name + event.str()
 						
 						if newname != None:
 							sfc = self.game.skin.render_text( newname, (self.score_color_text), self.score_mida_text, 1)
 							
 							if sfc.get_width() < 340:
 								# Name isn't too long, accept the new character
-								self.game.teams[element_seleccionat].nom = newname
+								self.game.teams[element_seleccionat].name = newname
 								self.game.teams[element_seleccionat].sfc_nom = sfc
 				
 				else:
@@ -376,7 +378,7 @@ class Score:
 							nou_grup = 1
 						
 						if event.keyUp('n'):
-							if self.game.teams[element_seleccionat].actiu:
+							if self.game.teams[element_seleccionat].active:
 								escriu ^= 1
 							else:
 								nou_grup = 1
@@ -401,17 +403,17 @@ class Score:
 
 					
 					if event.keyUp('z'): 
-						if self.game.teams[element_seleccionat].actiu:
-							self.game.teams[element_seleccionat].punts += 1
+						if self.game.teams[element_seleccionat].active:
+							self.game.teams[element_seleccionat].points += 1
 					
 					if event.keyUp('x'): 
-						if self.game.teams[element_seleccionat].actiu and self.game.teams[element_seleccionat].punts > 0:
-							self.game.teams[element_seleccionat].punts -= 1
+						if self.game.teams[element_seleccionat].active and self.game.teams[element_seleccionat].points > 0:
+							self.game.teams[element_seleccionat].points -= 1
 
 					if event.keyUp('d'): 
 						show_elements ^= 1
 					
-					if self.game.teams[element_seleccionat].actiu:
+					if self.game.teams[element_seleccionat].active:
 						for num in range(1, 7):
 							if event.keyUp(str(num), 'KP' + str(num)):
 								self.game.teams[element_seleccionat].canviaCategoria( num-1 )
@@ -424,11 +426,11 @@ class Score:
 							return element_seleccionat
 
 						elif mode == 0:
-							if self.game.teams[element_seleccionat].actiu and event.keyUp('SPACE') :
+							if self.game.teams[element_seleccionat].active and event.keyUp('SPACE') :
 								atzar = int( randint(25, 60) )
 								mode = 1
 							else:
-								if self.game.teams[element_seleccionat].actiu:
+								if self.game.teams[element_seleccionat].active:
 									escriu ^= 1
 								else:
 									nou_grup = 1
@@ -441,7 +443,7 @@ class Score:
 									for num in range(0, 6): 
 										equip.preguntes_tot[num] = 0
 										equip.preguntes_ok[num] = 0
-									equip.punts = 0
+									equip.points = 0
 									equip.figureta = 0				
 					
 					if event.keyUp('s'): 
@@ -457,7 +459,7 @@ class Score:
 						self.effect_mode.switch_mode(mode)
 
 					if event.keyUp('e') and not Global.LOCKED_MODE :
-						self.show_end_screen( startsound = True )
+						self.show_end_screen( startsound=True, force=True )
 						mostrada_victoria = True
 					
 					if event.keyUp('l'): 
@@ -470,8 +472,10 @@ class Score:
 			if nou_grup == 1:
 				self.so_sub.play()
 				nou_grup = 0
-				self.game.teams[element_seleccionat].actiu ^= 1
-				if self.game.teams[element_seleccionat].actiu and self.game.teams[element_seleccionat].nom == "": escriu ^= 1
+				self.game.teams[element_seleccionat].active ^= 1
+				if self.game.teams[element_seleccionat].active and \
+				self.game.teams[element_seleccionat].name == '':
+					escriu ^= 1
 
 			if atzar != 0 and teamsActius( self.game.teams ) >= 2:
 				element_seleccionat = seguentEquipActiu( self.game.teams, element_seleccionat )
@@ -511,7 +515,7 @@ class Score:
 							desp = if2(mode, cos( frate.segons() * 10.0 + (float(compta)/10.0) ) * 2.0, 0)
 							self.game.screen.blit( self.seleccio_score, (xcaixa + self.score_element_sel_offsetx + desp, ycaixa + self.score_element_sel_offsety + compta), (0,compta, self.seleccio_score.get_width(),1) )
 				
-					if self.game.teams[num].actiu:
+					if self.game.teams[num].active:
 					
 						self.game.screen.blit( self.element_score, (xcaixa, ycaixa ) )
 					
@@ -527,9 +531,9 @@ class Score:
 							if (int(time.time() * 4) % 2) == 0: 
 								self.game.screen.blit( self.sfc_cursor, (xcaixa + self.score_teams_offsetx + ampletext, ycaixa + self.score_teams_offsety ))
 						
-						color = if2(maxPunts(self.game.teams) > self.game.teams[num].punts,
+						color = if2(maxPunts(self.game.teams) > self.game.teams[num].points,
 							(128,0,0), (0,128,0))
-						pinta = self.game.skin.render_text( str(self.game.teams[num].punts).zfill(2), color, 150, 1)
+						pinta = self.game.skin.render_text( str(self.game.teams[num].points).zfill(2), color, 150, 1)
 						if self.score_resultat_visible == 'True':
 							self.game.screen.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 					
@@ -539,7 +543,7 @@ class Score:
 					
 						if self.show_corrects:
 							for compta in range(0, self.total_corrects):
-								if self.game.teams[num].punts > compta:
+								if self.game.teams[num].points > compta:
 									if self.correct_done_image != None:
 										self.game.screen.blit( self.correct_done_image, (xcaixa + self.corrects_coord[compta][0], ycaixa + self.corrects_coord[compta][1] ))
 								else:

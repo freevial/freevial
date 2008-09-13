@@ -96,7 +96,8 @@ class Freevial:
 		# initialize skin system
 		Global.game.skin = Skin()
 		Global.game.max_teams = Global.game.skin.configGetInt( 'max_teams', domain='game' )
-		for num in range( 0, Global.game.max_teams ): Global.game.teams.append( Equip() )
+		for num in xrange( 0, Global.game.max_teams ):
+			Global.game.teams.append( Equip(num) )
 	
 	
 	def juguem( self ):
@@ -123,8 +124,6 @@ class Freevial:
 				if not wheel:
 					wheel = Roda( Global.game )
 				resultat = wheel.juguem( )
-
-				print "Resultat ",resultat
 				
 				if resultat != -1:
 						
@@ -136,13 +135,13 @@ class Freevial:
 					
 					if resultat > -1:
 						Global.game.teams[ Global.game.current_team ].preguntes_ok[ resultat - 1 ] += 1
-						Global.game.teams[ Global.game.current_team ].punts += 1
+						Global.game.teams[ Global.game.current_team ].points += 1
 						
 						fig_abans = Global.game.teams[ Global.game.current_team ].figureta
 						Global.game.teams[ Global.game.current_team ].activaCategoria( resultat ) 
 						
 						if fig_abans != 63 and Global.game.teams[ Global.game.current_team ].figureta == 63:
-							Global.game.teams[ Global.game.current_team ].punts += 2
+							Global.game.teams[ Global.game.current_team ].points += 2
 					else:
 						Global.game.teams[ Global.game.current_team ].errors += 1
 					

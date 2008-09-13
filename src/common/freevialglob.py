@@ -40,27 +40,27 @@ gettext.install('freevial', '/usr/share/locale', unicode=1)
 
 textos = []
 
-
 class Equip:
 	
-	nom = ''
-	punts = 0
+	name = ''
+	points = 0
 	errors = 0
 	figureta = 0
-	actiu = False
+	active = False
 	eliminat = False
-
-	sfc_nom = None
-
 	teamgotxie_name = ''
+	
+	sfc_nom = None
 	teamgotxie_sfc = None
-
-	def __init__( self ):
-
+	
+	def __init__( self, num ):
+		
+		self.id = num
+		
 		self.preguntes_tot = []
 		self.preguntes_ok = []
-
-		for num in range(0, 6): 
+		
+		for num in xrange(0, 6): 
 			self.preguntes_tot.append( 0 )
 			self.preguntes_ok.append( 0 )
 
@@ -68,11 +68,9 @@ class Equip:
 		# Les tenim desendreçades i això ho complica una mica
 		self.figureta ^= bitCategoria( categoria )
 
-
 	def activaCategoria( self, categoria ):
 		# Les tenim desendreçades i això ho complica una mica
 		self.figureta |= bitCategoria( categoria )
-
 
 	def teCategoria( self, categoria ) :
 		return (self.figureta & bitCategoria( categoria )) != 0
@@ -260,14 +258,14 @@ def render_text( cadena, color, mida, antialias = 0, font_name = '', maxwidth = 
 		if len(sfcs) > 1:
 			iample = 0
 			ialt = 0
-			for num in range( 0, len(sfcs) ):
+			for num in xrange( 0, len(sfcs) ):
 				ialt += max(sfcs[num].get_height(), mida)
 				iample = min(maxwidth, max( iample, sfcs[num].get_width() ))
 			
 			sfc = pygame.Surface( ( iample, ialt), pygame.SRCALPHA, 32 )
 			
 			pos = 0
-			for num in range( 0, len(sfcs) ):
+			for num in xrange( 0, len(sfcs) ):
 				sfc.blit( sfcs[num], (0, pos) )
 				pos += max(sfcs[num].get_height(), mida)
 		
@@ -292,28 +290,13 @@ def screenshot( surface, destination = os.path.join( os.path.expanduser('~'), 'F
 	pygame.image.save( surface, destination )
 
 
-def count_not_empty( list, attr = None ):
-	""" Returns the amount of non-empty elements in a list. Optionally,
-	if the attr option is set, it will count the amount of elements in
-	the list that have an attribute named like that which is not empty."""
-	
-	count = 0
-	
-	for element in list:
-		if element:
-			if not attr or (hasattr(element, attr) and getattr(element, attr)):
-				count += 1
-	
-	return count
-
-
 def maxPunts( teams ):
 
 	puntsmax = 0
 
-	for num in range( 0, Global.game.max_teams ):
-		if teams[num].actiu:
-			puntsmax = max( puntsmax, teams[num].punts )
+	for team in teams:
+		if team.active:
+			puntsmax = max( puntsmax, team.points )
 	
 	return puntsmax
 
@@ -322,8 +305,8 @@ def puntsTotals( teams ):
 
 	punts = 0
 
-	for num in range( 0, Global.game.max_teams ):
-		punts += teams[num].punts
+	for team in teams:
+		punts += team.points
 	
 	return punts
 
@@ -332,77 +315,93 @@ def teamsActius( teams ):
 
 	actius = 0
 
-	for num in range( 0, Global.game.max_teams ):
-		if teams[num].actiu: actius += 1
+	for team in teams:
+		if team.active: actius += 1
 	
 	return actius
 
 
-def teamsTancat( teams ):
-
-	for num in range( 0, Global.game.max_teams ):
-		if teams[num].figureta == 63:
-			return True
+def winning_team( teams, mode, extra=None, force=False ):
+	""" winning_team(teams, mode, extra=None) -> int
 	
-	return False
+	Calculates which team is currently winning and returns it's index number
+	in the teams array, or -1 if there's a tie or the game can't end yet.
+	
+	Possible values for mode:
+	 - 0. The game ends when one of the teams completes the six parts of its
+	      icon and there is no tie. The team with the most points wins.
+	 - 1. The first team to get the amount of points indicated as $extra wins.
+	 - 2. The last team which fails the amount of questions indicated as
+	      $extra wins.
+	 - 3. The first team to complete the six parts of its icon wins.
+	
+	Setting $force to true will relax the checks and if there is no tie a winner
+	will returned be even if the game hasn't ended yet.
+	
+	"""
 
-
-def teamsGuanyador( teams, mode, extra ):
-
-	# Mode 0 - Figureta de 6 peces completa i una diferència de més de 2 punts respecte a l'equip anterior. Guanyador a punts
-	# Mode 1 - Aconseguir un nombre determinat de punts
-	# Mode 2 - Ser el darrer equip en fer X cagades
-	# Mode 3 - Omplir la figureta de 6 peces
-
-	guanyador = -1
-
+	winner = -1
+	active_teams = [x for x in teams if x.active]
+	
+	# Used by some modes
+	best_value = 0
+	game_ends = False
+	
+	if force and len(active_teams) == 1:
+		# There's only one team
+		return active_teams[0].id
+	
 	if mode == 0:
-		puntsmax = 0
-		equipmax = -1
-
-		if teamsTancat( teams ):
-
-			for num in range( 0, Global.game.max_teams ):
-				if teams[num].actiu:
-					if teams[num].punts == puntsmax:
-						# empat a punts
-						equipmax = -1 
-
-					if teams[num].punts > puntsmax:
-						equipmax = num
-						puntsmax = teams[num].punts
-	
-		guanyador = equipmax
+		
+		for team in active_teams:
+			if team.points == best_value:
+				winner = -1 # Tie
+			elif team.points > best_value:
+				winner = team.id
+				best_value = team.points
+			if team.figureta == 63:
+				game_ends = True
+		
+		if not game_ends and not force:
+			winner = -1
 	
 	elif mode == 1:
 		
-		for num in range( 0, Global.game.max_teams ):
-			if teams[num].punts >=  extra:
-				guanyador = num
+		for team in active_teams:
+			if team.points >= extra:
+				winner = team.id
+				game_ends = True
+			elif force and not game_ends and team.points > best_value:
+				winner = team.id
+				best_value = team.points
 	
 	elif mode == 2:
-		nocagats = []
-		for num in range( 0, Global.game.max_teams ):
-			if teams[num].errors <  extra:
-				nocagats.append( num )
-		if len(nocagats) == 1:
-			guanyador = nogacats[0]
+		candidates = []
+		for team in active_teams:
+			if team.errors < extra:
+				candidates.append( team.id )
+		if len(candidates) == 1:
+			winner = candidates[0]
+		elif force and team.errors < best_value:
+			winner = team.id
+			best_value = team.errors
 	
 	elif mode == 3:
-		for num in range( 0, Global.game.max_teams ):
-			if teams[num].figureta == 63:
-				guanyador = num
+		# TODO: Calculate the winner in an alternative way if $force is True.
+		for team in active_teams:
+			if team.figureta == 63:
+				winner = team.id
 	
-	return guanyador
+	return winner
 
 
 def seguentEquipActiu( teams, actual ):
 
 	actual += 1
 
-	for num in range(0, Global.game.max_teams ):
-		if teams[ (actual + num) % Global.game.max_teams ].actiu: 
-			return (actual + num) % Global.game.max_teams
+	for team in teams:
+		if teams[ (actual + team.id) % Global.game.max_teams ].active: 
+			return (actual + team.id) % Global.game.max_teams
 	
 	return -1
 
@@ -411,9 +410,9 @@ def anteriorEquipActiu( teams, actual ):
 
 	actual -= 1
 
-	for num in range( 0, Global.game.max_teams ):
-		if teams[ (actual - num ) % Global.game.max_teams ].actiu: 
-			return (actual - num ) % Global.game.max_teams
+	for team in teams:
+		if teams[ (actual - team.id ) % Global.game.max_teams ].active: 
+			return (actual - team.id ) % Global.game.max_teams
 	
 	return -1
 

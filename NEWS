@@ -20,6 +20,7 @@ Bug Fixes:
  - Fixed file permissions so that the installation script works for end users.
  - Fixed a bug in the wheel which could cause it to return to the team
    selection screen instead of showing a question.
+ - User requested end of the game ("e" key) now works correctly (LP: #184420).
 
 
 Version 1.2 - Perfectionism

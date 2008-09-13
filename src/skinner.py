@@ -188,6 +188,7 @@ class Skin:
 
 		return render_text( cadena, color, mida, antialias, nomfont, maxwidth )		
 
-	def teamsGuanyador( self, teams ):
+	def winning_team( self, teams, force=False ):
 	
-		return teamsGuanyador( teams, self.configGetInt("game_mode", "game") , self.configGetInt("game_limit", "game"))
+		return winning_team( teams, self.configGetInt('game_mode', 'game'),
+			self.configGetInt('game_limit', 'game'), force=force)

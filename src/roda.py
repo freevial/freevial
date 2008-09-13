@@ -133,7 +133,7 @@ class Roda:
 		
 		self.game.screen.blit( self.fons, (0,0) )
 
-		self.nom_equip_sfc = self.game.skin.render_text( self.game.teams[self.game.current_team].nom, self.game.skin.configGetRGB( "team_name_color" ), 30, 1 )
+		self.nom_equip_sfc = self.game.skin.render_text( self.game.teams[self.game.current_team].name, self.game.skin.configGetRGB( "team_name_color" ), 30, 1 )
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
 		
 		while 1:
