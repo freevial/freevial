@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.0" id="ciencies" language="ca">
+  <information>
+    <name>Ciències</name>
+    <description>Preguntes d'astronomia, biologia, física, quínica,... </description>
+    <destination>Persones en general</destination>
+    <timestamp_creation>1189202400</timestamp_creation>
+    <timestamp_modification>1200139483</timestamp_modification>
+
+	<license>GPLv3</license>
+	<url>http://www.freevial.org/bases/ciencies.xml</url>
+	<contact>info@freevial.org</contact>
+
+    <authors>
+      <author>Rafael Carreras</author>
+      <author>Nuria Carreras</author>
+    </authors>
+  </information>
+  <appearance>
+    <image>categoria_ciencies.png</image>
+    <sound>c2.ogg</sound>
+  </appearance>
+  <questions>
+    <question>
+      <sentence>Quin és el planeta més proper a la Terra?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Mart</answer>
+        <answer>Venus</answer>
+        <answer>Mercuri</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el nom de la nostra galàxia?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Via Làctia</answer>
+        <answer>Andròmeda</answer>
+        <answer>Ganímedes</answer>
+      </answers>
+    </question>    
+    <question>
+      <sentence>Quin d'aquests animals és més ràpid?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Guepard</answer>
+        <answer>Àliga</answer>
+        <answer>Dofí</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin planeta del Sistema Solar té unes dimensions més semblants a la Terra?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Venus</answer>
+        <answer>Júpiter</answer>
+        <answer>Mart</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què condueix més bé l'electricitat?</sentence>
+      <author>Nil Oriol</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Un fil d'or</answer>
+        <answer>Un cable de coure</answer>
+        <answer>Un fil de cotó</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el planeta més gran del Sistema Solar?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Júpiter</answer>
+        <answer>Saturn</answer>
+        <answer>Terra</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què cau més depressa?</sentence>
+      <author>Nuria Carreras</author>
+      <comments>Tots els cossos cauen amb la mateixa acceleració deguda a la gravetat. L'únic que podria modificar la velocitat és el fregament de l'aire.</comments>
+      <answers>
+        <answer correct="True">Totes dues igual</answer>
+        <answer>Una pedra de vint quilos i 0,2 m³</answer>
+        <answer>Una bala de canó de 100 quilos i 0,2 m³</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el planeta més petit del Sistema Solar?</sentence>
+      <author>Rafael Carreras</author>
+      <comments>Des de 2006, Plutó no es considera un planeta.</comments>
+      <answers>
+        <answer correct="True">Mercuri</answer>
+        <answer>Plutó</answer>
+        <answer>Mart</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina és la unitat de mesura de distàncies entre estrelles?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Any llum</answer>
+        <answer>Unitat Astronòmica (UA)</answer>
+        <answer>km</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Un any llum equival a...</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">9 bilions de km</answer>
+        <answer>150 bilions de km</answer>
+        <answer>900 milions de km</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Una Unitat Astronòmica equival a...</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">La distància entre el Sol i la Terra</answer>
+        <answer>La distància entre la Terra i la Lluna</answer>
+        <answer>La distància entre el Sol i Plutó</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Es veuen estels de dia?</sentence>
+      <author>Nil Oriol</author>
+      <comments>Sempre es veu el Sol</comments>
+      <answers>
+        <answer correct="True">Sí</answer>
+        <answer>Només en cas d'eclipsi</answer>
+        <answer>No</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin va ser el primer satèlit artificial?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Sputnik</answer>
+        <answer>Hubble</answer>
+        <answer>Columbus</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és l'estel més proper al nostre Sistema?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Alfa del Centaure</answer>
+        <answer>Sírius</answer>
+        <answer>Orió</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Cada quant passa el cometa Halley?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">76 anys</answer>
+        <answer>96 anys</answer>
+        <answer>65 anys</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina capa ens protegeix dels raigs ultraviolats?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">La capa d'ozó</answer>
+        <answer>La termosfera</answer>
+        <answer>La troposfera</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Qui va ser el primer científic a establir les òrbites eŀlíptiques?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Kepler</answer>
+        <answer>Galileu</answer>
+        <answer>Newton</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina és la unitat de massa del Sistema Internacional?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El Quilogram</answer>
+        <answer>El Newton</answer>
+        <answer>El Volt</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina és la unitat de pes del Sistema Internacional?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">El Newton</answer>
+        <answer>El Quilogram</answer>
+        <answer>El Volt</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el símbol del sodi?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Na</answer>
+        <answer>So</answer>
+        <answer>Sd</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el símbol del ruteni?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Ru</answer>
+        <answer>Rt</answer>
+        <answer>Sa</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el símbol del xenó?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Xe</answer>
+        <answer>Xn</answer>
+        <answer>Cn</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el riu més cabalós?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Amazones</answer>
+        <answer>Mississippi</answer>
+        <answer>Nil</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el riu més ample?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Mississippi</answer>
+        <answer>Amazones</answer>
+        <answer>Nil</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el riu més llarg?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Nil</answer>
+        <answer>Amazones</answer>
+        <answer>Mississippi</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és l'element més abundant a la matèria viva?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Carboni</answer>
+        <answer>Oxígen</answer>
+        <answer>Calci</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el número π?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">3,14</answer>
+        <answer>2,7</answer>
+        <answer>3,25</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el número e?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">2,7</answer>
+        <answer>666</answer>
+        <answer>3,14</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Què són les cataractes?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Una malaltia</answer>
+        <answer>Uns salts d'aigua</answer>
+        <answer>Ambdues</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina és la balena més grossa?</sentence>
+      <author>Nuria Carreras</author>
+      <comments>La blava fa uns 30 metres de llargada</comments>
+      <answers>
+        <answer correct="True">Blava</answer>
+        <answer>Grisa</answer>
+        <answer>Geperuda</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests animals és més gros?</sentence>
+      <author>Nuria Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Elefant africà</answer>
+        <answer>Balena de Cuvier</answer>
+        <answer>Formiga nigeriana</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin és el percentatge d'aigua dolça a la Terra?</sentence>
+      <author>Nuria Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">2,5 %</answer>
+        <answer>10 %</answer>
+        <answer>35 %</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quants litres d'aigua al dia, de mitjana, necessita un camp de golf?</sentence>
+      <author>Nuria Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">800 000 l</answer>
+        <answer>500 000 l</answer>
+        <answer>5 000 l</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quants litres d'aigua al dia gasta un europeu?</sentence>
+      <author>Nuria Carreras</author>
+      <comments>Un africà només en gasta 5 litres diaris.</comments>
+      <answers>
+        <answer correct="True">250</answer>
+        <answer>400</answer>
+        <answer>100</answer>
+      </answers>
+     </question>
+    <question>
+      <sentence>Quina és la tortuga més grossa?</sentence>
+      <author>Nuria Carreras</author>
+      <comments>La tortuga llaüt arriba a mesurar fins a 3 m.</comments>
+      <answers>
+        <answer correct="True">Llaüt</answer>
+        <answer>Galàpagos</answer>
+        <answer>Verda</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests científics no ha guanyat el premi Nobel?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">René Descartes</answer>
+        <answer>Marie Curie</answer>
+        <answer>Albert Einstein</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina ciència estudia la forma de la Terra?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Geodèsia</answer>
+        <answer>Geofísica</answer>
+        <answer>Geografia física</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quina d'aquestes és una branca de la geologia?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Vulcanologia</answer>
+        <answer>Oceanografia</answer>
+        <answer>Paleontologia</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin orígen té la paraula "química"?</sentence>
+      <author>Rafael Carreras</author>
+      <comments>De l'egipci "kemos"</comments>
+      <answers>
+        <answer correct="True">Egipci</answer>
+        <answer>Grec</answer>
+        <answer>Llatí</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin va ser el primer vehicle que va circular per la superfície de Mart?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Rover</answer>
+        <answer>Simpson</answer>
+        <answer>Mars Surveyer</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>De quin tipus és el sistema d'obertura de les portes dels trens?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Pneumàtic</answer>
+        <answer>Hidràulic</answer>
+        <answer>Pirotècnic</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Quin d'aquests no és un planeta?</sentence>
+      <author>Rafael Carreras</author>
+      <comments></comments>
+      <answers>
+        <answer correct="True">Plutó</answer>
+        <answer>Urà</answer>
+        <answer>Venus</answer>
+      </answers>
+    </question>
+   </questions>
+</database>
