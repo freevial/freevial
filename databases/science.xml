@@ -27,7 +27,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Mart</answer>
+        <answer correct="true">Mart</answer>
         <answer>Venus</answer>
         <answer>Mercuri</answer>
       </answers>
@@ -37,7 +37,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Via Làctia</answer>
+        <answer correct="true">Via Làctia</answer>
         <answer>Andròmeda</answer>
         <answer>Ganímedes</answer>
       </answers>
@@ -47,7 +47,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Guepard</answer>
+        <answer correct="true">Guepard</answer>
         <answer>Àliga</answer>
         <answer>Dofí</answer>
       </answers>
@@ -57,7 +57,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Venus</answer>
+        <answer correct="true">Venus</answer>
         <answer>Júpiter</answer>
         <answer>Mart</answer>
       </answers>
@@ -67,7 +67,7 @@
       <author>Nil Oriol</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Un fil d'or</answer>
+        <answer correct="true">Un fil d'or</answer>
         <answer>Un cable de coure</answer>
         <answer>Un fil de cotó</answer>
       </answers>
@@ -77,7 +77,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Júpiter</answer>
+        <answer correct="true">Júpiter</answer>
         <answer>Saturn</answer>
         <answer>Terra</answer>
       </answers>
@@ -87,7 +87,7 @@
       <author>Nuria Carreras</author>
       <comments>Tots els cossos cauen amb la mateixa acceleració deguda a la gravetat. L'únic que podria modificar la velocitat és el fregament de l'aire.</comments>
       <answers>
-        <answer correct="True">Totes dues igual</answer>
+        <answer correct="true">Totes dues igual</answer>
         <answer>Una pedra de vint quilos i 0,2 m³</answer>
         <answer>Una bala de canó de 100 quilos i 0,2 m³</answer>
       </answers>
@@ -97,7 +97,7 @@
       <author>Rafael Carreras</author>
       <comments>Des de 2006, Plutó no es considera un planeta.</comments>
       <answers>
-        <answer correct="True">Mercuri</answer>
+        <answer correct="true">Mercuri</answer>
         <answer>Plutó</answer>
         <answer>Mart</answer>
       </answers>
@@ -107,7 +107,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Any llum</answer>
+        <answer correct="true">Any llum</answer>
         <answer>Unitat Astronòmica (UA)</answer>
         <answer>km</answer>
       </answers>
@@ -117,7 +117,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">9 bilions de km</answer>
+        <answer correct="true">9 bilions de km</answer>
         <answer>150 bilions de km</answer>
         <answer>900 milions de km</answer>
       </answers>
@@ -127,7 +127,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">La distància entre el Sol i la Terra</answer>
+        <answer correct="true">La distància entre el Sol i la Terra</answer>
         <answer>La distància entre la Terra i la Lluna</answer>
         <answer>La distància entre el Sol i Plutó</answer>
       </answers>
@@ -137,7 +137,7 @@
       <author>Nil Oriol</author>
       <comments>Sempre es veu el Sol</comments>
       <answers>
-        <answer correct="True">Sí</answer>
+        <answer correct="true">Sí</answer>
         <answer>Només en cas d'eclipsi</answer>
         <answer>No</answer>
       </answers>
@@ -147,7 +147,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Sputnik</answer>
+        <answer correct="true">Sputnik</answer>
         <answer>Hubble</answer>
         <answer>Columbus</answer>
       </answers>
@@ -157,7 +157,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Alfa del Centaure</answer>
+        <answer correct="true">Alfa del Centaure</answer>
         <answer>Sírius</answer>
         <answer>Orió</answer>
       </answers>
@@ -167,7 +167,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">76 anys</answer>
+        <answer correct="true">76 anys</answer>
         <answer>96 anys</answer>
         <answer>65 anys</answer>
       </answers>
@@ -177,7 +177,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">La capa d'ozó</answer>
+        <answer correct="true">La capa d'ozó</answer>
         <answer>La termosfera</answer>
         <answer>La troposfera</answer>
       </answers>
@@ -187,7 +187,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Kepler</answer>
+        <answer correct="true">Kepler</answer>
         <answer>Galileu</answer>
         <answer>Newton</answer>
       </answers>
@@ -197,7 +197,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">El Quilogram</answer>
+        <answer correct="true">El Quilogram</answer>
         <answer>El Newton</answer>
         <answer>El Volt</answer>
       </answers>
@@ -207,7 +207,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">El Newton</answer>
+        <answer correct="true">El Newton</answer>
         <answer>El Quilogram</answer>
         <answer>El Volt</answer>
       </answers>
@@ -217,7 +217,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Na</answer>
+        <answer correct="true">Na</answer>
         <answer>So</answer>
         <answer>Sd</answer>
       </answers>
@@ -227,7 +227,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Ru</answer>
+        <answer correct="true">Ru</answer>
         <answer>Rt</answer>
         <answer>Sa</answer>
       </answers>
@@ -237,7 +237,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Xe</answer>
+        <answer correct="true">Xe</answer>
         <answer>Xn</answer>
         <answer>Cn</answer>
       </answers>
@@ -247,7 +247,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Amazones</answer>
+        <answer correct="true">Amazones</answer>
         <answer>Mississippi</answer>
         <answer>Nil</answer>
       </answers>
@@ -257,7 +257,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Mississippi</answer>
+        <answer correct="true">Mississippi</answer>
         <answer>Amazones</answer>
         <answer>Nil</answer>
       </answers>
@@ -267,7 +267,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Nil</answer>
+        <answer correct="true">Nil</answer>
         <answer>Amazones</answer>
         <answer>Mississippi</answer>
       </answers>
@@ -277,7 +277,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Carboni</answer>
+        <answer correct="true">Carboni</answer>
         <answer>Oxígen</answer>
         <answer>Calci</answer>
       </answers>
@@ -287,7 +287,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">3,14</answer>
+        <answer correct="true">3,14</answer>
         <answer>2,7</answer>
         <answer>3,25</answer>
       </answers>
@@ -297,7 +297,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">2,7</answer>
+        <answer correct="true">2,7</answer>
         <answer>666</answer>
         <answer>3,14</answer>
       </answers>
@@ -307,7 +307,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Una malaltia</answer>
+        <answer correct="true">Una malaltia</answer>
         <answer>Uns salts d'aigua</answer>
         <answer>Ambdues</answer>
       </answers>
@@ -317,7 +317,7 @@
       <author>Nuria Carreras</author>
       <comments>La blava fa uns 30 metres de llargada</comments>
       <answers>
-        <answer correct="True">Blava</answer>
+        <answer correct="true">Blava</answer>
         <answer>Grisa</answer>
         <answer>Geperuda</answer>
       </answers>
@@ -327,7 +327,7 @@
       <author>Nuria Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Elefant africà</answer>
+        <answer correct="true">Elefant africà</answer>
         <answer>Balena de Cuvier</answer>
         <answer>Formiga nigeriana</answer>
       </answers>
@@ -337,7 +337,7 @@
       <author>Nuria Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">2,5 %</answer>
+        <answer correct="true">2,5 %</answer>
         <answer>10 %</answer>
         <answer>35 %</answer>
       </answers>
@@ -347,7 +347,7 @@
       <author>Nuria Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">800 000 l</answer>
+        <answer correct="true">800 000 l</answer>
         <answer>500 000 l</answer>
         <answer>5 000 l</answer>
       </answers>
@@ -357,7 +357,7 @@
       <author>Nuria Carreras</author>
       <comments>Un africà només en gasta 5 litres diaris.</comments>
       <answers>
-        <answer correct="True">250</answer>
+        <answer correct="true">250</answer>
         <answer>400</answer>
         <answer>100</answer>
       </answers>
@@ -367,7 +367,7 @@
       <author>Nuria Carreras</author>
       <comments>La tortuga llaüt arriba a mesurar fins a 3 m.</comments>
       <answers>
-        <answer correct="True">Llaüt</answer>
+        <answer correct="true">Llaüt</answer>
         <answer>Galàpagos</answer>
         <answer>Verda</answer>
       </answers>
@@ -377,7 +377,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">René Descartes</answer>
+        <answer correct="true">René Descartes</answer>
         <answer>Marie Curie</answer>
         <answer>Albert Einstein</answer>
       </answers>
@@ -387,7 +387,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Geodèsia</answer>
+        <answer correct="true">Geodèsia</answer>
         <answer>Geofísica</answer>
         <answer>Geografia física</answer>
       </answers>
@@ -397,7 +397,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Vulcanologia</answer>
+        <answer correct="true">Vulcanologia</answer>
         <answer>Oceanografia</answer>
         <answer>Paleontologia</answer>
       </answers>
@@ -407,7 +407,7 @@
       <author>Rafael Carreras</author>
       <comments>De l'egipci "kemos"</comments>
       <answers>
-        <answer correct="True">Egipci</answer>
+        <answer correct="true">Egipci</answer>
         <answer>Grec</answer>
         <answer>Llatí</answer>
       </answers>
@@ -417,7 +417,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Rover</answer>
+        <answer correct="true">Rover</answer>
         <answer>Simpson</answer>
         <answer>Mars Surveyer</answer>
       </answers>
@@ -427,7 +427,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Pneumàtic</answer>
+        <answer correct="true">Pneumàtic</answer>
         <answer>Hidràulic</answer>
         <answer>Pirotècnic</answer>
       </answers>
@@ -437,7 +437,7 @@
       <author>Rafael Carreras</author>
       <comments></comments>
       <answers>
-        <answer correct="True">Plutó</answer>
+        <answer correct="true">Plutó</answer>
         <answer>Urà</answer>
         <answer>Venus</answer>
       </answers>
