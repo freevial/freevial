@@ -20,6 +20,7 @@
 		<contact>orestes@tsc.upc.edu</contact>
 		<authors>
 			<author>Orestes Mas Casals</author>
+			<author>Josep Sànchez Mesegué</author>
 		</authors>
 	</information>
 	<appearance>
@@ -846,6 +847,526 @@
 				<answer correct="true">el Vallès Oriental</answer>
 				<answer>el Vallès Occidental</answer>
 				<answer>el Montsià</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de l'Alacantí és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Alacant</answer>
+				<answer>Inca</answer>
+				<answer>Llucena</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de l'Alcoià és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Alcoi</answer>
+				<answer>Énguera</answer>
+				<answer>Tamarit de Llitera i Binèfar</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de l'Alcalatén és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Llucena</answer>
+				<answer>Vinaròs</answer>
+				<answer>Eivissa</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de l'Alt Maestrat és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Albocàsser</answer>
+				<answer>Llucmajor</answer>
+				<answer>Sant Francesc de Formentera</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de l'Alt Millars és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Cirat</answer>
+				<answer>Sagunt</answer>
+				<answer>Requena</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de l'Alt Palància és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Sogorb</answer>
+				<answer>València</answer>
+				<answer>Cocentaina</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de l'Alt Vinalopó és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Villena</answer>
+				<answer>Xàtiva</answer>
+				<answer>Morella</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Baix Maestrat és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Vinaròs</answer>
+				<answer>Sóller</answer>
+				<answer>Sueca</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Baix Segura és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Oriola</answer>
+				<answer>Cocentaina</answer>
+				<answer>Vall-de-Roures i Calaceit</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Baix Vinalopó és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Elx</answer>
+				<answer>Dénia</answer>
+				<answer>Gandia</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Camp de Morvedre és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Sagunt</answer>
+				<answer>Llíria</answer>
+				<answer>No en té</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Camp de Túria és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Llíria</answer>
+				<answer>Eivissa</answer>
+				<answer>Alcoi</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Canal de Navarrés és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Énguera</answer>
+				<answer>Elda</answer>
+				<answer>Elx</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Comtat és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Cocentaina</answer>
+				<answer>Petra</answer>
+				<answer>Manacor</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Costera és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Xàtiva</answer>
+				<answer>Cirat</answer>
+				<answer>Ceret</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Foia de Bunyol és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Xiva</answer>
+				<answer>Alacant</answer>
+				<answer>València</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de l'Horta Nord és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">No en té</answer>
+				<answer>Torrent</answer>
+				<answer>Petra</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de l'Horta Oest és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Torrent</answer>
+				<answer>Manacor</answer>
+				<answer>Formiguera</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de l'Horta Sud és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Catarroja</answer>
+				<answer>Ontinyent</answer>
+				<answer>Llíria</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Marina Alta és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Dénia</answer>
+				<answer>La Vila Joiosa</answer>
+				<answer>Palma</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Marina Baixa és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">La Vila Joiosa</answer>
+				<answer>Maó</answer>
+				<answer>Montlluís</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca dels Ports és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Morella</answer>
+				<answer>Requena</answer>
+				<answer>Villena</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Plana Alta és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Castelló de la Plana</answer>
+				<answer>Xelva</answer>
+				<answer>Aiora</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Plana Baixa és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Borriana</answer>
+				<answer>Graus i Benavarri</answer>
+				<answer>Cirat</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Plana d'Utiel és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Requena</answer>
+				<answer>No en té</answer>
+				<answer>Fraga</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Racó és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Ademús</answer>
+				<answer>Morella</answer>
+				<answer>Catarroja</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Ribera Alta és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Alzira</answer>
+				<answer>Ademús</answer>
+				<answer>Borriana</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Ribera Baixa és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Sueca</answer>
+				<answer>Fraga</answer>
+				<answer>Ademús</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca dels Serrans és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Xelva</answer>
+				<answer>Gandia</answer>
+				<answer>Albocàsser</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Safor és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Gandia</answer>
+				<answer>Alzira</answer>
+				<answer>Torrent</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de València és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">València</answer>
+				<answer>Villena</answer>
+				<answer>Xelva</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Vall d'Albaida és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Ontinyent</answer>
+				<answer>Borriana</answer>
+				<answer>Llucmajor</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Vall de Cofrents és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Aiora</answer>
+				<answer>Vall-de-Roures i Calaceit</answer>
+				<answer>La Vila Joiosa</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Vinalopó Mitjà és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Elda</answer>
+				<answer>Alcoi</answer>
+				<answer>Vinaròs</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de l'Alta Cerdanya és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Montlluís</answer>
+				<answer>Oriola</answer>
+				<answer>Xàtiva</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Capcir és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Formiguera</answer>
+				<answer>Xiva</answer>
+				<answer>Sagunt</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Conflent és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Prada</answer>
+				<answer>Aiora</answer>
+				<answer>Sóller</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Vallespir és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Ceret</answer>
+				<answer>Sogorb</answer>
+				<answer>Énguera</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Rosselló és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Perpinyà</answer>
+				<answer>Llucena</answer>
+				<answer>Inca</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de Eivissa és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Eivissa</answer>
+				<answer>Tamarit de Llitera i Binèfar</answer>
+				<answer>Castelló de la Plana</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de Formentera és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Sant Francesc de Formentera</answer>
+				<answer>Graus i Benavarri</answer>
+				<answer>Sogorb</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de Llevant és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Manacor</answer>
+				<answer>Sueca</answer>
+				<answer>Sant Francesc de Formentera</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de Menorca és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Maó</answer>
+				<answer>Montlluís</answer>
+				<answer>Perpinyà</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de Migjorn és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Llucmajor</answer>
+				<answer>Albocàsser</answer>
+				<answer>Maó</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de Palma és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Palma</answer>
+				<answer>Perpinyà</answer>
+				<answer>Ontinyent</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Pla de Mallorca és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Petra</answer>
+				<answer>Palma</answer>
+				<answer>Oriola</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de Raiguer és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Inca</answer>
+				<answer>Catarroja</answer>
+				<answer>Alzira</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Serra de Tramuntana és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Sóller</answer>
+				<answer>Elx</answer>
+				<answer>Elda</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Ribagorça és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Graus i Benavarri</answer>
+				<answer>Prada</answer>
+				<answer>Alacant</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca de la Llitera és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Tamarit de Llitera i Binèfar</answer>
+				<answer>Castelló de la Plana</answer>
+				<answer>Xiva</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Baix Cinca és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Fraga</answer>
+				<answer>Ceret</answer>
+				<answer>Prada</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>La capital de la comarca del Matarranya és:</sentence>
+			<author>orestes</author>
+			<answers>
+				<answer correct="true">Vall-de-Roures i Calaceit</answer>
+				<answer>Formiguera</answer>
+				<answer>Dénia</answer>
 			</answers>
 		</question>
 	</questions>
