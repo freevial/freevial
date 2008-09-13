@@ -15,8 +15,7 @@
 		<timestamp_creation>1221285600</timestamp_creation>
 		<timestamp_modification>1221285600</timestamp_modification>
 		<license>GPLv3</license>
-		<!--Optional:-->
-		<url>http://www.freevial.org/bases/geografia.xml</url>
+		<url></url>
 		<contact>orestes@tsc.upc.edu</contact>
 		<authors>
 			<author>Orestes Mas Casals</author>
