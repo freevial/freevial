@@ -41,7 +41,7 @@
     <question>
       <sentence>Quina d'aquestes normes no s'aplica a un gremlin?</sentence>
       <author>Carles</author>
-      <comments>No el mulli,#mantingui'l lluny de les llums brillants,#i el més important, no li doni# mai menjar després de mitjanit.##"Gremlins" (1984)</comments>
+      <comments>No el mulli,<br/>mantingui'l lluny de les llums brillants,<br/>i el més important, no li doni<br/> mai menjar després de mitjanit.<br/><br/>"Gremlins" (1984)</comments>
       <answers>
         <answer correct="true">No poden cantar</answer>
         <answer>No poden menjar després de mitjanit</answer>
@@ -69,7 +69,7 @@
       </answers>
     </question>
     <question>
-      <sentence>En quina pel·lícula un ordinador deia:#”Quin joc més estrany, l'única#manera de guanyar és no jugar”.</sentence>
+      <sentence>En quina pel·lícula un ordinador deia:<br/>”Quin joc més estrany, l'única<br/>manera de guanyar és no jugar”.</sentence>
       <author>Carles</author>
       <comments>Quan l'ordinador descrobria la insensatesa de la guerra.</comments>
       <answers>
@@ -89,7 +89,7 @@
       </answers>
     </question>
     <question>
-      <sentence>En un capítol de la sèrie "Porca misèria"#es veu un entorn gràfic de Linux, quin?</sentence>
+      <sentence>En un capítol de la sèrie "Porca misèria"<br/>es veu un entorn gràfic de Linux, quin?</sentence>
       <author>papapep</author>
       <comments></comments>
       <answers>
@@ -99,7 +99,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina eina usa la Trinity a "Matrix Reloaded"#per petar l'ordinador?</sentence>
+      <sentence>Quina eina usa la Trinity a "Matrix Reloaded"<br/>per petar l'ordinador?</sentence>
       <author>Carles</author>
       <comments>A la pel·lícula "Matrix Reloaded" podem veure la Trinity petant un ordinador i a la pantalla es veu com realitza un escaneig de seguretat amb l'eina nmap!!! Un cop fet això es mostra una vulnerabilitat real (exploit SSHv1 CRC32), un error de buffer, que aprofita amb una eina fingida sshnuke.</comments>
       <answers>
@@ -109,7 +109,7 @@
       </answers>
     </question>
     <question>
-      <sentence>El clon per a Linux dels famosos#Lemmings es diu...</sentence>
+      <sentence>El clon per a Linux dels famosos<br/>Lemmings es diu...</sentence>
       <author>lluisanunez</author>
       <comments>Supertux és un clon de Super Mario, Tux Racer és un joc d'animació 3D. </comments>
       <answers>
@@ -119,7 +119,7 @@
       </answers>
     </question>
     <question>
-      <sentence>De què és acrònim HAL a la pel·lícula "2001"#(tot i que ho negui Arthur C. Clarck)? </sentence>
+      <sentence>De què és acrònim HAL a la pel·lícula "2001"<br/>(tot i que ho negui Arthur C. Clarck)? </sentence>
       <author>Carles</author>
       <comments>IBM = I - 1 = H, B - 1 = A, M - 1 = L</comments>
       <answers>
@@ -129,7 +129,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina versió del wine està especialitzada#en fer rutllar jocs?</sentence>
+      <sentence>Quina versió del wine està especialitzada<br/>en fer rutllar jocs?</sentence>
       <author>Carles</author>
       <comments>L'xmame és un emulador de màquines de videjocs i no una versió del wine.</comments>
       <answers>
@@ -139,7 +139,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests ordinadors NO#duia el processador Zilog Z80-A?</sentence>
+      <sentence>Quin d'aquests ordinadors NO<br/>duia el processador Zilog Z80-A?</sentence>
       <author>Carles</author>
       <comments>Duia un MOS 6510</comments>
       <answers>
@@ -149,7 +149,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quan es va fer la pel·lícula "Tron",#què volia dir aquesta ordre?</sentence>
+      <sentence>Quan es va fer la pel·lícula "Tron",<br/>què volia dir aquesta ordre?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -189,7 +189,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Si volguéssim jugar al "King's quest"#amb l'Ubuntu, amb quin no podríem?</sentence>
+      <sentence>Si volguéssim jugar al "King's quest"<br/>amb l'Ubuntu, amb quin no podríem?</sentence>
       <author>Nil</author>
       <comments>26</comments>
       <answers>
@@ -199,7 +199,7 @@
       </answers>
     </question>
     <question>
-      <sentence>En Purple del "Dia del tentacle" es# torna dolent perquè es transforma# i aconsegueix..</sentence>
+      <sentence>En Purple del "Dia del tentacle" es<br/> torna dolent perquè es transforma<br/> i aconsegueix..</sentence>
       <author>Nil</author>
       <comments>25</comments>
       <answers>
@@ -229,7 +229,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Al llibre "SnowCrash" els americans#només són els millors...</sentence>
+      <sentence>Al llibre "SnowCrash" els americans<br/>només són els millors...</sentence>
       <author>Nil</author>
       <comments>22</comments>
       <answers>
@@ -239,7 +239,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es deia el noi que duia el#Mazinger Z?</sentence>
+      <sentence>Com es deia el noi que duia el<br/>Mazinger Z?</sentence>
       <author>Carles</author>
       <comments>21</comments>
       <answers>
@@ -250,7 +250,7 @@
     </question>
    
     <question>
-      <sentence>Quin personatge de videojoc considerava#que els noms no eren importants?</sentence>
+      <sentence>Quin personatge de videojoc considerava<br/>que els noms no eren importants?</sentence>
       <author>Carles</author>
       <comments>15</comments>
       <answers>
@@ -260,7 +260,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Per a què serveix la comanda#"klatu barada nikto"?</sentence>
+      <sentence>Per a què serveix la comanda<br/>"klatu barada nikto"?</sentence>
       <author>Carles</author>
       <comments>14</comments>
       <answers>
@@ -301,7 +301,7 @@
     </question>
     
        <question>
-      <sentence>Com avisa Maurice Moss els bombers#quan es crema el seu despatx?</sentence>
+      <sentence>Com avisa Maurice Moss els bombers<br/>quan es crema el seu despatx?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -321,7 +321,7 @@
       </answers>
     </question>
     <question>
-      <sentence>El cartell de proves del Freevial està#copiat de la publicitat d'un videojoc#de 8 bits.#Com es deia l'empresa que va fer-lo?</sentence>
+      <sentence>El cartell de proves del Freevial està<br/>copiat de la publicitat d'un videojoc<br/>de 8 bits.<br/>Com es deia l'empresa que va fer-lo?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -331,7 +331,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests ordinadors NO#duia el processador Zilog Z80-A</sentence>
+      <sentence>Quin d'aquests ordinadors NO<br/>duia el processador Zilog Z80-A</sentence>
       <author>Carles</author>
       <comments>5</comments>
       <answers>
@@ -341,7 +341,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quants jocs de cartes de solitari hi ha#als repositoris d'Ubuntu?</sentence>
+      <sentence>Quants jocs de cartes de solitari hi ha<br/>als repositoris d'Ubuntu?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -386,7 +386,7 @@
     <question>
       <sentence>Quina d'aquestes sèries de jocs no va fer Roberta Williams?</sentence>
       <author>Carles</author>
-      <comments>Roberta i Ken Williams van ser els fundadors de Sierra Online.#Ella era escriptora de contes i ell desenvolupador.##Junts van fer algunes de les millors aventures gràfiques.##La sèrie Gabriel Knight, també de Sierra, online no va ser escrita per ella,#com tampoc la sèrie d'aventures d'en Larry Laffer.</comments>
+      <comments>Roberta i Ken Williams van ser els fundadors de Sierra Online.<br/>Ella era escriptora de contes i ell desenvolupador.<br/><br/>Junts van fer algunes de les millors aventures gràfiques.<br/><br/>La sèrie Gabriel Knight, també de Sierra, online no va ser escrita per ella,<br/>com tampoc la sèrie d'aventures d'en Larry Laffer.</comments>
       <answers>
         <answer correct="true">Gabriel Knight</answer>
         <answer>Phantasmagoria</answer>

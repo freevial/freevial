@@ -31,7 +31,7 @@
   </appearance>
   <questions>
     <question>
-      <sentence>On es va celebrar el primer esdeveniment#d'Ubuntu a Europa?</sentence>
+      <sentence>On es va celebrar el primer esdeveniment<br/>d'Ubuntu a Europa?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -81,7 +81,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Què cal per a formar part del#Community Council d'Ubuntu?</sentence>
+      <sentence>Què cal per a formar part del<br/>Community Council d'Ubuntu?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -101,7 +101,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Què cal per a ser membre del#Catalan LoCo Team?</sentence>
+      <sentence>Què cal per a ser membre del<br/>Catalan LoCo Team?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -111,7 +111,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui coneix més personatges rellevants#del programari lliure a Catalunya?</sentence>
+      <sentence>Qui coneix més personatges rellevants<br/>del programari lliure a Catalunya?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -121,7 +121,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui és el coordinador de les#traduccions de l'OpenOffice.org?</sentence>
+      <sentence>Qui és el coordinador de les<br/>traduccions de l'OpenOffice.org?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -171,7 +171,7 @@
       </answers>
     </question>
     <question>
-      <sentence>On convoca els seus esdeveniments#el grup de traductors del KDE?</sentence>
+      <sentence>On convoca els seus esdeveniments<br/>el grup de traductors del KDE?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -181,7 +181,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina activitat física realitza el#Catalan LoCo Team Contact?</sentence>
+      <sentence>Quina activitat física realitza el<br/>Catalan LoCo Team Contact?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -191,7 +191,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui forma part de Caliu, la Càtedra de Programari Lliure,#el Catalan LoCo Team i cat&gt;&gt;KDE?</sentence>
+      <sentence>Qui forma part de Caliu, la Càtedra de Programari Lliure,<br/>el Catalan LoCo Team i cat&gt;&gt;KDE?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -291,7 +291,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui prepara els CD catalanitzats#d'Ubuntu i Kubuntu hores després del#llançament oficial?</sentence>
+      <sentence>Qui prepara els CD catalanitzats<br/>d'Ubuntu i Kubuntu hores després del<br/>llançament oficial?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -311,7 +311,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diu la Xarxa de#Programari Lliure a l'Administració?</sentence>
+      <sentence>Com es diu la Xarxa de<br/>Programari Lliure a l'Administració?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -321,7 +321,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui va escriure el llibre#«Programari Lliure i empresa a Catalunya»?</sentence>
+      <sentence>Qui va escriure el llibre<br/>«Programari Lliure i empresa a Catalunya»?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -331,7 +331,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui va iniciar la traducció del Gnome#al català?</sentence>
+      <sentence>Qui va iniciar la traducció del Gnome<br/>al català?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -341,7 +341,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui va iniciar la traducció del KDE#al català?</sentence>
+      <sentence>Qui va iniciar la traducció del KDE<br/>al català?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -351,7 +351,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui va obtenir el premi al#desenvolupador a l'aKademy 2006?</sentence>
+      <sentence>Qui va obtenir el premi al<br/>desenvolupador a l'aKademy 2006?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -361,7 +361,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina és la distribució de l'XTEC#basada en OpenSuse?</sentence>
+      <sentence>Quina és la distribució de l'XTEC<br/>basada en OpenSuse?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -371,7 +371,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui forma part de Caliu, Perl Mongers,#GNU, la Càtedra de Programari Lliure i#el Catalan LoCo Team?</sentence>
+      <sentence>Qui forma part de Caliu, Perl Mongers,<br/>GNU, la Càtedra de Programari Lliure i<br/>el Catalan LoCo Team?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -381,7 +381,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui forma part de Caliu, Softcatalà#i CatPL?</sentence>
+      <sentence>Qui forma part de Caliu, Softcatalà<br/>i CatPL?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -401,7 +401,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui va ser el coordinador#de la campanya contra les patents de programari#a casa nostra?</sentence>
+      <sentence>Qui va ser el coordinador<br/>de la campanya contra les patents de programari<br/>a casa nostra?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -421,7 +421,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui va ser el fundador de la#Free Software Foundation?</sentence>
+      <sentence>Qui va ser el fundador de la<br/>Free Software Foundation?</sentence>
       <author>rcarreras</author>
       <comments>RMS: Richard M. Stallman</comments>
       <answers>
@@ -471,7 +471,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin desenvolupador català de GNOME#treballa per a Nokia a Finlàndia?</sentence>
+      <sentence>Quin desenvolupador català de GNOME<br/>treballa per a Nokia a Finlàndia?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -551,7 +551,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diu la conferència anual#d'OpenOffice.org?</sentence>
+      <sentence>Com es diu la conferència anual<br/>d'OpenOffice.org?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -561,7 +561,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diu la conferència anual#de Gnome?</sentence>
+      <sentence>Com es diu la conferència anual<br/>de Gnome?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -571,7 +571,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diu la conferència anual#de KDE?</sentence>
+      <sentence>Com es diu la conferència anual<br/>de KDE?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -581,7 +581,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diu el grup de programadors#en Perl que es reuneix els dijous?</sentence>
+      <sentence>Com es diu el grup de programadors<br/>en Perl que es reuneix els dijous?</sentence>
       <author>rcarreras</author>
       <comments></comments>
       <answers>
@@ -591,7 +591,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui és el responsable#de Goodbye-Microsoft?</sentence>
+      <sentence>Qui és el responsable<br/>de Goodbye-Microsoft?</sentence>
       <author>rcarreras</author>
       <comments>És un programa que instal·la una Debian des d'un Windows.</comments>
       <answers>
@@ -601,7 +601,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin és l'estil de música preferit del coordinador#de la comunitat d'Ubuntu?</sentence>
+      <sentence>Quin és l'estil de música preferit del coordinador<br/>de la comunitat d'Ubuntu?</sentence>
       <author>quiron</author>
       <comments>En Jono Bacon, empleat de Canonical com a coordinador de la comunitat d'Ubuntu, és un gran amic del metal. Fins i tot té el seu propi grup!</comments>
       <answers>
@@ -611,7 +611,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin va ser el primer any que es va celebrar#el dia de la llibertat del programari?</sentence>
+      <sentence>Quin va ser el primer any que es va celebrar<br/>el dia de la llibertat del programari?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -621,7 +621,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin programa fa servir en Jordi Mas#per a traduir programari?</sentence>
+      <sentence>Quin programa fa servir en Jordi Mas<br/>per a traduir programari?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -631,7 +631,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin escriptori recomana fer#servir en Linus Torvalds?</sentence>
+      <sentence>Quin escriptori recomana fer<br/>servir en Linus Torvalds?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -651,7 +651,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui és l'únic home que ha comptat fins#a l'infinit amb tots els decimals?</sentence>
+      <sentence>Qui és l'únic home que ha comptat fins<br/>a l'infinit amb tots els decimals?</sentence>
       <author>quiron</author>
       <comments>I dos cops</comments>
       <answers>
@@ -711,7 +711,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quants euros va recaptar l'SGAE#durant l'any 2005?</sentence>
+      <sentence>Quants euros va recaptar l'SGAE<br/>durant l'any 2005?</sentence>
       <author>Carles</author>
       <comments>I això que encara no cobraven ni de bon tros tot el que cobren ara...</comments>
       <answers>
@@ -721,7 +721,7 @@
       </answers>
     </question>
     <question>
-      <sentence>L'any 1943 es creia que al món només hi havia mercat#per a...</sentence>
+      <sentence>L'any 1943 es creia que al món només hi havia mercat<br/>per a...</sentence>
       <author>Nil</author>
       <comments>Thomas Watson d'IBM va dir literalment que al món hi havia mercat per a 5 ordinadors com a molt.</comments>
       <answers>
@@ -751,9 +751,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quan en Mark Shuttleworth va fer# la seva fortuna venent#una empresa de certificats digitals va anar de viatge a...</sentence>
+      <sentence>Quan en Mark Shuttleworth va fer<br/> la seva fortuna venent<br/>una empresa de certificats digitals va anar de viatge a...</sentence>
       <author>Carles</author>
-      <comments>Mark Shuttleworth va ser el 2on turista espacial#de la història de la humanitat.##Després d'aconseguir fer fortuna#va fer un viatge a l'estació espacial#internacional amb un grup de científics#per tal de realitzar investigacions amb#cèl·lules mare.</comments>
+      <comments>Mark Shuttleworth va ser el 2on turista espacial<br/>de la història de la humanitat.<br/><br/>Després d'aconseguir fer fortuna<br/>va fer un viatge a l'estació espacial<br/>internacional amb un grup de científics<br/>per tal de realitzar investigacions amb<br/>cèl·lules mare.</comments>
       <answers>
         <answer correct="true">L'espai</answer>
         <answer>L'Everest</answer>
@@ -771,9 +771,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui va dir#«Don't think free as in free beer;#think free as in free speech»?</sentence>
+      <sentence>Qui va dir<br/>«Don't think free as in free beer;<br/>think free as in free speech»?</sentence>
       <author>Carles</author>
-      <comments>Richard Stallman, que amb aquesta frase remarcava la diferència entre els dos significats de la paraula "free" en anglès: gratuït i lliure. El programari hauria de ser lliure en el sentit de llibertat, no de no costar diners.##</comments>
+      <comments>Richard Stallman, que amb aquesta frase remarcava la diferència entre els dos significats de la paraula "free" en anglès: gratuït i lliure. El programari hauria de ser lliure en el sentit de llibertat, no de no costar diners.<br/><br/></comments>
       <answers>
         <answer correct="true">Richard Stallman</answer>
         <answer>Linus Torvalds</answer>
@@ -785,13 +785,13 @@
       <author>Carles</author>
       <comments></comments>
       <answers>
-        <answer correct="true">Perquè quan van engegar el primer#ordinador dins d'una vàlvula#hi havia un insecte</answer>
+        <answer correct="true">Perquè quan van engegar el primer<br/>ordinador dins d'una vàlvula<br/>hi havia un insecte</answer>
         <answer>Perquè sona simpàtic</answer>
         <answer>En honor a John Bughs</answer>
       </answers>
     </question>
     <question>
-      <sentence>Quan en Mark Shuttleworth va venir a Catalunya,#quina televisió el va entrevistar?</sentence>
+      <sentence>Quan en Mark Shuttleworth va venir a Catalunya,<br/>quina televisió el va entrevistar?</sentence>
       <author>Carles</author>
       <comments></comments>
       <answers>
@@ -831,7 +831,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Hans Reiser, creador del sistema#d'arxius ReiserFS, va ser acusat#l'any 2006 de...</sentence>
+      <sentence>Hans Reiser, creador del sistema<br/>d'arxius ReiserFS, va ser acusat<br/>l'any 2006 de...</sentence>
       <author>lluisanunez</author>
       <comments>http://en.wikipedia.org/wiki/Hans_Reiser</comments>
       <answers>
@@ -851,7 +851,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Què va patentar Microsoft#el 24 de setembre del 1996?</sentence>
+      <sentence>Què va patentar Microsoft<br/>el 24 de setembre del 1996?</sentence>
       <author>Carles</author>
       <comments>Patent number: 5559943</comments>
       <answers>
@@ -861,7 +861,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diu l'associació d'usuaris de GNU/Linux#més important de Catalunya?</sentence>
+      <sentence>Com es diu l'associació d'usuaris de GNU/Linux<br/>més important de Catalunya?</sentence>
       <author>Carles</author>
       <comments>I el seu Secretari Rafael Carreras és un dels fundadors del LoCo Català d'Ubuntaires.</comments>
       <answers>
@@ -881,7 +881,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Què es va celebrar el passat abril al#centre cultural de Les Corts?</sentence>
+      <sentence>Què es va celebrar el passat abril al<br/>centre cultural de Les Corts?</sentence>
       <author>papapep</author>
       <comments></comments>
       <answers>
@@ -891,7 +891,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Qui ha estat l'abanderat de la traducció#del programari al català?</sentence>
+      <sentence>Qui ha estat l'abanderat de la traducció<br/>del programari al català?</sentence>
       <author>Carles</author>
       <comments>Per cert... el clic dels nois de redmon ja s'ha convertit en clico.</comments>
       <answers>

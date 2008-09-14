@@ -60,7 +60,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Què et respon l'aptitude quan li#preguntes per les vaques? (aptitude moo)</sentence>
+      <sentence>Què et respon l'aptitude quan li<br/>preguntes per les vaques? (aptitude moo)</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -70,7 +70,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin programa de MSDOS va inspirar#les comandes de l'editor de text joe?</sentence>
+      <sentence>Quin programa de MSDOS va inspirar<br/>les comandes de l'editor de text joe?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -90,7 +90,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Dins de l'estructura de directoris POSIX, quin directori#està previst per a les configuracions?</sentence>
+      <sentence>Dins de l'estructura de directoris POSIX, quin directori<br/>està previst per a les configuracions?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -270,7 +270,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quan els traductors del#KDE ens parlen de la mida#de la caixa es refereixen a...</sentence>
+      <sentence>Quan els traductors del<br/>KDE ens parlen de la mida<br/>de la caixa es refereixen a...</sentence>
       <author>carles</author>
       <comments>Això que ens pot semblar estrany no és un error de traducció. Ve de la mida de les caselles (caixes) que s'usaven en les impremptes, on les majúscules eren més grans.</comments>
       <answers>
@@ -290,7 +290,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin animal d'aquests és germà,#però no amic, de la guineu de foc?</sentence>
+      <sentence>Quin animal d'aquests és germà,<br/>però no amic, de la guineu de foc?</sentence>
       <author>carles</author>
       <comments>L'any 2006 l'equip de Debian va fer una separació de la versió oficial del firefox, perquè l'equip de treball de mozilla no incorporava les seves actualitzacions a temps. En fer-ho van haver de canviar el logotip per un altre, ja que estava protegit per drets d'autor.</comments>
       <answers>
@@ -310,7 +310,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina de les següents aplicacions#NO es troba als repositoris d'Ubuntu?</sentence>
+      <sentence>Quina de les següents aplicacions<br/>NO es troba als repositoris d'Ubuntu?</sentence>
       <author>lluisanunez</author>
       <comments>Kalcul és una aplicació de KDE, Karacul és inventat. </comments>
       <answers>
@@ -342,7 +342,7 @@
     <question>
       <sentence>El millor editor lliure d'imatges matricials és...</sentence>
       <author>Nil</author>
-      <comments>El gimp és un programa de# tractament d'imatges,#el gaim de missatgeria instantània# (ara rebatejat com a pidgin)#i el gcc el compilador de# llenguatge c i c++. </comments>
+      <comments>El gimp és un programa de<br/> tractament d'imatges,<br/>el gaim de missatgeria instantània<br/> (ara rebatejat com a pidgin)<br/>i el gcc el compilador de<br/> llenguatge c i c++. </comments>
       <answers>
         <answer correct="true">gimp</answer>
         <answer>gaim</answer>
@@ -350,7 +350,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests programes#no és un programa de disseny#vectorial?</sentence>
+      <sentence>Quin d'aquests programes<br/>no és un programa de disseny<br/>vectorial?</sentence>
       <author>carles</author>
       <comments>És un programa d'autoedició.</comments>
       <answers>
@@ -360,9 +360,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests programes no és#per a manipular so?</sentence>
+      <sentence>Quin d'aquests programes no és<br/>per a manipular so?</sentence>
       <author>carles</author>
-      <comments>L'Ardour és un gran programa multipista per treballar en temps real.#L'Audacity és un gran programa per tractar so.#I el Blender és un programa boníssim de disseny gràfic en 3D.</comments>
+      <comments>L'Ardour és un gran programa multipista per treballar en temps real.<br/>L'Audacity és un gran programa per tractar so.<br/>I el Blender és un programa boníssim de disseny gràfic en 3D.</comments>
       <answers>
         <answer correct="true">Blender</answer>
         <answer>Ardour</answer>
@@ -370,7 +370,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com ho farien 4 usuaris de hasefrog#per engegar un cotxe que no funciona?</sentence>
+      <sentence>Com ho farien 4 usuaris de hasefrog<br/>per engegar un cotxe que no funciona?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -380,7 +380,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests programes#que permeten accés remot#no és als repositoris d'Ubuntu?</sentence>
+      <sentence>Quin d'aquests programes<br/>que permeten accés remot<br/>no és als repositoris d'Ubuntu?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -390,7 +390,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diu el gestor de fitxers#del KDE 4?</sentence>
+      <sentence>Com es diu el gestor de fitxers<br/>del KDE 4?</sentence>
       <author>carles</author>
       <comments>Tot i que ja el trobem predeterminat a les darreres versions de KDE.</comments>
       <answers>
@@ -400,7 +400,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests no és un#entorn Linux per a dispositius mòbils?</sentence>
+      <sentence>Quin d'aquests no és un<br/>entorn Linux per a dispositius mòbils?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -410,7 +410,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests no és un gestor de#finestres modern per a l'Ubuntu?</sentence>
+      <sentence>Quin d'aquests no és un gestor de<br/>finestres modern per a l'Ubuntu?</sentence>
       <author>carles</author>
       <comments>Evidentment l'Aero és per a l'Hasefrog Diòptries</comments>
       <answers>

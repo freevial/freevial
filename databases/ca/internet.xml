@@ -38,7 +38,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina és l'entitat encarregada de dissenyar estàndards i#recomanacions per al desenvolupament de pàgines web més coneguda?</sentence>
+      <sentence>Quina és l'entitat encarregada de dissenyar estàndards i<br/>recomanacions per al desenvolupament de pàgines web més coneguda?</sentence>
       <author>RainCT</author>
       <comments>Una de les entitats principals en aquest camp, i que ha dissenyat l'HTML i XHTML, entre d'altres, és el W3C (World Wide Web Consortium). L'OASIS és qui treballa en l'OpenDocument i Microsoft és l'empresa que s'encarrega de trencar tots els estàndards que pot.</comments>
       <answers>
@@ -78,7 +78,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Hi ha un enllaç a la wikipedia#de la unciclopedia?</sentence>
+      <sentence>Hi ha un enllaç a la wikipedia<br/>de la unciclopedia?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -88,7 +88,7 @@
       </answers>
     </question>
     <question>
-      <sentence>El fòrum de l'equip Català d'ubuntaires#el podem trobar a...</sentence>
+      <sentence>El fòrum de l'equip Català d'ubuntaires<br/>el podem trobar a...</sentence>
       <author>Carles</author>
       <comments>Concretament a http://ubuntuforums.org/forumdisplay.php?f=206. També podem anar-hi des del portal www.ubuntu.cat.</comments>
       <answers>
@@ -108,7 +108,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Existeix una entrada explicant#la Viquipèdia a la Viquipèdia?</sentence>
+      <sentence>Existeix una entrada explicant<br/>la Viquipèdia a la Viquipèdia?</sentence>
       <author>carles</author>
       <comments>I doncs, que us pensàveu?</comments>
       <answers>
@@ -128,7 +128,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin ha estat considerat per Òmnium#Cultural el#"més gran cançoner català del món"?</sentence>
+      <sentence>Quin ha estat considerat per Òmnium<br/>Cultural el<br/>"més gran cançoner català del món"?</sentence>
       <author>carles</author>
       <comments>he he... ha estat superior a mi... ho havia de fer...</comments>
       <answers>
@@ -138,7 +138,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es coneixen popularment#a la xarxa els jocs que han deixat#de comercialitzar-se?</sentence>
+      <sentence>Com es coneixen popularment<br/>a la xarxa els jocs que han deixat<br/>de comercialitzar-se?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -158,7 +158,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina d'aquestes xarxes#no existia abans d'internet?</sentence>
+      <sentence>Quina d'aquestes xarxes<br/>no existia abans d'internet?</sentence>
       <author>carles</author>
       <comments>Compuserve va ser la primera xarxa pública mundial d'accés públic. Fidonet (anterior a compuserve) era una xarxa d'enllaços entre les anteriors BBS.</comments>
       <answers>
@@ -173,14 +173,14 @@
       <author>carles</author>
       <comments>.... sí... lamentable. Si el sistema de control de còpies DRM detecta que tens algun mitjà que permet realitzar còpies de peŀlícules o vídeos, en baixarà la qualitat perquè no ho puguis fer correctament. A més, totes aquestes comprovacions fan que l'ordinador funcioni molt més lentament.</comments>
       <answers>
-        <answer correct="true">El Microsoft Vista fa que l'ordinador#vagi malament si detecta un dispositiu#que permet copiar pel·lícules</answer>
-        <answer>Un número fa que la facturació#del telèfon d'algú altre te la cobrin a tu</answer>
-        <answer>La llet es repasteuritza segons#el número inferior del tetrabrick</answer>
+        <answer correct="true">El Microsoft Vista fa que l'ordinador<br/>vagi malament si detecta un dispositiu<br/>que permet copiar pel·lícules</answer>
+        <answer>Un número fa que la facturació<br/>del telèfon d'algú altre te la cobrin a tu</answer>
+        <answer>La llet es repasteuritza segons<br/>el número inferior del tetrabrick</answer>
       </answers>
     </question>
     
     <question>
-      <sentence>Quina d'aquestes llengües té més#presència que el català a internet?</sentence>
+      <sentence>Quina d'aquestes llengües té més<br/>presència que el català a internet?</sentence>
       <author>carles</author>
       <comments>Actualment el català és la 21ena llengua a la xarxa. Per davant del grec, hebreu, romanès, vietnamita, hongarès, islandès, eslovac i eslovè.</comments>
       <answers>
@@ -191,7 +191,7 @@
     </question>
     
     <question>
-      <sentence>L'eyeOS és un “sistema operatiu” web#desenvolupat a...</sentence>
+      <sentence>L'eyeOS és un “sistema operatiu” web<br/>desenvolupat a...</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -202,7 +202,7 @@
     </question>
 
     <question>
-      <sentence>La tecnologia que fa possible l'alimentació#automàtica de notícies web es diu...</sentence>
+      <sentence>La tecnologia que fa possible l'alimentació<br/>automàtica de notícies web es diu...</sentence>
       <author>lluisanunez</author>
       <comments></comments>
       <answers>
@@ -226,7 +226,7 @@
     <question>
       <sentence>Quantes IPs existeixen en ip4</sentence>
       <author>carles</author>
-      <comments>2^32 = 4.294.967.296##Semblaven un munt fa uns anys i#ara ja cal canviar el sistema per que s'acaben.</comments>
+      <comments>2^32 = 4.294.967.296<br/><br/>Semblaven un munt fa uns anys i<br/>ara ja cal canviar el sistema per que s'acaben.</comments>
       <answers>
         <answer correct="true">2^32</answer>
         <answer>2^16</answer>
@@ -237,7 +237,7 @@
     <question>
       <sentence>Que volen dir les sigles TCP</sentence>
       <author>carles</author>
-      <comments>Despres de localitzar-se les màquines identifica#la forma com es comuniquen aquestes entre elles.</comments>
+      <comments>Despres de localitzar-se les màquines identifica<br/>la forma com es comuniquen aquestes entre elles.</comments>
       <answers>
         <answer correct="true">Transport control protocol</answer>
         <answer>Team collated passthrough</answer>

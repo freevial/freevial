@@ -186,7 +186,7 @@
     <question>
       <sentence>Quina d'aquestes parelles NO va fer una versió d'"El fil de la notícia"?</sentence>
       <author>Carles</author>
-      <comments>Jack Lemmon i Walter Mathau - "The Front Page" (1974) # Cary Grant i Rosalind Russell - "His Girl Friday" (1940)</comments>
+      <comments>Jack Lemmon i Walter Mathau - "The Front Page" (1974) <br/> Cary Grant i Rosalind Russell - "His Girl Friday" (1940)</comments>
       <answers>
         <answer correct="true">Bud Spencer i Therence Hill</answer>
         <answer>Cary Grant i Rosalind Russell</answer>
@@ -266,7 +266,7 @@
     <question>
       <sentence>Quin d'aquests "Zorros" és el primer? </sentence>
       <author>Carles</author>
-      <comments>"The Mark of Zorro" (1920) - Douglas Fairbanks#"The Mark of Zorro" (1940) - Tyrone Power# "The Mask of Zorro" (1998) - Antonio Banderas</comments>
+      <comments>"The Mark of Zorro" (1920) - Douglas Fairbanks<br/>"The Mark of Zorro" (1940) - Tyrone Power<br/> "The Mask of Zorro" (1998) - Antonio Banderas</comments>
       <answers>
         <answer correct="true">Douglas Fairbanks</answer>
         <answer>Antonio Banderas</answer>
@@ -316,7 +316,7 @@
     <question>
       <sentence>En Johnny Deep és increïblement genial fent de pirata, però el seu pare a la ficció en realitat...</sentence>
       <author>Carles</author>
-      <comments>i és en Keith Ritchards, el guitarra dels Rolling Stones...##Espero que hagueu contestat bé, que si us enganxa en Tardà... fiu...</comments>
+      <comments>i és en Keith Ritchards, el guitarra dels Rolling Stones...<br/><br/>Espero que hagueu contestat bé, que si us enganxa en Tardà... fiu...</comments>
       <answers>
         <answer correct="true">Té una banda de Rock and roll</answer>
         <answer>Té una pizzeria</answer>
@@ -336,7 +336,7 @@
     <question>
       <sentence>Per on patrulla el detectiu Axel Foley?</sentence>
       <author>Carles</author>
-      <comments>Eddie Murphy, en el seu paper de detectiu Axel Foley,#combat el crim al barri de Beverly Hills.##És el "Superdetectiu a Hollywood"##... recordeu la musiqueta?</comments>
+      <comments>Eddie Murphy, en el seu paper de detectiu Axel Foley,<br/>combat el crim al barri de Beverly Hills.<br/><br/>És el "Superdetectiu a Hollywood"<br/><br/>... recordeu la musiqueta?</comments>
       <answers>
         <answer correct="true">Beverly Hills</answer>
         <answer>Miami Cayos</answer>
@@ -346,7 +346,7 @@
     <question>
       <sentence>Qui tenia un apartament?</sentence>
       <author>Carles</author>
-      <comments>Jack Lemmon a la peŀlícula "L'apartament"#Ara que... ben bé no sabem si era d'ell#o de tots els que se n'aprofitaven.</comments>
+      <comments>Jack Lemmon a la peŀlícula "L'apartament"<br/>Ara que... ben bé no sabem si era d'ell<br/>o de tots els que se n'aprofitaven.</comments>
       <answers>
         <answer correct="true">Jack Lemmon</answer>
         <answer>Bruce Willis</answer>
@@ -376,7 +376,7 @@
     <question>
       <sentence>Quin d'aquests actors no ha fet de James Bond?</sentence>
       <author>Carles</author>
-      <comments>En Cary Elwes broda el seu paper de Westley a "La princesa promesa"#i fa de dolent en algun capítol d'"Expedient X".</comments>
+      <comments>En Cary Elwes broda el seu paper de Westley a "La princesa promesa"<br/>i fa de dolent en algun capítol d'"Expedient X".</comments>
       <answers>
         <answer correct="true">Cary Elwes</answer>
         <answer>George Lazenby</answer>
@@ -386,7 +386,7 @@
     <question>
       <sentence>Quin director de cinema entra en un banc i en surt armat amb una escopeta?</sentence>
       <author>Carles</author>
-      <comments>El sempre crític Michael Moore en el seu documental "Bowling for Columbine".#No us el podeu perdre.</comments>
+      <comments>El sempre crític Michael Moore en el seu documental "Bowling for Columbine".<br/>No us el podeu perdre.</comments>
       <answers>
         <answer correct="true">Michael Moore</answer>
         <answer>Stanley Kubrick</answer>
@@ -396,7 +396,7 @@
     <question>
       <sentence>Quin d'aquests no és fill d'en Vito Corleone?</sentence>
       <author>Carles</author>
-      <comments>Els fills es deien:##Santino 'Sonny' Corleone#Frederico 'Fredo' Corleone#Michael Corleone#i la filla: Constanzia 'Connie' Corleone-Rizzi.</comments>
+      <comments>Els fills es deien:<br/><br/>Santino 'Sonny' Corleone<br/>Frederico 'Fredo' Corleone<br/>Michael Corleone<br/>i la filla: Constanzia 'Connie' Corleone-Rizzi.</comments>
       <answers>
         <answer correct="true">Tessio</answer>
         <answer>Michael</answer>

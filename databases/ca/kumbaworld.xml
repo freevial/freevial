@@ -27,13 +27,13 @@
     <question>
       <sentence>Quin era el so que de què ens parlaven en Paul i l'Art?</sentence>
       <author>Carles</author>
-      <comments>"The sound of silence"##
-Hello darkness, my old friend#
-I’ve come to talk with you again.#
-Because a vision softly creeping,#
-left its seeds while I was sleeping.#
-And the vision that was planted#
-In my brain still remains#
+      <comments>"The sound of silence"<br/><br/>
+Hello darkness, my old friend<br/>
+I’ve come to talk with you again.<br/>
+Because a vision softly creeping,<br/>
+left its seeds while I was sleeping.<br/>
+And the vision that was planted<br/>
+In my brain still remains<br/>
 With the Sounds of Silence.</comments>
 
       <answers>
@@ -46,7 +46,7 @@ With the Sounds of Silence.</comments>
     <question>
       <sentence>Què ens ha dit la gallineta?</sentence>
       <author>Carles</author>
-      <comments>La gallina ha dit que no,#visca la revolució.</comments>
+      <comments>La gallina ha dit que no,<br/>visca la revolució.</comments>
 
       <answers>
         <answer correct="true">No</answer>
@@ -65,13 +65,13 @@ With the Sounds of Silence.</comments>
       </answers>
     </question>
     <question>
-      <sentence>Sangtraït ens explica la història#d'un home que volia ser...</sentence>
+      <sentence>Sangtraït ens explica la història<br/>d'un home que volia ser...</sentence>
       <author>carles</author>
-      <comments>"El vol de l´home ocell"##
-#
-Aquesta és la història#d'un que volia ser ocell#volia saltar muntanyes#i amb els arbres barallar##
-#
-Sangtraït#
+      <comments>"El vol de l´home ocell"<br/><br/>
+<br/>
+Aquesta és la història<br/>d'un que volia ser ocell<br/>volia saltar muntanyes<br/>i amb els arbres barallar<br/><br/>
+<br/>
+Sangtraït<br/>
 </comments>
       <answers>
         <answer correct="true">Ocell</answer>
@@ -83,13 +83,13 @@ Sangtraït#
     </question>
 
     <question>
-      <sentence>Ara que som junts què direm,#que tu i jo sabem i sovint oblidem?</sentence>
+      <sentence>Ara que som junts què direm,<br/>que tu i jo sabem i sovint oblidem?</sentence>
       <author>carles</author>
-      <comments>"Diguem no"##
-Ara que som junts#diré el que tu i jo sabem#i que sovint oblidem:##
-Hem vist la por#ser llei per a tots.#Hem vist la sang#que sols fa sang#ser llei del món##
-No,#jo dic no,#diguem no.#Nosaltres no som d'eixe món. ##
-#
+      <comments>"Diguem no"<br/><br/>
+Ara que som junts<br/>diré el que tu i jo sabem<br/>i que sovint oblidem:<br/><br/>
+Hem vist la por<br/>ser llei per a tots.<br/>Hem vist la sang<br/>que sols fa sang<br/>ser llei del món<br/><br/>
+No,<br/>jo dic no,<br/>diguem no.<br/>Nosaltres no som d'eixe món. <br/><br/>
+<br/>
 Raimon</comments>
       <answers>
         <answer correct="true">No</answer>
@@ -98,15 +98,15 @@ Raimon</comments>
       </answers>
     </question>
     <question>
-      <sentence>Qui buida sa filosa com una#aranya d'art subtil?</sentence>
+      <sentence>Qui buida sa filosa com una<br/>aranya d'art subtil?</sentence>
       <author>carles</author>
-      <comments>"La Balanguera"##
-#
-La Balanguera misteriosa#com una aranya d'art subtil,#buida que buida sa filosa,#de nostra vida treu lo fil.#Com una parca bé cavil.la#teixint la tela per demà.##
-La Balanguera fila, fila,#la Balanguera filarà.##
-#
-Poema de Joan Alcover#
-Música d'Amadeu Vives#</comments>
+      <comments>"La Balanguera"<br/><br/>
+<br/>
+La Balanguera misteriosa<br/>com una aranya d'art subtil,<br/>buida que buida sa filosa,<br/>de nostra vida treu lo fil.<br/>Com una parca bé cavil.la<br/>teixint la tela per demà.<br/><br/>
+La Balanguera fila, fila,<br/>la Balanguera filarà.<br/><br/>
+<br/>
+Poema de Joan Alcover<br/>
+Música d'Amadeu Vives<br/></comments>
       <answers>
         <answer correct="true">La Balanguera</answer>
         <answer>La fil·loxera</answer>
@@ -115,13 +115,13 @@ Música d'Amadeu Vives#</comments>
     </question>
 
     <question>
-      <sentence>Quants vents ens calen#per obrir pas?</sentence>
+      <sentence>Quants vents ens calen<br/>per obrir pas?</sentence>
       <author>carles</author>
-      <comments>Quatre vents##
-#
-A voltes sóc supervivent#dels mapes dels meus sentiments,#i en la tristesa#del llarg camí#sent les ferides del meu temps.##
-Perdut a les nits d’occident#he après a viure resistent,#i a les mans porte#cinc continents#i al puny tancat un món sencer##
-#
+      <comments>Quatre vents<br/><br/>
+<br/>
+A voltes sóc supervivent<br/>dels mapes dels meus sentiments,<br/>i en la tristesa<br/>del llarg camí<br/>sent les ferides del meu temps.<br/><br/>
+Perdut a les nits d’occident<br/>he après a viure resistent,<br/>i a les mans porte<br/>cinc continents<br/>i al puny tancat un món sencer<br/><br/>
+<br/>
 Obrint pas</comments>
       <answers>
         <answer correct="true">Quatre</answer>
@@ -131,13 +131,13 @@ Obrint pas</comments>
     </question>
 
     <question>
-      <sentence>Si parlem de les hores passades,#de l'alegria que fas reviure al meu cor#i de les cançons cantades, parlem de... </sentence>
+      <sentence>Si parlem de les hores passades,<br/>de l'alegria que fas reviure al meu cor<br/>i de les cançons cantades, parlem de... </sentence>
       <author>carles</author>
-      <comments>"Vella xiruca"##
-#
-Vella xiruca, quantes hores passades,#quanta alegria fa reviure el meu cor,#quantes cançons al teu bon pas foren cantades,#no en resta cap record##
-#
-Pujant les muntanyes blanques de neu,#fent ruta vers el cel blau,#m´has fet descobrir la joia del bon Déu#i assaborir la pau#</comments>
+      <comments>"Vella xiruca"<br/><br/>
+<br/>
+Vella xiruca, quantes hores passades,<br/>quanta alegria fa reviure el meu cor,<br/>quantes cançons al teu bon pas foren cantades,<br/>no en resta cap record<br/><br/>
+<br/>
+Pujant les muntanyes blanques de neu,<br/>fent ruta vers el cel blau,<br/>m´has fet descobrir la joia del bon Déu<br/>i assaborir la pau<br/></comments>
 
       <answers>
         <answer correct="true">La vella xiruca</answer>
@@ -147,17 +147,17 @@ Pujant les muntanyes blanques de neu,#fent ruta vers el cel blau,#m´has fet des
     </question>
 
     <question>
-      <sentence>Quin grup van formar: Titot, Carles Belda,#Marcel Casellas, David Rosell, Joan Reig#i Pep Toni Rubio?</sentence>
+      <sentence>Quin grup van formar: Titot, Carles Belda,<br/>Marcel Casellas, David Rosell, Joan Reig<br/>i Pep Toni Rubio?</sentence>
       <author>carles</author>
-      <comments>Mesclat és un grup de música català que fusiona la música tradicional amb el rock i que aglutina músics de diverses formacions d'arreu del país:#
-#
-    * Carles Belda (Pomada) – acordió diatònic i veu#
-    * Marcel Casellas (La Principal de la Nit) – baix i cors#
-    * David Rosell (Dept.) – guitarra i veu#
-    * Joan Reig (Els Pets) – bateria i cors#
-    * Francesc Ribera "Titot" (Brams) – veu#
-    * Pep Toni Rubio (Música Nostra) – flabiol i tamborino, grall i cors#
-#
+      <comments>Mesclat és un grup de música català que fusiona la música tradicional amb el rock i que aglutina músics de diverses formacions d'arreu del país:<br/>
+<br/>
+    * Carles Belda (Pomada) – acordió diatònic i veu<br/>
+    * Marcel Casellas (La Principal de la Nit) – baix i cors<br/>
+    * David Rosell (Dept.) – guitarra i veu<br/>
+    * Joan Reig (Els Pets) – bateria i cors<br/>
+    * Francesc Ribera "Titot" (Brams) – veu<br/>
+    * Pep Toni Rubio (Música Nostra) – flabiol i tamborino, grall i cors<br/>
+<br/>
 </comments>
       <answers>
         <answer correct="true">Mesclat</answer>
@@ -167,12 +167,12 @@ Pujant les muntanyes blanques de neu,#fent ruta vers el cel blau,#m´has fet des
     </question>
 
     <question>
-      <sentence>En quina cançó N'gai N'gai recomanava agafar#la guitarra?</sentence>
+      <sentence>En quina cançó N'gai N'gai recomanava agafar<br/>la guitarra?</sentence>
       <author>carles</author>
-      <comments>"Pol Petit"##
-#
-Ei Pol petit agafa la guitarra cada nit#surt al carrer i canta una cançó#Canta ben fort i digues la veritat sense cap por#Ei Pol petit també cantaré jo.##
-##
+      <comments>"Pol Petit"<br/><br/>
+<br/>
+Ei Pol petit agafa la guitarra cada nit<br/>surt al carrer i canta una cançó<br/>Canta ben fort i digues la veritat sense cap por<br/>Ei Pol petit també cantaré jo.<br/><br/>
+<br/><br/>
 N'gai N'gai</comments>
 
       <answers>
@@ -196,18 +196,18 @@ N'gai N'gai</comments>
     </question>
 
     <question>
-      <sentence>Com saluden al començar#un concert els Pets?</sentence>
+      <sentence>Com saluden al començar<br/>un concert els Pets?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
-        <answer correct="true">Som els pets de Constantí#i visca la mare que ens va parir</answer>
+        <answer correct="true">Som els pets de Constantí<br/>i visca la mare que ens va parir</answer>
         <answer>Agafeu-vos fort que comencem</answer>
         <answer>Desperta ferro</answer>
       </answers>
     </question>
 
     <question>
-      <sentence>Com saludaven al començar#un concert els Sopa de Cabra?</sentence>
+      <sentence>Com saludaven al començar<br/>un concert els Sopa de Cabra?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -220,10 +220,10 @@ N'gai N'gai</comments>
     <question>
       <sentence>Ningú m'ho ha demanat, però...</sentence>
       <author>carles</author>
-      <comments>Bon dia##
-Bon dia,#ningú m'ho ha demanat però fa bon dia,#damunt els caps un sol ben insolent#il·lumina descarat#tot l´espectacle de la gent. ##
-#
-Els pets#</comments>
+      <comments>Bon dia<br/><br/>
+Bon dia,<br/>ningú m'ho ha demanat però fa bon dia,<br/>damunt els caps un sol ben insolent<br/>il·lumina descarat<br/>tot l´espectacle de la gent. <br/><br/>
+<br/>
+Els pets<br/></comments>
 
       <answers>
         <answer correct="true">Fa bon dia</answer>
@@ -235,11 +235,11 @@ Els pets#</comments>
     <question>
       <sentence>Els Gossos ens parlen quan ens sentim...</sentence>
       <author>carles</author>
-      <comments>Quan et sentis de marbre##
-#
-Quan la gola et cremi com un got d’aiguardent#I te'n beguis un altre i bufi el vent de ponent.#Eixuga les desgràcies millor, que em facis cas#Ja no pots deixar-ho fins demà.##
-#
-Gossos#</comments>
+      <comments>Quan et sentis de marbre<br/><br/>
+<br/>
+Quan la gola et cremi com un got d’aiguardent<br/>I te'n beguis un altre i bufi el vent de ponent.<br/>Eixuga les desgràcies millor, que em facis cas<br/>Ja no pots deixar-ho fins demà.<br/><br/>
+<br/>
+Gossos<br/></comments>
       <answers>
         <answer correct="true">De marbre</answer>
         <answer>Tristos</answer>
@@ -249,8 +249,8 @@ Gossos#</comments>
     <question>
       <sentence>Això, amic meu, tan sols ho sap...</sentence>
       <author>carles</author>
-      <comments>Això, amic meu, tan sols ho sap el vent,#escolta la resposta dins del vent. ##
-#
+      <comments>Això, amic meu, tan sols ho sap el vent,<br/>escolta la resposta dins del vent. <br/><br/>
+<br/>
 Bob Dylan</comments>
       <answers>
         <answer correct="true">El vent</answer>
@@ -259,7 +259,7 @@ Bob Dylan</comments>
       </answers>
     </question>
     <question>
-      <sentence>La Companyia Elèctrica Dharma#ens fa posar la pell de gallina amb...</sentence>
+      <sentence>La Companyia Elèctrica Dharma<br/>ens fa posar la pell de gallina amb...</sentence>
       <author>carles</author>
       <comments>L'any 1983 la Dharma va treure el seu disc "Catalluna". El tema principal és senzillament preciós.</comments>
       <answers>
@@ -269,12 +269,12 @@ Bob Dylan</comments>
       </answers>
     </question>
     <question>
-      <sentence>Després de deixar la casa#i prendre el bastó, què farem?</sentence>
+      <sentence>Després de deixar la casa<br/>i prendre el bastó, què farem?</sentence>
       <author>carles</author>
-      <comments>Arrels##
-#
-Cal que deixi la meva casa i prengui el bastó#cal que amb una esperança trenqui la tristor#faré una cabana de pedra i de fang#on la terra em doni el seu guany##
-#
+      <comments>Arrels<br/><br/>
+<br/>
+Cal que deixi la meva casa i prengui el bastó<br/>cal que amb una esperança trenqui la tristor<br/>faré una cabana de pedra i de fang<br/>on la terra em doni el seu guany<br/><br/>
+<br/>
 Esquirols</comments>
       <answers>
         <answer correct="true">Una cabana</answer>
@@ -286,16 +286,16 @@ Esquirols</comments>
       <sentence>Com es deia el cantant de Brams?</sentence>
       <author>carles</author>
       <comments>Membres de Brams
-#
-    * Francesc Ribera "Titot" - Veu#
-    * Jordi Castilla - Teclats#
-    * Albert Vila - Baix#
-    * David Rosell - Guitarra i Trompeta#
-    * Santi Careta - Guitarra#
-    * Guillem Vernis - Saxo#
-    * Xevi Vila "Xef" - Bateria#
-    * Sílvia Cardona - Cors#
-#</comments>
+<br/>
+    * Francesc Ribera "Titot" - Veu<br/>
+    * Jordi Castilla - Teclats<br/>
+    * Albert Vila - Baix<br/>
+    * David Rosell - Guitarra i Trompeta<br/>
+    * Santi Careta - Guitarra<br/>
+    * Guillem Vernis - Saxo<br/>
+    * Xevi Vila "Xef" - Bateria<br/>
+    * Sílvia Cardona - Cors<br/>
+<br/></comments>
       <answers>
         <answer correct="true">Titot</answer>
         <answer>Titus</answer>
@@ -305,9 +305,9 @@ Esquirols</comments>
     <question>
       <sentence>Com és el llapis d'Antònia Font?</sentence>
       <author>carles</author>
-      <comments>Wa Yeah##
-Sa zebra que passa un semàfor i com se desmunta un bidet,#Cosmètics i Margaret Astor, ja sé com s´escriu Juliette!!!#Jo cant sa rosa i es cactus i moltes més coses també,#Un llapis d´Ikea, un pistatxo, wa yeah!##
-#
+      <comments>Wa Yeah<br/><br/>
+Sa zebra que passa un semàfor i com se desmunta un bidet,<br/>Cosmètics i Margaret Astor, ja sé com s´escriu Juliette!!!<br/>Jo cant sa rosa i es cactus i moltes més coses també,<br/>Un llapis d´Ikea, un pistatxo, wa yeah!<br/><br/>
+<br/>
 Antònia Font</comments>
       <answers>
         <answer correct="true">D'Ikea</answer>
@@ -316,7 +316,7 @@ Antònia Font</comments>
       </answers>
     </question>
     <question>
-      <sentence>En quin d'aquest grups es va quedar#el baixista de Sopa de Cabra?</sentence>
+      <sentence>En quin d'aquest grups es va quedar<br/>el baixista de Sopa de Cabra?</sentence>
       <author>carles</author>
       <comments>El grup Kabul Babà, on hi ha Jaume Soler "Peck" (guitarra després de la mort de Ninyín) i Francesc "Cuco" Lisicic (baix). Josep Bosch (bateria) també va formar part d'aquest grup durant l'enregistrament del seu primer disc ("Club") i la gira posterior (font: viquipèdia).</comments>
       <answers>
@@ -328,11 +328,11 @@ Antònia Font</comments>
     <question>
       <sentence>Qui ens explicava la trista vida d'un gat?</sentence>
       <author>carles</author>
-      <comments>"La vida d'un gat"##
-#
-El seu pare era un vell gat gordo i coix#i sa mare una gata de pagès#i ell va néixer una nit sota la pluja#però sa mare morí al part#i el seu pare d´un infart#Però sort que era un gat#i tenia set vides##
-#
-Albert Pla#</comments>
+      <comments>"La vida d'un gat"<br/><br/>
+<br/>
+El seu pare era un vell gat gordo i coix<br/>i sa mare una gata de pagès<br/>i ell va néixer una nit sota la pluja<br/>però sa mare morí al part<br/>i el seu pare d´un infart<br/>Però sort que era un gat<br/>i tenia set vides<br/><br/>
+<br/>
+Albert Pla<br/></comments>
       <answers>
         <answer correct="true">Albert Pla</answer>
         <answer>Joan Manuel Serrat</answer>
@@ -342,8 +342,8 @@ Albert Pla#</comments>
     <question>
       <sentence>On et duré si fa mal temps?</sentence>
       <author>carles</author>
-      <comments>De tot cor##
-Jo et duré a casa si fa mal temps#Jo t’empararé si un cas tens por#Jo te cuidaré si estàs malalta#De tot cor, de tot cor##
+      <comments>De tot cor<br/><br/>
+Jo et duré a casa si fa mal temps<br/>Jo t’empararé si un cas tens por<br/>Jo te cuidaré si estàs malalta<br/>De tot cor, de tot cor<br/><br/>
 Tomeu Penya</comments>
       <answers>
         <answer correct="true">A casa</answer>
@@ -354,7 +354,7 @@ Tomeu Penya</comments>
     <question>
       <sentence>Què vol fer la Trinca?</sentence>
       <author>carles</author>
-      <comments>Au vinga, vinga, vinga !#Arriba la Trinca, Trinca, Trinca#per salvar la humanitat.#Hem inventat una medecina,#que qui la pren ja està curat.##
+      <comments>Au vinga, vinga, vinga !<br/>Arriba la Trinca, Trinca, Trinca<br/>per salvar la humanitat.<br/>Hem inventat una medecina,<br/>que qui la pren ja està curat.<br/><br/>
 La Trinca </comments>
       <answers>
         <answer correct="true">Salvar la humanitat</answer>
@@ -365,7 +365,7 @@ La Trinca </comments>
     <question>
       <sentence>Com han de ser les paraules d'amor?</sentence>
       <author>carles</author>
-      <comments>Paraules d´amor senzilles i tendres.#No en sabíem més, teníem quinze anys.#No havíem tingut massa temps per aprende´n,#tot just despertàvem del son dels infants.##
+      <comments>Paraules d´amor senzilles i tendres.<br/>No en sabíem més, teníem quinze anys.<br/>No havíem tingut massa temps per aprende´n,<br/>tot just despertàvem del son dels infants.<br/><br/>
 Joan Manuel Serrat </comments>
       <answers>
         <answer correct="true">Senzilles i tendres</answer>
@@ -376,7 +376,7 @@ Joan Manuel Serrat </comments>
     <question>
       <sentence>El nom Lax'n'busto té el seu origen en...</sentence>
       <author>carles</author>
-      <comments>D'una entrevista:##Lax’n’Busto és el nom d’un antic medicament laxant. Com és que el vau triar?##Doncs estàvem diccionari en mà buscant un nom promocional pel primer concert. En Pemi Fortuny estava jugant amb una capseta petita on la seva tieta hi guardava els botons, perquè assajàvem al soterrani de casa seva. I ens va fer gràcia posar aquest nom pensant que ja el canviaríem, però s'hi ha quedat tota la vida. </comments>
+      <comments>D'una entrevista:<br/><br/>Lax’n’Busto és el nom d’un antic medicament laxant. Com és que el vau triar?<br/><br/>Doncs estàvem diccionari en mà buscant un nom promocional pel primer concert. En Pemi Fortuny estava jugant amb una capseta petita on la seva tieta hi guardava els botons, perquè assajàvem al soterrani de casa seva. I ens va fer gràcia posar aquest nom pensant que ja el canviaríem, però s'hi ha quedat tota la vida. </comments>
       <answers>
         <answer correct="true">Un medicament per anar de ventre</answer>
         <answer>Un clàssic del Rock'n'roll</answer>
@@ -384,13 +384,13 @@ Joan Manuel Serrat </comments>
       </answers>
     </question>
     <question>
-      <sentence>Si fa una nit clara i tranquil·la ...#què en farem, de les tristors?</sentence>
+      <sentence>Si fa una nit clara i tranquil·la ...<br/>què en farem, de les tristors?</sentence>
       <author>carles</author>
-      <comments>"Qualsevol nit, pot sortir el sol"##
-Fa una nit clara i tranquil.la,#hi ha la lluna que fa llum.#Els convidats van arribant i#van omplint tota la casa#de colors i de perfums. ##
-Oh ! Benvinguts! Passeu, passeu,#de les tristors en farem fum.#Que casa meva és casa vostra#si és que hi ha... cases d'algú. ##
-#
-Jaume Sisa#</comments>
+      <comments>"Qualsevol nit, pot sortir el sol"<br/><br/>
+Fa una nit clara i tranquil.la,<br/>hi ha la lluna que fa llum.<br/>Els convidats van arribant i<br/>van omplint tota la casa<br/>de colors i de perfums. <br/><br/>
+Oh ! Benvinguts! Passeu, passeu,<br/>de les tristors en farem fum.<br/>Que casa meva és casa vostra<br/>si és que hi ha... cases d'algú. <br/><br/>
+<br/>
+Jaume Sisa<br/></comments>
       <answers>
         <answer correct="true">Fum</answer>
         <answer>Alegries</answer>
@@ -400,22 +400,22 @@ Jaume Sisa#</comments>
     <question>
       <sentence>Qui va trucar de matinada?</sentence>
       <author>carles</author>
-      <comments>De matinada han trucat,#
-són al replà de l'escala#
-la mare quan surt a obrir,#
-porta la bata posada.#
-'Què volen aquesta gent#
-que truquen de matinada?'#
-#
-...#
-#
-La mare ben poc en sap#
-de totes les esperances#
-del seu fill estudiant#
-que ben compromès n'estava#
-'Què volen aquesta gent#
-que truquen de matinada?'#
-#
+      <comments>De matinada han trucat,<br/>
+són al replà de l'escala<br/>
+la mare quan surt a obrir,<br/>
+porta la bata posada.<br/>
+'Què volen aquesta gent<br/>
+que truquen de matinada?'<br/>
+<br/>
+...<br/>
+<br/>
+La mare ben poc en sap<br/>
+de totes les esperances<br/>
+del seu fill estudiant<br/>
+que ben compromès n'estava<br/>
+'Què volen aquesta gent<br/>
+que truquen de matinada?'<br/>
+<br/>
 Lluís Serrahima - Maria del Mar Bonet</comments>
       <answers>
         <answer correct="true">La policia</answer>
@@ -426,7 +426,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>Jo sóc l'artista, el cantant...</sentence>
       <author>carles</author>
-      <comments>Per tant, per tots, em vaig a presentar:#Jo ací explique a la meua manera#uns fets, un temps, una estima, una idea.#Jo sóc l´artista. El cantant. El pallasso. ##Ovidi Montllor</comments>
+      <comments>Per tant, per tots, em vaig a presentar:<br/>Jo ací explique a la meua manera<br/>uns fets, un temps, una estima, una idea.<br/>Jo sóc l´artista. El cantant. El pallasso. <br/><br/>Ovidi Montllor</comments>
       <answers>
         <answer correct="true">El pallasso</answer>
         <answer>El trobador</answer>
@@ -436,7 +436,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>Com fem caure espigues d´or,...</sentence>
       <author>carles</author>
-      <comments>"Els Segador"s## Catalunya, triomfant,#tornarà a ser rica i plena!#Endarrere aquesta gent#tan ufana i tan superba!## Bon cop de falç!#Bon cop de falç, defensors de la terra!#Bon cop de falç!## Ara és hora, segadors!#Ara és hora d'estar alerta!#Per quan vingui un altre juny#esmolem ben bé les eines!## Bon cop de falç!...## Que tremoli l´enemic#en veient la nostra ensenya:#com fem caure espigues d´or,#quan convé seguem cadenes!## Bon cop de falç!...## # Himne nacional de Catalunya</comments>
+      <comments>"Els Segador"s<br/><br/> Catalunya, triomfant,<br/>tornarà a ser rica i plena!<br/>Endarrere aquesta gent<br/>tan ufana i tan superba!<br/><br/> Bon cop de falç!<br/>Bon cop de falç, defensors de la terra!<br/>Bon cop de falç!<br/><br/> Ara és hora, segadors!<br/>Ara és hora d'estar alerta!<br/>Per quan vingui un altre juny<br/>esmolem ben bé les eines!<br/><br/> Bon cop de falç!...<br/><br/> Que tremoli l´enemic<br/>en veient la nostra ensenya:<br/>com fem caure espigues d´or,<br/>quan convé seguem cadenes!<br/><br/> Bon cop de falç!...<br/><br/> <br/> Himne nacional de Catalunya</comments>
       <answers>
         <answer correct="true">Quan convé seguem cadenes! </answer>
         <answer>La cançó de matinada</answer>
@@ -446,7 +446,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>Què va passar-li a en Pere Gallerí?</sentence>
       <author>carles</author>
-      <comments>Se´n puja dalt d´un arbre#per veure el Francolí;#les branques eren guerxes,#se´n va tombar,tombí.##que la mort,que la vi#marxant d´en Pere Gallerí#com vares tururú com vares tu morir##popular</comments>
+      <comments>Se´n puja dalt d´un arbre<br/>per veure el Francolí;<br/>les branques eren guerxes,<br/>se´n va tombar,tombí.<br/><br/>que la mort,que la vi<br/>marxant d´en Pere Gallerí<br/>com vares tururú com vares tu morir<br/><br/>popular</comments>
       <answers>
         <answer correct="true">Va morir</answer>
         <answer>Va anar a la muntanya</answer>
@@ -456,7 +456,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>Qui era l'amant de Margalida?</sentence>
       <author>carles</author>
-      <comments>No sé on ets, Margalida,#però el cant si t’arriba#pren-lo com un bes#crida el nom#del teu amant#bandera negra al cor##Joan Isaac###Salvador Puig i Antich (Barcelona, 1948-1974) fou un anarquista català, actiu durant els anys seixanta i començaments dels setanta. Va morir executat pel règim franquista després de ser jutjat per un Tribunal Militar i condemnat com a culpable de la mort del subinspector de 23 anys Anguas Barragán a Barcelona (font: viquipèdia).</comments>
+      <comments>No sé on ets, Margalida,<br/>però el cant si t’arriba<br/>pren-lo com un bes<br/>crida el nom<br/>del teu amant<br/>bandera negra al cor<br/><br/>Joan Isaac<br/><br/><br/>Salvador Puig i Antich (Barcelona, 1948-1974) fou un anarquista català, actiu durant els anys seixanta i començaments dels setanta. Va morir executat pel règim franquista després de ser jutjat per un Tribunal Militar i condemnat com a culpable de la mort del subinspector de 23 anys Anguas Barragán a Barcelona (font: viquipèdia).</comments>
       <answers>
         <answer correct="true">Salvador Puig </answer>
         <answer>Joan Serra</answer>
@@ -466,7 +466,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>Què demana Sau que li enviïs?</sentence>
       <author>carles</author>
-      <comments>Envia'm un àngel que sigui com tu.#Envia'm un àngel que s'assembli a tu.#Envia'm un àngel que em recordi a tu. ##Sau</comments>
+      <comments>Envia'm un àngel que sigui com tu.<br/>Envia'm un àngel que s'assembli a tu.<br/>Envia'm un àngel que em recordi a tu. <br/><br/>Sau</comments>
       <answers>
         <answer correct="true">Un àngel</answer>
         <answer>Un petó</answer>
@@ -476,7 +476,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>Qui és el boig de la ciutat?</sentence>
       <author>carles</author>
-      <comments>Sóc el boig de la ciutat#jo el vaig matar#l'hauré de substituir#fins que algú acabi amb mi...##Sopa de cabra</comments>
+      <comments>Sóc el boig de la ciutat<br/>jo el vaig matar<br/>l'hauré de substituir<br/>fins que algú acabi amb mi...<br/><br/>Sopa de cabra</comments>
       <answers>
         <answer correct="true">Jo</answer>
         <answer>En Joan Pera</answer>
@@ -487,7 +487,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>A Barcelona han entrat 100 persones forasteres...</sentence>
       <author>carles</author>
-      <comments>"Catalunya Comtat Gran"##Ja entraren a Barcelona#cent persones forasteres#amb el nom de segadors#perquè n'eren temps de sega.#</comments>
+      <comments>"Catalunya Comtat Gran"<br/><br/>Ja entraren a Barcelona<br/>cent persones forasteres<br/>amb el nom de segadors<br/>perquè n'eren temps de sega.<br/></comments>
       <answers>
         <answer correct="true">Els Segadors</answer>
 	        <answer>El Sometent</answer>
@@ -498,7 +498,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>No va poder resistir la temptació de fer un valset dolç al seu fill.</sentence>
       <author>carles</author>
-      <comments>"Valset" (Gavaldà)##"Nin rondinaire, petit dictador,#sempre trencant-me la son#ratolinet rinxolet i rumbós#em fas somriure amb el cor.##Em vaig prometre no fer-te cançons#per no semblar carrincló,#però no comptava amb la teva cara#de nen consentit embafat de petons.#</comments>
+      <comments>"Valset" (Gavaldà)<br/><br/>"Nin rondinaire, petit dictador,<br/>sempre trencant-me la son<br/>ratolinet rinxolet i rumbós<br/>em fas somriure amb el cor.<br/><br/>Em vaig prometre no fer-te cançons<br/>per no semblar carrincló,<br/>però no comptava amb la teva cara<br/>de nen consentit embafat de petons.<br/></comments>
       <answers>
         <answer correct="true">LLuís Gavaldà</answer>
 	        <answer>Gerard Quintana</answer>
@@ -507,9 +507,9 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     </question>
 
     <question>
-      <sentence>Companys, si sabeu on dorm la lluna blanca#digueu-li que la vull#però no puc anar a estimar-la.#Que encara hi ha combat.#</sentence>
+      <sentence>Companys, si sabeu on dorm la lluna blanca<br/>digueu-li que la vull<br/>però no puc anar a estimar-la.<br/>Que encara hi ha combat.<br/></sentence>
       <author>carles</author>
-      <comments>LLuís Llach#"Abril 74"###Companys, si sabeu on dorm la lluna blanca#digueu-li que la vull#però no puc anar a estimar-la.#Que encara hi ha combat.#...##I si un trist atzar m'atura i caic a terra#porteu tots els meus cants#i un ram de flors vermelles#a qui tant he estimat.#</comments>
+      <comments>LLuís Llach<br/>"Abril 74"<br/><br/><br/>Companys, si sabeu on dorm la lluna blanca<br/>digueu-li que la vull<br/>però no puc anar a estimar-la.<br/>Que encara hi ha combat.<br/>...<br/><br/>I si un trist atzar m'atura i caic a terra<br/>porteu tots els meus cants<br/>i un ram de flors vermelles<br/>a qui tant he estimat.<br/></comments>
       <answers>
         <answer correct="true">"Abril 74"</answer>
 	    <answer>"Agost 76"</answer>
@@ -520,7 +520,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>On va el rossinyol?</sentence>
       <author>carles</author>
-      <comments>"El rossinyol"##Populars i popularitzades dels Països Catalans##Rossinyol, que vas a França, rossinyol,#encomana'm a la mare, rossinyol,#d'un bell boscatge rossinyol#d'un vol. #</comments>
+      <comments>"El rossinyol"<br/><br/>Populars i popularitzades dels Països Catalans<br/><br/>Rossinyol, que vas a França, rossinyol,<br/>encomana'm a la mare, rossinyol,<br/>d'un bell boscatge rossinyol<br/>d'un vol. <br/></comments>
       <answers>
         <answer correct="true">A França</answer>
 	    <answer>Enlloc, fa voltes</answer>
@@ -532,7 +532,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>Qui diu "adéu, clavell morenet... adéu, estrella del dia"?</sentence>
       <author>carles</author>
-      <comments>Ho podrien dir tots, ja que són tots condemnats a mort.#Però aquestes són les paraules de la "Cançó del lladre".##La "Cançó del lladre"##Populars i popularitzades dels Països Catalans##Quan jo n'era petitet#festejava i presumia,#espardenya blanca al peu#i mocador a la falsia.#Adéu, clavell morenet!#Adéu, estrella del dia!#</comments>
+      <comments>Ho podrien dir tots, ja que són tots condemnats a mort.<br/>Però aquestes són les paraules de la "Cançó del lladre".<br/><br/>La "Cançó del lladre"<br/><br/>Populars i popularitzades dels Països Catalans<br/><br/>Quan jo n'era petitet<br/>festejava i presumia,<br/>espardenya blanca al peu<br/>i mocador a la falsia.<br/>Adéu, clavell morenet!<br/>Adéu, estrella del dia!<br/></comments>
       <answers>
         <answer correct="true">El lladre</answer>
 	    <answer>Els presos de la presó de lleida</answer>
@@ -543,7 +543,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>D'on baixa la Marieta de l'ull viu?</sentence>
       <author>carles</author>
-      <comments>Baixant de la Font del Gat#una noia, una noia;#baixant de la Font del Gat#una noia i un soldat.#Pregunteu-li com se diu,#Marieta, Marieta;#pregunteu-li com se diu;#Marieta de l'ull viu.#</comments>
+      <comments>Baixant de la Font del Gat<br/>una noia, una noia;<br/>baixant de la Font del Gat<br/>una noia i un soldat.<br/>Pregunteu-li com se diu,<br/>Marieta, Marieta;<br/>pregunteu-li com se diu;<br/>Marieta de l'ull viu.<br/></comments>
       <answers>
         <answer correct="true">De la Font del gat</answer>
 	    <answer>De Lleida</answer>
@@ -554,7 +554,7 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>Qui és la nina dels meus amors que fa estada a la platja?</sentence>
       <author>carles</author>
-      <comments>La Gavina##Oh gavina voladora#que voleies sobre el mar#i al pas del vent mar enfora#vas volant fins arribar#a la platja assolellada#platja de dolços records#on dia i nit hi fa estada#la nina dels meus amors.#</comments>
+      <comments>La Gavina<br/><br/>Oh gavina voladora<br/>que voleies sobre el mar<br/>i al pas del vent mar enfora<br/>vas volant fins arribar<br/>a la platja assolellada<br/>platja de dolços records<br/>on dia i nit hi fa estada<br/>la nina dels meus amors.<br/></comments>
       <answers>
         <answer correct="true">La gavina</answer>
 	    <answer>La Maria</answer>
@@ -565,8 +565,8 @@ Lluís Serrahima - Maria del Mar Bonet</comments>
     <question>
       <sentence>Què cerquen els vaixells de Stienkarrassi?</sentence>
       <author>carles</author>
-      <comments>Els vaixells de Stienkarrassi##Per les aigües de les illes,#per les ones de la mar#els vaixells de Stienkarrassi#van cercant la llibertat##Volga nostre, Volga nostre#que ets el riu nostre estimat#no coneixes la gran pena#que sofreixen els cosacs.##Tot guanyant la llunyania,
-per damunt l’ona flotant#els vaixells de Stienkarrassi#van cercant la llibertat.#</comments>
+      <comments>Els vaixells de Stienkarrassi<br/><br/>Per les aigües de les illes,<br/>per les ones de la mar<br/>els vaixells de Stienkarrassi<br/>van cercant la llibertat<br/><br/>Volga nostre, Volga nostre<br/>que ets el riu nostre estimat<br/>no coneixes la gran pena<br/>que sofreixen els cosacs.<br/><br/>Tot guanyant la llunyania,
+per damunt l’ona flotant<br/>els vaixells de Stienkarrassi<br/>van cercant la llibertat.<br/></comments>
       <answers>
         <answer correct="true">La llibertat</answer>
 	    <answer>L'horitzó</answer>
@@ -577,7 +577,7 @@ per damunt l’ona flotant#els vaixells de Stienkarrassi#van cercant la lliberta
     <question>
       <sentence>Quina perversió coneixem del senyor Ramon?</sentence>
       <author>carles</author>
-      <comments>El senyor Ramon#empaita les criades#el senyor Ramon#emapita tot el món.##Les pobres criades quan se'n van al llit#tururut, tururut...#Qui gemega ja ha rebut.###Una lletra forta, no?#</comments>
+      <comments>El senyor Ramon<br/>empaita les criades<br/>el senyor Ramon<br/>emapita tot el món.<br/><br/>Les pobres criades quan se'n van al llit<br/>tururut, tururut...<br/>Qui gemega ja ha rebut.<br/><br/><br/>Una lletra forta, no?<br/></comments>
       <answers>
         <answer correct="true">Empaita les criades</answer>
 	    <answer>Usa windows</answer>
@@ -588,8 +588,8 @@ per damunt l’ona flotant#els vaixells de Stienkarrassi#van cercant la lliberta
     <question>
       <sentence>Què demana la nina al seu pare dels presos de La presó de Lleida?</sentence>
       <author>carles</author>
-      <comments>La presó de Lleida##Populars i popularitzades dels Països Catalans##A la ciutat de Lleida#n'hi ha una presó;#de presos, mai n'hi manquen,#petita, bonica,#prou n'hi porta el baró.#lireta, liró.###...###Aniré al meu pare,#recaptaré el perdó.#Qui és que l'ha dictada,
-petita, bonica,#tan bonica cançó?#lireta, liró.#</comments>
+      <comments>La presó de Lleida<br/><br/>Populars i popularitzades dels Països Catalans<br/><br/>A la ciutat de Lleida<br/>n'hi ha una presó;<br/>de presos, mai n'hi manquen,<br/>petita, bonica,<br/>prou n'hi porta el baró.<br/>lireta, liró.<br/><br/><br/>...<br/><br/><br/>Aniré al meu pare,<br/>recaptaré el perdó.<br/>Qui és que l'ha dictada,
+petita, bonica,<br/>tan bonica cançó?<br/>lireta, liró.<br/></comments>
       <answers>
         <answer correct="true">L'indult</answer>
 	    <answer>Que els cremin</answer>
@@ -600,7 +600,7 @@ petita, bonica,#tan bonica cançó?#lireta, liró.#</comments>
     <question>
       <sentence>Puff era...</sentence>
       <author>carles</author>
-      <comments>"Puff, el drac màgic"##Peter Paul and Mary##Puff era un drac màgic que vivia al fons del mar#però sol s'avorria molt i sortia a jugar.##Hi havia un nen petit que se l'estimava molt,#es trobaven a la platja tot jugant de sol a sol.#Tots dos van preparar un viatge molt llarg,#volien anar a veure món tot travessant el mar.#</comments>
+      <comments>"Puff, el drac màgic"<br/><br/>Peter Paul and Mary<br/><br/>Puff era un drac màgic que vivia al fons del mar<br/>però sol s'avorria molt i sortia a jugar.<br/><br/>Hi havia un nen petit que se l'estimava molt,<br/>es trobaven a la platja tot jugant de sol a sol.<br/>Tots dos van preparar un viatge molt llarg,<br/>volien anar a veure món tot travessant el mar.<br/></comments>
       <answers>
         <answer correct="true">Un drac màgic</answer>
 	    <answer>Cansat</answer>
@@ -611,8 +611,8 @@ petita, bonica,#tan bonica cançó?#lireta, liró.#</comments>
     <question>
       <sentence>Si em dónes la mà, quan et vetllaré el son?</sentence>
       <author>carles</author>
-      <comments>"Quan el sol es pon"##Ll/M: Yarrou#Adap: J. Soler/ Xesco Boix#.3#Digue'm, per què plores, fill meu?#Jo sé què veus en els ulls de la gent#un cel de dubtes, ennegrit de pors,#però tu saps que jo estic vora teu,#vora teu.##Si em dons la mà, #jo et vetllaré el son, #blau i vermell, #
-quan el sol es pon.#</comments>
+      <comments>"Quan el sol es pon"<br/><br/>Ll/M: Yarrou<br/>Adap: J. Soler/ Xesco Boix<br/>.3<br/>Digue'm, per què plores, fill meu?<br/>Jo sé què veus en els ulls de la gent<br/>un cel de dubtes, ennegrit de pors,<br/>però tu saps que jo estic vora teu,<br/>vora teu.<br/><br/>Si em dons la mà, <br/>jo et vetllaré el son, <br/>blau i vermell, <br/>
+quan el sol es pon.<br/></comments>
       <answers>
         <answer correct="true">Quan el sol es pon</answer>
 	    <answer>Quan es fa fosc</answer>

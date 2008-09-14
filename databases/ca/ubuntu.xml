@@ -61,7 +61,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin és el servidor del canal de xat de#IRC de la comunitat catalana d'Ubuntu?</sentence>
+      <sentence>Quin és el servidor del canal de xat de<br/>IRC de la comunitat catalana d'Ubuntu?</sentence>
       <author>quiron</author>
       <comments></comments>
       <answers>
@@ -141,7 +141,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quins mesos de l'any s'alliberen les#versions noves de l'Ubuntu?</sentence>
+      <sentence>Quins mesos de l'any s'alliberen les<br/>versions noves de l'Ubuntu?</sentence>
       <author>Carles</author>
       <comments>El número de la versió correspon amb l'any i el mes (7.10=2007 octubre).</comments>
       <answers>
@@ -151,7 +151,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests formats es pot llegir#amb la instal·lació predeterminada#de l'Ubuntu?</sentence>
+      <sentence>Quin d'aquests formats es pot llegir<br/>amb la instal·lació predeterminada<br/>de l'Ubuntu?</sentence>
       <author>carles</author>
       <comments>Els formats mp3 i DVD (mpeg) són formats restrictius. L'mp3 està protegit per patents; en alguns països, no es poden ni mostrar les fonts del DVD, ja que implicaria rebentar la protecció dels DVDs. Malgrat tot, no hi ha cap problema per a fer-los servir un cop instaŀlat el sistema.</comments>
       <answers>
@@ -161,7 +161,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina d'aquestes NO és una funció#del Launchpad?</sentence>
+      <sentence>Quina d'aquestes NO és una funció<br/>del Launchpad?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -182,7 +182,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin és el malnom (nick) a l'IRC#d'en Mark Shuttleworth?</sentence>
+      <sentence>Quin és el malnom (nick) a l'IRC<br/>d'en Mark Shuttleworth?</sentence>
       <author>papapep</author>
       <comments>Self-Appointed Benevolent Dictator For Life.</comments>
       <answers>
@@ -196,15 +196,15 @@
       <author>lluisanunez</author>
       <comments>http://en.wikipedia.org/wiki/Gobuntu</comments>
       <answers>
-        <answer correct="true">Una versió d'Ubuntu amb#només programari lliure</answer>
-        <answer>Una versió d'Ubuntu amb#només Gnome</answer>
-        <answer>La distribució, basada en#Ubuntu, dels aficionats al GO</answer>
+        <answer correct="true">Una versió d'Ubuntu amb<br/>només programari lliure</answer>
+        <answer>Una versió d'Ubuntu amb<br/>només Gnome</answer>
+        <answer>La distribució, basada en<br/>Ubuntu, dels aficionats al GO</answer>
       </answers>
     </question>
 
 
     <question>
-      <sentence>En quina d'aquestes distribucions#es basa l'Ubuntu?</sentence>
+      <sentence>En quina d'aquestes distribucions<br/>es basa l'Ubuntu?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -227,7 +227,7 @@
     </question>
     
     <question>
-      <sentence>Quin d'aquests Linux NO és#una variant d'Ubuntu?</sentence>
+      <sentence>Quin d'aquests Linux NO és<br/>una variant d'Ubuntu?</sentence>
       <author>carles</author>
       <comments>LinKat és la distribució GNU/Linux del Departament d'Educació de la Generalitat de Catalunya. Es basa en la distribució Suse i el funcionament del seu programari es basa en paquets rpm.</comments>
       <answers>
@@ -257,7 +257,7 @@
       </answers>
     </question>
     <question>
-      <sentence>En quin d'aquests sistemes d'arxius no es#pot ni llegir ni escriure en Ubuntu?</sentence>
+      <sentence>En quin d'aquests sistemes d'arxius no es<br/>pot ni llegir ni escriure en Ubuntu?</sentence>
       <author>carles</author>
       <comments>Sata no és un sistema d'arxius.</comments>
       <answers>
@@ -267,7 +267,7 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin d'aquests paquets no#serveix per a instaŀlar programes?</sentence>
+      <sentence>Quin d'aquests paquets no<br/>serveix per a instaŀlar programes?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
@@ -279,7 +279,7 @@
     <question>
       <sentence>L'Ubuntu és un sistema operatiu del tipus...</sentence>
       <author>carles</author>
-      <comments>EL sistema operatiu és GNU amb Linux. Linux només n'és el nucli i n'és un component tan important com qualsevol altre.##Pel que fa a l'opció restant, encara que s'hi assembli molt, GNU/Linux no és un sistema Unix aprovat.</comments>
+      <comments>EL sistema operatiu és GNU amb Linux. Linux només n'és el nucli i n'és un component tan important com qualsevol altre.<br/><br/>Pel que fa a l'opció restant, encara que s'hi assembli molt, GNU/Linux no és un sistema Unix aprovat.</comments>
       <answers>
         <answer correct="true">GNU amb Linux</answer>
         <answer>Linux</answer>
@@ -287,13 +287,13 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina d'aquestes característiques#no inclou l'Edubuntu?</sentence>
+      <sentence>Quina d'aquestes característiques<br/>no inclou l'Edubuntu?</sentence>
       <author>carles</author>
       <comments></comments>
       <answers>
         <answer correct="true">Veure DVDs zona 2</answer>
         <answer>Gestionar horaris d'una escola</answer>
-        <answer>Iniciar ordinadors en xarxa#sense instaŀlar ni posar CDs</answer>
+        <answer>Iniciar ordinadors en xarxa<br/>sense instaŀlar ni posar CDs</answer>
       </answers>
     </question>
   </questions>

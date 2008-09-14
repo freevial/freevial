@@ -189,7 +189,7 @@
     <question>
       <sentence>Jugant a la brisca, quin és l'ordre de puntuació de les cartes?</sentence>
       <author>Carles</author>
-      <comments>L'as - 11 punts#3 - 10 punts#12 - 4 punts#11 - 3 punts#10 - 2 punts#La resta no valen res</comments>
+      <comments>L'as - 11 punts<br/>3 - 10 punts<br/>12 - 4 punts<br/>11 - 3 punts<br/>10 - 2 punts<br/>La resta no valen res</comments>
 	<media type="image">i13_1.png|i14_2.png</media>
       <answers>
         <answer correct="true">As, 3, 12, 11, 10</answer>
@@ -235,7 +235,7 @@
     </question>
 
     <question>
-      <sentence>Pedra, paper o tisores? #Si empates, perds!</sentence>
+      <sentence>Pedra, paper o tisores? <br/>Si empates, perds!</sentence>
       <author>CarlesIMarc</author>
       <comments></comments>
 	<media type="image">|i20_1.png</media>
@@ -247,7 +247,7 @@
     </question>
 
     <question>
-      <sentence>Pedra, paper o tisores? #Si empates, perds!</sentence>
+      <sentence>Pedra, paper o tisores? <br/>Si empates, perds!</sentence>
       <author>CarlesIMarc</author>
       <comments></comments>
 	<media type="image">|i20_2.png</media>
@@ -259,7 +259,7 @@
     </question>
 
     <question>
-      <sentence>Pedra, paper o tisores?#Si empates, perds!</sentence>
+      <sentence>Pedra, paper o tisores?<br/>Si empates, perds!</sentence>
       <author>CarlesIMarc</author>
       <comments></comments>
 	<media type="image">|i20_3.png</media>

@@ -26,7 +26,7 @@
   </appearance>
   <questions>
     <question>
-      <sentence>Quina diferència hi ha entre#en Dupond i en Dupont?</sentence>
+      <sentence>Quina diferència hi ha entre<br/>en Dupond i en Dupont?</sentence>
       <author>NiliMarc</author>
       <comments></comments>
       <answers>
@@ -38,7 +38,7 @@
     <question>
       <sentence>Quin és el déu de l'Obèlix?</sentence>
       <author>NiliMarc</author>
-      <comments>Astèrix el gal#</comments>
+      <comments>Astèrix el gal<br/></comments>
       <answers>
         <answer correct="true">Tutatis</answer>
         <answer>Balenus</answer>
@@ -46,9 +46,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quants dits tenen els personatges#dels Simpsons?</sentence>
+      <sentence>Quants dits tenen els personatges<br/>dels Simpsons?</sentence>
       <author>NiliMarc</author>
-      <comments>Simpsons#</comments>
+      <comments>Simpsons<br/></comments>
       <answers>
         <answer correct="true">4</answer>
         <answer>5</answer>
@@ -56,9 +56,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin és l'únic lloc del món on#hi ha un Mazinger gegant?</sentence>
+      <sentence>Quin és l'únic lloc del món on<br/>hi ha un Mazinger gegant?</sentence>
       <author>NiliMarc</author>
-      <comments>Mazinger Z#A Tarragona s'hi anava a construir una urbanització (Mas de plata) que, com a reclam turístic, tenia un Mazinger gegant, però la urbanització no es va acabar i hi va quedar el Mazinger abandonat.</comments>
+      <comments>Mazinger Z<br/>A Tarragona s'hi anava a construir una urbanització (Mas de plata) que, com a reclam turístic, tenia un Mazinger gegant, però la urbanització no es va acabar i hi va quedar el Mazinger abandonat.</comments>
       <answers>
         <answer correct="true">Tarragona</answer>
         <answer>El Japó</answer>
@@ -66,9 +66,9 @@
       </answers>
     </question>
     <question>
-      <sentence>La personalitat secreta de#l'Increïble Hulk és...</sentence>
+      <sentence>La personalitat secreta de<br/>l'Increïble Hulk és...</sentence>
       <author>NiliMarc</author>
-      <comments>L'Increïble Hulk#</comments>
+      <comments>L'Increïble Hulk<br/></comments>
       <answers>
         <answer correct="true">Bruce Banner</answer>
         <answer>Bruce Wayne</answer>
@@ -78,7 +78,7 @@
     <question>
       <sentence>Que la Yubaba mai et robi...</sentence>
       <author>NiliMarc</author>
-      <comments>El viatge de Chihiro#La Yubaba és la bruixa dolenta del viatge de Chihiro, que dóna sobrenoms als seus treballadors perquè si obliden el seu nom ja no són ningú i els pot controlar. Per això en Haku li diu a la Chihiro que mai oblidi el seu nom.</comments>
+      <comments>El viatge de Chihiro<br/>La Yubaba és la bruixa dolenta del viatge de Chihiro, que dóna sobrenoms als seus treballadors perquè si obliden el seu nom ja no són ningú i els pot controlar. Per això en Haku li diu a la Chihiro que mai oblidi el seu nom.</comments>
       <answers>
         <answer correct="true">El nom</answer>
         <answer>La voluntat</answer>
@@ -86,9 +86,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diu en Superman#al seu planeta natal?</sentence>
+      <sentence>Com es diu en Superman<br/>al seu planeta natal?</sentence>
       <author>NiliMarc</author>
-      <comments>Superman#En Superman neix a Kriptó, essent el fill de Jor-El, un eminent científic i líder polític. En Superman fou batejat amb el nom de Kal-el</comments>
+      <comments>Superman<br/>En Superman neix a Kriptó, essent el fill de Jor-El, un eminent científic i líder polític. En Superman fou batejat amb el nom de Kal-el</comments>
       <answers>
         <answer correct="true">Kal-el</answer>
         <answer>Jor-el</answer>
@@ -98,7 +98,7 @@
     <question>
       <sentence>Amb qui viu la Heidi?</sentence>
       <author>NiliMarc</author>
-      <comments>Heidi#La seva tieta aconsegueix feina i l'envia a viure amb el seu avi, que ni tan sols coneixia</comments>
+      <comments>Heidi<br/>La seva tieta aconsegueix feina i l'envia a viure amb el seu avi, que ni tan sols coneixia</comments>
       <answers>
         <answer correct="true">Amb l'avi</answer>
         <answer>Amb els pares</answer>
@@ -106,9 +106,9 @@
       </answers>
     </question>
     <question>
-      <sentence>D'on surten o van tots els#autobusos i metros del Superlópez?</sentence>
+      <sentence>D'on surten o van tots els<br/>autobusos i metros del Superlópez?</sentence>
       <author>NiliMarc</author>
-      <comments>Superlópez#</comments>
+      <comments>Superlópez<br/></comments>
       <answers>
         <answer correct="true">El Masnou</answer>
         <answer>L'Hospitalet</answer>
@@ -116,9 +116,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Què menja en Popeye#per tornar-se fort?</sentence>
+      <sentence>Què menja en Popeye<br/>per tornar-se fort?</sentence>
       <author>NiliMarc</author>
-      <comments>Popeye#Quan en Popeye necessita ser fort menja espinacs. Cal tenir en compte que durant molt de temps es va creure que els espinacs contenien molt més ferro del que en realitat tenen, perquè en una classificació havien col·locat malament la coma dels decimals.</comments>
+      <comments>Popeye<br/>Quan en Popeye necessita ser fort menja espinacs. Cal tenir en compte que durant molt de temps es va creure que els espinacs contenien molt més ferro del que en realitat tenen, perquè en una classificació havien col·locat malament la coma dels decimals.</comments>
       <answers>
         <answer correct="true">Espinacs</answer>
         <answer>Alls</answer>
@@ -126,9 +126,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin poder especial#té en Batman?</sentence>
+      <sentence>Quin poder especial<br/>té en Batman?</sentence>
       <author>NiliMarc</author>
-      <comments>Batman#L'únic poder que realment té és ser fill de papà.</comments>
+      <comments>Batman<br/>L'únic poder que realment té és ser fill de papà.</comments>
       <answers>
         <answer correct="true">Cap</answer>
         <answer>Pot volar com els ratpenats</answer>
@@ -136,9 +136,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Com es diu el planeta natal#d'en Superman?</sentence>
+      <sentence>Com es diu el planeta natal<br/>d'en Superman?</sentence>
       <author>NiliMarc</author>
-      <comments>Superman#Superman neix a Kriptó, essent el fill de Jor-El, un eminent científic i líder polític. Superman fou batejat amb el nom de Kal-el</comments>
+      <comments>Superman<br/>Superman neix a Kriptó, essent el fill de Jor-El, un eminent científic i líder polític. Superman fou batejat amb el nom de Kal-el</comments>
       <answers>
         <answer correct="true">Criptó</answer>
         <answer>Terra</answer>
@@ -146,9 +146,9 @@
       </answers>
     </question>
     <question>
-      <sentence>L'Spiderman es transforma en#superheroi després que...</sentence>
+      <sentence>L'Spiderman es transforma en<br/>superheroi després que...</sentence>
       <author>NiliMarc</author>
-      <comments>Spiderman#</comments>
+      <comments>Spiderman<br/></comments>
       <answers>
         <answer correct="true">El mossegui una aranya</answer>
         <answer>Entri en contacte amb un meteorit</answer>
@@ -168,7 +168,7 @@
     <question>
       <sentence>Quin secret té l'Arale?</sentence>
       <author>NiliMarc</author>
-      <comments>Dr.Slump#</comments>
+      <comments>Dr.Slump<br/></comments>
       <answers>
         <answer correct="true">És un robot</answer>
         <answer>És una superheroïna</answer>
@@ -178,7 +178,7 @@
     <question>
       <sentence>Què fa en López a l'oficina?</sentence>
       <author>NiliMarc</author>
-      <comments>Superlópez#La personalitat secreta d'en Superlópez és una feina molt dura.</comments>
+      <comments>Superlópez<br/>La personalitat secreta d'en Superlópez és una feina molt dura.</comments>
       <answers>
         <answer correct="true">Fa ocellets de paper</answer>
         <answer>Juga amb el boli</answer>
@@ -188,7 +188,7 @@
     <question>
       <sentence>Els “dolents” d'Evangelion són...</sentence>
       <author>NiliMarc</author>
-      <comments>Evangelion#</comments>
+      <comments>Evangelion<br/></comments>
       <answers>
         <answer correct="true">Àngels</answer>
         <answer>Dimonis</answer>
@@ -196,9 +196,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Itxigo Kurosaki és un#noi normal que...</sentence>
+      <sentence>Itxigo Kurosaki és un<br/>noi normal que...</sentence>
       <author>NiliMarc</author>
-      <comments>Bleach#Itxigo Kurosaki no és un noi de quinze anys normal i corrent... pot veure esperits i té un contacte innat amb el més enllà, del que traurà profit després de conèixer un shinigami (àngel de la mort) que li proporciona una espasa a joc amb les seves habilitats</comments>
+      <comments>Bleach<br/>Itxigo Kurosaki no és un noi de quinze anys normal i corrent... pot veure esperits i té un contacte innat amb el més enllà, del que traurà profit després de conèixer un shinigami (àngel de la mort) que li proporciona una espasa a joc amb les seves habilitats</comments>
       <answers>
         <answer correct="true">Veu fantasmes</answer>
         <answer>Lluita contra monstres</answer>
@@ -208,7 +208,7 @@
     <question>
       <sentence>Quin és el somni d'en Naruto?</sentence>
       <author>NiliMarc</author>
-      <comments>Naruto#Quan Naruto neix li segellen un monstre a dins, tot el poble li té por i per això el deixen de banda, per això en Naruto vol ser el Hokaje, el títol més important dels ninges.</comments>
+      <comments>Naruto<br/>Quan Naruto neix li segellen un monstre a dins, tot el poble li té por i per això el deixen de banda, per això en Naruto vol ser el Hokaje, el títol més important dels ninges.</comments>
       <answers>
         <answer correct="true">Convertir-se en Hokaje</answer>
         <answer>Ser el millor ninja</answer>
@@ -216,9 +216,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Què menja en Musculman#per tornar-se fort?</sentence>
+      <sentence>Què menja en Musculman<br/>per tornar-se fort?</sentence>
       <author>NiliMarc</author>
-      <comments>Musculman#</comments>
+      <comments>Musculman<br/></comments>
       <answers>
         <answer correct="true">Alls</answer>
         <answer>Cebes</answer>
@@ -226,9 +226,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Com anomenen en#Vash l'Estampida?</sentence>
+      <sentence>Com anomenen en<br/>Vash l'Estampida?</sentence>
       <author>NiliMarc</author>
-      <comments>Trigun#Després de la catastròfica arribada al planeta, i havent perdut durant el viatge la seva estimada, en Vash decideix que no permetrà que el seu germà Knives faci mal a ningú més. Però, com que ell és un alienígena molt poderós, destrueix sense voler una ciutat. Per això el seu cap passa a valdre 60.000.000.000$$ i rep un nou nom: "Tifó Humanoide".</comments>
+      <comments>Trigun<br/>Després de la catastròfica arribada al planeta, i havent perdut durant el viatge la seva estimada, en Vash decideix que no permetrà que el seu germà Knives faci mal a ningú més. Però, com que ell és un alienígena molt poderós, destrueix sense voler una ciutat. Per això el seu cap passa a valdre 60.000.000.000$$ i rep un nou nom: "Tifó Humanoide".</comments>
       <answers>
         <answer correct="true">Tifó humanoide</answer>
         <answer>L'home dels 60.000.000$$</answer>
@@ -236,9 +236,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quin problema té en Ranma#amb l'aigua?</sentence>
+      <sentence>Quin problema té en Ranma<br/>amb l'aigua?</sentence>
       <author>NiliMarc</author>
-      <comments>Ranma#En Ranma entrenava Jusenkyo per arribar a ser el millor lluitador d'arts marcials del món, allà ell i el seu pare queden maleïts perquè cauen a l'aigua i quan es mullen es transformen en noia (en Ranma) i panda (el seu pare).</comments>
+      <comments>Ranma<br/>En Ranma entrenava Jusenkyo per arribar a ser el millor lluitador d'arts marcials del món, allà ell i el seu pare queden maleïts perquè cauen a l'aigua i quan es mullen es transformen en noia (en Ranma) i panda (el seu pare).</comments>
       <answers>
         <answer correct="true">Es transforma en noia</answer>
         <answer>Es converteix en mico gegant</answer>
@@ -248,7 +248,7 @@
     <question>
       <sentence>On va néixer en Marco?</sentence>
       <author>NiliMarc</author>
-      <comments>Marco#En un poble italià, al peu de les muntanyes, hi viu el nostre amic Marco</comments>
+      <comments>Marco<br/>En un poble italià, al peu de les muntanyes, hi viu el nostre amic Marco</comments>
       <answers>
         <answer correct="true">En un poble italià</answer>
         <answer>En un poble rus</answer>
@@ -256,9 +256,9 @@
       </answers>
     </question>
     <question>
-      <sentence>De quin material està fet#el Mazinger Z?</sentence>
+      <sentence>De quin material està fet<br/>el Mazinger Z?</sentence>
       <author>NiliMarc</author>
-      <comments>Mazinger Z# El centre d'investigacions fotoatòmiques va descobrir aquest material per poder crear el robot Mazinger Z.</comments>
+      <comments>Mazinger Z<br/> El centre d'investigacions fotoatòmiques va descobrir aquest material per poder crear el robot Mazinger Z.</comments>
       <answers>
         <answer correct="true">Japànium (aliatge Z)</answer>
         <answer>Mazingànium (aliatge final)</answer>
@@ -266,9 +266,9 @@
       </answers>
     </question>
     <question>
-      <sentence>Quina és la tècnica definitiva#de la Ginger Inokuma?</sentence>
+      <sentence>Quina és la tècnica definitiva<br/>de la Ginger Inokuma?</sentence>
       <author>NiliMarc</author>
-      <comments>Cinturó Negre#La Ginger acaba quasi sempre els seus combats amb una tècnica anomenada "ippon seoi nage", que és una de les tècniques requerides per al cinturó groc. </comments>
+      <comments>Cinturó Negre<br/>La Ginger acaba quasi sempre els seus combats amb una tècnica anomenada "ippon seoi nage", que és una de les tècniques requerides per al cinturó groc. </comments>
       <answers>
         <answer correct="true">Ippon seoi nage</answer>
         <answer>L'atac d'en Kaito</answer>
@@ -278,7 +278,7 @@
     <question>
       <sentence>Què vol dir Kame en japonès?</sentence>
       <author>NiliMarc</author>
-      <comments>Bola de Drac#Follet tortuga és en la versió original Kame Sen'nin i el típic "kame hame ha" voldria dir "gran onada de corrent tortuga".</comments>
+      <comments>Bola de Drac<br/>Follet tortuga és en la versió original Kame Sen'nin i el típic "kame hame ha" voldria dir "gran onada de corrent tortuga".</comments>
       <answers>
         <answer correct="true">Tortuga</answer>
         <answer>Energia</answer>
@@ -286,9 +286,9 @@
       </answers>
     </question>
     <question>
-      <sentence>La relació entre en Kyo#i en Yuki és...</sentence>
+      <sentence>La relació entre en Kyo<br/>i en Yuki és...</sentence>
       <author>NiliMarc</author>
-      <comments>Fruits Basket#Yuki és la rata de la famílila Soma, mentre que Kyo és el Gat de la llegenda del zodíac xinès (però el gat va ser enganyat per la rata perquè no anés a la festa, i per això el gat odia tant la rata).</comments>
+      <comments>Fruits Basket<br/>Yuki és la rata de la famílila Soma, mentre que Kyo és el Gat de la llegenda del zodíac xinès (però el gat va ser enganyat per la rata perquè no anés a la festa, i per això el gat odia tant la rata).</comments>
       <answers>
         <answer correct="true">Es persegueixen com un gat i una rata</answer>
         <answer>S'odien</answer>
@@ -296,19 +296,19 @@
       </answers>
     </question>
     <question>
-      <sentence>En Mortadel·lo perd els cabells# perquè..</sentence>
+      <sentence>En Mortadel·lo perd els cabells<br/> perquè..</sentence>
       <author>NiliMarc</author>
-      <comments>Mortadel·lo i Filemó#A La història de Mortadel·lo i Filemó s'explica que quan en Mortadel·lo era un grenyes que tothom coneixia, el doctor Bacteri, que era barber, li va posar una cosa perquè no s'hagués de preocupar pels cabells mai més...</comments>
+      <comments>Mortadel·lo i Filemó<br/>A La història de Mortadel·lo i Filemó s'explica que quan en Mortadel·lo era un grenyes que tothom coneixia, el doctor Bacteri, que era barber, li va posar una cosa perquè no s'hagués de preocupar pels cabells mai més...</comments>
       <answers>
         <answer correct="true">El doctor Bacteri l'enganya</answer>
-        <answer>Es disfressa de vell i no es pot treure#la calba falsa</answer>
+        <answer>Es disfressa de vell i no es pot treure<br/>la calba falsa</answer>
         <answer>Un indi l'hi arrenca</answer>
       </answers>
     </question>
     <question>
-      <sentence>12 dels membres de la família#Soma es transformen en...</sentence>
+      <sentence>12 dels membres de la família<br/>Soma es transformen en...</sentence>
       <author>NiliMarc</author>
-      <comments>Fruits Basket#Es transformen quan es cansen massa o els toca una persona del sexe oposat que no sigui integrant de la família, per això són una família molt tancada.</comments>
+      <comments>Fruits Basket<br/>Es transformen quan es cansen massa o els toca una persona del sexe oposat que no sigui integrant de la família, per això són una família molt tancada.</comments>
       <answers>
         <answer correct="true">Els 12 animals del zodíac xinès</answer>
         <answer>Els 12 apòstols</answer>
@@ -318,7 +318,7 @@
     <question>
       <sentence>A què es dedica en Sergi Grapes?</sentence>
       <author>NiliMarc</author>
-      <comments>Sergi Grapes# Encara que estigui sempre fent invents, bestieses o dormint, el seu veritable ofici és el de repartidor de cartes.</comments>
+      <comments>Sergi Grapes<br/> Encara que estigui sempre fent invents, bestieses o dormint, el seu veritable ofici és el de repartidor de cartes.</comments>
       <answers>
         <answer correct="true">"Mindundi" d'oficina</answer>
         <answer>Jugador de futbol</answer>
@@ -326,9 +326,9 @@
       </answers>
     </question>
     <question>
-      <sentence>A quin planeta va néixer#en Cor Petit?</sentence>
+      <sentence>A quin planeta va néixer<br/>en Cor Petit?</sentence>
       <author>NiliMarc</author>
-      <comments>Bola de Drac# El Cor Petit/déu prové de Namek.</comments>
+      <comments>Bola de Drac<br/> El Cor Petit/déu prové de Namek.</comments>
       <answers>
         <answer correct="true">Namek</answer>
         <answer>La terra</answer>
@@ -338,7 +338,7 @@
     <question>
       <sentence>En Kakarot és...</sentence>
       <author>NiliMarc</author>
-      <comments>Bola de Drac Z#En Vegeta, el príncep dels superguerrers, sempre anomena en Goku Kakarot, ja que era el seu nom original al planeta Vegeta, que és on va néixer (el planeta Vegeta va ser destruït per en Frezeer).</comments>
+      <comments>Bola de Drac Z<br/>En Vegeta, el príncep dels superguerrers, sempre anomena en Goku Kakarot, ja que era el seu nom original al planeta Vegeta, que és on va néixer (el planeta Vegeta va ser destruït per en Frezeer).</comments>
       <answers>
         <answer correct="true">En Goku</answer>
         <answer>En Ràdix</answer>
@@ -346,19 +346,19 @@
       </answers>
     </question>
     <question>
-      <sentence>Les fruites del diable et donen#un poder, però..</sentence>
+      <sentence>Les fruites del diable et donen<br/>un poder, però..</sentence>
       <author>NiliMarc</author>
-      <comments>One Piece#Les fruites del diable donen els poders a tots els grans capitans pirates de la red line.</comments>
+      <comments>One Piece<br/>Les fruites del diable donen els poders a tots els grans capitans pirates de la red line.</comments>
       <answers>
         <answer correct="true">No pots nedar</answer>
-        <answer>Quan et toca la llum de la lluna#et converteixes</answer>
+        <answer>Quan et toca la llum de la lluna<br/>et converteixes</answer>
         <answer>No et pot tocar la llum del sol</answer>
       </answers>
     </question>
     <question>
-      <sentence>La mà dimoni del Sawamura#es converteix en...</sentence>
+      <sentence>La mà dimoni del Sawamura<br/>es converteix en...</sentence>
       <author>NiliMarc</author>
-      <comments>Midori No Hibi#Sawamura ha passat 17 anys i 2 mesos sense xicota, amb un rècord històric al seu institut de 20 carabasses; quan ja ho dóna tot per perdut, sent una veu femenina molt a prop del seu cap... Surt de la seva mà.</comments>
+      <comments>Midori No Hibi<br/>Sawamura ha passat 17 anys i 2 mesos sense xicota, amb un rècord històric al seu institut de 20 carabasses; quan ja ho dóna tot per perdut, sent una veu femenina molt a prop del seu cap... Surt de la seva mà.</comments>
       <answers>
         <answer correct="true">Una noia</answer>
         <answer>Una destral</answer>
@@ -368,7 +368,7 @@
     <question>
       <sentence>Monkey D.Luffy somia en...</sentence>
       <author>NiliMarc</author>
-      <comments>One Piece#Monkey D.Luffy és un noi de poble costaner, el seu somni de tota la vida ha estat ser pirata, ja que veia com els pirates amarraven la barca allí i s'ho passaven molt bé. Però després de conèixer un noi molt covard a una illa deserta controlada per una bruixa pirata, vol, a més, ser-ne el rei.</comments>
+      <comments>One Piece<br/>Monkey D.Luffy és un noi de poble costaner, el seu somni de tota la vida ha estat ser pirata, ja que veia com els pirates amarraven la barca allí i s'ho passaven molt bé. Però després de conèixer un noi molt covard a una illa deserta controlada per una bruixa pirata, vol, a més, ser-ne el rei.</comments>
       <answers>
         <answer correct="true">Ser el rei dels pirates</answer>
         <answer>Una quantitat inacabable de menjar</answer>
