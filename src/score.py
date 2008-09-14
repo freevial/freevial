@@ -34,7 +34,6 @@ from common.globals import Global
 from common.freevialglob import *
 from common.events import eventLoop, waitForMouseRelease
 from common.dialog_question import QuestionDialog
-from common.effects import BigLetter
 from endscreen import Visca
 from selcat import SelCat
 
@@ -50,7 +49,6 @@ class Score:
 		
 		self.help_overlay = createHelpScreen( 'score' )
 		self.help_on_screen = helpOnScreen( HOS_SCORE_MODE0 )
-		self.effect_mode = BigLetter()
 
 		self.background_mode = game.skin.configGet( 'background_mode')
 		
@@ -456,7 +454,6 @@ class Score:
 								2: 1,
 							}
 						mode = replaceModes[ mode ]
-						self.effect_mode.switch_mode(mode)
 
 					if event.keyUp('e') and not Global.LOCKED_MODE :
 						self.show_end_screen( startsound=True, force=True )
@@ -569,7 +566,6 @@ class Score:
 			self.help_on_screen.draw( self.game.screen, (350, 740),
 				if2(escriu, HOS_SCORE_MODEW, mode) )
 			
-			self.effect_mode.frame()
 			frate.next( self.game.screen )
 			
 			# Exchange self.game.screen buffers
