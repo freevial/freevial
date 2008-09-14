@@ -114,9 +114,9 @@ class LoadDatabase:
 		return files
 
 # Create the XML parser
-xsdxml = etree.parse( os.path.join(Global.databases[0], 'freevial-database.xsd') )
-xsd = etree.XMLSchema( xsdxml )
-parser = etree.XMLParser(remove_blank_text = True, remove_comments = True )
+xsdfile = os.path.join(Global.databases[0], 'freevial-database.xsd')
+xsd = etree.XMLSchema(etree.parse(xsdfile))
+parser = etree.XMLParser(remove_blank_text = True, remove_comments = True)
 parser.setElementClassLookup(objectify.ObjectifyElementClassLookup())
 
 def GetDatabase( xmlFile ):
@@ -216,11 +216,12 @@ def get_databases( database_num=None ):
 				try:
 					cat = GetDatabase(os.path.join(database, file))
 				except ValueError, e:
-					print u'Error with «%s»: %s' % (file, e)
-				except etree.DocumentInvalid, e:
-					_xml_error(file, e)
-				except etree.XMLSyntaxError, e:
-					_xml_error(file, e)
+					print >> sys.stderr, _(u'Error with «%s»: %s' % (file, e))
+				except (etree.DocumentInvalid, etree.XMLSyntaxError), e:
+					print '\n' + _(u'Error with «%s»: %s' % (file, e))
+					print _(u'You can get more information running the '
+						'following command:')
+					print u'\txmllint -schema %s %s' % (xsdfile, file)
 				else:
 					if len(cat) != 0:
 						Global.alldatabases.append( cat )
@@ -229,9 +230,3 @@ def get_databases( database_num=None ):
 		return Global.alldatabases[database_num]
 	else:
 		return Global.alldatabases
-
-def _xml_error( file, message ):
-	print _(u'Error with «%s»: %s' % (file, message))
-	print _(u'You can get more information running the following command:')
-	print u'\txmllint -schema %s %s' % (os.path.join(Global.databases[0],
-		'freevial-database.xsd'), file)
