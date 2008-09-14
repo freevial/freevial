@@ -1,0 +1,81 @@
+#! /usr/bin/env python2.5
+# -*- coding: utf-8 -*-
+
+#
+# Freevial
+# Game Launcher
+#
+# Copyright (C) 2007 The Freevial Team
+#
+# By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+import sys
+
+try:
+	import Tkinter
+	from Tkinter import Label, Button, N, S, E, W
+except ImportError:
+	print 'Please install python-tk.'
+	sys.exit(1)
+
+class Application(Tkinter.Frame):
+	
+	def __init__(self, master=None):
+		
+		Tkinter.Frame.__init__(self, master)
+		
+		self.parent = self.winfo_toplevel()
+		self.parent.minsize(width = 500, height = 200)
+		self.parent.resizable(width = False, height = False)
+		
+		self.grid(sticky = N+S+E+W)
+		self.makeResizable()
+		self.createWidgets()
+	
+	def makeResizable(self):
+		
+		for obj in (self.parent, self):
+			obj.rowconfigure(0, weight = 1)
+			obj.columnconfigure(0, weight = 1)
+	
+	def createWidgets(self):
+		
+		self.elements = {}
+		
+		self.elements['header'] = Label(self, text = 'Freevial')
+		self.elements['header'].grid(row = 1, column = 1, sticky = N+S+E+W)
+		
+		self.elements['txt_skin'] = Label(self, text='Heya')
+		self.elements['txt_skin'].grid(row = 2, column = 1, sticky = N+S+E+W)
+		
+		self.elements['quit'] = Button(self, text = 'Quit', command = self.quit, width = 10)
+		self.elements['quit'].grid(row = 4, column = 2, sticky = N+S+E+W)
+		
+		self.elements['start'] = Button(self, text = 'Start', command = None, width = 10)
+		self.elements['start'].grid(row = 4, column = 3)
+
+def main():
+	app = Application()
+	app.master.title('Freevial')
+	app.mainloop()
+
+if __name__ == '__main__':
+	try:
+		main()
+	except KeyboardInterrupt:
+		print 'Manual exit.'
+		sys.exit(0)
