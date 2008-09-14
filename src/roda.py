@@ -118,7 +118,7 @@ class Roda:
 		self.canviacat()
 
 		self.frate = frameRate( Global.fps_limit )
-				
+		
 		self.so_evil.stop()
 		self.so_dot.play(100)
 		

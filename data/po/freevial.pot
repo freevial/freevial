@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: freevial-dev@eurion.net\n"
-"POT-Creation-Date: 2008-09-14 20:14+0200\n"
+"POT-Creation-Date: 2008-09-14 22:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,71 +91,80 @@ msgid "show the framerate on screen"
 msgstr ""
 
 #: src/freevial.py:230
-msgid "enable D-Bus support, to interface with external applications"
+#, python-format
+msgid "set the framerate limit (default is %d)"
 msgstr ""
 
 #: src/freevial.py:235
-msgid "print information about the loaded database and exit"
+msgid "enable D-Bus support, to interface with external applications"
 msgstr ""
 
 #: src/freevial.py:240
-msgid "load all images and sounds at startup"
+msgid "print information about the loaded database and exit"
 msgstr ""
 
 #: src/freevial.py:245
+msgid "load all images and sounds at startup"
+msgstr ""
+
+#: src/freevial.py:250
 msgid "use psyco, if available (this will use more memory)"
 msgstr ""
 
-#: src/freevial.py:254
+#: src/freevial.py:259
 msgid ""
 "Error: You've indicated an incorrect language code. Valid examples are: \"ca"
 "\", \"en, de\", etc."
 msgstr ""
 
-#: src/freevial.py:257
+#: src/freevial.py:262
 #, python-format
 msgid "Selected languages: %s"
 msgstr ""
 
-#: src/freevial.py:262
+#: src/freevial.py:267
 #, python-format
 msgid "Could not find database \"%s\"..."
 msgstr ""
 
-#: src/freevial.py:277
+#: src/freevial.py:282
 msgid "Freevial - About the loaded database...\n"
 msgstr ""
 
-#: src/freevial.py:279
+#: src/freevial.py:284
 msgid "Location:"
 msgstr ""
 
-#: src/freevial.py:280
+#: src/freevial.py:285
 msgid "Amount of categories:"
 msgstr ""
 
-#: src/freevial.py:281
+#: src/freevial.py:286 src/selcat.py:198
 msgid "Amount of questions:"
 msgstr ""
 
-#: src/freevial.py:285
+#: src/freevial.py:290
 #, python-format
 msgid "%(category)s: %(num)s questions"
 msgstr ""
 
-#: src/freevial.py:320
+#: src/freevial.py:310
+msgid "You've given an incorrect value for --max-fps."
+msgstr ""
+
+#: src/freevial.py:331
 msgid "Error: Couldn't find dbus-python."
 msgstr ""
 
-#: src/freevial.py:335
+#: src/freevial.py:346
 msgid "Error: couldn't find enough categories; at least six are required."
 msgstr ""
 
-#: src/freevial.py:345
+#: src/freevial.py:356
 msgid "Warning: Could not find psyco."
 msgstr ""
 
-#: src/freevial.py:351
+#: src/freevial.py:362
 msgid "User requested interrupt."
 msgstr ""
 
@@ -197,33 +206,40 @@ msgid ""
 "expected."
 msgstr ""
 
-#: src/questions.py:154
+#: src/questions.py:153
 #, python-format
 msgid "Warning: «%s»: Found a question with less than 3 answers; ignoring it."
 msgstr ""
 
-#: src/questions.py:173
+#: src/questions.py:172
 #, python-format
 msgid "Warning: «%s»: Found a question without any correct answer; ignoring it."
 msgstr ""
 
-#: src/questions.py:190
-#, python-format
-msgid "Warning: «%s»: Found a question with incorrect"
-msgstr ""
-
-#: src/questions.py:211
+#: src/questions.py:204
 #, python-format
 msgid "Loading database \"%s\"..."
 msgstr ""
 
-#: src/questions.py:219 src/questions.py:222
+#: src/questions.py:212 src/questions.py:215
 #, python-format
 msgid "Error with «%(file)s»: %(error)s"
 msgstr ""
 
-#: src/questions.py:224
+#: src/questions.py:217
 msgid "You can get more information running the following command:"
+msgstr ""
+
+#: src/selcat.py:199
+msgid "Language:"
+msgstr ""
+
+#: src/selcat.py:200
+msgid "Creation date:"
+msgstr ""
+
+#: src/selcat.py:201
+msgid "Last modification:"
 msgstr ""
 
 #: src/skinner.py:58

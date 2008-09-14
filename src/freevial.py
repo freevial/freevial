@@ -164,17 +164,17 @@ optParser = OptionParser(
 	)
 optParser.add_option(
 	'-d', '--debug',
-	action='store_true', dest = 'debug',
+	action = 'store_true', dest = 'debug',
 	help = _('debug mode'),
 	)
 optParser.add_option(
 	'-f', '--fullscreen',
-	action='store_true', dest = 'fullscreen',
+	action = 'store_true', dest = 'fullscreen',
 	help = _('start in fullscreen mode'),
 	)
 optParser.add_option(
 	'-l', '--locked',
-	action='store_true', dest = 'locked',
+	action = 'store_true', dest = 'locked',
 	help = _('start game in locked mode'),
 	)
 optParser.add_option(
@@ -201,47 +201,52 @@ optParser.add_option(
 	)
 optParser.add_option(
 	'--no-sound',
-	action='store_true', dest = 'no_sound',
+	action = 'store_true', dest = 'no_sound',
 	help = _('disable sound'),
 	)
 optParser.add_option(
 	'--no-music',
-	action='store_true', dest = 'no_music',
+	action = 'store_true', dest = 'no_music',
 	help = _('disable music'),
 	)
 optParser.add_option(
 	'-m', '--mute',
-	action='store_true', dest = 'mute',
+	action = 'store_true', dest = 'mute',
 	help = _('disable all sounds and music'),
 	)
 optParser.add_option(
 	'--no-media',
-	action='store_true', dest = 'no_media',
+	action = 'store_true', dest = 'no_media',
 	help = _('disable media questions'),
 	)
 optParser.add_option(
 	'--fps',
-	action='store_true', dest = 'fps',
+	action = 'store_true', dest = 'fps',
 	help = _('show the framerate on screen'),
 	)
 optParser.add_option(
+	'--max-fps',
+	dest = 'max_fps', metavar = 'NUM',
+	help = _('set the framerate limit (default is %d)' % Global.fps_limit),
+	)
+optParser.add_option(
 	'--dbus',
-	action='store_true', dest = 'dbus',
+	action = 'store_true', dest = 'dbus',
 	help = _('enable D-Bus support, to interface with external applications'),
 	)
 optParser.add_option(
 	'--info-db', '--info-database',
-	action='store_true', dest = 'info_db',
+	action = 'store_true', dest = 'info_db',
 	help = _('print information about the loaded database and exit'),
 	)
 optParser.add_option(
 	'--preload',
-	action='store_true', dest = 'preload',
+	action = 'store_true', dest = 'preload',
 	help = _('load all images and sounds at startup'),
 	)
 optParser.add_option(
 	'--psyco',
-	action='store_true', dest = 'psyco',
+	action = 'store_true', dest = 'psyco',
 	help = _('use psyco, if available (this will use more memory)'),
 	)
 (options, args) = optParser.parse_args()
@@ -299,6 +304,12 @@ if options.fullscreen:
 
 if options.fps:
 	Global.DISPLAY_FPS = True
+
+if options.max_fps:
+	if not options.max_fps.isdigit():
+		print >> sys.stderr, _('You\'ve given an incorrect value for --max-fps.')
+		sys.exit(1)
+	Global.fps_limit = int(options.max_fps)
 
 if options.mute:
 	Global.SOUND_MUTE = True

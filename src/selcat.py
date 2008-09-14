@@ -24,19 +24,11 @@
 #
 
 import pygame
-from math import *
+import math
 
 from common.freevialglob import *
 from common.events import eventLoop
 from questions import shuffle_databases, get_databases
-
-def FindList( llista, element ):
-	
-	for num in range( 0, len(llista) ):
-		if llista[num] == element:
-			return num
-	
-	return -1
 
 class SelCat:
 
@@ -61,7 +53,6 @@ class SelCat:
 		self.so_sub2 = game.skin.LoadSound( 'so_sub2', 'so_sub_vol' )
 
 		self.selcat_color_text = game.skin.configGetRGB( 'color_text' )
-		
 		self.selcat_color_text_nosel = game.skin.configGetRGB( 'color_text_nosel' )
 
 		self.help_overlay = createHelpScreen( 'score' )
@@ -71,45 +62,38 @@ class SelCat:
 		self.cp = get_databases()
 		self.sfc_preguntes = range(0, len(self.cp))
 
-		self.reinicia_cats()
+		self.draw_labels()
 
-		self.sfc_nombres = range(0,6)
-		for num in range(0, 6):
+		self.sfc_nombres = range(0, 6)
+		for num in xrange(0, 6):
 			self.sfc_nombres[num] = render_text( str(num+1), colorsCategories()[num], 35, 1, '', 50 )
 	
-	def reinicia_cats( self ):
-		for num in range(0, len(self.cp)):
-			color = self.selcat_color_text_nosel
+	def draw_labels( self ):
+		for num in xrange(0, len(self.cp)):
 			if num < 6:
 				color = colorsCategories()[num]
+			else:
+				color = self.selcat_color_text_nosel
 			self.sfc_preguntes[num] = render_text( self.cp[num].name, color, 27, 1, '', 220 )
 	
-	def CanviaElements( self, aposar, atreure):
+	def move_category( self, orig, dest):
 		
-		self.so_sub2.play() 
+		if orig == dest or (dest == None and orig == 0):
+			return False
 		
-		if aposar == atreure:
-			return
+		self.so_sub2.play()
 		
-		queda = self.cp[aposar]
-		self.cp[aposar] = self.cp[atreure]
-		self.cp[atreure] = queda
+		current = self.cp[orig]
+		if dest:
+			self.cp[orig] = self.cp[dest]
+			self.cp[dest] = current
+		else:
+			self.cp.remove(current)
+			self.cp.insert(0, current)
 		
 		self.darrera_info = -1
-		self.reinicia_cats( )
+		self.draw_labels()
 	
-	def PosaPrimer( self, seleccio ):
-		
-		self.so_sub2.play() 
-		if seleccio == 0:
-			return
-
-		actual = self.cp[seleccio]
-		self.cp.remove( actual )
-		self.cp.insert( 0, actual )
-		self.darrera_info = -1
-		self.reinicia_cats( )
-
 	def juguem( self, estat ):
 		# estat 0 = edició, 1/2 = veure categories
 		
@@ -121,13 +105,11 @@ class SelCat:
 		ypos = mou_fons = mostra_ajuda = mostra_credits = 0
 
 		self.darrera_info = -1
-
 		darrer_element_a_la_vista = 0
-
 		primer_element_a_la_vista = 0
 
 		self.help_on_screen.activitat()
-			
+		
 		seleccio = 0
 		
 		nelements = if2(estat == 0, len(self.cp), 6)
@@ -155,17 +137,17 @@ class SelCat:
 
 					if event.keyUp('r'):
 						shuffle_databases()
-						self.reinicia_cats( )
+						self.draw_labels( )
 						self.so_sub2.play()
 						self.darrera_info = -1
 
 					for num in range(0, 6):
 						if event.keyUp(str(num + 1), 'KP' + str(num + 1)): 	
-							self.CanviaElements( seleccio, num )
+							self.move_category( seleccio, num )
 							seleccio = num
 
 					if event.keyUp('RETURN'):										
-						self.PosaPrimer( seleccio )
+						self.move_category( seleccio, None )
 			
 			# Animem el fons
 			ypos += 1
@@ -174,7 +156,7 @@ class SelCat:
 			# Pintem el fons animat
 			mou_fons += 8
 			for num in range(0, 768):
-				self.game.screen.blit( self.fons, (cos((float(mou_fons +num)) / 100.0) * 20, num), (0, (ypos + num) % 768, 1024, 1) )
+				self.game.screen.blit( self.fons, (math.cos((float(mou_fons +num)) / 100.0) * 20, num), (0, (ypos + num) % 768, 1024, 1) )
 
 			self.game.screen.blit( self.mascara_de_fons, (0, 0) )
 			self.game.screen.blit( self.sel_quadres, (0, 0) )
@@ -193,15 +175,15 @@ class SelCat:
 					self.game.screen.blit( self.sfc_nombres[num], (120, posact-3) )
 
 				darrer_element_a_la_vista = num
-				self.game.screen.blit( self.sfc_preguntes[num], ( 160,posact ))	
+				self.game.screen.blit( self.sfc_preguntes[num], ( 160, posact ))	
 
 				posact += self.sfc_preguntes[num].get_height() + 20
 
 			if primer_element_a_la_vista > 0: 
-				self.game.screen.blit( self.sel_fletxap, ( 386,216 + 10 + cos(time.time() * 10) * 10))
+				self.game.screen.blit( self.sel_fletxap, ( 386,216 + 10 + math.cos(time.time() * 10) * 10))
 
 			if darrer_element_a_la_vista < nelements - 1:
-				self.game.screen.blit( self.sel_fletxab, ( 386, 651 - 10 - cos(time.time()*10) * 10 ))
+				self.game.screen.blit( self.sel_fletxab, ( 386, 651 - 10 - math.cos(time.time()*10) * 10 ))
 
 			if darrer_element_a_la_vista < seleccio: 	primer_element_a_la_vista += 1
 
@@ -213,10 +195,10 @@ class SelCat:
 				self.sfc_text_info0 = render_text( self.cp[seleccio].authors, self.selcat_color_text, 14, 1, '', 220 )
 				self.sfc_text_info1 = render_text( self.cp[seleccio].description, self.selcat_color_text, 16, 1, '', 350 )
 				self.sfc_text_info2 = render_text( self.cp[seleccio].players, self.selcat_color_text, 16, 1, '', 350 )
-				self.sfc_text_info3 = render_text( u'Amount of questions:' + ' ' + str(len(self.cp[seleccio])), self.selcat_color_text, 16, 1, '', 350 )
-				self.sfc_text_info4 = render_text( u'Language:' + ' ' + self.cp[num].language, self.selcat_color_text, 16, 1, '', 100 )
-				self.sfc_text_info5 = render_text( u'Creation date:' + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[num].time[0])), self.selcat_color_text, 16, 1, '', 350 )
-				self.sfc_text_info6 = render_text( u'Last modification:' + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[seleccio].time[1])), self.selcat_color_text, 16, 1, '', 350 )
+				self.sfc_text_info3 = render_text( _(u'Amount of questions:') + ' ' + str(len(self.cp[seleccio])), self.selcat_color_text, 16, 1, '', 350 )
+				self.sfc_text_info4 = render_text( _(u'Language:') + ' ' + self.cp[num].language, self.selcat_color_text, 16, 1, '', 100 )
+				self.sfc_text_info5 = render_text( _(u'Creation date:') + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[num].time[0])), self.selcat_color_text, 16, 1, '', 350 )
+				self.sfc_text_info6 = render_text( _(u'Last modification:') + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[seleccio].time[1])), self.selcat_color_text, 16, 1, '', 350 )
 
 				self.sfc_cat = load_image( self.cp[seleccio].image )
 				if seleccio < 6:

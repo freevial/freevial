@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Freevial 1.3\n"
 "Report-Msgid-Bugs-To: freevial-dev@eurion.net\n"
-"POT-Creation-Date: 2008-09-14 20:14+0200\n"
-"PO-Revision-Date: 2008-09-14 20:20+0100\n"
+"POT-Creation-Date: 2008-09-14 22:27+0200\n"
+"PO-Revision-Date: 2008-09-14 22:27+0100\n"
 "Last-Translator: Siegfried-Angel Gevatter Pujals <rainct@ubuntu.com>\n"
 "Language-Team: The Freevial Team <freevial-dev@eurion.net>\n"
 "MIME-Version: 1.0\n"
@@ -89,69 +89,79 @@ msgid "show the framerate on screen"
 msgstr "mostra el nombre d'imatges per segon a la pantalla"
 
 #: src/freevial.py:230
+#, python-format
+msgid "set the framerate limit (default is %d)"
+msgstr "especifica el nombre d'imatges per segon (el valor predeterminat és %d)"
+
+#: src/freevial.py:235
 msgid "enable D-Bus support, to interface with external applications"
 msgstr "habilita la inferfície D-Bus"
 
-#: src/freevial.py:235
+#: src/freevial.py:240
 msgid "print information about the loaded database and exit"
 msgstr "mostra informació sobre la base de dades carregada i surt"
 
-#: src/freevial.py:240
+#: src/freevial.py:245
 msgid "load all images and sounds at startup"
 msgstr "carrega totes les imatges i sons a l'inici"
 
-#: src/freevial.py:245
+#: src/freevial.py:250
 msgid "use psyco, if available (this will use more memory)"
 msgstr "utilitza psyco, si està disponible (això utilitzarà més memòria)"
 
-#: src/freevial.py:254
+#: src/freevial.py:259
 msgid "Error: You've indicated an incorrect language code. Valid examples are: \"ca\", \"en, de\", etc."
 msgstr "Error: Heu indicat un codi d'idioma invàlid. Utilitzeu valors com ara \"ca\", \"en, de\", etc."
 
-#: src/freevial.py:257
+#: src/freevial.py:262
 #, python-format
 msgid "Selected languages: %s"
 msgstr "S'ha produït un error al carregar la imatge «%s»."
 
-#: src/freevial.py:262
+#: src/freevial.py:267
 #, python-format
 msgid "Could not find database \"%s\"..."
 msgstr "No s'ha pogut trobar la base de dades «%s»..."
 
-#: src/freevial.py:277
+#: src/freevial.py:282
 msgid "Freevial - About the loaded database...\n"
 msgstr "Freevial - Quant a la base de dades carregada...\n"
 
-#: src/freevial.py:279
+#: src/freevial.py:284
 msgid "Location:"
 msgstr "Ubicació:"
 
-#: src/freevial.py:280
+#: src/freevial.py:285
 msgid "Amount of categories:"
 msgstr "Nombre de categories:"
 
-#: src/freevial.py:281
+#: src/freevial.py:286
+#: src/selcat.py:198
 msgid "Amount of questions:"
 msgstr "Nombre de preguntes:"
 
-#: src/freevial.py:285
+#: src/freevial.py:290
 #, python-format
 msgid "%(category)s: %(num)s questions"
 msgstr "%(category)s: %(num)s preguntes"
 
-#: src/freevial.py:320
+#: src/freevial.py:310
+msgid "You've given an incorrect value for --max-fps."
+msgstr "Heu indicat un valor incorrecte per a --max-fps."
+
+#: src/freevial.py:331
 msgid "Error: Couldn't find dbus-python."
 msgstr "Error: No s'ha pogut trobar el mòdul dbus-python."
 
-#: src/freevial.py:335
+#: src/freevial.py:346
 msgid "Error: couldn't find enough categories; at least six are required."
 msgstr "Error: la base de dades no té prou categories; com a mínim se'n necessiten sis."
 
-#: src/freevial.py:345
+#: src/freevial.py:356
 msgid "Warning: Could not find psyco."
 msgstr "Avís: No s'ha pogut trobar el mòdul psyco."
 
-#: src/freevial.py:351
+#: src/freevial.py:362
 msgid "User requested interrupt."
 msgstr "Interrupció soŀlicitada per l'usuari."
 
@@ -188,35 +198,42 @@ msgstr "S'esperava un directori o un fitxer comprimit."
 msgid "Warning: «%(file)s»: Database's version is %(version)s, which is not supported by the installed version of Freevial. It might not work as expected."
 msgstr "Avís: «%(file)s»: Aquesta és un fitxer de versió %(version)s, la qual no està suportada per la vostra instaŀlació de Freevial. Pot ser que hi hagi problemes."
 
-#: src/questions.py:154
+#: src/questions.py:153
 #, python-format
 msgid "Warning: «%s»: Found a question with less than 3 answers; ignoring it."
 msgstr "Avís: «%s»: S'ha trobat una pregunta amb menys de 3 respostes; ignorant-la."
 
-#: src/questions.py:173
+#: src/questions.py:172
 #, python-format
 msgid "Warning: «%s»: Found a question without any correct answer; ignoring it."
 msgstr "Avís: «%s»: S'ha trobat una pregunta sense cap resposta correcta; ignorant-la."
 
-#: src/questions.py:190
-#, python-format
-msgid "Warning: «%s»: Found a question with incorrect"
-msgstr "Avís: «%s»: S'ha trobat una pregunta sense cap resposta correcta; ignorant-la."
-
-#: src/questions.py:211
+#: src/questions.py:204
 #, python-format
 msgid "Loading database \"%s\"..."
 msgstr "S'està carregant la base de dades «%s»..."
 
-#: src/questions.py:219
-#: src/questions.py:222
+#: src/questions.py:212
+#: src/questions.py:215
 #, python-format
 msgid "Error with «%(file)s»: %(error)s"
 msgstr "Error al fitxer «%(file)s»: %(error)s"
 
-#: src/questions.py:224
+#: src/questions.py:217
 msgid "You can get more information running the following command:"
 msgstr "Podeu obtenir més informació executant la comanda següent:"
+
+#: src/selcat.py:199
+msgid "Language:"
+msgstr "Llengua:"
+
+#: src/selcat.py:200
+msgid "Creation date:"
+msgstr "Data de creació:"
+
+#: src/selcat.py:201
+msgid "Last modification:"
+msgstr "Última modificació:"
 
 #: src/skinner.py:58
 #, python-format
@@ -247,3 +264,9 @@ msgstr "No s'ha pogut trobar l'aparença «%s»."
 #, python-format
 msgid "Failed loading sound: %s"
 msgstr "S'ha produït un error al carregar el so «%s»."
+
+#~ msgid "Warning: «%s»: Found a question with incorrect"
+#~ msgstr ""
+#~ "Avís: «%s»: S'ha trobat una pregunta sense cap resposta correcta; ignorant-"
+#~ "la."
+

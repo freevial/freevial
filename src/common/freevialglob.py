@@ -634,34 +634,12 @@ class frameRate:
 
 		if surface:	
 			if self.textSurface and Global.DISPLAY_FPS:
-				# display the frame rate on the middle of the screen's bottom
-				#surface.blit( self.textSurface, ( (( Global.screen_x / 2 ) - ( self.textSurface.get_width() / 2 )), 740 ) )
 				surface.blit( self.textSurface, (250, 740 ) )
 
-			#surface.blit( self.textSurface, (250, 740 ) )
 
 def maskimage ( sourceimage, sourcemask ):
 
 	pygame.surfarray.pixels_alpha(sourceimage)[...] = pygame.surfarray.array_alpha(sourcemask)
-
-def inkimage2(surface, rgb):
-
-	# Exemple de codi de utils.py 
-
-	a = pygame.surfarray.array3d(surface)
-	mult = a[..., 0] / 255.0
-	t = a.typecode()
-	reds = (rgb[0] * mult).astype(t)
-	greens = (rgb[1] * mult).astype(t)
-	blues = (rgb[2] * mult).astype(t)
-	s = pygame.Surface(surface.get_size(), SRCALPHA, 32)
-	a = pygame.surfarray.pixels3d(s)
-	a[...,0] = reds
-	a[...,1] = greens
-	a[...,2] = blues
-	maskimage(s, surface)
-
-	return s
 
 
 def inkimage ( sourceimage, color ):

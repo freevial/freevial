@@ -113,7 +113,7 @@
     <question>
       <sentence>En el desenvolupament d'una nova versió d'Ubuntu, quin d'aquests fets té lloc abans?</sentence>
       <author>RainCT</author>
-      <comments>https://wiki.Ubuntu.com/GutsyReleaseSchedule</comments>
+      <comments>https://wiki.Ubuntu.com/ReleaseSchedule</comments>
       <answers>
         <answer correct="true">DebianImportFreeze</answer>
         <answer>KernelFreeze</answer>

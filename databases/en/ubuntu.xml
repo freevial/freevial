@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.1" id="en-ubuntu" language="en"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
+
+  <information>
+    <name>Ubuntu</name>
+    <description>Everything related to Ubuntu.</description>
+    <destination>People interested in Ubuntu and everything around it.</destination>
+    <timestamp_creation>1221418244</timestamp_creation>
+    <timestamp_modification>1221418244</timestamp_modification>
+
+	<license>GPLv3</license>
+	<url></url>
+	<contact>info@freevial.org</contact>
+
+    <authors>
+      <author>Siegfried Gevatter</author>
+    </authors>
+  </information>
+  <appearance>
+    <image>categoria2.png</image>
+    <sound>c2.ogg</sound>
+  </appearance>
+  <questions>
+    <question>
+      <sentence>What is a MOTU?</sentence>
+      <author>RainCT</author>
+      <comments>The Masters of the Universe (MOTUs) are the brave souls who
+      keep the Universe and Multiverse components of Ubuntu in shape, spending
+      their time adding, maintaining, and supporting as much as possible of the
+      software found in them.</comments>
+      <answers>
+        <answer correct="true">An Ubuntu developer</answer>
+        <answer correct="true">A Master of the Universe</answer>
+        <answer>An audio library</answer>
+        <answer>A Multitask Operated Time Unit</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Which IRC node hosts most Ubuntu related channels?</sentence>
+      <author>RainCT</author>
+      <comments>The URL irc.ubuntu.com points to irc.freenode.net.</comments>
+      <answers>
+        <answer correct="true">Freenode</answer>
+        <answer>Quakenode</answer>
+        <answer>Canonical Node</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>What's the name of Canonical's well-known Community Manager?</sentence>
+      <author>RainCT</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">Jono Bacon</answer>
+        <answer>Daniel Holbach</answer>
+        <answer>Jonathan Backer</answer>
+        <answer>Mark Shuttleworth</answer>
+        <answer>Jorge Castro</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>What do you need in order to upload packages to REVU?</sentence>
+      <author>RainCT</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">A Launchpad account and a GPG key</answer>
+        <answer>Only a GPG key</answer>
+        <answer>Only a SSH Key</answer>
+        <answer>To be manually added to its keyring</answer>
+        <answer>To be an Ubuntu Developer</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>La first LTS Ubuntu version ever published is called...</sentence>
+      <author>RainCT</author>
+      <comments>The first Long Term Support (LTS) version of Ubuntu is the 8.04, Hardy Heron.</comments>
+      <answers>
+        <answer correct="true">Hardy Heron</answer>
+        <answer>Dapper Drake</answer>
+        <answer>Feisty Fawn</answer>
+        <answer>Gutsy Gibbon</answer>
+        <answer>Intrepid Ibex</answer>
+        <answer>Grumpy Groundhog</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>Which of the following takes place first?</sentence>
+      <author>RainCT</author>
+      <comments>See https://wiki.Ubuntu.com/ReleaseSchedule</comments>
+      <answers>
+        <answer correct="true">DebianImportFreeze</answer>
+        <answer>KernelFreeze</answer>
+        <answer>FeatureFreeze</answer>
+        <answer>DocumentationStringFreeze</answer>
+        <answer>ArtworkDeadlineOne</answer>
+      </answers>
+    </question>
+    <question>
+      <sentence>What's the new command which replaces "aptitude upgrade" since Gutsy?</sentence>
+      <author>RainCT</author>
+      <comments></comments>
+      <answers>
+        <answer correct="true">aptitude safe-upgrade</answer>
+        <answer>aptitude dist-upgrade</answer>
+        <answer>aptitude all-upgrade</answer>
+        <answer>It hasn't changed</answer>
+      </answers>
+    </question>
+  </questions>
+</database>

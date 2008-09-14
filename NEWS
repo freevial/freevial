@@ -18,6 +18,7 @@ Other Improvements:
  - Decreased the time it takes for the wheel to switch to a question when
    the game is muted.
  - Added an option (--preload) to load everything at startup.
+ - Added an option (--max-fps) to change the FPS limit.
  - All .xml files are now validated using a XSD schema when they are loaded.
  - Forced line breaks in XML files are now represented by "<br/>" (LP: 179621).
  - All error messages are now written to stderr.

@@ -148,9 +148,8 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 	)
 	
 	for question in root.questions.getchildren():
-				
+		
 		if question.answers.countchildren() < 3:
-			# Support for more than 2 incorrect answers was added in 1.3
 			print >> sys.stderr, _(u'Warning: «%s»: Found a question with '
                 'less than 3 answers; ignoring it.') % xmlFile
 			continue
@@ -182,15 +181,9 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 			# and different difficulty levels
 			if hasattr(question, 'media'):
 				obj.mediatype = question.media.get('type')
-				obj.media = question.media.text
-			difficulty = question.get('difficulty')
-			if difficulty:
-				difficulty = difficulty.lower().capitalize()
-				if difficulty not in ('Easy', 'Medium', 'Hard'):
-					print _(u'Warning: «%s»: Found a question with incorrect' +\
-						u' difficulty level «%s».') % (xmlFile, difficulty)
-				else:
-					obj.difficulty = difficulty
+				obj.media = question.media.text.strip()
+			if question.get('difficulty'):
+				obj.difficulty = question.get('difficulty')
 		
 		if not (Global.DISABLE_MEDIA and obj.mediatype):
 			database.add_question(obj)
