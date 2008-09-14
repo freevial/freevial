@@ -144,7 +144,7 @@ class Preguntador:
 		self.fons = range(0, 6)
 
 		for num in range(0, 6):
-			self.fons[num] = loadImage(get_databases( num ).image)
+			self.fons[num] = load_image(get_databases( num ).image)
 			self.fons[num] =  inkimage ( self.fons[num], (i_colors_cat[num][0],i_colors_cat[num][1],i_colors_cat[num][2],128) ) 
 
 		
@@ -230,7 +230,7 @@ class Preguntador:
 			im = imagename[:p] 
 
 		if im != "":
-			self.media_image[0] = loadImage( im )
+			self.media_image[0] = load_image( im )
 
 		if self.media_image[0]	!= None:
 
@@ -240,7 +240,7 @@ class Preguntador:
 			im = imagename[p+1:]
 
 		if im != "":
-			self.media_image[1] = loadImage( im )
+			self.media_image[1] = load_image( im )
 
 		if self.media_image[1]	!= None:
 
@@ -265,7 +265,7 @@ class Preguntador:
 		self.show_answers = 0
 
 		if self.current_question["mediatype"] == "audio":
-			self.audio = loadSound( self.current_question["media"], music = 1 )
+			self.audio = load_sound( self.current_question["media"], music = 1 )
 			self.audio.play( 1 )
 
 		if self.current_question["mediatype"] == "image":
@@ -360,8 +360,8 @@ class Preguntador:
 		
 		if (self.game.teams[self.game.current_team].figureta & bitCategoria( selcat )) == 0 and self.game.skin_mostra_punt_de_categoria == True:
 			mostra_punt_de_categoria = True
-			figureta_no = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta).zfill(2) + '.png')
-			figureta_si = loadImage('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
+			figureta_no = load_image('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta).zfill(2) + '.png')
+			figureta_si = load_image('points/freevial_tot' + str( self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
 			match_point = self.game.teams[self.game.current_team].figureta | bitCategoria ( selcat ) == 63
 		
 		mostra_comentaris = False

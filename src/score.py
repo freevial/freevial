@@ -167,7 +167,7 @@ class Score:
 	def slide_loadimage( self, frate ):
 
 		ima = self.score_slide_images[ self.score_slide_current_image ]
-		self.fons = loadImage( os.path.join( self.score_slide_folder, ima  ))
+		self.fons = load_image( os.path.join( self.score_slide_folder, ima  ))
 		self.score_slide_lasttime = frate.segons()
 
 		self.score_slide_current_image += 1

@@ -45,7 +45,7 @@ def setSkinName( path ):
 		# guess that it's not a path but just the name of the wanted
 		# skin, and try to find it.
 		
-		calculated_path = firstExistingDirectory( basename,
+		calculated_path = first_existing_directory( basename,
 			# Search directories:
 			'/usr/share/games/freevial/skins/', 
 			os.path.join(os.path.expanduser('~/'), '.freevial/skins/'),
@@ -125,13 +125,13 @@ class Skin:
 		return self.configGetEval( field, domain )
 	
 	def directLoadImage( self, name ):
-
+		
 		fullname = os.path.join( Global.skin_folder, name )
 
 		if os.path.exists( fullname ):
-			retval = loadImage( fullname )
+			retval = load_image( fullname )
 		else:
-			retval = loadImage( name )
+			retval = load_image( name )
 		
 		return retval
 
@@ -146,7 +146,7 @@ class Skin:
 		pos = self.configGet( name, domain )
 		
 		for num in range(0, 64):
-			torna[num] = loadImage(pos + str( num ).zfill(digits) + '.png')
+			torna[num] = load_image(pos + str( num ).zfill(digits) + '.png')
 		
 		return torna
 	
@@ -160,12 +160,12 @@ class Skin:
 		if os.path.isfile( fullname ):
 			name = fullname
 		
-		return loadSound( name, volume = volume, music = music )
+		return load_sound( name, volume = volume, music = music )
 
 	def preguntadorCarregaFiguretes( self, joc, selcat ):
 		self.mostra_punt_de_categoria = True
-		self.figureta_no = loadImage('points/freevial_tot' + str( joc.teams[joc.current_team].figureta).zfill(2) + '.png')
-		self.figureta_si = loadImage('points/freevial_tot' + str( joc.teams[joc.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
+		self.figureta_no = load_image('points/freevial_tot' + str( joc.teams[joc.current_team].figureta).zfill(2) + '.png')
+		self.figureta_si = load_image('points/freevial_tot' + str( joc.teams[joc.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
 		self.match_point = joc.teams[joc.current_team].figureta | bitCategoria ( selcat ) == 63
 
 	def search_font_name( self, nomfont ):
@@ -184,7 +184,7 @@ class Skin:
 
 	def render_text( self, cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
 
-		nomfont == self.search_font_name( nomfont )
+		nomfont = self.search_font_name( nomfont )
 
 		return render_text( cadena, color, mida, antialias, nomfont, maxwidth )		
 

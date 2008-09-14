@@ -80,14 +80,14 @@ class Visca:
 
 		Global.game = joc
 	
-		self.fons = loadImage('score_fons.png')
+		self.fons = load_image('score_fons.png')
 		self.fons_2 = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
 
 		self.nau_sfc = []
 		for num in range( 0, 72 ): 
-			self.nau_sfc.append( loadImage('ovnis/freevial_tot' + str( num ).zfill(2) + '.png') )
+			self.nau_sfc.append( load_image('ovnis/freevial_tot' + str( num ).zfill(2) + '.png') )
 
-		self.sfc_llum = loadImage( 'llum.png' )
+		self.sfc_llum = load_image( 'llum.png' )
 
 	def juguem( self, game, nomguanya ):
 		
@@ -97,7 +97,7 @@ class Visca:
 
 		self.naus = []
 
-		loadSound( 'wonfv.ogg', volume = 0.8, music = 1).play( 1 )
+		load_sound( 'wonfv.ogg', volume = 0.8, music = 1).play( 1 )
 		
 		mou_fons = ypos = xpos = 0
 

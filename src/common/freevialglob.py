@@ -23,6 +23,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import sys
 import os.path
 import random
 import pygame
@@ -80,71 +81,58 @@ def bitCategoria ( categoria ):
 	return (0x4,0x8,0x20,0x10,0x2,0x1)[ categoria ]
 
 
-def loadImagehttp( filename ):
+def load_image_http( filename ):
 	
 	imatge = None
 		
 	try:
 		import tempfile
 		fileonly = filename[filename.rfind("/")+1:]
-	
 		tempdir = tempfile.mkdtemp()
 		tempname = os.path.join( tempdir, fileonly)
-
-
+		
 		opener = urllib.FancyURLopener({})
-
 	 	f = opener.open( filename )
-
+		
 		llegit = f.read()
 		f.close()
-
-
-		file=open ( tempname, "wb" )
-		file.write ( llegit )
+		
+		file = open( tempname, "wb" )
+		file.write( llegit )
 		file.close()
-
+		
 		imatge = pygame.image.load(tempname).convert_alpha()
 
 	except:
-
 		imatge = None
 
 	return imatge
 
 
-def loadImage( name, colorkey = None, rotate = 0 ):
+def load_image( name, colorkey = None, rotate = 0 ):
 	""" Returns a Surface of the indicated image, which is expected to be in one
 	of the images directories. """
 	
 	image = None
 	
-	if name[:7].lower() == u"http://":
-	
-		image = loadImagehttp( name )
+	if name.lower().startswith('http://'):
+		image = load_image_http( name )
 	
 	else:
 		
-		fullname = os.path.join(Global.folders['images'], name)
+		fullname = first_existing_location(name, [Global.folders['images'],
+			Global.folders['teamgotxies']] + Global.databasefolders)
 		
-		if not os.path.exists( fullname ):
-			
-			# Also try in teamgotxies path
-			fullname = os.path.join(Global.folders['teamgotxies'], name)
-			
-			if not os.path.exists( fullname ):
-				# Also try in database paths
-				for foldername in Global.databasefolders:
-					fulln = os.path.join(foldername, name)
-					if os.path.exists( fulln ):
-						fullname = fulln
-						break
-		
-		try:
-			image = pygame.image.load(fullname)
-		except pygame.error, message:
-			print _('Failed loading image: %s' % fullname)
-			raise SystemExit, message
+		if fullname:
+			try:
+				image = pygame.image.load(fullname)
+			except pygame.error:
+				print >> sys.stderr, _(u'Could not load image "%s".' % fullname)
+				raise SystemExit
+		else:
+			print >> sys.stderr, _(u'Could not find image "%s".' % name)
+			# TODO: Consider returning a placeholder image and not crashing.
+			raise SystemExit
 	
 	if image != None:
 		
@@ -162,7 +150,7 @@ def loadImage( name, colorkey = None, rotate = 0 ):
 	return image
 
 
-def loadSound( name, volume = 1.0, music = False ):
+def load_sound( name, volume = 1.0, music = False ):
 	""" Returns a sound object of the indicated audio file, which is expected to be in the sounds folder. """
 	
 	if ( Global.MUSIC_MUTE and music ) or ( Global.SOUND_MUTE and not music ) or not pygame.mixer or not pygame.mixer.get_init():
@@ -538,16 +526,22 @@ def colorsCategories():
 	return i_colors_cat
 
 
-def firstExistingDirectory(name, *dirs):
+def first_existing_directory(name, *dirs):
 	""" Searches for a directory called by the given name inside all given
 	directories, and returns the full path to the first one which exists. """
 	
 	for directory in dirs:
 		if os.path.isdir( os.path.join(directory, name) ):
 			return os.path.join(directory, name)
-	
-	return False
 
+def first_existing_location(file, directories):
+	""" Searches for a file with the indicated name in the given directories
+	and returns the path to the first place where it exist. """
+	
+	for directory in directories:
+		filename = os.path.join(directory, file)
+		if os.path.isfile(filename):
+			return filename
 
 HOS_SCORE_MODE0 = 0
 HOS_SCORE_MODE1 = 1

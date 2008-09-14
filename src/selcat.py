@@ -218,9 +218,9 @@ class SelCat:
 				self.sfc_text_info5 = render_text( u'Creation date:' + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[num].time[0])), self.selcat_color_text, 16, 1, '', 350 )
 				self.sfc_text_info6 = render_text( u'Last modification:' + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[seleccio].time[1])), self.selcat_color_text, 16, 1, '', 350 )
 
-				self.sfc_cat = loadImage( self.cp[seleccio].image )
+				self.sfc_cat = load_image( self.cp[seleccio].image )
 				if seleccio < 6:
-					sfcmask = loadImage( 'filtre_c' + str(seleccio+1) + '.png' )
+					sfcmask = load_image( 'filtre_c' + str(seleccio+1) + '.png' )
 					self.sfc_cat.blit( sfcmask, (0,0))
 				self.sfc_cat = pygame.transform.scale(self.sfc_cat, (184, 138) )
 

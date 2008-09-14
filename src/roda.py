@@ -82,7 +82,7 @@ class Roda:
 		self.paper_offsetX = game.skin.configGetInt( 'paper_offsetX' )
 
 		for num in range(0, 6):
-			self.so_cat[num] = loadSound( get_databases(num).sound, volume = 1.0 )
+			self.so_cat[num] = load_sound( get_databases(num).sound, volume = 1.0 )
 		self.canviacat()		
 		self.help_overlay = createHelpScreen( 'roda' )		
 		
