@@ -40,6 +40,7 @@ mkdir -p $TMPDIR/freevial-$VERSION
 # Copy files
 cp COPYING README NEWS freevial devscripts/distrib/* $TMPDIR/freevial-$VERSION
 cp -r data/ src/ databases/ $TMPDIR/freevial-$VERSION
+mv $TMPDIR/freevial-$VERSION/data/po $TMPDIR/freevial-$VERSION/
 
 # Copy skins
 mkdir -p $TMPDIR/freevial-$VERSION/skins/kde4

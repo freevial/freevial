@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<database version="1.0" id="esports" language="ca">
+<database version="1.0" id="ca-sports" language="ca">
   <information>
     <name>Esports</name>
     <description>Preguntes desportives </description>

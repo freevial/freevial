@@ -216,9 +216,11 @@ def get_databases( database_num=None ):
 				try:
 					cat = GetDatabase(os.path.join(database, file))
 				except ValueError, e:
-					print >> sys.stderr, _(u'Error with «%s»: %s' % (file, e))
+					print >> sys.stderr, _(u'Error with «%(file)s»: %(error)s' \
+						% {'file': file, 'error': e})
 				except (etree.DocumentInvalid, etree.XMLSyntaxError), e:
-					print '\n' + _(u'Error with «%s»: %s' % (file, e))
+					print >> sys.stderr, _(u'Error with «%(file)s»: %(error)s' \
+						% {'file': file, 'error': e})
 					print _(u'You can get more information running the '
 						'following command:')
 					print u'\txmllint -schema %s %s' % (xsdfile, file)

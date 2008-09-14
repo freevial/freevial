@@ -51,14 +51,10 @@
         <xs:attribute type="xs:string" name="id" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
-                    String to identify the category. This makes it possible
-                    to have categories formed by several files, although
-                    this has not been implemented yet.
+                    Unique string to identify this category.
                 </xs:documentation>
                 <xs:documentation xml:lang="ca">
-                    Identificador de la categoria. Serveix per a poder tenir
-                    categories formades per més d'un fitxer, però encara no
-                    s'utilitza (ni està clar que si s'utilitzarà).
+                    Un identificador únic per a la categoria.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>

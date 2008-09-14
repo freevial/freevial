@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<database version="1.0" id="ciencies" language="ca">
+<database version="1.0" id="ca-science" language="ca">
   <information>
     <name>Ciències</name>
     <description>Preguntes d'astronomia, biologia, física, quínica,... </description>
