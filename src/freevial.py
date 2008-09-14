@@ -78,7 +78,7 @@ class Freevial:
 				pygame.mixer.pre_init(44100, -16, 2, 2048)
 				pygame.mixer.init()
 			except pygame.error, message:
-				print _('Sound initialization failed. %s' % message)
+				print >> sys.stderr, _('Sound initialization failed. %s' % message)
 				Global.SOUND_MUTE = True
 				Global.MUSIC_MUTE = True
 		
@@ -178,25 +178,25 @@ optParser.add_option(
 	help = _('start game in locked mode'),
 	)
 optParser.add_option(
-	'--lang',
+	'--lang', '--languages',
 	dest = 'languages',
 	help = _('only load those questions written in the indicated language(s); '
 			'for example, "ca, en"'),
 	)
 optParser.add_option(
 	'--database',
-	dest = 'database',
+	dest = 'database', metavar='PATH',
 	help = _('path to the database file / directory you want to append to the '
 		'default database'),
 	)
 optParser.add_option(
 	'--real',
-	dest = 'real',
+	dest = 'real', metavar='PATH',
 	help = _('(do not use this)')
 	)
 optParser.add_option(
 	'--skin',
-	dest = 'skin',
+	dest = 'skin', metavar='PATH',
 	help = _('absolute path to the skin directory'),
 	)
 optParser.add_option(
@@ -245,6 +245,16 @@ optParser.add_option(
 	help = _('use psyco, if available (this will use more memory)'),
 	)
 (options, args) = optParser.parse_args()
+
+if options.languages:
+	Global.languages = [ x.strip().strip(',').lower() for x in
+		options.languages.split() if x]
+	for language in Global.languages:
+		if len(language) != 2 or not language.isalpha():
+			print >> sys.stderr, _('Error: You\'ve indicated an incorrect '
+				'language code. Valid examples are: "ca", "en, de", etc.')
+			sys.exit( 1 )
+	print _(u'Selected languages: %s' % ', '.join(Global.languages))
 
 if options.database:
 	path = os.path.abspath(os.path.join(options.real, options.database))
@@ -307,7 +317,7 @@ if options.dbus:
 	try:
 		import dbus
 	except:
-		print _('Error: Couldn\'t find dbus-python.')
+		print >> sys.stderr, _('Error: Couldn\'t find dbus-python.')
 		sys.exit( 1 )
 	else:
 		Global.DBUS = True
@@ -322,7 +332,8 @@ if options.skin in sys.argv:
 	setSkinName( path )
 
 if len(get_databases()) < 6:
-	print _('Error: couldn\'t find enough categories; at least six are required.')
+	print >> sys.stderr, _('Error: couldn\'t find enough categories; '
+		'at least six are required.')
 	sys.exit( 1 )
 
 try:

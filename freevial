@@ -38,7 +38,7 @@ def find_dir(*directories):
 	return None
 
 directory = find_dir(os.path.join(cwd, 'src'), '/usr/share/games/freevial/src',
-	'/usr/share/freevial/src')
+	'/usr/share/freevial/src', '/opt/freevial/src')
 
 if not directory:
 	print >> sys.stderr, "Couldn't determine the path to any existing Freevial installation."

@@ -39,11 +39,11 @@ def collapse(text):
 	""" Collapses all sequences of consecutive whitespace (including newlines,
 	tab, etc.) to a single space, so that no matter how the XML is formatted,
 	the text is rendered as a single line. """
-	return re.sub('\s+',' ',text).strip()
+	return re.sub('\s+', ' ', text).strip()
 
 class LoadDatabase:
 	
-	def __init__(self, directory):
+	def __init__(self, directory, languages=None):
 		""" Load a question database (directory or compressed file). """
 		
 		try:
@@ -55,12 +55,8 @@ class LoadDatabase:
 			print _('For example:') + ' freevial --database ~/questions.tar.gz'
 			sys.exit(1)
 		
-		Global.databasefolders.append ( dbpath )
-		self.files = self._xml_in_path( dbpath )
-	
-	def get(self):
-		
-		return self.files
+		self.paths = [dbpath]
+		self.files = self._xml_in_path( dbpath, languages )
 	
 	def _get_real_path(self, directory):
 		""" If the given path is directory it is returned as-is, if it's
@@ -97,29 +93,31 @@ class LoadDatabase:
 		import tempfile
 		return tempfile.mkdtemp('', 'freevial-') + '/'
 	
-	def _xml_in_path(self, directory):
+	def _xml_in_path(self, directory, languages):
+		""" Returns a list containing the names of all the XML in the given
+		directory and the indicated language subdirectories. If $languages
+		is empty, all languages will be loaded. """
 		
 		files = []
 		
-		for file in self._files_in_path(directory):
-			if file[-4:] == '.xml': files.append(file)
+		for file in os.listdir(directory):
+			path = os.path.abspath(os.path.join(directory, file))
+			if len(file) == 2 and os.path.isdir(path) and (not Global.languages
+			or file in Global.languages):
+				f = self._xml_in_path(os.path.join(directory, file), languages)
+				if f:
+					files.extend(f)
+					self.paths.append(path)
+			elif file.endswith('.xml'):
+				files.append(os.path.join(directory, file))
 		
 		return files
-	
-	def _files_in_path(self, directory):
-		""" Returns a list with the name of all the files in the given directory. """
-		
-		for files in (files for dirpath, dirnames, files in os.walk(directory)):
-			return [ '%s' % os.path.abspath(os.path.join(directory, file)) for file in files ]
 
 # Create the XML parser
 xsdxml = etree.parse( os.path.join(Global.databases[0], 'freevial-database.xsd') )
 xsd = etree.XMLSchema( xsdxml )
 parser = etree.XMLParser(remove_blank_text = True, remove_comments = True )
 parser.setElementClassLookup(objectify.ObjectifyElementClassLookup())
-
-def filtraText( text ):
-    return re.sub('\\s+', ' ', text)
 
 def GetDatabase( xmlFile ):
 	""" Returns a Database instance loaded with the questions from a XML file. """
@@ -138,11 +136,11 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 		xsd.assertValid(doc)	
 	
 	database = Database(
-		filtraText(root.information.name.text),
+		collapse(root.information.name.text),
 		root.get('language'),
-		filtraText(root.information.description.text),
-		filtraText(root.information.destination.text),
-		', '.join(["%s" % filtraText(author.text).split(',')[0] for author in root.information.authors.getchildren()]),
+		collapse(root.information.description.text),
+		collapse(root.information.destination.text),
+		', '.join(["%s" % collapse(author.text).split(',')[0] for author in root.information.authors.getchildren()]),
 		(int(root.information.timestamp_creation.text), int(root.information.timestamp_modification.text)),
 		root.appearance.image.text,
 		root.appearance.sound.text,
@@ -211,13 +209,14 @@ def get_databases( database_num=None ):
 		
 		for database in Global.databases:
 			print _(u'Loading database "%s"...' % database)
-			database_files = LoadDatabase(database).get()
+			loaded_database = LoadDatabase(database, Global.languages)
+			Global.databasefolders.extend(loaded_database.paths)
 			
-			for file in database_files:
+			for file in loaded_database.files:
 				try:
 					cat = GetDatabase(os.path.join(database, file))
-				except ValueError:
-					print u'Error with «%s».' % file
+				except ValueError, e:
+					print u'Error with «%s»: %s' % (file, e)
 				except etree.DocumentInvalid, e:
 					_xml_error(file, e)
 				except etree.XMLSyntaxError, e:
