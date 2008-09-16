@@ -64,7 +64,7 @@ class EventHandle:
 	
 	global mouseButtons
 	
-	def __init__( self, event, do_base_actions = True ):
+	def __init__(self, event, do_base_actions = True):
 		
 		if event.type == pygame.JOYBUTTONDOWN:
 			event = self._convert_joystick_event(event)
@@ -78,13 +78,13 @@ class EventHandle:
 			self.handled = True
 	
 	
-	def _convert_joystick_event( self, event ):
+	def _convert_joystick_event(self, event):
 		
-		if joystick_aliases.get( event.button ):
-			return pygame.event.Event( pygame.KEYUP, { 'key': joystick_aliases[ event.button ], 'unicode': u's', 'mod': 0 } )
+		if joystick_aliases.get(event.button):
+			return pygame.event.Event(pygame.KEYUP, { 'key': joystick_aliases[ event.button ], 'unicode': u's', 'mod': 0 })
 	
 	
-	def _getKey( self, key ):
+	def _getKey(self, key):
 		
 		if type(key) is str:
 			
@@ -96,17 +96,17 @@ class EventHandle:
 		return key
 	
 	
-	def _isKeyEvent( self ):
+	def _isKeyEvent(self):
 		
 		return hasattr(self.event, 'key') 
 	
 	
-	def _isStateEvent( self ):
+	def _isStateEvent(self):
 		
 		return hasattr(self.event, 'state') 
 	
 	
-	def _hasKey( self, keynames ):
+	def _hasKey(self, keynames):
 		
 		if not self._isKeyEvent():
 			return False
@@ -122,22 +122,22 @@ class EventHandle:
 		return False
 	
 	
-	def isKey( self, *keynames ):
+	def isKey(self, *keynames):
 		
 		return self._hasKey(keynames)
 	
 	
-	def isUp( self ):
+	def isUp(self):
 		
 		return self.event.type == pygame.KEYUP 
 	
 	
-	def isDown( self ):
+	def isDown(self):
 
 		return self.event.type == pygame.KEYDOWN
 	
 	
-	def isClick( self, request = 0 ):
+	def isClick(self, request = 0):
 		
 		if type(request) is not int:
 			request = mouseButtons[ request ]
@@ -145,7 +145,7 @@ class EventHandle:
 		return self.event.type == pygame.MOUSEBUTTONDOWN and (self.event.button == request or request == 0) 
 	
 	
-	def isRelease( self, request = 0 ):
+	def isRelease(self, request = 0):
 		
 		if type(request) is not int:
 			request = mouseButtons[ request ]
@@ -153,7 +153,7 @@ class EventHandle:
 		return self.event.type == pygame.MOUSEBUTTONUP and (self.event.button == request or request == 0) 
 		
 	
-	def keyUp( self, *keynames ):
+	def keyUp(self, *keynames):
 		
 		if not self.isUp():
 			return False
@@ -164,7 +164,7 @@ class EventHandle:
 		return self.isKey(*keynames)
 	
 	
-	def keyDown( self, *keynames ):
+	def keyDown(self, *keynames):
 		
 		if not self.isDown():
 			return False
@@ -175,33 +175,33 @@ class EventHandle:
 		return self.isKey(keynames)
 	
 	
-	def isWindowMinimize( self ):
+	def isWindowMinimize(self):
 		
 		return self._isStateEvent() and self.event.state == 6 and self.event.gain == 0
 	
-	def isWindowRestore( self ):
+	def isWindowRestore(self):
 		
 		return self._isStateEvent() and self.event.state == 4 and self.event.gain == 1
 	
-	def isWindowFocusLose( self ):
+	def isWindowFocusLose(self):
 		
 		return self._isStateEvent() and self.event.state == 1 and self.event.gain == 0
 	
-	def isWindowFocusGain( self ):
+	def isWindowFocusGain(self):
 		
 		return self._isStateEvent() and self.event.state == 1 and self.event.gain == 1
 	
-	def isQuit( self ):
+	def isQuit(self):
 		
 		return  self.event.type == pygame.QUIT
 	
 	
-	def str( self ):
+	def str(self):
 		
 		return if2(self._isKeyEvent(), printKey(self.event.key), '')
 	
 	
-	def base_actions( self ):
+	def base_actions(self):
 		
 		if self.isQuit():
 			sys.exit()
@@ -244,13 +244,13 @@ def eventLoop():
 		if eventhandle.handled: continue
 		yield eventhandle
 
-def waitForMouseRelease( ):
+def waitForMouseRelease():
 
 	while pygame.mouse.get_pressed()[0] + pygame.mouse.get_pressed()[1] + pygame.mouse.get_pressed()[2] != 0:
 		pygame.event.wait() 
 
 
-def pauseGameUntilRestore( ):
+def pauseGameUntilRestore():
 	
 	while True:
 		for event in pygame.event.get():
@@ -265,7 +265,7 @@ def pauseGameUntilRestore( ):
 aobert = atancat = adieresi = acirc = False
 accents = [u"aeiou", u"àèìòù", u"áéíóú", u"äëïöü", u"âêîôû" ]
 
-def printKey( tecla ):
+def printKey(tecla):
 	""" Translates a pygame Key object for on-game printing of it's value. """
 
 	global aobert, atancat, adieresi, acirc, accents
@@ -287,7 +287,7 @@ def printKey( tecla ):
 	if len(keyname) == 3 and keyname[:1] == '[' and keyname[2:] == ']':
 		keyname = keyname[1:2]
 	
-	pos = accents[0].find( keyname )
+	pos = accents[0].find(keyname)
 	if pos != -1:
 		if aobert: keyname = accents[1][pos]
 		if atancat: keyname = accents[2][pos]

@@ -35,37 +35,37 @@ from common.globals import Global
 Global.skin_file = default_file = os.path.join(Global.basefolder, 'skin.ini')
 Global.skin_folder = Global.basefolder
 
-def setSkinName( path ):
+def setSkinName(path):
 	
-	basename = sys.argv[sys.argv.index( '--skin' ) + 1]
+	basename = sys.argv[sys.argv.index('--skin') + 1]
 	
-	if not os.path.isdir( path ) and not '/' in basename:
+	if not os.path.isdir(path) and not '/' in basename:
 		
 		# If the directory doesn't exist, and it contains no slashes,
 		# guess that it's not a path but just the name of the wanted
 		# skin, and try to find it.
 		
-		calculated_path = first_existing_directory( basename,
+		calculated_path = first_existing_directory(basename,
 			# Search directories:
 			'/usr/share/games/freevial/skins/', 
 			os.path.join(os.path.expanduser('~/'), '.freevial/skins/'),
-			os.path.abspath('../skins/') )
+			os.path.abspath('../skins/'))
 		
 		if calculated_path:
 			path = calculated_path
 	
-	if not os.path.isdir( path ):
+	if not os.path.isdir(path):
 		print _('Could not find skin "%s".') % unicode(path, 'utf-8')
-		sys.exit( 1 )
+		sys.exit(1)
 	
 	Global.skin_folder = path
-	Global.skin_file = os.path.join( path, 'skin.ini' )
+	Global.skin_file = os.path.join(path, 'skin.ini')
 	
 	print _(u'Loading skin "%s"...' % unicode(Global.skin_folder, 'utf-8'))
 
 class Skin:
 	
-	def __init__( self ):
+	def __init__(self):
 		
 		self.defconfig = SafeConfigParser()
 		self.defconfig.readfp(open(default_file, 'r'))				
@@ -75,14 +75,14 @@ class Skin:
 		
 		Global.skin_folder = Global.skin_folder
 
-		fontname = self.search_font_name('' )
+		fontname = self.search_font_name('')
 		if fontname != '':
-			set_default_font( fontname )
+			set_default_font(fontname)
 	
-	def set_domain( self, domain ):
+	def set_domain(self, domain):
 		self.domain = domain
 	
-	def configGet( self, field, domain = None, type = None ):
+	def configGet(self, field, domain = None, type = None):
 		
 		if not domain:
 			domain = self.domain
@@ -108,87 +108,87 @@ class Skin:
 		
 		return value
 	
-	def configGetInt( self, field, domain = None ):	
-		return self.configGet( field, domain, type = int )
+	def configGetInt(self, field, domain = None):	
+		return self.configGet(field, domain, type = int)
 	
-	def configGetFloat( self, field, domain = None ):	
-		return self.configGet( field, domain, type = float )
+	def configGetFloat(self, field, domain = None):	
+		return self.configGet(field, domain, type = float)
 	
-	def configGetBool( self, field, domain = None ):
-		return self.configGet( field, domain, type = bool )
+	def configGetBool(self, field, domain = None):
+		return self.configGet(field, domain, type = bool)
 
-	def configGetEval( self, field, domain = None ):
-		toeval = self.configGet( field, domain )
-		return eval( str(toeval) )
+	def configGetEval(self, field, domain = None):
+		toeval = self.configGet(field, domain)
+		return eval(str(toeval))
 
-	def configGetRGB( self, field, domain = None ):	
-		return self.configGetEval( field, domain )
+	def configGetRGB(self, field, domain = None):	
+		return self.configGetEval(field, domain)
 	
-	def directLoadImage( self, name ):
+	def directLoadImage(self, name):
 		
-		fullname = os.path.join( Global.skin_folder, name )
+		fullname = os.path.join(Global.skin_folder, name)
 
-		if os.path.exists( fullname ):
-			retval = load_image( fullname )
+		if os.path.exists(fullname):
+			retval = load_image(fullname)
 		else:
-			retval = load_image( name )
+			retval = load_image(name)
 		
 		return retval
 
-	def LoadImage( self, field, domain = None ):
+	def LoadImage(self, field, domain = None):
 		
-		return self.directLoadImage( self.configGet( field, domain ) )
+		return self.directLoadImage(self.configGet(field, domain))
 
 	
-	def LoadImageRange( self, name, maxrange, digits, domain = None ):
+	def LoadImageRange(self, name, maxrange, digits, domain = None):
 		
 		torna = range(0, maxrange)
-		pos = self.configGet( name, domain )
+		pos = self.configGet(name, domain)
 		
 		for num in xrange(0, 64):
-			torna[num] = load_image(pos + str( num ).zfill(digits) + '.png')
+			torna[num] = load_image(pos + str(num).zfill(digits) + '.png')
 		
 		return torna
 	
-	def LoadSound( self, name, volume, music = 0, domain = None ):
+	def LoadSound(self, name, volume, music = 0, domain = None):
 		
-		name = self.configGet( name, domain )
-		volume = self.configGetFloat( volume, domain )
+		name = self.configGet(name, domain)
+		volume = self.configGetFloat(volume, domain)
 		
-		fullname = os.path.join( Global.skin_folder, name )
+		fullname = os.path.join(Global.skin_folder, name)
 		
-		if os.path.isfile( fullname ):
+		if os.path.isfile(fullname):
 			name = fullname
 		
-		return load_sound( name, volume = volume, music = music )
+		return load_sound(name, volume = volume, music = music)
 
-	def preguntadorCarregaFiguretes( self, joc, selcat ):
+	def preguntadorCarregaFiguretes(self, joc, selcat):
 		self.mostra_punt_de_categoria = True
-		self.figureta_no = load_image('points/freevial_tot' + str( joc.teams[joc.current_team].figureta).zfill(2) + '.png')
-		self.figureta_si = load_image('points/freevial_tot' + str( joc.teams[joc.current_team].figureta | bitCategoria ( selcat )).zfill(2) + '.png')
-		self.match_point = joc.teams[joc.current_team].figureta | bitCategoria ( selcat ) == 63
+		self.figureta_no = load_image('points/freevial_tot' + str(joc.teams[joc.current_team].figureta).zfill(2) + '.png')
+		self.figureta_si = load_image('points/freevial_tot' + str(joc.teams[joc.current_team].figureta | bitCategoria (selcat)).zfill(2) + '.png')
+		self.match_point = joc.teams[joc.current_team].figureta | bitCategoria (selcat) == 63
 
-	def search_font_name( self, nomfont ):
+	def search_font_name(self, nomfont):
 
 		if nomfont == '':
-			nomfont = self.configGet( 'default_font', 'game' )
+			nomfont = self.configGet('default_font', 'game')
 
 		if nomfont != '':
-			if not os.path.exists( nomfont ):
-				fullname = os.path.join( unicode(Global.skin_folder, 'utf-8'), nomfont)	
+			if not os.path.exists(nomfont):
+				fullname = os.path.join(unicode(Global.skin_folder, 'utf-8'), nomfont)	
 
-				if os.path.exists( fullname ):
+				if os.path.exists(fullname):
 					nomfont = fullname
 
 		return nomfont
 
-	def render_text( self, cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0 ):
+	def render_text(self, cadena, color, mida, antialias = 0, nomfont = '', maxwidth = 0):
 
-		nomfont = self.search_font_name( nomfont )
+		nomfont = self.search_font_name(nomfont)
 
-		return render_text( cadena, color, mida, antialias, nomfont, maxwidth )		
+		return render_text(cadena, color, mida, antialias, nomfont, maxwidth)		
 
-	def winning_team( self, teams, force=False ):
+	def winning_team(self, teams, force=False):
 	
-		return winning_team( teams, self.configGetInt('game_mode', 'game'),
+		return winning_team(teams, self.configGetInt('game_mode', 'game'),
 			self.configGetInt('game_limit', 'game'), force=force)

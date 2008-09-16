@@ -56,7 +56,7 @@ class LoadDatabase:
 			sys.exit(1)
 		
 		self.paths = [dbpath]
-		self.files = self._xml_in_path( dbpath, languages )
+		self.files = self._xml_in_path(dbpath, languages)
 	
 	def _get_real_path(self, directory):
 		""" If the given path is directory it is returned as-is, if it's
@@ -119,7 +119,7 @@ xsd = etree.XMLSchema(etree.parse(xsdfile))
 parser = etree.XMLParser(remove_blank_text = True, remove_comments = True)
 parser.setElementClassLookup(objectify.ObjectifyElementClassLookup())
 
-def GetDatabase( xmlFile ):
+def GetDatabase(xmlFile):
 	""" Returns a Database instance loaded with the questions from a XML file. """
 	
 	doc = etree.parse(xmlFile, parser)
@@ -151,7 +151,7 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 		
 		if question.answers.countchildren() < 3:
 			print >> sys.stderr, _(u'Warning: «%s»: Found a question with '
-                'less than 3 answers; ignoring it.') % xmlFile
+				'less than 3 answers; ignoring it.') % xmlFile
 			continue
 		
 		obj = Question(
@@ -194,7 +194,7 @@ def shuffle_databases():
 	
 	random.shuffle(Global.alldatabases)
 
-def get_databases( database_num=None ):
+def get_databases(database_num=None):
 	
 	if not Global.alldatabases:
 		
@@ -219,7 +219,7 @@ def get_databases( database_num=None ):
 					print u'\txmllint -schema %s %s' % (xsdfile, file)
 				else:
 					if len(cat) != 0:
-						Global.alldatabases.append( cat )
+						Global.alldatabases.append(cat)
 	
 	if database_num is not None:
 		return Global.alldatabases[database_num]

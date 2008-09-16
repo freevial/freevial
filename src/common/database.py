@@ -56,7 +56,7 @@ class Question:
 
 class Database:
 	
-	def __init__( self, name, language, description, players, authors, time, image, sound, version ):
+	def __init__(self, name, language, description, players, authors, time, image, sound, version):
 		
 		# General Database Data
 		self.name = unicode(name)
@@ -77,21 +77,21 @@ class Database:
 		# Internal Variables
 		self._shuffled = False
 	
-	def __len__( self ):
+	def __len__(self):
 		""" Returns the total amount of questions in this database. """
 		
-		return len( self._questions ) + len( self._old_questions )
+		return len(self._questions) + len(self._old_questions)
 	
-	def _shuffle( self ):
+	def _shuffle(self):
 		""" Shuffles the question list. """
 		
 		shuffle(self._questions)
 
 		self._shuffled = True
 	
-	def _get_question( self ):
+	def _get_question(self):
 		""" Returns the next question in a list, where the first answer
-		    is the correct one. """
+			is the correct one. """
 		
 		if len(self._questions) == 0:
 			print _(u'All questions in category «%s» have been answered. Reshuffling...') %  self.name
@@ -102,17 +102,17 @@ class Database:
 		if not self._shuffled:
 			self._shuffle()
 		
-		self._old_questions.append( self._questions.pop() )
+		self._old_questions.append(self._questions.pop())
 		
 		return self._old_questions[-1]
 	
-	def add_question( self, obj ):
+	def add_question(self, obj):
 		
-		self._questions.append( obj )
+		self._questions.append(obj)
 	
-	def question( self ):
+	def question(self):
 		""" Returns the next question in a dictionary (with the answers
-		    in a random position). """
+			in a random position). """
 		
 		data = self._get_question()
 		answers = data.get_answers()

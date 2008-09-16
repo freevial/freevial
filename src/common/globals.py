@@ -32,12 +32,12 @@ gettext.install('freevial', '/usr/share/locale', unicode=1)
 
 class GlobalVar:
 	
-	def __repr__( self ):
+	def __repr__(self):
 		
 		return str(vars(self))
 	
 	
-	def __str__( self ):
+	def __str__(self):
 		
 		return self.__repr__()
 

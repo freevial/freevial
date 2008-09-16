@@ -54,7 +54,7 @@ class Equip:
 	sfc_nom = None
 	teamgotxie_sfc = None
 	
-	def __init__( self, num ):
+	def __init__(self, num):
 		
 		self.id = num
 		
@@ -62,26 +62,26 @@ class Equip:
 		self.preguntes_ok = []
 		
 		for num in xrange(0, 6): 
-			self.preguntes_tot.append( 0 )
-			self.preguntes_ok.append( 0 )
+			self.preguntes_tot.append(0)
+			self.preguntes_ok.append(0)
 
-	def canviaCategoria( self, categoria ):
+	def canviaCategoria(self, categoria):
 		# Les tenim desendreçades i això ho complica una mica
-		self.figureta ^= bitCategoria( categoria )
+		self.figureta ^= bitCategoria(categoria)
 
-	def activaCategoria( self, categoria ):
+	def activaCategoria(self, categoria):
 		# Les tenim desendreçades i això ho complica una mica
-		self.figureta |= bitCategoria( categoria )
+		self.figureta |= bitCategoria(categoria)
 
-	def teCategoria( self, categoria ) :
-		return (self.figureta & bitCategoria( categoria )) != 0
+	def teCategoria(self, categoria) :
+		return (self.figureta & bitCategoria(categoria)) != 0
 
 
-def bitCategoria ( categoria ):
+def bitCategoria (categoria):
 	return (0x4,0x8,0x20,0x10,0x2,0x1)[ categoria ]
 
 
-def load_image_http( filename ):
+def load_image_http(filename):
 	
 	imatge = None
 		
@@ -89,16 +89,16 @@ def load_image_http( filename ):
 		import tempfile
 		fileonly = filename[filename.rfind("/")+1:]
 		tempdir = tempfile.mkdtemp()
-		tempname = os.path.join( tempdir, fileonly)
+		tempname = os.path.join(tempdir, fileonly)
 		
 		opener = urllib.FancyURLopener({})
-	 	f = opener.open( filename )
+		f = opener.open(filename)
 		
 		llegit = f.read()
 		f.close()
 		
-		file = open( tempname, "wb" )
-		file.write( llegit )
+		file = open(tempname, "wb")
+		file.write(llegit)
 		file.close()
 		
 		imatge = pygame.image.load(tempname).convert_alpha()
@@ -109,14 +109,14 @@ def load_image_http( filename ):
 	return imatge
 
 
-def load_image( name, colorkey = None, rotate = 0 ):
+def load_image(name, colorkey = None, rotate = 0):
 	""" Returns a Surface of the indicated image, which is expected to be in one
 	of the images directories. """
 	
 	image = None
 	
 	if name.lower().startswith('http://'):
-		image = load_image_http( name )
+		image = load_image_http(name)
 	
 	else:
 		
@@ -150,26 +150,26 @@ def load_image( name, colorkey = None, rotate = 0 ):
 	return image
 
 
-def load_sound( name, volume = 1.0, music = False ):
+def load_sound(name, volume = 1.0, music = False):
 	""" Returns a sound object of the indicated audio file, which is expected to be in the sounds folder. """
 	
-	if ( Global.MUSIC_MUTE and music ) or ( Global.SOUND_MUTE and not music ) or not pygame.mixer or not pygame.mixer.get_init():
+	if (Global.MUSIC_MUTE and music) or (Global.SOUND_MUTE and not music) or not pygame.mixer or not pygame.mixer.get_init():
 	
 		class NoneSound:
-			def load( *args ): pass
-			def play( *args ): pass
-			def stop( *args ): pass
-			def set_volume( *args ): pass
+			def load(*args): pass
+			def play(*args): pass
+			def stop(*args): pass
+			def set_volume(*args): pass
 		
 		return NoneSound()
 	
 	fullname = os.path.join(Global.folders['sounds'], name)
 	
-	if not os.path.exists( fullname ):
+	if not os.path.exists(fullname):
 		# Also try in database paths
 		for foldername in Global.databasefolders:
 			fulln = os.path.join(foldername, str(name))
-			if os.path.exists( fulln ):
+			if os.path.exists(fulln):
 				fullname = fulln	
 				break
 	
@@ -194,28 +194,28 @@ def load_sound( name, volume = 1.0, music = False ):
 default_font = '/usr/share/fonts/truetype/unfonts/UnBatangBold.ttf'
 
 
-def set_default_font( font_name ):
+def set_default_font(font_name):
 
-	if os.path.isfile( font_name ):
+	if os.path.isfile(font_name):
 		default_font = font_name
 		
 
-def render_text( cadena, color, mida, antialias = 0, font_name = '', maxwidth = 0 ):
+def render_text(cadena, color, mida, antialias = 0, font_name = '', maxwidth = 0):
 	""" Function for easier text rendering. """
 
 	global default_font
 
-	if os.path.isfile( font_name ):
-		font = pygame.font.Font( font_name, mida )
+	if os.path.isfile(font_name):
+		font = pygame.font.Font(font_name, mida)
 	else:
 		if not font_name:
 			font_name = default_font
 		font_path = os.path.join(Global.folders['fonts'], font_name)
-		if os.path.isfile( font_path ):
-			font = pygame.font.Font( font_path, mida )
+		if os.path.isfile(font_path):
+			font = pygame.font.Font(font_path, mida)
 		else:
 			# NOT WORKING IN PYGAME
-			font = pygame.font.SysFont( font_name, mida )
+			font = pygame.font.SysFont(font_name, mida)
 	
 	text_restant = cadena
 	sfc = None
@@ -230,66 +230,66 @@ def render_text( cadena, color, mida, antialias = 0, font_name = '', maxwidth = 
 
 			while ample > maxwidth:
 
-				sfc = font.render( escriure, antialias, color )
+				sfc = font.render(escriure, antialias, color)
 				ample = sfc.get_width()		
 			
 				if ample > maxwidth:
-					tpos = escriure.rfind( ' ' )
+					tpos = escriure.rfind(' ')
 					if tpos == -1:
 						ample = maxwidth
 					else:
 						escriure = escriure[0:tpos]		
 
-			sfcs.append( sfc )
-			text_restant = text_restant[ len( escriure )+1:]
+			sfcs.append(sfc)
+			text_restant = text_restant[ len(escriure)+1:]
 		
 		if len(sfcs) > 1:
 			iample = 0
 			ialt = 0
-			for num in xrange( 0, len(sfcs) ):
+			for num in xrange(0, len(sfcs)):
 				ialt += max(sfcs[num].get_height(), mida)
-				iample = min(maxwidth, max( iample, sfcs[num].get_width() ))
+				iample = min(maxwidth, max(iample, sfcs[num].get_width()))
 			
-			sfc = pygame.Surface( ( iample, ialt), pygame.SRCALPHA, 32 )
+			sfc = pygame.Surface((iample, ialt), pygame.SRCALPHA, 32)
 			
 			pos = 0
-			for num in xrange( 0, len(sfcs) ):
-				sfc.blit( sfcs[num], (0, pos) )
+			for num in xrange(0, len(sfcs)):
+				sfc.blit(sfcs[num], (0, pos))
 				pos += max(sfcs[num].get_height(), mida)
 		
 		else:
 			sfc = if2(len(sfcs) == 1, sfcs[0], None)
 	else:
-		sfc = font.render( cadena, antialias, color )
+		sfc = font.render(cadena, antialias, color)
 	
 	return sfc
 
-def screenshot( surface, destination = os.path.join( os.path.expanduser('~'), 'Freevial/Screenshots/' ) ):
+def screenshot(surface, destination = os.path.join(os.path.expanduser('~'), 'Freevial/Screenshots/')):
 	""" Saves a screenshot of the indicated surface. """
 	
-	destination = os.path.normpath( destination )
+	destination = os.path.normpath(destination)
 	
-	if not os.path.exists( destination ):
-		os.makedirs( destination )
+	if not os.path.exists(destination):
+		os.makedirs(destination)
 	
 	# PNG and JPEG saving is new in pygame 1.8.
-	destination = os.path.join( destination, str( time.time() ) + '.tga' )
+	destination = os.path.join(destination, str(time.time()) + '.tga')
 	
-	pygame.image.save( surface, destination )
+	pygame.image.save(surface, destination)
 
 
-def maxPunts( teams ):
+def maxPunts(teams):
 
 	puntsmax = 0
 
 	for team in teams:
 		if team.active:
-			puntsmax = max( puntsmax, team.points )
+			puntsmax = max(puntsmax, team.points)
 	
 	return puntsmax
 
 
-def puntsTotals( teams ):
+def puntsTotals(teams):
 
 	punts = 0
 
@@ -299,7 +299,7 @@ def puntsTotals( teams ):
 	return punts
 
 
-def teamsActius( teams ):
+def teamsActius(teams):
 
 	actius = 0
 
@@ -309,7 +309,7 @@ def teamsActius( teams ):
 	return actius
 
 
-def winning_team( teams, mode, extra=None, force=False ):
+def winning_team(teams, mode, extra=None, force=False):
 	""" winning_team(teams, mode, extra=None) -> int
 	
 	Calculates which team is currently winning and returns it's index number
@@ -317,10 +317,10 @@ def winning_team( teams, mode, extra=None, force=False ):
 	
 	Possible values for mode:
 	 - 0. The game ends when one of the teams completes the six parts of its
-	      icon and there is no tie. The team with the most points wins.
+		  icon and there is no tie. The team with the most points wins.
 	 - 1. The first team to get the amount of points indicated as $extra wins.
 	 - 2. The last team which fails the amount of questions indicated as
-	      $extra wins.
+		  $extra wins.
 	 - 3. The first team to complete the six parts of its icon wins.
 	
 	Setting $force to true will relax the checks and if there is no tie a winner
@@ -367,7 +367,7 @@ def winning_team( teams, mode, extra=None, force=False ):
 		candidates = []
 		for team in active_teams:
 			if team.errors < extra:
-				candidates.append( team.id )
+				candidates.append(team.id)
 		if len(candidates) == 1:
 			winner = candidates[0]
 		elif force and team.errors < best_value:
@@ -383,7 +383,7 @@ def winning_team( teams, mode, extra=None, force=False ):
 	return winner
 
 
-def seguentEquipActiu( teams, actual ):
+def seguentEquipActiu(teams, actual):
 
 	actual += 1
 
@@ -394,18 +394,18 @@ def seguentEquipActiu( teams, actual ):
 	return -1
 
 
-def anteriorEquipActiu( teams, actual ):
+def anteriorEquipActiu(teams, actual):
 
 	actual -= 1
 
 	for team in teams:
-		if teams[ (actual - team.id ) % Global.game.max_teams ].active: 
-			return (actual - team.id ) % Global.game.max_teams
+		if teams[ (actual - team.id) % Global.game.max_teams ].active: 
+			return (actual - team.id) % Global.game.max_teams
 	
 	return -1
 
 
-def list2string( list, wordsEachLine = 5, lineEnd = ',' ):
+def list2string(list, wordsEachLine = 5, lineEnd = ','):
 	""" Converts a list of words into a list of comma-separated string with 'wordsEachLine' words. """
 	
 	lines = []
@@ -420,43 +420,43 @@ def list2string( list, wordsEachLine = 5, lineEnd = ',' ):
 		string += author
 		
 		if (wordsEachLine - 1) == (i % wordsEachLine):
-			lines.append( str(string + lineEnd) )
+			lines.append(str(string + lineEnd))
 			string = ''
 
 		i += 1
 		
 	if string != '':
-		lines.append( str(string + lineEnd) )
+		lines.append(str(string + lineEnd))
 	
 	lines[-1] = lines[-1][:-len(lineEnd)]
 	
 	return lines
 
 
-def createTextSurface( frases, color, intensitat = 25 ):
+def createTextSurface(frases, color, intensitat = 25):
 	""" Creates a help overlay surface and prints the passed text on it. """
 	
 	font_step = (768 - (315)) / len(frases) 
-	font_step = min( font_step, 25 )
+	font_step = min(font_step, 25)
 
 	font_size = font_step - (font_step * 10) / 100
 	if font_size < 10: font_size = 10
  
-	help_overlay = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
+	help_overlay = pygame.Surface((1024, 768), pygame.SRCALPHA, 32)
 	
-	for num in xrange( 0, 10):
-		help_overlay.fill( (0, 0, 16, num * intensitat), ( 100 + (num * 2), 100 + (num * 2), 1024 - 100 * 2 - (num * 4), 768 - 150 - (num * 4)) )
+	for num in xrange(0, 10):
+		help_overlay.fill((0, 0, 16, num * intensitat), (100 + (num * 2), 100 + (num * 2), 1024 - 100 * 2 - (num * 4), 768 - 150 - (num * 4)))
 	
 	nline = 0
 
 	pos = 0
 	for line in frases:
 		if line != "":	
-			text_pregunta = render_text( line, (0,0,0), font_size, 1, '', 700 )
-			help_overlay.blit( text_pregunta, (150 + 2, pos + 142))
+			text_pregunta = render_text(line, (0,0,0), font_size, 1, '', 700)
+			help_overlay.blit(text_pregunta, (150 + 2, pos + 142))
 			
-			text_pregunta = render_text( line, color, font_size, 1, '', 700 )
-			help_overlay.blit( text_pregunta, (150, pos + 140))
+			text_pregunta = render_text(line, color, font_size, 1, '', 700)
+			help_overlay.blit(text_pregunta, (150, pos + 140))
 			
 			pos += text_pregunta.get_height()
 		else:
@@ -467,20 +467,20 @@ def createTextSurface( frases, color, intensitat = 25 ):
 	return help_overlay
 
 
-def replaceKeywoards( content ):
+def replaceKeywoards(content):
 	""" Replaces keywoards found in the content a help file. """
 	
 	for num in xrange(0, len(content)):
 		content[num] = unicode(content[num], 'utf-8')
 	
 	for (i, line) in enumerate(content):
-		if line.startswith( '##replace:question-authors' ):
+		if line.startswith('##replace:question-authors'):
 			content[ i : (i + 1) ] = sorted(["%s: %s" % (category.name, category.authors) for category in get_databases()])
 	
 	return content
 
 
-def readLocalizedHelpFile( help_section ):
+def readLocalizedHelpFile(help_section):
 	""" Reads a localized file into an unicoded array. """
 	
 	# FIXME/TODO: Delete help files and use gettext strings instead.
@@ -492,34 +492,34 @@ def readLocalizedHelpFile( help_section ):
 	
 	lines = []
 	
-	for line in replaceKeywoards(open( filename, 'r' ).readlines()):
+	for line in replaceKeywoards(open(filename, 'r').readlines()):
 		
 		if not line[-1:].isalnum():
 			line = line[:-1]
 		
-		lines.append ( line )
+		lines.append (line)
 	
 	return lines
 
 
-def createHelpScreen( help_section, alternate_text = False ):
+def createHelpScreen(help_section, alternate_text = False):
 	""" Creates a help overlay surface based on a help file. """
 	
-	return createTextSurface( readLocalizedHelpFile( help_section ),
-		if2(alternate_text, (0, 255, 255), (255, 255, 0)) )
+	return createTextSurface(readLocalizedHelpFile(help_section),
+		if2(alternate_text, (0, 255, 255), (255, 255, 0)))
 
 
 def initTextos():
 	global textos
 
-	textos = readLocalizedHelpFile( "textos" )
+	textos = readLocalizedHelpFile("textos")
 
 
-def valorText( ntext ):
+def valorText(ntext):
 	return textos[ ntext ]
 
 
-i_colors_cat = ( (0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,255,0) )
+i_colors_cat = ((0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,255,0))
 
 def colorsCategories():
 
@@ -531,7 +531,7 @@ def first_existing_directory(name, *dirs):
 	directories, and returns the full path to the first one which exists. """
 	
 	for directory in dirs:
-		if os.path.isdir( os.path.join(directory, name) ):
+		if os.path.isdir(os.path.join(directory, name)):
 			return os.path.join(directory, name)
 
 def first_existing_location(file, directories):
@@ -566,34 +566,34 @@ class helpOnScreen:
 	intensitat = 5
 	
 	
-	def __init__( self, itext ):
+	def __init__(self, itext):
 		
-		self.creaTextdeTextos ( itext )
+		self.creaTextdeTextos (itext)
 		self.sec_darrera_activitat = time.time()	
 	
 	
-	def creaTextdeTextos(self, itext, extra = '' ):
+	def creaTextdeTextos(self, itext, extra = ''):
 		
 		global textos
-		self.creaText( textos[itext] + extra )
+		self.creaText(textos[itext] + extra)
 	
 	
-	def creaText( self, ptext ):
+	def creaText(self, ptext):
 		
 		if self.text != ptext :
 			self.text = ptext
-			self.sfc_text = render_text( self.text, (128,128,128), 15, 1 )
+			self.sfc_text = render_text(self.text, (128,128,128), 15, 1)
 	
 	
-	def draw( self, surface, pos, itext = None, extra = '' ):
+	def draw(self, surface, pos, itext = None, extra = ''):
 		
 		if time.time() >= self.sec_darrera_activitat + self.sec_timeout :
 			
-			if itext: self.creaTextdeTextos ( itext, extra )
-			surface.blit( self.sfc_text, pos )
+			if itext: self.creaTextdeTextos (itext, extra)
+			surface.blit(self.sfc_text, pos)
 	
 	
-	def activitat( self, event = None ):
+	def activitat(self, event = None):
 		
 		if not event or event.type == pygame.KEYUP:
 			self.sec_darrera_activitat = time.time()
@@ -605,23 +605,23 @@ class frameRate:
 	seconds = fps = fps_current = fps_limit = lastTicks = t_inici = 0
 	textSurface = None
 	
-	def __init__( self, fps_limit = 0 ):
+	def __init__(self, fps_limit = 0):
 		self.fps_limit = fps_limit
 		self.lastTicks = pygame.time.get_ticks()
 		self.t_inici = time.time()
 	
-	def segons( self ):
+	def segons(self):
 		return time.time() - self.t_inici
 
-	def next( self, surface = None ):
+	def next(self, surface = None):
 		
 		if time.time() > self.seconds + 1:
 			self.seconds = time.time()
 			self.fps = self.fps_current
 			self.fps_current = 0
 			if Global.DISPLAY_FPS:
-				self.textSurface = render_text( 'FPS: ' + if2(self.fps > 0,
-					str(self.fps), 'N/a'), (128, 128, 128), 15, 1 )
+				self.textSurface = render_text('FPS: ' + if2(self.fps > 0,
+					str(self.fps), 'N/a'), (128, 128, 128), 15, 1)
 		else:
 			self.fps_current += 1
 		
@@ -629,39 +629,39 @@ class frameRate:
 		limit_ticks = pygame.time.get_ticks() - self.lastTicks
 		
 		if limit_ticks < limit_fps:
-			pygame.time.wait( limit_fps - limit_ticks )
+			pygame.time.wait(limit_fps - limit_ticks)
 			self.lastTicks = pygame.time.get_ticks()
 
 		if surface:	
 			if self.textSurface and Global.DISPLAY_FPS:
-				surface.blit( self.textSurface, (250, 740 ) )
+				surface.blit(self.textSurface, (250, 740))
 
 
-def maskimage ( sourceimage, sourcemask ):
+def maskimage (sourceimage, sourcemask):
 
 	pygame.surfarray.pixels_alpha(sourceimage)[...] = pygame.surfarray.array_alpha(sourcemask)
 
 
-def inkimage ( sourceimage, color ):
+def inkimage (sourceimage, color):
 
 	mida = (sourceimage.get_width(), sourceimage.get_height())
 
 	arraypunt = chr(color[0])+chr(color[1])+chr(color[2])+chr(color[3])
 	
-	impunt = pygame.image.fromstring( arraypunt, (1,1), "RGBA" )
+	impunt = pygame.image.fromstring(arraypunt, (1,1), "RGBA")
 
-	impunt = pygame.transform.scale(impunt, mida )
+	impunt = pygame.transform.scale(impunt, mida)
 
-	desti = pygame.Surface( mida, pygame.SRCALPHA, 32 )
-	desti.blit( sourceimage, (0,0) )
-	desti.blit( impunt, (0,0) )
+	desti = pygame.Surface(mida, pygame.SRCALPHA, 32)
+	desti.blit(sourceimage, (0,0))
+	desti.blit(impunt, (0,0))
 
 	pygame.surfarray.pixels_alpha(desti)[...] = pygame.surfarray.array_alpha(sourceimage)
 
 	return desti
 
 
-def if2( boolean, val1, val2 ):
+def if2(boolean, val1, val2):
 	"""An 'a if b else c'-syntax replacement for Python 2.4."""
 
 	if bool(boolean):

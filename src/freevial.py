@@ -45,7 +45,7 @@ SERIES = 'gresca'
 
 class Freevial:
 	
-	def __init__( self ):
+	def __init__(self):
 		
 		Global.game = GlobalVar()
 		
@@ -58,16 +58,16 @@ class Freevial:
 		Global.game.sfc_credits = ''
 	
 	
-	def inici( self ):
+	def inici(self):
 		
 		# inicialize presentation surface
-		Global.game.screen = pygame.display.set_mode( ( Global.screen_x, Global.screen_y))
+		Global.game.screen = pygame.display.set_mode((Global.screen_x, Global.screen_y))
 		pygame.display.set_caption('Freevial')
-		pygame.display.set_icon( load_image('freevial.png') )
+		pygame.display.set_icon(load_image('freevial.png'))
 		
 		if not Global.DEBUG_MODE:
 			
-			pygame.mouse.set_visible( False )
+			pygame.mouse.set_visible(False)
 			
 			if Global.FULLSCREEN_MODE:
 				pygame.display.toggle_fullscreen()
@@ -84,37 +84,37 @@ class Freevial:
 		
 		pygame.font.init()
 		
-		Global.game.sfc_credits = createHelpScreen( 'credits', alternate_text = True )
+		Global.game.sfc_credits = createHelpScreen('credits', alternate_text = True)
 		
 		initTextos()
 		
 		# initialize joystick, if there's one
 		pygame.joystick.init()
 		if pygame.joystick.get_count():
-			pygame.joystick.Joystick( 0 ).init()
+			pygame.joystick.Joystick(0).init()
 		
 		# initialize skin system
 		Global.game.skin = Skin()
-		Global.game.max_teams = Global.game.skin.configGetInt( 'max_teams', domain='game' )
-		for num in xrange( 0, Global.game.max_teams ):
-			Global.game.teams.append( Equip(num) )
+		Global.game.max_teams = Global.game.skin.configGetInt('max_teams', domain='game')
+		for num in xrange(0, Global.game.max_teams):
+			Global.game.teams.append(Equip(num))
 	
 	
-	def juguem( self ):
+	def juguem(self):
 		
 		self.inici()
 		
 		score = wheel = question = None
 		
 		if Global.PRELOAD:
-			score = Score( Global.game )
-			wheel = Roda( Global.game )
-			question = Preguntador( Global.game )
+			score = Score(Global.game)
+			wheel = Roda(Global.game)
+			question = Preguntador(Global.game)
 		
 		while 1:
 			
 			if not score:
-				score = Score( Global.game )
+				score = Score(Global.game)
 			Global.game.current_team = score.juguem()
 			
 			if Global.game.current_team != -1:
@@ -122,30 +122,30 @@ class Freevial:
 				Global.game.rounds += 1		
 				
 				if not wheel:
-					wheel = Roda( Global.game )
-				resultat = wheel.juguem( )
+					wheel = Roda(Global.game)
+				resultat = wheel.juguem()
 				
 				if resultat != -1:
 						
 					Global.game.teams[ Global.game.current_team ].preguntes_tot[ resultat - 1 ] += 1		
 					
 					if not question:
-						question = Preguntador( Global.game )
-					resultat = question.juguem( resultat )	
+						question = Preguntador(Global.game)
+					resultat = question.juguem(resultat)	
 					
 					if resultat > -1:
 						Global.game.teams[ Global.game.current_team ].preguntes_ok[ resultat - 1 ] += 1
 						Global.game.teams[ Global.game.current_team ].points += 1
 						
 						fig_abans = Global.game.teams[ Global.game.current_team ].figureta
-						Global.game.teams[ Global.game.current_team ].activaCategoria( resultat ) 
+						Global.game.teams[ Global.game.current_team ].activaCategoria(resultat) 
 						
 						if fig_abans != 63 and Global.game.teams[ Global.game.current_team ].figureta == 63:
 							Global.game.teams[ Global.game.current_team ].points += 2
 					else:
 						Global.game.teams[ Global.game.current_team ].errors += 1
 					
-					Global.game.current_team = seguentEquipActiu( Global.game.teams, Global.game.current_team )
+					Global.game.current_team = seguentEquipActiu(Global.game.teams, Global.game.current_team)
 			else:
 				sys.exit()
 
@@ -258,14 +258,14 @@ if options.languages:
 		if len(language) != 2 or not language.isalpha():
 			print >> sys.stderr, _('Error: You\'ve indicated an incorrect '
 				'language code. Valid examples are: "ca", "en, de", etc.')
-			sys.exit( 1 )
+			sys.exit(1)
 	print _(u'Selected languages: %s' % ', '.join(Global.languages))
 
 if options.database:
 	path = os.path.abspath(os.path.join(options.real, options.database))
-	if not os.path.isdir( path ):
+	if not os.path.isdir(path):
 		print _(u'Could not find database "%s"...' % path)
-		sys.exit( 1 )
+		sys.exit(1)
 	Global.databases.append(path)
 
 if options.info_db:
@@ -291,7 +291,7 @@ if options.info_db:
 			% {'category': category[0], 'num': category[1]})
 	print
 	
-	sys.exit( 0 )
+	sys.exit(0)
 
 if options.debug:
 	Global.DEBUG_MODE = True
@@ -329,7 +329,7 @@ if options.dbus:
 		import dbus
 	except:
 		print >> sys.stderr, _('Error: Couldn\'t find dbus-python.')
-		sys.exit( 1 )
+		sys.exit(1)
 	else:
 		Global.DBUS = True
 		Global.session_bus = dbus.SessionBus()
@@ -340,12 +340,12 @@ if options.preload:
 
 if options.skin in sys.argv:
 	path = os.path.abspath(os.path.join(options.real, options.skin))
-	setSkinName( path )
+	setSkinName(path)
 
 if len(get_databases()) < 6:
 	print >> sys.stderr, _('Error: couldn\'t find enough categories; '
 		'at least six are required.')
-	sys.exit( 1 )
+	sys.exit(1)
 
 try:
 	if options.psyco:
@@ -360,4 +360,4 @@ try:
 
 except KeyboardInterrupt:
 	print _('User requested interrupt.')
-	sys.exit( 0 )
+	sys.exit(0)

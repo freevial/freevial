@@ -26,13 +26,13 @@
 
 from common.globals import Global
 
-class Example( dbus.service.Object ):
+class Example(dbus.service.Object):
 	
 	interface = 'net.freevial.Freevial'
 	
-	def __init__( self, object_path ):
-		dbus.service.Object.__init__( self, Global.session_bus, object_path )
+	def __init__(self, object_path):
+		dbus.service.Object.__init__(self, Global.session_bus, object_path)
 	
-	@dbus.service.method( dbus_interface=self.interface, in_signature='v', out_signature='s' )
-	def StringifyVariant( self, variant ):
+	@dbus.service.method(dbus_interface=self.interface, in_signature='v', out_signature='s')
+	def StringifyVariant(self, variant):
 		return 'Hey'

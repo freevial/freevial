@@ -33,30 +33,30 @@ from events import EventHandle
 
 class QuestionDialog:
 	
-	def ask( self, screen, question, answers, default = 0, cancel = -1, color = (255, 0, 0) ):
+	def ask(self, screen, question, answers, default = 0, cancel = -1, color = (255, 0, 0)):
 		
-		frate = frameRate( Global.fps_limit )
+		frate = frameRate(Global.fps_limit)
 		
-		sfc_screen_bg = pygame.Surface( ( screen.get_width(), screen.get_height()), pygame.SRCALPHA, 32 )
-		sfc_screen_bg.blit( screen, (0,0) )
+		sfc_screen_bg = pygame.Surface((screen.get_width(), screen.get_height()), pygame.SRCALPHA, 32)
+		sfc_screen_bg.blit(screen, (0,0))
 		
-		sfc_screen2 = pygame.Surface( ( screen.get_width(), screen.get_height() ), pygame.SRCALPHA, 32 )
+		sfc_screen2 = pygame.Surface((screen.get_width(), screen.get_height()), pygame.SRCALPHA, 32)
 		
 		selection = default
 		total_duracio_fadeout = duracio_fadeout = 10
 		fadeout_intensity = 20
 		
-		sfc_question = render_text( question, (255,255,255), 50, 1, '', 600 )
+		sfc_question = render_text(question, (255,255,255), 50, 1, '', 600)
 		sfc_answers = []
 		
 		space_between_answers = 32
 		answers_width = 0
 		
-		for num in xrange( 0, len(answers) ):
-			sfc = render_text( answers[num], (255,255,255), 50, 1, '', 500 )
+		for num in xrange(0, len(answers)):
+			sfc = render_text(answers[num], (255,255,255), 50, 1, '', 500)
 			answers_width += sfc.get_width()
 			if num: answers_width += space_between_answers
-			sfc_answers.append( sfc )
+			sfc_answers.append(sfc)
 		
 		while True:
 			
@@ -80,24 +80,24 @@ class QuestionDialog:
 					return selection
 			
 			if duracio_fadeout:
-				sfc_screen2.blit( sfc_screen_bg, (0,0) )
-				sfc_screen2.fill( (0,0,0, total_duracio_fadeout * fadeout_intensity - duracio_fadeout * fadeout_intensity) ) 
+				sfc_screen2.blit(sfc_screen_bg, (0,0))
+				sfc_screen2.fill((0,0,0, total_duracio_fadeout * fadeout_intensity - duracio_fadeout * fadeout_intensity)) 
 				duracio_fadeout -= 1
 			
-			screen.blit( sfc_screen_bg, (0,0) )
-			screen.blit( sfc_screen2, (0,0) )
+			screen.blit(sfc_screen_bg, (0,0))
+			screen.blit(sfc_screen2, (0,0))
 			
-			screen.blit( sfc_question, (screen.get_width() / 2 -sfc_question.get_width() / 2, 300) )
+			screen.blit(sfc_question, (screen.get_width() / 2 -sfc_question.get_width() / 2, 300))
 			
-			posx = (screen.get_width() / 2 - answers_width / 2 )
-			for num in xrange(0, len(answers) ):
+			posx = (screen.get_width() / 2 - answers_width / 2)
+			for num in xrange(0, len(answers)):
 				
 				if selection == num:
 					for salt in xrange(0, 25):
-						screen.fill( (color[0] * salt / 25, color[1]* salt / 25, color[2]* salt / 25), (posx - 25 + salt, 450, sfc_answers[num].get_width() + 25*2-salt*2, sfc_answers[num].get_height()  ))
+						screen.fill((color[0] * salt / 25, color[1]* salt / 25, color[2]* salt / 25), (posx - 25 + salt, 450, sfc_answers[num].get_width() + 25*2-salt*2, sfc_answers[num].get_height()))
 				
-				screen.blit( sfc_answers[num], (posx, 450) )
+				screen.blit(sfc_answers[num], (posx, 450))
 				posx += sfc_answers[num].get_width() + space_between_answers
 			
-			frate.next( screen )
+			frate.next(screen)
 			pygame.display.flip()
