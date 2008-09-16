@@ -209,7 +209,7 @@ class Preguntador:
 	# Inicialitzador de nova pregunta
 	#
 
-	def loadmediaimage( self, imagename):
+	def _loadmediaimage( self, imagename):
 
 		# codi horrible per anar ràpid. cal canviar-lo
 
@@ -226,7 +226,7 @@ class Preguntador:
 		if p != -1:
 			im = imagename[:p] 
 
-		if im != "":
+		if im != '':
 			self.media_image[0] = load_image( im )
 
 		if self.media_image[0]	!= None:
@@ -236,7 +236,7 @@ class Preguntador:
 		if p != -1:	
 			im = imagename[p+1:]
 
-		if im != "":
+		if im != '':
 			self.media_image[1] = load_image( im )
 
 		if self.media_image[1]	!= None:
@@ -245,11 +245,11 @@ class Preguntador:
 
 	def initialize_question( self ):
 
-		self.sfc_pregunta  = self.preguntadorPintatext( self.current_question['text'], self.game.skin.configGetInt("question_width") )
+		self.sfc_pregunta  = self.preguntadorPintatext( self.current_question['text'], self.game.skin.configGetInt('question_width') )
 
 		self.sfc_resposta = range(0, 3)
 		for num in xrange(0, 3):
-			self.sfc_resposta[ num ] = self.preguntadorPintatext( self.current_question[ 'opt' + str(num + 1) ], self.game.skin.configGetInt("answer_width") )
+			self.sfc_resposta[ num ] = self.preguntadorPintatext( self.current_question[ 'opt' + str(num + 1) ], self.game.skin.configGetInt('answer_width') )
 
 		self.sfc_apregunta = self.game.skin.render_text( str(self.current_question['author']), (self.color_de_text), (self.mida_text_autor) )
 		self.sfc_apregunta.set_alpha( 64 )	
@@ -261,12 +261,12 @@ class Preguntador:
 
 		self.show_answers = 0
 
-		if self.current_question["mediatype"] == "audio":
-			self.audio = load_sound( self.current_question["media"], music = 1 )
+		if self.current_question['mediatype'] == 'audio':
+			self.audio = load_sound( self.current_question['media'], music = 1 )
 			self.audio.play( 1 )
 
-		if self.current_question["mediatype"] == "image":
-			self.loadmediaimage( self.current_question["media"]  )
+		if self.current_question['mediatype'] == 'image':
+			self._loadmediaimage( self.current_question['media']  )
 
 	###########################################
 	#
@@ -322,7 +322,7 @@ class Preguntador:
 		
 		max_time = self.game.skin.configGetInt( 'max_time' )
 		
-		self.nom_equip_sfc = self.game.skin.render_text( self.game.teams[self.game.current_team].name, self.game.skin.configGetRGB( "team_name_color" ), 30, 1 )	
+		self.nom_equip_sfc = self.game.skin.render_text( self.game.teams[self.game.current_team].name, self.game.skin.configGetRGB( 'team_name_color' ), 30, 1 )	
 		self.nom_equip_sfc = pygame.transform.rotate ( self.nom_equip_sfc, 90 )
 		self.nom_equip_sfc.set_alpha( 64 )
 		
@@ -339,7 +339,7 @@ class Preguntador:
 		waitForMouseRelease( )
 		
 
-		if self.current_question["mediatype"] == "audio":
+		if self.current_question['mediatype'] == 'audio':
 			self.audioinit = time.time() + 2000
 		else:
 			self.game.skin.LoadSound( 'so_fons', 'so_fons_vol', 1).play( -1 )
@@ -425,9 +425,9 @@ class Preguntador:
 						self.so_sub.play()
 				
 					if event.keyUp('x'):	
-						if self.current_question["mediatype"] == "audio":
+						if self.current_question['mediatype'] == 'audio':
 							self.audio.play( 1 )
-						if self.current_question["mediatype"] == "image":
+						if self.current_question['mediatype'] == 'image':
 							hide_answers += 1
 							hide_answers %= 4
 				
@@ -461,7 +461,7 @@ class Preguntador:
 					else:
 						self.so_nook.play()
 					notes = if2(self.current_question['comment'],
-						self.current_question['comment'], ".")
+						self.current_question['comment'], '.')
 					sfc_comentaris = createTextSurface( notes, (128,255,255), 25 )
 				elif acaba == 1:
 					if not Global.LOCKED_MODE or mostra_comentaris == True or len( ''.join(self.current_question['comment']) ) <= 5:
@@ -519,7 +519,7 @@ class Preguntador:
 				else:
 					self.mascara = self.retalla_sel
 			
-				if not (self.current_question["mediatype"] == "image" and self.hide_mask_on_image_quiz ):		
+				if not (self.current_question['mediatype'] == 'image' and self.hide_mask_on_image_quiz ):		
 				# pintem l'ombrejat on correspongui	
 					if self.selected > 0:
 						self.game.screen.blit( self.mascara, ( self.postextx, (260,260+150,260+300)[self.selected - 1]))
@@ -608,13 +608,13 @@ class Preguntador:
 					self.game.screen.blit( sfc_comentaris, (0, compos))
  			
 			textmostra = ''
-			if self.current_question["mediatype"] == "audio":
-				textmostra += _(" X - Replay media")
+			if self.current_question['mediatype'] == 'audio':
+				textmostra += _(' X - Replay media')
 				for nota in notesvoladores:
 					nota.pinta(  self.game.screen, self )
 
-			if self.current_question["mediatype"] == "image":
-				textmostra += _(" X - Shows or hides answers/images")
+			if self.current_question['mediatype'] == 'image':
+				textmostra += _(' X - Shows or hides answers/images')
 
 			if self.use_teamgotxies:
 				team = self.game.teams[self.game.current_team]
