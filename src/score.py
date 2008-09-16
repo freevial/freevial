@@ -144,7 +144,7 @@ class Score:
 			self.score_slide_activity_timeout = game.skin.configGetInt( 'slide_activity_timeout' )
 			self.score_slide_current_image = 0
 
-			for compta in range(0, 10):
+			for compta in xrange(0, 10):
 				random.shuffle( self.score_slide_images )
 
 
@@ -203,7 +203,7 @@ class Score:
 		team = self.game.teams[es]
 		llista = os.listdir(Global.folders['teamgotxies'])
 		
-		for num in range( 0, len(llista) ):
+		for num in xrange( 0, len(llista) ):
 			if llista[num] == team.teamgotxie_name:
 				npos = (num + desp) % len(llista)
 				team.teamgotxie_name = llista[npos]
@@ -412,7 +412,7 @@ class Score:
 						show_elements ^= 1
 					
 					if self.game.teams[element_seleccionat].active:
-						for num in range(1, 7):
+						for num in xrange(1, 7):
 							if event.keyUp(str(num), 'KP' + str(num)):
 								self.game.teams[element_seleccionat].canviaCategoria( num-1 )
 					
@@ -438,7 +438,7 @@ class Score:
 								show_stats = 0 
 				
 								for equip in self.game.teams:
-									for num in range(0, 6): 
+									for num in xrange(0, 6): 
 										equip.preguntes_tot[num] = 0
 										equip.preguntes_ok[num] = 0
 									equip.points = 0
@@ -492,8 +492,7 @@ class Score:
 				self.mou_fons += 8
 			
 			# Pintem el fons animat
-			for num in range(0, 768):
-				
+			for num in xrange(0, 768):
 				if self.score_ones_al_fons:
 					xpinta = cos((float(self.mou_fons +num)) / 100.0) * self.score_prof_ones_al_fons				
 				if self.score_background_y_offset + num < 768:
@@ -503,7 +502,7 @@ class Score:
 			
 			if show_elements:
 				# pintem les puntuacions
-				for num in range(0, Global.game.max_teams):
+				for num in xrange(0, Global.game.max_teams):
 					ycaixa = self.score_caixes[num][1]
 					xcaixa = self.score_caixes[num][0]
 				
@@ -535,11 +534,11 @@ class Score:
 							self.game.screen.blit( pinta, (xcaixa + 200, ycaixa - 15) )
 					
 						if show_stats and self.final_stats:
-							for cat in range(0,6):
+							for cat in xrange(0,6):
 								self.game.screen.blit( self.barra_pos( self.game.teams[num].preguntes_tot[cat], self.game.teams[num].preguntes_ok[cat],  colorsCategories()[cat], 50, 14 ), (xcaixa + 140, ycaixa + 21 + cat * 16) )
 					
 						if self.show_corrects:
-							for compta in range(0, self.total_corrects):
+							for compta in xrange(0, self.total_corrects):
 								if self.game.teams[num].points > compta:
 									if self.correct_done_image != None:
 										self.game.screen.blit( self.correct_done_image, (xcaixa + self.corrects_coord[compta][0], ycaixa + self.corrects_coord[compta][1] ))

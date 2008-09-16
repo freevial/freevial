@@ -52,7 +52,7 @@ class QuestionDialog:
 		space_between_answers = 32
 		answers_width = 0
 		
-		for num in range( 0, len(answers) ):
+		for num in xrange( 0, len(answers) ):
 			sfc = render_text( answers[num], (255,255,255), 50, 1, '', 500 )
 			answers_width += sfc.get_width()
 			if num: answers_width += space_between_answers
@@ -90,10 +90,10 @@ class QuestionDialog:
 			screen.blit( sfc_question, (screen.get_width() / 2 -sfc_question.get_width() / 2, 300) )
 			
 			posx = (screen.get_width() / 2 - answers_width / 2 )
-			for num in range(0, len(answers) ):
+			for num in xrange(0, len(answers) ):
 				
 				if selection == num:
-					for salt in range(0, 25):
+					for salt in xrange(0, 25):
 						screen.fill( (color[0] * salt / 25, color[1]* salt / 25, color[2]* salt / 25), (posx - 25 + salt, 450, sfc_answers[num].get_width() + 25*2-salt*2, sfc_answers[num].get_height()  ))
 				
 				screen.blit( sfc_answers[num], (posx, 450) )

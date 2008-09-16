@@ -84,7 +84,7 @@ class Visca:
 		self.fons_2 = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
 
 		self.nau_sfc = []
-		for num in range( 0, 72 ): 
+		for num in xrange( 0, 72 ): 
 			self.nau_sfc.append( load_image('ovnis/freevial_tot' + str( num ).zfill(2) + '.png') )
 
 		self.sfc_llum = load_image( 'llum.png' )
@@ -142,7 +142,7 @@ class Visca:
 
 			if segons < 5.5 and int(segons) > surten:
 				surten = int( segons)
-				for num in range( 0, 360, 10):
+				for num in xrange( 0, 360, 10):
 					nova_nau = Nau( num )
 					nova_nau.vel = surten * 2
 					self.naus.append( nova_nau )
@@ -156,7 +156,7 @@ class Visca:
 						nova_nau = Nau()
 						self.naus.append( nova_nau )
 			
-			for num in range( len(self.naus) - 1, -1, -1):
+			for num in xrange( len(self.naus) - 1, -1, -1):
 				nau = self.naus[num]
 				if nau.esFora() :
 					self.naus.remove( nau )
@@ -197,13 +197,13 @@ class Visca:
 
 				Global.game.screen.blit( self.fons, (0,0))
 
-				for num in range(0, 768):
+				for num in xrange(0, 768):
 					Global.game.screen.blit( self.fons, (math.cos((float(mou_fons +num)) / 100.0) * 20, num), (0, (ypos + num) % 768, 1024, 1) )
 	
 				llista_freevial = [ [8.7, 12], [12.7, 17], [20, 23.5], [27.5, 31], [33, 35.5], [49.5, 52.5], [55.5, 57.5], [60.9, 63.5] ]
 
 				if ensegments( llista_freevial, segons ):
-					for num in range( 0, 5):
+					for num in xrange( 0, 5):
 						Global.game.screen.blit( sfc_freevial, (random.randint(	-sfc_freevial.get_width(), 1024), random.randint(-sfc_freevial.get_height(), 768 )) ) 	
 
 					if segons >= 20 and segons <=34:

@@ -141,7 +141,7 @@ class SelCat:
 						self.so_sub2.play()
 						self.darrera_info = -1
 
-					for num in range(0, 6):
+					for num in xrange(0, 6):
 						if event.keyUp(str(num + 1), 'KP' + str(num + 1)): 	
 							self.move_category( seleccio, num )
 							seleccio = num
@@ -155,7 +155,7 @@ class SelCat:
 
 			# Pintem el fons animat
 			mou_fons += 8
-			for num in range(0, 768):
+			for num in xrange(0, 768):
 				self.game.screen.blit( self.fons, (math.cos((float(mou_fons +num)) / 100.0) * 20, num), (0, (ypos + num) % 768, 1024, 1) )
 
 			self.game.screen.blit( self.mascara_de_fons, (0, 0) )
@@ -164,7 +164,7 @@ class SelCat:
 			nelements = if2(estat == 0, len(self.cp), 6)
 
 			posact= 220
-			for num in range(primer_element_a_la_vista, nelements):	
+			for num in xrange(primer_element_a_la_vista, nelements):	
 				if posact + self.sfc_preguntes[num].get_height() > (768 -80)	:
 					break
 			
@@ -178,34 +178,34 @@ class SelCat:
 				self.game.screen.blit( self.sfc_preguntes[num], ( 160, posact ))	
 
 				posact += self.sfc_preguntes[num].get_height() + 20
-
+			
 			if primer_element_a_la_vista > 0: 
 				self.game.screen.blit( self.sel_fletxap, ( 386,216 + 10 + math.cos(time.time() * 10) * 10))
-
+			
 			if darrer_element_a_la_vista < nelements - 1:
 				self.game.screen.blit( self.sel_fletxab, ( 386, 651 - 10 - math.cos(time.time()*10) * 10 ))
-
-			if darrer_element_a_la_vista < seleccio: 	primer_element_a_la_vista += 1
-
-			if primer_element_a_la_vista > seleccio: 	primer_element_a_la_vista -= 1
-
+			
+			if darrer_element_a_la_vista < seleccio:
+				primer_element_a_la_vista += 1
+			
+			if primer_element_a_la_vista > seleccio:
+				primer_element_a_la_vista -= 1
+			
 			self.game.screen.blit( self.sfc_preguntes[seleccio], ( 475, 220 ))	
-
-			if seleccio != self.darrera_info: 	
+			if seleccio != self.darrera_info:
 				self.sfc_text_info0 = render_text( self.cp[seleccio].authors, self.selcat_color_text, 14, 1, '', 220 )
 				self.sfc_text_info1 = render_text( self.cp[seleccio].description, self.selcat_color_text, 16, 1, '', 350 )
 				self.sfc_text_info2 = render_text( self.cp[seleccio].players, self.selcat_color_text, 16, 1, '', 350 )
 				self.sfc_text_info3 = render_text( _(u'Amount of questions:') + ' ' + str(len(self.cp[seleccio])), self.selcat_color_text, 16, 1, '', 350 )
-				self.sfc_text_info4 = render_text( _(u'Language:') + ' ' + self.cp[num].language, self.selcat_color_text, 16, 1, '', 100 )
-				self.sfc_text_info5 = render_text( _(u'Creation date:') + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[num].time[0])), self.selcat_color_text, 16, 1, '', 350 )
+				self.sfc_text_info4 = render_text( _(u'Language:') + ' ' + self.cp[seleccio].language, self.selcat_color_text, 16, 1, '', 100 )
+				self.sfc_text_info5 = render_text( _(u'Creation date:') + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[seleccio].time[0])), self.selcat_color_text, 16, 1, '', 350 )
 				self.sfc_text_info6 = render_text( _(u'Last modification:') + ' ' + time.strftime('%d/%m/%Y', time.gmtime(self.cp[seleccio].time[1])), self.selcat_color_text, 16, 1, '', 350 )
-
+				
 				self.sfc_cat = load_image( self.cp[seleccio].image )
 				if seleccio < 6:
 					sfcmask = load_image( 'filtre_c' + str(seleccio+1) + '.png' )
 					self.sfc_cat.blit( sfcmask, (0,0))
 				self.sfc_cat = pygame.transform.scale(self.sfc_cat, (184, 138) )
-
 				self.darrera_info = seleccio
 			
 			self.game.screen.blit( self.sfc_text_info0, ( 475, 305 ))	

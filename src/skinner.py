@@ -145,7 +145,7 @@ class Skin:
 		torna = range(0, maxrange)
 		pos = self.configGet( name, domain )
 		
-		for num in range(0, 64):
+		for num in xrange(0, 64):
 			torna[num] = load_image(pos + str( num ).zfill(digits) + '.png')
 		
 		return torna

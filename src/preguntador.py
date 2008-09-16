@@ -143,10 +143,9 @@ class Preguntador:
 		
 		self.fons = range(0, 6)
 
-		for num in range(0, 6):
+		for num in xrange(0, 6):
 			self.fons[num] = load_image(get_databases( num ).image)
-			self.fons[num] =  inkimage ( self.fons[num], (i_colors_cat[num][0],i_colors_cat[num][1],i_colors_cat[num][2],128) ) 
-
+			self.fons[num] =  inkimage ( self.fons[num], (i_colors_cat[num][0],i_colors_cat[num][1],i_colors_cat[num][2],128) )
 		
 		self.mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
 		
@@ -181,11 +180,9 @@ class Preguntador:
 		self.notesimatges = []
 		self.notesimatges.append( self.nota )
 
-		for num in range(0, 6):
-
+		for num in xrange(0, 6):
 			self.notesimatges.append( inkimage ( self.nota, (i_colors_cat[num][0],i_colors_cat[num][1],i_colors_cat[num][2],128)  ) )
-
-
+		
 		self.use_teamgotxies = self.game.skin.configGetBool( 'use_teamgotxies' )
 		if self.use_teamgotxies:
 			self.teamgotxies_pos = self.game.skin.configGetEval( 'teamgotxies_pos' )
@@ -316,7 +313,7 @@ class Preguntador:
 
 		mostramusica = False
 		notesvoladores = []
-		for num in range( 0, 20):
+		for num in xrange(0, 20):
 			nota = NotaVoladora()
 			notesvoladores.append( nota )
 
@@ -438,7 +435,7 @@ class Preguntador:
 				if event.keyUp('z'):	
 					self.mostraautor ^= 1
 
-				for num in range(1, 7):
+				for num in xrange(1, 7):
 					if event.keyUp(str(num), 'KP' + str(num)):
 						self.atzar( num-1 )
 				
@@ -540,7 +537,7 @@ class Preguntador:
 				# i les solucions			
 				linia_act = 270
 				
-				for num in range(0, 3):
+				for num in xrange(0, 3):
 					self.game.screen.blit( self.lletres[num][(self.selected != num + 1)], ( self.postextx, linia_act + (150 * num)) )
 					self.game.screen.blit( self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)) )		
 				
@@ -593,7 +590,7 @@ class Preguntador:
 				current_time = time.time()
 				figureta_blit = if2((int(current_time * 2) % 2) == 0, figureta_no, figureta_si)
 				if match_point:
-					for num in range( 0, 16 ) :
+					for num in xrange( 0, 16 ) :
 						self.game.screen.blit( figureta_blit, (
 							500 + cos(current_time + (float(num)/15)) * 400,
 							110 + sin((current_time + (float(num)/10)) * 2) * 25) )

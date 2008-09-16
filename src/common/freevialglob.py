@@ -444,7 +444,7 @@ def createTextSurface( frases, color, intensitat = 25 ):
  
 	help_overlay = pygame.Surface( ( 1024, 768), pygame.SRCALPHA, 32 )
 	
-	for num in range( 0, 10):
+	for num in xrange( 0, 10):
 		help_overlay.fill( (0, 0, 16, num * intensitat), ( 100 + (num * 2), 100 + (num * 2), 1024 - 100 * 2 - (num * 4), 768 - 150 - (num * 4)) )
 	
 	nline = 0
@@ -470,7 +470,7 @@ def createTextSurface( frases, color, intensitat = 25 ):
 def replaceKeywoards( content ):
 	""" Replaces keywoards found in the content a help file. """
 	
-	for num in range(0, len(content)):
+	for num in xrange(0, len(content)):
 		content[num] = unicode(content[num], 'utf-8')
 	
 	for (i, line) in enumerate(content):
