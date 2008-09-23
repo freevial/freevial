@@ -31,7 +31,7 @@
   <questions>
     <question>
       <sentence>En quin any es fa llençar la bomba atòmica a Hiroshima?</sentence>
-      <author>NúriaCarreras</author>
+      <author>NuriaCarreras</author>
       <comments></comments>
       <answers>
         <answer correct="true">1945</answer>
@@ -79,7 +79,7 @@
 
     <question>
       <sentence>Quina és la segona edat de pedra?</sentence>
-      <author>NúriaCarreras</author>
+      <author>NuriaCarreras</author>
       <comments></comments>
       <answers>
         <answer correct="true">Mesolític</answer>
@@ -200,7 +200,7 @@
 
     <question>
       <sentence>Quant de temps va durar la Inquisició Espanyola?</sentence>
-      <author>NúriaCarreras</author>
+      <author>NuriaCarreras</author>
       <comments>Fundada el 1478 pels Reis Catòlics i suprimida el 1820 pel rei Ferran VII, dins el període conegut com el Trienni Liberal, en el qual es va reimplantar la Constitució espanyola de 1812.</comments>
       <answers>
         <answer correct="true">1478 - 1820</answer>
