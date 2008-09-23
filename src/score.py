@@ -268,7 +268,7 @@ class Score:
 		if winning_team != -1: 
 			mode = 2
 			show_stats = 1
-			element_seleccionat = winning_team(self.game.teams)
+			element_seleccionat = self.game.skin.winning_team(self.game.teams)
 			self.so_ok.play()
 		else:
 			self.game.skin.LoadSound('background_sound', 'background_sound_vol', music = 1).play(-1)
