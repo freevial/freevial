@@ -42,7 +42,7 @@
 
 
     <question>
-      <sentence>Durant quants es diu que va governar Gilgamesh?</sentence>
+      <sentence>Durant quants anys es diu que va governar Gilgamesh?</sentence>
       <author>NilOriol</author>
       <comments>Segons el llistat dels reis sumeris, Gilgamesh podria correspondre a un rei històric que va governar cap el 2700 a.C.</comments>
       <answers>
@@ -83,7 +83,7 @@
       <comments></comments>
       <answers>
         <answer correct="true">Mesolític</answer>
-        <answer>Paleoític</answer>
+        <answer>Paleolític</answer>
         <answer>Neolític</answer>
         <answer>Museolític</answer>
       </answers>
@@ -105,7 +105,7 @@
     <question>
       <sentence>En quin segle es va produir la batalla de Las Navas de Tolosa?</sentence>
       <author>RafaelCarreras</author>
-      <comments>Es va produir el 1212 entre cristians i almoades, a Las Navas de Tolosa (província de Jaén).</comments>
+      <comments>Es va produir el 1212 entre cristians i almohades, a Las Navas de Tolosa (província de Jaén).</comments>
       <answers>
         <answer correct="true">XIII</answer>
         <answer>XIV</answer>
@@ -121,7 +121,7 @@
       <answers>
         <answer correct="true">L'arc</answer>
         <answer>Ballesta</answer>
-        <answer>Amdues per igual</answer>
+        <answer>Ambdues per igual</answer>
       </answers>
     </question>
 
