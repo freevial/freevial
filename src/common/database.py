@@ -51,8 +51,12 @@ class Question:
 	
 	def get_answers(self):
 		
-		return sample(self._correct_answers, 1) + \
-			sample(self._wrong_answers, 2)
+		if len(self._wrong_answers) == 1:
+			i = 1
+		else:
+			i = 2
+		
+		return sample(self._correct_answers, 1) + sample(self._wrong_answers, i)
 
 class Database:
 	
@@ -116,17 +120,15 @@ class Database:
 		
 		data = self._get_question()
 		answers = data.get_answers()
-		answer_order = sample(xrange(0, 3), 3)
+		answer_order = sample(xrange(0, len(answers)), len(answers))
 		
 		question = {}
 		question['text'] = data.question
-		question['opt1'] = answers[answer_order[0]]
-		question['opt2'] = answers[answer_order[1]]
-		question['opt3'] = answers[answer_order[2]]
+		question['options'] = tuple((answers[answer_order[num]] for num in xrange(0, len(answers))))
 		question['answer'] = answer_order.index(0)
 		question['author'] = data.author
 		question['comment'] = data.comment
 		question['mediatype'] = data.mediatype
 		question['media'] = data.media
-
+		
 		return question

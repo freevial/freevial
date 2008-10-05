@@ -515,14 +515,15 @@
         <xs:annotation>
             <xs:documentation xml:lang="ca">
                 Llista de respostes a la pregunta. Com a mínim n'hi
-                ha d'haver una de correcta i dues d'incorrectes. Se'n
-                mostraran tres sota de la pregunta, en ordre aleatori,
-                precedides de la lletra A, B o C.
+                ha d'haver una de correcta i una (però preferiblement
+                dues) d'incorrectes. Se'n mostraran fins a tres sota de
+                la pregunta, en ordre aleatori, precedides de la lletra
+                A, B o C.
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element type="answerType" name="answer"
-                maxOccurs="unbounded" minOccurs="3" />
+                maxOccurs="unbounded" minOccurs="2" />
         </xs:sequence>
     </xs:complexType>
 
@@ -549,13 +550,8 @@
 	<xs:simpleType name="text" >
          
         <xs:restriction base="xs:string">
-			<!-- <xs:pattern 
-				value="^[^\x00-\x09\x0b\x0c\x0e-\x1f]*$">
-				</xs:pattern>-->
 			<xs:pattern value="(\P{Cc}|\r|\n|\t)*"></xs:pattern>
 			<xs:whiteSpace value="collapse" />
 		</xs:restriction>   
      </xs:simpleType>
-
-
 </xs:schema>
