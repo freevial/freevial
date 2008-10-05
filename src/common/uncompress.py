@@ -47,7 +47,7 @@ class Uncompressor:
 			raise ValueError, 'Unsuported file format, expected .tar.gz, .tar.bz or .zip.'
 	
 	
-	def _unzip_all(directory):
+	def _unzip_all(self, directory):
 		""" Extract all members of the current zip file to the given directory. """
 		
 		for name in self.fileobj.namelist():
@@ -59,6 +59,8 @@ class Uncompressor:
 				outfile = open(os.path.join(directory, name), 'wb')
 				outfile.write(self.fileobj.read(name))
 				outfile.close()
+		
+		return directory
 	
 	
 	def _open(self, filename, mode='r'):
@@ -83,3 +85,6 @@ class Uncompressor:
 		
 		elif self.type == 'zip':
 			return self._unzip_all(directory)
+
+
+

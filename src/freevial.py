@@ -263,7 +263,7 @@ if options.languages:
 
 if options.database:
 	path = os.path.abspath(os.path.join(options.real, options.database))
-	if not os.path.isdir(path):
+	if not os.path.exists(path):
 		print _(u'Could not find database "%s"...' % path)
 		sys.exit(1)
 	Global.databases.append(path)
