@@ -19,11 +19,12 @@
 		<authors>
 			<author>Teresa Sanz Dolado</author>
 			<author>Jordi Àlamo Llapart</author>
+			<author>Orestes Mas Casals (imatge)</author>
 		</authors>
 	</information>
 	<appearance>
 		<!-- FIXME: Provisional-->
-		<image>categoria_cat.png</image>
+		<image>categoria_amer.png</image>
 		<sound>mov.ogg</sound>
 	</appearance>
 	<questions>
