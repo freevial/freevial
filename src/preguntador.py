@@ -64,9 +64,7 @@ class NotaVoladora:
 
 	def pinta(self, surface, preguntador):
 		self.mou()
-		#surface.blit(preguntador.nota, (self.x, self.y))
 		surface.blit(preguntador.notesimatges[self.col], (self.x, self.y))
-		
 
 class Preguntador:
 
@@ -142,10 +140,10 @@ class Preguntador:
 		self.solucio_nook = game.skin.LoadImage('solucio_nook')
 		
 		self.fons = range(0, 6)
-
+		
 		for num in xrange(0, 6):
 			self.fons[num] = load_image(get_databases(num).image)
-			self.fons[num] =  inkimage (self.fons[num], (i_colors_cat[num][0],i_colors_cat[num][1],i_colors_cat[num][2],128))
+			self.fons[num] = inkimage (self.fons[num], (i_colors_cat[num][0],i_colors_cat[num][1],i_colors_cat[num][2],128))
 		
 		self.mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
 		
@@ -163,13 +161,11 @@ class Preguntador:
 		self.so_ok = game.skin.LoadSound('so_ok', 'so_ok_vol')
 		self.so_nook = game.skin.LoadSound('so_nook', 'so_nook_vol')
 		
-		
 		self.categoria = None
 		self.current_question = None
 		self.num_asked_questions = 0
 		self.show_answers = 0
 		self.selected = 0
-		
 		
 		self.help_overlay = createHelpScreen('preguntador')
 		
@@ -247,9 +243,9 @@ class Preguntador:
 
 		self.sfc_pregunta  = self.preguntadorPintatext(self.current_question['text'], self.game.skin.configGetInt('question_width'))
 
-		self.sfc_resposta = range(0, 3)
-		for num in xrange(0, 3):
-			self.sfc_resposta[ num ] = self.preguntadorPintatext(self.current_question[ 'opt' + str(num + 1) ], self.game.skin.configGetInt('answer_width'))
+		self.sfc_resposta = range(0, len(self.current_question['options']))
+		for num in xrange(0, len(self.current_question['options'])):
+			self.sfc_resposta[ num ] = self.preguntadorPintatext(self.current_question['options'][num], self.game.skin.configGetInt('answer_width'))
 
 		self.sfc_apregunta = self.game.skin.render_text(str(self.current_question['author']), (self.color_de_text), (self.mida_text_autor))
 		self.sfc_apregunta.set_alpha(64)	
@@ -412,25 +408,24 @@ class Preguntador:
 						self.selected = 3
 						self.so_sub.play()
 					
-					if event.keyUp('DOWN', 'TAB') or event.isClick (5): 
+					if event.keyUp('DOWN', 'TAB') or event.isClick(5):
 						self.selected += 1
-						if self.selected == 4:
+						if self.selected == (len(self.current_question['options']) + 1):
 							self.selected = 1
 						self.so_sub.play()
 					
-					if event.keyUp(event, 'UP') or event.isClick (4): 
+					if event.keyUp(event, 'UP') or event.isClick(4):
 						self.selected -= 1
 						if self.selected <= 0:
-							self.selected = 3	
+							self.selected = len(self.current_question['options'])
 						self.so_sub.play()
-				
+					
 					if event.keyUp('x'):	
 						if self.current_question['mediatype'] == 'audio':
 							self.audio.play(1)
 						if self.current_question['mediatype'] == 'image':
 							hide_answers += 1
 							hide_answers %= 4
-				
 
 				if event.keyUp('z'):	
 					self.mostraautor ^= 1
@@ -537,7 +532,7 @@ class Preguntador:
 				# i les solucions			
 				linia_act = 270
 				
-				for num in xrange(0, 3):
+				for num in xrange(0, len(self.current_question['options'])):
 					self.game.screen.blit(self.lletres[num][(self.selected != num + 1)], (self.postextx, linia_act + (150 * num)))
 					self.game.screen.blit(self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)))		
 				
@@ -569,10 +564,10 @@ class Preguntador:
 			posnook = 700 + cos(time.time()) * 25
 			posnook2 = 700 - cos(time.time()) * 25
 			posok = 700 + cos(time.time() * 2) * 50
-		
+			
 			if self.show_answers > 0:
 				
-				for num in xrange(0, 3):
+				for num in xrange(0, len(self.current_question['options'])):
 					if self.current_question['answer'] == num :
 						if (self.selected - 1) != num :	
 							self.game.screen.blit(self.solucio_ok, (posnook2, linia_act + (150 * num)))

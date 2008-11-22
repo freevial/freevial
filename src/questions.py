@@ -149,9 +149,9 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 	
 	for question in root.questions.getchildren():
 		
-		if question.answers.countchildren() < 3:
+		if question.answers.countchildren() < 2:
 			print >> sys.stderr, _(u'Warning: «%s»: Found a question with '
-				'less than 3 answers; ignoring it.') % xmlFile
+				'less than 2 answers; ignoring it.') % xmlFile
 			continue
 		
 		obj = Question(

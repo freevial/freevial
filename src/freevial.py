@@ -60,7 +60,7 @@ class Freevial:
 	
 	def inici(self):
 		
-		# inicialize presentation surface
+		# initialize presentation surface
 		Global.game.screen = pygame.display.set_mode((Global.screen_x, Global.screen_y))
 		pygame.display.set_caption('Freevial')
 		pygame.display.set_icon(load_image('freevial.png'))
@@ -263,10 +263,9 @@ if options.languages:
 
 if options.database:
 	path = os.path.abspath(os.path.join(options.real, options.database))
-	# Pot ser un arxiu zip o tar
-	#if not os.path.isdir(path):
-	#	print _(u'Could not find database "%s"...' % path)
-	#	sys.exit(1)
+	if not os.path.exists(path):
+		print _(u'Could not find database "%s"...' % path)
+		sys.exit(1)
 	Global.databases.append(path)
 
 if options.info_db:

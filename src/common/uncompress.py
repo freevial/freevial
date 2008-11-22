@@ -59,8 +59,7 @@ class Uncompressor:
 				outfile = open(os.path.join(directory, name), 'wb')
 				outfile.write(self.fileobj.read(name))
 				outfile.close()
-
-		print "DIRECTORY: ", directory
+		
 		return directory
 	
 	
