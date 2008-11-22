@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<database version="1.1" id="ca-amer" language="ca"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="file:///usr/share/games/freevial/databases/freevial-database.xsd">
+	<information>
+		<name>Coses d'Amer</name>
+		<description>
+			Preguntes sobre diversos aspectes de la vila d'Amer
+		</description>
+		<destination>
+			Per a tots aquells que vulguin comprovar el seu grau de coneixement de la història i cultura de la vila d'Amer. Categoria creada especialment per a la festa de presentació de la Ubuntu 8.10, el 29/11/2008
+		</destination>
+		<timestamp_creation>1227373200</timestamp_creation>
+		<timestamp_modification>1227373200</timestamp_modification>
+		<license>GPLv3</license>
+		<url></url>
+		<contact>jordi@bttamer.org</contact>
+		<authors>
+			<author>Teresa Sanz Dolado</author>
+			<author>Jordi Àlamo Llapart</author>
+		</authors>
+	</information>
+	<appearance>
+		<!-- FIXME: Provisional-->
+		<image>categoria_cat.png</image>
+		<sound>mov.ogg</sound>
+	</appearance>
+	<questions>
+		<!--Zero or more repetitions:-->
+		<question>
+			<sentence>Com es diuen els Gegants d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">Climent i Brígida</answer>
+				<answer>Arnau i Filomena</answer>
+				<answer>Climent i Roser</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Quin és l'acte principal de la Festa Major d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">La Sardana de l'Alcalde</answer>
+				<answer>La Tornaboda</answer>
+				<answer>El Correfoc</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>A quina comarca pertany Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">La Selva</answer>
+				<answer>Garrotxa </answer>
+				<answer>Gironès</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>En quin any es van adquirir els primers Gegants d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">1880</answer>
+				<answer>1957</answer>
+				<answer>1910</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Quin riu travessa Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">Brugent</answer>
+				<answer>Onyar</answer>
+				<answer>Ter</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>En quin any un terratrèmol va destruir pràcticament el poble d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">1427</answer>
+				<answer>1515</answer>
+				<answer>1870</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Com es diu la Sardana de l'Alcalde?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">La Mil·lenària</answer>
+				<answer>Vila d'Amer</answer>
+				<answer>Fonts d'Amer</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Quan va passar per últim cop el tren d'Olot per Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">1969</answer>
+				<answer>1971</answer>
+				<answer>1973</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Qui fou el primer Alcalde d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">Antoni Conches</answer>
+				<answer>Llorenç Cargol</answer>
+				<answer>Isidre Pujol</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Quin any es van posar les llambordes de la Plaça d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">1982</answer>
+				<answer>1990</answer>
+				<answer>1984</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Qui fou l'últim abat del Monestir d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">Joan Antoni de Llanza</answer>
+				<answer>Xavier de Golobart</answer>
+				<answer>Josep Puigderajols</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>De quin any és l'actual campanar d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">1900</answer>
+				<answer>1890</answer>
+				<answer>1939</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Com es diu l'arbre més vell d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">Roure de Can Puig</answer>
+				<answer>Roure de Can Ter</answer>
+				<answer>Roure de Can Fornada</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>De qui és la col·lecció permanent del Museu d'Amer (Med'A)?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">Lluís Sidera i Pujolràs</answer>
+				<answer>Joan Garcia i Balcells</answer>
+				<answer>Maria Casas i Grau</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Quin concurs es celebra a l'aplec de Santa Brígida?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">Xiulet de Cargolina</answer>
+				<answer>Llançament de Pinyol</answer>
+				<answer>Fumadors de Cigars</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Com es diu la revista d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">Amera</answer>
+				<answer>Amerencs</answer>
+				<answer>Ter</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Quin són els colors de l'equip de futbol d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">Blau i grana</answer>
+				<answer>Blau i verd</answer>
+				<answer>Blau i blanc</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Com es diu el castell d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">Castell d'Estela</answer>
+				<answer>Castell de Brugent</answer>
+				<answer>Castell Blanc</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>De quin any data l'Ajuntament d'Amer?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">1493</answer>
+				<answer>1510</answer>
+				<answer>1480</answer>
+			</answers>
+		</question>
+
+		<question>
+			<sentence>Com es coneix el transport públic que fa el trajecte Amer – Olot?</sentence>
+			<author>Teresa</author>
+			<answers>
+				<answer correct="true">La Teisa</answer>
+				<answer>La Garrotxina</answer>
+				<answer>L'Olotina</answer>
+			</answers>
+		</question>
+	</questions>
+</database>
+
+
