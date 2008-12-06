@@ -29,7 +29,6 @@ import gettext
 import re
 from lxml import etree, objectify
 
-from common.freevialglob import *
 from common.uncompress import Uncompressor
 from common.globals import GlobalVar, Global
 from common.database import Database, Question
