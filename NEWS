@@ -30,6 +30,7 @@ Bug Fixes:
  - Fixed a bug in the wheel which could cause it to return to the team
    selection screen instead of showing a question.
  - User requested end of the game ("e" key) works correctly now (LP: #184420).
+ - Now mouse and joystick events count as activity and delay the in-game help.
 
 
 Version 1.2 - Perfectionism

@@ -54,11 +54,7 @@ class SelCat:
 
 		self.selcat_color_text = game.skin.configGetRGB('color_text')
 		self.selcat_color_text_nosel = game.skin.configGetRGB('color_text_nosel')
-
-		self.help_overlay = createHelpScreen('score')
-
-		self.help_on_screen = helpOnScreen(HOS_SCORE_MODE0)
-
+		
 		self.cp = get_databases()
 		self.sfc_preguntes = range(0, len(self.cp))
 
@@ -102,13 +98,11 @@ class SelCat:
 		
 		self.game.screen.fill((0,0,0,0))
 		
-		ypos = mou_fons = mostra_ajuda = mostra_credits = 0
+		ypos = mou_fons = 0
 
 		self.darrera_info = -1
 		darrer_element_a_la_vista = 0
 		primer_element_a_la_vista = 0
-
-		self.help_on_screen.activitat()
 		
 		seleccio = 0
 		
@@ -217,9 +211,6 @@ class SelCat:
 			self.game.screen.blit(self.sfc_text_info6, (490, 655))	
 	
 			self.game.screen.blit(self.sfc_cat, (697, 221))	
-			
-			if mostra_ajuda: self.game.screen.blit(self.help_overlay, (0,0))
-			if mostra_credits: self.game.screen.blit(self.game.sfc_credits, (0,0))
 			
 			self.game.screen.blit(self.sel_reflexos, (0, 0))
 

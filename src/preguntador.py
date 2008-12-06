@@ -34,6 +34,30 @@ from common.freevialglob import *
 from common.events import eventLoop, waitForMouseRelease
 from questions import get_databases
 
+instructions = _("""INSTRUCTIONS
+
+Game mode
+-----------------
+A, B, C - Choose answer A, B or C
+
+ARROWS - Changes current selecion
+I, O, P - Select answer A, B or C
+INTRO - Choose selected answer
+
+F11 or F - Changes full screen mode
+
+After answer
+-----------------
+
+F3 - Show/hide quiz notes
+
+Presentation mode
+-----------------
+Z - Show/hide quiz author and number
+1..6 - Shows random quiz from selected category
+
+F1 or H - Help | F2 - About freevial | Q or ESC - Quit""")
+
 class NotaVoladora:
 
 	def __init__(self):
@@ -167,10 +191,9 @@ class Preguntador:
 		self.show_answers = 0
 		self.selected = 0
 		
-		self.help_overlay = createHelpScreen('preguntador')
+		self.help_overlay = createHelpScreen(instructions)
 		
-		self.help_on_screen = helpOnScreen(HOS_PREGUNTADOR_RUN)
-		self.help_on_screen.sec_timeout = 10
+		self.help_on_screen = HelpOnScreen()
 
 		self.nota = game.skin.LoadImage('media_music_image')
 		self.notesimatges = []
@@ -324,8 +347,6 @@ class Preguntador:
 		
 		compos = 768
 		
-		self.help_on_screen.sec_timeout = 10
-
 		self.frate = frameRate(Global.fps_limit)
 
 		self.atzar(selcat)
@@ -344,7 +365,7 @@ class Preguntador:
 					
 
 		mostra_punt_de_categoria = False
-		mostra_ajuda = mostra_credits = 0
+		mostra_ajuda = 0
 
 		self.game.screen.fill((0,0,0,0))
 
@@ -360,7 +381,7 @@ class Preguntador:
 		mostra_comentaris = False
 		sfc_comentaris = None
 
-		self.help_on_screen.activitat()
+		self.help_on_screen.next()
 
 		hide_answers = 0	
 
@@ -371,10 +392,10 @@ class Preguntador:
 			# Iterador d'events
 			for event in eventLoop():
 				
-				self.help_on_screen.activitat(event)
+				self.help_on_screen.next(event)
 				
 				if event.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
-					if not mostra_ajuda and not mostra_credits:
+					if not mostra_ajuda:
 						if not (Global.SOUND_MUTE or Global.MUSIC_MUTE):
 							pygame.mixer.fadeout(500)
 						if self.show_answers == 0:
@@ -382,15 +403,10 @@ class Preguntador:
 							self.selected = 0
 						acaba = 1
 					else:
-						mostra_ajuda = mostra_credits = 0
+						mostra_ajuda = 0
 				
 				if event.keyUp('F1', 'h'):
 					mostra_ajuda ^= 1
-					mostra_credits = 0
-
-				if event.keyUp('F2'):
-					mostra_ajuda = 0
-					mostra_credits ^= 1
 				
 				if self.show_answers == 0:
 					if event.keyUp('a', 'i'):
@@ -448,7 +464,7 @@ class Preguntador:
 
 				if not Global.MUSIC_MUTE:
 					pygame.mixer.music.fadeout(2500)
-				self.help_on_screen.sec_timeout = 3
+				
 				if self.show_answers == 0:
 					self.show_answers = 3
 					if self.current_question['answer'] == (self.selected - 1):
@@ -602,14 +618,14 @@ class Preguntador:
 					compos += 100
 					self.game.screen.blit(sfc_comentaris, (0, compos))
 			
-			textmostra = ''
+			extra_help_text = ''
 			if self.current_question['mediatype'] == 'audio':
-				textmostra += _(' X - Replay media')
+				extra_help_text += _(' X - Replay media')
 				for nota in notesvoladores:
 					nota.pinta(self.game.screen, self)
 
 			if self.current_question['mediatype'] == 'image':
-				textmostra += _(' X - Shows or hides answers/images')
+				extra_help_text += _(' X - Show or hide answers/images')
 
 			if self.use_teamgotxies:
 				team = self.game.teams[self.game.current_team]
@@ -618,11 +634,11 @@ class Preguntador:
 					self.game.screen.blit(team.teamgotxie_sfc, (self.teamgotxies_pos[0] - team.teamgotxie_sfc.get_width() / 2, self.teamgotxies_pos[1] - team.teamgotxie_sfc.get_height() / 2))
 			
 			self.help_on_screen.draw(self.game.screen, (350, 740),
-				if2(self.show_answers, HOS_PREGUNTADOR_END, HOS_PREGUNTADOR_RUN),
-				extra = textmostra)
+				if2(self.show_answers,
+					_('F3 - Show comments, INTRO/ESC - Back to score screen'),
+					_('A, B, C - Choose answer, F1 - Help') + extra_help_text))
 			
 			if mostra_ajuda: self.game.screen.blit(self.help_overlay, (0,0))
-			if mostra_credits: self.game.screen.blit(self.game.sfc_credits, (0,0))
 			
 			self.frate.next(self.game.screen)
 			

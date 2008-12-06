@@ -35,11 +35,8 @@ import urllib
 from pygame.locals import *
 
 from common.globals import Global
-from questions import get_databases
 
 gettext.install('freevial', '/usr/share/locale', unicode=1)
-
-textos = []
 
 class Equip:
 	
@@ -433,15 +430,11 @@ def list2string(list, wordsEachLine = 5, lineEnd = ','):
 	return lines
 
 
-def createTextSurface(frases, color, intensitat = 25):
+def createTextSurface(text, color, intensitat = 25):
 	""" Creates a help overlay surface and prints the passed text on it. """
 	
-	font_step = (768 - (315)) / len(frases) 
-	font_step = min(font_step, 25)
-
-	font_size = font_step - (font_step * 10) / 100
-	if font_size < 10: font_size = 10
- 
+	font_size = 14
+	
 	help_overlay = pygame.Surface((1024, 768), pygame.SRCALPHA, 32)
 	
 	for num in xrange(0, 10):
@@ -450,8 +443,8 @@ def createTextSurface(frases, color, intensitat = 25):
 	nline = 0
 
 	pos = 0
-	for line in frases:
-		if line != "":	
+	for line in text.split('\n'):
+		if line != '':	
 			text_pregunta = render_text(line, (0,0,0), font_size, 1, '', 700)
 			help_overlay.blit(text_pregunta, (150 + 2, pos + 142))
 			
@@ -467,56 +460,10 @@ def createTextSurface(frases, color, intensitat = 25):
 	return help_overlay
 
 
-def replaceKeywoards(content):
-	""" Replaces keywoards found in the content a help file. """
+def createHelpScreen(text):
+	""" Creates a help overlay surface containing the given text. """
 	
-	for num in xrange(0, len(content)):
-		content[num] = unicode(content[num], 'utf-8')
-	
-	for (i, line) in enumerate(content):
-		if line.startswith('##replace:question-authors'):
-			content[ i : (i + 1) ] = sorted(["%s: %s" % (category.name, category.authors) for category in get_databases()])
-	
-	return content
-
-
-def readLocalizedHelpFile(help_section):
-	""" Reads a localized file into an unicoded array. """
-	
-	# FIXME/TODO: Delete help files and use gettext strings instead.
-	
-	filename = os.path.join(Global.folders['help'], (help_section + "_"+ locale.getdefaultlocale()[0][:2] +'.txt'))
-	
-	if not os.path.exists (filename):
-		filename = os.path.join(Global.folders['help'], (help_section + '.txt'))
-	
-	lines = []
-	
-	for line in replaceKeywoards(open(filename, 'r').readlines()):
-		
-		if not line[-1:].isalnum():
-			line = line[:-1]
-		
-		lines.append (line)
-	
-	return lines
-
-
-def createHelpScreen(help_section, alternate_text = False):
-	""" Creates a help overlay surface based on a help file. """
-	
-	return createTextSurface(readLocalizedHelpFile(help_section),
-		if2(alternate_text, (0, 255, 255), (255, 255, 0)))
-
-
-def initTextos():
-	global textos
-
-	textos = readLocalizedHelpFile("textos")
-
-
-def valorText(ntext):
-	return textos[ ntext ]
+	return createTextSurface(text, (255, 255, 0))
 
 
 i_colors_cat = ((0,0,255), (255,128,0), (0,255,0),(255,0,0),(255,0,255), (255,255,0))
@@ -543,60 +490,34 @@ def first_existing_location(file, directories):
 		if os.path.isfile(filename):
 			return filename
 
-HOS_SCORE_MODE0 = 0
-HOS_SCORE_MODE1 = 1
-HOS_SCORE_MODE2 = 2
-HOS_QUIT = 3
-HOS_YES = 4
-HOS_NO = 5
-HOS_PREGUNTADOR_RUN = 6
-HOS_PREGUNTADOR_END = 7
-HOS_SCORE_MODEW = 8
-HOS_RODA_ATURA = 9
-HOS_NEW_GAME = 10
 
-
-class helpOnScreen:
+class HelpOnScreen:
 	
-	text = ''
-	scf_text = None
-	sec_darrera_activitat = -1
+	_texts = {}
+	sec_last_activity = -1
 	sec_timeout = 10
-
-	intensitat = 5
 	
-	
-	def __init__(self, itext):
+	def next(self, event=None):
+		""" This function updates the last date of user activity (key presses,
+		etc). It should be called when a new page is first shown, and then
+		each time there's an event. """
 		
-		self.creaTextdeTextos (itext)
-		self.sec_darrera_activitat = time.time()	
+		if not event or event.is_user_action():
+			self.sec_last_activity = time.time()
 	
-	
-	def creaTextdeTextos(self, itext, extra = ''):
+	def get_last_activity(self):
+		""" Returns the timestamp of the last user activity. """
 		
-		global textos
-		self.creaText(textos[itext] + extra)
+		return self.sec_last_activity
 	
-	
-	def creaText(self, ptext):
+	def draw(self, surface, position, text):
+		""" Draws the given text upon the indicated surface if a certain
+		amount of time has ellapsed since the last user activity. """
 		
-		if self.text != ptext :
-			self.text = ptext
-			self.sfc_text = render_text(self.text, (128,128,128), 15, 1)
-	
-	
-	def draw(self, surface, pos, itext = None, extra = ''):
-		
-		if time.time() >= self.sec_darrera_activitat + self.sec_timeout :
-			
-			if itext: self.creaTextdeTextos (itext, extra)
-			surface.blit(self.sfc_text, pos)
-	
-	
-	def activitat(self, event = None):
-		
-		if not event or event.type == pygame.KEYUP:
-			self.sec_darrera_activitat = time.time()
+		if time.time() >= (self.get_last_activity() + self.sec_timeout):
+			if text not in self._texts:
+				self._texts[text] = render_text(text, (128,128,128), 15, 1)
+			surface.blit(self._texts[text], position)
 
 
 class frameRate:

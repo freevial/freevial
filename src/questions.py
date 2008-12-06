@@ -173,7 +173,8 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 			continue
 		
 		if hasattr(question, 'comments') and question.comments.text is not None:
-			obj.comment = [collapse(x) for x in question.comments.xpath('child::text()')]
+			obj.comment = '\n'.join(
+				[collapse(x) for x in question.comments.xpath('child::text()')])
 		
 		if version >= 1.1:
 			# Version 1.1 introduces support for media, more than three answers

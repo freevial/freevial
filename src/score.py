@@ -26,9 +26,8 @@
 import sys
 import os.path
 from random import randint
-import pygame
 from math import *
-from pygame.locals import *
+import pygame
 
 from common.globals import Global
 from common.freevialglob import *
@@ -40,6 +39,43 @@ from selcat import SelCat
 vocals_amb_accents = (u'aàáäâ', u'eèéëê', u'iìíïî', u'oòóöô', u'uùúüû',
 						u'AÀÁÄÂ', u'EÈÉËÈ', u'IÌÍÏÎ', u'OÒÓÖÔ', u'UÙÚÜÛ')
 
+help_messages = [
+	_('ARROWS - Select slot, INTRO - Create team, SPACE - Start game, F1 - Help'),
+	_('INTRO - Star turn, F1 - Help'),
+	_('F1 - Help, INTRO - New game'),
+	_('Write a name for the team and press ENTER'),
+]
+
+instructions = _("""TEAM INSTRUCTIONS
+
+Team creation mode
+---------------------------------------------------------------------------
+ARROWS - Changes current selection
+NEXT / PREV PAG - Chooses next or previous team
+
+INTRO - Enables selected team
+A - Enables / Disables selected team
+N - Changes team name
+
+R - Choose a random team / start game mode
+M - Change between team creation mode and game mode
+
+F11 or F - Changes full screen mode
+
+L - Switch locked mode
+
+Game mode
+---------------------------------------------------------------------------
+INTRO - Start turn            
+S - Show / hide stats
+
+Presentation mode
+---------------------------------------------------------------------------
+Z, X - Increment or decrease score
+1..6 - Enable / Disable seleced category
+
+F1 or H - Help | F2 - About Freevial | Q or ESC - Quit""")
+
 class Score:
 
 	def __init__(self, game):
@@ -47,8 +83,8 @@ class Score:
 		self.game = game
 		game.skin.set_domain('score')		
 		
-		self.help_overlay = createHelpScreen('score')
-		self.help_on_screen = helpOnScreen(HOS_SCORE_MODE0)
+		self.help_overlay = createHelpScreen(instructions)
+		self.help_on_screen = HelpOnScreen()
 
 		self.background_mode = game.skin.configGet('background_mode')
 		
@@ -215,9 +251,6 @@ class Score:
 
 	def prevTeamgotxie(self, es):
 		self.moveTeamgotxie(es, -1)
-		
-
-
 
 	def accentsMOU(self, newname, desp):
 	
@@ -248,13 +281,12 @@ class Score:
 
 		frate = frameRate(Global.fps_limit)
 
-		if self.background_mode == "slide":
+		if self.background_mode == 'slide':
 			self.slide_loadimage(frate)
-			
 		
 		waitForMouseRelease()
 		
-		ypos = escriu = atzar = mou_fons = mostra_ajuda = mostra_credits = show_stats = 0
+		ypos = escriu = atzar = mou_fons = mostra_ajuda = show_stats = 0
 		element_seleccionat = self.game.current_team
 		nou_grup = if2(teamsActius(self.game.teams) == 0, 1, 0)
 		
@@ -276,7 +308,7 @@ class Score:
 		surten = 0
 		mostrada_victoria = False
 		
-		self.help_on_screen.activitat()
+		self.help_on_screen.next()
 
 		show_elements = True
 		
@@ -295,27 +327,22 @@ class Score:
 					self.show_end_screen()
 					mostrada_victoria = True
 
-			if self.background_mode == "slide":
-				if time.time() >= self.help_on_screen.sec_darrera_activitat + self.score_slide_activity_timeout :
+			if self.background_mode == 'slide':
+				if time.time() >= self.help_on_screen.get_last_activity() + self.score_slide_activity_timeout:
 					show_elements = False
 			
 			# event iterator
 			for event in eventLoop():
 				
-				self.help_on_screen.activitat(event)
+				self.help_on_screen.next(event)
 
 				if event.type == pygame.KEYUP and not show_elements:
 					show_elements ^= 1
 				
 				if event.keyUp('F1') or (not escriu and event.keyUp('h')):
 					mostra_ajuda ^= 1
-					mostra_credits = 0
 				
-				if event.keyDown('F2'):
-					mostra_credits ^= 1
-					mostra_ajuda = 0
-				
-				if escriu and not mostra_ajuda and not mostra_credits:
+				if escriu and not mostra_ajuda:
 					
 					if event.isClick('primary') or event.keyUp('RETURN', 'ESCAPE', 'KP_ENTER'):
 						escriu = 0
@@ -348,15 +375,18 @@ class Score:
 				else:
 					
 					if event.keyUp('q', 'ESCAPE'):
-						if not mostra_ajuda and not mostra_credits:
+						if not mostra_ajuda:
 							if not Global.LOCKED_MODE:
-								if QuestionDialog().ask(self.game.screen, valorText(HOS_QUIT), (valorText(HOS_YES), valorText( HOS_NO)), color = self.game.skin.configGetRGB( "game_question_color", "game" ) ) == 0:
+								if QuestionDialog().ask(self.game.screen,
+									_('Are you sure you want to quit the game?'),
+									(_('Yes'), _('No')),
+									color = self.game.skin.configGetRGB('game_question_color', 'game')) == 0:
 									if not Global.MUSIC_MUTE:
 										pygame.mixer.music.fadeout(500)
 										pygame.time.wait(500)
 									return -1
 						else:
-							mostra_ajuda = mostra_credits = 0
+							mostra_ajuda = 0
 					
 					if mode == 0:
 						
@@ -433,7 +463,9 @@ class Score:
 								else:
 									nou_grup = 1
 						else:
-							if QuestionDialog().ask(self.game.screen, valorText(HOS_NEW_GAME), (valorText(HOS_YES), valorText( HOS_NO)), color = self.game.skin.configGetRGB( 'game_question_color', 'game' )) == 0:
+							if QuestionDialog().ask(self.game.screen,
+								_('Play again?'), (_('Yes'), _('No')),
+								color=self.game.skin.configGetRGB('game_question_color', 'game')) == 0:
 								mode = 0
 								show_stats = 0 
 				
@@ -560,10 +592,9 @@ class Score:
 				self.game.screen.blit(self.sfc_llum, (0, 0))
 			
 			if mostra_ajuda: self.game.screen.blit(self.help_overlay, (0,0))
-			if mostra_credits: self.game.screen.blit(self.game.sfc_credits, (0,0))
 			
 			self.help_on_screen.draw(self.game.screen, (350, 740),
-				if2(escriu, HOS_SCORE_MODEW, mode))
+				if2(escriu, help_messages[3], help_messages[mode]))
 			
 			frate.next(self.game.screen)
 			

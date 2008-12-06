@@ -32,11 +32,27 @@ from common.freevialglob import *
 from common.events import eventLoop, waitForMouseRelease
 from questions import get_databases
 
+instructions = _("""INSTRUCTIONS
 
-##################################################
-#
-# Empaquetat en una classe del selector
-#
+INTRO or SPACE - Stop gambling machine
+
+F12 or F - Changes full screen mode
+
+The selected category will choose the kind of 
+question you are going to answer.
+
+If you get a category where you haven't already
+answered correctly any question, you'll win the 
+part of the logo of the same color if you know the
+right answer.
+
+Once a player has all colors game stops and 
+the team with the most points wins.
+
+Being the first to answer all categories gives you
+3 extra points.
+
+F1 or H - Help | F2 - About freevial | Q or ESC - Quit""")
 
 class Roda:
 	
@@ -84,10 +100,9 @@ class Roda:
 		for num in xrange(0, 6):
 			self.so_cat[num] = load_sound(get_databases(num).sound, volume = 1.0)
 		self.canviacat()		
-		self.help_overlay = createHelpScreen('roda')		
+		self.help_overlay = createHelpScreen(instructions)		
 		
-		self.help_on_screen = helpOnScreen(HOS_RODA_ATURA)
-		self.help_on_screen.sec_timeout = 10
+		self.help_on_screen = HelpOnScreen()
 
 		self.rewheelonrepeat = game.skin.configGetBool('rewheelonrepeat');
 
@@ -116,7 +131,8 @@ class Roda:
 		self.game.skin.set_domain('wheel')
 
 		self.canviacat()
-
+		
+		self.help_on_screen.next()
 		self.frate = frameRate(Global.fps_limit)
 		
 		self.so_evil.stop()
@@ -127,7 +143,7 @@ class Roda:
 
 		waitForMouseRelease()
 			
-		pos = pos_fons = atura = frenant = time_fi = mostra_ajuda = mostra_credits = 0
+		pos = pos_fons = atura = frenant = time_fi = mostra_ajuda = 0
 		rodant = 1
 		resultat = -1
 		
@@ -140,21 +156,18 @@ class Roda:
 			
 			for event in eventLoop():
 				
+				self.help_on_screen.next(event)
+				
 				if event.keyUp('ESCAPE', 'q') and not Global.LOCKED_MODE:
-					if not mostra_ajuda and not mostra_credits:
+					if not mostra_ajuda:
 						if not (Global.MUSIC_MUTE or Global.SOUND_MUTE):
 							pygame.mixer.fadeout(500)
 						return -1
 					else:
-						mostra_ajuda = mostra_credits = 0
+						mostra_ajuda = 0
 				
 				if event.keyUp('F1', 'h'):
-					mostra_ajuda ^= 1	
-					mostra_credits = 0			
-				
-				if event.keyUp('F2'):
-					mostra_credits ^= 1
-					mostra_ajuda = 0
+					mostra_ajuda ^= 1
 				
 				if event.isRelease('primary') or event.keyUp('RETURN', 'SPACE', 'KP_ENTER') and rodant == 1:
 					atura = 1
@@ -242,9 +255,8 @@ class Roda:
 				self.game.screen.blit(self.figureta[self.game.teams[self.game.current_team].figureta], (70, 630))
 						
 			if mostra_ajuda: self.game.screen.blit(self.help_overlay, (0,0))
-			if mostra_credits: self.game.screen.blit(self.game.sfc_credits, (0,0))
-
-			self.help_on_screen.draw(self.game.screen, (350, 740))
+			
+			self.help_on_screen.draw(self.game.screen, (350, 740), _('INTRO - Stop the wheel'))
 			
 			self.frate.next(self.game.screen)
 			

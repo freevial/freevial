@@ -55,7 +55,6 @@ class Freevial:
 		Global.game.teams = []
 		
 		Global.game.current_team = 0
-		Global.game.sfc_credits = ''
 	
 	
 	def inici(self):
@@ -83,10 +82,6 @@ class Freevial:
 				Global.MUSIC_MUTE = True
 		
 		pygame.font.init()
-		
-		Global.game.sfc_credits = createHelpScreen('credits', alternate_text = True)
-		
-		initTextos()
 		
 		# initialize joystick, if there's one
 		pygame.joystick.init()

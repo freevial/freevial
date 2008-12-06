@@ -195,11 +195,14 @@ class EventHandle:
 		
 		return  self.event.type == pygame.QUIT
 	
-	
 	def str(self):
 		
 		return if2(self._isKeyEvent(), printKey(self.event.key), '')
 	
+	def is_user_action(self):
+		
+		return self.event.type in (pygame.KEYUP, pygame.KEYDOWN,
+			pygame.MOUSEBUTTONUP, pygame.MOUSEBUTTONDOWN, pygame.JOYBUTTONDOWN)
 	
 	def base_actions(self):
 		
