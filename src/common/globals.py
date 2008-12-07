@@ -2,7 +2,7 @@
 
 #
 # Freevial
-# Global Data used all over Freevial
+# Global data used all over Freevial
 #
 # Copyright (C) 2007, 2008 The Freevial Team
 #
@@ -73,3 +73,6 @@ Global.folders = {
 		'fonts': os.path.join(Global.basefolder, 'fonts'),
 		'help': os.path.join(Global.basefolder, 'help'),
 	}
+
+# Instances
+Global.help_on_screen = None

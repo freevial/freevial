@@ -93,7 +93,9 @@ class Freevial:
 		Global.game.max_teams = Global.game.skin.configGetInt('max_teams', domain='game')
 		for num in xrange(0, Global.game.max_teams):
 			Global.game.teams.append(Equip(num))
-	
+		
+		# Initialize common instances
+		Global.help_on_screen = HelpOnScreen()
 	
 	def juguem(self):
 		

@@ -84,8 +84,7 @@ class Score:
 		game.skin.set_domain('score')		
 		
 		self.help_overlay = createHelpScreen(instructions)
-		self.help_on_screen = HelpOnScreen()
-
+		
 		self.background_mode = game.skin.configGet('background_mode')
 		
 		self.score_color_text = game.skin.configGetRGB('color_text')
@@ -308,7 +307,7 @@ class Score:
 		surten = 0
 		mostrada_victoria = False
 		
-		self.help_on_screen.next()
+		Global.help_on_screen.next()
 
 		show_elements = True
 		
@@ -328,13 +327,13 @@ class Score:
 					mostrada_victoria = True
 
 			if self.background_mode == 'slide':
-				if time.time() >= self.help_on_screen.get_last_activity() + self.score_slide_activity_timeout:
+				if time.time() >= Global.help_on_screen.get_last_activity() + self.score_slide_activity_timeout:
 					show_elements = False
 			
 			# event iterator
 			for event in eventLoop():
 				
-				self.help_on_screen.next(event)
+				Global.help_on_screen.next(event)
 
 				if event.type == pygame.KEYUP and not show_elements:
 					show_elements ^= 1
@@ -593,7 +592,7 @@ class Score:
 			
 			if mostra_ajuda: self.game.screen.blit(self.help_overlay, (0,0))
 			
-			self.help_on_screen.draw(self.game.screen, (350, 740),
+			Global.help_on_screen.draw(self.game.screen, (350, 740),
 				if2(escriu, help_messages[3], help_messages[mode]))
 			
 			frate.next(self.game.screen)

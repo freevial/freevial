@@ -102,8 +102,6 @@ class Roda:
 		self.canviacat()		
 		self.help_overlay = createHelpScreen(instructions)		
 		
-		self.help_on_screen = HelpOnScreen()
-
 		self.rewheelonrepeat = game.skin.configGetBool('rewheelonrepeat');
 
 		self.use_teamgotxies = self.game.skin.configGetBool('use_teamgotxies')
@@ -132,7 +130,7 @@ class Roda:
 
 		self.canviacat()
 		
-		self.help_on_screen.next()
+		Global.help_on_screen.next()
 		self.frate = frameRate(Global.fps_limit)
 		
 		self.so_evil.stop()
@@ -156,7 +154,7 @@ class Roda:
 			
 			for event in eventLoop():
 				
-				self.help_on_screen.next(event)
+				Global.help_on_screen.next(event)
 				
 				if event.keyUp('ESCAPE', 'q') and not Global.LOCKED_MODE:
 					if not mostra_ajuda:
@@ -256,7 +254,7 @@ class Roda:
 						
 			if mostra_ajuda: self.game.screen.blit(self.help_overlay, (0,0))
 			
-			self.help_on_screen.draw(self.game.screen, (350, 740), _('INTRO - Stop the wheel'))
+			Global.help_on_screen.draw(self.game.screen, (350, 740), _('INTRO - Stop the wheel'))
 			
 			self.frate.next(self.game.screen)
 			

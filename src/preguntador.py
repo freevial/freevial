@@ -192,8 +192,6 @@ class Preguntador:
 		self.selected = 0
 		
 		self.help_overlay = createHelpScreen(instructions)
-		
-		self.help_on_screen = HelpOnScreen()
 
 		self.nota = game.skin.LoadImage('media_music_image')
 		self.notesimatges = []
@@ -381,7 +379,7 @@ class Preguntador:
 		mostra_comentaris = False
 		sfc_comentaris = None
 
-		self.help_on_screen.next()
+		Global.help_on_screen.next()
 
 		hide_answers = 0	
 
@@ -392,7 +390,7 @@ class Preguntador:
 			# Iterador d'events
 			for event in eventLoop():
 				
-				self.help_on_screen.next(event)
+				Global.help_on_screen.next(event)
 				
 				if event.keyUp('q', 'ESCAPE') and not Global.LOCKED_MODE:
 					if not mostra_ajuda:
@@ -633,7 +631,7 @@ class Preguntador:
 				if team.teamgotxie_sfc != None:
 					self.game.screen.blit(team.teamgotxie_sfc, (self.teamgotxies_pos[0] - team.teamgotxie_sfc.get_width() / 2, self.teamgotxies_pos[1] - team.teamgotxie_sfc.get_height() / 2))
 			
-			self.help_on_screen.draw(self.game.screen, (350, 740),
+			Global.help_on_screen.draw(self.game.screen, (350, 740),
 				if2(self.show_answers,
 					_('F3 - Show comments, INTRO/ESC - Back to score screen'),
 					_('A, B, C - Choose answer, F1 - Help') + extra_help_text))
