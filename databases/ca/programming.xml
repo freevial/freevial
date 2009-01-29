@@ -292,7 +292,15 @@
       </answers>
     </question>
 
-
+    <question>
+      <sentence>Si bo és dolent i dolent és bo, què és dolent?</sentence>
+      <author>RainCT</author>
+      <comments>Les parauls "bo" i "dolent" són variables. Si amb qualsevol llenguatge de programació assignessim el valor de "dolent" a "bo" i el de "bo" a "dolent", en aquesta operació "bo" ja tindria el valor de "dolent" i per tant el valor de "dolent" no canvia.</comments>
+      <answers>
+        <answer correct="true">El mateix que al principi</answer>
+        <answer>Bo</answer>
+      </answers>
+    </question>
 
   </questions>
 </database>
