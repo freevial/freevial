@@ -447,7 +447,7 @@ msgstr "No s'ha pogut trobar l'aparença «%s»."
 #: src/skinner.py:64
 #, python-format
 msgid "Loading skin \"%s\"..."
-msgstr "No s'ha pogut trobar l'aparença «»..."
+msgstr "S'està carregant l'aparença «%s»..."
 
 #: src/common/database.py:101
 #, python-format
