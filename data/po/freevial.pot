@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: freevial-dev@eurion.net\n"
-"POT-Creation-Date: 2008-12-07 00:15+0100\n"
+"POT-Creation-Date: 2009-02-07 23:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Sound initialization failed. %s"
 msgstr ""
 
-#: src/freevial.py:147
+#: src/freevial.py:149
 #, python-format
 msgid ""
 "\n"
@@ -34,137 +34,137 @@ msgid ""
 "\n"
 msgstr ""
 
-#: src/freevial.py:157
+#: src/freevial.py:159
 msgid "Usage: %prog [options]"
 msgstr ""
 
-#: src/freevial.py:163
+#: src/freevial.py:165
 msgid "debug mode"
 msgstr ""
 
-#: src/freevial.py:168
+#: src/freevial.py:170
 msgid "start in fullscreen mode"
 msgstr ""
 
-#: src/freevial.py:173
+#: src/freevial.py:175
 msgid "start game in locked mode"
 msgstr ""
 
-#: src/freevial.py:178
+#: src/freevial.py:180
 msgid ""
 "only load those questions written in the indicated language(s); for example, "
 "\"ca, en\""
 msgstr ""
 
-#: src/freevial.py:184
+#: src/freevial.py:186
 msgid ""
 "path to the database file / directory you want to append to the default "
 "database"
 msgstr ""
 
-#: src/freevial.py:190
+#: src/freevial.py:192
 msgid "(do not use this)"
 msgstr ""
 
-#: src/freevial.py:195
+#: src/freevial.py:197
 msgid "absolute path to the skin directory"
 msgstr ""
 
-#: src/freevial.py:200
+#: src/freevial.py:202
 msgid "disable sound"
 msgstr ""
 
-#: src/freevial.py:205
+#: src/freevial.py:207
 msgid "disable music"
 msgstr ""
 
-#: src/freevial.py:210
+#: src/freevial.py:212
 msgid "disable all sounds and music"
 msgstr ""
 
-#: src/freevial.py:215
+#: src/freevial.py:217
 msgid "disable media questions"
 msgstr ""
 
-#: src/freevial.py:220
+#: src/freevial.py:222
 msgid "show the framerate on screen"
 msgstr ""
 
-#: src/freevial.py:225
+#: src/freevial.py:227
 #, python-format
 msgid "set the framerate limit (default is %d)"
 msgstr ""
 
-#: src/freevial.py:230
+#: src/freevial.py:232
 msgid "enable D-Bus support, to interface with external applications"
 msgstr ""
 
-#: src/freevial.py:235
+#: src/freevial.py:237
 msgid "print information about the loaded database and exit"
 msgstr ""
 
-#: src/freevial.py:240
+#: src/freevial.py:242
 msgid "load all images and sounds at startup"
 msgstr ""
 
-#: src/freevial.py:245
+#: src/freevial.py:247
 msgid "use psyco, if available (this will use more memory)"
 msgstr ""
 
-#: src/freevial.py:254
+#: src/freevial.py:256
 msgid ""
 "Error: You've indicated an incorrect language code. Valid examples are: \"ca"
 "\", \"en, de\", etc."
 msgstr ""
 
-#: src/freevial.py:257
+#: src/freevial.py:259
 #, python-format
 msgid "Selected languages: %s"
 msgstr ""
 
-#: src/freevial.py:262
+#: src/freevial.py:264
 #, python-format
 msgid "Could not find database \"%s\"..."
 msgstr ""
 
-#: src/freevial.py:277
+#: src/freevial.py:279
 msgid "Freevial - About the loaded database...\n"
 msgstr ""
 
-#: src/freevial.py:279
+#: src/freevial.py:281
 msgid "Location:"
 msgstr ""
 
-#: src/freevial.py:280
+#: src/freevial.py:282
 msgid "Amount of categories:"
 msgstr ""
 
-#: src/freevial.py:281 src/selcat.py:193
+#: src/freevial.py:283 src/selcat.py:193
 msgid "Amount of questions:"
 msgstr ""
 
-#: src/freevial.py:285
+#: src/freevial.py:287
 #, python-format
 msgid "%(category)s: %(num)s questions"
 msgstr ""
 
-#: src/freevial.py:305
+#: src/freevial.py:307
 msgid "You've given an incorrect value for --max-fps."
 msgstr ""
 
-#: src/freevial.py:326
+#: src/freevial.py:328
 msgid "Error: Couldn't find dbus-python."
 msgstr ""
 
-#: src/freevial.py:341
+#: src/freevial.py:343
 msgid "Error: couldn't find enough categories; at least six are required."
 msgstr ""
 
-#: src/freevial.py:351
+#: src/freevial.py:353
 msgid "Warning: Could not find psyco."
 msgstr ""
 
-#: src/freevial.py:357
+#: src/freevial.py:359
 msgid "User requested interrupt."
 msgstr ""
 
@@ -195,19 +195,19 @@ msgid ""
 "F1 or H - Help | F2 - About freevial | Q or ESC - Quit"
 msgstr ""
 
-#: src/preguntador.py:623
+#: src/preguntador.py:621
 msgid " X - Replay media"
 msgstr ""
 
-#: src/preguntador.py:628
+#: src/preguntador.py:626
 msgid " X - Show or hide answers/images"
 msgstr ""
 
-#: src/preguntador.py:638
+#: src/preguntador.py:636
 msgid "F3 - Show comments, INTRO/ESC - Back to score screen"
 msgstr ""
 
-#: src/preguntador.py:639
+#: src/preguntador.py:637
 msgid "A, B, C - Choose answer, F1 - Help"
 msgstr ""
 
@@ -290,7 +290,7 @@ msgid ""
 "F1 or H - Help | F2 - About freevial | Q or ESC - Quit"
 msgstr ""
 
-#: src/roda.py:259
+#: src/roda.py:257
 msgid "INTRO - Stop the wheel"
 msgstr ""
 
@@ -344,19 +344,19 @@ msgid ""
 "F1 or H - Help | F2 - About Freevial | Q or ESC - Quit"
 msgstr ""
 
-#: src/score.py:381
+#: src/score.py:380
 msgid "Are you sure you want to quit the game?"
 msgstr ""
 
-#: src/score.py:382 src/score.py:467
+#: src/score.py:381 src/score.py:466
 msgid "Yes"
 msgstr ""
 
-#: src/score.py:382 src/score.py:467
+#: src/score.py:381 src/score.py:466
 msgid "No"
 msgstr ""
 
-#: src/score.py:467
+#: src/score.py:466
 msgid "Play again?"
 msgstr ""
 

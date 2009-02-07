@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Freevial 1.3\n"
 "Report-Msgid-Bugs-To: freevial-dev@eurion.net\n"
-"POT-Creation-Date: 2008-12-07 00:15+0100\n"
-"PO-Revision-Date: 2008-12-07 00:38+0100\n"
+"POT-Creation-Date: 2009-02-07 23:06+0100\n"
+"PO-Revision-Date: 2009-02-07 23:07+0100\n"
 "Last-Translator: Siegfried-Angel Gevatter Pujals <rainct@ubuntu.com>\n"
 "Language-Team: The Freevial Team <freevial-dev@eurion.net>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 msgid "Sound initialization failed. %s"
 msgstr "Ha fallat la inicialització del sistema de so. %s"
 
-#: src/freevial.py:147
+#: src/freevial.py:149
 #, python-format
 msgid ""
 "\n"
@@ -36,132 +36,132 @@ msgstr ""
 "https://launchpad.net/freevial/%(series)s\n"
 "\n"
 
-#: src/freevial.py:157
+#: src/freevial.py:159
 msgid "Usage: %prog [options]"
 msgstr "Sintaxi: freevial [opcions]"
 
-#: src/freevial.py:163
+#: src/freevial.py:165
 msgid "debug mode"
 msgstr "mode de depuració"
 
-#: src/freevial.py:168
+#: src/freevial.py:170
 msgid "start in fullscreen mode"
 msgstr "inicia el joc en mode protegit"
 
-#: src/freevial.py:173
+#: src/freevial.py:175
 msgid "start game in locked mode"
 msgstr "inicia el joc en mode protegit"
 
-#: src/freevial.py:178
+#: src/freevial.py:180
 msgid "only load those questions written in the indicated language(s); for example, \"ca, en\""
 msgstr "carrega només aquelles preguntes escrites en les llengües indicades; per exemple, \"ca, en\""
 
-#: src/freevial.py:184
+#: src/freevial.py:186
 msgid "path to the database file / directory you want to append to the default database"
 msgstr "ruta de la base de dades a afegir a la base de dades predeterminada"
 
-#: src/freevial.py:190
+#: src/freevial.py:192
 msgid "(do not use this)"
 msgstr "(no utilitzeu això)"
 
-#: src/freevial.py:195
+#: src/freevial.py:197
 msgid "absolute path to the skin directory"
 msgstr "ruta absoluta del directori de l'aparença a utilitzar."
 
-#: src/freevial.py:200
+#: src/freevial.py:202
 msgid "disable sound"
 msgstr "desactiva els sons"
 
-#: src/freevial.py:205
+#: src/freevial.py:207
 msgid "disable music"
 msgstr "desactiva la música"
 
-#: src/freevial.py:210
+#: src/freevial.py:212
 msgid "disable all sounds and music"
 msgstr "desactiva tots els sons i la música"
 
-#: src/freevial.py:215
+#: src/freevial.py:217
 msgid "disable media questions"
 msgstr "desactiva les preguntes multimèdia"
 
-#: src/freevial.py:220
+#: src/freevial.py:222
 msgid "show the framerate on screen"
 msgstr "mostra el nombre d'imatges per segon a la pantalla"
 
-#: src/freevial.py:225
+#: src/freevial.py:227
 #, python-format
 msgid "set the framerate limit (default is %d)"
 msgstr "especifica el nombre d'imatges per segon (el valor predeterminat és %d)"
 
-#: src/freevial.py:230
+#: src/freevial.py:232
 msgid "enable D-Bus support, to interface with external applications"
 msgstr "habilita la inferfície D-Bus"
 
-#: src/freevial.py:235
+#: src/freevial.py:237
 msgid "print information about the loaded database and exit"
 msgstr "mostra informació sobre la base de dades carregada i surt"
 
-#: src/freevial.py:240
+#: src/freevial.py:242
 msgid "load all images and sounds at startup"
 msgstr "carrega totes les imatges i sons a l'inici"
 
-#: src/freevial.py:245
+#: src/freevial.py:247
 msgid "use psyco, if available (this will use more memory)"
 msgstr "utilitza psyco, si està disponible (això utilitzarà més memòria)"
 
-#: src/freevial.py:254
+#: src/freevial.py:256
 msgid "Error: You've indicated an incorrect language code. Valid examples are: \"ca\", \"en, de\", etc."
 msgstr "Error: Heu indicat un codi d'idioma invàlid. Utilitzeu valors com ara \"ca\", \"en, de\", etc."
 
-#: src/freevial.py:257
+#: src/freevial.py:259
 #, python-format
 msgid "Selected languages: %s"
 msgstr "S'ha produït un error al carregar la imatge «%s»."
 
-#: src/freevial.py:262
+#: src/freevial.py:264
 #, python-format
 msgid "Could not find database \"%s\"..."
 msgstr "No s'ha pogut trobar la base de dades «%s»..."
 
-#: src/freevial.py:277
+#: src/freevial.py:279
 msgid "Freevial - About the loaded database...\n"
 msgstr "Freevial - Quant a la base de dades carregada...\n"
 
-#: src/freevial.py:279
+#: src/freevial.py:281
 msgid "Location:"
 msgstr "Ubicació:"
 
-#: src/freevial.py:280
+#: src/freevial.py:282
 msgid "Amount of categories:"
 msgstr "Nombre de categories:"
 
-#: src/freevial.py:281
+#: src/freevial.py:283
 #: src/selcat.py:193
 msgid "Amount of questions:"
 msgstr "Nombre de preguntes:"
 
-#: src/freevial.py:285
+#: src/freevial.py:287
 #, python-format
 msgid "%(category)s: %(num)s questions"
 msgstr "%(category)s: %(num)s preguntes"
 
-#: src/freevial.py:305
+#: src/freevial.py:307
 msgid "You've given an incorrect value for --max-fps."
 msgstr "Heu indicat un valor incorrecte per a --max-fps."
 
-#: src/freevial.py:326
+#: src/freevial.py:328
 msgid "Error: Couldn't find dbus-python."
 msgstr "Error: No s'ha pogut trobar el mòdul dbus-python."
 
-#: src/freevial.py:341
+#: src/freevial.py:343
 msgid "Error: couldn't find enough categories; at least six are required."
 msgstr "Error: la base de dades no té prou categories; com a mínim se'n necessiten sis."
 
-#: src/freevial.py:351
+#: src/freevial.py:353
 msgid "Warning: Could not find psyco."
 msgstr "Avís: No s'ha pogut trobar el mòdul psyco."
 
-#: src/freevial.py:357
+#: src/freevial.py:359
 msgid "User requested interrupt."
 msgstr "Interrupció soŀlicitada per l'usuari."
 
@@ -216,19 +216,19 @@ msgstr ""
 "\n"
 "F1 o H - Ajuda | F2 - Crèdits | Q o ESC - Acaba\n"
 
-#: src/preguntador.py:623
+#: src/preguntador.py:621
 msgid " X - Replay media"
 msgstr " X - Torna a reproduir la pista"
 
-#: src/preguntador.py:628
+#: src/preguntador.py:626
 msgid " X - Show or hide answers/images"
 msgstr " X - Mostra o amaga les respostes/imatges"
 
-#: src/preguntador.py:638
+#: src/preguntador.py:636
 msgid "F3 - Show comments, INTRO/ESC - Back to score screen"
 msgstr "F3 - Mostra els comentaris, INTRO/ESC - Torna"
 
-#: src/preguntador.py:639
+#: src/preguntador.py:637
 msgid "A, B, C - Choose answer, F1 - Help"
 msgstr "A, B, C - Tria una resposta, F1 - Mostra l'ajuda"
 
@@ -327,7 +327,7 @@ msgstr ""
 "\n"
 "F1 o H - Ajuda | F2 - Crèdits | Q o ESC - Acaba\n"
 
-#: src/roda.py:259
+#: src/roda.py:257
 msgid "INTRO - Stop the wheel"
 msgstr "INTRO - Atura la roda"
 
@@ -409,21 +409,21 @@ msgstr ""
 "\n"
 "F1 o H - Ajuda | F2 - Crèdits | Q o ESC - Acaba\n"
 
-#: src/score.py:381
+#: src/score.py:380
 msgid "Are you sure you want to quit the game?"
 msgstr "Segur que voleu finalitzar el joc?"
 
-#: src/score.py:382
-#: src/score.py:467
+#: src/score.py:381
+#: src/score.py:466
 msgid "Yes"
 msgstr "Sí"
 
-#: src/score.py:382
-#: src/score.py:467
+#: src/score.py:381
+#: src/score.py:466
 msgid "No"
 msgstr "No"
 
-#: src/score.py:467
+#: src/score.py:466
 msgid "Play again?"
 msgstr "Tornem a jugar?"
 
