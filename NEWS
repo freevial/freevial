@@ -8,7 +8,7 @@ of database format version 1.1, which introduces many new features.
 Important Improvements:
  - Added support for media questions (that is, with sound or images).
  - Added support for questions with more than one correct and two incorrect
-   answers (three of them are randomly choosen at runtime), and for questions
+   answers (three of them are randomly chosen at runtime), and for questions
    with only two (one correct and one incorrect) answers.
  - When a location is indicated with --database, the default categories are
    still loaded in addition to the indicated ones.
