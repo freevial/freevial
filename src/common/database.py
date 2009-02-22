@@ -23,7 +23,6 @@
 #
 
 from random import shuffle, sample, randint
-from copy import deepcopy
 import gettext
 
 class Question:
@@ -99,7 +98,7 @@ class Database:
 		
 		if len(self._questions) == 0:
 			print _(u'All questions in category «%s» have been answered. Reshuffling...') %  self.name
-			self._questions = deepcopy(self._old_questions)
+			self._questions = self._old_questions
 			self._old_questions = []
 			self._shuffled = False
 		
