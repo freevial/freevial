@@ -447,6 +447,7 @@ class Preguntador:
 				for num in xrange(1, 7):
 					if event.keyUp(str(num), 'KP' + str(num)):
 						self.atzar(num-1)
+						mostra_comentaris = False
 				
 				if event.isRelease('primary') or event.keyUp('RETURN', 'SPACE', 'KP_ENTER'):
 					if self.selected != 0 or (self.segons <= 0 and max_time != 0):
@@ -482,7 +483,7 @@ class Preguntador:
 							return -1
 					else:
 						compos = 768
-						mostra_comentaris = True;
+						mostra_comentaris = True
 
 			# Animem el fons
 			self.ypos += 2
