@@ -3,7 +3,7 @@
 #
 # Freevial
 #
-# Copyright (C) 2007, 2008 The Freevial Team
+# Copyright (C) 2007-2009 The Freevial Team
 #
 # By Carles Oriol i Margarit <carles@kumbaworld.com>
 # By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>

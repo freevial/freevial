@@ -4,7 +4,7 @@
 # Freevial
 # Questions Importer
 #
-# Copyright (C) 2007, 2008 The Freevial Team
+# Copyright (C) 2007-2009 The Freevial Team
 #
 # By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>
 # By Carles Oriol i Margarit <carles@kumbaworld.com>

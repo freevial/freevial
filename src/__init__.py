@@ -4,7 +4,7 @@
 # Freevial
 # A quiz game for community events
 #
-# Copyright (C) 2007, 2008 The Freevial Team
+# Copyright (C) 2007-2009 The Freevial Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

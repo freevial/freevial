@@ -4,7 +4,7 @@
 # Freevial
 # DBUS Service
 #
-# Copyright (C) 2008 The Freevial Team
+# Copyright (C) 2008-2009 The Freevial Team
 #
 # By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>
 #

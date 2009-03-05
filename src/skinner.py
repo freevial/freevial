@@ -4,7 +4,7 @@
 # Freevial
 # Skin Stuff
 #
-# Copyright (C) 2007, 2008 The Freevial Team
+# Copyright (C) 2007-2009 The Freevial Team
 #
 # By Nil Oriol <nil@kumbaworld.com>
 # By Carles Oriol <carles@kumbaworld.com>

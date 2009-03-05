@@ -4,7 +4,7 @@
 # Freevial
 # Collection of commonly used classes and functions
 #
-# Copyright (C) 2007, 2008 The Freevial Team
+# Copyright (C) 2007-2009 The Freevial Team
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

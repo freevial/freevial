@@ -4,7 +4,7 @@
 # Freevial
 # Questions Asker
 #
-# Copyright (C) 2007, 2008 The Freevial Team
+# Copyright (C) 2007-2009 The Freevial Team
 #
 # By Carles Oriol i Margarit <carles@kumbaworld.com>
 # By Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>
@@ -493,12 +493,9 @@ class Preguntador:
 			if self.ypos < 200:
 				self.game.screen.blit(self.fons[self.categoria], (0, min(200, self.ypos)), (0, 0, Global.screen_x, 200 - min(200, self.ypos)))
 			
-
-
 			# i el sombrejem per fer l'efecte de desapariió
 			# també pintem el logotip del peu a l'hora que esborrem el fons de self.game.screen
 			self.game.screen.blit(self.mascara_de_fons, (0, 0))
-
 			
 			# si és pregunta d'imatge la mostrem
 			if hide_answers != 3:
