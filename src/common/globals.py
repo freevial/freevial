@@ -65,6 +65,7 @@ Global.languages = None
 Global.databasefolders = []
 Global.alldatabases = None
 Global.session_bus = None
+Global.preferences = None
 
 Global.folders = {
 		'images': os.path.join(Global.basefolder, 'images'),

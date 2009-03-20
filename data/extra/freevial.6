@@ -22,48 +22,53 @@ to tell it where the appearance information it should use is located.
 
 .SH OPTIONS
 .TP
-\fB\-d\fR, \fB\-\-debug\fR
+.B \-d, \-\-debug
 Run Freevial in debug mode (this doesn't change much at all).
 .TP
-\fB\-m\fR, \fB\-\-mute\fR
+.B \-m, \-\-mute
 Disable music and sounds.
 .TP
-\fB\-f\fR, \fB\-\-fullscreen\fR
+.B \-f, \-\-fullscreen
 Start in fullscreen mode (it can be windowed ingame with F11).
 .TP
-\fB\-l\fR, \fB\-\-locked\fR
+.B \-l, \-\-locked
 Start in locked mode (game can't be closed nor questions aborted; unlock by pressing the
 l-key in the team selection screen).
 .TP
-\fB\-h\fR, \fB\-\-help\fR
+.B \-h, \-\-help
 Prints the help and exists.
 .TP
-\fB\-v\fR, \fB\-\-version\fR
+.B \-v, \-\-version
 Prints information about the current version and release series, and exists.
 .TP
-\fB\-\-info\-db\fR, \fB\-\-info\-database\fR
+.B \-\-info\-db, \-\-info\-database
 Prints information about the loaded database and exists. This can be combined
 with the \-\-database option.
 .TP
-\fB\-\-no\-sound\fR
+.B \-\-no\-sound
 Disables all sounds. You can use \-\-mute to also disable the music.
 .TP
-\fB\-\-no\-music\fR
+.B \-\-no\-music
 Disables the music. You can use \-\-mute to also disable sounds.
 .TP
-\fB\-\-fps\fR
+.B \-\-fps
 Displays the framerate on screen.
 .TP
-\fB\-\-psyco\fR
+.B \-\-psyco
 Tries to use the psyco module in order to accelerate Freevial. This is
 not recommended, as it will need more memory.
+
+.SH FILES
+.TP
+.I ~/.config/freevial/preferences.ini
+Per user configuration file.
 
 .SH REPORTING BUGS
 If you find any bug please report it on: https://bugs.launchpad.net/freevial/.
 
 .SH AUTHOR
 Freevial was written by Carles Oriol <carles@kumbaworld.com> and
-Siegfried-Angel Gevatter Pujals (RainCT) <siggi.gevatter@gmail.com>.
+Siegfried-Angel Gevatter Pujals <siggi.gevatter@gmail.com>.
 
 .SH COPYRIGHT
 Copyright \(co 2007-2009 The Freevial Team

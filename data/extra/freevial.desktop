@@ -7,3 +7,4 @@ Icon=freevial
 Exec=freevial
 Terminal=false
 Categories=Game;
+X-Ubuntu-Gettext-Domain=freevial

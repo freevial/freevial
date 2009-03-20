@@ -68,10 +68,10 @@ class Skin:
 	def __init__(self):
 		
 		self.defconfig = SafeConfigParser()
-		self.defconfig.readfp(open(default_file, 'r'))				
+		self.defconfig.readfp(open(default_file))				
 		
 		self.config = SafeConfigParser()
-		self.config.readfp(open(Global.skin_file, 'r'))	
+		self.config.readfp(open(Global.skin_file))	
 		
 		Global.skin_folder = Global.skin_folder
 

@@ -30,6 +30,7 @@ import gettext
 from optparse import OptionParser
 
 from common.globals import GlobalVar, Global
+from common.config import Preferences
 from common.freevialglob import *
 from questions import get_databases
 from skinner import setSkinName, Skin
@@ -352,6 +353,7 @@ try:
 		except ImportError:
 			print >> sys.stderr, _('Warning: Could not find psyco.')
 	
+	Global.preferences = Preferences()
 	joc = Freevial()
 	joc.juguem()
 

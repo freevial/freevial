@@ -18,8 +18,8 @@ DEPENDENCIES
 -------
 
 To run Freevial you need a Python installation (version 2.4 or newer) and the
-Python modules pygame and lxml. The game has been designed to run on GNU/Linux,
-so you may find problems if you use another system.
+Python modules pygame, lxml and pyxdg. The game has been designed to run on
+GNU/Linux, so you may find problems if you use another system.
 
 
 INSTRUCTIONS
