@@ -1,10 +1,7 @@
 Version 1.4 - [No name yet]
 ------------------------------
 
-It's time to slow down and get a bit of stabilization (before doing more
-big changes which are already shaping up in our mind!), so this release
-focuses on bug fixes, translation and question database updates and minor
-improvements.
+...
 
 Bug Fixes:
  - If you manually switch to a different category (keys 1-6) while the comment

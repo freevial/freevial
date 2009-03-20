@@ -108,5 +108,14 @@
         <answer>It hasn't changed</answer>
       </answers>
     </question>
+    <question>
+      <sentence>Which of these formats work on a default Ubuntu installation?</sentence>
+      <author>RainCT</author>
+      <answers>
+        <answer correct="true">OGG</answer>
+        <answer>MP3</answer>
+        <answer>DVD</answer>
+      </answers>
+    </question>
   </questions>
 </database>
