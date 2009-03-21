@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
- 
+
 #
 # Freevial
 # Category selection
@@ -54,6 +54,7 @@ Being the first to answer all categories gives you
 
 F1 or H - Help | F2 - About freevial | Q or ESC - Quit""")
 
+
 class Roda:
 	
 	def __init__(self, game):
@@ -102,7 +103,7 @@ class Roda:
 		self.canviacat()		
 		self.help_overlay = createHelpScreen(instructions)		
 		
-		self.rewheelonrepeat = game.skin.configGetBool('rewheelonrepeat');
+		self.rewheelonrepeat = game.skin.configGetBool('rewheelonrepeat')
 
 		self.use_teamgotxies = self.game.skin.configGetBool('use_teamgotxies')
 		if self.use_teamgotxies:
@@ -111,7 +112,7 @@ class Roda:
 	def canviacat(self):
 		
 		self.categoriesagafades = []
-		for num in range (0, 6):
+		for num in range(0, 6):
 			self.categoriesagafades += get_databases(num).name
 		
 		if self.categoriesagafades != self.categories:
@@ -119,9 +120,9 @@ class Roda:
 
 			self.paper = self.game.skin.LoadImage('wheel_paper')
 			for num in xrange(0, 6):
-				sfc = self.game.skin.render_text(get_databases(num).name, (0,0,0), self.tipografia_mida, 1, self.tipografia, self.paper_text_width);
-				self.paper.blit(sfc, (self.paper_text_offsetX+2, 2+(num * 200) + 100 - sfc.get_height() / 2))
-				sfc = self.game.skin.render_text(get_databases(num).name, colorsCategories()[num], self.tipografia_mida, 1, self.tipografia, self.paper_text_width);
+				sfc = self.game.skin.render_text(get_databases(num).name, (0, 0, 0), self.tipografia_mida, 1, self.tipografia, self.paper_text_width)
+				self.paper.blit(sfc, (self.paper_text_offsetX + 2, 2 + (num * 200) + 100 - sfc.get_height() / 2))
+				sfc = self.game.skin.render_text(get_databases(num).name, colorsCategories()[num], self.tipografia_mida, 1, self.tipografia, self.paper_text_width)
 				self.paper.blit(sfc, (self.paper_text_offsetX, (num * 200) + 100 - sfc.get_height() / 2))
 	
 	def juguem(self):
@@ -145,10 +146,10 @@ class Roda:
 		rodant = 1
 		resultat = -1
 		
-		self.game.screen.blit(self.fons, (0,0))
+		self.game.screen.blit(self.fons, (0, 0))
 
 		self.nom_equip_sfc = self.game.skin.render_text(self.game.teams[self.game.current_team].name, self.game.skin.configGetRGB('team_name_color'), 30, 1)
-		self.nom_equip_sfc = pygame.transform.rotate (self.nom_equip_sfc, 90)
+		self.nom_equip_sfc = pygame.transform.rotate(self.nom_equip_sfc, 90)
 		
 		while 1:
 			
@@ -187,7 +188,8 @@ class Roda:
 			
 			# decelerem
 			velocitat -= deceleracio
-			if velocitat < 0: velocitat = 0
+			if velocitat < 0:
+				velocitat = 0
 			
 			# Si ja hem acabat de rodar afinem la selecció
 			# a l'element més proper
@@ -202,7 +204,7 @@ class Roda:
 						if pos <= -1200:
 							pos += 1200
 				else:
-					resultat = int(((- ( pos - 1550) / 200)) % 6 )
+					resultat = int(((- (pos - 1550) / 200)) % 6)
 					
 					if self.rewheelonrepeat and self.game.teams[self.game.current_team].teCategoria(resultat):
 						velocitat = random.randint(0, 1200) 
@@ -225,10 +227,12 @@ class Roda:
 			
 			if rodant == 1:
 				pos_fons += velocitat * 2
-				if pos_fons >= 768:	pos_fons -= 768
+				if pos_fons >= 768:
+					pos_fons -= 768
 				
 				pos -= velocitat
-				if pos <= -1200: pos += 1200
+				if pos <= -1200:
+					pos += 1200
 
 			#pintem el paper freevial
 			self.game.screen.blit(self.fons, (0, pos_fons))
@@ -239,7 +243,7 @@ class Roda:
 			self.game.screen.blit(self.paper, (self.paper_offsetX, pos + 1200))
 			
 			#pintem els marges vermells i degradats
-			self.game.screen.blit(self.front, (0,0))	
+			self.game.screen.blit(self.front, (0, 0))	
 			
 			self.game.screen.blit(self.nom_equip_sfc, (20, 748 - self.nom_equip_sfc.get_height()))
 
@@ -252,7 +256,8 @@ class Roda:
 			if self.score_figureta_visible:
 				self.game.screen.blit(self.figureta[self.game.teams[self.game.current_team].figureta], (70, 630))
 						
-			if mostra_ajuda: self.game.screen.blit(self.help_overlay, (0,0))
+			if mostra_ajuda:
+				self.game.screen.blit(self.help_overlay, (0, 0))
 			
 			Global.help_on_screen.draw(self.game.screen, (350, 740), _('INTRO - Stop the wheel'))
 			
