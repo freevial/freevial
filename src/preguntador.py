@@ -58,6 +58,7 @@ Z - Show/hide quiz author and number
 
 F1 or H - Help | F2 - About freevial | Q or ESC - Quit""")
 
+
 class NotaVoladora:
 
 	def __init__(self):
@@ -167,7 +168,7 @@ class Preguntador:
 		
 		for num in xrange(0, 6):
 			self.fons[num] = load_image(get_databases(num).image)
-			self.fons[num] = inkimage (self.fons[num], (i_colors_cat[num][0],i_colors_cat[num][1],i_colors_cat[num][2],128))
+			self.fons[num] = inkimage (self.fons[num], (i_colors_cat[num][0], i_colors_cat[num][1], i_colors_cat[num][2], 128))
 		
 		self.mascara = pygame.Surface((655, 150), pygame.SRCALPHA, 32)
 		
@@ -198,7 +199,7 @@ class Preguntador:
 		self.notesimatges.append(self.nota)
 
 		for num in xrange(0, 6):
-			self.notesimatges.append(inkimage (self.nota, (i_colors_cat[num][0],i_colors_cat[num][1],i_colors_cat[num][2],128)))
+			self.notesimatges.append(inkimage (self.nota, (i_colors_cat[num][0], i_colors_cat[num][1], i_colors_cat[num][2], 128)))
 		
 		self.use_teamgotxies = self.game.skin.configGetBool('use_teamgotxies')
 		if self.use_teamgotxies:
@@ -246,7 +247,7 @@ class Preguntador:
 		if im != '':
 			self.media_image[0] = load_image(im)
 
-		if self.media_image[0]	!= None:
+		if self.media_image[0] != None:
 
 			self.media_image_dance[0] = ((512-50)-(self.media_image[0].get_width()/2), ((768-100)/2-50)-(self.media_image[0].get_height()/2))
 
@@ -256,7 +257,7 @@ class Preguntador:
 		if im != '':
 			self.media_image[1] = load_image(im)
 
-		if self.media_image[1]	!= None:
+		if self.media_image[1] != None:
 
 			self.media_image_dance[1] = ((512-50)-(self.media_image[1].get_width()/2), ((768-100)/2-50)-(self.media_image[1].get_height()/2))
 
@@ -303,7 +304,7 @@ class Preguntador:
 				cadena = ' '
 			sfc_pregunta[nlinia] = self.game.skin.render_text(cadena, self.color_de_text, self.mida_font, 1, '', maxample - 2)
 			sfc_shad[nlinia] = self.game.skin.render_text(cadena, self.color_de_fons, self.mida_font, 1, '', maxample - 2)
-			nalt += sfc_pregunta[nlinia].get_height() + 2				     
+			nalt += sfc_pregunta[nlinia].get_height() + 2					 
 			nlinia += 1
 		
 		if not maxample:
@@ -324,7 +325,7 @@ class Preguntador:
 	#
 	# Bucle principal del programa
 	#
-	def juguem(self , selcat):
+	def juguem(self, selcat):
 		
 		self.audioinit = 0
 
@@ -349,7 +350,8 @@ class Preguntador:
 
 		self.atzar(selcat)
 
-		if not Global.SOUND_MUTE: pygame.time.wait(2500)
+		if not Global.SOUND_MUTE:
+			pygame.time.wait(2500)
 		
 		waitForMouseRelease()
 		
@@ -358,9 +360,6 @@ class Preguntador:
 			self.audioinit = time.time() + 2000
 		else:
 			self.game.skin.LoadSound('so_fons', 'so_fons_vol', 1).play(-1)
-
-
-					
 
 		mostra_punt_de_categoria = False
 		mostra_ajuda = 0
@@ -503,7 +502,7 @@ class Preguntador:
 		
 				if self.current_question['mediatype'] == 'image':
 					mostraim = if2(self.show_answers == 0, 0, 1)
-					if self.media_image[mostraim]	!= None:						
+					if self.media_image[mostraim] != None:						
 						t = time.time()
 						xi = cos(t)* float(self.media_image_dance[mostraim][0])
 						yi = sin(t/2.5)* float(self.media_image_dance[mostraim][1])
@@ -568,7 +567,7 @@ class Preguntador:
 				
 						# pintem els segons que queden, posant-los cada cop menys transparents
 					self.pinta_segons.set_alpha((max_time - segons_act) * 100 / max_time)
-					self.game.screen.blit(self.pinta_segons, (300 , 150))
+					self.game.screen.blit(self.pinta_segons, (300, 150))
 
 			# Pintem les solucions
 			linia_act = 270
@@ -580,8 +579,8 @@ class Preguntador:
 			if self.show_answers > 0:
 				
 				for num in xrange(0, len(self.current_question['options'])):
-					if self.current_question['answer'] == num :
-						if (self.selected - 1) != num :	
+					if self.current_question['answer'] == num:
+						if (self.selected - 1) != num:	
 							self.game.screen.blit(self.solucio_ok, (posnook2, linia_act + (150 * num)))
 						else:
 							self.game.screen.blit(self.solucio_ok, (posok, linia_act + (150 * num)))

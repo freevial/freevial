@@ -44,6 +44,7 @@ gettext.install('freevial', '/usr/share/locale', unicode=1)
 VERSION = 'UNRELEASED'
 SERIES = 'gresca'
 
+
 class Freevial:
 	
 	def __init__(self):
@@ -56,7 +57,6 @@ class Freevial:
 		Global.game.teams = []
 		
 		Global.game.current_team = 0
-	
 	
 	def inici(self):
 		
