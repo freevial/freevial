@@ -45,11 +45,11 @@ class Preferences(GlobalVar):
 			filename = os.path.join(BaseDirectory.load_first_config('freevial'),
 				'preferences.ini')
 		
-		self.config = None
+		self._config = None
 		if os.path.isfile(filename):
 			print _(u'Loading configuration file "%s"...' % filename)
-			self.config = SafeConfigParser()
-			self.config.readfp(open(filename))
+			self._config = SafeConfigParser()
+			self._config.readfp(open(filename))
 		
 		for section in self.settings:
 			for element in self.settings[section]:
@@ -59,6 +59,7 @@ class Preferences(GlobalVar):
 				self.set_setting(section, element[1], element[2], element[0])
 	
 	def set_setting(self, section, option, type, setting_name):
-		if self.config.has_section(section) and self.config.has_option(section, option):
+		if self._config and self._config.has_section(section) and \
+		self._config.has_option(section, option):
 			parser = getattr('config.get' + type)
 			setattr(self, setting_name, parser(section, option))
