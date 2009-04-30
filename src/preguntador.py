@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
- 
+
 #
 # Freevial
 # Questions Asker
@@ -335,7 +335,6 @@ class Preguntador:
 			nota = NotaVoladora()
 			notesvoladores.append(nota)
 
-
 		self.game.skin.set_domain('preguntador')
 		
 		max_time = self.game.skin.configGetInt('max_time')
@@ -354,7 +353,6 @@ class Preguntador:
 			pygame.time.wait(2500)
 		
 		waitForMouseRelease()
-		
 
 		if self.current_question['mediatype'] == 'audio':
 			self.audioinit = time.time() + 2000
@@ -510,7 +508,7 @@ class Preguntador:
 
 			if hide_answers != 1:
 				if self.use_mask:
-					# preparem el sobrejat de l'opció seleccionada
+					# preparem el sombrejat de l'opció seleccionada
 					ympos = self.ypos + 300
 					ympos %= 768
 					self.mascara.blit(self.fons[ self.categoria], (0,0), (0, (768 - ympos), Global.screen_x, min(200, ympos)))

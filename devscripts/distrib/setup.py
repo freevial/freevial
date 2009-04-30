@@ -18,11 +18,10 @@ setup(
 	# Classifiers
 	classifiers = [
 		'License :: OSI-Approved :: GNU General Public License (GPL)',
-		'Intended Audience :: End USers/Desktop',
+		'Intended Audience :: End Users/Desktop',
 		'Development Status :: 5 - Production/Stable',
 		'Topic :: Games/Entertainment',
 		'Programming Language :: Python',
-		'Database Environment :: Database API :: XML-based'
 		]
 	
 	# File installation

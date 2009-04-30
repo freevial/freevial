@@ -42,8 +42,12 @@ class Preferences(GlobalVar):
 	def __init__(self, filename=None):
 		
 		if not filename:
-			filename = os.path.join(BaseDirectory.load_first_config('freevial'),
-				'preferences.ini')
+			if BaseDirectory.load_first_config('freevial'):
+				filename = os.path.join(
+					BaseDirectory.load_first_config('freevial'),
+					'preferences.ini')
+			else:
+				filename = ''
 		
 		self._config = None
 		if os.path.isfile(filename):

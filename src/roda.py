@@ -63,9 +63,6 @@ class Roda:
 		
 		game.skin.set_domain('wheel')
 		
-		self.fons = game.skin.configGet('wheel_background')
-		self.front = game.skin.configGet('wheel_front')
-
 		self.categories = []
 		self.categoriesagafades = []
 		self.maxim_equips = game.skin.configGetInt('max_teams', 'game')
@@ -82,7 +79,7 @@ class Roda:
 		
 		if self.score_figureta_visible:
 			self.figureta = game.skin.LoadImageRange('figureta_mask', 64, 2)
-			
+		
 		self.fons = game.skin.LoadImage('wheel_background')
 		self.front = game.skin.LoadImage('wheel_front')
 		self.paper = game.skin.LoadImage('wheel_paper')
@@ -104,11 +101,11 @@ class Roda:
 		self.help_overlay = createHelpScreen(instructions)		
 		
 		self.rewheelonrepeat = game.skin.configGetBool('rewheelonrepeat')
-
+		
 		self.use_teamgotxies = self.game.skin.configGetBool('use_teamgotxies')
 		if self.use_teamgotxies:
 			self.teamgotxies_pos = self.game.skin.configGetEval('teamgotxies_pos')
-
+	
 	def canviacat(self):
 		
 		self.categoriesagafades = []
