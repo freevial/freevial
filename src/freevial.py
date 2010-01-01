@@ -27,7 +27,7 @@ import sys
 import os
 import pygame
 import gettext
-from optparse import OptionParser
+from optparse import OptionParser, SUPPRESS_HELP
 
 from common.globals import GlobalVar, Global
 from common.config import Preferences
@@ -190,7 +190,7 @@ optParser.add_option(
 optParser.add_option(
 	'--real',
 	dest = 'real', metavar='PATH',
-	help = _('(do not use this)')
+	help = SUPPRESS_HELP
 	)
 optParser.add_option(
 	'--skin',
