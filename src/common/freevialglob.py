@@ -36,7 +36,7 @@ from pygame.locals import *
 
 from common.globals import Global
 
-gettext.install('freevial', '/usr/share/locale', unicode=1)
+gettext.install('freevial', '/usr/share/locale')
 
 class Equip:
 	

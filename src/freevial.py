@@ -38,7 +38,7 @@ from score import Score
 from preguntador import Preguntador
 from roda import Roda
 
-gettext.install('freevial', '/usr/share/locale', unicode=1)
+gettext.install('freevial', '/usr/share/locale')
 
 # Version information
 VERSION = 'UNRELEASED'

@@ -28,7 +28,7 @@ import random
 import pygame
 import gettext
 
-gettext.install('freevial', '/usr/share/locale', unicode=1)
+gettext.install('freevial', '/usr/share/locale')
 
 class GlobalVar:
 	
