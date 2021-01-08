@@ -224,7 +224,7 @@ class Score:
 			resultat = visca.juguem(self.game, Global.game.teams[ winner_team ].name)
 			self.game.skin.LoadSound('background_sound', 'background_sound_vol', music = 1).play(-1)
 		elif force:
-			print "\a", # Just beep; don't print an empty line
+			print("\a", end="") # Just beep; don't print an empty line
 	
 	def comprovaTeamgotxies(self):
 		if self.use_teamgotxies:

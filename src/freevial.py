@@ -78,7 +78,7 @@ class Freevial:
 				pygame.mixer.pre_init(44100, -16, 2, 2048)
 				pygame.mixer.init()
 			except pygame.error, message:
-				print >> sys.stderr, _('Sound initialization failed. %s' % message)
+				print(_('Sound initialization failed. %s' % message), file=sys.stderr)
 				Global.SOUND_MUTE = True
 				Global.MUSIC_MUTE = True
 		
@@ -254,15 +254,15 @@ if options.languages:
 		options.languages.split() if x]
 	for language in Global.languages:
 		if len(language) != 2 or not language.isalpha():
-			print >> sys.stderr, _('Error: You\'ve indicated an incorrect '
-				'language code. Valid examples are: "ca", "en, de", etc.')
+			print(_('Error: You\'ve indicated an incorrect '
+				'language code. Valid examples are: "ca", "en, de", etc.'), file=sys.stderr)
 			sys.exit(1)
-	print _(u'Selected languages: %s' % ', '.join(Global.languages))
+	print(_(u'Selected languages: %s' % ', '.join(Global.languages)))
 
 if options.database:
 	path = os.path.abspath(os.path.join(options.real, options.database))
 	if not os.path.exists(path):
-		print _(u'Could not find database "%s"...' % path)
+		print(_(u'Could not find database "%s"...' % path))
 		sys.exit(1)
 	Global.databases.append(path)
 
@@ -276,18 +276,18 @@ if options.info_db:
 		total_questions += len(database)
 		categories.append((database.name, len(database)))
 	
-	print
-	print _('Freevial - About the loaded database...\n')
+	print()
+	print(_('Freevial - About the loaded database...\n'))
 	
-	print _('Location:'), '; '.join(Global.databases)
-	print _('Amount of categories:'), total_categories
-	print _('Amount of questions:'), total_questions, '\n'
+	print(_('Location:'), '; '.join(Global.databases))
+	print(_('Amount of categories:'), total_categories)
+	print(_('Amount of questions:'), total_questions, '\n')
 	
 	categories.sort()
 	for category in categories:
-		print _(u'%(category)s: %(num)s questions' \
-			% {'category': category[0], 'num': category[1]})
-	print
+		print(_(u'%(category)s: %(num)s questions' \
+			% {'category': category[0], 'num': category[1]}))
+	print()
 	
 	sys.exit(0)
 
@@ -305,7 +305,7 @@ if options.fps:
 
 if options.max_fps:
 	if not options.max_fps.isdigit():
-		print >> sys.stderr, _('You\'ve given an incorrect value for --max-fps.')
+		print(_('You\'ve given an incorrect value for --max-fps.'), file=sys.stderr)
 		sys.exit(1)
 	Global.fps_limit = int(options.max_fps)
 
@@ -326,7 +326,7 @@ if options.dbus:
 	try:
 		import dbus
 	except:
-		print >> sys.stderr, _('Error: Couldn\'t find dbus-python.')
+		print(_('Error: Couldn\'t find dbus-python.'), file=sys.stderr)
 		sys.exit(1)
 	else:
 		Global.DBUS = True
@@ -341,8 +341,8 @@ if options.skin in sys.argv:
 	setSkinName(path)
 
 if len(get_databases()) < 6:
-	print >> sys.stderr, _('Error: couldn\'t find enough categories; '
-		'at least six are required.')
+	print(_('Error: couldn\'t find enough categories; '
+		'at least six are required.'), file=sys.stderr)
 	sys.exit(1)
 
 try:
@@ -351,12 +351,12 @@ try:
 			import psyco
 			psyco.profile()
 		except ImportError:
-			print >> sys.stderr, _('Warning: Could not find psyco.')
+			print(_('Warning: Could not find psyco.'), file=sys.stderr)
 	
 	Global.preferences = Preferences()
 	joc = Freevial()
 	joc.juguem()
 
 except KeyboardInterrupt:
-	print _('User requested interrupt.')
+	print(_('User requested interrupt.'))
 	sys.exit(0)

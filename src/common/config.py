@@ -51,7 +51,7 @@ class Preferences(GlobalVar):
 		
 		self._config = None
 		if os.path.isfile(filename):
-			print _(u'Loading configuration file "%s"...' % filename)
+			print(_(u'Loading configuration file "%s"...' % filename))
 			self._config = SafeConfigParser()
 			self._config.readfp(open(filename))
 		

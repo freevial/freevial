@@ -41,7 +41,7 @@ directory = find_dir(os.path.join(cwd, 'src'), '/usr/share/games/freevial/src',
 	'/usr/share/freevial/src', '/opt/freevial/src')
 
 if not directory:
-	print >> sys.stderr, "Couldn't determine the path to any existing Freevial installation."
+	print("Couldn't determine the path to any existing Freevial installation.", file=sys.stderr)
 	sys.exit(1)
 
 # Pass Freevial the path from where it's really called
@@ -54,5 +54,5 @@ sys.path.insert(0, directory)
 try:
 	import freevial
 except KeyboardInterrupt:
-	print 'User requested interrupt.'
+	print('User requested interrupt.')
 	sys.exit(0)

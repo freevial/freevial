@@ -124,10 +124,10 @@ def load_image(name, colorkey = None, rotate = 0):
 			try:
 				image = pygame.image.load(fullname)
 			except pygame.error:
-				print >> sys.stderr, _(u'Could not load image "%s".' % fullname)
+				print(_(u'Could not load image "%s".' % fullname), file=sys.stderr)
 				raise SystemExit
 		else:
-			print >> sys.stderr, _(u'Could not find image "%s".' % name)
+			print(_(u'Could not find image "%s".' % name), file=sys.stderr)
 			# TODO: Consider returning a placeholder image and not crashing.
 			raise SystemExit
 	
@@ -179,7 +179,7 @@ def load_sound(name, volume = 1.0, music = False):
 	
 	except pygame.error, message:
 		
-		print _('Failed loading sound: %s' % fullname)
+		print(_('Failed loading sound: %s' % fullname))
 		
 		if not music:
 			raise SystemExit, message

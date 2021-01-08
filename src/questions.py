@@ -49,9 +49,9 @@ class LoadDatabase:
 			dbpath = self._get_real_path(directory)
 		
 		except IOError:
-			print _('Error: Couldn\'t find the current questions database.')
-			print _('You can provide the location to that one you want to use by passing the --database option.')
-			print _('For example:') + ' freevial --database ~/questions.tar.gz'
+			print(_('Error: Couldn\'t find the current questions database.'))
+			print(_('You can provide the location to that one you want to use by passing the --database option.'))
+			print(_('For example:') + ' freevial --database ~/questions.tar.gz')
 			sys.exit(1)
 		
 		self.paths = [dbpath]
@@ -127,9 +127,9 @@ def GetDatabase(xmlFile):
 	version = float(root.get('version'))
 	
 	if str(version) > str(1.2):
-		print >> sys.stderr, _(u'Warning: «%(file)s»: Database\'s version is \
+		print(_(u'Warning: «%(file)s»: Database\'s version is \
 %(version)s, which is not supported by the installed version of Freevial. It \
-might not work as expected.') % {'file': xmlFile, 'version': root.get('version')}
+might not work as expected.') % {'file': xmlFile, 'version': root.get('version')}, file=sys.stderr)
 	else:
 		# Validate the file
 		xsd.assertValid(doc)	
@@ -149,8 +149,8 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 	for question in root.questions.getchildren():
 		
 		if question.answers.countchildren() < 2:
-			print >> sys.stderr, _(u'Warning: «%s»: Found a question with '
-				'less than 2 answers; ignoring it.') % xmlFile
+			print(_(u'Warning: «%s»: Found a question with '
+				'less than 2 answers; ignoring it.') % xmlFile, file=sys.stderr)
 			continue
 		
 		obj = Question(
@@ -168,8 +168,8 @@ might not work as expected.') % {'file': xmlFile, 'version': root.get('version')
 				obj.add_answer([collapse(x) for x in answer.xpath('child::text()')], False)
 		
 		if not has_correct_answer:
-			print >> sys.stderr, _(u'Warning: «%s»: Found a question without '
-				'any correct answer; ignoring it.') % xmlFile
+			print(_(u'Warning: «%s»: Found a question without '
+				'any correct answer; ignoring it.') % xmlFile, file=sys.stderr)
 			continue
 		
 		if hasattr(question, 'comments') and question.comments.text is not None:
@@ -201,7 +201,7 @@ def get_databases(database_num=None):
 		Global.alldatabases = []
 		
 		for database in Global.databases:
-			print _(u'Loading database "%s"...' % database)
+			print(_(u'Loading database "%s"...' % database))
 			loaded_database = LoadDatabase(database, Global.languages)
 			Global.databasefolders.extend(loaded_database.paths)
 			
@@ -209,14 +209,14 @@ def get_databases(database_num=None):
 				try:
 					cat = GetDatabase(os.path.join(database, file))
 				except ValueError, e:
-					print >> sys.stderr, _(u'Error with «%(file)s»: %(error)s' \
-						% {'file': file, 'error': e})
+					print(_(u'Error with «%(file)s»: %(error)s' \
+						% {'file': file, 'error': e}), file=sys.stderr)
 				except (etree.DocumentInvalid, etree.XMLSyntaxError), e:
-					print >> sys.stderr, _(u'Error with «%(file)s»: %(error)s' \
-						% {'file': file, 'error': e})
-					print _(u'You can get more information running the '
-						'following command:')
-					print u'\txmllint -schema %s %s' % (xsdfile, file)
+					print(_(u'Error with «%(file)s»: %(error)s' \
+						% {'file': file, 'error': e}), file=sys.stderr)
+					print(_(u'You can get more information running the '
+						'following command:'))
+					print(u'\txmllint -schema %s %s' % (xsdfile, file))
 				else:
 					if len(cat) != 0:
 						Global.alldatabases.append(cat)
