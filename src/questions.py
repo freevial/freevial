@@ -64,7 +64,7 @@ class LoadDatabase:
 		the directory/file doesn't exist at all, it raises IOError."""
 		
 		if not os.path.exists(directory):
-			raise IOError, _('Indicated directory of file doesn\'t exist or has wrong permissions.')
+			raise IOError(_('Indicated directory of file doesn\'t exist or has wrong permissions.'))
 		
 		if os.path.isdir(directory):
 			return directory
@@ -74,7 +74,7 @@ class LoadDatabase:
 		if ext in ('gz', 'bz2', 'zip'):
 			return self._extract(directory)
 		
-		raise ValueError, _('Expected a directory or compressed file.')
+		raise ValueError(_('Expected a directory or compressed file.'))
 	
 	def _extract(self, directory):
 		""" Extracts a compressed file to a temporal directory and returns
@@ -208,10 +208,10 @@ def get_databases(database_num=None):
 			for file in loaded_database.files:
 				try:
 					cat = GetDatabase(os.path.join(database, file))
-				except ValueError, e:
+				except ValueError as e:
 					print(_(u'Error with «%(file)s»: %(error)s' \
 						% {'file': file, 'error': e}), file=sys.stderr)
-				except (etree.DocumentInvalid, etree.XMLSyntaxError), e:
+				except (etree.DocumentInvalid, etree.XMLSyntaxError) as e:
 					print(_(u'Error with «%(file)s»: %(error)s' \
 						% {'file': file, 'error': e}), file=sys.stderr)
 					print(_(u'You can get more information running the '

@@ -177,12 +177,12 @@ def load_sound(name, volume = 1.0, music = False):
 			obj = pygame.mixer.music
 			obj.load(fullname)
 	
-	except pygame.error, message:
+	except pygame.error as message:
 		
 		print(_('Failed loading sound: %s' % fullname))
 		
 		if not music:
-			raise SystemExit, message
+			raise SystemExit(message)
 	
 	obj.set_volume(float(volume))
 	

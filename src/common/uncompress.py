@@ -44,7 +44,7 @@ class Uncompressor:
 			return 'zip'
 		
 		else:
-			raise ValueError, 'Unsuported file format, expected .tar.gz, .tar.bz or .zip.'
+			raise ValueError('Unsuported file format, expected .tar.gz, .tar.bz or .zip.')
 	
 	
 	def _unzip_all(self, directory):

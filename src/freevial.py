@@ -77,7 +77,7 @@ class Freevial:
 			try:
 				pygame.mixer.pre_init(44100, -16, 2, 2048)
 				pygame.mixer.init()
-			except pygame.error, message:
+			except pygame.error as message:
 				print(_('Sound initialization failed. %s' % message), file=sys.stderr)
 				Global.SOUND_MUTE = True
 				Global.MUSIC_MUTE = True
