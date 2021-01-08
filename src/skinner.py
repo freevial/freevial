@@ -27,7 +27,7 @@
 import sys
 import os.path
 import gettext
-from ConfigParser import SafeConfigParser, NoOptionError, NoSectionError
+from configparser import SafeConfigParser, NoOptionError, NoSectionError
 
 from common.freevialglob import *
 from common.globals import Global

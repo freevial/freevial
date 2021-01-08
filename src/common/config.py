@@ -24,7 +24,7 @@
 
 import os.path
 import gettext
-from ConfigParser import SafeConfigParser, NoOptionError, NoSectionError
+from configparser import SafeConfigParser, NoOptionError, NoSectionError
 from xdg import BaseDirectory
 
 from common.globals import GlobalVar
