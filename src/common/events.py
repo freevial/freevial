@@ -27,7 +27,7 @@ import sys
 import re
 import pygame
 
-from freevialglob import screenshot, if2
+from common.freevialglob import screenshot, if2
 
 
 mouseButtons = {

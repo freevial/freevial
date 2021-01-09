@@ -27,7 +27,7 @@ import sys
 import os
 import pygame
 
-from freevialglob import *
+from common.freevialglob import *
 from events import EventHandle
 
 
