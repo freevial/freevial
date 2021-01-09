@@ -28,7 +28,7 @@ import os
 import pygame
 
 from common.freevialglob import *
-from events import EventHandle
+from common.events import EventHandle
 
 
 class QuestionDialog:
