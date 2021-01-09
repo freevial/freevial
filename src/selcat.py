@@ -61,11 +61,11 @@ class SelCat:
 		self.draw_labels()
 
 		self.sfc_nombres = range(0, 6)
-		for num in xrange(0, 6):
+		for num in range(0, 6):
 			self.sfc_nombres[num] = render_text(str(num+1), colorsCategories()[num], 35, 1, '', 50)
 	
 	def draw_labels(self):
-		for num in xrange(0, len(self.cp)):
+		for num in range(0, len(self.cp)):
 			if num < 6:
 				color = colorsCategories()[num]
 			else:
@@ -135,7 +135,7 @@ class SelCat:
 						self.so_sub2.play()
 						self.darrera_info = -1
 
-					for num in xrange(0, 6):
+					for num in range(0, 6):
 						if event.keyUp(str(num + 1), 'KP' + str(num + 1)): 	
 							self.move_category(seleccio, num)
 							seleccio = num
@@ -149,7 +149,7 @@ class SelCat:
 
 			# Pintem el fons animat
 			mou_fons += 8
-			for num in xrange(0, 768):
+			for num in range(0, 768):
 				self.game.screen.blit(self.fons, (math.cos((float(mou_fons +num)) / 100.0) * 20, num), (0, (ypos + num) % 768, 1024, 1))
 
 			self.game.screen.blit(self.mascara_de_fons, (0, 0))
@@ -158,7 +158,7 @@ class SelCat:
 			nelements = if2(estat == 0, len(self.cp), 6)
 
 			posact= 220
-			for num in xrange(primer_element_a_la_vista, nelements):	
+			for num in range(primer_element_a_la_vista, nelements):	
 				if posact + self.sfc_preguntes[num].get_height() > (768 -80)	:
 					break
 			

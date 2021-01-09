@@ -92,7 +92,7 @@ class Freevial:
 		# initialize skin system
 		Global.game.skin = Skin()
 		Global.game.max_teams = Global.game.skin.configGetInt('max_teams', domain='game')
-		for num in xrange(0, Global.game.max_teams):
+		for num in range(0, Global.game.max_teams):
 			Global.game.teams.append(Equip(num))
 		
 		# Initialize common instances

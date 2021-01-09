@@ -95,7 +95,7 @@ class Roda:
 		self.paper_text_offsetX = game.skin.configGetInt('paper_text_offsetX')
 		self.paper_offsetX = game.skin.configGetInt('paper_offsetX')
 
-		for num in xrange(0, 6):
+		for num in range(0, 6):
 			self.so_cat[num] = load_sound(get_databases(num).sound, volume = 1.0)
 		self.canviacat()		
 		self.help_overlay = createHelpScreen(instructions)		
@@ -116,7 +116,7 @@ class Roda:
 			self.categories = self.categoriesagafades
 
 			self.paper = self.game.skin.LoadImage('wheel_paper')
-			for num in xrange(0, 6):
+			for num in range(0, 6):
 				sfc = self.game.skin.render_text(get_databases(num).name, (0, 0, 0), self.tipografia_mida, 1, self.tipografia, self.paper_text_width)
 				self.paper.blit(sfc, (self.paper_text_offsetX + 2, 2 + (num * 200) + 100 - sfc.get_height() / 2))
 				sfc = self.game.skin.render_text(get_databases(num).name, colorsCategories()[num], self.tipografia_mida, 1, self.tipografia, self.paper_text_width)

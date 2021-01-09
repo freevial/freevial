@@ -58,7 +58,7 @@ class Equip:
 		self.preguntes_tot = []
 		self.preguntes_ok = []
 		
-		for num in xrange(0, 6): 
+		for num in range(0, 6): 
 			self.preguntes_tot.append(0)
 			self.preguntes_ok.append(0)
 
@@ -243,14 +243,14 @@ def render_text(cadena, color, mida, antialias = 0, font_name = '', maxwidth = 0
 		if len(sfcs) > 1:
 			iample = 0
 			ialt = 0
-			for num in xrange(0, len(sfcs)):
+			for num in range(0, len(sfcs)):
 				ialt += max(sfcs[num].get_height(), mida)
 				iample = min(maxwidth, max(iample, sfcs[num].get_width()))
 			
 			sfc = pygame.Surface((iample, ialt), pygame.SRCALPHA, 32)
 			
 			pos = 0
-			for num in xrange(0, len(sfcs)):
+			for num in range(0, len(sfcs)):
 				sfc.blit(sfcs[num], (0, pos))
 				pos += max(sfcs[num].get_height(), mida)
 		
@@ -437,7 +437,7 @@ def createTextSurface(text, color, intensitat = 25):
 	
 	help_overlay = pygame.Surface((1024, 768), pygame.SRCALPHA, 32)
 	
-	for num in xrange(0, 10):
+	for num in range(0, 10):
 		help_overlay.fill((0, 0, 16, num * intensitat), (100 + (num * 2), 100 + (num * 2), 1024 - 100 * 2 - (num * 4), 768 - 150 - (num * 4)))
 	
 	nline = 0

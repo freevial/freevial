@@ -166,7 +166,7 @@ class Preguntador:
 		
 		self.fons = range(0, 6)
 		
-		for num in xrange(0, 6):
+		for num in range(0, 6):
 			self.fons[num] = load_image(get_databases(num).image)
 			self.fons[num] = inkimage (self.fons[num], (i_colors_cat[num][0], i_colors_cat[num][1], i_colors_cat[num][2], 128))
 		
@@ -198,7 +198,7 @@ class Preguntador:
 		self.notesimatges = []
 		self.notesimatges.append(self.nota)
 
-		for num in xrange(0, 6):
+		for num in range(0, 6):
 			self.notesimatges.append(inkimage (self.nota, (i_colors_cat[num][0], i_colors_cat[num][1], i_colors_cat[num][2], 128)))
 		
 		self.use_teamgotxies = self.game.skin.configGetBool('use_teamgotxies')
@@ -266,7 +266,7 @@ class Preguntador:
 		self.sfc_pregunta  = self.preguntadorPintatext(self.current_question['text'], self.game.skin.configGetInt('question_width'))
 
 		self.sfc_resposta = range(0, len(self.current_question['options']))
-		for num in xrange(0, len(self.current_question['options'])):
+		for num in range(0, len(self.current_question['options'])):
 			self.sfc_resposta[ num ] = self.preguntadorPintatext(self.current_question['options'][num], self.game.skin.configGetInt('answer_width'))
 
 		self.sfc_apregunta = self.game.skin.render_text(str(self.current_question['author']), (self.color_de_text), (self.mida_text_autor))
@@ -331,7 +331,7 @@ class Preguntador:
 
 		mostramusica = False
 		notesvoladores = []
-		for num in xrange(0, 20):
+		for num in range(0, 20):
 			nota = NotaVoladora()
 			notesvoladores.append(nota)
 
@@ -441,7 +441,7 @@ class Preguntador:
 				if event.keyUp('z'):	
 					self.mostraautor ^= 1
 
-				for num in xrange(1, 7):
+				for num in range(1, 7):
 					if event.keyUp(str(num), 'KP' + str(num)):
 						self.atzar(num-1)
 						mostra_comentaris = False
@@ -541,7 +541,7 @@ class Preguntador:
 				# i les solucions			
 				linia_act = 270
 				
-				for num in xrange(0, len(self.current_question['options'])):
+				for num in range(0, len(self.current_question['options'])):
 					self.game.screen.blit(self.lletres[num][(self.selected != num + 1)], (self.postextx, linia_act + (150 * num)))
 					self.game.screen.blit(self.sfc_resposta[ num ], (self.postextx + 180 , linia_act + 20 + (150 * num)))		
 				
@@ -576,7 +576,7 @@ class Preguntador:
 			
 			if self.show_answers > 0:
 				
-				for num in xrange(0, len(self.current_question['options'])):
+				for num in range(0, len(self.current_question['options'])):
 					if self.current_question['answer'] == num:
 						if (self.selected - 1) != num:	
 							self.game.screen.blit(self.solucio_ok, (posnook2, linia_act + (150 * num)))
@@ -594,7 +594,7 @@ class Preguntador:
 				current_time = time.time()
 				figureta_blit = if2((int(current_time * 2) % 2) == 0, figureta_no, figureta_si)
 				if match_point:
-					for num in xrange(0, 16) :
+					for num in range(0, 16) :
 						self.game.screen.blit(figureta_blit, (
 							500 + cos(current_time + (float(num)/15)) * 400,
 							110 + sin((current_time + (float(num)/10)) * 2) * 25))

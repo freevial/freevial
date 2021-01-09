@@ -119,11 +119,11 @@ class Database:
 		
 		data = self._get_question()
 		answers = data.get_answers()
-		answer_order = sample(xrange(0, len(answers)), len(answers))
+		answer_order = sample(range(0, len(answers)), len(answers))
 		
 		question = {}
 		question['text'] = data.question
-		question['options'] = tuple((answers[answer_order[num]] for num in xrange(0, len(answers))))
+		question['options'] = tuple((answers[answer_order[num]] for num in range(0, len(answers))))
 		question['answer'] = answer_order.index(0)
 		question['author'] = data.author
 		question['comment'] = data.comment
