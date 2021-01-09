@@ -62,11 +62,11 @@ class Database:
 	def __init__(self, name, language, description, players, authors, time, image, sound, version):
 		
 		# General Database Data
-		self.name = unicode(name)
-		self.language = unicode(language)
-		self.description = unicode(description)
-		self.players = unicode(players)
-		self.authors = unicode(authors)
+		self.name = str(name)
+		self.language = str(language)
+		self.description = str(description)
+		self.players = str(players)
+		self.authors = str(authors)
 		self.time = [ time[0], time[1] ]
 		self.image = image
 		self.sound = sound

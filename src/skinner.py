@@ -55,13 +55,13 @@ def setSkinName(path):
 			path = calculated_path
 	
 	if not os.path.isdir(path):
-		print(_('Could not find skin "%s".') % unicode(path, 'utf-8'))
+		print(_('Could not find skin "%s".') % str(path))
 		sys.exit(1)
 	
 	Global.skin_folder = path
 	Global.skin_file = os.path.join(path, 'skin.ini')
 	
-	print(_(u'Loading skin "%s"...' % unicode(Global.skin_folder, 'utf-8')))
+	print(_(u'Loading skin "%s"...' % str(Global.skin_folder)))
 
 class Skin:
 	
@@ -175,7 +175,7 @@ class Skin:
 
 		if nomfont != '':
 			if not os.path.exists(nomfont):
-				fullname = os.path.join(unicode(Global.skin_folder, 'utf-8'), nomfont)	
+				fullname = os.path.join(str(Global.skin_folder), nomfont)
 
 				if os.path.exists(fullname):
 					nomfont = fullname
