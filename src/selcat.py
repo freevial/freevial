@@ -56,11 +56,11 @@ class SelCat:
 		self.selcat_color_text_nosel = game.skin.configGetRGB('color_text_nosel')
 		
 		self.cp = get_databases()
-		self.sfc_preguntes = range(0, len(self.cp))
+		self.sfc_preguntes = list(range(0, len(self.cp)))
 
 		self.draw_labels()
 
-		self.sfc_nombres = range(0, 6)
+		self.sfc_nombres = list(range(0, 6))
 		for num in range(0, 6):
 			self.sfc_nombres[num] = render_text(str(num+1), colorsCategories()[num], 35, 1, '', 50)
 	

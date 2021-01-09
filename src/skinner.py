@@ -142,7 +142,7 @@ class Skin:
 	
 	def LoadImageRange(self, name, maxrange, digits, domain = None):
 		
-		torna = range(0, maxrange)
+		torna = list(range(0, maxrange))
 		pos = self.configGet(name, domain)
 		
 		for num in range(0, 64):

@@ -86,7 +86,7 @@ class Roda:
 		self.so_dot = game.skin.LoadSound('sound_wheel_dot', 'sound_wheel_dot_vol')
 		self.so_evil = game.skin.LoadSound('sound_wheel_evil', 'sound_wheel_evil_vol')
 		self.so_sub = game.skin.LoadSound('sound_wheel_sub', 'sound_wheel_sub_vol')
-		self.so_cat = range(0, 6)
+		self.so_cat = list(range(0, 6))
 
 		self.so_de_pas = game.skin.configGetInt('so_de_pas')
 

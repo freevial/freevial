@@ -164,7 +164,7 @@ class Preguntador:
 		self.solucio_ok = game.skin.LoadImage('solucio_ok')
 		self.solucio_nook = game.skin.LoadImage('solucio_nook')
 		
-		self.fons = range(0, 6)
+		self.fons = list(range(0, 6))
 		
 		for num in range(0, 6):
 			self.fons[num] = load_image(get_databases(num).image)
@@ -265,7 +265,7 @@ class Preguntador:
 
 		self.sfc_pregunta  = self.preguntadorPintatext(self.current_question['text'], self.game.skin.configGetInt('question_width'))
 
-		self.sfc_resposta = range(0, len(self.current_question['options']))
+		self.sfc_resposta = list(range(0, len(self.current_question['options'])))
 		for num in range(0, len(self.current_question['options'])):
 			self.sfc_resposta[ num ] = self.preguntadorPintatext(self.current_question['options'][num], self.game.skin.configGetInt('answer_width'))
 
@@ -294,8 +294,8 @@ class Preguntador:
 
 		nalt = 0
 		
-		sfc_pregunta = range(0, len(cadenes))
-		sfc_shad = range(0, len(cadenes))
+		sfc_pregunta = list(range(0, len(cadenes)))
+		sfc_shad = list(range(0, len(cadenes)))
 
 		nlinia = 0
 
