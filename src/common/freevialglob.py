@@ -550,7 +550,7 @@ class frameRate:
 		limit_ticks = pygame.time.get_ticks() - self.lastTicks
 		
 		if limit_ticks < limit_fps:
-			pygame.time.wait(limit_fps - limit_ticks)
+			pygame.time.wait(int(limit_fps - limit_ticks))
 			self.lastTicks = pygame.time.get_ticks()
 
 		if surface:	
