@@ -567,7 +567,7 @@ def inkimage (sourceimage, color):
 
 	mida = (sourceimage.get_width(), sourceimage.get_height())
 
-	arraypunt = chr(color[0])+chr(color[1])+chr(color[2])+chr(color[3])
+	arraypunt = bytes(color)
 	
 	impunt = pygame.image.fromstring(arraypunt, (1,1), "RGBA")
 
