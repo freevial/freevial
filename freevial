@@ -29,20 +29,23 @@ import os
 
 cwd = os.path.dirname(os.path.abspath(__file__))
 
+
 def find_dir(*directories):
 
-	for directory in directories:
-		if os.path.exists(os.path.join(directory, 'freevial.py')):
-			return directory
-	
-	return None
+    for directory in directories:
+        if os.path.exists(os.path.join(directory, 'freevial.py')):
+            return directory
+
+    return None
+
 
 directory = find_dir(os.path.join(cwd, 'src'), '/usr/share/games/freevial/src',
-	'/usr/share/freevial/src', '/opt/freevial/src')
+                     '/usr/share/freevial/src', '/opt/freevial/src')
 
 if not directory:
-	print("Couldn't determine the path to any existing Freevial installation.", file=sys.stderr)
-	sys.exit(1)
+    print("Couldn't determine the path to any existing Freevial installation.",
+          file=sys.stderr)
+    sys.exit(1)
 
 # Pass Freevial the path from where it's really called
 sys.argv.extend(('--real', os.getcwd()))
@@ -52,7 +55,7 @@ sys.path.insert(0, directory)
 
 # Start game
 try:
-	import freevial
+    import freevial
 except KeyboardInterrupt:
-	print('User requested interrupt.')
-	sys.exit(0)
+    print('User requested interrupt.')
+    sys.exit(0)
