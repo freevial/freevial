@@ -147,216 +147,218 @@ class Freevial:
 			else:
 				sys.exit()
 
-version_string = _(u"""
-Freevial, a trivia platform for use on community events.
 
-You are running version %(version)s, which is part of the «%(series)s» series.
+def run():
+	version_string = _(u"""
+	Freevial, a trivia platform for use on community events.
 
-https://launchpad.net/freevial/%(series)s
+	You are running version %(version)s, which is part of the «%(series)s» series.
 
-"""  % {'version': VERSION, 'series': SERIES})
+	https://launchpad.net/freevial/%(series)s
 
-optParser = OptionParser(
-	usage = _('Usage: %prog [options]'),
-	version = version_string,
-	)
-optParser.add_option(
-	'-d', '--debug',
-	action = 'store_true', dest = 'debug',
-	help = _('debug mode'),
-	)
-optParser.add_option(
-	'-f', '--fullscreen',
-	action = 'store_true', dest = 'fullscreen',
-	help = _('start in fullscreen mode'),
-	)
-optParser.add_option(
-	'-l', '--locked',
-	action = 'store_true', dest = 'locked',
-	help = _('start game in locked mode'),
-	)
-optParser.add_option(
-	'--lang', '--languages',
-	dest = 'languages',
-	help = _('only load those questions written in the indicated language(s); '
-			'for example, "ca, en"'),
-	)
-optParser.add_option(
-	'--database',
-	dest = 'database', metavar='PATH',
-	help = _('path to the database file / directory you want to append to the '
-		'default database'),
-	)
-optParser.add_option(
-	'--real',
-	dest = 'real', metavar='PATH',
-	help = SUPPRESS_HELP
-	)
-optParser.add_option(
-	'--skin',
-	dest = 'skin', metavar='PATH',
-	help = _('absolute path to the skin directory'),
-	)
-optParser.add_option(
-	'--no-sound',
-	action = 'store_true', dest = 'no_sound',
-	help = _('disable sound'),
-	)
-optParser.add_option(
-	'--no-music',
-	action = 'store_true', dest = 'no_music',
-	help = _('disable music'),
-	)
-optParser.add_option(
-	'-m', '--mute',
-	action = 'store_true', dest = 'mute',
-	help = _('disable all sounds and music'),
-	)
-optParser.add_option(
-	'--no-media',
-	action = 'store_true', dest = 'no_media',
-	help = _('disable media questions'),
-	)
-optParser.add_option(
-	'--fps',
-	action = 'store_true', dest = 'fps',
-	help = _('show the framerate on screen'),
-	)
-optParser.add_option(
-	'--max-fps',
-	dest = 'max_fps', metavar = 'NUM',
-	help = _('set the framerate limit (default is %d)' % Global.fps_limit),
-	)
-optParser.add_option(
-	'--dbus',
-	action = 'store_true', dest = 'dbus',
-	help = _('enable D-Bus support, to interface with external applications'),
-	)
-optParser.add_option(
-	'--info-db', '--info-database',
-	action = 'store_true', dest = 'info_db',
-	help = _('print information about the loaded database and exit'),
-	)
-optParser.add_option(
-	'--preload',
-	action = 'store_true', dest = 'preload',
-	help = _('load all images and sounds at startup'),
-	)
-optParser.add_option(
-	'--psyco',
-	action = 'store_true', dest = 'psyco',
-	help = _('use psyco, if available (this will use more memory)'),
-	)
-(options, args) = optParser.parse_args()
+	"""  % {'version': VERSION, 'series': SERIES})
 
-if options.languages:
-	Global.languages = [ x.strip().strip(',').lower() for x in
-		options.languages.split() if x]
-	for language in Global.languages:
-		if len(language) != 2 or not language.isalpha():
-			print(_('Error: You\'ve indicated an incorrect '
-				'language code. Valid examples are: "ca", "en, de", etc.'), file=sys.stderr)
+	optParser = OptionParser(
+		usage = _('Usage: %prog [options]'),
+		version = version_string,
+		)
+	optParser.add_option(
+		'-d', '--debug',
+		action = 'store_true', dest = 'debug',
+		help = _('debug mode'),
+		)
+	optParser.add_option(
+		'-f', '--fullscreen',
+		action = 'store_true', dest = 'fullscreen',
+		help = _('start in fullscreen mode'),
+		)
+	optParser.add_option(
+		'-l', '--locked',
+		action = 'store_true', dest = 'locked',
+		help = _('start game in locked mode'),
+		)
+	optParser.add_option(
+		'--lang', '--languages',
+		dest = 'languages',
+		help = _('only load those questions written in the indicated language(s); '
+				'for example, "ca, en"'),
+		)
+	optParser.add_option(
+		'--database',
+		dest = 'database', metavar='PATH',
+		help = _('path to the database file / directory you want to append to the '
+			'default database'),
+		)
+	optParser.add_option(
+		'--real',
+		dest = 'real', metavar='PATH',
+		help = SUPPRESS_HELP
+		)
+	optParser.add_option(
+		'--skin',
+		dest = 'skin', metavar='PATH',
+		help = _('absolute path to the skin directory'),
+		)
+	optParser.add_option(
+		'--no-sound',
+		action = 'store_true', dest = 'no_sound',
+		help = _('disable sound'),
+		)
+	optParser.add_option(
+		'--no-music',
+		action = 'store_true', dest = 'no_music',
+		help = _('disable music'),
+		)
+	optParser.add_option(
+		'-m', '--mute',
+		action = 'store_true', dest = 'mute',
+		help = _('disable all sounds and music'),
+		)
+	optParser.add_option(
+		'--no-media',
+		action = 'store_true', dest = 'no_media',
+		help = _('disable media questions'),
+		)
+	optParser.add_option(
+		'--fps',
+		action = 'store_true', dest = 'fps',
+		help = _('show the framerate on screen'),
+		)
+	optParser.add_option(
+		'--max-fps',
+		dest = 'max_fps', metavar = 'NUM',
+		help = _('set the framerate limit (default is %d)' % Global.fps_limit),
+		)
+	optParser.add_option(
+		'--dbus',
+		action = 'store_true', dest = 'dbus',
+		help = _('enable D-Bus support, to interface with external applications'),
+		)
+	optParser.add_option(
+		'--info-db', '--info-database',
+		action = 'store_true', dest = 'info_db',
+		help = _('print information about the loaded database and exit'),
+		)
+	optParser.add_option(
+		'--preload',
+		action = 'store_true', dest = 'preload',
+		help = _('load all images and sounds at startup'),
+		)
+	optParser.add_option(
+		'--psyco',
+		action = 'store_true', dest = 'psyco',
+		help = _('use psyco, if available (this will use more memory)'),
+		)
+	(options, args) = optParser.parse_args()
+
+	if options.languages:
+		Global.languages = [ x.strip().strip(',').lower() for x in
+			options.languages.split() if x]
+		for language in Global.languages:
+			if len(language) != 2 or not language.isalpha():
+				print(_('Error: You\'ve indicated an incorrect '
+					'language code. Valid examples are: "ca", "en, de", etc.'), file=sys.stderr)
+				sys.exit(1)
+		print(_(u'Selected languages: %s' % ', '.join(Global.languages)))
+
+	if options.database:
+		path = os.path.abspath(os.path.join(options.real, options.database))
+		if not os.path.exists(path):
+			print(_(u'Could not find database "%s"...' % path))
 			sys.exit(1)
-	print(_(u'Selected languages: %s' % ', '.join(Global.languages)))
+		Global.databases.append(path)
 
-if options.database:
-	path = os.path.abspath(os.path.join(options.real, options.database))
-	if not os.path.exists(path):
-		print(_(u'Could not find database "%s"...' % path))
-		sys.exit(1)
-	Global.databases.append(path)
+	if options.info_db:
+		total_categories = 0
+		total_questions = 0
+		categories = []
+		
+		for database in get_databases():
+			total_categories += 1
+			total_questions += len(database)
+			categories.append((database.name, len(database)))
+		
+		print()
+		print(_('Freevial - About the loaded database...\n'))
+		
+		print(_('Location:'), '; '.join(Global.databases))
+		print(_('Amount of categories:'), total_categories)
+		print(_('Amount of questions:'), total_questions, '\n')
+		
+		categories.sort()
+		for category in categories:
+			print(_(u'%(category)s: %(num)s questions' \
+				% {'category': category[0], 'num': category[1]}))
+		print()
+		
+		sys.exit(0)
 
-if options.info_db:
-	total_categories = 0
-	total_questions = 0
-	categories = []
-	
-	for database in get_databases():
-		total_categories += 1
-		total_questions += len(database)
-		categories.append((database.name, len(database)))
-	
-	print()
-	print(_('Freevial - About the loaded database...\n'))
-	
-	print(_('Location:'), '; '.join(Global.databases))
-	print(_('Amount of categories:'), total_categories)
-	print(_('Amount of questions:'), total_questions, '\n')
-	
-	categories.sort()
-	for category in categories:
-		print(_(u'%(category)s: %(num)s questions' \
-			% {'category': category[0], 'num': category[1]}))
-	print()
-	
-	sys.exit(0)
+	if options.debug:
+		Global.DEBUG_MODE = True
 
-if options.debug:
-	Global.DEBUG_MODE = True
+	if options.locked:
+		Global.LOCKED_MODE = True
 
-if options.locked:
-	Global.LOCKED_MODE = True
+	if options.fullscreen:
+		Global.FULLSCREEN_MODE = True
 
-if options.fullscreen:
-	Global.FULLSCREEN_MODE = True
+	if options.fps:
+		Global.DISPLAY_FPS = True
 
-if options.fps:
-	Global.DISPLAY_FPS = True
+	if options.max_fps:
+		if not options.max_fps.isdigit():
+			print(_('You\'ve given an incorrect value for --max-fps.'), file=sys.stderr)
+			sys.exit(1)
+		Global.fps_limit = int(options.max_fps)
 
-if options.max_fps:
-	if not options.max_fps.isdigit():
-		print(_('You\'ve given an incorrect value for --max-fps.'), file=sys.stderr)
-		sys.exit(1)
-	Global.fps_limit = int(options.max_fps)
+	if options.mute:
+		Global.SOUND_MUTE = True
+		Global.MUSIC_MUTE = True
 
-if options.mute:
-	Global.SOUND_MUTE = True
-	Global.MUSIC_MUTE = True
+	if options.no_sound:
+		Global.SOUND_MUTE = True
 
-if options.no_sound:
-	Global.SOUND_MUTE = True
+	if options.no_music:
+		Global.MUSIC_MUTE = True
 
-if options.no_music:
-	Global.MUSIC_MUTE = True
+	if options.no_media or (Global.SOUND_MUTE and Global.MUSIC_MUTE):
+		Global.DISABLE_MEDIA = True
 
-if options.no_media or (Global.SOUND_MUTE and Global.MUSIC_MUTE):
-	Global.DISABLE_MEDIA = True
-
-if options.dbus:
-	try:
-		import dbus
-	except:
-		print(_('Error: Couldn\'t find dbus-python.'), file=sys.stderr)
-		sys.exit(1)
-	else:
-		Global.DBUS = True
-		Global.session_bus = dbus.SessionBus()
-		import common.dbus
-
-if options.preload:
-	Global.PRELOAD = True
-
-if options.skin in sys.argv:
-	path = os.path.abspath(os.path.join(options.real, options.skin))
-	setSkinName(path)
-
-if len(get_databases()) < 6:
-	print(_('Error: couldn\'t find enough categories; '
-		'at least six are required.'), file=sys.stderr)
-	sys.exit(1)
-
-try:
-	if options.psyco:
+	if options.dbus:
 		try:
-			import psyco
-			psyco.profile()
-		except ImportError:
-			print(_('Warning: Could not find psyco.'), file=sys.stderr)
-	
-	Global.preferences = Preferences()
-	joc = Freevial()
-	joc.juguem()
+			import dbus
+		except:
+			print(_('Error: Couldn\'t find dbus-python.'), file=sys.stderr)
+			sys.exit(1)
+		else:
+			Global.DBUS = True
+			Global.session_bus = dbus.SessionBus()
+			import common.dbus
 
-except KeyboardInterrupt:
-	print(_('User requested interrupt.'))
-	sys.exit(0)
+	if options.preload:
+		Global.PRELOAD = True
+
+	if options.skin in sys.argv:
+		path = os.path.abspath(os.path.join(options.real, options.skin))
+		setSkinName(path)
+
+	if len(get_databases()) < 6:
+		print(_('Error: couldn\'t find enough categories; '
+			'at least six are required.'), file=sys.stderr)
+		sys.exit(1)
+
+	try:
+		if options.psyco:
+			try:
+				import psyco
+				psyco.profile()
+			except ImportError:
+				print(_('Warning: Could not find psyco.'), file=sys.stderr)
+		
+		Global.preferences = Preferences()
+		joc = Freevial()
+		joc.juguem()
+
+	except KeyboardInterrupt:
+		print(_('User requested interrupt.'))
+		sys.exit(0)

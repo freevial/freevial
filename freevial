@@ -56,6 +56,7 @@ sys.path.insert(0, directory)
 # Start game
 try:
     import freevial
+    freevial.run()
 except KeyboardInterrupt:
     print('User requested interrupt.')
     sys.exit(0)
